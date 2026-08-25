@@ -1,0 +1,17 @@
+{
+  "title": "McDonald's Fry Timer Beep",
+  "category": "notification",
+  "tags": [
+    "mcdonalds",
+    "fries",
+    "beep",
+    "timer"
+  ],
+  "duration": 15.1,
+  "audio": "/audio/mcdonalds-beep.mp3",
+  "blurb": "The McDonald's fry timer — the relentless beeping that haunts every fast-food kitchen and, through sheer cultural osmosis, everyone else too. It means the fries are ready and nobody is coming. Play it as an alarm, a prank, or a tribute to anyone who's ever worked a fryer station. The beep does not stop. The beep never stops.",
+  "origin": "The infamous fry-timer beep from McDonald's kitchens.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1200
+}

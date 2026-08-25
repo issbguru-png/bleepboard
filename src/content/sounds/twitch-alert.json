@@ -1,0 +1,17 @@
+{
+  "title": "Twitch Follower Alert",
+  "category": "notification",
+  "tags": [
+    "twitch",
+    "alert",
+    "follower",
+    "streaming"
+  ],
+  "duration": 11.3,
+  "audio": "/audio/twitch-alert.mp3",
+  "blurb": "The classic Twitch alert sound — the chime that interrupts every stream to announce a new follower. For streamers it's dopamine; for viewers it's Pavlovian 'someone just followed' recognition. Use it in edits about streaming, play it to prank streamers mid-game, or set it as a notification and feel like your phone is growing a community.",
+  "origin": "The classic follower-alert chime from Twitch streaming culture.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1150
+}
