@@ -1,0 +1,17 @@
+{
+  "title": "Punch",
+  "category": "sound-effects",
+  "tags": [
+    "punch",
+    "hit",
+    "impact",
+    "action"
+  ],
+  "duration": 1.5,
+  "audio": "/audio/punch.mp3",
+  "blurb": "The punch sound — a meaty cinematic impact that no real fist has ever produced. Movie punches sound like this because reality is disappointing; edits inherit the tradition. Use it for physical comedy, verbal knockouts, and moments where an argument lands like a haymaker. THWACK. The debate is over.",
+  "origin": "The classic cinematic punch impact.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1000
+}

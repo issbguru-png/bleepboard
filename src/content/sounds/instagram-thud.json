@@ -1,0 +1,17 @@
+{
+  "title": "Instagram Thud",
+  "category": "notification",
+  "tags": [
+    "instagram",
+    "thud",
+    "notification",
+    "boom"
+  ],
+  "duration": 1.3,
+  "audio": "/audio/instagram-thud.mp3",
+  "blurb": "The Instagram thud — the weighty boom-tap of the app's notification, instantly recognized by a billion thumbs. It carries strange gravity: something happened, someone reacted, the algorithm has news. Use it in edits about posting, or play it aloud to trigger the collective phone-check. Social media's heartbeat, one thud at a time.",
+  "origin": "Instagram's distinctive notification thud.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1200
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Ding",
+  "category": "notification",
+  "tags": [
+    "ding",
+    "bell",
+    "alert",
+    "simple"
+  ],
+  "duration": 3,
+  "audio": "/audio/ding.mp3",
+  "blurb": "A single perfect ding — the atom of notification sounds. Bell-clear, instantly understood, infinitely applicable: idea arriving, elevator landing, order ready, point made. When a moment needs marking and nothing fancy will do, the ding does it. The most honest sound in the catalog: it dings. That's the whole feature set.",
+  "origin": "One clean bell ding — the universal alert.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1150
+}

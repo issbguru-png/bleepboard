@@ -1,0 +1,17 @@
+{
+  "title": "Swoosh",
+  "category": "sound-effects",
+  "tags": [
+    "swoosh",
+    "whoosh",
+    "transition",
+    "fast"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/swoosh.mp3",
+  "blurb": "The swoosh — the air-slicing whoosh of fast movement and faster transitions. It's editing's most-used connective tissue: scene changes, text flying in, hands gesturing dramatically. Nothing physical needs to move for a swoosh to work; it creates the motion by itself. The duct tape of sound design, in premium quality.",
+  "origin": "The classic transition whoosh.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 900
+}

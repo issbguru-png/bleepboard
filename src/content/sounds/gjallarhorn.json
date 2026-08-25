@@ -1,0 +1,17 @@
+{
+  "title": "Viking War Horn (Gjallarhorn)",
+  "category": "sound-effects",
+  "tags": [
+    "viking",
+    "horn",
+    "gjallarhorn",
+    "battle"
+  ],
+  "duration": 2.4,
+  "audio": "/audio/gjallarhorn.mp3",
+  "blurb": "The Gjallarhorn — the massive Viking war horn blast that summons battle energy from a thousand years ago. Popularized by Minnesota's stadium ritual, the sound outgrew football entirely: it's now the internet's horn for any epic mobilization. Play it before raids, road trips, and group orders arriving. SKOL. The horde is ready.",
+  "origin": "The Viking war horn, famous from Minnesota's stadium tradition.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1050
+}

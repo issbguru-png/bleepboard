@@ -1,0 +1,17 @@
+{
+  "title": "Extremely Loud CORRECT Buzzer",
+  "category": "sound-effects",
+  "tags": [
+    "correct",
+    "buzzer",
+    "loud",
+    "win"
+  ],
+  "duration": 1.2,
+  "audio": "/audio/correct-buzzer-loud.mp3",
+  "blurb": "The EXTREMELY LOUD correct buzzer — being right, at a volume that constitutes assault. The counterpart to our extremely loud incorrect buzzer: this one celebrates accuracy with the same total disregard for eardrums. Play it when someone nails the answer and deserves to have the entire street know. Correctness this loud cannot be appealed.",
+  "origin": "The maximum-volume edition of the correct-answer buzzer.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1200
+}

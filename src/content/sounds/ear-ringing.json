@@ -1,0 +1,17 @@
+{
+  "title": "Ear Ringing (Tinnitus)",
+  "category": "sound-effects",
+  "tags": [
+    "ringing",
+    "tinnitus",
+    "flashbang",
+    "dazed"
+  ],
+  "duration": 15.2,
+  "audio": "/audio/ear-ringing.mp3",
+  "blurb": "The ear-ringing tone — that high, thin eeeeee of post-explosion cinema, flashbang aftermaths, and standing up too fast. Film grammar uses it for dazed disorientation, and edits inherited the trick: play it after loud chaos, overwhelming news, or your alarm's third snooze. The world goes distant, the ring takes over. Realistic enough to check your own ears.",
+  "origin": "The cinematic post-blast ear ring.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1000
+}
