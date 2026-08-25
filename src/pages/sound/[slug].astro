@@ -82,6 +82,7 @@ const schema = [
   <section class="prose">
     <p>{d.blurb}</p>
     {d.origin && <p class="muted"><strong>Origin:</strong> {d.origin}</p>}
+    {d.explainer && <p><a href={d.explainer}>Read the full story behind this sound →</a></p>}
   </section>
 
   <section>

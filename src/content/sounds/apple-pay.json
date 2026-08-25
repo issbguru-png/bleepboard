@@ -9,9 +9,10 @@
   ],
   "duration": 1.4,
   "audio": "/audio/apple-pay.mp3",
-  "blurb": "The Apple Pay success chime — that soft, expensive-sounding ding of a payment going through. The meme usage is beautifully unhinged: it plays whenever anything is 'purchased,' including things that cannot be purchased — dignity, someone's ankles in a basketball game, a person getting dunked on in an argument. One of the most searched notification sounds on the internet.",
+  "blurb": "The Apple Pay success chime \u2014 that soft, expensive-sounding ding of a payment going through. The meme usage is beautifully unhinged: it plays whenever anything is 'purchased,' including things that cannot be purchased \u2014 dignity, someone's ankles in a basketball game, a person getting dunked on in an argument. One of the most searched notification sounds on the internet.",
   "origin": "Apple's contactless-payment confirmation chime, memed as the sound of 'buying' anything.",
   "added": "2026-08-25",
   "featured": false,
-  "plays": 2600
+  "plays": 2600,
+  "explainer": "/blog/apple-pay-sound-meme/"
 }

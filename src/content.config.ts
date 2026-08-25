@@ -11,6 +11,7 @@ const sounds = defineCollection({
     audio: z.string(), // /audio/{slug}.mp3
     blurb: z.string().min(200), // unique copy — quality gate: ~60-120 words
     origin: z.string().optional(), // one-liner on where the sound comes from
+    explainer: z.string().optional(), // path to a blog explainer, e.g. /blog/vine-boom-history/
     added: z.coerce.date(),
     featured: z.boolean().default(false),
     plays: z.number().default(0),

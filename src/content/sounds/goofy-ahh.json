@@ -9,9 +9,10 @@
   ],
   "duration": 32.1,
   "audio": "/audio/goofy-ahh.mp3",
-  "blurb": "The goofy ahh sound — a chaotic cartoon-adjacent noise from the meme genre that turned every serious moment into a circus. Goofy ahh culture is about maximal silliness applied to minimal situations, and this clip is its anthem. Drop it on anyone taking themselves too seriously: workout videos, dramatic speeches, LinkedIn posts. Instant deflation, every time.",
-  "origin": "From the 'goofy ahh' meme wave — cartoonish sounds applied to overly serious clips.",
+  "blurb": "The goofy ahh sound \u2014 a chaotic cartoon-adjacent noise from the meme genre that turned every serious moment into a circus. Goofy ahh culture is about maximal silliness applied to minimal situations, and this clip is its anthem. Drop it on anyone taking themselves too seriously: workout videos, dramatic speeches, LinkedIn posts. Instant deflation, every time.",
+  "origin": "From the 'goofy ahh' meme wave \u2014 cartoonish sounds applied to overly serious clips.",
   "added": "2026-08-25",
   "featured": false,
-  "plays": 1650
+  "plays": 1650,
+  "explainer": "/blog/goofy-ahh-meaning-sounds/"
 }
