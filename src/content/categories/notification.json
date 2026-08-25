@@ -1,0 +1,17 @@
+{
+  "name": "Notification",
+  "hubTitle": "Notification Sounds Soundboard",
+  "order": 5,
+  "metaDescription": "Iconic notification sound buttons \u2014 pings, chimes, alerts and message tones. Play them instantly or download the MP3 free.",
+  "intro": "The most recognizable half-second sounds on Earth: notification pings, message chimes, and alert tones. People search these out to use as custom ringtones, to prank friends mid-conversation, or to drop into edits for that instant flash of recognition.\n\nThis board collects the classics and the trending ones as instant buttons. Each sound's page has a free MP3 download sized for use as a phone notification, plus an embed code if you want the button on your own site.",
+  "faq": [
+    {
+      "q": "Can I set these as my phone's notification sound?",
+      "a": "Yes \u2014 download the MP3 from the sound page, then set it as a custom sound in your phone's settings (both iOS and Android support custom tones)."
+    },
+    {
+      "q": "Why do notification sounds make great pranks?",
+      "a": "Because everyone reflexively checks their phone. Play a familiar ping out loud in a quiet room and watch the whole room reach for their pockets."
+    }
+  ]
+}

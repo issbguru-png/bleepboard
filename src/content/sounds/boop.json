@@ -1,0 +1,17 @@
+{
+  "title": "Boop",
+  "category": "meme",
+  "tags": [
+    "boop",
+    "cute",
+    "ui",
+    "wholesome"
+  ],
+  "duration": 0.3,
+  "audio": "/audio/boop.mp3",
+  "blurb": "A soft, friendly two-tone boop. This is the sound of tapping someone on the nose, of a wholesome UI interaction, of small delightful things happening. Streamers use it for channel-point redemptions, editors for cute moments, and everyone else because pressing a button labeled Boop and hearing a boop is a complete experience in itself. Original synthesized audio, free to download and use.",
+  "origin": "Original Bleepboard synthesis \u2014 the house boop.",
+  "added": "2026-08-25",
+  "featured": true,
+  "plays": 1560
+}

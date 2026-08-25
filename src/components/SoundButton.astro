@@ -1,0 +1,16 @@
+---
+import { soundPath, fmtDuration } from '../lib/site';
+
+interface Props {
+  slug: string;
+  title: string;
+  audio: string;
+  duration: number;
+}
+const { slug, title, audio, duration } = Astro.props;
+---
+<div class="bleep">
+  <button class="bleep-play" data-src={audio} aria-label={`Play ${title}`}>▶</button>
+  <a class="bleep-title" href={soundPath(slug)}>{title}</a>
+  <span class="bleep-meta">{fmtDuration(duration)}</span>
+</div>

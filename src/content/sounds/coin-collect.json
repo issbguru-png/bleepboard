@@ -1,0 +1,17 @@
+{
+  "title": "Coin Collect",
+  "category": "gaming",
+  "tags": [
+    "coin",
+    "retro",
+    "arcade",
+    "pickup"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/coin-collect.mp3",
+  "blurb": "A bright two-note coin pickup blip straight out of the 8-bit era. This is the sound of progress: play it when anything good happens \u2014 a donation on stream, a right answer, a successful parallel park. It's synthesized in the classic arcade style, so it's original audio you can use anywhere without worrying about rights. Short, punchy, and weirdly satisfying on loop.",
+  "origin": "Original 8-bit style synthesis inspired by arcade coin pickups.",
+  "added": "2026-08-25",
+  "featured": true,
+  "plays": 1105
+}

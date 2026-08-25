@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SoundButton from '../components/SoundButton.astro';
+import { SITE, hubPath } from '../lib/site';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  return categories.map((c) => ({
+    params: { hub: `${c.id}-soundboard` },
+    props: { category: c },
+  }));
+}
+
+const { category } = Astro.props;
+const d = category.data;
+const sounds = (await getCollection('sounds'))
+  .filter((s) => s.data.category === category.id)
+  .sort((a, b) => b.data.plays - a.data.plays);
+
+const pageUrl = SITE.url + hubPath(category.id);
+const title = `${d.hubTitle} — Free ${d.name} Sound Buttons | ${SITE.name}`;
+
+const schema: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: d.hubTitle, item: pageUrl },
+    ],
+  },
+];
+if (d.faq.length > 0) {
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+---
+<Base title={title} description={d.metaDescription} schema={schema}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a> › {d.hubTitle}
+  </nav>
+
+  <h1>{d.hubTitle}</h1>
+  <section class="prose">
+    {d.intro.split('\n\n').map((para) => <p>{para}</p>)}
+  </section>
+
+  <h2>{d.name} sound buttons</h2>
+  <div class="grid">
+    {sounds.map((s) => (
+      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+    ))}
+  </div>
+  {sounds.length === 0 && <p class="muted">Sounds coming soon — check <a href="/new/">new sounds</a>.</p>}
+
+  {d.faq.length > 0 && (
+    <section class="faq">
+      <h2>FAQ</h2>
+      {d.faq.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </section>
+  )}
+</Base>

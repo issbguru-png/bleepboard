@@ -1,0 +1,17 @@
+{
+  "title": "Siren Wail",
+  "category": "sound-effects",
+  "tags": [
+    "siren",
+    "alarm",
+    "emergency",
+    "alert"
+  ],
+  "duration": 2.5,
+  "audio": "/audio/siren-wail.mp3",
+  "blurb": "A wailing two-and-a-half-second siren sweep \u2014 the generic emergency sound that isn't any specific service's siren, which keeps it safe to use anywhere. It reads as 'something is happening and it's probably your fault.' Use it for dramatic edits, prank alarms, or as the soundtrack to someone's terrible decision in the group chat. Original synthesis, free MP3.",
+  "origin": "Original frequency-swept synthesis in the style of a generic emergency siren.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 410
+}

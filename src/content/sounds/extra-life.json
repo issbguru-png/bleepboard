@@ -1,0 +1,17 @@
+{
+  "title": "Extra Life",
+  "category": "gaming",
+  "tags": [
+    "extra-life",
+    "1up",
+    "retro",
+    "jingle"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/extra-life.mp3",
+  "blurb": "A quick three-note ascending jingle \u2014 the unmistakable shape of earning an extra life. Half a second of pure reward. Use it when someone gets a second chance they arguably didn't earn: a retake, a rematch, a relationship. Streamers use it for donation alerts; editors for comeback moments. Original 8-bit style synthesis, free to use anywhere.",
+  "origin": "Original 1-up style jingle synthesis in the 8-bit tradition.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 560
+}

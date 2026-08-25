@@ -1,0 +1,17 @@
+{
+  "title": "Keypad Dialing",
+  "category": "sound-effects",
+  "tags": [
+    "phone",
+    "keypad",
+    "dtmf",
+    "dialing"
+  ],
+  "duration": 1.0,
+  "audio": "/audio/keypad-dial.mp3",
+  "blurb": "Four quick telephone keypad tones \u2014 real DTMF frequencies, the actual dual-tone system phones use to dial. It's the sound of urgently calling someone in every movie ever made. Use it in edits before a phone-call scene, in podcasts as a transition, or anywhere you need instant we're-making-a-call energy. Synthesized to spec, so it's clean, original, and free to use.",
+  "origin": "Genuine DTMF dual-tone synthesis \u2014 the same frequencies real phones dial with.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 290
+}

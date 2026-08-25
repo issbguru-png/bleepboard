@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SoundButton from '../components/SoundButton.astro';
+
+const sounds = (await getCollection('sounds')).sort(
+  (a, b) => b.data.added.valueOf() - a.data.added.valueOf()
+);
+---
+<Base
+  title="New Sound Buttons — Latest Meme Sounds | Bleepboard"
+  description="The newest sound buttons on Bleepboard. Fresh meme sounds and viral audio clips added every week — play and download free."
+>
+  <h1>New sounds</h1>
+  <p class="muted">The latest sound buttons, freshest first. We add new memes within days of them taking off.</p>
+  <div class="grid">
+    {sounds.map((s) => (
+      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+    ))}
+  </div>
+</Base>

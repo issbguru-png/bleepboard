@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SoundButton from '../components/SoundButton.astro';
+import { SITE, hubPath } from '../lib/site';
+
+const sounds = await getCollection('sounds');
+const categories = (await getCollection('categories')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const trending = sounds
+  .sort((a, b) => b.data.plays - a.data.plays)
+  .slice(0, 24);
+const newest = sounds
+  .sort((a, b) => b.data.added.valueOf() - a.data.added.valueOf())
+  .slice(0, 12);
+
+const title = 'Bleepboard — Instant Sound Buttons & Meme Soundboard';
+const description = SITE.description;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+  },
+];
+---
+<Base title={title} description={description} schema={schema}>
+  <h1>Instant sound buttons for every meme</h1>
+  <p class="muted" style="max-width:62ch">
+    Tap a button, hear the sound. Bleepboard is a free meme soundboard —
+    play and download meme sounds, viral clips, and sound effects instantly.
+    No signup. No install.
+  </p>
+
+  <div class="chips">
+    {categories.map((c) => (
+      <a class="chip" href={hubPath(c.id)}>{c.data.name}</a>
+    ))}
+  </div>
+
+  <h2>Trending sounds</h2>
+  <div class="grid">
+    {trending.map((s) => (
+      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+    ))}
+  </div>
+
+  <h2>New this week</h2>
+  <div class="grid">
+    {newest.map((s) => (
+      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+    ))}
+  </div>
+
+  <section class="prose">
+    <h2>What is Bleepboard?</h2>
+    <p>
+      Bleepboard is a soundboard built for speed: every sound button plays the moment
+      you tap it, and every sound has its own page with a free MP3 download, the story
+      behind the clip, and an embed code so you can drop the button into your own site,
+      stream overlay, or Discord server.
+    </p>
+    <p>
+      We add new sound buttons every week — usually within a day or two of a meme
+      taking off on TikTok or YouTube. Check the <a href="/new/">newest sounds</a> or
+      browse by category above.
+    </p>
+  </section>
+</Base>

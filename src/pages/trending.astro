@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SoundButton from '../components/SoundButton.astro';
+
+const sounds = (await getCollection('sounds')).sort(
+  (a, b) => b.data.plays - a.data.plays
+);
+---
+<Base
+  title="Trending Sound Buttons — Most Played Right Now | Bleepboard"
+  description="The most played sound buttons on Bleepboard right now. Viral meme sounds ranked by real plays — tap to play, free to download."
+>
+  <h1>Trending sounds</h1>
+  <p class="muted">Ranked by plays. What the internet is pressing right now.</p>
+  <div class="grid">
+    {sounds.map((s) => (
+      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+    ))}
+  </div>
+</Base>

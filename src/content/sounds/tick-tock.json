@@ -1,0 +1,17 @@
+{
+  "title": "Tick Tock Clock",
+  "category": "sound-effects",
+  "tags": [
+    "clock",
+    "tick",
+    "timer",
+    "suspense"
+  ],
+  "duration": 2.0,
+  "audio": "/audio/tick-tock.mp3",
+  "blurb": "An alternating tick-tock, two seconds of pure deadline pressure. This is the sound quiz shows play while someone sweats over an answer, and the sound editors reach for when a decision is taking too long. Loop it under any moment of hesitation and the moment becomes ten times funnier. Sharp synthesized clicks, no background noise, free to download.",
+  "origin": "Original synthesis of a mechanical clock's alternating tick and tock.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 370
+}

@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import { SITE, soundPath } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const sounds = await getCollection('sounds');
+  return sounds.map((s) => ({ params: { slug: s.id }, props: { sound: s } }));
+}
+
+const { sound } = Astro.props;
+const d = sound.data;
+const pageUrl = SITE.url + soundPath(sound.id);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{d.title} — Bleepboard</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root { --accent: #e5484d; --ink: #1b1a19; --bg: #ffffff; --line: #e6e3df; }
+      @media (prefers-color-scheme: dark) {
+        :root { --ink: #efedea; --bg: #1d1c1a; --line: #33302c; }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; font-family: system-ui, sans-serif;
+        background: var(--bg); color: var(--ink);
+        display: flex; align-items: center; gap: 12px;
+        padding: 12px; border: 1px solid var(--line); border-radius: 12px;
+        height: 100vh;
+      }
+      button {
+        width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
+        background: var(--accent); color: #fff; font-size: 18px; flex-shrink: 0;
+      }
+      .t { min-width: 0; }
+      .t strong { display: block; font-size: 14px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; }
+      .t a { font-size: 11px; color: var(--accent); text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <button id="p" aria-label={`Play ${d.title}`}>▶</button>
+    <div class="t">
+      <strong>{d.title}</strong>
+      <a href={pageUrl} target="_blank" rel="noopener">bleepboard.com</a>
+    </div>
+    <script define:vars={{ src: d.audio, site: SITE.url }}>
+      const a = new Audio(site + src);
+      const b = document.getElementById('p');
+      b.addEventListener('click', () => {
+        if (a.paused) { a.currentTime = 0; a.play(); b.textContent = '⏸'; }
+        else { a.pause(); b.textContent = '▶'; }
+      });
+      a.onended = () => (b.textContent = '▶');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "title": "Busy Signal",
+  "category": "notification",
+  "tags": [
+    "phone",
+    "busy",
+    "telephone",
+    "retro"
+  ],
+  "duration": 2.2,
+  "audio": "/audio/busy-signal.mp3",
+  "blurb": "The telephone busy signal \u2014 480 Hz and 620 Hz pulsing together in the rhythm that once meant someone was already on the line. It's the sound of rejection, landline edition. Use it in edits when someone gets left on read, as a comedy beat when a plan falls through, or as a deeply confusing ringtone for anyone born after 2005. Synthesized to the North American spec, free to download.",
+  "origin": "Precise synthesis of the North American busy signal (480+620 Hz, 0.5s cadence).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 380
+}

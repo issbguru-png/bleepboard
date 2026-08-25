@@ -1,0 +1,17 @@
+{
+  "title": "Doorbell Ding Dong",
+  "category": "notification",
+  "tags": [
+    "doorbell",
+    "ding-dong",
+    "home",
+    "chime"
+  ],
+  "duration": 1.6,
+  "audio": "/audio/doorbell.mp3",
+  "blurb": "A classic two-tone ding-dong doorbell chime. This one triggers dogs, interrupts dinner, and makes streamers pause mid-sentence to check a door that doesn't exist. It's a staple prank sound for exactly that reason \u2014 play it on a call and watch someone actually get up. Also works as a clean scene-transition chime in edits. Original synthesis, free MP3 download.",
+  "origin": "Original synthesis of the classic two-chime residential doorbell.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 520
+}

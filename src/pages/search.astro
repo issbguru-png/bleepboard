@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Search Sounds | Bleepboard"
+  description="Search every sound button on Bleepboard — find any meme sound, sound effect, or viral clip by name or tag, and play it instantly."
+>
+  <h1>Search sounds</h1>
+  <p class="muted">Type anything — sound names, tags, vibes. Results play instantly.</p>
+  <input
+    id="q"
+    type="search"
+    placeholder="e.g. bleep, buzzer, phone…"
+    autocomplete="off"
+    style="width:100%;max-width:480px;padding:12px 16px;font-size:16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)"
+  />
+  <div id="results" class="grid"></div>
+  <p id="empty" class="muted" hidden>No sounds match — try a shorter word, or browse <a href="/categories/">categories</a>.</p>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const results = document.getElementById('results')!;
+    const empty = document.getElementById('empty')!;
+    let index: { slug: string; title: string; tags: string[]; category: string; audio: string; duration: number }[] = [];
+
+    fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((data) => {
+        index = data;
+        render(index);
+      });
+
+    function render(items: typeof index) {
+      results.innerHTML = items
+        .map(
+          (s) => `<div class="bleep">
+            <button class="bleep-play" data-src="${s.audio}" data-slug="${s.slug}" aria-label="Play ${s.title}">▶</button>
+            <a class="bleep-title" href="/sound/${s.slug}/">${s.title}</a>
+            <span class="bleep-meta">${s.duration}s</span>
+          </div>`
+        )
+        .join('');
+      empty.hidden = items.length > 0;
+    }
+
+    q.addEventListener('input', () => {
+      const terms = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      if (!terms.length) return render(index);
+      render(
+        index.filter((s) => {
+          const hay = (s.title + ' ' + s.tags.join(' ') + ' ' + s.category).toLowerCase();
+          return terms.every((t) => hay.includes(t));
+        })
+      );
+    });
+  </script>
+</Base>

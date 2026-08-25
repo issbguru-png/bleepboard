@@ -1,0 +1,17 @@
+{
+  "title": "Phone Vibrate",
+  "category": "prank",
+  "tags": [
+    "vibrate",
+    "buzz",
+    "phone",
+    "prank"
+  ],
+  "duration": 1.6,
+  "audio": "/audio/phone-vibrate.mp3",
+  "blurb": "Three pulses of phone-on-table vibration buzz. Nothing summons universal panic like this sound: everyone in the room checks their pocket simultaneously. It's the most reliable prank sound in existence because the reflex is unbeatable. Also useful in edits to show an incoming call without using any real phone's audio. Low-frequency synthesis with that authentic table-rattle texture.",
+  "origin": "Original synthesis of a phone vibrating on a hard surface, buzz-pause cadence.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 760
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Static Burst",
+  "category": "prank",
+  "tags": [
+    "static",
+    "noise",
+    "glitch",
+    "radio"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/static-burst.mp3",
+  "blurb": "A half-second burst of pink-noise static \u2014 the sound of a radio losing signal or a speaker giving up. Editors use it as a glitch transition; pranksters play it mid-conversation to convince someone their headphones are dying. It cuts through any audio mix instantly, which is exactly why it works. Original generated noise, free to download and use anywhere.",
+  "origin": "Generated pink-noise burst, shaped like an analog radio dropout.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 430
+}

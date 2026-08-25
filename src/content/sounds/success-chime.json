@@ -1,0 +1,17 @@
+{
+  "title": "Success Chime",
+  "category": "notification",
+  "tags": [
+    "success",
+    "chime",
+    "win",
+    "level-complete"
+  ],
+  "duration": 1.2,
+  "audio": "/audio/success-chime.mp3",
+  "blurb": "A bright ascending major-chord chime that means it worked. Task complete, payment accepted, answer correct \u2014 this is the sound of small victories. Use it for stream channel-point wins, quiz-night right answers, or ironically after doing the bare minimum. It's the optimistic sibling of the wrong-answer buzzer, and they work beautifully as a pair. Original synthesis, free to use.",
+  "origin": "Original C-major arpeggio synthesis in the style of app success sounds.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 450
+}

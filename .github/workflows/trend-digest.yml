@@ -1,0 +1,17 @@
+name: Daily trend digest
+
+on:
+  schedule:
+    - cron: '30 13 * * *' # daily, 13:30 UTC
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run trend monitor
+        run: node scripts/trend-monitor.mjs | tee -a "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,17 @@
+{
+  "title": "Alarm Beeps",
+  "category": "prank",
+  "tags": [
+    "alarm",
+    "beep",
+    "alert",
+    "prank"
+  ],
+  "duration": 0.6,
+  "audio": "/audio/alarm-beeps.mp3",
+  "blurb": "Four sharp alarm beeps that trigger instant low-level panic in any room. It reads as a fire alarm, a microwave, a smoke detector with a dying battery \u2014 whatever the listener fears most. That ambiguity is exactly what makes it a top-tier prank sound: play it from a hidden phone and watch everyone perform a full security sweep of the kitchen. Free MP3 download for your traps.",
+  "origin": "Original synthesis modeled on generic appliance and alarm beeps.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 720
+}
