@@ -1,0 +1,17 @@
+{
+  "title": "Taco Bell Bong",
+  "category": "notification",
+  "tags": [
+    "taco-bell",
+    "bong",
+    "brand",
+    "chime"
+  ],
+  "duration": 1.9,
+  "audio": "/audio/taco-bell-bong.mp3",
+  "blurb": "The Taco Bell bong — the resonant bell that ends every Taco Bell ad and, somehow, became a beloved meme sound. Editors drop it after anything that could conceivably end a commercial: a punchline, a life decision, a catastrophic failure presented with confidence. It carries an odd finality, like the universe signing off on whatever just happened.",
+  "origin": "The gong sting from Taco Bell's commercials; adopted as an all-purpose closing punctuation.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1750
+}

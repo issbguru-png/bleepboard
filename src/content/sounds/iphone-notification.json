@@ -1,0 +1,17 @@
+{
+  "title": "iPhone Notification",
+  "category": "notification",
+  "tags": [
+    "iphone",
+    "notification",
+    "ping",
+    "tri-tone"
+  ],
+  "duration": 4.6,
+  "audio": "/audio/iphone-notification.mp3",
+  "blurb": "The iPhone notification sound — arguably the most heard sound on Earth. Every human within earshot will check their phone; that reflex is undefeated and always will be. Use it in edits to signal an incoming text, or play it in a quiet room as a social experiment with immediate and total results. The apex predator of prank sounds.",
+  "origin": "Apple's default alert tone; the most reflexively recognized sound in modern life.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 2350
+}

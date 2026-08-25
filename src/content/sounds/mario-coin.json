@@ -1,0 +1,17 @@
+{
+  "title": "Mario Coin",
+  "category": "gaming",
+  "tags": [
+    "mario",
+    "coin",
+    "retro",
+    "nintendo"
+  ],
+  "duration": 2,
+  "audio": "/audio/mario-coin.mp3",
+  "blurb": "The Mario coin sound — the brightest, most satisfying blip in gaming history. Forty years of players are neurologically conditioned to feel rewarded by this exact noise, which makes it comedy gold when applied to worthless achievements: finding a penny, getting a participation trophy, receiving exposure instead of payment. The gold standard of reward sounds, literally.",
+  "origin": "The coin collect from Super Mario Bros. (Nintendo, 1985).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1600
+}

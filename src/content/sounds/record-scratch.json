@@ -1,0 +1,17 @@
+{
+  "title": "Record Scratch",
+  "category": "sound-effects",
+  "tags": [
+    "record-scratch",
+    "freeze",
+    "stop",
+    "transition"
+  ],
+  "duration": 6.5,
+  "audio": "/audio/record-scratch.mp3",
+  "blurb": "The record scratch — the sound that stops time. Paired forever with a freeze-frame and 'yep, that's me — you're probably wondering how I got here,' it's the universal signal that something has gone off script. Use it to interrupt, to rewind, or to open any story that starts at the worst possible moment. A cornerstone of comedic editing grammar.",
+  "origin": "The vinyl-scratch interrupt, canonized by the freeze-frame narration trope.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 930
+}
