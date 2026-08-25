@@ -1,0 +1,17 @@
+{
+  "title": "Rubber Duck Squeak",
+  "category": "animal",
+  "tags": [
+    "duck",
+    "squeak",
+    "toy",
+    "funny"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/rubber-duck.mp3",
+  "blurb": "The squeak of a rubber duck — a sound with a surprisingly serious second career in software engineering, where rubber duck debugging means explaining your broken code out loud to a bath toy until you hear the flaw yourself. It works, annoyingly often. Outside of that it is simply the perfect comedy squeak: light, silly, and impossible to take seriously for even a moment. Good for cartoon edits, bath-time videos, and punctuating your own bad decisions.",
+  "origin": "A squeeze recording of a classic rubber bath duck.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1150
+}

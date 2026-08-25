@@ -6,9 +6,24 @@ import Base from '../layouts/Base.astro';
   description="That page doesn't exist — but the sounds do. Search Bleepboard or browse trending sound buttons."
   noindex={true}
 >
-  <h1>404 — that sound doesn't exist</h1>
-  <p class="muted">
-    Whatever was here got yeeted. Try the <a href="/search/">search</a>,
-    the <a href="/trending/">trending board</a>, or head <a href="/">home</a>.
-  </p>
+  <section class="page-head center">
+    <p class="eyebrow"><span class="tick"></span>Error 404</p>
+    <h1>That sound doesn't exist</h1>
+    <p class="lede">
+      Whatever was here got yeeted. The rest of the soundboard is very much alive —
+      pick a way back in.
+    </p>
+    <div class="hero-actions">
+      <a class="search-pill" href="/search/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        Search every sound…
+        <span class="kbd" aria-hidden="true">/</span>
+      </a>
+    </div>
+    <p class="btn-row" style="margin-top:var(--s4)">
+      <a class="btn" href="/trending/">Trending</a>
+      <a class="btn" href="/categories/">Categories</a>
+      <a class="btn" href="/">Home</a>
+    </p>
+  </section>
 </Base>

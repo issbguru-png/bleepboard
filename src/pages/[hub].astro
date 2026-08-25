@@ -14,9 +14,22 @@ export async function getStaticPaths() {
 
 const { category } = Astro.props;
 const d = category.data;
-const sounds = (await getCollection('sounds'))
+const allSounds = await getCollection('sounds');
+const sounds = allSounds
   .filter((s) => s.data.category === category.id)
   .sort((a, b) => b.data.plays - a.data.plays);
+
+// intro copy: first paragraph carries the page as the lede, the rest becomes
+// the "about" block under the buttons — same words, better reading order.
+const paras = d.intro.split('\n\n').map((p) => p.trim()).filter(Boolean);
+const [lede, ...rest] = paras;
+
+// sibling hubs, for internal linking out of the page
+const others = (await getCollection('categories'))
+  .filter((c) => c.id !== category.id)
+  .sort((a, b) => a.data.order - b.data.order);
+const counts = new Map<string, number>();
+for (const s of allSounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
 
 const pageUrl = SITE.url + hubPath(category.id);
 const title = `${d.hubTitle} — Free ${d.name} Sound Buttons | ${SITE.name}`;
@@ -43,27 +56,68 @@ if (d.faq.length > 0) {
   });
 }
 ---
-<Base title={title} description={d.metaDescription} schema={schema}>
+<Base title={title} description={d.metaDescription} schema={schema} cat={category.id}>
   <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a> › {d.hubTitle}
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <a href="/categories/">Categories</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">{d.hubTitle}</span>
   </nav>
 
-  <h1>{d.hubTitle}</h1>
-  <section class="prose">
-    {d.intro.split('\n\n').map((para) => <p>{para}</p>)}
+  <section class="hub-hero">
+    <p class="eyebrow"><span class="tick"></span>Soundboard</p>
+    <h1>{d.hubTitle}</h1>
+    <p class="lede">{lede}</p>
+    <ul class="stats">
+      <li><b class="tnum">{sounds.length}</b> sound buttons</li>
+      <li><b>Free</b> MP3 downloads</li>
+      <li><b>Instant</b> — no signup</li>
+    </ul>
   </section>
 
-  <h2>{d.name} sound buttons</h2>
-  <div class="grid">
-    {sounds.map((s) => (
-      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
-    ))}
-  </div>
-  {sounds.length === 0 && <p class="muted">Sounds coming soon — check <a href="/new/">new sounds</a>.</p>}
+  <section class="section">
+    <div class="section-head">
+      <h2>{d.name} sound buttons</h2>
+      <a class="section-link" href="/categories/">All soundboards →</a>
+    </div>
+    <p class="section-sub">
+      {sounds.length > 0
+        ? `All ${sounds.length} clips in this board, most-played first. Tap to play, open a sound for the free MP3.`
+        : 'This board is being filled in right now.'}
+    </p>
+    {sounds.length > 0 ? (
+      <div class="grid grid--lg">
+        {sounds.map((s, i) => (
+          <SoundButton
+            slug={s.id}
+            title={s.data.title}
+            audio={s.data.audio}
+            duration={s.data.duration}
+            rank={i < 3 ? i + 1 : undefined}
+          />
+        ))}
+      </div>
+    ) : (
+      <p class="empty-state">
+        Sounds coming soon — check the <a href="/new/">newest sounds</a> in the meantime.
+      </p>
+    )}
+  </section>
+
+  {rest.length > 0 && (
+    <section class="section hub-about">
+      <div class="section-head"><h2>About the {d.name.toLowerCase()} soundboard</h2></div>
+      <div class="prose">
+        {rest.map((para) => <p>{para}</p>)}
+      </div>
+    </section>
+  )}
 
   {d.faq.length > 0 && (
-    <section class="faq">
-      <h2>FAQ</h2>
+    <section class="section faq">
+      <div class="section-head"><h2>{d.name} soundboard FAQ</h2></div>
+      <p class="section-sub">The questions people ask most about these sounds.</p>
       {d.faq.map((f) => (
         <details>
           <summary>{f.q}</summary>
@@ -72,4 +126,20 @@ if (d.faq.length > 0) {
       ))}
     </section>
   )}
+
+  <section class="section">
+    <div class="section-head">
+      <h2>More soundboards</h2>
+      <a class="section-link" href="/categories/">Browse all →</a>
+    </div>
+    <p class="section-sub">Every board is free, instant, and downloadable.</p>
+    <div class="cat-grid">
+      {others.map((c) => (
+        <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
+          <span class="cat-name">{c.data.name}</span>
+          <span class="cat-count tnum">{counts.get(c.id) ?? 0} sounds</span>
+        </a>
+      ))}
+    </div>
+  </section>
 </Base>

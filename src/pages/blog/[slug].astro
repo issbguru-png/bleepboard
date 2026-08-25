@@ -12,6 +12,18 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
 
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const readingTime = Math.max(
+  1,
+  Math.round((post.body ?? '').trim().split(/\s+/).length / 220)
+);
+
+const more = (await getCollection('blog'))
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -28,14 +40,42 @@ const schema = [
 ---
 <Base title={`${d.title} | ${SITE.name}`} description={d.description} schema={schema} ogType="article">
   <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a> › <a href="/blog/">Blog</a> › {d.title}
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <a href="/blog/">Blog</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">{d.title}</span>
   </nav>
-  <article class="prose">
+
+  <article class="prose article">
+    <p class="eyebrow"><span class="tick"></span>Article</p>
     <h1>{d.title}</h1>
-    <p class="small">
-      {d.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-      {d.updated && ` · Updated ${d.updated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+    <p class="byline">
+      <time datetime={d.date.toISOString().slice(0, 10)}>{fmt(d.date)}</time>
+      {d.updated && <> · Updated {fmt(d.updated)}</>}
+      {' · '}{readingTime} min read
     </p>
     <Content />
   </article>
+
+  {more.length > 0 && (
+    <section class="section post-foot">
+      <h2 class="section-mini">Keep reading</h2>
+      <ul class="post-list">
+        {more.map((p) => (
+          <li>
+            <a class="post-card" href={`/blog/${p.id}/`}>
+              <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="btn-row" style="margin-top:var(--s5)">
+        <a class="btn" href="/blog/">All articles</a>
+        <a class="btn primary" href="/trending/">Play trending sounds</a>
+      </p>
+    </section>
+  )}
 </Base>

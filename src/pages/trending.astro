@@ -6,16 +6,52 @@ import SoundButton from '../components/SoundButton.astro';
 const sounds = (await getCollection('sounds')).sort(
   (a, b) => b.data.plays - a.data.plays
 );
+const top = sounds.slice(0, 12);
+const rest = sounds.slice(12);
+const totalPlays = sounds.reduce((n, s) => n + s.data.plays, 0);
 ---
 <Base
   title="Trending Sound Buttons — Most Played Right Now | Bleepboard"
   description="The most played sound buttons on Bleepboard right now. Viral meme sounds ranked by real plays — tap to play, free to download."
 >
-  <h1>Trending sounds</h1>
-  <p class="muted">Ranked by plays. What the internet is pressing right now.</p>
-  <div class="grid">
-    {sounds.map((s) => (
-      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
-    ))}
-  </div>
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>Updated continuously</p>
+    <h1>Trending sounds</h1>
+    <p class="lede">
+      Ranked by plays — what the internet is actually pressing right now.
+      Number one moves whenever a new clip catches.
+    </p>
+    <ul class="stats">
+      <li><b class="tnum">{sounds.length}</b> sounds ranked</li>
+      <li><b class="tnum">{totalPlays.toLocaleString()}</b> plays counted</li>
+      <li><b>Free</b> MP3 downloads</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Top 12 right now</h2>
+      <a class="section-link" href="/new/">See what's new →</a>
+    </div>
+    <p class="section-sub">The board's heavy hitters, in order.</p>
+    <div class="grid grid--lg">
+      {top.map((s, i) => (
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} rank={i + 1} />
+      ))}
+    </div>
+  </section>
+
+  {rest.length > 0 && (
+    <section class="section">
+      <div class="section-head">
+        <h2>The rest of the chart</h2>
+      </div>
+      <p class="section-sub">Ranks 13–{sounds.length}, still sorted by plays.</p>
+      <div class="grid">
+        {rest.map((s, i) => (
+          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} rank={i + 13} />
+        ))}
+      </div>
+    </section>
+  )}
 </Base>

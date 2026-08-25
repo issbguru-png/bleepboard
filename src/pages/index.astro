@@ -8,13 +8,17 @@ const sounds = await getCollection('sounds');
 const categories = (await getCollection('categories')).sort(
   (a, b) => a.data.order - b.data.order
 );
-const trending = sounds
-  .sort((a, b) => b.data.plays - a.data.plays)
-  .slice(0, 24);
-const newest = sounds
-  .sort((a, b) => b.data.added.valueOf() - a.data.added.valueOf())
-  .slice(0, 12);
+const counts = new Map<string, number>();
+for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
 
+const trending = [...sounds]
+  .sort((a, b) => b.data.plays - a.data.plays)
+  .slice(0, 18);
+const newest = [...sounds]
+  .sort((a, b) => b.data.added.valueOf() - a.data.added.valueOf())
+  .slice(0, 14);
+
+const total = sounds.length;
 const title = 'Bleepboard — Instant Sound Buttons & Meme Soundboard';
 const description = SITE.description;
 
@@ -28,34 +32,74 @@ const schema = [
 ];
 ---
 <Base title={title} description={description} schema={schema}>
-  <h1>Instant sound buttons for every meme</h1>
-  <p class="muted" style="max-width:62ch">
-    Tap a button, hear the sound. Bleepboard is a free meme soundboard —
-    play and download meme sounds, viral clips, and sound effects instantly.
-    No signup. No install.
-  </p>
+  <section class="hero">
+    <p class="eyebrow"><span class="tick"></span>Free meme soundboard</p>
+    <h1>Instant sound buttons for every meme</h1>
+    <p class="lede">
+      Tap a button, hear the sound. Bleepboard is a free meme soundboard —
+      play and download meme sounds, viral clips, and sound effects instantly.
+      No signup. No install.
+    </p>
 
-  <div class="chips">
-    {categories.map((c) => (
-      <a class="chip" href={hubPath(c.id)}>{c.data.name}</a>
-    ))}
-  </div>
+    <div class="hero-actions">
+      <a class="search-pill" href="/search/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        Search {total} sounds…
+        <span class="kbd" aria-hidden="true">/</span>
+      </a>
+      <a class="btn" href="/trending/">Trending now</a>
+    </div>
 
-  <h2>Trending sounds</h2>
-  <div class="grid">
-    {trending.map((s) => (
-      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
-    ))}
-  </div>
+    <ul class="stats">
+      <li><b class="tnum">{total}</b> sound buttons</li>
+      <li><b>Free</b> MP3 downloads</li>
+      <li><b>New</b> memes every week</li>
+    </ul>
+  </section>
 
-  <h2>New this week</h2>
-  <div class="grid">
-    {newest.map((s) => (
-      <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
-    ))}
-  </div>
+  <section class="section">
+    <div class="section-head">
+      <h2>Trending sounds</h2>
+      <a class="section-link" href="/trending/">All trending →</a>
+    </div>
+    <p class="section-sub">Ranked by plays — what the internet is pressing right now.</p>
+    <div class="grid grid--lg">
+      {trending.map((s, i) => (
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} rank={i < 3 ? i + 1 : undefined} />
+      ))}
+    </div>
+  </section>
 
-  <section class="prose">
+  <section class="section">
+    <div class="section-head">
+      <h2>New this week</h2>
+      <a class="section-link" href="/new/">All new sounds →</a>
+    </div>
+    <p class="section-sub">Freshly cut clips, usually within days of the meme taking off.</p>
+    <div class="grid">
+      {newest.map((s) => (
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} isNew />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Browse by category</h2>
+      <a class="section-link" href="/categories/">All categories →</a>
+    </div>
+    <p class="section-sub">{categories.length} soundboards, each with its own corner of the internet.</p>
+    <div class="cat-grid">
+      {categories.map((c) => (
+        <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
+          <span class="cat-name">{c.data.name}</span>
+          <span class="cat-count tnum">{counts.get(c.id) ?? 0} sounds</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section prose">
     <h2>What is Bleepboard?</h2>
     <p>
       Bleepboard is a soundboard built for speed: every sound button plays the moment

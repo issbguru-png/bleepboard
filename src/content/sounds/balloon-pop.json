@@ -1,0 +1,17 @@
+{
+  "title": "Balloon Pop",
+  "category": "sound-effects",
+  "tags": [
+    "balloon",
+    "pop",
+    "party",
+    "startle"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/balloon-pop.mp3",
+  "blurb": "A single sharp balloon burst — a sound occupying a strange position in the human nervous system, because everybody flinches even when they watched it coming. That makes it genuinely useful: comedic for a deflating moment, startling as a jump cut, and perfect for punctuating any celebration that is about to go badly wrong. Party planners and horror editors reach for the same clip, which tells you something about both professions.",
+  "origin": "A close recording of a party balloon bursting.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1050
+}

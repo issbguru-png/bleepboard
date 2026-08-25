@@ -14,13 +14,40 @@ for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category)
   title="All Soundboards by Category | Bleepboard"
   description="Browse every Bleepboard soundboard — meme sounds, sound effects, gaming, TikTok, anime, notifications, pranks and more."
 >
-  <h1>Soundboard categories</h1>
-  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
-    {categories.map((c) => (
-      <a class="bleep" href={hubPath(c.id)} style="text-decoration:none">
-        <span class="bleep-title" style="font-size:16px">{c.data.hubTitle}</span>
-        <span class="bleep-meta">{counts.get(c.id) ?? 0} sounds</span>
-      </a>
-    ))}
-  </div>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">Categories</span>
+  </nav>
+
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>{categories.length} soundboards</p>
+    <h1>Soundboard categories</h1>
+    <p class="lede">
+      Every board on Bleepboard, each with its own corner of the internet —
+      from brainrot and TikTok audio to clean, usable sound effects.
+    </p>
+    <ul class="stats">
+      <li><b class="tnum">{sounds.length}</b> sound buttons total</li>
+      <li><b class="tnum">{categories.length}</b> categories</li>
+      <li><b>Free</b> MP3 downloads</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Browse every soundboard</h2>
+      <a class="section-link" href="/search/">Or search all sounds →</a>
+    </div>
+    <p class="section-sub">Tap a board to open it — every sound plays instantly, no signup.</p>
+    <div class="cat-grid cat-grid--lg">
+      {categories.map((c) => (
+        <a class="cat-card cat-card--lg" href={hubPath(c.id)} data-cat={c.id}>
+          <span class="cat-name">{c.data.hubTitle}</span>
+          <span class="cat-card-desc">{c.data.metaDescription}</span>
+          <span class="cat-count tnum">{counts.get(c.id) ?? 0} sounds</span>
+        </a>
+      ))}
+    </div>
+  </section>
 </Base>

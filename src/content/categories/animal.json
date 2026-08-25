@@ -1,0 +1,21 @@
+{
+  "name": "Animal",
+  "hubTitle": "Animal Sounds Soundboard",
+  "order": 12,
+  "metaDescription": "Animal sound buttons — cat meows, screaming goats, cow moos, dog laughs, bird calls and farmyard noise. Play instantly, download free MP3s.",
+  "intro": "The animal sounds soundboard: meows, moos, gobbles, oinks and at least one goat that sounds like a man having a terrible morning. Some of these are the honest article — a hen clucking, a horse whinnying across a field, whale song rolling through deep water. Others are the internet's favourite animals, the marmot and the screaming goat and the pigeon that should not be able to make that noise, kept here because a soundboard without them would be incomplete.\n\nThere are two good reasons to want animal noises on tap. The first is practical: video editors, teachers, radio hosts and anyone building a farm scene need clean, recognisable clips, and every button here downloads as a free MP3. The second is that animal sounds are simply the oldest joke on earth. Drop a cow into a serious conversation and the conversation is over. Every button plays instantly in the browser, works on phones, and can be embedded straight into a stream overlay or Discord soundboard.",
+  "faq": [
+    {
+      "q": "Are these real animal recordings?",
+      "a": "Most are genuine field or studio recordings of the animal in question. A few — the rubber duck and the screaming rubber chicken, for instance — are toys, and the pages say so. Where a clip is famous because of a meme rather than the animal, we note where it came from."
+    },
+    {
+      "q": "Can I use these animal sounds in a video?",
+      "a": "Yes — every sound has a free MP3 download on its page, ready to drop into a video edit, a class presentation, a podcast, or a stream alert. No account needed."
+    },
+    {
+      "q": "Why does the goat sound like a person screaming?",
+      "a": "Because a goat's alarm bleat sits right in the human vocal range, so your brain files it as a person before it corrects itself. That mismatch is exactly why the screaming goat took over the internet in 2013 and never really left."
+    }
+  ]
+}

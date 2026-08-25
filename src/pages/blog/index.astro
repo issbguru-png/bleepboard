@@ -5,18 +5,47 @@ import Base from '../../layouts/Base.astro';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+const readingTime = (body?: string) =>
+  Math.max(1, Math.round((body ?? '').trim().split(/\s+/).length / 220));
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 <Base
   title="Blog — Meme Sound Explainers & Guides | Bleepboard"
   description="Where meme sounds come from, how to use soundboards on Discord and OBS, and the stories behind the internet's favorite audio clips."
 >
-  <h1>Blog</h1>
-  <p class="muted">The stories behind the sounds — meme origins, soundboard guides, trend breakdowns.</p>
-  {posts.map((p) => (
-    <article class="card">
-      <h3 style="margin:0 0 4px"><a href={`/blog/${p.id}/`} style="text-decoration:none">{p.data.title}</a></h3>
-      <p class="small" style="margin:0 0 8px">{p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-      <p class="muted" style="margin:0">{p.data.description}</p>
-    </article>
-  ))}
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">Blog</span>
+  </nav>
+
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>{posts.length} articles</p>
+    <h1>Blog</h1>
+    <p class="lede">
+      The stories behind the sounds — meme origins, soundboard guides, and
+      trend breakdowns, written by the people who cut the clips.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Latest articles</h2>
+      <a class="section-link" href="/trending/">Trending sounds →</a>
+    </div>
+    <ul class="post-list">
+      {posts.map((p) => (
+        <li>
+          <a class="post-card" href={`/blog/${p.id}/`}>
+            <time datetime={p.data.date.toISOString().slice(0, 10)}>
+              {fmt(p.data.date)} · {readingTime(p.body)} min read
+            </time>
+            <h2>{p.data.title}</h2>
+            <p>{p.data.description}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 </Base>

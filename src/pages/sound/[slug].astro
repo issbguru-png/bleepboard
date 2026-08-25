@@ -34,7 +34,25 @@ const audioUrl = SITE.url + d.audio;
 const title = `${d.title} Sound Button — Play & Download MP3 | ${SITE.name}`;
 const description = `Play the ${d.title} sound button instantly and download the MP3 free. ${d.origin ?? ''}`.slice(0, 158);
 
-const embedCode = `<iframe src="${SITE.url}/embed/${sound.id}/" width="220" height="90" style="border:0" loading="lazy" title="${d.title} sound button"></iframe><br><a href="${pageUrl}">${d.title} sound button on Bleepboard</a>`;
+const embedCode = `<iframe
+  src="${SITE.url}/embed/${sound.id}/"
+  width="220" height="90" style="border:0"
+  loading="lazy" title="${d.title} sound button"></iframe>
+<br>
+<a href="${pageUrl}">${d.title} sound button on Bleepboard</a>`;
+
+// A waveform unique to this sound: deterministic from the slug, so the same
+// clip always draws the same shape. Decorative, and doubles as the progress bar.
+const BARS = 72;
+let seed = 0;
+for (let i = 0; i < sound.id.length; i++) seed = (seed * 31 + sound.id.charCodeAt(i)) >>> 0;
+const bars = Array.from({ length: BARS }, (_, i) => {
+  seed = (seed * 1664525 + 1013904223) >>> 0;
+  const noise = (seed % 1000) / 1000;
+  // gentle envelope so it reads as a clip, not a random picket fence
+  const env = Math.sin((Math.PI * (i + 0.5)) / BARS) ** 0.55;
+  return Math.round(14 + noise * 86 * env);
+});
 
 const schema = [
   {
@@ -58,49 +76,100 @@ const schema = [
   },
 ];
 ---
-<Base title={title} description={description} schema={schema}>
+<Base title={title} description={description} schema={schema} cat={d.category}>
   <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a> › <a href={hubPath(d.category)}>{catName} Soundboard</a> › {d.title}
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <a href={hubPath(d.category)}>{catName} Soundboard</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">{d.title}</span>
   </nav>
 
-  <div class="sound-hero card" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-    <button class="bleep-play" data-src={d.audio} aria-label={`Play ${d.title}`} style="width:72px;height:72px;font-size:26px">▶</button>
-    <div>
-      <h1 style="margin:0">{d.title}</h1>
-      <p class="small" style="margin:4px 0 0">
-        {catName} · {fmtDuration(d.duration)} · {d.plays.toLocaleString()} plays
-      </p>
+  <div class="sound-hero" style={`--dur:${d.duration}s`}>
+    <div class="sound-hero-top">
+      <button
+        class="hero-play"
+        type="button"
+        data-src={d.audio}
+        data-slug={sound.id}
+        aria-label={`Play ${d.title}`}
+        aria-pressed="false"
+      >
+        <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+          ><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z" /></svg
+        >
+        <span class="i-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <div class="sound-hero-text">
+        <p class="eyebrow"><span class="tick"></span>Sound button</p>
+        <h1>{d.title}</h1>
+        <ul class="sound-hero-meta">
+          <li><a href={hubPath(d.category)}>{catName}</a></li>
+          <li><span class="tnum">{fmtDuration(d.duration)}</span></li>
+          <li><span class="tnum">{d.plays.toLocaleString()}</span> plays</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wave" aria-hidden="true">
+      <div class="wave-row">{bars.map((h) => <i style={`--h:${h}`}></i>)}</div>
+      <div class="wave-row wave-fill">{bars.map((h) => <i style={`--h:${h}`}></i>)}</div>
+    </div>
+
+    <div class="btn-row sound-actions">
+      <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
+        Download MP3
+      </a>
+      <button class="btn" type="button" data-copy={pageUrl}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 13.5a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M13.5 10.5a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+        <span data-copy-label>Copy link</span>
+      </button>
+      <a class="btn" href={`#embed`}>Embed</a>
     </div>
   </div>
 
-  <div class="btn-row">
-    <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>⬇ Download MP3</a>
-    <button class="btn" data-copy={pageUrl}>Copy link</button>
-    <a class="btn" href={hubPath(d.category)}>More {catName} sounds</a>
-  </div>
-
-  <section class="prose">
+  <section class="section prose">
+    <h2>About the {d.title} sound</h2>
     <p>{d.blurb}</p>
-    {d.origin && <p class="muted"><strong>Origin:</strong> {d.origin}</p>}
-    {d.explainer && <p><a href={d.explainer}>Read the full story behind this sound →</a></p>}
-  </section>
-
-  <section>
-    <h2>Embed this sound button</h2>
-    <p class="muted">Paste this into your site, blog, or stream overlay:</p>
-    <pre class="embed-code">{embedCode}</pre>
+    {d.origin && (
+      <p class="origin-note"><b>Origin</b><span>{d.origin}</span></p>
+    )}
+    {d.explainer && (
+      <p><a href={d.explainer}>Read the full story behind this sound →</a></p>
+    )}
   </section>
 
   {d.tags.length > 0 && (
-    <div class="chips">
-      {d.tags.map((t) => <span class="chip">#{t}</span>)}
-    </div>
+    <section class="section tag-section">
+      <h2 class="section-mini">Tags</h2>
+      <ul class="chips">
+        {d.tags.map((t) => <li class="chip">#{t}</li>)}
+      </ul>
+    </section>
   )}
 
+  <section class="section" id="embed">
+    <div class="section-head"><h2>Embed this sound button</h2></div>
+    <p class="section-sub">Drop it into your site, blog, or stream overlay — it stays free and keeps working.</p>
+    <div class="code-card">
+      <div class="code-card-head">
+        <span class="label">Embed code</span>
+        <button class="btn sm" type="button" data-copy={embedCode}>
+          <span data-copy-label>Copy</span>
+        </button>
+      </div>
+      <pre>{embedCode}</pre>
+    </div>
+  </section>
+
   {related.length > 0 && (
-    <section>
-      <h2>You may also like</h2>
-      <div class="grid">
+    <section class="section">
+      <div class="section-head">
+        <h2>You may also like</h2>
+        <a class="section-link" href={hubPath(d.category)}>More {catName} sounds →</a>
+      </div>
+      <div class="grid grid--sm">
         {related.map((s) => (
           <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
         ))}

@@ -1,0 +1,17 @@
+{
+  "title": "Cat Meow",
+  "category": "animal",
+  "tags": [
+    "cat",
+    "meow",
+    "pet",
+    "animal"
+  ],
+  "duration": 4,
+  "audio": "/audio/cat-meow.mp3",
+  "blurb": "A clean, classic cat meow — the single most useful animal sound there is. Here is the thing worth knowing before you press it: adult cats barely meow at each other at all. The entire vocabulary evolved specifically to manipulate humans, and it works. Beyond summoning somebody's pet from three rooms away, it makes a superb comedic non-answer — ask a difficult question, reply with this. Handy for videos, prank calls, and confusing your own cat, which is effective and mildly cruel.",
+  "origin": "A studio recording of a domestic cat's meow.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 2000
+}

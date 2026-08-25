@@ -1,23 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const sounds = await getCollection('sounds');
+const categories = await getCollection('categories');
 ---
 <Base
   title="About Bleepboard"
   description="Bleepboard is a free meme soundboard: instant sound buttons, free MP3 downloads, and the stories behind the internet's favorite sounds."
 >
-  <article class="prose">
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>About us</p>
     <h1>About Bleepboard</h1>
-    <p>
+    <p class="lede">
       Bleepboard is a soundboard built around one idea: when a meme takes off, you should be
       able to play the sound — and know where it came from — within seconds.
     </p>
-    <p>
-      Every sound button plays instantly, downloads free as MP3, and comes with a short write-up
-      on the sound's origin. We add new sounds every week, usually within a day or two of a trend
-      breaking on TikTok, YouTube, or Discord.
+    <ul class="stats">
+      <li><b class="tnum">{sounds.length}</b> sound buttons</li>
+      <li><b class="tnum">{categories.length}</b> soundboards</li>
+      <li><b>Free</b> forever</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="prose">
+      <p>
+        Every sound button plays instantly, downloads free as MP3, and comes with a short write-up
+        on the sound's origin. We add new sounds every week, usually within a day or two of a trend
+        breaking on TikTok, YouTube, or Discord.
+      </p>
+      <p>
+        Want a sound added? Found something that shouldn't be here? See our <a href="/dmca/">DMCA &amp; takedown page</a>.
+      </p>
+    </div>
+    <p class="btn-row" style="margin-top:var(--s5)">
+      <a class="btn primary" href="/trending/">Play trending sounds</a>
+      <a class="btn" href="/categories/">Browse soundboards</a>
     </p>
-    <p>
-      Want a sound added? Found something that shouldn't be here? See our <a href="/dmca/">DMCA &amp; takedown page</a>.
-    </p>
-  </article>
+  </section>
 </Base>

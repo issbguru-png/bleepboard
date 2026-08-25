@@ -1,0 +1,17 @@
+{
+  "title": "Chicken Cluck",
+  "category": "animal",
+  "tags": [
+    "chicken",
+    "cluck",
+    "farm",
+    "bird"
+  ],
+  "duration": 2.4,
+  "audio": "/audio/chicken-cluck.mp3",
+  "blurb": "Contented clucking from a hen going quietly about her business — the background texture of every farmyard scene ever filmed. Chickens have well over twenty distinct calls, and this is the everyday chatter one: not the alarm call, not the egg song. It is a staple for cartoon edits, farm-themed videos and passive-aggressively calling somebody a coward without using words. Also disproportionately funny when dropped into a silent moment on a work call.",
+  "origin": "A field recording of a hen clucking.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1300
+}

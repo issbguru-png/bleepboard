@@ -1,0 +1,17 @@
+{
+  "title": "Whale Talking",
+  "category": "animal",
+  "tags": [
+    "whale",
+    "song",
+    "ocean",
+    "documentary"
+  ],
+  "duration": 9.1,
+  "audio": "/audio/whale-talking.mp3",
+  "blurb": "Whale song: long, mournful, weirdly musical calls that travel enormous distances through deep water. Humpback males sing structured songs that shift year on year, and whole populations adopt each new version — one of the few genuinely accepted cases of culture existing outside humans. For most listeners, though, this is simply the sound of a nature documentary, or of a certain SpongeBob character having feelings at maximum volume. Both readings are entirely welcome here.",
+  "origin": "A hydrophone recording of whale song.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 950
+}

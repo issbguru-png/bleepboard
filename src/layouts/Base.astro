@@ -9,10 +9,20 @@ interface Props {
   schema?: object[];
   noindex?: boolean;
   ogType?: string;
+  /** category slug — drives the accent hue for this page */
+  cat?: string;
 }
 
-const { title, description, schema = [], noindex = false, ogType = 'website' } = Astro.props;
+const { title, description, schema = [], noindex = false, ogType = 'website', cat } = Astro.props;
 const canonicalUrl = canonical(Astro.url.pathname);
+const nav = [
+  ['/new/', 'New'],
+  ['/trending/', 'Trending'],
+  ['/categories/', 'Categories'],
+  ['/search/', 'Search'],
+  ['/blog/', 'Blog'],
+];
+const here = Astro.url.pathname;
 ---
 <!doctype html>
 <html lang="en">
@@ -31,21 +41,28 @@ const canonicalUrl = canonical(Astro.url.pathname);
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {schema.map((obj) => (
       <script type="application/ld+json" set:html={JSON.stringify(obj)} />
     ))}
   </head>
-  <body>
+  <body data-cat={cat}>
     <header class="site-header">
-      <div class="wrap">
-        <a class="logo" href="/"><span class="dot"></span>Bleepboard</a>
+      <div class="wrap header-inner">
+        <a class="logo" href="/">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"
+              ><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z" /></svg
+            >
+          </span>
+          Bleepboard
+        </a>
         <nav class="site-nav" aria-label="Main">
-          <a href="/new/">New</a>
-          <a href="/trending/">Trending</a>
-          <a href="/categories/">Categories</a>
-          <a href="/search/">Search</a>
-          <a href="/blog/">Blog</a>
+          {nav.map(([href, label]) => (
+            <a href={href} aria-current={here === href ? 'page' : undefined}>{label}</a>
+          ))}
         </nav>
       </div>
     </header>
@@ -56,10 +73,11 @@ const canonicalUrl = canonical(Astro.url.pathname);
     </main>
     <footer class="site-footer">
       <div class="wrap">
-        <span>© {new Date().getFullYear()} {SITE.name}</span>
+        <span class="foot-brand">© {new Date().getFullYear()} {SITE.name}</span>
+        <a href="/categories/">Categories</a>
+        <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
         <a href="/dmca/">DMCA</a>
-        <a href="/blog/">Blog</a>
       </div>
     </footer>
     <script src="../scripts/player.ts"></script>

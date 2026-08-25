@@ -6,11 +6,36 @@ interface Props {
   title: string;
   audio: string;
   duration: number;
+  /** optional 1-based rank badge (trending grids) */
+  rank?: number;
+  /** show a NEW flag */
+  isNew?: boolean;
 }
-const { slug, title, audio, duration } = Astro.props;
+const { slug, title, audio, duration, rank, isNew = false } = Astro.props;
 ---
-<div class="bleep">
-  <button class="bleep-play" data-src={audio} aria-label={`Play ${title}`}>▶</button>
-  <a class="bleep-title" href={soundPath(slug)}>{title}</a>
-  <span class="bleep-meta">{fmtDuration(duration)}</span>
-</div>
+<article class="bleep" style={`--dur:${duration}s`}>
+  {rank !== undefined && (
+    <span class={`bleep-flag rank${rank <= 3 ? ' top' : ''}`} aria-hidden="true">{rank}</span>
+  )}
+  {rank === undefined && isNew && <span class="bleep-flag new" aria-hidden="true">NEW</span>}
+
+  <button
+    class="bleep-play"
+    type="button"
+    data-src={audio}
+    data-slug={slug}
+    aria-label={`Play ${title}`}
+    aria-pressed="false"
+  >
+    <span class="bleep-ico" aria-hidden="true">
+      <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+        ><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z"
+      /></svg>
+      <span class="i-eq"><i></i><i></i><i></i></span>
+    </span>
+    <span class="bleep-dur" aria-hidden="true">{fmtDuration(duration)}</span>
+    <span class="bleep-bar" aria-hidden="true"></span>
+  </button>
+
+  <a class="bleep-title" href={soundPath(slug)}><span>{title}</span></a>
+</article>

@@ -9,7 +9,7 @@
   ],
   "duration": 2.5,
   "audio": "/audio/siren-wail.mp3",
-  "blurb": "A wailing two-and-a-half-second siren sweep \u2014 the generic emergency sound that isn't any specific service's siren, which keeps it safe to use anywhere. It reads as 'something is happening and it's probably your fault.' Use it for dramatic edits, prank alarms, or as the soundtrack to someone's terrible decision in the group chat. Original synthesis, free MP3.",
+  "blurb": "A two-and-a-half-second frequency sweep that reads instantly as emergency without belonging to any particular service \u2014 which is exactly the point, since it keeps the file safe to use anywhere without impersonating a real siren. Semantically it lands as something is happening and it is probably your fault. Use it for dramatic edits, for prank alarms, or as the soundtrack to somebody announcing a terrible decision in the group chat. Original synthesis, clean, free MP3, no blue lights implied and none legally required.",
   "origin": "Original frequency-swept synthesis in the style of a generic emergency siren.",
   "added": "2026-08-25",
   "featured": false,
