@@ -1,0 +1,17 @@
+{
+  "title": "Messenger Notification",
+  "category": "notification",
+  "tags": [
+    "messenger",
+    "facebook",
+    "message",
+    "alert"
+  ],
+  "duration": 1.6,
+  "audio": "/audio/messenger-notification.mp3",
+  "blurb": "The Messenger notification — the distinctive pop that means a conversation has started whether you wanted one or not. It sits alongside WhatsApp and iMessage in the tiny group of sounds recognised by billions of people. Add it to the notification-prank arsenal; it never misses.",
+  "origin": "Facebook Messenger's message alert.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1600
+}

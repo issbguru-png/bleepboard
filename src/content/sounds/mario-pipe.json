@@ -1,0 +1,17 @@
+{
+  "title": "Mario Pipe",
+  "category": "gaming",
+  "tags": [
+    "mario",
+    "pipe",
+    "warp",
+    "retro"
+  ],
+  "duration": 1,
+  "audio": "/audio/mario-pipe.mp3",
+  "blurb": "The Mario pipe warp — the descending bloop of disappearing into plumbing. It's the sound of a quick exit to somewhere else entirely, which makes it perfect for leaving conversations, ducking out of plans, and any escape that should look effortless. Down the pipe, problem solved.",
+  "origin": "The pipe warp sound from Super Mario Bros. (Nintendo).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1500
+}

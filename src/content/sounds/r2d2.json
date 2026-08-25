@@ -1,0 +1,17 @@
+{
+  "title": "R2-D2",
+  "category": "sound-effects",
+  "tags": [
+    "star-wars",
+    "r2d2",
+    "droid",
+    "beeps"
+  ],
+  "duration": 29.9,
+  "audio": "/audio/r2d2.mp3",
+  "blurb": "R2-D2's beeps and whistles — the most expressive language ever built out of pure electronic noise. Ben Burtt created a character who communicates complex emotion without a single word, and audiences understood every line. Play it to respond to anything without committing to an actual opinion.",
+  "origin": "R2-D2's vocalisations from Star Wars, designed by Ben Burtt.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1750
+}

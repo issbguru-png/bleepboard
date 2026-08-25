@@ -1,0 +1,17 @@
+{
+  "title": "FitnessGram Pacer Test",
+  "category": "meme",
+  "tags": [
+    "pacer-test",
+    "school",
+    "gym",
+    "classic"
+  ],
+  "duration": 8.4,
+  "audio": "/audio/pacer-test.mp3",
+  "blurb": "'The FitnessGram Pacer Test is a multi-stage aerobic capacity test...' — the announcement that struck fear into every school gymnasium in America. It's a shared trauma so universal it became a meme, and an entire generation can recite the opening verbatim while feeling their lungs preemptively burn.",
+  "origin": "The narration from the school FitnessGram Pacer Test.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1900
+}

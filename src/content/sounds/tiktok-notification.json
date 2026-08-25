@@ -1,0 +1,17 @@
+{
+  "title": "TikTok Notification",
+  "category": "notification",
+  "tags": [
+    "tiktok",
+    "notification",
+    "alert",
+    "social"
+  ],
+  "duration": 1,
+  "audio": "/audio/tiktok-notification.mp3",
+  "blurb": "The TikTok notification — the alert of the app that reorganised global attention spans. It means someone liked something, or the algorithm has decided you need to come back. Play it near anyone under thirty to trigger an immediate, involuntary phone check. Devastatingly effective.",
+  "origin": "TikTok's notification alert.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1750
+}

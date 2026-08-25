@@ -1,0 +1,17 @@
+{
+  "title": "Dial-Up Modem",
+  "category": "notification",
+  "tags": [
+    "dial-up",
+    "modem",
+    "internet",
+    "retro"
+  ],
+  "duration": 6.2,
+  "audio": "/audio/dial-up.mp3",
+  "blurb": "The dial-up handshake — thirty seconds of shrieking negotiation that stood between you and the internet, and which absolutely could not happen while anyone was on the phone. For anyone who lived through it, this sound is pure sense-memory. For everyone else, it's inexplicable machine screaming.",
+  "origin": "The 56k modem connection handshake.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1850
+}

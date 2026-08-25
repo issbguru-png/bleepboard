@@ -1,0 +1,17 @@
+{
+  "title": "Amber Alert",
+  "category": "prank",
+  "tags": [
+    "amber-alert",
+    "emergency",
+    "alarm",
+    "loud"
+  ],
+  "duration": 11,
+  "audio": "/audio/amber-alert.mp3",
+  "blurb": "The Amber Alert tone — the emergency broadcast screech that overrides every phone setting and every conversation. It's designed to be impossible to ignore, which makes it the most effective prank sound in existence and the most alarming. Every phone in a room will be checked instantly. Use sparingly; this one genuinely startles people.",
+  "origin": "The emergency alert tone used for Amber Alerts.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 2000
+}

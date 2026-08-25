@@ -1,0 +1,17 @@
+{
+  "title": "Pac-Man Death",
+  "category": "gaming",
+  "tags": [
+    "pac-man",
+    "death",
+    "retro",
+    "arcade"
+  ],
+  "duration": 2.1,
+  "audio": "/audio/pac-man-death.mp3",
+  "blurb": "The Pac-Man death sound — that descending warble of a yellow circle meeting a ghost. It's been signalling failure since 1980, making it one of the oldest fail sounds in gaming. Play it for defeats that feel retro, inevitable, and slightly your own fault for going down that corridor.",
+  "origin": "The death sound from Pac-Man (Namco, 1980).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1550
+}

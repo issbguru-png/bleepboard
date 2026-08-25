@@ -1,0 +1,17 @@
+{
+  "title": "Duolingo Wrong",
+  "category": "notification",
+  "tags": [
+    "duolingo",
+    "wrong",
+    "error",
+    "buzz"
+  ],
+  "duration": 1.3,
+  "audio": "/audio/duolingo-wrong.mp3",
+  "blurb": "The Duolingo wrong-answer buzz — a small sound carrying enormous disappointment, because you know the owl saw that. It's the counterpart to the correct chime, and the reason a green bird has become the internet's most feared authority figure. Play it when someone gets something confidently wrong.",
+  "origin": "Duolingo's incorrect-answer sound.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1650
+}

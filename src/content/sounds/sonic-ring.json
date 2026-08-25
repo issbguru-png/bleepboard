@@ -1,0 +1,17 @@
+{
+  "title": "Sonic Ring",
+  "category": "gaming",
+  "tags": [
+    "sonic",
+    "ring",
+    "collect",
+    "retro"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/sonic-ring.mp3",
+  "blurb": "The Sonic ring collect — a bright metallic chime that thirty years of players associate with not dying. Every ring is one more chance, and this sound is the sound of buying it. Play it for small saves, near-misses, and any moment where you technically got away with something.",
+  "origin": "The ring collection sound from Sonic the Hedgehog (Sega).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1500
+}

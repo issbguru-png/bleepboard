@@ -1,0 +1,17 @@
+{
+  "title": "Pew",
+  "category": "sound-effects",
+  "tags": [
+    "pew",
+    "laser",
+    "shoot",
+    "cartoon"
+  ],
+  "duration": 0.4,
+  "audio": "/audio/pew.mp3",
+  "blurb": "Pew. The most efficient onomatopoeia in existence — a tiny laser noise that everyone can make with their mouth and everyone finds funny. It's the sound of finger guns, imaginary blasters, and playful violence. Deploy it liberally; the pew has no wrong context and costs nothing emotionally.",
+  "origin": "The classic cartoon laser 'pew'.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1450
+}

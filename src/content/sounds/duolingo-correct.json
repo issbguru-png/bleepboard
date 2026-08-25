@@ -1,0 +1,17 @@
+{
+  "title": "Duolingo Correct",
+  "category": "notification",
+  "tags": [
+    "duolingo",
+    "correct",
+    "learning",
+    "chime"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/duolingo-correct.mp3",
+  "blurb": "The Duolingo correct chime — the bright little reward that keeps five hundred million people doing language exercises. It's one of the most effective dopamine loops ever shipped in an app. Play it whenever you get anything right, and feel your streak spiritually extend by one day.",
+  "origin": "Duolingo's correct-answer chime.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1700
+}

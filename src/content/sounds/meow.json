@@ -1,0 +1,17 @@
+{
+  "title": "M e o w",
+  "category": "sound-effects",
+  "tags": [
+    "meow",
+    "cat",
+    "cute",
+    "animal"
+  ],
+  "duration": 1.9,
+  "audio": "/audio/meow.mp3",
+  "blurb": "A single perfect meow — the most demanding syllable in the animal kingdom. Cats produce this sound almost exclusively for humans, which makes every meow a targeted request. Play it to summon cat owners, punctuate cute moments, or communicate a need without specifying what it is. The cat knows what it did.",
+  "origin": "A single clear cat meow.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1500
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Lightsaber Ignition",
+  "category": "sound-effects",
+  "tags": [
+    "star-wars",
+    "lightsaber",
+    "ignition",
+    "hum"
+  ],
+  "duration": 2.8,
+  "audio": "/audio/lightsaber.mp3",
+  "blurb": "The lightsaber ignition — that snap-hiss of a plasma blade coming to life, built by Ben Burtt from a projector motor hum and a broken TV picking up interference. It's arguably the most famous sound effect ever created. Play it when drawing any weapon, including a strongly-worded reply.",
+  "origin": "The lightsaber ignition from Star Wars, created by Ben Burtt.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1900
+}

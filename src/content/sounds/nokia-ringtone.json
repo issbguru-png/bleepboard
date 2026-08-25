@@ -1,0 +1,17 @@
+{
+  "title": "Nokia Ringtone",
+  "category": "notification",
+  "tags": [
+    "nokia",
+    "ringtone",
+    "classic",
+    "retro"
+  ],
+  "duration": 12.1,
+  "audio": "/audio/nokia-ringtone.mp3",
+  "blurb": "The Nokia tune — mathematically one of the most-heard melodies in human history, having rung from billions of indestructible handsets. It's a 19th-century guitar piece by Francisco Tárrega that accidentally became the sound of the mobile era. Play it in public and watch everyone over thirty check their pocket.",
+  "origin": "Nokia's default ringtone, adapted from Tárrega's 'Gran Vals' (1902).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 2000
+}

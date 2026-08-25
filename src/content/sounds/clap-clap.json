@@ -1,0 +1,17 @@
+{
+  "title": "Clap Clap",
+  "category": "sound-effects",
+  "tags": [
+    "clap",
+    "applause",
+    "sarcastic",
+    "slow-clap"
+  ],
+  "duration": 2.1,
+  "audio": "/audio/clap-clap.mp3",
+  "blurb": "Two deliberate claps — the most passive-aggressive applause available. It's not celebration; it's commentary. Use it for sarcastic congratulation, the beginning of a slow clap, or to acknowledge someone's achievement in the least enthusiastic way physically possible. Well done. Truly.",
+  "origin": "Two isolated claps — sarcastic applause.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1300
+}

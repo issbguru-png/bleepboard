@@ -1,0 +1,17 @@
+{
+  "title": "Hello There",
+  "category": "meme",
+  "tags": [
+    "star-wars",
+    "obi-wan",
+    "hello-there",
+    "prequel"
+  ],
+  "duration": 1.1,
+  "audio": "/audio/hello-there.mp3",
+  "blurb": "'Hello there!' — Obi-Wan Kenobi's greeting, and the single most reliable way to identify a prequel-memes enjoyer in the wild. Say it in any room and someone will answer 'GENERAL KENOBI' without hesitation. It's a password, a greeting, and a personality test rolled into one.",
+  "origin": "Obi-Wan Kenobi's greeting from Revenge of the Sith, a prequel-meme cornerstone.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1850
+}

@@ -30,7 +30,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let ok = 0, failed = [];
 
 for (const item of manifest) {
-  const { url, slug, title, category, tags, blurb, origin = '', plays = 0 } = item;
+  const { url, audioUrl: directAudio, slug, title, category, tags, blurb, origin = '', plays = 0 } = item;
   const outJson = resolve(root, `src/content/sounds/${slug}.json`);
   if (existsSync(outJson)) {
     console.log(`- ${slug}: already exists, skipping`);
@@ -43,11 +43,22 @@ for (const item of manifest) {
     continue;
   }
   try {
-    const html = await (await fetch(url, { headers: { 'User-Agent': UA } })).text();
-    const m = html.match(/playSound\('[^']*',\s*'([^']+)'\)/);
-    if (!m) throw new Error('no playSound() audio reference found');
-    const audioUrl = new URL(m[1], url).href;
-    const raw = Buffer.from(await (await fetch(audioUrl, { headers: { 'User-Agent': UA } })).arrayBuffer());
+    const cached = resolve(root, `.cache/audio/${item.src || slug}.mp3`);
+    let raw;
+    if (existsSync(cached)) {
+      raw = readFileSync(cached);           // preflight cache — zero network
+    } else {
+    let audioUrl;
+    if (directAudio) {
+      audioUrl = directAudio; // manifest supplies the media URL directly
+    } else {
+      const html = await (await fetch(url, { headers: { 'User-Agent': UA } })).text();
+      const m = html.match(/playSound\('[^']*',\s*'([^']+)'\)/);
+      if (!m) throw new Error('no playSound() audio reference found');
+      audioUrl = new URL(m[1], url).href;
+    }
+    raw = Buffer.from(await (await fetch(audioUrl, { headers: { 'User-Agent': UA } })).arrayBuffer());
+    }
     if (raw.length < 1000) throw new Error(`audio too small (${raw.length}B)`);
     const tmp = resolve(root, `.import-tmp-${slug}`);
     writeFileSync(tmp, raw);

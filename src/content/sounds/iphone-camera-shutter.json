@@ -1,0 +1,17 @@
+{
+  "title": "iPhone Camera Shutter",
+  "category": "notification",
+  "tags": [
+    "iphone",
+    "camera",
+    "shutter",
+    "photo"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/iphone-camera-shutter.mp3",
+  "blurb": "The iPhone camera shutter — the fake mechanical click Apple added so phones couldn't take photos silently. It's now the universal sound of being photographed, wanted or otherwise. Use it in edits for photo moments, or play it behind someone to convince them they've just been captured mid-embarrassment.",
+  "origin": "Apple's simulated camera shutter click.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1600
+}
