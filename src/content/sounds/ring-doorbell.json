@@ -1,0 +1,17 @@
+{
+  "title": "Ring Doorbell",
+  "category": "notification",
+  "tags": [
+    "ring",
+    "doorbell",
+    "camera",
+    "home"
+  ],
+  "duration": 5.2,
+  "audio": "/audio/ring-doorbell.mp3",
+  "blurb": "The Ring doorbell chime — the modern doorbell sound that half the internet now recognizes from viral porch videos. It carries strange authority: someone is at the door and they are being recorded. Use it in edits to announce arrivals, or play it at home to make everyone freeze mid-sentence and check the app. Surveillance-era ding-dong.",
+  "origin": "The chime from Ring video doorbells, famous via viral doorbell-cam footage.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1200
+}

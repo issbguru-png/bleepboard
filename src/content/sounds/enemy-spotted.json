@@ -1,0 +1,17 @@
+{
+  "title": "Enemy Spotted",
+  "category": "gaming",
+  "tags": [
+    "csgo",
+    "callout",
+    "radio",
+    "spotted"
+  ],
+  "duration": 1.5,
+  "audio": "/audio/enemy-spotted.mp3",
+  "blurb": "'Enemy spotted.' — the Counter-Strike radio callout, delivered with the flat professionalism of a man about to be one-tapped. It's gaming's most reusable alert: play it when the teacher walks in, when your ex enters the party, when the group chat's main character comes online. Threat detected, situational awareness engaged, good luck everyone.",
+  "origin": "The classic radio callout from Counter-Strike.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1300
+}

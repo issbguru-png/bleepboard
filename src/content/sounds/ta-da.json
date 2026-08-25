@@ -1,0 +1,17 @@
+{
+  "title": "Ta-Da!",
+  "category": "sound-effects",
+  "tags": [
+    "ta-da",
+    "fanfare",
+    "reveal",
+    "win"
+  ],
+  "duration": 2.1,
+  "audio": "/audio/ta-da.mp3",
+  "blurb": "TA-DA! — the classic fanfare of a reveal, sincere or otherwise. The Windows-era jingle energy makes it perfect for both real accomplishments and absolute nothingburgers presented with showmanship: cleaning one dish, arriving on time, finishing the task that was due last week. The gap between fanfare and achievement is where the comedy lives.",
+  "origin": "The classic reveal fanfare, in the tradition of the Windows 3.1 'tada' chime.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 980
+}

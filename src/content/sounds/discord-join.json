@@ -1,0 +1,17 @@
+{
+  "title": "Discord Join Call",
+  "category": "discord",
+  "tags": [
+    "discord",
+    "join",
+    "call",
+    "notification"
+  ],
+  "duration": 1.3,
+  "audio": "/audio/discord-join.mp3",
+  "blurb": "The Discord join sound — that friendly little blip announcing someone just entered the call. It's Pavlovian at this point: a generation of gamers hears it and instinctively says a name as a question. Use it in edits to signal an arrival, or play it in a real call to convince everyone a ghost member just joined. Simple, iconic, endlessly abusable.",
+  "origin": "Discord's default voice-channel join notification.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1650
+}

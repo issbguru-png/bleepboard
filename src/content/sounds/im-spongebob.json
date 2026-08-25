@@ -1,0 +1,17 @@
+{
+  "title": "I'm SpongeBob!",
+  "category": "spongebob",
+  "tags": [
+    "spongebob",
+    "intro",
+    "declaration",
+    "funny"
+  ],
+  "duration": 1.4,
+  "audio": "/audio/im-spongebob.mp3",
+  "blurb": "'I'm SpongeBob!' — the sponge introducing himself with the unearned confidence of a man who has never once read a room. It's a perfect entrance sound: play it when arriving anywhere, volunteering for anything, or claiming an identity nobody questioned. The sheer enthusiasm is the joke, and it never runs out. Who lives in a pineapple indeed.",
+  "origin": "SpongeBob's enthusiastic self-introduction from the series.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1100
+}

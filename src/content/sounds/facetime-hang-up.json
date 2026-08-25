@@ -1,0 +1,17 @@
+{
+  "title": "FaceTime Hang Up",
+  "category": "notification",
+  "tags": [
+    "facetime",
+    "hang-up",
+    "call",
+    "apple"
+  ],
+  "duration": 2.5,
+  "audio": "/audio/facetime-hang-up.mp3",
+  "blurb": "The FaceTime hang-up sound — the blunt double-tap that ends the call. As a meme it's the sound of a conversation being terminated with prejudice: someone says something wild, and this plays. No goodbye, no explanation, just the void. The politest possible way to communicate 'absolutely not.' Devastating in edits, cathartic in real life.",
+  "origin": "Apple's FaceTime call-end sound, memed as the ultimate conversation ender.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1350
+}

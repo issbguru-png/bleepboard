@@ -1,0 +1,17 @@
+{
+  "title": "Discord Notification",
+  "category": "discord",
+  "tags": [
+    "discord",
+    "notification",
+    "ping",
+    "message"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/discord-notification.mp3",
+  "blurb": "The Discord message notification — the soft double-knock that means someone needs you, or more likely, someone posted a meme at 2am. Like all great notification sounds it triggers an involuntary phone-check in anyone who's ever used the app. Essential for edits about gamers, group chats, and being perceived. Also elite prank material in any room full of Discord users.",
+  "origin": "Discord's default incoming-message sound.",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1500
+}

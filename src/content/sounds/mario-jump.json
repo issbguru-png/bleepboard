@@ -1,0 +1,17 @@
+{
+  "title": "Mario Jump",
+  "category": "gaming",
+  "tags": [
+    "mario",
+    "jump",
+    "retro",
+    "boing"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/mario-jump.mp3",
+  "blurb": "The Mario jump — the springy boing that launched a billion platforming attempts. It's the most famous jump sound ever recorded, and applying it to real-world hops, leaps, and falls upgrades them all into gameplay. Use it for anything leaving the ground: cats, toddlers, stock prices before the crash. Forty years old and still full of air.",
+  "origin": "The jump sound from Super Mario Bros. (Nintendo, 1985).",
+  "added": "2026-08-25",
+  "featured": false,
+  "plays": 1300
+}
