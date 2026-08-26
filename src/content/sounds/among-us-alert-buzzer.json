@@ -1,0 +1,17 @@
+{
+  "title": "Among Us Alert Buzzer",
+  "category": "gaming",
+  "tags": [
+    "among-us",
+    "alarm",
+    "sabotage",
+    "alert"
+  ],
+  "duration": 1.6,
+  "audio": "/audio/among-us-alert-buzzer.mp3",
+  "blurb": "Somebody has sabotaged something, and the ship would like you to know about it urgently. This is the buzzing alarm Among Us throws up when the reactor melts down or the oxygen starts draining, paired with a countdown that turns a room full of friends into a stampede. Impostors love it, because a good sabotage scatters everyone and buys thirty seconds of unwatched corridor. Crewmates hate it for the same reason. As a soundboard button it works beautifully for announcing that something in real life has gone badly wrong.",
+  "origin": "The sabotage alarm from Among Us (InnerSloth).",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1300
+}

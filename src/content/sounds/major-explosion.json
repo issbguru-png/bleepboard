@@ -1,0 +1,17 @@
+{
+  "title": "Major Explosion",
+  "category": "sound-effects",
+  "tags": [
+    "explosion",
+    "boom",
+    "blast",
+    "impact"
+  ],
+  "duration": 3.9,
+  "audio": "/audio/major-explosion.mp3",
+  "blurb": "Low boom, then a tail that runs for several seconds with enough bottom end to move a subwoofer. Explosion foley is almost never a real explosion; the rumble that sells it is usually layered up from sources with nothing to do with combustion at all. What matters when you are cutting is the shape: one hard transient, then a decay you can either trim into or let ring out. Meme edits treat it as the loudest available full stop, normally over a still image. Check your levels before you send this to anybody.",
+  "origin": "A generic explosion sound effect, widely used in video editing.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1700
+}

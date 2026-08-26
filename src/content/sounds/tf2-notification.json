@@ -1,0 +1,17 @@
+{
+  "title": "TF2 Notification",
+  "category": "gaming",
+  "tags": [
+    "tf2",
+    "notification",
+    "alert",
+    "valve"
+  ],
+  "duration": 3.2,
+  "audio": "/audio/tf2-notification.mp3",
+  "blurb": "Valve has a house style for small alerts, and Team Fortress 2's is one of the friendlier examples: a short, warm blip telling you something happened without dragging you out of the match. Players hear it thousands of hours deep and stop consciously registering it, then hear it again years later and are immediately nine years old. That is the strange power of game interface audio. Plenty of people run it as their Discord ping, which makes every incoming message feel vaguely like an item drop.",
+  "origin": "A notification alert from Team Fortress 2 (Valve).",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 800
+}

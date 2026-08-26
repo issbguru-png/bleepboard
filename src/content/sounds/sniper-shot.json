@@ -1,0 +1,17 @@
+{
+  "title": "Sniper Shot",
+  "category": "sound-effects",
+  "tags": [
+    "sniper",
+    "rifle",
+    "montage",
+    "editing"
+  ],
+  "duration": 2.9,
+  "audio": "/audio/sniper-shot.mp3",
+  "blurb": "A sharp crack followed by a long echo rolling away, which is the detail that separates a rifle effect from a pistol one: distance. Montage editors have leaned on this sound for two decades, from Counter-Strike clips through to trickshot videos, where the shot and the reaction to it are the entire edit. The tail is the part you actually work with, because it gives you something to cut against. Dry recordings sit better under existing audio. Use it for timing rather than for shock value and it does considerably more work.",
+  "origin": "A generic rifle report with distant echo, widely used in gaming montages and video editing.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1200
+}

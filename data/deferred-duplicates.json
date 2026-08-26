@@ -1,0 +1,557 @@
+[
+ {
+  "src": "buy-item-geometry-dash",
+  "slug": "buy-item-geometry-dash",
+  "title": "Buy Item (Geometry Dash)",
+  "category": "gaming",
+  "tags": [
+   "geometry-dash",
+   "shop",
+   "purchase",
+   "chime"
+  ],
+  "blurb": "Geometry Dash keeps a shop where the orbs you have ground out of hundreds of failed attempts finally turn into an icon nobody else will ever see, since your cube is on screen for about nine seconds before it explodes. Here is the little confirmation chime that fires when you buy something there. RobTop's menu audio is unusually satisfying for a game largely about failure, and it is one reason the shop screen gets more traffic than it strictly deserves. Small dopamine, reliably delivered.",
+  "origin": "The shop purchase sound from Geometry Dash (RobTop Games).",
+  "plays": 550
+ },
+ {
+  "src": "c00lkidd-idle-laugh",
+  "slug": "c00lkidd-idle-laugh",
+  "title": "c00lkidd Idle Laugh",
+  "category": "gaming",
+  "tags": [
+   "roblox",
+   "forsaken",
+   "c00lkidd",
+   "laugh"
+  ],
+  "blurb": "A child giggling to himself somewhere you cannot see him, which is a considerably worse experience in Forsaken than the description makes it sound. c00lkidd is the one killer in that Roblox game drawn from real platform history rather than folklore: he is built on the notorious team c00lkidd exploiter crew that spent years defacing games with the c00lgui. In-game he believes he is playing tag. The idle laugh is what you hear while he closes the distance, and Roblox voice chats have adopted it for exactly that purpose.",
+  "origin": "c00lkidd's idle laugh from the Roblox game Forsaken (2024).",
+  "plays": 1150
+ },
+ {
+  "src": "critical-hit-tf2-team-fortress-2",
+  "slug": "critical-hit-tf2-team-fortress-2",
+  "title": "Critical Hit (TF2)",
+  "category": "gaming",
+  "tags": [
+   "tf2",
+   "crit",
+   "hit",
+   "valve"
+  ],
+  "blurb": "That bright electric ding means somebody just took triple damage for no reason anybody can defend. Random crits have been Team Fortress 2's longest-running argument since 2007: Valve keeps them because they are funny, competitive players want them gone, and the debate has outlived several entire games. The sound is a rising zap with a glassy edge, loud enough to cut through a firefight and engineered to feel undeserved. Nobody has ever earned one. Melee crits are the worst offender — a lucky frying pan has ended friendships. Play it whenever a friend wins through luck they will later describe as skill.",
+  "origin": "The critical hit sound from Team Fortress 2 (Valve, 2007).",
+  "plays": 1600
+ },
+ {
+  "src": "fnaf-foxy-running",
+  "slug": "fnaf-foxy-running",
+  "title": "FNAF Foxy Running",
+  "category": "gaming",
+  "tags": [
+   "fnaf",
+   "foxy",
+   "running",
+   "hallway"
+  ],
+  "blurb": "Pirate Cove is a curtain with something behind it, and the something does not creep. When Foxy finally commits you get pounding footsteps down the west hall and barely enough time to reach the door button, the tightest reaction window the first game ever asks of you. Veterans check that one camera obsessively for exactly this reason. The running sound is really the sound of a mistake you made several minutes earlier. It has since become a standard edit cue for anything arriving faster than the person on screen was ready for.",
+  "origin": "Foxy's run down the west hall in Five Nights at Freddy's.",
+  "plays": 1400
+ },
+ {
+  "src": "fnaf-freddys-laugh",
+  "slug": "fnaf-freddys-laugh",
+  "title": "FNAF Freddy's Laugh",
+  "category": "gaming",
+  "tags": [
+   "fnaf",
+   "freddy",
+   "laugh",
+   "creepy"
+  ],
+  "blurb": "Somewhere in the building, something is enjoying itself. Freddy's laugh is a warped, echoing chuckle that arrives on no schedule and confirms only that he has moved. You cannot see him while it plays. That is the design: a horror cue with no image attached, so your brain supplies a worse one out of the four security cameras you have been staring at all night. A decade on, the clip still gets used in edits and calls to imply that somebody knows something you do not.",
+  "origin": "Freddy Fazbear's laugh from the Five Nights at Freddy's series.",
+  "plays": 1450
+ },
+ {
+  "src": "fnaf-phone-call",
+  "slug": "fnaf-phone-call",
+  "title": "FNAF Phone Call",
+  "category": "gaming",
+  "tags": [
+   "fnaf",
+   "phone",
+   "ringing",
+   "voicemail"
+  ],
+  "blurb": "Every night in Five Nights at Freddy's opens the same way: a phone ringing in an empty office, then a recorded voice being far too relaxed about your working conditions. The ring itself does a lot of quiet work. It is the one predictable event in a game built on unpredictability, so players came to treat it as a countdown rather than a comfort. Answer it and the lore starts. Reach for it when you want to imply that somebody is about to explain something they should have explained yesterday.",
+  "origin": "The night-opening phone call from Five Nights at Freddy's.",
+  "plays": 1250
+ },
+ {
+  "src": "fnaf-puppet-music-box",
+  "slug": "fnaf-puppet-music-box",
+  "title": "FNAF Puppet Music Box",
+  "category": "gaming",
+  "tags": [
+   "fnaf",
+   "puppet",
+   "music-box",
+   "wind-up"
+  ],
+  "blurb": "Winding a music box should not be stressful. FNAF 2 managed it by putting the Puppet on the other end and handing you four other emergencies to juggle at the same time. The tune is a wound-down rendition of My Grandfather's Clock, slowing and souring as the winding runs out, and if it stops the box opens. Horror edits reach for it constantly now, because a decelerating lullaby communicates approaching disaster faster than any amount of screaming ever could.",
+  "origin": "The music box you wind in Five Nights at Freddy's 2.",
+  "plays": 1350
+ },
+ {
+  "src": "get-shards-geometry-dash",
+  "slug": "get-shards-geometry-dash",
+  "title": "Get Shards (Geometry Dash)",
+  "category": "gaming",
+  "tags": [
+   "geometry-dash",
+   "shards",
+   "collect",
+   "chime"
+  ],
+  "blurb": "Shards are the coloured currency Geometry Dash hands out for doing the things it wants you to do, and picking them up fires this bright little chime. There is a whole economy running behind the levels: fire, ice, poison and the rest, all funnelling into unlocks that keep you tapping long after the jumping stopped being fun. RobTop understands reward loops better than most mobile studios ever managed. The chime is short and cheerful, so it stands in nicely for any small win worth acknowledging.",
+  "origin": "The shard pickup sound from Geometry Dash.",
+  "plays": 500
+ },
+ {
+  "src": "minecraft-endermen",
+  "slug": "minecraft-endermen",
+  "title": "Minecraft Endermen",
+  "category": "gaming",
+  "tags": [
+   "minecraft",
+   "enderman",
+   "creepy",
+   "ambient"
+  ],
+  "blurb": "Garbled and backwards, with an unmistakably human voice buried under the distortion. Endermen mutter to themselves as they teleport around, and players have spent years slowing the files down and running them in reverse to work out what is being said; the popular answers are ordinary phrases like hello and what's up. Look directly at one and the muttering stops being ambient. The effect is far creepier than a monster growl would have managed, and the clip still works as a jump-scare setup in edits and voice calls.",
+  "origin": "Enderman vocalisations from Minecraft.",
+  "plays": 1900
+ },
+ {
+  "src": "opening-a-chest-geometry-dash",
+  "slug": "opening-a-chest-geometry-dash",
+  "title": "Opening a Chest (Geometry Dash)",
+  "category": "gaming",
+  "tags": [
+   "geometry-dash",
+   "chest",
+   "reward",
+   "unlock"
+  ],
+  "blurb": "Under a second of sound, and it represents a two-day wait. Geometry Dash locks its chests behind timers and keys, so the treasure room becomes a thing you check in on rather than something you play, and this creaky little unlock noise is the payoff for remembering. Usually the reward is disappointing. Occasionally it is not, and that ratio is the entire reason people keep going back to the screen. As a soundboard button it suits any moment where expectations are about to be politely lowered.",
+  "origin": "The chest unlock sound from Geometry Dash.",
+  "plays": 500
+ },
+ {
+  "src": "roblox-doors-seeks-chase-theme",
+  "slug": "roblox-doors-seeks-chase-theme",
+  "title": "Roblox Doors Seek's Chase Theme",
+  "category": "gaming",
+  "tags": [
+   "roblox",
+   "doors",
+   "seek",
+   "chase"
+  ],
+  "blurb": "The corridor floods, the walls start bleeding, and you are sprinting in a straight line with a black figure gaining behind you. Seek's chase is the setpiece of Roblox Doors and the music does most of the panic: frantic and driving, timed to a sequence where one mistimed slide sends you back to the lobby. It turned into a TikTok backing track almost immediately. Put it over footage of anything urgent and it works. Put it in a Discord call and somebody will start typing in capitals.",
+  "origin": "Seek's chase music from Roblox Doors.",
+  "plays": 1800
+ },
+ {
+  "src": "secret-key-geometry-dash",
+  "slug": "secret-key-geometry-dash",
+  "title": "Secret Key (Geometry Dash)",
+  "category": "gaming",
+  "tags": [
+   "geometry-dash",
+   "key",
+   "secret",
+   "unlock"
+  ],
+  "blurb": "Keys are how Geometry Dash gates its hidden corners, and this is the chime that says you have turned one up. RobTop has spent over a decade burying vaults, codes and locked rooms inside a game ostensibly about jumping over spikes, and the community treats each new one as a puzzle to be cracked collectively within hours. Half the appeal lives in these menus. The sound is bright and slightly conspiratorial, so it makes a good button for announcing that you have worked something out.",
+  "origin": "The key pickup sound from Geometry Dash.",
+  "plays": 550
+ },
+ {
+  "src": "valorant-ace-sound",
+  "slug": "valorant-ace-sound",
+  "title": "Valorant Ace Sound",
+  "category": "gaming",
+  "tags": [
+   "valorant",
+   "ace",
+   "riot",
+   "victory"
+  ],
+  "blurb": "Five kills, one round, one player, and the game makes certain everybody watching knows about it. Valorant's ace callout is designed for the clip: it lands the instant the last enemy drops, giving highlight reels a built-in punctuation mark that Riot clearly thought about very carefully. Nobody has ever posted an ace quietly. The sound has spread past the game as a general-purpose flourish for clearing a whole list of problems in one go, roughly the feeling it was engineered to sell in the first place.",
+  "origin": "The ace callout from Valorant (Riot Games, 2020).",
+  "plays": 1500
+ },
+ {
+  "src": "alastor-nuh-uh-uh",
+  "slug": "alastor-nuh-uh-uh",
+  "title": "Alastor Nuh Uh Uh",
+  "category": "meme",
+  "tags": [
+   "hazbin-hotel",
+   "alastor",
+   "no",
+   "radio-demon"
+  ],
+  "blurb": "Three syllables of pure denial, sung rather than spoken. Alastor is the Radio Demon of Hazbin Hotel, Vivienne Medrano's cartoon about a hotel that tries to rehabilitate sinners, and Amir Talai plays him with the clipped warmth of an old broadcast. The wagging-finger correction is his standard response to anybody reaching for something they were never going to be allowed. Fans took it straight to Discord. It answers homework requests, unreasonable favours and any sentence beginning with the words can I just, and the smugness survives being played forty times in a row.",
+  "origin": "Alastor's singsong refusal from Hazbin Hotel (Prime Video, 2024).",
+  "plays": 1900
+ },
+ {
+  "src": "alastor-so-its-a-deal",
+  "slug": "alastor-so-its-a-deal",
+  "title": "Alastor So It's A Deal",
+  "category": "meme",
+  "tags": [
+   "hazbin-hotel",
+   "alastor",
+   "deal",
+   "demon"
+  ],
+  "blurb": "Contracts in hell come with a flourish, and here is the flourish. Alastor closes an arrangement with theatrical delight, his voice thickening into static as the terms lock into place and the other party works out what they have signed. Hazbin Hotel runs an entire economy on these bargains, so the fandom treats the line as a stamp rather than a quote. It seals things. Group chats use it to confirm plans, players use it after trades, and a fair number of people use it on decisions they will regret by Thursday.",
+  "origin": "Alastor sealing a deal in Hazbin Hotel.",
+  "plays": 1200
+ },
+ {
+  "src": "are-you-smiling-why-not-digital-circus",
+  "slug": "are-you-smiling-why-not-digital-circus",
+  "title": "Are You Smiling? Why Not?",
+  "category": "meme",
+  "tags": [
+   "digital-circus",
+   "tadc",
+   "smile",
+   "creepy"
+  ],
+  "blurb": "Ask that in the right tone and it stops being a question. The Amazing Digital Circus runs on the gap between chirpy delivery and genuine menace, and six seconds of it are plenty to demonstrate the effect. The voice is bright, the pacing is friendly, and the demand underneath is not open to negotiation. Nobody inside the circus gets to opt out. Editors have found it endlessly useful for videos about compulsory fun, and it lands hardest on anyone whose employer has ever put morale on a calendar.",
+  "origin": "A line from The Amazing Digital Circus (Glitch Productions).",
+  "plays": 900
+ },
+ {
+  "src": "bombardilo-crocodilo",
+  "slug": "bombardilo-crocodilo",
+  "title": "Bombardilo Crocodilo",
+  "category": "brainrot",
+  "tags": [
+   "italian-brainrot",
+   "crocodile",
+   "ai",
+   "tiktok"
+  ],
+  "blurb": "Somebody fed a crocodile and a bomber plane into a video generator in early 2025 and posted the result to TikTok. Within weeks the thing had a name, a voice and a supporting cast. The audio is the giveaway: synthetic Italian narration rolling through nonsense rhymes with the gravity of a war film trailer. Usually written Bombardiro, it sits alongside Tralalero Tralala and Tung Tung Tung Sahur at the centre of the Italian brainrot canon. Playground recitation followed almost immediately, to the lasting despair of teachers.",
+  "origin": "An AI-generated Italian brainrot character that spread on TikTok from early 2025.",
+  "plays": 2400
+ },
+ {
+  "src": "charlie-browns-teacher-talking",
+  "slug": "charlie-browns-teacher-talking",
+  "title": "Charlie Brown's Teacher Talking",
+  "category": "meme",
+  "tags": [
+   "peanuts",
+   "trombone",
+   "teacher",
+   "cartoon"
+  ],
+  "blurb": "Peanuts made a rule and kept it for decades: adults exist, but you never hear a word they say. What you get instead is a trombone played through a plunger mute, first heard in the television specials of the mid-sixties and never improved upon since. Ten seconds of drone carrying no information whatsoever. Generations have used it as shorthand for a lecture sliding straight past the ear, and it has outlived the specials themselves — as a caption, as a reaction, and as the only honest soundtrack for a meeting that refuses to end.",
+  "origin": "The muted-trombone adult voice used in the Peanuts television specials.",
+  "plays": 1600
+ },
+ {
+  "src": "dexter-theme",
+  "slug": "dexter-theme",
+  "title": "Dexter's Laboratory Theme",
+  "category": "meme",
+  "tags": [
+   "dexters-laboratory",
+   "cartoon-network",
+   "theme",
+   "nineties"
+  ],
+  "blurb": "Eight seconds of clattering brass and mad-scientist urgency, and every child of the nineties knows precisely which bookcase is about to swing open. Dexter's Laboratory reached Cartoon Network in 1996 from Genndy Tartakovsky, who gave a small boy an unplaceable accent, an enormous secret lab and a sister with no sense of danger at all. The theme wastes nothing. Use it as an intro sting before any project undertaken in a shed, a garage or a bedroom that is about to smell strongly of solder.",
+  "origin": "The title theme from Dexter's Laboratory (Cartoon Network, 1996).",
+  "plays": 1500
+ },
+ {
+  "src": "domain-expansion-sukuna",
+  "slug": "domain-expansion-sukuna",
+  "title": "Sukuna Domain Expansion",
+  "category": "anime",
+  "tags": [
+   "jujutsu-kaisen",
+   "sukuna",
+   "domain-expansion",
+   "anime"
+  ],
+  "blurb": "Two words, and the fight stops being a fight. Domain expansion is Jujutsu Kaisen's highest escalation, a sorcerer folding their own certainty into a space where the technique simply cannot miss, and Sukuna's is the one everybody quotes. The delivery is unhurried, which is the frightening part. Ryomen Sukuna spends most of the series visibly bored, so the moment he bothers with formality you know somebody is finished. The cue now soundtracks anime edits, gym clips and any video where a person decides to stop being polite about winning.",
+  "origin": "Sukuna's domain expansion incantation from Jujutsu Kaisen.",
+  "plays": 2200
+ },
+ {
+  "src": "fein-fein-fein",
+  "slug": "fein-fein-fein",
+  "title": "FEIN FEIN FEIN",
+  "category": "brainrot",
+  "tags": [
+   "travis-scott",
+   "fein",
+   "edit",
+   "hype"
+  ],
+  "blurb": "One syllable, stacked over and over until it stops meaning anything at all. FE!N comes from Travis Scott's Utopia in 2023 with Playboi Carti on the hook, and it grew a second life on stage, where Scott took to restarting the track again and again while an arena lost its composure. The internet extracted the chant and used it as fuel. Edits reach for it whenever a video needs a peak. Thirteen seconds here, enough to build and enough to become unbearable in a small room, which is roughly the intended experience.",
+  "origin": "The repeated hook from Travis Scott's FE!N, from the album Utopia (2023).",
+  "plays": 1800
+ },
+ {
+  "src": "gravity-falls-opening-theme",
+  "slug": "gravity-falls-opening-theme",
+  "title": "Gravity Falls Opening Theme",
+  "category": "meme",
+  "tags": [
+   "gravity-falls",
+   "theme",
+   "disney",
+   "mystery"
+  ],
+  "blurb": "Woozy and slightly haunted. The titles promise a summer of secrets and the show duly delivers one: Gravity Falls sent two twins to their great-uncle's tourist trap in Oregon in 2012, and Brad Breeck's theme established the tone before a line of dialogue landed. Fans then took it apart for years, reversing the whispered ending and running ciphers across the credits — decoding was the entire culture around the show. Play it now and a room goes quiet, because the tune still sounds like something is watching from behind the trees.",
+  "origin": "Brad Breeck's opening theme for Gravity Falls (Disney, 2012).",
+  "plays": 2000
+ },
+ {
+  "src": "i-will-tear-you-to-pieces-tadc",
+  "slug": "i-will-tear-you-to-pieces-tadc",
+  "title": "I Will Tear You To Pieces",
+  "category": "meme",
+  "tags": [
+   "digital-circus",
+   "tadc",
+   "threat",
+   "angry"
+  ],
+  "blurb": "Nothing in that sentence is ambiguous, and it is funny anyway, because it comes out of a cartoon character with enormous eyes standing in a candy-coloured room. Glitch Productions built The Amazing Digital Circus on precisely that collision: real menace, bright shapes, no warning about which one is arriving next. Four seconds is all it needs. It has become the standard overreaction sound for board games, ranked lobbies and anyone who has just been sold out by a teammate for a genuinely tiny advantage.",
+  "origin": "A threat line from The Amazing Digital Circus (Glitch Productions).",
+  "plays": 800
+ },
+ {
+  "src": "kool-aid-man-oh-yeah",
+  "slug": "kool-aid-man-oh-yeah",
+  "title": "Kool-Aid Man Oh Yeah",
+  "category": "meme",
+  "tags": [
+   "kool-aid",
+   "oh-yeah",
+   "advert",
+   "wall"
+  ],
+  "blurb": "Advertising rarely produces a catchphrase with this kind of shelf life. Kool-Aid's mascot has been shouting the same two syllables since the 1970s, always entering through masonry rather than a door, always thrilled with himself. The voice is enormous and slightly wet, like a man cheering from inside a jug, and that is more or less what he is. American children accepted the premise without argument. As a cue it suits any uninvited entrance — barging into a call, into a conversation, or into a room you were not expecting to be part of.",
+  "origin": "The Kool-Aid Man's 'Oh yeah!' catchphrase from Kool-Aid television advertising.",
+  "plays": 1650
+ },
+ {
+  "src": "maxwell-the-cat-theme",
+  "slug": "maxwell-the-cat-theme",
+  "title": "Maxwell The Cat Theme",
+  "category": "meme",
+  "tags": [
+   "maxwell",
+   "cat",
+   "spinning",
+   "garrys-mod"
+  ],
+  "blurb": "Behind the meme sits an actual cat, photographed in a pose so peculiar it looked rendered before anyone rendered it. Once a crude three-dimensional model reached Garry's Mod in late 2022, there was no stopping the thing. The tune stapled to him is a hyperactive fiddle loop that never resolves, so it can spin as long as the cat does — which, on the internet, means indefinitely. Nearly thirty seconds here. It has soundtracked game clips, exam-results reactions and thousands of edits in which nothing whatsoever occurs except rotation.",
+  "origin": "The looping fiddle tune paired with the spinning Maxwell the Cat model, viral from late 2022.",
+  "plays": 2300
+ },
+ {
+  "src": "noot-noot-pingu",
+  "slug": "noot-noot-pingu",
+  "title": "Noot Noot (Pingu)",
+  "category": "meme",
+  "tags": [
+   "pingu",
+   "noot-noot",
+   "penguin",
+   "claymation"
+  ],
+  "blurb": "Pingu was Swiss claymation made for very small children, and somehow his catchphrase became one of the internet's most dependable punctuation marks. The penguin honks. That is the entire vocabulary, and it covers greeting, outrage and triumph with equal confidence. Remix culture adopted him early, dropping the honk into trap beats, horror edits and every soundboard going, and he has never really left. Play it as an answer to a question you would rather not engage with, or twice in quick succession when somebody says something you strongly approve of.",
+  "origin": "Pingu's 'noot noot' from the Swiss claymation series Pingu.",
+  "plays": 1850
+ },
+ {
+  "src": "this-radio-hazbin-hotel",
+  "slug": "this-radio-hazbin-hotel",
+  "title": "This Radio (Hazbin Hotel)",
+  "category": "meme",
+  "tags": [
+   "hazbin-hotel",
+   "alastor",
+   "radio",
+   "static"
+  ],
+  "blurb": "Every syllable Alastor speaks arrives with a faint carrier hum, as though routed through a transmitter nobody remembered to switch off. He was a broadcaster before he died, and Hazbin Hotel never lets that fact go quiet: static swells when he is pleased, and his voice thins out the moment he wants to sound like an announcement rather than a person. A few seconds of exactly that texture. Editors use it to open Hazbin videos, and everyone else uses it to make an ordinary statement sound like it is being read to a nation in the 1930s.",
+  "origin": "An Alastor radio line from Hazbin Hotel.",
+  "plays": 750
+ },
+ {
+  "src": "x-files",
+  "slug": "x-files",
+  "title": "X-Files Theme",
+  "category": "meme",
+  "tags": [
+   "x-files",
+   "theme",
+   "conspiracy",
+   "whistle"
+  ],
+  "blurb": "A few bars of whistling and everyone within earshot assumes a conspiracy. The X-Files began in 1993, with Chris Carter's two FBI agents arguing about aliens across nine seasons, and Mark Snow's theme carried an enormous share of the atmosphere. Very few television cues are this economical. The whistle is high, thin and faintly wrong, and it became universal shorthand long ago for anything unexplained — a light switching itself off, a colleague's suspiciously detailed excuse, a parcel that has been out for delivery since Tuesday. Play it when somebody insists there is no normal explanation.",
+  "origin": "Mark Snow's theme for The X-Files (1993).",
+  "plays": 1550
+ },
+ {
+  "src": "lightsaber_on",
+  "slug": "lightsaber-on",
+  "title": "Lightsaber On",
+  "category": "sound-effects",
+  "tags": [
+   "star-wars",
+   "lightsaber",
+   "ignition",
+   "sci-fi"
+  ],
+  "blurb": "Snap, then a rising hiss settling into a hum. Ignition is the part of the lightsaber that sells the entire idea, because a glowing stick only becomes a weapon once your ears agree it is dangerous. The effect was assembled out of humming electrical noise rather than anything sword-shaped, which is why it has never once sounded like metal. Star Wars has kept it essentially unchanged since 1977, across every film, series and plastic replica since. Under three seconds, and you are holding something. Works on picking up literally any object.",
+  "origin": "The lightsaber ignition effect from Star Wars, originally created by sound designer Ben Burtt.",
+  "plays": 2400
+ },
+ {
+  "src": "msn-new-message",
+  "slug": "msn-new-message",
+  "title": "MSN New Message",
+  "category": "notification",
+  "tags": [
+   "msn",
+   "messenger",
+   "notification",
+   "2000s"
+  ],
+  "blurb": "One second, two tones, and a small window flashing orange on the taskbar. Windows Live Messenger ran the after-school social lives of an entire generation, and this alert was the trigger: somebody had typed something, and the something might matter enormously. People learned to recognise it through headphones, through walls, through a parent insisting that homework came first. Microsoft retired the service in 2013 and moved everybody to Skype, which nobody enjoyed. The sound has aged into a nostalgia button. Play it and watch a thirty-something glance instinctively at the corner of their screen.",
+  "origin": "The new message alert from MSN / Windows Live Messenger.",
+  "plays": 1300
+ },
+ {
+  "src": "playstation-startup-sound",
+  "slug": "playstation-startup-sound",
+  "title": "PlayStation Startup Sound",
+  "category": "sound-effects",
+  "tags": [
+   "playstation",
+   "ps1",
+   "startup",
+   "retro"
+  ],
+  "blurb": "Seventeen seconds of ceremony before a single game could begin. The original PlayStation booted in two movements, a short chime for the company logo and then that vast reverberating swell as the PlayStation mark assembled itself, and nobody in the mid-nineties considered this too long to wait. A modern console would be mocked for it. The sequence works because it promises that something enormous is loading, which was frequently true. Nostalgia aside, it remains a strange piece of music: cold, echoing and faintly ceremonial, attached to a machine that mostly played racing games.",
+  "origin": "The boot sequence of the original Sony PlayStation, released in 1994.",
+  "plays": 1800
+ },
+ {
+  "src": "ps4-startup-sound",
+  "slug": "ps4-startup-sound",
+  "title": "PS4 Startup Sound",
+  "category": "sound-effects",
+  "tags": [
+   "playstation",
+   "ps4",
+   "startup",
+   "chime"
+  ],
+  "blurb": "By 2013 a games console had nothing left to prove, and the PlayStation 4's boot chime behaves accordingly. It rises briefly, lands, and gets out of the way. There is no attempt here to sound like a spacecraft powering up, only a signal that the machine is awake and waiting for instructions. Millions of people associate it with the precise moment an evening got handed over to something else, which loads eight seconds of gentle synthesiser with more feeling than it has any business carrying. Good as an intro sting. Better as an announcement that plans have changed.",
+  "origin": "The boot chime of the Sony PlayStation 4, released in 2013.",
+  "plays": 1500
+ },
+ {
+  "src": "skype-call",
+  "slug": "skype-call",
+  "title": "Skype Call",
+  "category": "notification",
+  "tags": [
+   "skype",
+   "call",
+   "ringtone",
+   "video-call"
+  ],
+  "blurb": "Before Zoom took over, this was the sound of being summoned. Skype's incoming-call tone announced job interviews, long-distance relationships and group projects nobody wanted to join, always in the same relentlessly upbeat register regardless of what was arriving. Microsoft switched Skype off in 2025, which turned the ringtone into a museum piece more or less overnight. It does have one genuinely useful modern application: play it during a meeting and watch everybody check whether their own laptop is about to embarrass them. Two decades of remote-work dread, compressed into a few bright notes.",
+  "origin": "The incoming call tone from Skype, which Microsoft retired in 2025.",
+  "plays": 1400
+ },
+ {
+  "src": "youve-got-mail-aol",
+  "slug": "youve-got-mail-aol",
+  "title": "You've Got Mail (AOL)",
+  "category": "notification",
+  "tags": [
+   "aol",
+   "email",
+   "notification",
+   "90s"
+  ],
+  "blurb": "Three words that Hollywood liked enough to build a Tom Hanks and Meg Ryan romance around in 1998. AOL's mail alert was already everywhere by then, having ridden into millions of homes on free trial discs that arrived with magazines, in cereal boxes, seemingly through the walls. The greeting is warm, slightly amateur, and recorded long before anybody treated notification sounds as branding. Getting mail meant a person had written to you. That is the part worth explaining to anyone born after the fact, because no inbox has produced that feeling in roughly twenty years.",
+  "origin": "AOL's 'You've got mail' notification, later the title of a 1998 Tom Hanks and Meg Ryan film.",
+  "plays": 1500
+ },
+ {
+  "src": "cow-moos",
+  "slug": "cow-moos",
+  "title": "Cow Moos",
+  "category": "animal",
+  "tags": [
+   "cow",
+   "moo",
+   "farm",
+   "animal"
+  ],
+  "blurb": "Moo. That is the entire clip, and it is exactly what you came here for. Cattle actually vocalise across a fairly wide range, from the low rumble a cow uses with her own calf to the flat bellow that carries across a field, and this is very much the field version: unhurried, faintly comic, unmistakably bovine. It shows up in farm footage, children's learning apps and a genuinely enormous number of Minecraft videos. On a soundboard it works best deadpan, played into a voice call about half a second after somebody says something daft.",
+  "origin": "A generic farm recording of a cow lowing.",
+  "plays": 1300
+ },
+ {
+  "src": "fitness-gram-pacer-test",
+  "slug": "fitness-gram-pacer-test",
+  "title": "FitnessGram Pacer Test",
+  "category": "meme",
+  "tags": [
+   "pacer-test",
+   "copypasta",
+   "school",
+   "meme"
+  ],
+  "blurb": "American schoolchildren know this narration the way other countries know a national anthem. The FitnessGram PACER test is entirely real: a multistage shuttle run used in US school fitness assessment, with a recorded voice calmly explaining the rules while thirty kids line up in a gym dreading it. Around 2016 the opening lines escaped into copypasta and stayed there, quoted from memory in comment sections for years afterwards. As a soundboard button it is a bait-and-switch. Start it innocently, then watch the room work out what is happening. The dread is entirely learned.",
+  "origin": "The recorded instructions from the FitnessGram PACER multistage shuttle run, a standard US school fitness test.",
+  "plays": 2600
+ },
+ {
+  "src": "goat-screaming",
+  "slug": "goat-screaming",
+  "title": "Goat Screaming",
+  "category": "animal",
+  "tags": [
+   "goat",
+   "scream",
+   "animal",
+   "funny"
+  ],
+  "blurb": "Goats scream. Properly scream, in a register far more human than any farm animal has a right to manage, and the internet has never entirely recovered from finding this out. A run of goat-edition remixes around 2013 spliced these bleats into pop choruses, and the joke has quietly refused to die since. Biologically it is ordinary goat vocalisation, nothing unusual for the species. The comedy comes purely from the resemblance — a bleat that lands on the ear as a person yelling. Use it as a punchline over a dramatic pause, or in place of a reaction you would rather not voice yourself.",
+  "origin": "A recording of a domestic goat bleating, of the type popularised by the 2013 goat-edition remix videos.",
+  "plays": 1800
+ }
+]

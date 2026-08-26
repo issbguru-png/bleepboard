@@ -1,0 +1,228 @@
+[
+ {
+  "src": "backrooms-ambience",
+  "slug": "backrooms-ambience",
+  "title": "Backrooms Ambience",
+  "category": "sound-effects",
+  "tags": [
+   "backrooms",
+   "ambience",
+   "horror",
+   "liminal",
+   "hum"
+  ],
+  "blurb": "Endless yellow rooms, damp carpet, and a fluorescent hum that never quite settles into silence. That is what this loop is built to suggest. The Backrooms started as a single 4chan post in 2019 and grew into a whole genre of found-footage horror, and in most of those videos the ambience does the heavy lifting — a low buzz, a faint drone from an air handler, nothing you can point at. Editors lay it under a static shot to make an ordinary corridor feel wrong. It also works quietly under a horror stream, where you want unease rather than a scare.",
+  "origin": "A liminal-space room-tone loop in the style of the Backrooms creepypasta; no single documented source recording.",
+  "plays": 1400
+ },
+ {
+  "src": "campus-fire-alarm",
+  "slug": "campus-fire-alarm",
+  "title": "Campus Fire Alarm",
+  "category": "prank",
+  "tags": [
+   "alarm",
+   "fire-alarm",
+   "prank",
+   "loud"
+  ],
+  "blurb": "Anyone who has lived in halls knows this one at three in the morning, standing outside in a dressing gown while somebody's toast takes the blame. The clip is a standard institutional alarm: piercing, repetitive, engineered so that no sleeping human can ignore it. As a prank button it is deeply unkind and extremely effective, particularly over a call to a flatmate with an exam tomorrow. Video editors use it differently, dropping it in at the exact instant something on screen goes catastrophically wrong. Keep the volume sensible before you press it.",
+  "origin": "A generic institutional fire-alarm recording of the type used in schools and university buildings.",
+  "plays": 900
+ },
+ {
+  "src": "concrete-sliding",
+  "slug": "concrete-sliding",
+  "title": "Concrete Sliding",
+  "category": "sound-effects",
+  "tags": [
+   "concrete",
+   "scrape",
+   "stone",
+   "foley"
+  ],
+  "blurb": "Heavy stone dragged across heavy stone, slow and gritty, with all the low scrape that implies. Foley like this earns its keep in horror and thriller edits: a slab shifting, a lid moving, something being uncovered that should have stayed buried. Game modders reach for it constantly, because a stone door has to sound like it weighs a tonne or nobody believes the puzzle in front of them. There is no story behind it, and none is needed. Put it under a slow push-in shot and the tension arrives without any help from the picture.",
+  "origin": "A generic foley recording of concrete or stone being dragged; widely used in video editing.",
+  "plays": 500
+ },
+ {
+  "src": "creepy-i-see-you",
+  "slug": "creepy-i-see-you",
+  "title": "Creepy I See You",
+  "category": "sound-effects",
+  "tags": [
+   "creepy",
+   "whisper",
+   "horror",
+   "voice"
+  ],
+  "blurb": "A whispered \"I see you\", pitched low and far too close to the microphone. Nobody needs that explained. Voice lines like this circulate through horror edits, jumpscare compilations and Roblox horror games without any traceable original recording behind them, and this one has the essentials: breath audible on the consonants, and no music underneath to hide in. Play it into a Discord call when somebody has been quiet for a while — the effect on a person wearing headphones alone at night is reliably unfair. Short clips like this outperform long ones, because the imagination fills the gap.",
+  "origin": "An unattributed whispered horror voice line; no documented original source.",
+  "plays": 700
+ },
+ {
+  "src": "flickering-neon",
+  "slug": "flickering-neon",
+  "title": "Flickering Neon",
+  "category": "sound-effects",
+  "tags": [
+   "neon",
+   "buzz",
+   "electric",
+   "ambience"
+  ],
+  "blurb": "Electrical buzz with a stutter in it, the sound of a tube one bad night away from going out entirely. Sound designers use it as shorthand for somewhere nobody maintains: a motel corridor, an underpass, the back room of a bar in a film that is about to turn nasty. The buzz does the acting. Pair it with almost any dim shot and the location instantly reads as neglected, without a word of dialogue explaining why. Loop it under a conversation at low level and viewers will decide the scene is unsafe long before anything happens.",
+  "origin": "A generic electrical buzz and flicker effect used as atmosphere; no documented source recording.",
+  "plays": 450
+ },
+ {
+  "src": "gun-reload",
+  "slug": "gun-reload",
+  "title": "Gun Reload",
+  "category": "sound-effects",
+  "tags": [
+   "reload",
+   "foley",
+   "editing",
+   "click"
+  ],
+  "blurb": "Magazine out, magazine in, then the slide. Editors need this constantly, and it stays near the top of the request list on every soundboard going: game montages, film-style transitions, the half-second of setup before a hard cut. This recording is clean and dry, with no room reverb baked into it, which matters if you are stacking it under other audio. Firearm foley varies enormously between weapons and microphones, so anyone matching to footage should listen to the metal rather than the bang. Played under a slow turn to camera, it is mostly a comedy beat.",
+  "origin": "A generic firearm reloading foley recording, widely used in video editing.",
+  "plays": 1600
+ },
+ {
+  "src": "handgun-cocking",
+  "slug": "handgun-cocking",
+  "title": "Handgun Cocking",
+  "category": "sound-effects",
+  "tags": [
+   "cocking",
+   "click",
+   "foley",
+   "editing"
+  ],
+  "blurb": "Two short metallic clicks and nothing else. Film has trained everybody to read that tiny noise as intent, so thoroughly that sound editors will add a cocking sound to weapons which do not mechanically make one, purely because audiences expect to hear it. That makes it unusually useful foley: it signals a change in the scene without needing a single frame of picture. On soundboards it lives almost entirely as comic timing, played immediately after somebody says something indefensible. Keep it dry and unprocessed if you are cutting it against real footage.",
+  "origin": "A generic handgun hammer-and-slide foley recording, widely used in video editing.",
+  "plays": 1100
+ },
+ {
+  "src": "heavy-applause",
+  "slug": "heavy-applause",
+  "title": "Heavy Applause",
+  "category": "sound-effects",
+  "tags": [
+   "applause",
+   "clapping",
+   "crowd",
+   "cheer"
+  ],
+  "blurb": "A full room going at it, hundreds of pairs of hands rather than a polite dozen. Crowd applause sounds simple and is genuinely awkward to fake, because real clapping never lands in sync and the tail decays unevenly as people give up at different moments. This recording has that raggedness. Use it sincerely at the end of a presentation clip, or witheringly in a voice call after somebody states the obvious at length. Slow it right down and you get a slow clap — a related tool with considerably worse manners.",
+  "origin": "A generic recording of a large audience applauding.",
+  "plays": 1500
+ },
+ {
+  "src": "joke-drums",
+  "slug": "joke-drums",
+  "title": "Joke Drums",
+  "category": "meme",
+  "tags": [
+   "rimshot",
+   "badum-tss",
+   "comedy",
+   "drums"
+  ],
+  "blurb": "Ba dum tss. The rimshot has been rescuing bad jokes since vaudeville comics worked with a live band, back when part of the drummer's job was covering for a punchline that failed to arrive on its own. Snare, then cymbal, landing a beat later than you expect. Online it survives on pure irony: nobody plays it because the joke was good, they play it because the joke was dreadful and someone has to say so. Keep it within reach for group calls, where a bad pun deserves consequences rather than laughter.",
+  "origin": "A comedy rimshot sting of the kind long used by live club and variety-show drummers.",
+  "plays": 2200
+ },
+ {
+  "src": "loud-wind",
+  "slug": "loud-wind",
+  "title": "Loud Wind",
+  "category": "sound-effects",
+  "tags": [
+   "wind",
+   "howling",
+   "storm",
+   "ambience"
+  ],
+  "blurb": "Howling and sustained, the pitch shifting as each gust rises and drops away again. Wind is the workhorse of atmospheric sound design because it fills silence without asking for attention, and footage shot on a still afternoon can be relocated to a moor or a clifftop with nothing but this running underneath. There is a comic use too: drop it into the pause after a joke nobody laughed at and the silence turns into a desert. No clever backstory here. Most editors end up reaching for wind far more often than they ever expected to.",
+  "origin": "A generic recording of strong wind, used widely as atmospheric ambience.",
+  "plays": 800
+ },
+ {
+  "src": "major-explosion",
+  "slug": "major-explosion",
+  "title": "Major Explosion",
+  "category": "sound-effects",
+  "tags": [
+   "explosion",
+   "boom",
+   "blast",
+   "impact"
+  ],
+  "blurb": "Low boom, then a tail that runs for several seconds with enough bottom end to move a subwoofer. Explosion foley is almost never a real explosion; the rumble that sells it is usually layered up from sources with nothing to do with combustion at all. What matters when you are cutting is the shape: one hard transient, then a decay you can either trim into or let ring out. Meme edits treat it as the loudest available full stop, normally over a still image. Check your levels before you send this to anybody.",
+  "origin": "A generic explosion sound effect, widely used in video editing.",
+  "plays": 1700
+ },
+ {
+  "src": "microwave-noises",
+  "slug": "microwave-noises",
+  "title": "Microwave Noises",
+  "category": "sound-effects",
+  "tags": [
+   "microwave",
+   "kitchen",
+   "beep",
+   "appliance"
+  ],
+  "blurb": "The hum of a turntable going round, then the beeps that mean your food is theoretically ready. Kitchen foley gets underrated. This one carries oddly specific associations for anyone who has lived alone: the late-night reheat, the countdown, the door you yank open at two seconds purely to beat the beep. Editors use it for domestic scenes and for gag timing, since an appliance finishing is a natural punchline beat. It doubles as a small cruelty in voice calls — the beeps sound real enough that somebody will get up and check their own kitchen.",
+  "origin": "A generic recording of a microwave oven running and finishing its cycle.",
+  "plays": 600
+ },
+ {
+  "src": "sniper-shot",
+  "slug": "sniper-shot",
+  "title": "Sniper Shot",
+  "category": "sound-effects",
+  "tags": [
+   "sniper",
+   "rifle",
+   "montage",
+   "editing"
+  ],
+  "blurb": "A sharp crack followed by a long echo rolling away, which is the detail that separates a rifle effect from a pistol one: distance. Montage editors have leaned on this sound for two decades, from Counter-Strike clips through to trickshot videos, where the shot and the reaction to it are the entire edit. The tail is the part you actually work with, because it gives you something to cut against. Dry recordings sit better under existing audio. Use it for timing rather than for shock value and it does considerably more work.",
+  "origin": "A generic rifle report with distant echo, widely used in gaming montages and video editing.",
+  "plays": 1200
+ },
+ {
+  "src": "super-mario-pipe",
+  "slug": "super-mario-pipe",
+  "title": "Super Mario Pipe",
+  "category": "meme",
+  "tags": [
+   "mario",
+   "nintendo",
+   "warp",
+   "exit"
+  ],
+  "blurb": "Down the pipe and gone. Nintendo shipped Super Mario Bros. in 1985 with an audio chip that had almost nothing to work with, so the warp cue is a single quick descending slide, over in about half a second. Decades later it is still legible to people who have never played the game. Meme editors adopted it as the standard exit noise, played whenever somebody leaves a voice call, deletes a message, or walks out of a conversation they themselves started. Treat it as the polite alternative to a door slam.",
+  "origin": "The pipe warp sound effect from Nintendo's Super Mario Bros. (1985).",
+  "plays": 2400
+ },
+ {
+  "src": "truck-horn-loud",
+  "slug": "truck-horn-loud",
+  "title": "Truck Horn Loud",
+  "category": "sound-effects",
+  "tags": [
+   "horn",
+   "truck",
+   "air-horn",
+   "loud"
+  ],
+  "blurb": "An air horn from something very large, blasted at a level that assumes you are sitting in a cab rather than wearing headphones. Truck horns run low and loud on purpose, because the stopping distance of a heavy vehicle means the driver needs you to move now rather than shortly. That urgency is why the sound cuts through in edits: it reads as immediate danger with no setup required. It is also a well-established way to ruin somebody's afternoon mid-call. Turn the volume down before the first press, then decide whether you want it back up.",
+  "origin": "A generic recording of a heavy-goods-vehicle air horn.",
+  "plays": 1000
+ }
+]

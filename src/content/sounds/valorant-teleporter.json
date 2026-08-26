@@ -1,0 +1,17 @@
+{
+  "title": "Valorant Teleporter",
+  "category": "gaming",
+  "tags": [
+    "valorant",
+    "bind",
+    "teleporter",
+    "whoosh"
+  ],
+  "duration": 1.5,
+  "audio": "/audio/valorant-teleporter.mp3",
+  "blurb": "Bind is the Valorant map built around teleporters, and stepping into one makes a noise the entire enemy team can hear. That is the trade the whole map runs on: instant repositioning in exchange for announcing exactly where you are about to reappear. Entire strategies revolve around sending one player through as bait. The sound is a quick electronic whoosh with a hollow tail, and it triggers immediate paranoia in anybody who has played the map, which is the highest compliment a game sound effect can earn.",
+  "origin": "The teleporter sound from Bind in Valorant.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 700
+}

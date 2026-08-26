@@ -1,0 +1,17 @@
+{
+  "title": "Loud Wind",
+  "category": "sound-effects",
+  "tags": [
+    "wind",
+    "howling",
+    "storm",
+    "ambience"
+  ],
+  "duration": 9.4,
+  "audio": "/audio/loud-wind.mp3",
+  "blurb": "Howling and sustained, the pitch shifting as each gust rises and drops away again. Wind is the workhorse of atmospheric sound design because it fills silence without asking for attention, and footage shot on a still afternoon can be relocated to a moor or a clifftop with nothing but this running underneath. There is a comic use too: drop it into the pause after a joke nobody laughed at and the silence turns into a desert. No clever backstory here. Most editors end up reaching for wind far more often than they ever expected to.",
+  "origin": "A generic recording of strong wind, used widely as atmospheric ambience.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 800
+}

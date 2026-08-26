@@ -1,0 +1,17 @@
+{
+  "title": "WWE Ring Bell",
+  "category": "sound-effects",
+  "tags": [
+    "wwe",
+    "wrestling",
+    "bell",
+    "sports"
+  ],
+  "duration": 1.1,
+  "audio": "/audio/wwe-ring-bell.mp3",
+  "blurb": "Ding ding ding. In wrestling the bell is the one honest object in the building: it starts the match, ends the match, and rings the instant somebody taps out or cannot answer the count. Everything else is choreography. Promotions also ring it ten deliberate times as a memorial for a wrestler who has died, a tradition WWE has observed since at least the early nineties, so the sound carries weight it has no obvious right to. On a soundboard it works as a full stop — end of round, end of argument, end of discussion.",
+  "origin": "The ring bell used in professional wrestling to start and end matches.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1100
+}

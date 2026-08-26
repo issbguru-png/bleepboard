@@ -1,0 +1,452 @@
+[
+ {
+  "src": "adopt-me-roblox",
+  "slug": "adopt-me-roblox",
+  "title": "Adopt Me Roblox",
+  "category": "gaming",
+  "tags": [
+   "roblox",
+   "adopt-me",
+   "pets",
+   "music"
+  ],
+  "blurb": "Adopt Me! runs on a simple loop: hatch an egg, raise the pet, trade it away for something rarer, repeat until your entire social life is a spreadsheet. This is the cheerful music sitting underneath all that commerce, bright and looping and completely unbothered by the ruthless economy it soundtracks. Uplift Games built one of the most-played experiences on Roblox out of it — concurrent player counts that broke records the platform had never had to think about before. Play it to anyone who once traded away a legendary pet and has regretted it ever since.",
+  "origin": "Music from the Roblox game Adopt Me! (Uplift Games).",
+  "plays": 1000
+ },
+ {
+  "src": "among-us-alert-buzzer",
+  "slug": "among-us-alert-buzzer",
+  "title": "Among Us Alert Buzzer",
+  "category": "gaming",
+  "tags": [
+   "among-us",
+   "alarm",
+   "sabotage",
+   "alert"
+  ],
+  "blurb": "Somebody has sabotaged something, and the ship would like you to know about it urgently. This is the buzzing alarm Among Us throws up when the reactor melts down or the oxygen starts draining, paired with a countdown that turns a room full of friends into a stampede. Impostors love it, because a good sabotage scatters everyone and buys thirty seconds of unwatched corridor. Crewmates hate it for the same reason. As a soundboard button it works beautifully for announcing that something in real life has gone badly wrong.",
+  "origin": "The sabotage alarm from Among Us (InnerSloth).",
+  "plays": 1300
+ },
+ {
+  "src": "among-us-emergency-meeting",
+  "slug": "among-us-emergency-meeting",
+  "title": "Among Us Emergency Meeting",
+  "category": "gaming",
+  "tags": [
+   "among-us",
+   "meeting",
+   "sting",
+   "impostor"
+  ],
+  "blurb": "Slam the button in the cafeteria and everyone gets dragged to the table, wherever they were and whatever they were doing. The emergency meeting sting is two seconds of pure escalation, and by late 2020 it had escaped the game entirely — it became the standard way to open an argument, a group chat callout, or a video where somebody is about to be accused of something. InnerSloth released the game in 2018 and almost nobody noticed until streamers found it. Now the sound alone is enough to make people brace.",
+  "origin": "The emergency meeting sting from Among Us (InnerSloth, 2018).",
+  "plays": 2600
+ },
+ {
+  "src": "among-us-roundstart",
+  "slug": "among-us-roundstart",
+  "title": "Among Us Round Start",
+  "category": "gaming",
+  "tags": [
+   "among-us",
+   "start",
+   "role-reveal",
+   "sting"
+  ],
+  "blurb": "Ten players drop into the ship and the game quietly decides who is about to lie to everyone. The opening cue plays over the role reveal, the half-second where you find out whether the next four minutes are a chore simulator or a murder spree. It carries a specific dread if you drew Impostor and have to immediately act normal in front of people who know you well. Short, and quietly loaded. Useful whenever a group is about to start something and nobody has admitted their intentions yet.",
+  "origin": "The round-start cue from Among Us.",
+  "plays": 1000
+ },
+ {
+  "src": "fnaf-1-door-sound",
+  "slug": "fnaf-1-door-sound",
+  "title": "FNAF 1 Door Sound",
+  "category": "gaming",
+  "tags": [
+   "fnaf",
+   "door",
+   "slam",
+   "power"
+  ],
+  "blurb": "Metal on metal, heavy and final, and every press of it eats power you do not have. The office doors in the first Five Nights at Freddy's are the whole game in one mechanic: safety costs electricity, electricity runs out, and the doors decide whether the night stays quiet or ends with Bonnie in your doorway. Players learned to slam and release in tiny bursts. The sound now works across horror edits as shorthand for shutting something out and praying the battery holds.",
+  "origin": "The office door sound from Five Nights at Freddy's (2014).",
+  "plays": 1300
+ },
+ {
+  "src": "fnaf-opening-camera",
+  "slug": "fnaf-opening-camera",
+  "title": "FNAF Opening Camera",
+  "category": "gaming",
+  "tags": [
+   "fnaf",
+   "camera",
+   "monitor",
+   "static"
+  ],
+  "blurb": "Up goes the monitor, and with it a burst of grainy static and a mechanical clunk you will hear several hundred times a night. Flipping cameras in Five Nights at Freddy's is compulsive and dangerous in equal measure, since the tablet blocks your view of the office and the clock keeps running while you check. The tablet is a liability. The sound became load-bearing for the series' entire rhythm — check, panic, drop the monitor, check again. Edit creators use it as a scene transition, usually right before something appears that was not there before.",
+  "origin": "The camera monitor sound from Five Nights at Freddy's.",
+  "plays": 1200
+ },
+ {
+  "src": "fortnite-slurp-juice",
+  "slug": "fortnite-slurp-juice",
+  "title": "Fortnite Slurp Juice",
+  "category": "gaming",
+  "tags": [
+   "fortnite",
+   "slurp",
+   "healing",
+   "item"
+  ],
+  "blurb": "Blue, fizzy and gone in a few glugs. Slurp Juice trickles health and shields back into you over time rather than all at once, so drinking it mid-fight is a bet that nobody is about to peek your position. The audio is pure Fortnite design: cartoonish, readable across a hundred metres, and instantly familiar to anyone who has crouched behind a wall counting to ten. It has become the standard joke sound for taking a swig of anything — energy drinks especially.",
+  "origin": "The Slurp Juice consumable sound from Fortnite.",
+  "plays": 1600
+ },
+ {
+  "src": "kahoot-lobby-music",
+  "slug": "kahoot-lobby-music",
+  "title": "Kahoot Lobby Music",
+  "category": "gaming",
+  "tags": [
+   "kahoot",
+   "lobby",
+   "quiz",
+   "classroom"
+  ],
+  "blurb": "An entire generation's nervous system was rewired by this loop. The Kahoot lobby music plays while everybody types in a rude nickname and the teacher pretends not to notice, and it has been doing so in classrooms worldwide for over a decade. The Norwegian company behind it turned a pub quiz into a school-wide adrenaline event — the waiting theme is the part people actually remember. Relentlessly bouncy. Play it before any group activity and watch grown adults sit up straight without knowing why.",
+  "origin": "The lobby waiting music from the Kahoot! quiz platform.",
+  "plays": 2300
+ },
+ {
+  "src": "level-end-geometry-dash",
+  "slug": "level-end-geometry-dash",
+  "title": "Level End (Geometry Dash)",
+  "category": "gaming",
+  "tags": [
+   "geometry-dash",
+   "complete",
+   "victory",
+   "fanfare"
+  ],
+  "blurb": "After four hundred attempts, one cracked phone screen and a genuine argument with a friend about whether the timing is fair, you finally get this. The completion sound in Geometry Dash is a short rising flourish, and the relief attached to it runs wildly out of proportion to its length. Hard demons make it hit differently. Streamers have built whole compilations around the half-second of silence just before it plays — nobody in chat is breathing. Deploy it for anything you have at last finished.",
+  "origin": "The level completion sound from Geometry Dash.",
+  "plays": 800
+ },
+ {
+  "src": "limbo-geometry-dash",
+  "slug": "limbo-geometry-dash",
+  "title": "LIMBO (Geometry Dash)",
+  "category": "gaming",
+  "tags": [
+   "geometry-dash",
+   "limbo",
+   "demon",
+   "level"
+  ],
+  "blurb": "LIMBO is a memory level, which in Geometry Dash means the game deliberately refuses to tell you what is coming and expects you to have learned it anyway. The megacollab hosted by MindCap was verified in late 2022 after well over a hundred thousand attempts, and it took the community's award for best demon collaboration that year. This is a slice of what you hear while grinding it. Menacing and repetitive, and inseparable from the level for anyone who has watched that attempt counter climb.",
+  "origin": "Audio from LIMBO, a Geometry Dash extreme demon megacollab hosted by MindCap and verified in 2022.",
+  "plays": 600
+ },
+ {
+  "src": "megalovania",
+  "slug": "megalovania",
+  "title": "Megalovania",
+  "category": "gaming",
+  "tags": [
+   "undertale",
+   "sans",
+   "toby-fox",
+   "boss"
+  ],
+  "blurb": "Toby Fox wrote this melody years before Undertale existed. Versions of it turn up in a 2008 EarthBound ROM hack and later in his Homestuck work, so by the time it landed on Sans in 2015 it had already been rebuilt twice over. Then it ate the internet. Playing it now signals one specific thing: somebody unassuming is about to become a serious problem, which is why it soundtracks everything from anime edits to videos of very small aggressive dogs. Few game tracks have travelled this far from their source.",
+  "origin": "Sans's battle theme from Undertale (Toby Fox, 2015).",
+  "plays": 2900
+ },
+ {
+  "src": "minecraft-click",
+  "slug": "minecraft-click",
+  "title": "Minecraft Click",
+  "category": "gaming",
+  "tags": [
+   "minecraft",
+   "click",
+   "ui",
+   "button"
+  ],
+  "blurb": "Wood on wood, about as plain as a sound can be, and somehow one of the most recognisable noises in gaming. Every menu button in Minecraft answers with this click, so anyone who played as a child has heard it tens of thousands of times without ever consciously noticing. That is good interface design doing its job invisibly. The same tick doubles as the in-world button press, meaning it covers both the settings menu and a secret redstone door. Perfect for punctuating a joke on a call.",
+  "origin": "The interface click from Minecraft.",
+  "plays": 1500
+ },
+ {
+  "src": "minecraft-creeper-explosion",
+  "slug": "minecraft-creeper-explosion",
+  "title": "Minecraft Creeper Explosion",
+  "category": "gaming",
+  "tags": [
+   "minecraft",
+   "creeper",
+   "explosion",
+   "hiss"
+  ],
+  "blurb": "The hiss is the important part. By the time the blast lands, your house has a hole in it and the diamonds you were carrying are somewhere at the bottom of a lava pool. Creepers exist because of a modelling accident — Notch got the dimensions wrong while building a pig and shipped the result as a monster instead. That mistake became the face of the entire game. Reach for this clip when something has been quietly building behind somebody and is about to delete all their progress at once.",
+  "origin": "The creeper hiss and explosion from Minecraft.",
+  "plays": 2800
+ },
+ {
+  "src": "missing-ping-lol",
+  "slug": "missing-ping-lol",
+  "title": "Missing Ping (League of Legends)",
+  "category": "gaming",
+  "tags": [
+   "league-of-legends",
+   "ping",
+   "missing",
+   "communication"
+  ],
+  "blurb": "A short chirp and a question-mark bubble, and now the whole team knows your lane opponent has vanished. The enemy missing ping is League of Legends' most-used piece of communication and its most passive-aggressive: spam it at a jungler who is three camps away and you have delivered an entire paragraph without typing a word. Riot has rebuilt the ping wheel repeatedly over the years. The sound survived all of it. Outside the game it does honest work flagging that somebody has gone suspiciously quiet in a group chat.",
+  "origin": "The enemy missing ping from League of Legends (Riot Games).",
+  "plays": 1100
+ },
+ {
+  "src": "nether-portal",
+  "slug": "nether-portal",
+  "title": "Nether Portal",
+  "category": "gaming",
+  "tags": [
+   "minecraft",
+   "nether",
+   "portal",
+   "ambience"
+  ],
+  "blurb": "Purple and warbling, with a faintly sick edge: the noise a Minecraft nether portal makes while it waits for you to step in and regret it. Stand nearby and the low wobbling hum fills the room, which the game fully intends, since it wants you uneasy before the loading screen even arrives. It gets under your skin. Builders complain about it endlessly and then put portals in their basements anyway. The clip is great for implying a doorway to somewhere worse: an open-plan office, a group chat, a second job.",
+  "origin": "The nether portal ambience from Minecraft.",
+  "plays": 1450
+ },
+ {
+  "src": "outsider-poppy-playtime",
+  "slug": "outsider-poppy-playtime",
+  "title": "Outsider (Poppy Playtime)",
+  "category": "gaming",
+  "tags": [
+   "poppy-playtime",
+   "horror",
+   "creepy",
+   "atmosphere"
+  ],
+  "blurb": "Poppy Playtime built its identity on toys that should not be moving, and the audio does more work than the monsters do. Mob Entertainment's factory is all long corridors and nursery colours, so the score has to carry the dread while you are staring at something bright pink. This clip sits in that register: slow and deliberately paced, with no interest in hurrying you along. Editors use it for the moment the camera stops being playful. Good for setting a mood before anything has actually happened on screen.",
+  "origin": "A track associated with Mob Entertainment's Poppy Playtime series.",
+  "plays": 800
+ },
+ {
+  "src": "phasmophobia-heartbeat",
+  "slug": "phasmophobia-heartbeat",
+  "title": "Phasmophobia Heartbeat",
+  "category": "gaming",
+  "tags": [
+   "phasmophobia",
+   "heartbeat",
+   "horror",
+   "hunt"
+  ],
+  "blurb": "Your own pulse, played back at you, speeding up. Phasmophobia turns fear into a mechanic: sanity drops, the ghost starts hunting, the lights die, and the heartbeat tells you it has noticed you specifically. Kinetic Games pushed it into early access in 2020 and it promptly became the game everybody streamed with four friends and a great deal of screaming. Hiding in a locker while this plays is genuinely unpleasant — the audio does work the graphics never had to. Use it to raise the temperature on a countdown, a deadline, or a message that says we need to talk.",
+  "origin": "The hunt heartbeat from Phasmophobia (Kinetic Games, 2020).",
+  "plays": 950
+ },
+ {
+  "src": "rammus-ok",
+  "slug": "rammus-ok",
+  "title": "Rammus OK",
+  "category": "gaming",
+  "tags": [
+   "league-of-legends",
+   "rammus",
+   "ok",
+   "voice-line"
+  ],
+  "blurb": "One syllable, delivered by an armoured armadillo, and it has outlived most of the champions released since. Rammus answers a good chunk of his League of Legends prompts with a flat, unbothered \"Ok.\" and the internet decided that was the funniest available response to anything at all. It works as agreement, as dismissal and as a threat, depending entirely on what was said before it. Riot has kept the line through every rework. Post it when a very long message deserves the smallest possible acknowledgement.",
+  "origin": "Rammus's 'Ok.' voice line from League of Legends.",
+  "plays": 1400
+ },
+ {
+  "src": "roblox-doors-elevator-music",
+  "slug": "roblox-doors-elevator-music",
+  "title": "Roblox Doors Elevator Music",
+  "category": "gaming",
+  "tags": [
+   "roblox",
+   "doors",
+   "elevator",
+   "lobby"
+  ],
+  "blurb": "Before the corridors, the entities and the screaming, there is a lift with cheerful music in it. Doors puts everyone in that elevator at the start of a run, and the loop playing while you wait for the last player to load is the only calm the game ever offers. Regulars find it genuinely soothing. It also sets up the contrast beautifully, since the moment those doors open the tone falls off a cliff. Ideal for handing somebody a completely false sense of security.",
+  "origin": "The starting elevator music from Roblox Doors (LSPLASH).",
+  "plays": 1350
+ },
+ {
+  "src": "roblox-doors-open-door",
+  "slug": "roblox-doors-open-door",
+  "title": "Roblox Doors Open Door",
+  "category": "gaming",
+  "tags": [
+   "roblox",
+   "doors",
+   "creak",
+   "hinge"
+  ],
+  "blurb": "A creak, a swing, and then the small dread of not knowing what waits on the other side. Opening doors is the core verb of the biggest horror game on Roblox, and LSPLASH made the sound deliberately unhurried so your brain has time to fill the gap with something awful. Most of the time it is an empty room. Players still flinch. Away from the game the clip works as a plain door effect, which is why it turns up in edits with no connection to Roblox at all.",
+  "origin": "The door opening sound from Roblox Doors.",
+  "plays": 1050
+ },
+ {
+  "src": "roblox-og-sounds",
+  "slug": "roblox-og-sounds",
+  "title": "Roblox OG Sounds",
+  "category": "gaming",
+  "tags": [
+   "roblox",
+   "oof",
+   "nostalgia",
+   "classic"
+  ],
+  "blurb": "Old Roblox had a very specific sonic fingerprint, and most of it has quietly been replaced. Here is a run through the classics, the oof death sound chief among them, which came originally from a 2000 game called Messiah and was pulled from Roblox in July 2022 when a licensing dispute with composer Tommy Tallarico could not be settled. Millions of children got their first copyright lesson that week. For anyone who played between roughly 2010 and 2020, these noises land somewhere between nostalgia and mild grief.",
+  "origin": "A compilation of classic Roblox sound effects, including the retired oof death sound.",
+  "plays": 1700
+ },
+ {
+  "src": "shut-down-league-of-legends",
+  "slug": "shut-down-league-of-legends",
+  "title": "Shut Down (League of Legends)",
+  "category": "gaming",
+  "tags": [
+   "league-of-legends",
+   "announcer",
+   "shutdown",
+   "kill"
+  ],
+  "blurb": "Nothing in League of Legends tastes sweeter than ending somebody's killing spree and pocketing the gold they had been accumulating for it. The announcer calls \"Shut down!\" and the bounty transfers, which is both a mechanical rubber band and a small public humiliation. Riot leans into it. The line has long since escaped the game and now shows up wherever a winning streak collapses in front of an audience, sporting or otherwise. Two words, perfectly weighted, and useful in almost any argument you happen to be winning.",
+  "origin": "The announcer's 'Shut down!' call from League of Legends.",
+  "plays": 1200
+ },
+ {
+  "src": "starcraft-notification",
+  "slug": "starcraft-notification",
+  "title": "StarCraft Notification",
+  "category": "gaming",
+  "tags": [
+   "starcraft",
+   "notification",
+   "blizzard",
+   "alert"
+  ],
+  "blurb": "Two tenths of a second of clean digital blip, and thousands of people have set it as their message tone. Blizzard's StarCraft games are full of these short alerts, built to cut through a battle without stealing attention from it, and that discipline is why the sound ages so well beside modern notification chimes. It sounds like competence. Put it on a phone and every incoming text starts to feel like a build order update rather than an interruption from somebody who wants something from you.",
+  "origin": "A notification blip from Blizzard's StarCraft.",
+  "plays": 700
+ },
+ {
+  "src": "subway-surfers",
+  "slug": "subway-surfers",
+  "title": "Subway Surfers",
+  "category": "gaming",
+  "tags": [
+   "subway-surfers",
+   "brainrot",
+   "mobile",
+   "gameplay"
+  ],
+  "blurb": "An endless runner from 2012 became the background of the entire internet, which nobody involved could possibly have planned. Subway Surfers footage is the standard filler in the bottom half of a split-screen video, running silently under a narrated Reddit story while your attention has nowhere else to go. SYBO and Kiloo made a perfectly good mobile game — and accidentally invented a genre of visual chewing gum. This clip is the audio half of that phenomenon. Attach it to anything and it reads instantly as the second half of a TikTok.",
+  "origin": "Audio from Subway Surfers (SYBO and Kiloo, 2012).",
+  "plays": 2400
+ },
+ {
+  "src": "teemolaugh",
+  "slug": "teemolaugh",
+  "title": "Teemo Laugh",
+  "category": "gaming",
+  "tags": [
+   "league-of-legends",
+   "teemo",
+   "laugh",
+   "troll"
+  ],
+  "blurb": "A tiny cheerful giggle from the most despised creature in League of Legends. Teemo scatters invisible mushrooms across the map, blinds people, and then makes this exact noise while you die to something you never saw, so the laugh became the community's universal sound for petty, deliberate cruelty. Players have written songs about hating him. The giggle is genuinely sweet in isolation, and that gap is the joke — pair it with any small act of sabotage and the meaning arrives before you have explained anything.",
+  "origin": "Teemo's laugh from League of Legends.",
+  "plays": 900
+ },
+ {
+  "src": "tf2-nom-nom-nom",
+  "slug": "tf2-nom-nom-nom",
+  "title": "TF2 Nom Nom Nom",
+  "category": "gaming",
+  "tags": [
+   "tf2",
+   "heavy",
+   "sandvich",
+   "eating"
+  ],
+  "blurb": "Heavy Weapons Guy eating a sandwich, loudly, in the middle of a war. The Sandvich heals him to full if he can find a few uninterrupted seconds, so the eating animation doubles as a public declaration that you consider the enemy team beneath your notice. Taunting with it is a real tactic and a real risk. That contented munching has since become the internet's default sound for smug satisfaction, deployed whenever somebody is enjoying a situation rather more than the people around them think they should.",
+  "origin": "Heavy eating the Sandvich in Team Fortress 2.",
+  "plays": 1100
+ },
+ {
+  "src": "tf2-notification",
+  "slug": "tf2-notification",
+  "title": "TF2 Notification",
+  "category": "gaming",
+  "tags": [
+   "tf2",
+   "notification",
+   "alert",
+   "valve"
+  ],
+  "blurb": "Valve has a house style for small alerts, and Team Fortress 2's is one of the friendlier examples: a short, warm blip telling you something happened without dragging you out of the match. Players hear it thousands of hours deep and stop consciously registering it, then hear it again years later and are immediately nine years old. That is the strange power of game interface audio. Plenty of people run it as their Discord ping, which makes every incoming message feel vaguely like an item drop.",
+  "origin": "A notification alert from Team Fortress 2 (Valve).",
+  "plays": 800
+ },
+ {
+  "src": "tf2-scout-scream",
+  "slug": "tf2-scout-scream",
+  "title": "TF2 Scout Scream",
+  "category": "gaming",
+  "tags": [
+   "tf2",
+   "scout",
+   "scream",
+   "death"
+  ],
+  "blurb": "Scout talks constantly, at volume, in a Boston accent, right up until the moment a sniper disagrees with him. He never sees it coming. The death scream is high and abrupt, matching a character whose whole personality is running too fast towards a bad decision. Team Fortress 2's voice work is the reason the cast still gets fan animations nearly twenty years on. Use the clip for any sudden and undignified ending: a game, a bet, a plan that lasted four seconds. It is funnier than a generic scream because you can hear the confidence stop.",
+  "origin": "Scout's death scream from Team Fortress 2.",
+  "plays": 1000
+ },
+ {
+  "src": "valorant-clutch",
+  "slug": "valorant-clutch",
+  "title": "Valorant Clutch",
+  "category": "gaming",
+  "tags": [
+   "valorant",
+   "clutch",
+   "round",
+   "riot"
+  ],
+  "blurb": "Last player alive, outnumbered, and somehow the round is still winnable. Clutching in Valorant means taking a situation everybody has already written off and dragging it back, and the game marks it with a sting sharp enough to be worth the screenshot. Teammates in the spectator chat lose their minds. The clip works outside the game for any solo rescue of a group project — it carries an edge of disbelief that a plain victory fanfare never manages. Riot understands that the near-loss is what makes it taste good.",
+  "origin": "The clutch sting from Valorant.",
+  "plays": 900
+ },
+ {
+  "src": "valorant-teleporter",
+  "slug": "valorant-teleporter",
+  "title": "Valorant Teleporter",
+  "category": "gaming",
+  "tags": [
+   "valorant",
+   "bind",
+   "teleporter",
+   "whoosh"
+  ],
+  "blurb": "Bind is the Valorant map built around teleporters, and stepping into one makes a noise the entire enemy team can hear. That is the trade the whole map runs on: instant repositioning in exchange for announcing exactly where you are about to reappear. Entire strategies revolve around sending one player through as bait. The sound is a quick electronic whoosh with a hollow tail, and it triggers immediate paranoia in anybody who has played the map, which is the highest compliment a game sound effect can earn.",
+  "origin": "The teleporter sound from Bind in Valorant.",
+  "plays": 700
+ }
+]

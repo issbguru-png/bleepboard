@@ -1,0 +1,17 @@
+{
+  "title": "Dial-Up Sound",
+  "category": "notification",
+  "tags": [
+    "dial-up",
+    "modem",
+    "internet",
+    "retro"
+  ],
+  "duration": 6.2,
+  "audio": "/audio/dial-up-sound.mp3",
+  "blurb": "Six seconds is the polite version. A real 56k connection took the better part of a minute to shriek its way to a working link, and every stage of it came out of the modem's own speaker so you could tell by ear whether things were going wrong. Editors now use the noise as instant shorthand for the past, the way a rotary dial or a VHS tracking line works. Anyone under twenty-five hears an alien transmission. Anyone older hears a sibling picking up the phone downstairs and killing the whole thing stone dead.",
+  "origin": "The handshake tones of a dial-up modem connecting over a telephone line.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1900
+}

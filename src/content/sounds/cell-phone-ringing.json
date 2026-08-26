@@ -1,0 +1,17 @@
+{
+  "title": "Cell Phone Ringing",
+  "category": "notification",
+  "tags": [
+    "phone",
+    "ringing",
+    "ringtone",
+    "alert"
+  ],
+  "duration": 10.2,
+  "audio": "/audio/cell-phone-ringing.mp3",
+  "blurb": "Ten seconds of a phone demanding attention, unbranded and entirely unhurried. No handset maker owns this one, which makes it the ring of choice for films, stage plays and student videos that cannot afford to licence anything Apple made. It also makes an excellent nuisance. Play it quietly in an open-plan office and watch four people pat their pockets at once. Sound designers keep a version on hand because a ringing phone interrupts a scene faster than almost anything else — somebody is calling, nobody knows who, and nothing continues until it gets answered.",
+  "origin": "A generic mobile phone ringing tone.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1000
+}

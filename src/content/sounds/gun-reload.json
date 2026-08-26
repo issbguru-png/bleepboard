@@ -1,0 +1,17 @@
+{
+  "title": "Gun Reload",
+  "category": "sound-effects",
+  "tags": [
+    "reload",
+    "foley",
+    "editing",
+    "click"
+  ],
+  "duration": 1,
+  "audio": "/audio/gun-reload.mp3",
+  "blurb": "Magazine out, magazine in, then the slide. Editors need this constantly, and it stays near the top of the request list on every soundboard going: game montages, film-style transitions, the half-second of setup before a hard cut. This recording is clean and dry, with no room reverb baked into it, which matters if you are stacking it under other audio. Firearm foley varies enormously between weapons and microphones, so anyone matching to footage should listen to the metal rather than the bang. Played under a slow turn to camera, it is mostly a comedy beat.",
+  "origin": "A generic firearm reloading foley recording, widely used in video editing.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1600
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Minecraft Click",
+  "category": "gaming",
+  "tags": [
+    "minecraft",
+    "click",
+    "ui",
+    "button"
+  ],
+  "duration": 0.8,
+  "audio": "/audio/minecraft-click.mp3",
+  "blurb": "Wood on wood, about as plain as a sound can be, and somehow one of the most recognisable noises in gaming. Every menu button in Minecraft answers with this click, so anyone who played as a child has heard it tens of thousands of times without ever consciously noticing. That is good interface design doing its job invisibly. The same tick doubles as the in-world button press, meaning it covers both the settings menu and a secret redstone door. Perfect for punctuating a joke on a call.",
+  "origin": "The interface click from Minecraft.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1500
+}

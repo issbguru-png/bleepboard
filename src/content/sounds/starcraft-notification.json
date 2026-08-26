@@ -1,0 +1,17 @@
+{
+  "title": "StarCraft Notification",
+  "category": "gaming",
+  "tags": [
+    "starcraft",
+    "notification",
+    "blizzard",
+    "alert"
+  ],
+  "duration": 0.2,
+  "audio": "/audio/starcraft-notification.mp3",
+  "blurb": "Two tenths of a second of clean digital blip, and thousands of people have set it as their message tone. Blizzard's StarCraft games are full of these short alerts, built to cut through a battle without stealing attention from it, and that discipline is why the sound ages so well beside modern notification chimes. It sounds like competence. Put it on a phone and every incoming text starts to feel like a build order update rather than an interruption from somebody who wants something from you.",
+  "origin": "A notification blip from Blizzard's StarCraft.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 700
+}

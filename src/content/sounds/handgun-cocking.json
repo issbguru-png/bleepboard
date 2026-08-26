@@ -1,0 +1,17 @@
+{
+  "title": "Handgun Cocking",
+  "category": "sound-effects",
+  "tags": [
+    "cocking",
+    "click",
+    "foley",
+    "editing"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/handgun-cocking.mp3",
+  "blurb": "Two short metallic clicks and nothing else. Film has trained everybody to read that tiny noise as intent, so thoroughly that sound editors will add a cocking sound to weapons which do not mechanically make one, purely because audiences expect to hear it. That makes it unusually useful foley: it signals a change in the scene without needing a single frame of picture. On soundboards it lives almost entirely as comic timing, played immediately after somebody says something indefensible. Keep it dry and unprocessed if you are cutting it against real footage.",
+  "origin": "A generic handgun hammer-and-slide foley recording, widely used in video editing.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1100
+}
