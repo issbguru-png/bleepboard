@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
+import Woofer from '../components/Woofer.astro';
 import { SITE, hubPath } from '../lib/site';
 
 const sounds = await getCollection('sounds');
@@ -139,6 +140,40 @@ const schema = [
       taking off on TikTok or YouTube. Check the <a href="/new/">newest sounds</a> or
       browse by category above.
     </p>
+  </section>
+
+  <section class="section" id="woofer">
+    <div class="section-head">
+      <h2>Who runs this place</h2>
+    </div>
+    <div class="author-card">
+      <Woofer size={128} />
+      <div class="author-body">
+        <h3>Woofer</h3>
+        <p class="author-role">Bleepboard's resident sound gremlin</p>
+        <p>
+          Woofer is a speaker cabinet that grew legs and developed opinions. He lives
+          somewhere in the server rack, wears headphones he refuses to take off, and
+          spends his days doing the one thing he's good at: hearing a clip go viral and
+          immediately needing it catalogued.
+        </p>
+        <p>
+          His filing system is aggressive. A sound doesn't get a button here until Woofer
+          knows where it came from — which film, which stream, which unhinged six seconds
+          of someone's Tuesday. That's why every sound on this site has a write-up
+          instead of a shrug. He finds untagged audio genuinely upsetting.
+        </p>
+        <p>
+          His big driver twitches when something is about to trend. He is usually right,
+          and unbearable about it.
+        </p>
+        <p class="author-note">
+          Woofer is our mascot, not a real person — Bleepboard is made by a small team who
+          find a cartoon speaker easier to draw than themselves. Say hello on the
+          <a href="/about/">about page</a>.
+        </p>
+      </div>
+    </div>
   </section>
   </div>
 

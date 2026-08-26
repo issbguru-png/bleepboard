@@ -1,0 +1,60 @@
+---
+/**
+ * Woofer — Bleepboard's mascot. A speaker-cabinet creature in headphones.
+ * Deliberately illustrated rather than photographic: this is a brand character,
+ * not a person, and shouldn't read as one.
+ */
+interface Props {
+  size?: number;
+  class?: string;
+}
+const { size = 128, class: cls = '' } = Astro.props;
+---
+<svg
+  class={`woofer ${cls}`}
+  width={size}
+  height={size}
+  viewBox="0 0 128 128"
+  role="img"
+  aria-label="Woofer, the Bleepboard mascot — a speaker cabinet with headphones"
+>
+  <!-- ground shadow -->
+  <ellipse cx="64" cy="115" rx="30" ry="4.5" class="w-shadow" />
+
+  <!-- headphone band -->
+  <path
+    d="M28 56a36 36 0 0 1 72 0"
+    class="w-band"
+    fill="none"
+    stroke-width="7"
+    stroke-linecap="round"
+  />
+
+  <!-- cabinet body -->
+  <rect x="30" y="40" width="68" height="66" rx="15" class="w-body" />
+  <rect x="30" y="40" width="68" height="66" rx="15" class="w-body-edge" fill="none" stroke-width="2.5" />
+
+  <!-- tweeter (small driver, reads as the left eye) -->
+  <circle cx="50" cy="62" r="9" class="w-cone" />
+  <circle cx="50" cy="62" r="3.4" class="w-dust" />
+
+  <!-- second tweeter / right eye -->
+  <circle cx="78" cy="62" r="9" class="w-cone" />
+  <circle cx="78" cy="62" r="3.4" class="w-dust" />
+
+  <!-- woofer (big driver, reads as a mouth) -->
+  <circle cx="64" cy="88" r="13" class="w-cone" />
+  <circle cx="64" cy="88" r="6" class="w-dust-lg" />
+  <circle cx="64" cy="88" r="2.2" class="w-dust" />
+
+  <!-- ear cups -->
+  <rect x="16" y="50" width="16" height="26" rx="7" class="w-cup" />
+  <rect x="96" y="50" width="16" height="26" rx="7" class="w-cup" />
+
+  <!-- power LED -->
+  <circle cx="88" cy="47" r="2.2" class="w-led" />
+
+  <!-- feet -->
+  <rect x="40" y="104" width="14" height="7" rx="3.5" class="w-cup" />
+  <rect x="74" y="104" width="14" height="7" rx="3.5" class="w-cup" />
+</svg>

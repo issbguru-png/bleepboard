@@ -1186,3 +1186,68 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
   .hub-hero { padding-bottom: var(--s5); }
 }
 .stack-tight { display: flex; flex-direction: column; gap: var(--s3); }
+
+/* --- Woofer: mascot + the "who runs this" section ------------------------- */
+.woofer { display: block; flex: none; }
+.woofer .w-shadow { fill: var(--ink); opacity: 0.10; }
+.woofer .w-band   { stroke: var(--ink-2); }
+.woofer .w-body   { fill: var(--accent); }
+.woofer .w-body-edge { stroke: var(--accent-2); opacity: 0.55; }
+.woofer .w-cone   { fill: var(--surface); }
+.woofer .w-dust   { fill: var(--accent-2); }
+.woofer .w-dust-lg{ fill: var(--accent-soft); }
+.woofer .w-cup    { fill: var(--ink-2); }
+.woofer .w-led    { fill: var(--gold); }
+
+/* the big driver pulses gently, like it's idling */
+@media (prefers-reduced-motion: no-preference) {
+  .woofer .w-dust-lg {
+    transform-origin: 64px 88px;
+    animation: woofer-idle 2.8s var(--ease) infinite;
+  }
+}
+@keyframes woofer-idle {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+.author-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s5);
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s5) var(--s5) var(--s5) var(--s5);
+  box-shadow: var(--shadow-1);
+}
+.author-card > .woofer {
+  background: var(--accent-soft);
+  border-radius: var(--r);
+  padding: var(--s2);
+}
+.author-body { flex: 1 1 320px; min-width: 0; }
+.author-body h3 { margin: 0 0 var(--s1); }
+.author-role {
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 var(--s3);
+}
+.author-body p { margin: 0 0 var(--s3); max-width: 60ch; }
+.author-body p:last-child { margin-bottom: 0; }
+.author-note {
+  font-size: var(--step--1);
+  color: var(--ink-3);
+  border-top: 1px dashed var(--line-2);
+  padding-top: var(--s3);
+  margin-top: var(--s4) !important;
+}
+
+@media (max-width: 559px) {
+  .author-card { gap: var(--s4); padding: var(--s4); }
+  .author-card > .woofer { width: 88px; height: 88px; }
+}
