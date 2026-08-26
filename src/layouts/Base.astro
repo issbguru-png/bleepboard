@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE, canonical } from '../lib/site';
+import Analytics from '../components/Analytics.astro';
 import Woofer from '../components/Woofer.astro';
 
 interface Props {
@@ -29,6 +30,10 @@ const here = Astro.url.pathname;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {/* Consent Mode v2 defaults must run before any other Google script */}
+    <Analytics />
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />

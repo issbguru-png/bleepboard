@@ -1,0 +1,87 @@
+---
+/**
+ * An ad slot that doesn't wreck your Core Web Vitals.
+ *
+ * The failure mode this avoids: an ad loads late, pushes the page down, and
+ * your CLS tanks. Since Core Web Vitals is a ranking factor and this site is
+ * built entirely for organic search, an ad implementation that costs rankings
+ * costs more than it earns. So every slot reserves its height up front and the
+ * ad fills a box that was always there.
+ *
+ * Renders nothing at all when ads are off, so there are no empty grey boxes on
+ * an unmonetised site.
+ *
+ * Mediavine places its own ads by scanning the DOM — you generally do NOT hand-
+ * place units for it. These slots are therefore AdSense-only.
+ */
+import { ADSENSE_LIVE, ADSENSE_ID, CHILD_DIRECTED } from '../lib/monetization';
+
+interface Props {
+  /** AdSense ad unit slot ID, from the AdSense UI. */
+  slot: string;
+  /** Reserved height. Match this to the unit you configure, or you reintroduce CLS. */
+  minHeight?: number;
+  /** Mobile reserved height, if it differs. */
+  minHeightMobile?: number;
+  format?: string;
+  class?: string;
+  /** Label shown above the unit. Disclosure is good practice and some
+   *  jurisdictions expect it. */
+  label?: string;
+}
+
+const {
+  slot,
+  minHeight = 280,
+  minHeightMobile = 250,
+  format = 'auto',
+  class: cls = '',
+  label = 'Advertisement',
+} = Astro.props;
+---
+{ADSENSE_LIVE && (
+  <aside
+    class={`ad-slot ${cls}`}
+    style={`--ad-h:${minHeight}px;--ad-h-m:${minHeightMobile}px`}
+    aria-label={label}
+  >
+    <span class="ad-slot-label" aria-hidden="true">{label}</span>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={ADSENSE_ID}
+      data-ad-slot={slot}
+      data-ad-format={format}
+      data-full-width-responsive="true"
+      {...(CHILD_DIRECTED ? { 'data-tag-for-child-directed-treatment': '1' } : {})}
+    ></ins>
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </aside>
+)}
+
+<style>
+  .ad-slot {
+    display: block;
+    margin: var(--s6) auto;
+    /* Reserved before anything loads — this is the whole point. */
+    min-height: var(--ad-h-m);
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    contain: layout;
+  }
+  @media (min-width: 760px) {
+    .ad-slot { min-height: var(--ad-h); }
+  }
+  .ad-slot-label {
+    display: block;
+    font-size: var(--step--2);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: var(--s2);
+  }
+  .ad-slot .adsbygoogle { max-width: 100%; }
+</style>

@@ -1,0 +1,108 @@
+---
+/**
+ * Analytics, consent and ad-network loading. Renders in <head>.
+ *
+ * ORDER MATTERS AND IS NOT NEGOTIABLE:
+ *   1. Consent Mode v2 defaults  ← must run BEFORE anything Google loads
+ *   2. The CMP
+ *   3. gtag.js / ad network
+ *
+ * If the defaults don't run first, Google's tags fire with unset consent and
+ * you get exactly the violation the CMP was meant to prevent. That's why this
+ * is one inline block rather than separate components.
+ *
+ * Everything is gated on an ID being present in src/lib/monetization.ts, so an
+ * unconfigured site emits nothing at all.
+ */
+import {
+  GA4_ID, ADSENSE_ID, MEDIAVINE_ID,
+  ANALYTICS_LIVE, ADSENSE_LIVE, MEDIAVINE_LIVE, TRACKING_LIVE,
+  USE_GOOGLE_CMP, CHILD_DIRECTED,
+} from '../lib/monetization';
+
+/** EEA + UK + Switzerland. Consent is denied by default in these regions and
+ *  granted elsewhere — the standard compliant setup. */
+const CONSENT_REGIONS = [
+  'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT',
+  'LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',
+  'IS','LI','NO','GB','CH',
+];
+---
+{TRACKING_LIVE && (
+  <>
+    {/* 1. Consent Mode v2 defaults — before any Google script */}
+    <script is:inline define:vars={{ CONSENT_REGIONS, CHILD_DIRECTED }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      // Denied in the EEA/UK/CH until the CMP says otherwise.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        region: CONSENT_REGIONS,
+        wait_for_update: 500,
+      });
+
+      // Everywhere else: granted, which is the usual posture outside the EEA.
+      gtag('consent', 'default', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted',
+      });
+
+      // Child-directed sites must never personalise, in any region.
+      if (CHILD_DIRECTED) {
+        gtag('consent', 'update', {
+          ad_personalization: 'denied',
+          ad_user_data: 'denied',
+        });
+      }
+    </script>
+
+    {/* 2. Google Funding Choices — Google's own certified CMP */}
+    {USE_GOOGLE_CMP && ADSENSE_ID && (
+      <script
+        is:inline
+        async
+        src={`https://fundingchoicesmessages.google.com/i/${ADSENSE_ID.replace('ca-', '')}?ers=1`}
+      ></script>
+    )}
+
+    {/* 3a. GA4 */}
+    {ANALYTICS_LIVE && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script is:inline define:vars={{ GA4_ID }}>
+          gtag('js', new Date());
+          // No cross-site ad signals from a soundboard; keeps the footprint small.
+          gtag('config', GA4_ID, { anonymize_ip: true, allow_google_signals: false });
+        </script>
+      </>
+    )}
+
+    {/* 3b. AdSense */}
+    {ADSENSE_LIVE && (
+      <script
+        is:inline
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
+        crossorigin="anonymous"
+      ></script>
+    )}
+
+    {/* 3c. Mediavine — ships its own CMP, so USE_GOOGLE_CMP should stay off here */}
+    {MEDIAVINE_LIVE && (
+      <script
+        is:inline
+        async
+        data-noptimize="1"
+        data-cfasync="false"
+        src={`https://scripts.mediavine.com/tags/${MEDIAVINE_ID}.js`}
+      ></script>
+    )}
+  </>
+)}
