@@ -86,6 +86,12 @@ const here = Astro.url.pathname;
             <li><a href="/about/">About</a></li>
             <li><a href="/dmca/">DMCA</a></li>
             <li><a href="/privacy/">Privacy</a></li>
+            {/* CPRA wants this control reachable from every page, and it goes to
+                the section that explains what it does rather than to a button
+                that pretends to have done it. */}
+            <li class="foot-wide">
+              <a href="/privacy/#do-not-sell">Do Not Sell or Share My Personal Information</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -134,6 +140,14 @@ const here = Astro.url.pathname;
     padding: 0;
   }
 
+  /* The CPRA opt-out link has a long label by law rather than by choice, so on
+     mid-width screens the row can no longer hold every link. Wrapped lines are
+     pushed to the right edge, under the rest of the nav, so a wrap reads as a
+     second line of the same block instead of a stray orphan on the left. */
+  @media (min-width: 560px) {
+    .site-footer .footer-links { justify-content: flex-end; }
+  }
+
   @media (max-width: 559.98px) {
     .site-footer .wrap.footer-inner {
       flex-direction: column;
@@ -154,14 +168,27 @@ const here = Astro.url.pathname;
       gap: var(--s2);    /* one consistent value for rows and columns */
     }
 
-    /* Odd link count (5, since Privacy joined) would leave the last pill
-       orphaned in the left column with a hole beside it. Let it span the full
-       width instead, so the block always closes on a straight edge.
+    /* An odd link count would leave the last pill orphaned in the left column
+       with a hole beside it. Let it span the full width instead, so the block
+       always closes on a straight edge.
 
        :nth-child(odd):last-child is self-correcting rather than a hardcoded
-       "5th item" rule — it fires only when the count is actually odd, so
-       adding a sixth link silently restores the plain 3x2 grid. */
+       "5th item" rule — it fires only when the count is actually odd. With the
+       six links currently in the footer it stays dormant. */
     .site-footer .footer-links li:nth-child(odd):last-child {
+      grid-column: 1 / -1;
+    }
+
+    /* "Do Not Sell or Share My Personal Information" is four lines of text in a
+       140px column at 320px, so it takes a row of its own. */
+    .site-footer .footer-links li.foot-wide { grid-column: 1 / -1; }
+
+    /* Which leaves the five links ahead of it resolving to 2 + 2 + 1, with the
+       fifth alone beside a hole. Span that one too. Same self-correcting shape
+       as the rule above: it fires only while the count before the wide pill is
+       odd, so a seventh link restores the plain grid on its own. Browsers
+       without :has() land back on the orphan, which is cosmetic. */
+    .site-footer .footer-links li:nth-child(odd):has(+ li.foot-wide) {
       grid-column: 1 / -1;
     }
 
