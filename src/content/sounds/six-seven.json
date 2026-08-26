@@ -9,9 +9,10 @@
   ],
   "duration": 3.9,
   "audio": "/audio/six-seven.mp3",
-  "blurb": "Six... seven! The two numbers that broke a generation. Born from a Skrilla track and turbocharged by basketball edits, 67 became Gen Alpha's inside joke \u2014 a call-and-response chant with hand gestures, screamed in classrooms worldwide until teachers begged for mercy. It means nothing. It means everything. Ask a kid what 67 means and watch them short-circuit trying to explain. Peak brainrot, perfectly preserved.",
+  "blurb": "Six... seven! The two numbers that broke a generation. Born from Skrilla's track and turbocharged by basketball edits playing on the height 6'7\", it became Gen Alpha's inside joke \u2014 a call-and-response chant with an accompanying hand gesture, screamed across classrooms worldwide until teachers began confiscating the concept itself. It means nothing. It means everything. Ask a child what 67 means and watch them genuinely short-circuit attempting to explain, because there is no explanation, only participation. That gap between how much they care and how little it signifies is peak brainrot, perfectly preserved.",
   "origin": "From Skrilla's 'Doot Doot (6 7)', amplified by basketball edits into a global Gen Alpha chant.",
   "added": "2026-08-25T22:10:00+05:00",
   "featured": false,
-  "plays": 3200
+  "plays": 3200,
+  "explainer": "/blog/what-does-67-mean/"
 }

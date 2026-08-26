@@ -1,0 +1,17 @@
+{
+  "title": "Double Kill",
+  "category": "gaming",
+  "tags": [
+    "league-of-legends",
+    "double-kill",
+    "announcer",
+    "streak"
+  ],
+  "duration": 1.5,
+  "audio": "/audio/double-kill.mp3",
+  "blurb": "The first rung on the multi-kill ladder, and by far the one most people actually hear. Kill-streak announcers became standard across competitive games because they turn a private moment of competence into a public event, and the deep, clipped delivery is doing deliberate work — it sounds like a verdict rather than a score update. League of Legends, shooters and half the arena games ever made all run some version of it. Best used sarcastically, ideally after somebody completes two mildly difficult tasks in a row.",
+  "origin": "The double kill announcer callout from League of Legends (Riot Games).",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1900
+}

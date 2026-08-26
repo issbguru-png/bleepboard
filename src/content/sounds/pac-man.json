@@ -1,0 +1,17 @@
+{
+  "title": "Pac-Man",
+  "category": "gaming",
+  "tags": [
+    "pac-man",
+    "arcade",
+    "retro",
+    "waka"
+  ],
+  "duration": 11.7,
+  "audio": "/audio/pac-man.mp3",
+  "blurb": "Namco released Pac-Man in 1980 and accidentally invented a sound palette that practically everyone on earth can still identify. The opening jingle, the relentless waka-waka of the chomp, the ghost siren rising as the maze empties — all squeezed out of a chip with almost nothing to work with, and all instantly readable as video game. Toshio Kai's audio is a large part of why the character escaped the arcade into cereal boxes and Saturday morning cartoons. Certified arcade heritage, ready for any retro edit.",
+  "origin": "Arcade audio from Pac-Man (Namco, 1980), sound by Toshio Kai.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 2130
+}

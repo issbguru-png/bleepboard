@@ -9,7 +9,7 @@
   ],
   "duration": 1.0,
   "audio": "/audio/censor-bleep.mp3",
-  "blurb": "The 1000 Hz censor bleep \u2014 television's universal way of saying you know exactly what word that was. This is the clean, full-length one-second version, perfect for bleeping out names, brands, or your friend's terrible opinions in edits and streams. It's the sound Bleepboard is named after: press it over anything and the moment instantly becomes funnier than the uncensored version ever was.",
+  "blurb": "The 1000 Hz censor bleep \u2014 television's universal way of saying you know exactly what word that was. Broadcasters standardised on a single clean sine tone precisely because it's impossible to mistake for anything else, and the internet inherited it as comedy punctuation. This is the full one-second version, ready for bleeping out names, brands, or a friend's genuinely indefensible opinion. It's the sound Bleepboard is named after, and it has a strange property: applied to almost anything, the censored version lands harder than whatever was actually said.",
   "origin": "Broadcast TV censorship tone, standardized around a 1 kHz sine wave.",
   "added": "2026-08-25T19:23:47+05:00",
   "featured": true,

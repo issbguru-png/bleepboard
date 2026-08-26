@@ -1,0 +1,17 @@
+{
+  "title": "Minecraft Bow",
+  "category": "gaming",
+  "tags": [
+    "minecraft",
+    "bow",
+    "arrow",
+    "shoot"
+  ],
+  "duration": 0.5,
+  "audio": "/audio/minecraft-bow.mp3",
+  "blurb": "A creak of tension and the snap of release. Minecraft's bow gives you almost no feedback beyond this half-second sound and a small animation, so players learn to time a full draw entirely by ear: pull, listen, release, hope. Skeletons use exactly the same noise against you, which is why hearing it in a dark cave means you are already being shot at from somewhere you cannot see. In edits it works as a clean, dry launch sting for anything fired, thrown, or sent off into the distance.",
+  "origin": "The bow release sound from Minecraft.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1490
+}

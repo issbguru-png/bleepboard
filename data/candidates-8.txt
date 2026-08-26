@@ -1,0 +1,153 @@
+# Batch 8 candidates — already-cached (zero network)
+bite
+blink
+bowling-sound
+buy-item-geometry-dash
+c00lkidd-idle-laugh
+camera-flash
+charlie-browns-teacher-talking
+confetti-pop
+digital-glitch
+fnaf-1-door-sound
+fnaf-clank
+fnaf-foxy-running
+fnaf-opening-camera
+footsteps-approaching
+groan-tube
+heavy-applause
+im-freddy-fazbear
+joke-drums
+metal-banging
+pop
+roblox-explosion
+small-crowd-applause
+sparkle
+waterphone
+wazzup
+
+# Hazbin Hotel
+alastor-greeting
+alastor-lovely
+alastor-nuh-uh-uh
+alastor-so-its-a-deal
+nifty-laugh-hazbin-hotel
+rwarr-angel-dust-hazbin-hotel
+this-radio-hazbin-hotel
+
+# The Amazing Digital Circus
+i-am-god-the-amazing-digital-circus
+so-funny-the-amazing-digital-circus
+i-will-tear-you-to-pieces-tadc
+you-parasite-digital-circus
+are-you-smiling-why-not-digital-circus
+wheres-kinger-digital-circus
+
+# Poppy Playtime
+outsider-poppy-playtime
+limn-poppy-playtime
+
+# Minecraft
+minecraft-zombie
+minecraft-spider
+minecraft-potion
+minecraft-eating
+minecraft-drinking
+minecraft-cat
+minecraft-click
+minecraft-bow
+minecraft-firework
+minecraft-horse-death
+nether-portal
+
+# Among Us
+among-us-kill
+amongusbodyfound
+among-us-roundstart
+among-us-alert-buzzer
+
+# Fortnite
+fortnitechest
+fortniteboogiebomb
+fortnitestormincoming
+fortnite-slurp-juice
+
+# Valorant
+valorant-clutch
+valorant-spike-plant
+valorant-defuse
+valorant-teleporter
+
+# Team Fortress 2
+tf2-notification
+tf2-scout-scream
+tf2-frying-pan
+critical-hit-tf2-team-fortress-2
+tf2-nom-nom-nom
+
+# League of Legends
+pentakill
+double-kill
+jhin-laugh
+rammus-ok
+teemolaugh
+missing-ping-lol
+shut-down-league-of-legends
+
+# Roblox
+roblox-og-sounds
+adopt-me-roblox
+roblox-doors-open-door
+
+# Horror / atmosphere
+phasmophobia-heartbeat
+phasmophobia-ghost-attack
+backrooms-ambience
+creepy-i-see-you
+vecna-clock
+
+# Squid Game
+squid-game-wake-up
+
+# System / retro
+windows-95-startup
+windows-xp-shutdown
+windows-10-notification
+windows-11-error
+skype-call
+msn-new-message
+iphone-alarm
+iphoneringtone
+hello-moto
+cingular-att-ringtone
+cell-phone-ringing
+starcraft-notification
+game-boy-advance-startup
+gamecubeintro
+wii-click
+nintendo-switch-click
+pac-man
+
+# Sports
+goal-horn
+goalllll
+encara-messi
+aguero
+mbappe-special
+harry-maguire
+33-max-verstappen
+wwe-ring-bell
+
+# Misc SFX
+kaboom
+major-explosion
+gun-reload
+handgun-cocking
+sniper-shot
+microwave-noises
+flickering-neon
+concrete-sliding
+truck-horn-loud
+police-siren
+campus-fire-alarm
+loud-wind
+rain

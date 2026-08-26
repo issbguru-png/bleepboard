@@ -1,0 +1,17 @@
+{
+  "title": "Windows 10 Notification",
+  "category": "notification",
+  "tags": [
+    "windows",
+    "windows-10",
+    "notification",
+    "ping"
+  ],
+  "duration": 3.3,
+  "audio": "/audio/windows-10-notification.mp3",
+  "blurb": "A soft two-note ping, deliberately designed to be ignorable. Microsoft rebuilt the entire Windows sound palette around the idea that computers had stopped being things you sat down at and become things you lived beside, so the alerts got quieter, rounder and far less insistent than the XP era's sharp digital stabs. The result is a sound that tens of millions of people hear daily without ever consciously registering it — which makes it an outstanding prank. Play it in an open-plan office and watch a dozen heads turn.",
+  "origin": "The notification sound from Windows 10.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1920
+}

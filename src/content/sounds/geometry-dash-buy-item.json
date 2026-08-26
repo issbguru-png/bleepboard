@@ -1,0 +1,17 @@
+{
+  "title": "Geometry Dash Buy Item",
+  "category": "gaming",
+  "tags": [
+    "geometry-dash",
+    "shop",
+    "purchase",
+    "chime"
+  ],
+  "duration": 1.3,
+  "audio": "/audio/geometry-dash-buy-item.mp3",
+  "blurb": "Geometry Dash's shop keeps players coming back long after they have given up on the levels themselves. This is the confirmation you get when you finally hand over your hard-won orbs for an icon, a trail or a colour you did not really need — a bright, satisfied little chime engineered to make spending feel like winning. RobTop has always understood that the game's economy is half the addiction. Grinding for cosmetics you will look at for two seconds is the whole loop, and this is the noise that rewards you for completing it.",
+  "origin": "The purchase confirmation sound from the Geometry Dash shop.",
+  "added": "2026-08-26",
+  "featured": false,
+  "plays": 1310
+}
