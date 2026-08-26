@@ -12,6 +12,27 @@ npm run build      # static build → dist/
 npm run preview    # serve dist/ locally
 ```
 
+## Writing copy — read this before importing sounds
+
+**[docs/writing-blurbs.md](docs/writing-blurbs.md)** is the style guide. Every
+sound page carries hand-written copy, and that is the entire competitive
+argument of this site — rival soundboards ship templated filler.
+
+In Aug 2026 all 523 blurbs had to be rewritten because they read as
+machine-written: 517 em-dashes, 74 blurbs opening with the identical
+`Name — appositive` shape, 74 "which is exactly why". The style guide plus the
+audit below exist so that doesn't recur.
+
+```sh
+npm run audit        # sound blurbs — exits non-zero on a regression
+npm run audit:all    # + blog and category copy
+npm run check        # audit, then build
+```
+
+Run `npm run audit` after every import. It enforces 70–110 words, catches banned
+constructions, blocks duplicate blurbs and shared openings, and watches em-dash
+density (target ~0.25–0.40 per blurb — **zero is also a tell**).
+
 ## Adding a sound (the 48-hour trend pipeline)
 
 ```sh

@@ -42,8 +42,9 @@ const origin = arg('origin', '');
 
 // quality gate — mirrors the content schema
 const words = blurb.trim().split(/\s+/).length;
-if (words < 40) {
-  console.error(`Quality gate: blurb is ${words} words — minimum is 40 (aim for 60-120). Not shipping thin pages.`);
+if (words < 70) {
+  console.error(`Quality gate: blurb is ${words} words — minimum is 70, target 70-110.`);
+  console.error(`See docs/writing-blurbs.md. Thin pages are what sinks sites in this niche.`);
   process.exit(1);
 }
 const catFile = resolve(root, `src/content/categories/${category}.json`);

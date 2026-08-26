@@ -37,8 +37,8 @@ for (const item of manifest) {
     continue;
   }
   const words = blurb.trim().split(/\s+/).length;
-  if (words < 40) {
-    console.error(`✗ ${slug}: blurb is ${words} words (<40) — quality gate. Skipped.`);
+  if (words < 70) {
+    console.error(`✗ ${slug}: blurb is ${words} words (<70) — quality gate. Skipped. See docs/writing-blurbs.md`);
     failed.push(slug);
     continue;
   }

@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "audit": "node scripts/audit-copy.mjs",
+    "audit:all": "node scripts/audit-copy.mjs --all",
+    "check": "node scripts/audit-copy.mjs && astro build"
   },
   "dependencies": {
     "astro": "^7.2.6"
