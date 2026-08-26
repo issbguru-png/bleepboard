@@ -34,6 +34,39 @@ const audioUrl = SITE.url + d.audio;
 const title = `${d.title} Sound Button — Play & Download MP3 | ${SITE.name}`;
 const description = `Play the ${d.title} sound button instantly and download the MP3 free. ${d.origin ?? ''}`.slice(0, 158);
 
+// --- Share targets -------------------------------------------------------
+// We always share the sound *page*, never the bare MP3: the page carries the
+// title, the player, the download, and the licence context.
+const enc = encodeURIComponent;
+const shareText = `${d.title} sound button on ${SITE.name}`;
+const shareLinks = [
+  { label: 'Share on X', href: `https://x.com/intent/post?text=${enc(shareText)}&url=${enc(pageUrl)}` },
+  { label: 'Share on Reddit', href: `https://www.reddit.com/submit?url=${enc(pageUrl)}&title=${enc(shareText)}` },
+  { label: 'Share on WhatsApp', href: `https://wa.me/?text=${enc(`${shareText} ${pageUrl}`)}` },
+];
+
+// --- Report targets ------------------------------------------------------
+// There is no form backend, so a report is a real email the visitor sends,
+// pre-filled so they don't have to describe which clip they mean. The reason
+// only changes the subject line — that's what routes it on our end.
+const REPORT_TO = 'dmca@bleepboard.com';
+const reportBody = [
+  `Sound: ${d.title}`,
+  `Page: ${pageUrl}`,
+  `Audio: ${audioUrl}`,
+  '',
+  'What is wrong with it:',
+  '',
+  '',
+].join('\n');
+const reportLink = (subject: string) =>
+  `mailto:${REPORT_TO}?subject=${enc(subject)}&body=${enc(reportBody)}`;
+const reportOptions = [
+  { label: 'Copyright claim', href: reportLink(`Copyright claim: ${d.title} (${sound.id})`) },
+  { label: 'Broken or wrong audio', href: reportLink(`Broken audio: ${d.title} (${sound.id})`) },
+  { label: 'Inappropriate content', href: reportLink(`Inappropriate content: ${d.title} (${sound.id})`) },
+];
+
 const embedCode = `<iframe
   src="${SITE.url}/embed/${sound.id}/"
   width="220" height="90" style="border:0"
@@ -121,12 +154,96 @@ const schema = [
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
         Download MP3
       </a>
-      <button class="btn" type="button" data-copy={pageUrl}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 13.5a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M13.5 10.5a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1-1"/></svg>
-        <span data-copy-label>Copy link</span>
+      <button
+        class="btn"
+        type="button"
+        data-menu="share"
+        data-share-url={pageUrl}
+        data-share-title={d.title}
+        data-share-text={shareText}
+        aria-controls="share-menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.4 10.7 7.2-4.4"/><path d="m8.4 13.3 7.2 4.4"/></svg>
+        Share
       </button>
+      <div class="actions-menu" id="share-menu" hidden>
+        <p class="menu-note">Send this sound button to someone.</p>
+        <button class="menu-item" type="button" data-copy={pageUrl}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 13.5a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M13.5 10.5a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+          <span data-copy-label aria-live="polite">Copy link</span>
+        </button>
+        {shareLinks.map((l) => (
+          <a class="menu-item" href={l.href} target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5"/><path d="M14 4h6v6"/><path d="m20 4-8.5 8.5"/></svg>
+            {l.label}
+          </a>
+        ))}
+      </div>
+
+      <button
+        class="btn fav-btn"
+        id="fav-btn"
+        type="button"
+        data-fav={sound.id}
+        aria-pressed="false"
+        aria-label={`Save ${d.title} to your favourites`}
+      >
+        <svg class="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4 4.9 13.3a4.5 4.5 0 0 1 6.4-6.3l.7.7.7-.7a4.5 4.5 0 0 1 6.4 6.3z"/></svg>
+        <span class="fav-label" aria-hidden="true"><span class="on">Saved</span><span class="off">Save</span></span>
+      </button>
+
       <a class="btn" href={`#embed`}>Embed</a>
     </div>
+
+    <p class="sound-actions-minor">
+      <a class="minor-link" href="/favourites/" data-fav-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4 4.9 13.3a4.5 4.5 0 0 1 6.4-6.3l.7.7.7-.7a4.5 4.5 0 0 1 6.4 6.3z"/></svg>
+        Your favourites<span data-fav-count></span>
+      </a>
+      <span class="minor-sep" aria-hidden="true">·</span>
+      <button
+        class="minor-link"
+        type="button"
+        data-menu="report"
+        aria-controls="report-menu"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21.5V4"/><path d="M5 5h12.5l-2.2 3.8L17.5 12.5H5z"/></svg>
+        Report this sound
+      </button>
+      <span class="fav-warn" data-fav-warn hidden>
+        Favourites need site storage, which this browser has turned off — saving is unavailable here.
+      </span>
+    </p>
+
+    <div class="actions-menu" id="report-menu" hidden>
+      <p class="menu-note">
+        Opens an email to <b>{REPORT_TO}</b> with this sound already filled in.
+        Nothing is sent until you send it.
+      </p>
+      {reportOptions.map((o) => (
+        <a class="menu-item" href={o.href}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          {o.label}
+        </a>
+      ))}
+      <hr class="menu-sep" />
+      <a class="menu-item quiet" href="/dmca/">Formal DMCA takedown process →</a>
+    </div>
+
+    <script is:inline define:vars={{ favSlug: sound.id }}>
+      /* Paint the saved state before first paint so the heart never flickers. */
+      try {
+        var bbList = JSON.parse(localStorage.getItem('bleepboard:favourites') || '[]');
+        if (Array.isArray(bbList)) {
+          var bbBtn = document.getElementById('fav-btn');
+          if (bbBtn && bbList.indexOf(favSlug) > -1) bbBtn.setAttribute('aria-pressed', 'true');
+          var bbCount = document.querySelector('[data-fav-count]');
+          if (bbCount && bbList.length) bbCount.textContent = ' (' + bbList.length + ')';
+        }
+      } catch (e) {}
+    </script>
   </div>
 
   <section class="section prose">
@@ -176,4 +293,136 @@ const schema = [
       </div>
     </section>
   )}
+
+  <script src="../../scripts/sound-actions.ts"></script>
 </Base>
+
+<style>
+  /* Comfortable thumb targets — most of this site's traffic is phones. */
+  .sound-actions .btn { min-height: 44px; }
+
+  /* --- favourite toggle --------------------------------------------------
+     Both labels share one grid cell, so the button is always as wide as the
+     longer word and swapping state never nudges the row. */
+  .fav-label { display: grid; }
+  .fav-label > span { grid-area: 1 / 1; text-align: left; }
+  .fav-label .on { visibility: hidden; }
+  .fav-btn[aria-pressed='true'] .fav-label .on { visibility: visible; }
+  .fav-btn[aria-pressed='true'] .fav-label .off { visibility: hidden; }
+  .fav-btn .i-heart { transition: fill 0.16s var(--ease); }
+  .fav-btn[aria-pressed='true'] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-text);
+  }
+  .fav-btn[aria-pressed='true'] .i-heart { fill: currentColor; }
+  .fav-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+  .fav-btn[disabled]:hover {
+    transform: none;
+    border-color: var(--line-2);
+    box-shadow: var(--shadow-1);
+  }
+
+  /* --- quiet secondary line ---------------------------------------------- */
+  .sound-actions-minor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 var(--s3);
+    margin: var(--s2) 0 0;
+    font-size: var(--step--1);
+    color: var(--ink-3);
+  }
+  .minor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 2px;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-weight: 650;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .minor-link:hover { color: var(--accent-text); }
+  .minor-link svg { width: 15px; height: 15px; flex: none; }
+  .minor-sep { opacity: 0.45; }
+  .fav-warn { flex-basis: 100%; padding-bottom: var(--s2); }
+  [data-fav-nav][hidden] { display: none; }
+
+  /* --- share / report menus ----------------------------------------------
+     position:fixed so they escape .sound-hero's overflow:hidden and can never
+     shift the page when they open. */
+  .actions-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    min-width: 236px;
+    max-width: min(330px, calc(100vw - 24px));
+    padding: 6px;
+    border: 1px solid var(--line-2);
+    border-radius: var(--r);
+    background: var(--surface);
+    box-shadow: var(--shadow-3), var(--shadow-2);
+  }
+  .menu-note {
+    margin: 6px 8px 8px;
+    font-size: var(--step--2);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--ink-3);
+  }
+  .menu-note b { color: var(--ink-2); }
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: var(--r-sm);
+    background: none;
+    color: var(--ink);
+    font: inherit;
+    font-size: var(--step--1);
+    font-weight: 650;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menu-item:hover,
+  .menu-item:focus-visible { background: var(--surface-2); color: var(--ink); }
+  .menu-item svg { width: 16px; height: 16px; flex: none; color: var(--ink-3); }
+  .menu-item.quiet { font-weight: 600; color: var(--ink-3); }
+  .menu-item.quiet:hover { color: var(--accent-text); }
+  .menu-sep { margin: 6px 8px; border: 0; border-top: 1px solid var(--line); }
+
+  @media (max-width: 560px) {
+    /* A bottom sheet is easier to reach one-handed than a floating anchor. */
+    .actions-menu {
+      top: auto;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      min-width: 0;
+      max-width: none;
+      padding: 8px;
+    }
+    .menu-item { min-height: 48px; font-size: var(--step-0); }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .actions-menu { animation: menu-in 0.14s var(--ease); }
+    @keyframes menu-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+</style>

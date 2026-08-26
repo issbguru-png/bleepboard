@@ -1,0 +1,171 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Everything on this page is per-visitor and lives in their browser, so there
+// is nothing here for a crawler to index — hence noindex, and no sitemap entry.
+---
+<Base
+  title="Your Favourites | Bleepboard"
+  description="The sound buttons you've saved on this device."
+  noindex={true}
+>
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>Saved on this device</p>
+    <h1>Your favourites</h1>
+    <p class="lede">
+      Every sound you've hit <b>Save</b> on. There's no account behind this — the list is
+      stored in this browser only, never sent anywhere, and clearing your browsing data
+      clears it too.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 id="fav-heading">Saved sounds</h2>
+      <button class="section-link" type="button" id="fav-clear" hidden>Clear all ✕</button>
+    </div>
+    <p class="result-count" id="fav-status" role="status">Loading your favourites…</p>
+    <div class="grid grid--lg" id="fav-grid" aria-labelledby="fav-heading"></div>
+
+    <p class="empty-state" id="fav-empty" hidden>
+      <b>Nothing saved yet.</b><br />
+      Open any sound and press <b>Save</b> — it'll show up here.<br />
+      <a href="/">Browse the soundboard →</a> &nbsp;·&nbsp; <a href="/trending/">See what's trending →</a>
+    </p>
+
+    <p class="empty-state" id="fav-blocked" hidden>
+      <b>Favourites need site storage.</b><br />
+      This browser has it turned off (private mode or blocked site data), so there's
+      nowhere to keep your list. Everything else on Bleepboard still works.
+    </p>
+  </section>
+</Base>
+
+<style is:global>
+  /* Namespaced to this page's markup only — the cards are injected by script,
+     so they can't carry Astro's scoping attribute. */
+  .fav-item { display: grid; gap: 6px; align-content: start; }
+  .fav-remove {
+    min-height: 44px;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    background: var(--surface-2);
+    color: var(--ink-3);
+    font: inherit;
+    font-size: var(--step--2);
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .fav-remove:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-text);
+  }
+  #fav-clear[hidden] { display: none; }
+</style>
+
+<script>
+  import { readFavourites, storageAvailable, writeFavourites, removeFavourite } from '../scripts/favourites';
+
+  interface Item {
+    slug: string;
+    title: string;
+    tags: string[];
+    category: string;
+    audio: string;
+    duration: number;
+  }
+
+  const grid = document.getElementById('fav-grid')!;
+  const status = document.getElementById('fav-status')!;
+  const empty = document.getElementById('fav-empty')!;
+  const blocked = document.getElementById('fav-blocked')!;
+  const clearBtn = document.getElementById('fav-clear') as HTMLButtonElement;
+
+  const esc = (s: string) =>
+    s.replace(/[&<>"']/g, (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!
+    );
+  const dur = (n: number) => `${n.toFixed(1).replace(/\.0$/, '')}s`;
+
+  const PLAY =
+    '<svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z"/></svg>';
+
+  /** Same card the homepage search renders, plus a remove control. */
+  function card(s: Item) {
+    const title = esc(s.title);
+    return `<div class="fav-item">
+      <article class="bleep" data-cat="${esc(s.category)}" style="--dur:${s.duration}s">
+        <button class="bleep-play" type="button" data-src="${esc(s.audio)}" data-slug="${esc(s.slug)}" aria-label="Play ${title}" aria-pressed="false">
+          <span class="bleep-ico" aria-hidden="true">${PLAY}<span class="i-eq"><i></i><i></i><i></i></span></span>
+          <span class="bleep-dur" aria-hidden="true">${dur(s.duration)}</span>
+          <span class="bleep-bar" aria-hidden="true"></span>
+        </button>
+        <a class="bleep-title" href="/sound/${esc(s.slug)}/"><span>${title}</span></a>
+      </article>
+      <button class="fav-remove" type="button" data-remove="${esc(s.slug)}" aria-label="Remove ${title} from your favourites">Remove</button>
+    </div>`;
+  }
+
+  function showEmpty() {
+    grid.innerHTML = '';
+    empty.hidden = false;
+    clearBtn.hidden = true;
+    status.textContent = 'No sounds saved yet.';
+  }
+
+  let index: Item[] | null = null;
+
+  async function render() {
+    const slugs = readFavourites();
+    if (!slugs.length) return showEmpty();
+
+    if (!index) {
+      try {
+        index = (await (await fetch('/search-index.json')).json()) as Item[];
+      } catch {
+        status.textContent =
+          'Your favourites are saved, but the sound list could not be loaded. Check your connection and reload.';
+        return;
+      }
+    }
+
+    const by = new Map(index.map((s) => [s.slug, s]));
+    const found = slugs.map((s) => by.get(s)).filter((s): s is Item => Boolean(s));
+
+    // A sound that no longer exists (removed on a takedown) is dropped for good.
+    if (found.length !== slugs.length) writeFavourites(found.map((s) => s.slug));
+    if (!found.length) return showEmpty();
+
+    empty.hidden = true;
+    clearBtn.hidden = false;
+    grid.innerHTML = found.map(card).join('');
+    status.textContent = `${found.length} saved sound${found.length === 1 ? '' : 's'}, newest first.`;
+  }
+
+  if (!storageAvailable()) {
+    status.hidden = true;
+    blocked.hidden = false;
+  } else {
+    grid.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-remove]');
+      if (!btn) return;
+      removeFavourite(btn.dataset.remove!);
+      render();
+    });
+
+    clearBtn.addEventListener('click', () => {
+      if (!confirm('Remove every saved sound from this browser?')) return;
+      writeFavourites([]);
+      render();
+      clearBtn.blur();
+    });
+
+    // Saved or removed in another tab while this one was open.
+    window.addEventListener('storage', () => render());
+
+    render();
+  }
+</script>
