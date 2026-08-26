@@ -8,8 +8,12 @@ Deploys automatically from `main` via GitHub Pages on every push.
 **Analytics:** GA4 live (`G-RE0Q1R4421`) with Consent Mode v2 — denied by default in
 EEA/UK/CH until a CMP is answered, granted elsewhere.
 
-**Not indexed.** No Search Console property exists, so none of this is in Google yet.
-This is the single biggest open item; everything else compounds only after it.
+**Search Console:** property added and `https://bleepboard.com/sitemap_index.xml`
+submitted (2026-08-26). Note the filename uses an underscore. Indexing takes weeks
+at this age — check coverage in GSC before assuming anything is wrong.
+
+**Backlinks are now the single biggest open item.** The content and technical work
+is done; nothing is pointing at it.
 
 ## Stack
 
@@ -29,26 +33,24 @@ npm run build
 - **[docs/writing-blurbs.md](docs/writing-blurbs.md)** is the copy SOP. Read it before
   writing any blurb. `npm run audit` enforces it and exits non-zero on regression.
 - `data/import-batch-7.json` is the quality benchmark for manifests.
-- **56 sounds are already validated and cached** in `.cache/audio/` — zero network
-  cost, they just need copy written.
+- **114 sounds are already validated and cached** in `.cache/audio/` — zero network
+  cost, they just need copy written. (261 files are cached; 147 are already imported.)
 
-## Cloudflare migration — prepared, needs owner to execute
+## Cloudflare migration — prepared, DECIDED AGAINST 2026-08-26
 
-Everything on the code side is ready: `public/_headers` (cache + security rules,
-inert on GitHub Pages), `wrangler.toml`, and a full runbook at
-**[docs/migrate-to-cloudflare.md](docs/migrate-to-cloudflare.md)**.
+Code side is ready if this is ever revisited: `public/_headers`, `wrangler.toml`,
+and a runbook at **[docs/migrate-to-cloudflare.md](docs/migrate-to-cloudflare.md)**.
 
-Blocked on three things only the account holder can do: create a Cloudflare
-account, run `npx wrangler login` (browser OAuth), and change DNS at Dynadot.
+**Do not migrate for speed.** The original 1,453 ms figure that justified this was
+measured badly. A real `.pages.dev` deployment was slower, not faster: 611-773 ms
+against GitHub Pages' 250 ms, with `cf-ray` showing the request routed to a
+Singapore PoP. The recommendation was wrong and the owner chose to stay on GitHub.
 
-Measured 2026-08-26 — why it's worth doing:
-- Cold audio latency 1,453 ms vs soundboardguys.com's 1,039 ms (they use a
-  media CDN, we use GitHub Pages).
-- GitHub Pages sends `max-age=600` on 40 MB of MP3s that never change.
-- The play-count Function has never run (see below).
+The `max-age=600` problem it was meant to solve is now handled in `public/sw.js`
+instead — see **[docs/audio-performance.md](docs/audio-performance.md)**. Cached
+audio replays in 2 ms against 340 ms cold.
 
-Best done now, at zero traffic: URLs don't change, so it's a hosting swap
-rather than an SEO migration, and rollback is a DNS revert.
+The only remaining reason to move is server-side code (play counts, below).
 
 ## Known limitation: play counts don't work
 
@@ -91,8 +93,7 @@ notice. Flip that constant when ads launch.
 
 ## Content backlog
 
-- 56 cached sounds ready to import (see above).
+- 114 cached sounds ready to import (see above).
 - Enough adjacent material for a `/cartoon-soundboard/` hub with real headroom.
-- Seven wave-1 blog articles run 322–483 words against wave-2's 687–793. Worth
-  expanding to match.
+- ~~Seven short wave-1 articles~~ — done. Shortest article is now 675 words.
 - ~1,100 unimported slugs remain in the source catalogue.
