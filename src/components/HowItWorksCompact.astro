@@ -1,0 +1,294 @@
+---
+/**
+ * HowItWorksCompact — the homepage-sized cousin of TrendPipeline.
+ *
+ * TrendPipeline (/about/) tells this story with four illustrated 140×100 scenes
+ * and a paragraph each. That is right for the about page and far too tall for
+ * the home page, so this is the same four beats compressed into one short strip
+ * of icon-sized steps, ending in a link through to the full version.
+ *
+ * ACCURACY NOTE — same warning that sits on TrendPipeline, and it matters more
+ * here because short copy is where inflated claims sneak back in:
+ *   - scripts/trend-monitor.mjs fetches Google Trends rising queries and filters
+ *     them against SOUND_HINTS.
+ *   - .github/workflows/trend-digest.yml runs it on a `30 13 * * *` cron — once
+ *     a day — and writes a digest.
+ *   - That digest is a list of suggestions, not a publish queue. Everything
+ *     after it is a person: finding the clip, checking it, writing it up.
+ *     src/content.config.ts enforces `blurb: z.string().min(200)`, so a thin
+ *     write-up fails the build.
+ * Detection is automated; publishing is not. Never write "instant", "24/7",
+ * "continuous", "real time" or fleet-of-bots claims into this component, and do
+ * not promise a publishing cadence.
+ *
+ * Renders its own `.section` wrapper so it drops straight into the home page's
+ * rhythm between the existing sections. Heading is an <h2> — never an <h1>.
+ */
+interface Props {
+  /** section heading (rendered as an h2) */
+  heading?: string;
+  /** one-line standfirst under the heading */
+  sub?: string;
+  /** id for the <section>, for in-page anchors */
+  id?: string;
+}
+const {
+  heading = 'How a sound gets found',
+  sub = 'Bots watch, humans decide. Here is the short version.',
+  id = 'how-it-works',
+} = Astro.props;
+
+const steps = [
+  {
+    n: 1,
+    kind: 'bot',
+    tag: 'Automated',
+    title: 'A bot reads the charts',
+    body: 'Once a day, it pulls rising Google Trends queries.',
+  },
+  {
+    n: 2,
+    kind: 'bot',
+    tag: 'Automated',
+    title: 'Sound-ish ones kept',
+    body: 'A digest of suggestions, not a queue.',
+  },
+  {
+    n: 3,
+    kind: 'human',
+    tag: 'Human',
+    title: 'A human decides',
+    body: 'Someone finds the clip and listens to it.',
+  },
+  {
+    n: 4,
+    kind: 'human',
+    tag: 'Human',
+    title: 'No write-up, no button',
+    body: 'A description too thin fails the build.',
+  },
+];
+---
+
+<section class="section hiwc" id={id}>
+  <div class="section-head">
+    <h2>{heading}</h2>
+  </div>
+  <p class="section-sub">{sub}</p>
+
+  <ol class="hiwc-steps" role="list">
+    {steps.map((s) => (
+      <li class="hiwc-card" data-kind={s.kind}>
+        <span class="hiwc-tile">
+          {s.n === 1 && (
+            /* radar scope with a blip — the daily scan */
+            <svg class="hiwc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9" />
+              <circle cx="12" cy="12" r="4" />
+              <path d="m12 12 6.4-6.4" />
+              <circle class="hiwc-ping" cx="16.4" cy="15.4" r="1.5" />
+            </svg>
+          )}
+          {s.n === 2 && (
+            /* funnel — most rising queries fall straight through */
+            <svg class="hiwc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M3.5 4.5h17L14 12.5V19l-4 2v-8.5z" />
+            </svg>
+          )}
+          {s.n === 3 && (
+            /* headphones — a person actually listens to the clip */
+            <svg class="hiwc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+              <rect x="2.5" y="13.5" width="5" height="7" rx="2.5" />
+              <rect x="16.5" y="13.5" width="5" height="7" rx="2.5" />
+            </svg>
+          )}
+          {s.n === 4 && (
+            /* lines of text with a caret — the write-up, typed by hand */
+            <svg class="hiwc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M4 6h16" />
+              <path d="M4 12h16" />
+              <path d="M4 18h7" />
+              <path class="hiwc-caret" d="M13.5 15v6" />
+            </svg>
+          )}
+        </span>
+
+        <div class="hiwc-text">
+          <p class="hiwc-kind"><span class="hiwc-n">{s.n}</span>{s.tag}</p>
+          <h3 class="hiwc-title">{s.title}</h3>
+          <p class="hiwc-body">{s.body}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <p class="hiwc-more">
+    <a class="hiwc-more-link" href="/about/#pipeline">
+      How it works in full <span class="hiwc-arrow" aria-hidden="true">&#8594;</span>
+    </a>
+  </p>
+</section>
+
+<style>
+  /* ---- the strip --------------------------------------------------------
+     One column of thin rows on a phone, 2×2 on a large phone/tablet, a single
+     four-across strip on desktop. The card stays horizontal at every size —
+     that is what keeps this a fraction of TrendPipeline's height. */
+  .hiwc .section-sub { margin-bottom: var(--s3); }
+
+  .hiwc-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+    margin: var(--s4) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (min-width: 560px) {
+    .hiwc-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 940px) {
+    .hiwc-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); }
+  }
+
+  .hiwc-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s3);
+    min-width: 0;
+    padding: var(--s3);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow-1);
+  }
+  .hiwc-card:hover { border-color: var(--line-2); }
+
+  /* ---- glyph tile -------------------------------------------------------
+     Neutral for the automated steps, accent-tinted for the human ones, so the
+     "bots watch, humans decide" split is readable before a word is read. */
+  .hiwc-tile {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--r-sm);
+    background: var(--surface-3);
+    color: var(--ink-2);
+  }
+  [data-kind='human'] .hiwc-tile {
+    background: var(--accent-soft);
+    color: var(--accent-text);
+  }
+  .hiwc-ico { display: block; width: 19px; height: 19px; }
+  .hiwc-ping { fill: currentColor; stroke: none; }
+
+  /* ---- step text --------------------------------------------------------- */
+  .hiwc-text { min-width: 0; }
+
+  .hiwc-kind {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 3px;
+    font-size: var(--step--2);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--ink-3);
+  }
+  .hiwc-n {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 10px;
+    letter-spacing: 0;
+    background: var(--surface-3);
+    color: var(--ink-2);
+  }
+  [data-kind='human'] .hiwc-n {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .hiwc-title {
+    margin: 0 0 2px;
+    font-size: var(--step-0);
+    font-weight: 750;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    overflow-wrap: break-word;
+  }
+  .hiwc-body {
+    margin: 0;
+    max-width: 42ch;
+    font-size: var(--step--1);
+    line-height: 1.45;
+    color: var(--ink-2);
+    overflow-wrap: break-word;
+  }
+
+  /* ---- link through to the long version ---------------------------------- */
+  .hiwc-more { margin: var(--s3) 0 0; font-size: var(--step--1); }
+  .hiwc-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    color: var(--ink-2);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--line-2);
+    padding-bottom: 1px;
+  }
+  .hiwc-more-link:hover { color: var(--accent-text); border-color: currentColor; }
+  .hiwc-arrow { display: inline-block; }
+
+  /* ---- motion -----------------------------------------------------------
+     Everything animated lives in this one guard. The resting drawing is the
+     complete drawing: the radar blip sits at full opacity and the caret is
+     solid, so a reader with reduced motion sees a finished graphic, not a
+     half-faded one. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hiwc-card { transition: transform 0.18s var(--ease), border-color 0.18s var(--ease); }
+    .hiwc-card:hover { transform: translateY(-2px); }
+
+    .hiwc-ping {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: hiwc-ping 4.2s var(--ease) infinite;
+    }
+    .hiwc-caret { animation: hiwc-blink 1.8s steps(1, end) infinite; }
+
+    .hiwc-arrow { transition: transform 0.18s var(--ease); }
+    .hiwc-more-link:hover .hiwc-arrow { transform: translateX(3px); }
+  }
+
+  @keyframes hiwc-ping {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    46%      { opacity: 0.3; transform: scale(0.6); }
+  }
+  @keyframes hiwc-blink {
+    0%, 58%   { opacity: 1; }
+    59%, 100% { opacity: 0.25; }
+  }
+
+
+  /* Below 560px the strip stacks, which ran ~500px tall on a phone — more than
+     "brief". Tighten the card so all four steps fit in ~370px with no content
+     dropped: smaller tile, tighter padding, denser type. */
+  @media (max-width: 559.98px) {
+    .hiwc-steps { gap: var(--s2); }
+    .hiwc-card { padding: var(--s2) var(--s3); gap: var(--s3); align-items: center; }
+    .hiwc-tile { width: 28px; height: 28px; }
+    .hiwc-ico { width: 16px; height: 16px; }
+    .hiwc-kind { font-size: 10px; margin-bottom: 2px; }
+    .hiwc-card h3 { font-size: var(--step-0); line-height: 1.15; }
+    .hiwc-body { font-size: var(--step--1); line-height: 1.3; }
+  }
+</style>

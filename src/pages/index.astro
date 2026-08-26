@@ -5,6 +5,7 @@ import SoundButton from '../components/SoundButton.astro';
 import CategoryIcon from '../components/CategoryIcon.astro';
 import StatIcon from '../components/StatIcon.astro';
 import Woofer from '../components/Woofer.astro';
+import HowItWorksCompact from '../components/HowItWorksCompact.astro';
 import { SITE, hubPath } from '../lib/site';
 
 const sounds = await getCollection('sounds');
@@ -144,6 +145,8 @@ const schema = [
       ))}
     </div>
   </section>
+
+  <HowItWorksCompact />
 
   <!-- One panel, two jobs: the product explainer leads because it is what a
        first-time visitor actually needs; Woofer's bio follows in a tinted
