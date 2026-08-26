@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CategoryIcon from '../components/CategoryIcon.astro';
+import StatIcon from '../components/StatIcon.astro';
 import { hubPath } from '../lib/site';
 
 const categories = (await getCollection('categories')).sort(
@@ -22,16 +23,19 @@ for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category)
   </nav>
 
   <section class="page-head">
-    <p class="eyebrow"><span class="tick"></span>{categories.length} soundboards</p>
+    <div class="hero-mark">
+      <StatIcon name="categories" size={48} />
+      <p class="eyebrow"><span class="tick"></span>{categories.length} soundboards</p>
+    </div>
     <h1>Soundboard categories</h1>
     <p class="lede">
       Every board on Bleepboard, each with its own corner of the internet —
       from brainrot and TikTok audio to clean, usable sound effects.
     </p>
-    <ul class="stats">
-      <li><b class="tnum">{sounds.length}</b> sound buttons total</li>
-      <li><b class="tnum">{categories.length}</b> categories</li>
-      <li><b>Free</b> MP3 downloads</li>
+    <ul class="stats stats--icon">
+      <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> sound buttons total</span></li>
+      <li><StatIcon name="categories" /><span><b class="tnum">{categories.length}</b> categories</span></li>
+      <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
     </ul>
   </section>
 

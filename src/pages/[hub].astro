@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
 import CategoryIcon from '../components/CategoryIcon.astro';
+import StatIcon from '../components/StatIcon.astro';
 import { SITE, hubPath } from '../lib/site';
 
 export async function getStaticPaths() {
@@ -67,13 +68,16 @@ if (d.faq.length > 0) {
   </nav>
 
   <section class="hub-hero">
-    <p class="eyebrow"><span class="tick"></span>Soundboard</p>
+    <div class="hero-mark">
+      <CategoryIcon cat={category.id} size={48} />
+      <p class="eyebrow"><span class="tick"></span>Soundboard</p>
+    </div>
     <h1>{d.hubTitle}</h1>
     <p class="lede">{lede}</p>
-    <ul class="stats">
-      <li><b class="tnum">{sounds.length}</b> sound buttons</li>
-      <li><b>Free</b> MP3 downloads</li>
-      <li><b>Instant</b> — no signup</li>
+    <ul class="stats stats--icon">
+      <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> sound buttons</span></li>
+      <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
+      <li><StatIcon name="instant" /><span><b>Instant</b> — no signup</span></li>
     </ul>
   </section>
 

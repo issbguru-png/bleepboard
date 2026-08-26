@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
+import StatIcon from '../components/StatIcon.astro';
 
 const sounds = (await getCollection('sounds')).sort(
   (a, b) => b.data.plays - a.data.plays
@@ -15,16 +16,19 @@ const totalPlays = sounds.reduce((n, s) => n + s.data.plays, 0);
   description="The most played sound buttons on Bleepboard right now. Viral meme sounds ranked by real plays — tap to play, free to download."
 >
   <section class="page-head">
-    <p class="eyebrow"><span class="tick"></span>Updated continuously</p>
+    <div class="hero-mark">
+      <StatIcon name="ranked" size={48} />
+      <p class="eyebrow"><span class="tick"></span>Updated continuously</p>
+    </div>
     <h1>Trending sounds</h1>
     <p class="lede">
       Ranked by plays — what the internet is actually pressing right now.
       Number one moves whenever a new clip catches.
     </p>
-    <ul class="stats">
-      <li><b class="tnum">{sounds.length}</b> sounds ranked</li>
-      <li><b class="tnum">{totalPlays.toLocaleString()}</b> plays counted</li>
-      <li><b>Free</b> MP3 downloads</li>
+    <ul class="stats stats--icon">
+      <li><StatIcon name="ranked" /><span><b class="tnum">{sounds.length}</b> sounds ranked</span></li>
+      <li><StatIcon name="plays" /><span><b class="tnum">{totalPlays.toLocaleString()}</b> plays counted</span></li>
+      <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
     </ul>
   </section>
 

@@ -70,14 +70,109 @@ const here = Astro.url.pathname;
       </div>
     </main>
     <footer class="site-footer">
-      <div class="wrap">
+      <div class="wrap footer-inner">
         <span class="foot-brand">© {new Date().getFullYear()} {SITE.name}</span>
-        <a href="/categories/">Categories</a>
-        <a href="/blog/">Blog</a>
-        <a href="/about/">About</a>
-        <a href="/dmca/">DMCA</a>
+        <nav class="footer-nav" aria-label="Footer">
+          <ul class="footer-links">
+            <li><a href="/categories/">Categories</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/dmca/">DMCA</a></li>
+          </ul>
+        </nav>
       </div>
     </footer>
     <script src="../scripts/player.ts"></script>
   </body>
 </html>
+
+<style>
+  /* --- footer layout -------------------------------------------------------
+     Scoped to this layout on purpose; global.css is owned elsewhere right now.
+
+     Desktop (>=560px) is deliberately byte-for-byte the same picture as before:
+     one flex row, brand hard left (margin-right:auto from global.css still
+     does the pushing), links as a right-aligned row with a 24px column gap.
+     The <ul> is reset flat so it contributes no box of its own.
+
+     Below 560px that single row cannot fit — ~285px of text plus 4x24px of
+     column gap is ~381px, against 288px of usable width at 320px (and 343px at
+     375px), so it used to wrap. Because .foot-brand carries margin-right:auto, the auto
+     margin resolved on the *first* line only: line one was stretched to the
+     full width (brand pinned left, "Categories Blog" shoved against the right
+     edge) while the remainder ("About DMCA" at 320px, a lone "DMCA" at 375px)
+     sat orphaned at the left of line two. Row gap (12px) and column gap (24px)
+     also disagreed, so the two lines never read as a pair. And the links were
+     bare inline text: ~16px of hit height, far under the 44px target.
+
+     So below 560px we stop wrapping and lay out deliberately: an even 2x2 grid
+     of tap-sized pills (same pill vocabulary as the mobile .site-nav rail),
+     with the copyright on its own centred row underneath.
+  ------------------------------------------------------------------------- */
+  .site-footer .wrap.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s3) var(--s5);
+  }
+
+  .site-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s3) var(--s5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 559.98px) {
+    .site-footer .wrap.footer-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--s5);
+    }
+    /* links first, copyright as its own closing row */
+    .site-footer .wrap.footer-inner .footer-nav { order: 1; }
+    .site-footer .wrap.footer-inner .foot-brand {
+      order: 2;
+      margin-right: 0;   /* beats the desktop `margin-right: auto` */
+      text-align: center;
+    }
+
+    .site-footer .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--s2);    /* one consistent value for rows and columns */
+    }
+
+    .site-footer .footer-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;  /* border-box, so this is the real tap height */
+      padding: var(--s2) var(--s3);
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: var(--r-pill);
+      background: var(--surface);
+      color: var(--ink-2);
+    }
+    .site-footer .footer-links a:hover,
+    .site-footer .footer-links a:focus-visible {
+      color: var(--accent-text);
+      border-color: var(--line-2);
+    }
+    /* keep the global focus ring, just let it hug the pill */
+    .site-footer .footer-links a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+  }
+
+  @media (max-width: 559.98px) and (prefers-reduced-motion: no-preference) {
+    .site-footer .footer-links a {
+      transition: color 0.14s, background 0.14s, border-color 0.14s;
+    }
+  }
+</style>

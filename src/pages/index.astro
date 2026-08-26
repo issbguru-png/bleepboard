@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
 import CategoryIcon from '../components/CategoryIcon.astro';
+import StatIcon from '../components/StatIcon.astro';
 import Woofer from '../components/Woofer.astro';
 import { SITE, hubPath } from '../lib/site';
 
@@ -72,15 +73,15 @@ const schema = [
 
     <ul class="stats stats--icon">
       <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        <StatIcon name="buttons" />
         <span><b class="tnum">{total}</b> sound buttons</span>
       </li>
       <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        <StatIcon name="download" />
         <span><b>Free</b> MP3 downloads</span>
       </li>
       <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M18 16.5l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z"/></svg>
+        <StatIcon name="new" />
         <span><b>New</b> sounds added regularly</span>
       </li>
     </ul>
@@ -144,51 +145,57 @@ const schema = [
     </div>
   </section>
 
-  <section class="section prose">
-    <h2>What is Bleepboard?</h2>
-    <p>
-      Bleepboard is a soundboard built for speed: every sound button plays the moment
-      you tap it, and every sound has its own page with a free MP3 download, the story
-      behind the clip, and an embed code so you can drop the button into your own site,
-      stream overlay, or Discord server.
-    </p>
-    <p>
-      We add new sound buttons regularly — aiming to cut them within a day or two of a meme
-      taking off on TikTok or YouTube. Check the <a href="/new/">newest sounds</a> or
-      browse by category above.
-    </p>
-  </section>
-
-  <section class="section" id="woofer">
+  <!-- One panel, two jobs: the product explainer leads because it is what a
+       first-time visitor actually needs; Woofer's bio follows in a tinted
+       sub-panel, clearly secondary, with his disclosure line attached to it. -->
+  <section class="section">
     <div class="section-head">
-      <h2>Who runs this place</h2>
+      <h2>What is Bleepboard?</h2>
     </div>
-    <div class="author-card">
-      <Woofer size={128} />
-      <div class="author-body">
-        <h3>Woofer</h3>
-        <p class="author-role">Bleepboard's resident sound gremlin</p>
+    <p class="section-sub">The board, and the gremlin who keeps it filed.</p>
+
+    <div class="author-card author-card--about">
+      <div class="about-lead prose">
         <p>
-          Woofer is a speaker cabinet that grew legs and developed opinions. He lives
-          somewhere in the server rack, wears headphones he refuses to take off, and
-          spends his days doing the one thing he's good at: hearing a clip go viral and
-          immediately needing it catalogued.
-        </p>
-        <p>
-          His filing system is aggressive. A sound doesn't get a button here until Woofer
-          knows where it came from — which film, which stream, which unhinged six seconds
-          of someone's Tuesday. That's why every sound on this site has a write-up
-          instead of a shrug. He finds untagged audio genuinely upsetting.
+          Bleepboard is a soundboard built for speed: every sound button plays the moment
+          you tap it, and every sound has its own page with a free MP3 download, the story
+          behind the clip, and an embed code so you can drop the button into your own site,
+          stream overlay, or Discord server.
         </p>
         <p>
-          His big driver twitches when something is about to trend. He is usually right,
-          and unbearable about it.
+          We add new sound buttons regularly — aiming to cut them within a day or two of a meme
+          taking off on TikTok or YouTube. Check the <a href="/new/">newest sounds</a> or
+          browse by category above.
         </p>
-        <p class="author-note">
-          Woofer is our mascot, not a real person — Bleepboard is made by a small team who
-          find a cartoon speaker easier to draw than themselves. Say hello on the
-          <a href="/about/">about page</a>.
-        </p>
+      </div>
+
+      <div class="about-meet" id="woofer">
+        <Woofer size={128} />
+        <div class="author-body">
+          <h3>Woofer</h3>
+          <p class="author-role">Bleepboard's resident sound gremlin</p>
+          <p>
+            Woofer is a speaker cabinet that grew legs and developed opinions. He lives
+            somewhere in the server rack, wears headphones he refuses to take off, and
+            spends his days doing the one thing he's good at: hearing a clip go viral and
+            immediately needing it catalogued.
+          </p>
+          <p>
+            His filing system is aggressive. A sound doesn't get a button here until Woofer
+            knows where it came from — which film, which stream, which unhinged six seconds
+            of someone's Tuesday. That's why every sound on this site has a write-up
+            instead of a shrug. He finds untagged audio genuinely upsetting.
+          </p>
+          <p>
+            His big driver twitches when something is about to trend. He is usually right,
+            and unbearable about it.
+          </p>
+          <p class="author-note">
+            Woofer is our mascot, not a real person — Bleepboard is made by a small team who
+            find a cartoon speaker easier to draw than themselves. Say hello on the
+            <a href="/about/">about page</a>.
+          </p>
+        </div>
       </div>
     </div>
   </section>

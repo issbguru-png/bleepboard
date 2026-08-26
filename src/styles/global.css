@@ -1253,9 +1253,51 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
   margin-top: var(--s4) !important;
 }
 
+/* Homepage variant: the "What is Bleepboard?" explainer and Woofer's bio
+   share one panel. The explainer stacks on top at reading emphasis; Woofer
+   sits below in a tinted sub-panel so his story reads as colour, not spec —
+   and so his mascot disclosure stays visibly attached to him. */
+.author-card--about {
+  display: block;
+  padding: var(--s6);
+}
+.about-lead { max-width: var(--maxw-prose); }
+.about-lead p { font-size: var(--step-1); line-height: 1.6; }
+
+.about-meet {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--s5);
+  margin-top: var(--s6);
+  padding: var(--s5);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  /* the hero mascot links straight here, under a sticky header on desktop */
+  scroll-margin-top: var(--s5);
+}
+.about-meet > .woofer {
+  background: var(--accent-soft);
+  border-radius: var(--r);
+  padding: var(--s2);
+}
+
+@media (min-width: 760px) {
+  .about-meet { scroll-margin-top: var(--s9); }
+}
+
 @media (max-width: 559px) {
   .author-card { gap: var(--s4); padding: var(--s4); }
   .author-card > .woofer { width: 88px; height: 88px; }
+  .author-card--about { padding: var(--s4); }
+  .about-meet {
+    gap: var(--s4);
+    margin-top: var(--s5);
+    padding: var(--s4);
+  }
+  .about-meet > .woofer { width: 88px; height: 88px; }
+  .about-lead p { font-size: var(--step-0); }
 }
 
 /* --- hero mascot --------------------------------------------------------- */
@@ -1360,13 +1402,44 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
   .hero-mascot .hero-woofer { width: 66px; height: 66px; }
 }
 
-/* stats with leading icons (hero) — the plain dot variant stays for other pages */
-.stats--icon li { gap: var(--s2); align-items: center; }
+/* ==========================================================================
+   Icon system — CategoryIcon + StatIcon
+   One family: 24×24 viewBox, stroke-only, weight 2, round caps/joins, and the
+   colour always comes from --cat (which is --accent off the category hubs).
+   ========================================================================== */
+
+/* stats with leading icons — every .stats strip renders a StatIcon now, so the
+   glyph replaces the plain dot the ::before used to draw */
+.stats--icon li { gap: var(--s2); align-items: center; min-width: 0; }
 .stats--icon li::before { display: none; }
 .stats--icon svg {
   width: 17px; height: 17px; flex: none;
-  color: var(--accent);
+  color: var(--cat);
   opacity: 0.9;
+}
+
+/* Page-level identity mark: the big glyph locked up with the eyebrow rather
+   than stacked above it, so it costs one row instead of two and never pushes
+   the h1 down the page on a phone. */
+.hero-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  margin: 0 0 var(--s3);
+}
+.hero-mark .eyebrow { margin: 0; min-width: 0; }
+/* the type selector out-specifies both components' own scoped rules */
+.hero-mark svg.cat-ico,
+.hero-mark svg.stat-ico {
+  width: 48px; height: 48px;
+  margin: 0;
+  opacity: 1;
+  color: var(--cat);
+}
+@media (max-width: 640px) {
+  .hero-mark { gap: var(--s2); }
+  .hero-mark svg.cat-ico,
+  .hero-mark svg.stat-ico { width: 40px; height: 40px; }
 }
 
 /* Category cards carry their own hue, so the button colours become learnable:
