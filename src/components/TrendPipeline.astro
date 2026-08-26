@@ -1,0 +1,436 @@
+---
+/**
+ * TrendPipeline — the "how a sound gets found" graphic for /about/.
+ *
+ * Four illustrated stages, each a small self-contained scene so it stays legible
+ * when the row collapses to a single column on a phone.
+ *
+ * ACCURACY NOTE — the copy here describes the real system, nothing more:
+ *   - scripts/trend-monitor.mjs fetches Google Trends rising queries and filters
+ *     them against SOUND_HINTS.
+ *   - .github/workflows/trend-digest.yml runs it on a `30 13 * * *` cron — once a
+ *     day — and appends the digest to the run summary.
+ *   - Nothing downstream of that is automated. Audio is sourced by hand, and
+ *     src/content.config.ts enforces `blurb: z.string().min(200)`, so a sound with
+ *     a thin (or missing) description fails the build.
+ * Detection is automated; publishing is not. Do not add "instant", "24/7",
+ * "continuous" or fleet-of-bots claims to this component.
+ */
+const steps = [
+  {
+    n: 1,
+    kind: 'bot',
+    title: 'A bot reads the charts',
+    body:
+      'Once a day, a small script wakes up, pulls the rising search queries off Google Trends and skims the lot for anything sound-shaped.',
+  },
+  {
+    n: 2,
+    kind: 'bot',
+    title: 'Sound-ish ones get kept',
+    body:
+      'Most rising queries are politics, sport and weather. Anything carrying a word like sound, meme, audio or brainrot drops into a digest. Everything else falls through.',
+  },
+  {
+    n: 3,
+    kind: 'human',
+    title: 'A human decides',
+    body:
+      'That digest is a list of suggestions, not a publish queue. Someone has to track down the actual clip, listen to it, confirm it is the right one and decide it earns a button.',
+  },
+  {
+    n: 4,
+    kind: 'human',
+    title: 'Nothing ships without a write-up',
+    body:
+      'Then the description gets written by hand. The build rejects any sound whose write-up is too short, so a blank page physically cannot reach the board.',
+  },
+];
+---
+
+<div class="pipe" role="list">
+  {steps.map((s, i) => (
+    <>
+      <article class="pipe-step" role="listitem" data-kind={s.kind}>
+        <div class="pipe-art">
+          {s.n === 1 && (
+            /* Stage 1 — a speaker-bot watching a radar scope */
+            <svg viewBox="0 0 140 100" class="scene scene--radar" aria-hidden="true">
+              <ellipse cx="27" cy="90" rx="19" ry="3" class="s-shadow" />
+
+              <g class="bot bot--a">
+                <path d="M26 53 20 42" class="s-wire" fill="none" stroke-width="2.4" stroke-linecap="round" />
+                <circle cx="19" cy="40" r="3.4" class="s-led" />
+                <rect x="10" y="52" width="34" height="34" rx="9" class="s-body" />
+                <circle cx="20" cy="64" r="4.6" class="s-cone" />
+                <circle cx="20" cy="64" r="1.8" class="s-dust" />
+                <circle cx="34" cy="64" r="4.6" class="s-cone" />
+                <circle cx="34" cy="64" r="1.8" class="s-dust" />
+                <circle cx="27" cy="77" r="5.6" class="s-cone" />
+                <circle cx="27" cy="77" r="2.2" class="s-dust" />
+                <rect x="14" y="85" width="9" height="4" rx="2" class="s-foot" />
+                <rect x="31" y="85" width="9" height="4" rx="2" class="s-foot" />
+              </g>
+
+              <circle cx="98" cy="56" r="32" class="s-scope" />
+              <circle cx="98" cy="56" r="22" class="s-ring" fill="none" />
+              <circle cx="98" cy="56" r="12" class="s-ring" fill="none" />
+              <path d="M66 56h64M98 24v64" class="s-ring" fill="none" />
+              <path d="M98 56V24a32 32 0 0 1 22.6 9.4Z" class="s-sweep" />
+              <circle cx="110" cy="44" r="3" class="s-blip s-blip--1" />
+              <circle cx="88" cy="72" r="2.6" class="s-blip s-blip--2" />
+              <circle cx="113" cy="66" r="3.4" class="s-blip s-blip--3" />
+              <circle cx="98" cy="56" r="32" class="s-scope-edge" fill="none" />
+            </svg>
+          )}
+
+          {s.n === 2 && (
+            /* Stage 2 — rising queries fall through a sieve; the sound-ish one is caught */
+            <svg viewBox="0 0 140 100" class="scene scene--sift" aria-hidden="true">
+              <path d="M18 20h68L62 48v14H42V48Z" class="s-funnel" />
+              <path d="M18 20h68L62 48v14H42V48Z" class="s-funnel-edge" fill="none" />
+
+              <rect x="30" y="4" width="24" height="7" rx="3.5" class="s-chip s-chip--1" />
+              <rect x="58" y="4" width="30" height="7" rx="3.5" class="s-chip s-chip--2" />
+              <rect x="46" y="4" width="20" height="7" rx="3.5" class="s-chip s-chip--3 is-keep" />
+
+              <rect x="34" y="70" width="36" height="20" rx="6" class="s-clip" />
+              <path d="M47 76v8l7-4Z" class="s-clip-play" />
+              <path d="M59 77.5a4.5 4.5 0 0 1 0 5M63 75a8 8 0 0 1 0 10" class="s-clip-wave" fill="none" stroke-width="2" stroke-linecap="round" />
+
+              <g class="bot bot--b">
+                <rect x="98" y="52" width="32" height="32" rx="8" class="s-body" />
+                <circle cx="107" cy="63" r="4.2" class="s-cone" />
+                <circle cx="107" cy="63" r="1.7" class="s-dust" />
+                <circle cx="121" cy="63" r="4.2" class="s-cone" />
+                <circle cx="121" cy="63" r="1.7" class="s-dust" />
+                <circle cx="114" cy="75" r="5" class="s-cone" />
+                <circle cx="114" cy="75" r="2" class="s-dust" />
+                <rect x="102" y="83" width="8" height="4" rx="2" class="s-foot" />
+                <rect x="118" y="83" width="8" height="4" rx="2" class="s-foot" />
+                <path d="M98 68 79 78" class="s-wire" fill="none" stroke-width="3" stroke-linecap="round" />
+                <circle cx="77" cy="79" r="3.4" class="s-hand" />
+              </g>
+            </svg>
+          )}
+
+          {s.n === 3 && (
+            /* Stage 3 — a person in headphones actually listens, then approves */
+            <svg viewBox="0 0 140 100" class="scene scene--listen" aria-hidden="true">
+              <g class="wave">
+                <rect x="12" y="48" width="7" height="18" rx="3.5" class="s-bar s-bar--1" />
+                <rect x="24" y="40" width="7" height="34" rx="3.5" class="s-bar s-bar--2" />
+                <rect x="36" y="44" width="7" height="26" rx="3.5" class="s-bar s-bar--3" />
+                <rect x="48" y="36" width="7" height="42" rx="3.5" class="s-bar s-bar--4" />
+                <rect x="60" y="46" width="7" height="22" rx="3.5" class="s-bar s-bar--5" />
+              </g>
+
+              <path d="M74 96c0-15 10-22 22-22s22 7 22 22Z" class="s-shirt" />
+              <rect x="90" y="62" width="12" height="16" rx="6" class="s-skin" />
+              <rect x="79" y="28" width="34" height="46" rx="17" class="s-hair" />
+              <ellipse cx="96" cy="54" rx="17" ry="18" class="s-skin" />
+              <ellipse cx="96" cy="54" rx="17" ry="18" class="s-skin-edge" fill="none" />
+              <path d="M80 46a16 16 0 0 1 32 0" class="s-hair-fringe" />
+              <circle cx="90" cy="55" r="2.2" class="s-face" />
+              <circle cx="102" cy="55" r="2.2" class="s-face" />
+              <path d="M91 63q5 4.5 10 0" class="s-face-line" fill="none" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M79 56a17 17 0 0 1 34 0" class="s-band" fill="none" stroke-width="4.6" stroke-linecap="round" />
+              <rect x="72.5" y="49" width="10" height="17" rx="5" class="s-cup" />
+              <rect x="109.5" y="49" width="10" height="17" rx="5" class="s-cup" />
+
+              <g class="tickbadge">
+                <circle cx="126" cy="22" r="11" class="s-tick-bg" />
+                <path d="m121 22 3.6 3.6L131 18.6" class="s-tick" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg>
+          )}
+
+          {s.n === 4 && (
+            /* Stage 4 — the write-up gets typed before the button exists */
+            <svg viewBox="0 0 140 100" class="scene scene--write" aria-hidden="true">
+              <rect x="13" y="11" width="114" height="78" rx="11" class="s-card" />
+              <rect x="13" y="11" width="114" height="78" rx="11" class="s-card-edge" fill="none" />
+
+              <circle cx="34" cy="32" r="11" class="s-play-bg" />
+              <path d="M31 27.5v9l7.5-4.5Z" class="s-play" />
+              <rect x="51" y="26" width="52" height="8" rx="4" class="s-tone" />
+              <rect x="51" y="38" width="32" height="5" rx="2.5" class="s-tone s-tone--dim" />
+
+              <path d="M24 51h92" class="s-rule" fill="none" />
+
+              <rect x="24" y="58" width="92" height="5" rx="2.5" class="s-line s-line--1" />
+              <rect x="24" y="68" width="92" height="5" rx="2.5" class="s-line s-line--2" />
+              <rect x="24" y="78" width="60" height="5" rx="2.5" class="s-line s-line--3" />
+              <rect x="87" y="75.5" width="2.6" height="10" rx="1.3" class="s-caret" />
+            </svg>
+          )}
+        </div>
+
+        <p class="pipe-num"><span class="pipe-num-b">{s.n}</span>{s.kind === 'bot' ? 'Automated' : 'Human'}</p>
+        <h3 class="pipe-title">{s.title}</h3>
+        <p class="pipe-body">{s.body}</p>
+      </article>
+
+      {i < steps.length - 1 && (
+        <span class="pipe-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7" /></svg>
+        </span>
+      )}
+    </>
+  ))}
+</div>
+
+<p class="pipe-foot">
+  <b>Bots watch. Humans decide.</b> The watching runs on a schedule. Everything after it —
+  finding the clip, checking it's the right one, writing the description — is a person sitting
+  down and doing it. That's the slow bit, and it's the reason every sound here has a real
+  write-up instead of a template.
+</p>
+
+<style>
+  /* ---- layout ---------------------------------------------------------- */
+  .pipe {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    margin-top: var(--s4);
+  }
+
+  .pipe-step {
+    flex: 1 1 0;
+    min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: var(--s4);
+    box-shadow: var(--shadow-1);
+  }
+
+  .pipe-arrow {
+    flex: none;
+    align-self: center;
+    display: grid;
+    place-items: center;
+    color: var(--line-2);
+    transform: rotate(90deg);
+  }
+  .pipe-arrow svg { width: 20px; height: 20px; display: block; }
+
+  @media (min-width: 920px) {
+    .pipe { flex-direction: row; align-items: stretch; gap: var(--s1); }
+    .pipe-arrow { transform: none; }
+  }
+
+  /* ---- scene frame ------------------------------------------------------ */
+  .pipe-art {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: var(--s2);
+    margin-bottom: var(--s3);
+    overflow: hidden;
+  }
+  .scene { display: block; width: 100%; height: auto; }
+
+  /* ---- step text -------------------------------------------------------- */
+  .pipe-num {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s2);
+    margin: 0 0 var(--s2);
+    font-size: var(--step--2);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .pipe-num-b {
+    display: grid;
+    place-items: center;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    font-size: 11px;
+    letter-spacing: 0;
+    background: var(--surface-3);
+    color: var(--ink-2);
+  }
+  [data-kind='human'] .pipe-num-b {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .pipe-title {
+    margin: 0 0 var(--s2);
+    font-size: var(--step-1);
+    line-height: 1.25;
+  }
+  .pipe-body {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    max-width: 46ch;
+  }
+
+  .pipe-foot {
+    margin: var(--s4) 0 0;
+    padding: var(--s3) var(--s4);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    background: var(--accent-soft);
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    max-width: 62ch;
+  }
+  .pipe-foot b { color: var(--ink); font-weight: 800; }
+
+  /* ---- shared scene palette (tokens only, so both themes work) ---------- */
+  .s-shadow      { fill: var(--ink); opacity: 0.09; }
+  .s-body        { fill: var(--accent); }
+  .s-cone        { fill: var(--surface); }
+  .s-dust        { fill: var(--accent-2); }
+  .s-foot        { fill: var(--ink-2); }
+  .s-cup         { fill: var(--ink); }
+  .s-wire        { stroke: var(--ink-2); }
+  .s-hand        { fill: var(--ink-2); }
+  .s-led         { fill: var(--gold); }
+
+  .s-scope       { fill: var(--surface); }
+  .s-scope-edge  { stroke: var(--line-2); stroke-width: 1.5; }
+  .s-ring        { stroke: var(--line-2); stroke-width: 1.2; opacity: 0.85; }
+  .s-sweep       { fill: var(--accent); opacity: 0.22; }
+  .s-blip        { fill: var(--accent); }
+
+  .s-chip        { fill: var(--line-2); }
+  .s-chip.is-keep{ fill: var(--accent); }
+  .s-funnel      { fill: var(--surface); }
+  .s-funnel-edge { stroke: var(--line-2); stroke-width: 1.6; }
+  .s-clip        { fill: var(--accent); }
+  .s-clip-play,
+  .s-clip-wave   { fill: var(--accent-ink); stroke: var(--accent-ink); }
+  .s-clip-wave   { fill: none; }
+
+  .s-bar         { fill: var(--accent); }
+  .s-bar--2, .s-bar--4 { fill: var(--accent-2); }
+  .s-shirt       { fill: var(--accent); }
+  .s-skin        { fill: var(--surface-2); }
+  .s-skin-edge   { stroke: var(--line-2); stroke-width: 1.4; }
+  .s-hair,
+  .s-hair-fringe { fill: var(--ink-2); }
+  .s-face        { fill: var(--ink-2); }
+  .s-face-line   { stroke: var(--ink-2); }
+  .s-band        { stroke: var(--ink); }
+  .s-tick-bg     { fill: var(--accent); }
+  .s-tick        { stroke: var(--accent-ink); }
+
+  .s-card        { fill: var(--surface); }
+  .s-card-edge   { stroke: var(--line-2); stroke-width: 1.5; }
+  .s-play-bg     { fill: var(--accent); }
+  .s-play        { fill: var(--accent-ink); }
+  .s-tone        { fill: var(--surface-3); }
+  .s-tone--dim   { opacity: 0.7; }
+  .s-rule        { stroke: var(--line); stroke-width: 1.4; }
+  .s-line        { fill: var(--ink-3); opacity: 0.4; }
+  .s-caret       { fill: var(--accent); }
+
+  /* ---- motion ----------------------------------------------------------
+     Every animation on this graphic lives inside this one guard, so a reader
+     with prefers-reduced-motion gets the same drawing, perfectly still. */
+  @media (prefers-reduced-motion: no-preference) {
+    .bot { animation: pipe-bob 3.4s var(--ease) infinite; }
+    .bot--b { animation-duration: 3.9s; animation-delay: -1.2s; }
+
+    .s-sweep {
+      transform-origin: 98px 56px;
+      animation: pipe-sweep 4.5s linear infinite;
+    }
+    .s-blip { animation: pipe-blip 4.5s linear infinite; opacity: 0; }
+    .s-blip--1 { animation-delay: -3.6s; }
+    .s-blip--2 { animation-delay: -1.3s; }
+    .s-blip--3 { animation-delay: -0.35s; }
+
+    .s-chip {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pipe-fall 3.6s var(--ease) infinite;
+      opacity: 0;
+    }
+    .s-chip--1 { animation-delay: -2.4s; }
+    .s-chip--2 { animation-delay: -1.2s; }
+    .s-chip--3 { animation-delay: 0s; }
+    .s-clip { animation: pipe-catch 3.6s var(--ease) infinite; }
+
+    .s-bar {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pipe-eq 1.1s ease-in-out infinite alternate;
+    }
+    .s-bar--1 { animation-delay: -0.9s; }
+    .s-bar--2 { animation-delay: -0.15s; }
+    .s-bar--3 { animation-delay: -0.6s; }
+    .s-bar--4 { animation-delay: -0.35s; }
+    .s-bar--5 { animation-delay: -0.75s; }
+
+    .tickbadge {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pipe-stamp 3.2s var(--ease) infinite;
+    }
+
+    .s-line {
+      transform-box: fill-box;
+      transform-origin: left center;
+      animation: pipe-type 4.4s steps(14, end) infinite;
+    }
+    .s-line--2 { animation-delay: 0.5s; }
+    .s-line--3 { animation-delay: 1s; }
+    .s-caret { animation: pipe-caret 0.9s steps(1, end) infinite; }
+
+    .pipe-arrow svg { animation: pipe-nudge 2.6s var(--ease) infinite; }
+  }
+
+  @keyframes pipe-bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-3px); }
+  }
+  @keyframes pipe-sweep {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pipe-blip {
+    0%       { opacity: 0.95; }
+    45%      { opacity: 0.12; }
+    100%     { opacity: 0.05; }
+  }
+  @keyframes pipe-fall {
+    0%       { transform: translateY(-16px); opacity: 0; }
+    18%      { opacity: 1; }
+    70%      { transform: translateY(34px); opacity: 1; }
+    88%, 100%{ transform: translateY(46px); opacity: 0; }
+  }
+  @keyframes pipe-catch {
+    0%, 62%   { transform: translateY(6px) scale(0.94); opacity: 0.35; }
+    76%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  @keyframes pipe-eq {
+    from { transform: scaleY(0.32); }
+    to   { transform: scaleY(1); }
+  }
+  @keyframes pipe-stamp {
+    0%, 55%  { transform: scale(0.72); opacity: 0; }
+    68%      { transform: scale(1.12); opacity: 1; }
+    78%, 100%{ transform: scale(1); opacity: 1; }
+  }
+  @keyframes pipe-type {
+    0%       { transform: scaleX(0); }
+    45%, 92% { transform: scaleX(1); }
+    100%     { transform: scaleX(0); }
+  }
+  @keyframes pipe-caret {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @keyframes pipe-nudge {
+    0%, 100% { transform: translateX(0); opacity: 0.75; }
+    50%      { transform: translateX(3px); opacity: 1; }
+  }
+</style>

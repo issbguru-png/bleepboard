@@ -1,0 +1,104 @@
+---
+/**
+ * FounderAvatar — a flat-vector portrait tile for the founder section on /about/.
+ *
+ * Deliberately an ILLUSTRATION, not a photograph, and deliberately NOT a likeness:
+ * it's drawn in the site's own tokens (warm neutrals + the Bleepboard accent) rather
+ * than in literal skin/hair colours, so it reads as a stylised avatar in the same
+ * visual family as Woofer instead of pretending to be a picture of a real person.
+ * The headphones are the deliberate tie back to the mascot.
+ *
+ * If a real portrait or a bespoke illustration turns up later, swap this component's
+ * innards — the .author-card layout on the about page won't need to change.
+ */
+interface Props {
+  size?: number;
+  class?: string;
+  /** Hide from assistive tech where adjacent text already names the person. */
+  decorative?: boolean;
+  label?: string;
+}
+const {
+  size = 128,
+  class: cls = '',
+  decorative = false,
+  label = 'Illustrated avatar of Zam Zam Gillani, founder of Bleepboard',
+} = Astro.props;
+
+/* Stable id: the clip geometry is identical for every instance, and a fixed id
+   keeps the build output byte-reproducible. */
+const clipId = 'fa-portrait-clip';
+
+const a11y = decorative
+  ? { 'aria-hidden': 'true' as const }
+  : { role: 'img', 'aria-label': label };
+---
+<svg
+  class={`founder-avatar ${cls}`}
+  width={size}
+  height={size}
+  viewBox="0 0 128 128"
+  {...a11y}
+>
+  {/* portrait tile */}
+  <rect x="0" y="0" width="128" height="128" rx="24" class="fa-tile" />
+
+  {/* everything below is clipped to the tile so the shoulders sit flush */}
+  <clipPath id={clipId}><rect x="0" y="0" width="128" height="128" rx="24" /></clipPath>
+  <g clip-path={`url(#${clipId})`}>
+    {/* shoulders / top */}
+    <path d="M20 128c0-20 20-32 44-32s44 12 44 32Z" class="fa-shirt" />
+    <path d="M55 95h18l-9 14Z" class="fa-collar" />
+
+    {/* neck */}
+    <rect x="55" y="74" width="18" height="24" rx="9" class="fa-skin" />
+
+    {/* hair behind the head */}
+    <rect x="35" y="24" width="58" height="78" rx="27" class="fa-hair" />
+
+    {/* head */}
+    <ellipse cx="64" cy="56" rx="24" ry="27" class="fa-skin" />
+    <ellipse cx="64" cy="56" rx="24" ry="27" class="fa-skin-edge" fill="none" stroke-width="1.6" />
+
+    {/* fringe */}
+    <path d="M40 52c1-19 11-29 24-29s23 10 24 29c-5-9-13-14-24-14s-19 5-24 14Z" class="fa-hair" />
+
+    {/* face */}
+    <path d="M49 46c3.5-2.5 8-2.5 11 0M68 46c3-2.5 7.5-2.5 11 0" class="fa-line" fill="none" stroke-width="2.4" stroke-linecap="round" />
+    <circle cx="55" cy="55" r="2.9" class="fa-eye" />
+    <circle cx="73" cy="55" r="2.9" class="fa-eye" />
+    <ellipse cx="47" cy="63" rx="5" ry="3" class="fa-blush" />
+    <ellipse cx="81" cy="63" rx="5" ry="3" class="fa-blush" />
+    <path d="M57 66q7 6.5 14 0" class="fa-line" fill="none" stroke-width="2.6" stroke-linecap="round" />
+
+    {/* headphones — the visual handshake with Woofer */}
+    <path d="M36 58a28 28 0 0 1 56 0" class="fa-band" fill="none" stroke-width="5.5" stroke-linecap="round" />
+    <rect x="28" y="52" width="14" height="24" rx="7" class="fa-cup" />
+    <rect x="86" y="52" width="14" height="24" rx="7" class="fa-cup" />
+    <circle cx="35" cy="64" r="3.4" class="fa-cup-dot" />
+    <circle cx="93" cy="64" r="3.4" class="fa-cup-dot" />
+  </g>
+</svg>
+
+<style>
+  .founder-avatar { display: block; flex: none; }
+
+  .fa-tile      { fill: var(--accent-soft); }
+  .fa-shirt     { fill: var(--accent); }
+  /* Reads as a collar shadow in light mode and a collar highlight in dark —
+     --accent-ink is always the readable counterpart to --accent. */
+  .fa-collar    { fill: var(--accent-ink); opacity: 0.35; }
+  .fa-skin      { fill: var(--surface); }
+  .fa-skin-edge { stroke: var(--line-2); }
+  .fa-hair      { fill: var(--ink-2); }
+  .fa-eye,
+  .fa-line      { fill: var(--ink-2); stroke: var(--ink-2); }
+  .fa-line      { fill: none; }
+  .fa-blush     { fill: var(--accent); opacity: 0.2; }
+  .fa-band      { stroke: var(--ink); }
+  .fa-cup       { fill: var(--ink); }
+  .fa-cup-dot   { fill: var(--accent); }
+
+  /* No animation here on purpose: this stands in for a real person, and a
+     bobbing/blinking portrait reads as a toy. Woofer does the moving. */
+</style>

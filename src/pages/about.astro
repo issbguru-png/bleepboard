@@ -1,9 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import Woofer from '../components/Woofer.astro';
+import TrendPipeline from '../components/TrendPipeline.astro';
+import FounderAvatar from '../components/FounderAvatar.astro';
 
 const sounds = await getCollection('sounds');
 const categories = await getCollection('categories');
+const posts = await getCollection('blog');
 ---
 <Base
   title="About Bleepboard"
@@ -19,24 +23,181 @@ const categories = await getCollection('categories');
     <ul class="stats">
       <li><b class="tnum">{sounds.length}</b> sound buttons</li>
       <li><b class="tnum">{categories.length}</b> soundboards</li>
+      <li><b class="tnum">{posts.length}</b> explainers</li>
       <li><b>Free</b> forever</li>
     </ul>
   </section>
 
-  <section class="section">
-    <div class="prose">
+  <!-- ==================== 1. how a sound gets found ==================== -->
+  <section class="section" id="pipeline">
+    <div class="section-head">
+      <h2>How a sound gets found</h2>
+    </div>
+    <p class="section-sub">
+      Half machine, half stubborn human. Here is the actual route from "the internet is
+      making a noise" to "there is a button for it".
+    </p>
+
+    <div class="foreman">
+      <Woofer size={96} decorative />
       <p>
-        Every sound button plays instantly, downloads free as MP3, and comes with a short write-up
-        on the sound's origin. We add new sounds regularly, aiming to cut them within a day or two of
-        a trend breaking on TikTok, YouTube, or Discord.
-      </p>
-      <p>
-        Want a sound added? Found something that shouldn't be here? See our <a href="/dmca/">DMCA &amp; takedown page</a>.
+        Woofer, our mascot, gets the credit for this bit. The rest of us do the typing.
       </p>
     </div>
-    <p class="btn-row" style="margin-top:var(--s5)">
+
+    <TrendPipeline />
+  </section>
+
+  <!-- ==================== 2. origin story ==================== -->
+  <section class="section" id="why">
+    <div class="section-head">
+      <h2>Why we built this</h2>
+    </div>
+
+    <div class="prose">
+      <p>
+        Meme sounds have always been easy to find and impossible to understand. You could get
+        the clip in about four clicks from a dozen sites — under a banner ad, behind a popup,
+        next to a download button that wasn't the download button. What you couldn't get was
+        an answer to the obvious question: <strong>what is this, actually?</strong> Which film,
+        which stream, which unhinged six seconds of someone's Tuesday. The clip arrived with no
+        label, no context and no reason to be funny beyond "it just is".
+      </p>
+      <p>
+        That gap is the whole reason Bleepboard exists. We wanted the soundboard that explains
+        itself — where pressing the button is the fast part and the story is right underneath it.
+      </p>
+
+      <h3>What that means in practice</h3>
+      <ul class="why-list">
+        <li>
+          <b>Every sound has a write-up, written by a person.</b> Not a templated sentence with
+          the title swapped in. The site's own content schema enforces a minimum length on those
+          descriptions, so a sound with a thin or empty write-up fails the build rather than
+          quietly shipping. It is a deliberately annoying rule and we have kept it.
+        </li>
+        <li>
+          <b>{categories.length} curated soundboards, not one undifferentiated dump.</b> Sounds
+          live in hubs — meme, gaming, Discord, brainrot, SpongeBob and the rest — each with its
+          own written introduction, so browsing gets you somewhere instead of scrolling forever.
+        </li>
+        <li>
+          <b>{posts.length} long-form explainers.</b> Some sounds have a history too big for a
+          paragraph, so they get a <a href="/blog/">full article</a> on where the thing came from
+          and how it escaped into everyone's For You page.
+        </li>
+        <li>
+          <b>No signup, no install, no wall.</b> Buttons play the moment you tap them, every
+          clip downloads free as an MP3, and nothing on this site asks you to make an account
+          first.
+        </li>
+      </ul>
+
+      <p>
+        None of that is clever engineering. It's just the boring, unscalable work of listening
+        to a clip and writing down what it is — which is exactly why so few soundboards bother.
+      </p>
+      <p>
+        Want a sound added? Found something that shouldn't be here? See our
+        <a href="/dmca/">DMCA &amp; takedown page</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 3. founder ==================== -->
+  <section class="section" id="founder">
+    <div class="section-head">
+      <h2>Who's behind it</h2>
+    </div>
+    <div class="author-card">
+      <span class="founder-portrait">
+        <FounderAvatar size={128} />
+      </span>
+      <div class="author-body">
+        <h3>Zam Zam Gillani</h3>
+        <p class="author-role">Founder</p>
+        {/* TODO: replace with Zam Zam's own words */}
+        <p>
+          Zam Zam founded Bleepboard on a narrow, slightly pedantic conviction: a sound button
+          should be able to tell you what it is. Plenty of soundboards will hand you the audio.
+          Almost none will tell you which film, stream or late-night upload it escaped from.
+        </p>
+        <p>
+          So the rule here is hers — nothing gets a button until someone has worked out where it
+          came from and written that down. It is the slowest possible way to run a soundboard,
+          and it is the only version worth having.
+        </p>
+        <p class="author-note">
+          The portrait above is an illustration in the site's house style, not a photograph.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="btn-row">
       <a class="btn primary" href="/trending/">Play trending sounds</a>
       <a class="btn" href="/categories/">Browse soundboards</a>
     </p>
   </section>
+
 </Base>
+
+<style>
+  /* Woofer introducing the pipeline. Kept small — he's a caption, not a hero. */
+  .foreman {
+    display: flex;
+    align-items: center;
+    gap: var(--s4);
+    margin: var(--s4) 0 var(--s2);
+  }
+  .foreman p {
+    margin: 0;
+    max-width: 44ch;
+    color: var(--ink-2);
+    font-size: var(--step--1);
+  }
+  @media (max-width: 559px) {
+    .foreman :global(.woofer) { width: 72px; height: 72px; }
+  }
+
+  /* "What that means in practice" — the receipts for the paragraph above it. */
+  .why-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s4) 0 0;
+    display: grid;
+    gap: var(--s3);
+  }
+  @media (min-width: 760px) {
+    .why-list { grid-template-columns: 1fr 1fr; }
+  }
+  .why-list li {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: var(--s4);
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .why-list b { color: var(--ink); font-weight: 750; display: block; margin-bottom: 4px; }
+
+  /* .why-list breaks out of the prose measure — the two-up grid needs the room. */
+  .prose .why-list { max-width: none; }
+  @media (min-width: 760px) {
+    #why .prose { max-width: 78ch; }
+  }
+
+  /* The avatar draws its own rounded tile (rx scales with the SVG), so the
+     wrapper stays shapeless — a fixed border-radius here would fight it. */
+  .founder-portrait {
+    flex: none;
+    display: block;
+    line-height: 0;
+  }
+  @media (max-width: 559px) {
+    .founder-portrait :global(.founder-avatar) { width: 88px; height: 88px; }
+  }
+</style>
