@@ -78,6 +78,7 @@ const here = Astro.url.pathname;
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/about/">About</a></li>
             <li><a href="/dmca/">DMCA</a></li>
+            <li><a href="/privacy/">Privacy</a></li>
           </ul>
         </nav>
       </div>
@@ -144,6 +145,17 @@ const here = Astro.url.pathname;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--s2);    /* one consistent value for rows and columns */
+    }
+
+    /* Odd link count (5, since Privacy joined) would leave the last pill
+       orphaned in the left column with a hole beside it. Let it span the full
+       width instead, so the block always closes on a straight edge.
+
+       :nth-child(odd):last-child is self-correcting rather than a hardcoded
+       "5th item" rule — it fires only when the count is actually odd, so
+       adding a sixth link silently restores the plain 3x2 grid. */
+    .site-footer .footer-links li:nth-child(odd):last-child {
+      grid-column: 1 / -1;
     }
 
     .site-footer .footer-links a {

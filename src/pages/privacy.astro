@@ -1,0 +1,885 @@
+---
+import Base from '../layouts/Base.astro';
+
+/* --- Contact --------------------------------------------------------------
+   dmca@bleepboard.com is the one address that demonstrably exists (it is the
+   target of every Report menu on every sound page, and of /dmca/). It is used
+   here as the working fallback so this page never points at a black hole.
+
+   TODO (owner): provision `privacy@bleepboard.com` and swap PRIVACY_TO to it.
+   Both AdSense and Mediavine expect a contact route on the privacy policy, and
+   a shared legal/copyright inbox is workable but not ideal. Until the mailbox
+   exists, do NOT print it — an address that bounces is worse than a shared one.
+------------------------------------------------------------------------- */
+const PRIVACY_TO = 'dmca@bleepboard.com';
+
+/* --- Ad status ------------------------------------------------------------
+   THE SINGLE SWITCH FOR THIS PAGE.
+
+   Bleepboard serves no ads today. Verified, not assumed: there is no AdSense,
+   Mediavine, GPT or any other ad tag anywhere in src/ or public/, and a built
+   dist/ contains no third-party script of any kind.
+
+   The advertising section below is written to be truthful in BOTH states: it
+   currently says ads are not served and describes what will change when they
+   are. When ads actually go live, flip ADS_LIVE to true — that rewrites the
+   status note and the tense-sensitive lines, and nothing else on the page
+   needs touching.
+
+   TODO (owner): before flipping this, see the "Before ads go live" checklist
+   in the report — in particular, a Google-certified consent management
+   platform must be serving EEA/UK traffic FIRST. Flipping this flag does not
+   make the site compliant; it only makes this page describe reality.
+------------------------------------------------------------------------- */
+const ADS_LIVE = false;
+
+/* Opt-out routes. These are the controls the networks themselves point at.
+   We link them; we do not operate them and cannot promise what they do. */
+const optOuts = [
+  {
+    label: 'Google Ads Settings',
+    href: 'https://myadcenter.google.com/',
+    blurb:
+      'Turn off personalised advertising across Google’s own products and the sites that use Google’s ad technology, including this one if it ever does.',
+  },
+  {
+    label: 'Google — how ads work',
+    href: 'https://policies.google.com/technologies/ads',
+    blurb:
+      'Google’s own description of the cookies and identifiers it uses to serve and measure ads. Worth reading before you decide what to switch off.',
+  },
+  {
+    label: 'aboutads.info opt-out',
+    href: 'https://optout.aboutads.info/',
+    blurb:
+      'The Digital Advertising Alliance’s industry page for opting out of interest-based ads from many third-party vendors at once.',
+  },
+  {
+    label: 'Your Online Choices (EU/UK)',
+    href: 'https://www.youronlinechoices.eu/',
+    blurb:
+      'The European equivalent, run by EDAA. Same idea, different set of participating vendors.',
+  },
+  {
+    label: 'NAI opt-out',
+    href: 'https://optout.networkadvertising.org/',
+    blurb:
+      'Network Advertising Initiative member opt-outs, covering another slice of the ad-tech supply chain.',
+  },
+];
+---
+<Base
+  title="Privacy Policy | Bleepboard"
+  description="What Bleepboard does and does not collect: no accounts, no cookies, no analytics, and one favourites list that never leaves your browser. Plus how advertising, embeds and hosting logs work."
+>
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>Legal</p>
+    <h1>Privacy policy</h1>
+    <p class="lede">
+      Bleepboard is a static website that plays short audio clips. There is no account
+      to make, no login, no newsletter and no database with your name in it. This page
+      says exactly what happens to data when you use the site — including the parts
+      that are genuinely nothing.
+    </p>
+    {/* TODO (owner): an effective / last-updated date belongs directly under the
+        lede. Deliberately omitted rather than invented — a fabricated date on a
+        privacy policy is a real problem, not a cosmetic one. Add it as static
+        text (not `new Date()`, which would silently claim the policy changed on
+        every deploy). */}
+  </section>
+
+  <!-- ==================== 0. the short version ==================== -->
+  <section class="section" id="summary">
+    <div class="section-head">
+      <h2>The short version</h2>
+    </div>
+    <p class="section-sub">
+      The whole policy in a paragraph, for people who are here to play a sound and leave.
+    </p>
+
+    <div class="summary">
+      <p class="summary-lead">
+        Bleepboard does not ask you for personal information and does not set cookies.
+        The only thing it saves is your favourites list, which is stored in your own
+        browser and never sent to us. There are currently no analytics and no
+        advertising on the site. The web host that serves the pages keeps standard
+        access logs, as every web host does. If advertising is added later, ad
+        companies will set their own cookies — that section is below, and it is
+        clearly marked as not yet active.
+      </p>
+
+      <div class="ledger">
+        <div class="ledger-col">
+          <p class="ledger-head" data-kind="yes">What is stored</p>
+          <ul class="ledger-list">
+            <li>Your favourites, in your browser’s local storage</li>
+            <li>Standard web-server access logs, held by the host</li>
+          </ul>
+        </div>
+        <div class="ledger-col">
+          <p class="ledger-head" data-kind="no">What is not</p>
+          <ul class="ledger-list">
+            <li>No accounts, names, emails or passwords</li>
+            <li>No cookies set by this site</li>
+            <li>No analytics or visitor tracking</li>
+            <li>No advertising cookies — today</li>
+            <li>No selling or sharing of personal information</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1. on your device ==================== -->
+  <section class="section" id="device">
+    <div class="section-head">
+      <h2>What the site stores on your device</h2>
+    </div>
+    <p class="section-sub">
+      One key, holding a list of sound names. That is the entirety of it.
+    </p>
+
+    <dl class="facts">
+      <div>
+        <dt>Storage key</dt>
+        <dd><code>bleepboard:favourites</code></dd>
+      </div>
+      <div>
+        <dt>Mechanism</dt>
+        <dd>Browser local storage — not a cookie, so it is never attached to a network request.</dd>
+      </div>
+      <div>
+        <dt>Contents</dt>
+        <dd>A list of the short names of the sounds you saved, most recent first. Nothing else.</dd>
+      </div>
+      <div>
+        <dt>Where it goes</dt>
+        <dd>Nowhere. It is read and written by code running in your browser and is never transmitted to us or anyone else.</dd>
+      </div>
+    </dl>
+
+    <div class="prose">
+      <p>
+        Because it lives in your browser rather than on a server, your favourites are
+        per-browser and per-device. Save something on your phone and it will not appear
+        on your laptop. That is a genuine limitation, and it is the direct consequence
+        of not having accounts.
+      </p>
+      <p>
+        If your browser blocks site data — a private window, or strict privacy settings —
+        the favourite button disables itself and says so, rather than accepting taps it
+        cannot remember. The site also writes and immediately deletes a tiny throwaway
+        value on load purely to test whether storage works at all; it holds nothing and
+        does not survive the check.
+      </p>
+      <p>
+        <strong>To clear it:</strong> use your browser’s “clear site data”, “cookies and
+        site data”, or “clear browsing data” option for bleepboard.com. In most browsers
+        that setting is under Settings → Privacy. Clearing it deletes your favourites
+        permanently and immediately — there is no copy anywhere else to delete, and
+        nothing for us to do on our end.
+      </p>
+    </div>
+
+    <p class="origin-note">
+      <b>Note</b>
+      <span>
+        Playing a sound also asks your device for a very short vibration on phones that
+        support it, and the share and copy buttons hand text to your operating system’s
+        share sheet or clipboard. Those are browser features acting on your device. We
+        never see what you shared, or where you sent it.
+      </span>
+    </p>
+  </section>
+
+  <!-- ==================== 2. advertising ==================== -->
+  <section class="section" id="advertising">
+    <div class="section-head">
+      <h2>Third-party advertising</h2>
+    </div>
+    <p class="section-sub">
+      The one part of this page that describes companies other than us.
+    </p>
+
+    {!ADS_LIVE && (
+      <p class="status">
+        <b>Not active</b>
+        <span>
+          Bleepboard is not currently showing ads, and no advertising code runs on this
+          site today. This section describes what would apply if and when advertising is
+          added, so that it is here to read before anything changes rather than after.
+        </span>
+      </p>
+    )}
+    {ADS_LIVE && (
+      <p class="status" data-live>
+        <b>Active</b>
+        <span>
+          Bleepboard currently shows advertising supplied by third-party ad networks. The
+          following describes how that works and how to opt out.
+        </span>
+      </p>
+    )}
+
+    {/* TODO (owner): when ads go live, set ADS_LIVE = true at the top of this file.
+        Also name the actual network(s) in the paragraph below — right now it says
+        "Google AdSense and/or a managed provider such as Mediavine" because the
+        decision has not been made. Once one is signed, say which one, and delete
+        the other. Vague-but-honest is fine before launch; vague after launch is not. */}
+
+    <div class="prose">
+      <p>
+        Bleepboard is free, and the plan for keeping it that way is advertising rather
+        than paywalls or data sales. The intended route is Google AdSense and/or a
+        managed advertising provider such as Mediavine. When advertising runs on a site,
+        the following is true of essentially all of them, and would be true here:
+      </p>
+      <ul>
+        <li>
+          <strong>Third-party vendors, including Google, use cookies and similar
+          identifiers to serve ads</strong> based on your prior visits to this website
+          and to other websites.
+        </li>
+        <li>
+          <strong>Google’s use of advertising cookies</strong> enables it and its partners
+          to serve ads to you based on your visits to Bleepboard and other sites on the
+          internet. You can opt out of personalised advertising by visiting
+          <a href="https://myadcenter.google.com/" rel="noopener">Google Ads Settings</a>.
+        </li>
+        <li>
+          <strong>Ad exchanges and demand partners</strong> sit behind the ad slot itself.
+          A single ad placement can involve many companies bidding in real time, each of
+          which may set or read its own identifier. That chain is operated by the ad
+          network, not by us.
+        </li>
+        <li>
+          <strong>You can opt out of third-party vendor cookies</strong> for interest-based
+          advertising at <a href="https://optout.aboutads.info/" rel="noopener">aboutads.info</a>,
+          and from the other industry pages listed below.
+        </li>
+      </ul>
+      <p>
+        Advertising cookies are set by those companies under their own privacy policies,
+        not ours. We do not receive, store or have access to the identifiers they use, we
+        cannot read them, and we cannot delete them for you — the opt-out links below go
+        directly to the parties that can. Nor can we make promises on their behalf about
+        what they do with what they collect; the only accurate thing to say is that their
+        policies govern it, and they are worth reading.
+      </p>
+
+      <h3>If you are in the EEA or the UK</h3>
+      <p>
+        Under EU and UK law, personalised advertising and the cookies behind it require
+        your consent, given freely and before anything is set. Consent is collected
+        through a consent management platform — the banner that asks what you allow — and
+        your choice there governs whether personalised ads are shown to you and whether
+        advertising cookies are placed.
+      </p>
+      <p>
+        <strong>Bleepboard does not currently operate a consent banner, because it
+        currently serves no ads and sets no cookies of its own.</strong> One must be in
+        place before advertising is switched on for visitors in those regions. We are
+        saying that plainly rather than describing a mechanism that does not exist.
+      </p>
+      {/* TODO (owner) — REAL COMPLIANCE GAP, NOT A COPY PROBLEM:
+          Google requires a Google-certified CMP for EEA/UK traffic on any property
+          serving AdSense/AdMob ads, and both GDPR and the ePrivacy rules require
+          prior consent for advertising cookies regardless of network. Serving
+          personalised ads to EEA/UK visitors without a CMP is a policy violation and
+          a legal exposure, not a nice-to-have.
+
+          Mediavine ships a CMP as part of its script; AdSense alone does not — with
+          bare AdSense you must add a certified CMP yourself.
+
+          When a CMP exists, this subsection must be rewritten to describe it: which
+          CMP, what it asks, and how a visitor reopens it to change their answer.
+          Do not soften the paragraph above until that is genuinely true. */}
+    </div>
+
+    <div class="opt-grid">
+      {optOuts.map((o) => (
+        <a class="opt-card" href={o.href} rel="noopener">
+          <b>{o.label}</b>
+          <span class="opt-blurb">{o.blurb}</span>
+          <span class="opt-host">{new URL(o.href).host}</span>
+        </a>
+      ))}
+    </div>
+
+    <p class="origin-note">
+      <b>Note</b>
+      <span>
+        These opt-outs are stored by your browser, which means clearing your site data
+        can clear the opt-out along with everything else, and an opt-out set in one
+        browser does not carry to another. That is how the industry built it, not a
+        choice made here.
+      </span>
+    </p>
+  </section>
+
+  <!-- ==================== 3. analytics ==================== -->
+  <section class="section" id="analytics">
+    <div class="section-head">
+      <h2>Analytics</h2>
+    </div>
+    <p class="section-sub">
+      A short section, because the honest answer is short.
+    </p>
+
+    <div class="prose">
+      <p>
+        <strong>There are none.</strong> Bleepboard runs no Google Analytics, no Tag
+        Manager, no Plausible, Fathom or Umami, no heatmap or session-recording tool, and
+        no pixel from any social network. No third-party script of any kind loads on
+        these pages. The fonts are the ones already on your device, so not even a
+        typeface is fetched from someone else’s server.
+      </p>
+      <p>
+        There is one loose end worth being straight about. When you play a sound, the
+        site fires a single tiny same-origin request intended to count plays, so that the
+        trending list could reflect what people actually play. <strong>Nothing is
+        listening at the other end.</strong> The counter it was written for was never
+        connected, so the request reaches the static host, finds nothing, and is
+        discarded. It carries only the short name of the sound — no identifier, no cookie
+        and nothing about you — and even that is currently counted by no one.
+      </p>
+      <p>
+        If a play counter is ever switched on, it would record a count per sound and
+        nothing that identifies a visitor. This page will be updated before that happens,
+        not after.
+      </p>
+      {/* TODO (owner): the play-count endpoint (functions/api/play.ts) is a Cloudflare
+          Pages Function, while the site deploys to GitHub Pages — so it is inert twice
+          over: the function is not deployed, and its KV binding (PLAYS) was never
+          provisioned. Verified against RESUME.md. If either changes, this paragraph
+          and the "Analytics" summary line above must change with it. */}
+    </div>
+  </section>
+
+  <!-- ==================== 4. embeds ==================== -->
+  <section class="section" id="embeds">
+    <div class="section-head">
+      <h2>Embedded players on other sites</h2>
+    </div>
+    <p class="section-sub">
+      Bleepboard sounds can be embedded in other people’s pages. Here is what that means
+      if you met one out in the wild.
+    </p>
+
+    <div class="prose">
+      <p>
+        Each sound page offers a snippet that puts a small play button on another website
+        as an inline frame. If you are reading this because you met one of those buttons
+        somewhere else: it is a minimal page containing a play button, the sound’s title
+        and a link back here.
+      </p>
+      <p>
+        The embedded player <strong>sets no cookies, saves nothing to your device, loads
+        no third-party script and does not track you</strong>. It does not carry the
+        favourites feature, and it does not send the play request described above. Your
+        browser does fetch the player and the audio file from bleepboard.com, which means
+        the request reaches our host in the same way as any other page request, and is
+        subject to the same server logs described below.
+      </p>
+      <p>
+        The site the embed appears on is a different matter entirely. That site has its
+        own analytics, its own cookies and its own privacy policy, and none of that is
+        under our control or covered by this page. The same applies to any advertising it
+        runs around the embed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 5. hosting ==================== -->
+  <section class="section" id="hosting">
+    <div class="section-head">
+      <h2>Hosting and server logs</h2>
+    </div>
+    <p class="section-sub">
+      Somebody has to serve the files, and serving files leaves a record.
+    </p>
+
+    <div class="prose">
+      <p>
+        Bleepboard is a static site hosted on GitHub Pages. Every page is generated ahead
+        of time and published as a plain file — there is no application server, no
+        database, and nothing that could hold a user record even if we wanted one.
+      </p>
+      <p>
+        Like every web host, GitHub receives the requests your browser makes and keeps
+        standard access logs. These typically include your IP address, the page
+        requested, the time, and your browser’s user-agent string. This is how the web
+        has worked since the beginning: a server cannot send you a page without knowing
+        where to send it.
+      </p>
+      <p>
+        Those logs belong to GitHub and are handled under GitHub’s privacy statement. We
+        do not have access to them, we cannot query them, and we do not receive any
+        report derived from them. That also means we cannot look up, export or delete a
+        log entry on request — the honest answer is to point you at the host rather than
+        to imply a control we do not have.
+      </p>
+      {/* TODO (owner): do NOT state a log retention period here. GitHub's retention for
+          Pages access logs is theirs to define and change, is not published as a fixed
+          figure we can rely on, and is not ours to promise. Leave it described as the
+          host's, as above. */}
+    </div>
+  </section>
+
+  <!-- ==================== 6. rights ==================== -->
+  <section class="section" id="rights">
+    <div class="section-head">
+      <h2>Your rights and choices</h2>
+    </div>
+    <p class="section-sub">
+      Data-protection law gives you a set of rights. Most of them, here, resolve to a
+      button in your own browser — which is a good sign, not a dodge.
+    </p>
+
+    <div class="prose">
+      <p>
+        Because Bleepboard holds no accounts and keeps no user records, there is normally
+        nothing on our side to look up, correct, export or erase. The favourites list is
+        already yours: it is on your device, we cannot see it, and you can delete it
+        yourself in seconds. Advertising identifiers, if advertising is ever running,
+        belong to the ad companies and are handled through their opt-outs above.
+      </p>
+
+      <h3>EEA and UK (GDPR)</h3>
+      <p>
+        If you are in the European Economic Area or the United Kingdom, you have the
+        right to access the personal data held about you, to have it corrected or erased,
+        to restrict or object to processing, and to data portability. You also have the
+        right to lodge a complaint with your national data protection authority.
+      </p>
+      <ul>
+        <li>
+          <strong>Access, portability, correction and erasure:</strong> we hold no
+          personal data to produce, correct or erase. Your favourites are erased by
+          clearing site data for bleepboard.com in your browser.
+        </li>
+        <li>
+          <strong>Objection and restriction:</strong> there is no profiling or automated
+          decision-making here. If advertising is running, the consent mechanism and the
+          opt-outs above are how you object to personalised advertising.
+        </li>
+        <li>
+          <strong>Withdrawing consent:</strong> where consent has been given for
+          advertising cookies, you can withdraw it at any time, and it must be as easy to
+          withdraw as it was to give.
+        </li>
+        <li>
+          <strong>Server logs</strong> are held by our host, not by us. Requests about
+          them are directed to GitHub, whose privacy statement governs them.
+        </li>
+      </ul>
+      {/* TODO (owner): GDPR Art. 13 requires the identity of the controller. This page
+          therefore needs, once known and confirmed: the operating legal entity's name;
+          a postal address; and — if the site is targeted at or monitors EEA/UK visitors
+          without an establishment there — an Art. 27 representative in the EU and/or UK.
+          A Data Protection Officer is very unlikely to be required at this scale, but
+          that determination is the owner's to make, not ours to assert.
+          Nothing is stated above because none of it has been supplied, and an invented
+          controller identity is worse than an acknowledged omission. */}
+
+      <h3>California (CCPA/CPRA)</h3>
+      <p>
+        If you are a California resident, you have the right to know what personal
+        information is collected and how it is used, to request deletion, to request
+        correction, and to opt out of the “sale” or “sharing” of personal information —
+        a definition broad enough to include sharing identifiers with advertising
+        partners for cross-context behavioural advertising. You also have the right not
+        to be discriminated against for exercising any of these.
+      </p>
+      <ul>
+        <li>
+          <strong>Right to know and to delete:</strong> Bleepboard collects no personal
+          information through accounts, forms or analytics, so there is no profile to
+          disclose or delete. Your favourites are deleted by clearing site data.
+        </li>
+        <li>
+          <strong>Sale or sharing:</strong> we do not sell personal information and do
+          not share it for cross-context behavioural advertising. If advertising is
+          added, ad partners may collect identifiers directly through their own
+          technology, which some of these laws treat as “sharing” — the opt-outs above
+          are the route to switch that off.
+        </li>
+        <li>
+          <strong>Global Privacy Control:</strong> browser-level opt-out signals are
+          honoured by advertising vendors that support them. Since the site sets no
+          identifiers itself, there is nothing here for the signal to switch off.
+        </li>
+      </ul>
+      {/* TODO (owner): if/when ads go live and the network's implementation constitutes
+          "sharing" under CPRA, a clearly-labelled "Do Not Sell or Share My Personal
+          Information" link is required and must appear in the site footer, not only on
+          this page. Mediavine and Google both provide a mechanism for this; wire the
+          real one rather than writing a link that goes nowhere. */}
+    </div>
+  </section>
+
+  <!-- ==================== 7. children ==================== -->
+  <section class="section" id="children">
+    <div class="section-head">
+      <h2>Children</h2>
+    </div>
+    <p class="section-sub">
+      Meme sounds skew young. That deserves a straight answer rather than a boilerplate
+      paragraph copied off another site.
+    </p>
+
+    <div class="prose">
+      <p>
+        Bleepboard is a general-audience site rather than one directed at children, but
+        we are under no illusions about who plays a soundboard. So: there are no
+        accounts, no sign-up, no profiles, no comments, no uploads and no forms. There is
+        nowhere on this site for a child — or anyone — to enter a name, an age, an email
+        address or a photograph, because no such field exists.
+      </p>
+      <p>
+        We do not knowingly collect personal information from children. If you believe a
+        child has somehow provided personal information to us, contact us and we will
+        delete it. Realistically the only way that could happen is an email sent to one
+        of our addresses, and an email we are asked to delete gets deleted.
+      </p>
+      <p>
+        If advertising is added, ad networks have their own settings for child-directed
+        treatment and age-appropriate ad serving, and their own obligations under COPPA
+        and similar rules. Those controls sit with the network. We can configure what our
+        account offers; we cannot audit what a third party does with a request, and we
+        will not claim otherwise.
+      </p>
+      {/* TODO (owner): before enabling ads, review the network's child-directed /
+          "tag for users under the age of consent" settings and decide the site's
+          designation deliberately. A soundboard full of Roblox, FNAF, SpongeBob and
+          Minecraft audio will draw a young audience regardless of how the site is
+          formally classified, and COPPA turns on who the audience actually is. This
+          is a judgement call for the owner (ideally with advice), not a default to
+          accept silently. */}
+    </div>
+  </section>
+
+  <!-- ==================== 8. changes & contact ==================== -->
+  <section class="section" id="changes">
+    <div class="section-head">
+      <h2>Changes to this policy</h2>
+    </div>
+
+    <div class="prose">
+      <p>
+        This policy will change when the site does — most obviously if advertising or a
+        play counter is switched on. When that happens, the relevant section is rewritten
+        to describe what is actually running, and the date at the top is updated. We would
+        rather update this page before a change ships than explain it afterwards.
+      </p>
+      <p>
+        Bleepboard is a static site, so an update takes effect when the site is next
+        rebuilt and published, and caches may serve an older copy for a short while after
+        that.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-head">
+      <h2>How to contact us</h2>
+    </div>
+    <p class="section-sub">
+      A real address, read by a person.
+    </p>
+
+    <div class="prose">
+      <p>
+        Questions about this policy, or about anything on the site, go to
+        <b class="mail">{PRIVACY_TO}</b>. It is the same address used for copyright and
+        content reports, and it is read by a person rather than a ticket queue.
+      </p>
+      {/* TODO (owner): no response-time commitment is stated, and none should be added
+          until the owner is willing to hold it. A missed promise on a privacy policy is
+          a compliance problem; note that GDPR sets a one-month deadline for responding
+          to a data-subject request and CCPA sets 45 days, so any figure published here
+          must sit inside those. */}
+      {/* TODO (owner): a governing law / jurisdiction clause is deliberately absent —
+          it depends on where the operating entity is established, which has not been
+          supplied. Add it with the entity details, or leave it out entirely. */}
+    </div>
+
+    <p class="fine">
+      This page is a plain-English summary of how Bleepboard handles data. It is a
+      description of our practices, not legal advice — if you need to know what your
+      rights are or how a particular law applies to you, ask a lawyer rather than a
+      soundboard.
+    </p>
+
+    <p class="btn-row back-row">
+      <a class="btn" href="/about/">About Bleepboard</a>
+      <a class="btn" href="/dmca/">DMCA &amp; takedowns</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  /* --- the short version ---------------------------------------------------
+     The summary is the only part most people will read, so it gets a panel and
+     a two-column ledger rather than another run of prose. The two columns are
+     deliberately unequal in length — "what isn't collected" being the longer
+     list is the point of the page, and padding the left column to match would
+     be dishonest formatting.
+  ------------------------------------------------------------------------- */
+  .summary {
+    max-width: var(--maxw-prose);
+    padding: var(--s5);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+  }
+  .summary-lead {
+    margin: 0;
+    max-width: none;
+    color: var(--ink-2);
+    font-size: var(--step-0);
+    line-height: 1.6;
+  }
+
+  .ledger {
+    display: grid;
+    gap: var(--s5);
+    margin-top: var(--s5);
+    padding-top: var(--s5);
+    border-top: 1px solid var(--line);
+  }
+  @media (min-width: 620px) {
+    .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5) var(--s6); }
+  }
+
+  .ledger-head {
+    display: flex;
+    align-items: center;
+    gap: var(--s2);
+    margin: 0 0 var(--s3);
+    max-width: none;
+    color: var(--ink);
+    font-size: var(--step--2);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  /* A dot rather than an icon font: two states, two tokens, no dependency. */
+  .ledger-head::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--ink-3);
+  }
+  .ledger-head[data-kind='yes']::before { background: var(--cat); }
+  .ledger-head[data-kind='no']::before {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-2);
+  }
+
+  .ledger-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s2);
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.5;
+  }
+  .ledger-list li {
+    margin: 0;
+    padding-left: var(--s4);
+    position: relative;
+  }
+  .ledger-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 1px;
+    background: var(--line-2);
+  }
+
+  /* --- the local storage key ----------------------------------------------
+     A definition list, because this genuinely is a set of key/value facts and
+     dressing them as prose would make them harder to check.
+  ------------------------------------------------------------------------- */
+  .facts {
+    display: grid;
+    gap: 0;
+    margin: 0 0 var(--s5);
+    max-width: var(--maxw-prose);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+  .facts > div {
+    display: grid;
+    gap: var(--s1) var(--s4);
+    padding: var(--s3) var(--s4);
+    background: var(--surface);
+  }
+  .facts > div + div { border-top: 1px solid var(--line); }
+  @media (min-width: 620px) {
+    .facts > div { grid-template-columns: 8.5rem minmax(0, 1fr); align-items: baseline; }
+  }
+  .facts dt {
+    color: var(--ink-3);
+    font-size: var(--step--2);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .facts dd {
+    margin: 0;
+    min-width: 0;
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .facts code {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    color: var(--ink);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-xs);
+    padding: 1px 5px;
+    /* the key is long-ish; break it rather than push the page sideways at 320px */
+    overflow-wrap: anywhere;
+  }
+
+  #device .origin-note { margin-top: var(--s5); }
+
+  /* --- ad status note ------------------------------------------------------
+     Flagged rather than buried: whether ads are running is the single most
+     load-bearing fact in that section, and it changes.
+  ------------------------------------------------------------------------- */
+  .status {
+    display: flex;
+    gap: var(--s3);
+    align-items: baseline;
+    max-width: var(--maxw-prose);
+    margin: 0 0 var(--s5);
+    padding: var(--s4);
+    border: 1px solid var(--gold-line);
+    border-left-width: 3px;
+    border-radius: var(--r-sm);
+    background: var(--gold-soft);
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .status b {
+    flex: none;
+    color: var(--gold);
+    font-size: var(--step--2);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .status span { min-width: 0; }
+  .status[data-live] {
+    border-color: var(--line-2);
+    background: var(--surface-2);
+  }
+  .status[data-live] b { color: var(--accent-text); }
+
+  /* --- opt-out routes ------------------------------------------------------
+     Cards rather than a list of bare links: these are the actionable exits
+     from this page, and they need to be findable and tappable.
+  ------------------------------------------------------------------------- */
+  .opt-grid {
+    display: grid;
+    gap: var(--s3);
+    margin-top: var(--s5);
+  }
+  @media (min-width: 760px) {
+    .opt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .opt-card {
+    display: grid;
+    align-content: start;
+    gap: var(--s1);
+    min-height: 44px;
+    padding: var(--s4);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    text-decoration: none;
+    color: var(--ink-2);
+  }
+  .opt-card b {
+    color: var(--ink);
+    font-weight: 750;
+    font-size: var(--step-0);
+    line-height: 1.3;
+    min-width: 0;
+  }
+  .opt-blurb {
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .opt-host {
+    margin-top: var(--s1);
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    color: var(--ink-3);
+    overflow-wrap: anywhere;
+  }
+  .opt-card:hover,
+  .opt-card:focus-visible { border-color: var(--line-2); }
+  .opt-card:hover b,
+  .opt-card:focus-visible b { color: var(--accent-text); }
+
+  #advertising .origin-note { margin-top: var(--s5); }
+
+  /* --- prose tuning --------------------------------------------------------
+     global .prose sets h2 margins for pages that run headings inside prose;
+     here every h2 is a real section head, so only h3 spacing needs a nudge.
+  ------------------------------------------------------------------------- */
+  .prose h3 {
+    margin-top: var(--s6);
+    font-size: var(--step-1);
+  }
+  .prose ul { margin-top: var(--s3); }
+
+  /* Long address, narrow phone: break rather than push the page sideways.
+     Same treatment as /dmca/, on purpose — it is the same address. */
+  .mail {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    color: var(--ink);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  /* --- closing note --------------------------------------------------------
+     Matched to the /dmca/ closing note deliberately: the two legal pages
+     should end the same way. */
+  .fine {
+    max-width: var(--maxw-prose);
+    margin-top: var(--s5);
+    padding: var(--s4);
+    border-left: 2px solid var(--line-2);
+    background: var(--bg-2);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+  .back-row { margin-top: var(--s5); }
+  .back-row .btn { min-height: 44px; }
+
+  /* No animation on this page beyond what the shared .btn already carries.
+     Kill the inherited hover lift when motion is not wanted. */
+  @media (prefers-reduced-motion: reduce) {
+    .back-row .btn,
+    .opt-card { transition: none; }
+    .back-row .btn:hover { transform: none; }
+  }
+</style>
