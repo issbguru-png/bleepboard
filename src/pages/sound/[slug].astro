@@ -171,7 +171,7 @@ const schema = [
       </div>
       <div class="grid grid--sm">
         {related.map((s) => (
-          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} />
         ))}
       </div>
     </section>

@@ -69,10 +69,19 @@ const schema = [
       ))}
     </ul>
 
-    <ul class="stats">
-      <li><b class="tnum">{total}</b> sound buttons</li>
-      <li><b>Free</b> MP3 downloads</li>
-      <li><b>New</b> sounds added regularly</li>
+    <ul class="stats stats--icon">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        <span><b class="tnum">{total}</b> sound buttons</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        <span><b>Free</b> MP3 downloads</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M18 16.5l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z"/></svg>
+        <span><b>New</b> sounds added regularly</span>
+      </li>
     </ul>
     </div>
   </section>
@@ -99,7 +108,7 @@ const schema = [
     <p class="section-sub">Ranked by plays — what the internet is pressing right now.</p>
     <div class="grid grid--lg">
       {trending.map((s, i) => (
-        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} rank={i < 3 ? i + 1 : undefined} />
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i < 3 ? i + 1 : undefined} />
       ))}
     </div>
   </section>
@@ -112,7 +121,7 @@ const schema = [
     <p class="section-sub">The most recent clips to join the board.</p>
     <div class="grid">
       {newest.map((s) => (
-        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} isNew />
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} isNew />
       ))}
     </div>
   </section>
@@ -209,7 +218,7 @@ const schema = [
 
     function card(s: Item) {
       const title = esc(s.title);
-      return `<article class="bleep" style="--dur:${s.duration}s">
+      return `<article class="bleep" data-cat="${esc(s.category)}" style="--dur:${s.duration}s">
         <button class="bleep-play" type="button" data-src="${esc(s.audio)}" data-slug="${esc(s.slug)}" aria-label="Play ${title}" aria-pressed="false">
           <span class="bleep-ico" aria-hidden="true">${PLAY}<span class="i-eq"><i></i><i></i><i></i></span></span>
           <span class="bleep-dur" aria-hidden="true">${dur(s.duration)}</span>

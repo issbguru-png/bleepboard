@@ -6,14 +6,16 @@ interface Props {
   title: string;
   audio: string;
   duration: number;
+  /** category slug — drives the button's colour via --cat */
+  category?: string;
   /** optional 1-based rank badge (trending grids) */
   rank?: number;
   /** show a NEW flag */
   isNew?: boolean;
 }
-const { slug, title, audio, duration, rank, isNew = false } = Astro.props;
+const { slug, title, audio, duration, category, rank, isNew = false } = Astro.props;
 ---
-<article class="bleep" style={`--dur:${duration}s`}>
+<article class="bleep" data-cat={category} style={`--dur:${duration}s`}>
   {rank !== undefined && (
     <span class={`bleep-flag rank${rank <= 3 ? ' top' : ''}`} aria-hidden="true">{rank}</span>
   )}

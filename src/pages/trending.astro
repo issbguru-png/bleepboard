@@ -36,7 +36,7 @@ const totalPlays = sounds.reduce((n, s) => n + s.data.plays, 0);
     <p class="section-sub">The board's heavy hitters, in order.</p>
     <div class="grid grid--lg">
       {top.map((s, i) => (
-        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} rank={i + 1} />
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i + 1} />
       ))}
     </div>
   </section>
@@ -49,7 +49,7 @@ const totalPlays = sounds.reduce((n, s) => n + s.data.plays, 0);
       <p class="section-sub">Ranks 13–{sounds.length}, still sorted by plays.</p>
       <div class="grid">
         {rest.map((s, i) => (
-          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} rank={i + 13} />
+          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i + 13} />
         ))}
       </div>
     </section>

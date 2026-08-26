@@ -39,7 +39,7 @@ const latestLabel = latest
     <p class="section-sub">The most recent {fresh.length} clips to join the soundboard.</p>
     <div class="grid grid--lg">
       {fresh.map((s) => (
-        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} isNew />
+        <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} isNew />
       ))}
     </div>
   </section>
@@ -52,7 +52,7 @@ const latestLabel = latest
       <p class="section-sub">The full back catalogue in the order it was added.</p>
       <div class="grid">
         {rest.map((s) => (
-          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} />
+          <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} />
         ))}
       </div>
     </section>
