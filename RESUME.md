@@ -13,8 +13,9 @@ This is the single biggest open item; everything else compounds only after it.
 
 ## Stack
 
-Astro SSG → GitHub Pages. No framework, no CSS library, no webfont, no analytics,
-no cookies. One localStorage key (`bleepboard:favourites`). System fonts only.
+Astro SSG → GitHub Pages. No framework, no CSS library, no webfont. One localStorage
+key (`bleepboard:favourites`). System fonts only. GA4 is the only third-party script;
+it loads behind Consent Mode v2 (see `src/lib/monetization.ts`).
 
 ## Content pipeline
 
