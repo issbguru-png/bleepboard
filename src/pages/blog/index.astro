@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { SITE } from '../../lib/site';
+import { breadcrumbs, itemList } from '../../lib/schema';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -9,10 +11,23 @@ const readingTime = (body?: string) =>
   Math.max(1, Math.round((body ?? '').trim().split(/\s+/).length / 220));
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Blog', SITE.url + '/blog/'],
+  ]),
+  itemList(
+    'Bleepboard articles',
+    posts.map((p) => ({ name: p.data.title, url: `${SITE.url}/blog/${p.id}/` })),
+    'Explainers on where meme sounds came from and how to use them.'
+  ),
+];
 ---
 <Base
-  title="Blog — Meme Sound Explainers & Guides | Bleepboard"
+  title="Meme Sound Explainers & Soundboard Guides | Bleepboard"
   description="Where meme sounds come from, how to use soundboards on Discord and OBS, and the stories behind the internet's favorite audio clips."
+  schema={schema}
 >
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>

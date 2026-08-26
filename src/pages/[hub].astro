@@ -4,7 +4,8 @@ import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
 import CategoryIcon from '../components/CategoryIcon.astro';
 import StatIcon from '../components/StatIcon.astro';
-import { SITE, hubPath } from '../lib/site';
+import { SITE, hubPath, soundPath, pickTitle } from '../lib/site';
+import { breadcrumbs, itemList, faqPage } from '../lib/schema';
 
 export async function getStaticPaths() {
   const categories = await getCollection('categories');
@@ -34,29 +35,36 @@ const counts = new Map<string, number>();
 for (const s of allSounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
 
 const pageUrl = SITE.url + hubPath(category.id);
-const title = `${d.hubTitle} — Free ${d.name} Sound Buttons | ${SITE.name}`;
+// The old template repeated the category name and then bolted the brand on
+// ("Notification Sounds Soundboard — Free Notification Sound Buttons |
+// Bleepboard", 77 chars). Both competitors instead lead with the board name
+// and hang a real count off it ("Spongebob Soundboard 1000+ Unique Sounds").
+// `sounds.length` is the actual number rendered below, so the count is real.
+const title = pickTitle([
+  `${d.hubTitle} — ${sounds.length} Free Sound Buttons`,
+  `${d.hubTitle} — ${sounds.length} Sound Buttons`,
+  `${d.hubTitle} — Free Sound Buttons`,
+  d.hubTitle,
+]);
 
 const schema: object[] = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
-      { '@type': 'ListItem', position: 2, name: d.hubTitle, item: pageUrl },
-    ],
-  },
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Categories', SITE.url + '/categories/'],
+    [d.hubTitle, pageUrl],
+  ]),
 ];
-if (d.faq.length > 0) {
-  schema.push({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: d.faq.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  });
+// The list mirrors exactly what the grid renders, in the same order.
+if (sounds.length > 0) {
+  schema.push(
+    itemList(
+      d.hubTitle,
+      sounds.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+      d.metaDescription
+    )
+  );
 }
+if (d.faq.length > 0) schema.push(faqPage(d.faq));
 ---
 <Base title={title} description={d.metaDescription} schema={schema} cat={category.id}>
   <nav class="breadcrumbs" aria-label="Breadcrumb">

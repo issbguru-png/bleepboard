@@ -1,5 +1,6 @@
 ---
 title: "Italian Brainrot, Explained: The AI Animals That Took Over the Internet"
+seoTitle: "Italian Brainrot, Explained: The AI Animal Memes"
 description: "Tralalero Tralala, Bombardiro Crocodilo, Tung Tung Tung Sahur and the rest: what Italian brainrot is, where it came from and why it spread."
 date: 2026-08-26
 tags: [brainrot, italian-brainrot, meme, explainer]

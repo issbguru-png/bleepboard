@@ -1,7 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { SITE } from '../../lib/site';
+import { SITE, absolute, pickTitle } from '../../lib/site';
+import { breadcrumbs, publisher } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -24,21 +25,41 @@ const more = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 2);
 
+const pageUrl = SITE.url + `/blog/${post.id}/`;
+
 const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: d.title,
     description: d.description,
+    // Google treats `image` as required for Article; without it the page is
+    // ineligible for article treatment entirely.
+    image: absolute(SITE.ogImage),
     datePublished: d.date.toISOString(),
-    ...(d.updated ? { dateModified: d.updated.toISOString() } : {}),
-    author: { '@type': 'Organization', name: SITE.name },
-    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-    mainEntityOfPage: SITE.url + `/blog/${post.id}/`,
+    // dateModified falls back to the publish date rather than being omitted —
+    // an unmodified article was last modified when it was published.
+    dateModified: (d.updated ?? d.date).toISOString(),
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    inLanguage: 'en',
+    ...(d.tags.length ? { keywords: d.tags.join(', ') } : {}),
   },
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Blog', SITE.url + '/blog/'],
+    [d.title, pageUrl],
+  ]),
 ];
+
+// The <h1> keeps the editorial headline; the <title> may use a shorter
+// `seoTitle` where that headline overruns the ~60 characters Google shows.
+// The brand suffix is then kept only if it still fits.
+const headline = d.seoTitle ?? d.title;
+const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
 ---
-<Base title={`${d.title} | ${SITE.name}`} description={d.description} schema={schema} ogType="article">
+<Base title={title} description={d.description} schema={schema} ogType="article">
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="sep" aria-hidden="true">›</span>

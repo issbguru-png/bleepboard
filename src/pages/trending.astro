@@ -3,16 +3,35 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
 import StatIcon from '../components/StatIcon.astro';
+import { SITE, soundPath } from '../lib/site';
+import { breadcrumbs, itemList } from '../lib/schema';
 
 const sounds = (await getCollection('sounds')).sort(
   (a, b) => b.data.plays - a.data.plays
 );
 const top = sounds.slice(0, 12);
 const rest = sounds.slice(12);
+
+// The list is the full ranked set this page renders, in render order.
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Trending', SITE.url + '/trending/'],
+  ]),
+  // Ordered by the editorial `plays` weight, which is a curation signal rather
+  // than a measured play count — so the wording here claims popularity, not a
+  // statistic. See the note in src/content.config.ts.
+  itemList(
+    'Trending sound buttons',
+    sounds.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+    'Every sound button on Bleepboard, most popular first.'
+  ),
+];
 ---
 <Base
-  title="Trending Sound Buttons — Most Played Right Now | Bleepboard"
+  title={`Trending Sound Buttons — ${sounds.length} Popular Meme Sounds`}
   description="The most popular sound buttons on Bleepboard — the meme sounds people come here for, ranked. Tap to play, free MP3 downloads."
+  schema={schema}
 >
   <section class="page-head">
     <div class="hero-mark">

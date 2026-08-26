@@ -6,7 +6,8 @@ import CategoryIcon from '../components/CategoryIcon.astro';
 import StatIcon from '../components/StatIcon.astro';
 import Woofer from '../components/Woofer.astro';
 import HowItWorksCompact from '../components/HowItWorksCompact.astro';
-import { SITE, hubPath } from '../lib/site';
+import { SITE, hubPath, soundPath, pickTitle } from '../lib/site';
+import { organization, website, itemList } from '../lib/schema';
 
 const sounds = await getCollection('sounds');
 const categories = (await getCollection('categories')).sort(
@@ -24,16 +25,26 @@ const newest = [...sounds]
 
 const total = sounds.length;
 const quick = ['airhorn', 'vine boom', 'discord', 'fart', 'brainrot', 'notification'];
-const title = 'Bleepboard — Instant Sound Buttons & Meme Soundboard';
+// Lead with the two head phrases rather than the brand: nobody is searching
+// "Bleepboard" yet, and "sound buttons" / "meme soundboard" are where the
+// volume is. Brand stays on the end because this is the one page that should
+// carry it.
+const title = pickTitle([
+  `Sound Buttons — Free Meme Soundboard | ${SITE.name}`,
+  `Sound Buttons — Free Meme Soundboard`,
+]);
 const description = SITE.description;
 
 const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: SITE.name,
-    url: SITE.url,
-  },
+  organization(),
+  // The SearchAction is only honest because the homepage genuinely resolves
+  // `?q=` into rendered results — see the script at the bottom of this file.
+  website(`${SITE.url}/?q={search_term_string}`),
+  itemList(
+    'Trending sound buttons',
+    trending.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+    'The sound buttons people are reaching for most right now.'
+  ),
 ];
 ---
 <Base title={title} description={description} schema={schema}>
@@ -278,11 +289,28 @@ const schema = [
         : `Nothing matching “${query}”`;
     }
 
-    q.addEventListener('input', search);
+    /** Mirror the query into the address bar so a search is linkable and
+     *  survives a reload or a back button. This is also what makes the
+     *  WebSite SearchAction in the page's JSON-LD truthful: `/?q=vine+boom`
+     *  really does render results for "vine boom". replaceState rather than
+     *  pushState, so typing does not bury the previous page under one history
+     *  entry per keystroke. */
+    function syncUrl(query: string) {
+      const url = new URL(window.location.href);
+      if (query) url.searchParams.set('q', query);
+      else url.searchParams.delete('q');
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }
+
+    q.addEventListener('input', () => {
+      syncUrl(q.value.trim());
+      search();
+    });
     q.addEventListener('focus', ensureIndex, { once: true });
 
     clear.addEventListener('click', () => {
       q.value = '';
+      syncUrl('');
       showBrowse();
       q.focus();
     });
@@ -290,6 +318,7 @@ const schema = [
     document.querySelectorAll<HTMLButtonElement>('.search-tools .chip').forEach((btn) => {
       btn.addEventListener('click', () => {
         q.value = btn.dataset.term ?? '';
+        syncUrl(q.value);
         search();
         q.focus();
       });
@@ -300,8 +329,16 @@ const schema = [
       if (e.key === 'Escape' && q.value) {
         e.preventDefault();
         q.value = '';
+        syncUrl('');
         showBrowse();
       }
     });
+
+    // Arriving on /?q=… — or coming back to it — runs the search immediately.
+    const initial = new URLSearchParams(window.location.search).get('q');
+    if (initial) {
+      q.value = initial;
+      search();
+    }
   </script>
 </Base>

@@ -38,6 +38,10 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    /** Optional shorter <title> for search results, when the editorial
+     *  headline is longer than the ~60 characters Google will show. The <h1>
+     *  always uses `title`, so the page keeps its real headline. */
+    seoTitle: z.string().max(60).optional(),
     description: z.string().max(160),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),

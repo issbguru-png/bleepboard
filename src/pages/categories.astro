@@ -4,6 +4,8 @@ import Base from '../layouts/Base.astro';
 import CategoryIcon from '../components/CategoryIcon.astro';
 import StatIcon from '../components/StatIcon.astro';
 import { hubPath } from '../lib/site';
+import { SITE } from '../lib/site';
+import { breadcrumbs, itemList } from '../lib/schema';
 
 const categories = (await getCollection('categories')).sort(
   (a, b) => a.data.order - b.data.order
@@ -11,10 +13,23 @@ const categories = (await getCollection('categories')).sort(
 const sounds = await getCollection('sounds');
 const counts = new Map<string, number>();
 for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Categories', SITE.url + '/categories/'],
+  ]),
+  itemList(
+    'Bleepboard soundboards',
+    categories.map((c) => ({ name: c.data.hubTitle, url: SITE.url + hubPath(c.id) })),
+    'Every soundboard on Bleepboard, grouped by category.'
+  ),
+];
 ---
 <Base
-  title="All Soundboards by Category | Bleepboard"
-  description="Browse every Bleepboard soundboard — meme sounds, sound effects, gaming, TikTok, anime, notifications, pranks and more."
+  title={`All ${categories.length} Soundboards — Browse by Category`}
+  description="Browse every Bleepboard soundboard — meme sounds, sound effects, gaming, TikTok, anime, notifications, pranks and more. Free MP3 downloads."
+  schema={schema}
 >
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>

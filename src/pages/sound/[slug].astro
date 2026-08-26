@@ -2,7 +2,19 @@
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import SoundButton from '../../components/SoundButton.astro';
-import { SITE, hubPath, soundPath, fmtDuration } from '../../lib/site';
+import {
+  SITE,
+  hubPath,
+  soundPath,
+  fmtDuration,
+  absolute,
+  pickTitle,
+  buildDescription,
+  clamp,
+  isoDuration,
+  DESC_MIN,
+} from '../../lib/site';
+import { breadcrumbs, publisher } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const sounds = await getCollection('sounds');
@@ -31,8 +43,43 @@ const related = all
 
 const pageUrl = SITE.url + soundPath(sound.id);
 const audioUrl = SITE.url + d.audio;
-const title = `${d.title} Sound Button — Play & Download MP3 | ${SITE.name}`;
-const description = `Play the ${d.title} sound button instantly and download the MP3 free. ${d.origin ?? ''}`.slice(0, 158);
+// Titles: "sound button" is the head phrase this page competes on, so it sits
+// straight after the name and the brand is dropped — `og:site_name` and the
+// Organization node already tell Google whose page this is, and 14 characters
+// of "| Bleepboard" was pushing most of these past the ~60ch truncation point.
+// Names here run from "6 7" to "Lie Detector (Determined That Was a Lie)", so
+// the qualifier shrinks to fit rather than the title overflowing.
+const title = pickTitle([
+  `${d.title} Sound Button — Play & Download Free MP3`,
+  `${d.title} Sound Button — Play & Download MP3`,
+  `${d.title} Sound Button — Free MP3 Download`,
+  `${d.title} Sound Button — Free MP3`,
+  `${d.title} Sound Button`,
+]);
+
+// Descriptions were previously `.slice(0, 158)`, which cut mid-word whenever
+// `origin` ran long, and left 124 of them under 120 characters when `origin`
+// was missing entirely. Build from the strongest available material instead,
+// then top up short ones so every page earns its snippet.
+const blurbSentences = d.blurb.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
+// Strongest material first, then keep feeding it real sentences from the blurb
+// until the snippet is full. Everything here is copy that already passes the
+// blurb audit, so nothing new has to be written per sound.
+let description = buildDescription([
+  `Play the ${d.title} sound button instantly — free MP3 download, no signup.`,
+  d.origin,
+  ...blurbSentences,
+]);
+// Last resort for a sound whose blurb sentences are all too long to fit the
+// remaining room: name the board it belongs to, which is at least true and
+// specific to this page.
+if (description.length < DESC_MIN) {
+  description = buildDescription([
+    description,
+    `From the ${catName} soundboard on ${SITE.name}.`,
+  ]);
+}
+description = clamp(description);
 
 // --- Share targets -------------------------------------------------------
 // We always share the sound *page*, never the bare MP3: the page carries the
@@ -93,20 +140,27 @@ const schema = [
     '@type': 'AudioObject',
     name: d.title,
     contentUrl: audioUrl,
-    duration: `PT${d.duration}S`,
+    // Whole seconds — see isoDuration(); `PT3.6S` is legal ISO-8601 but not
+    // reliably parsed by consumers.
+    duration: isoDuration(d.duration),
     encodingFormat: 'audio/mpeg',
     url: pageUrl,
-    description: d.blurb.slice(0, 200),
+    // The full blurb, not a 200-char slice that used to cut mid-word.
+    description: clamp(d.blurb, 320),
+    uploadDate: d.added.toISOString(),
+    thumbnailUrl: absolute(SITE.ogImage),
+    inLanguage: 'en',
+    isFamilyFriendly: true,
+    isAccessibleForFree: true,
+    genre: catName,
+    ...(d.tags.length ? { keywords: d.tags.join(', ') } : {}),
+    publisher,
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
-      { '@type': 'ListItem', position: 2, name: catName + ' Soundboard', item: SITE.url + hubPath(d.category) },
-      { '@type': 'ListItem', position: 3, name: d.title, item: pageUrl },
-    ],
-  },
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    [catName + ' Soundboard', SITE.url + hubPath(d.category)],
+    [d.title, pageUrl],
+  ]),
 ];
 ---
 <Base title={title} description={description} schema={schema} cat={d.category}>

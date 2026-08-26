@@ -1,5 +1,6 @@
 ---
 title: "The Vine Boom: How One Bass Hit Became the Internet's Punchline"
+seoTitle: "Vine Boom Sound: The History of the Bass Hit Meme"
 description: "The history of the Vine Boom sound effect: where it came from, why every editor uses it, and where to play and download it free."
 date: 2026-08-25
 tags: [meme, explainer, sound-effect]

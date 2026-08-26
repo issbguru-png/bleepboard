@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
 import StatIcon from '../components/StatIcon.astro';
+import { SITE, soundPath } from '../lib/site';
+import { breadcrumbs, itemList } from '../lib/schema';
 
 const sounds = (await getCollection('sounds')).sort(
   (a, b) => b.data.added.valueOf() - a.data.added.valueOf()
@@ -13,10 +15,23 @@ const latest = sounds[0]?.data.added;
 const latestLabel = latest
   ? latest.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : '';
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['New', SITE.url + '/new/'],
+  ]),
+  itemList(
+    'Newest sound buttons',
+    sounds.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+    'Every sound button on Bleepboard, newest first.'
+  ),
+];
 ---
 <Base
-  title="New Sound Buttons — Latest Meme Sounds | Bleepboard"
-  description="The newest sound buttons on Bleepboard. Fresh meme sounds and viral audio clips, newest first — play and download free."
+  title={`New Sound Buttons — ${sounds.length} Latest Meme Sounds`}
+  description="The newest sound buttons on Bleepboard. Fresh meme sounds and viral audio clips, newest first. Tap to play, download the MP3 free."
+  schema={schema}
 >
   <section class="page-head">
     <div class="hero-mark">
