@@ -9,7 +9,7 @@
   ],
   "duration": 0.6,
   "audio": "/audio/discord-ping.mp3",
-  "blurb": "The Discord ping \u2014 the sharper alert of being @mentioned, which is to say, summoned publicly. There is no peace after this sound: somebody wants something, everyone can see they asked, and the social cost of ignoring it is now non-zero. Anyone who has been on the receiving end of an @everyone understands the specific dread involved. Use it in edits when a character gets called out by name, or play it near someone with notifications on to watch a small, involuntary flinch.",
+  "blurb": "Sharper than the ordinary notification, because being @mentioned means being summoned publicly. There is no peace after this sound. Somebody wants something, everyone can see they asked, and the social cost of ignoring it is now non-zero. Anyone who has been on the receiving end of an @everyone understands the specific dread involved. Use it in edits when a character gets called out by name, or play it near someone with notifications on to watch a small, involuntary flinch.",
   "origin": "Discord's mention/ping alert sound.",
   "added": "2026-08-25T19:39:54+05:00",
   "featured": false,

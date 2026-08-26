@@ -9,7 +9,7 @@
   ],
   "duration": 1.2,
   "audio": "/audio/discord-leave.mp3",
-  "blurb": "The Discord leave blip \u2014 the descending counterpart to the join sound, announcing someone has dipped. Its comedic value comes from total neutrality: it plays identically whether someone said a warm goodnight or rage-quit an argument they were visibly losing. That ambiguity makes it the perfect passive-aggressive punctuation mark. Drop it immediately after any conversational defeat to imply the loser has left the building. Pair it with the join sound for edits about the endless churn of a voice channel at 3am.",
+  "blurb": "The descending counterpart to the join sound, announcing that someone has dipped. Its comedic value comes from total neutrality: it plays identically whether someone said a warm goodnight or rage-quit an argument they were visibly losing. That ambiguity makes it a perfect passive-aggressive punctuation mark. Drop it immediately after any conversational defeat to imply the loser has left the building. Pair it with the join sound for edits about the endless churn of a voice channel at 3am.",
   "origin": "Discord's default voice-channel disconnect notification.",
   "added": "2026-08-25T19:39:44+05:00",
   "featured": false,

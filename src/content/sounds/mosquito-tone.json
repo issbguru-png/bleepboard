@@ -9,8 +9,8 @@
   ],
   "duration": 2.0,
   "audio": "/audio/mosquito-tone.mp3",
-  "blurb": "A pure 15 kHz tone \u2014 the infamous mosquito sound most teenagers can hear and most adults cannot. High-frequency hearing declines steadily with age, so this single tone functions as a rough hearing test, a science demo, and a legendary classroom prank all at once. It was even deployed commercially as a teen deterrent outside shops, which is a genuinely strange thing to have existed. Play it in mixed company and map exactly who still has their top end, based entirely on who winces first.",
-  "origin": "Pure 15 kHz sine tone \u2014 audibility drops sharply with age, hence the name.",
+  "blurb": "A pure 15 kHz tone, the infamous mosquito sound most teenagers can hear and most adults cannot. High-frequency hearing declines steadily with age, so this single tone doubles as a rough hearing test, a science demo and a legendary classroom prank. It was even deployed commercially as a teen deterrent outside shops, which is a genuinely strange thing to have existed. Play it in mixed company and map who still has their top end. Whoever winces first has answered the question.",
+  "origin": "Pure 15 kHz sine tone whose audibility drops sharply with age, hence the name.",
   "added": "2026-08-25T19:40:37+05:00",
   "featured": false,
   "plays": 890

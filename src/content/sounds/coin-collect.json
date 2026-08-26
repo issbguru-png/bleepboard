@@ -9,7 +9,7 @@
   ],
   "duration": 0.5,
   "audio": "/audio/coin-collect.mp3",
-  "blurb": "A bright two-note coin pickup blip, straight out of the 8-bit era. Early arcade hardware could only produce a handful of simple waveforms, so designers made rewards short, high, and rising \u2014 a shape the brain reads as \"good thing happened\" without any training. That constraint accidentally created the template every reward sound still follows. Play it when anything goes right: a donation on stream, a correct answer, a successfully executed parallel park. Synthesised from scratch in the arcade tradition, so it's original audio you can use anywhere.",
+  "blurb": "A bright two-note coin pickup blip straight out of the 8-bit era. Early arcade hardware could only produce a handful of simple waveforms, so designers made rewards short and high and rising, a shape the brain reads as good thing happened without any training at all. That constraint accidentally created the template every reward sound still follows. Play it when anything goes right: a donation on stream, a correct answer, a parallel park executed on the first attempt. Synthesised from scratch in the arcade tradition, so it is original audio you can use anywhere.",
   "origin": "Original 8-bit style synthesis inspired by arcade coin pickups.",
   "added": "2026-08-25T19:24:32+05:00",
   "featured": true,
