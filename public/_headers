@@ -44,10 +44,16 @@
 /ads.txt
   Cache-Control: public, max-age=0, must-revalidate
 
-# HTML must revalidate or a deploy takes ten minutes to reach anyone.
-# Security headers go here too, applied site-wide.
+# Site-wide: security headers ONLY.
+#
+# Deliberately no Cache-Control here. Cloudflare Pages applies every matching
+# rule and concatenates same-named headers, so a Cache-Control on /* gets
+# appended to the specific rules above — producing
+#   `public, max-age=2592000, public, max-age=0, must-revalidate`
+# on MP3s, where the trailing must-revalidate defeats the whole point.
+# Pages already sends `public, max-age=0, must-revalidate` for HTML by
+# default, which is what we want anyway.
 /*
-  Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()

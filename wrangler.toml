@@ -13,9 +13,11 @@ compatibility_date = "2026-08-26"
 # It is the reason play counts do not work today: the Function is Cloudflare
 # code sitting in a repo deployed to GitHub Pages, where it never runs.
 #
-# Create the namespace first, then paste its id here:
-#   npx wrangler kv namespace create PLAYS
-#
-# [[kv_namespaces]]
-# binding = "PLAYS"
-# id = "TODO: paste the id wrangler prints"
+# NOTE: this file is the source of truth for Pages config. Bindings set via the
+# API or dashboard are WIPED on the next `wrangler pages deploy` if they are not
+# also declared here — that cost an hour of debugging on 2026-08-26, when
+# /api/play kept returning 500 because context.env.PLAYS was undefined.
+
+[[kv_namespaces]]
+binding = "PLAYS"
+id = "e404cff7b9534d3ba39b16d31a5bb02d"
