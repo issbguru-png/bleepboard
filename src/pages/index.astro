@@ -19,6 +19,7 @@ const newest = [...sounds]
   .slice(0, 14);
 
 const total = sounds.length;
+const quick = ['airhorn', 'vine boom', 'discord', 'fart', 'brainrot', 'notification'];
 const title = 'Bleepboard — Instant Sound Buttons & Meme Soundboard';
 const description = SITE.description;
 
@@ -41,14 +42,26 @@ const schema = [
       No signup. No install.
     </p>
 
-    <div class="hero-actions">
-      <a class="search-pill" href="/search/">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
-        Search {total} sounds…
-        <span class="kbd" aria-hidden="true">/</span>
-      </a>
-      <a class="btn" href="/trending/">Trending now</a>
+    <div class="searchbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      <input
+        id="q"
+        type="search"
+        placeholder={`Search ${total} sounds…`}
+        aria-label="Search sounds by name or tag"
+        aria-controls="results"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+      />
     </div>
+
+    <ul class="search-tools">
+      <li class="label" aria-hidden="true">Try</li>
+      {quick.map((term) => (
+        <li><button class="chip" type="button" data-term={term}>{term}</button></li>
+      ))}
+    </ul>
 
     <ul class="stats">
       <li><b class="tnum">{total}</b> sound buttons</li>
@@ -56,6 +69,20 @@ const schema = [
       <li><b>New</b> sounds added regularly</li>
     </ul>
   </section>
+
+  <section class="section" id="results-section" hidden>
+    <div class="section-head">
+      <h2 id="results-heading">Search results</h2>
+      <button class="section-link" type="button" id="clear-search">Clear search ✕</button>
+    </div>
+    <p id="count" class="result-count" role="status" aria-live="polite"></p>
+    <div id="results" class="grid grid--lg" aria-labelledby="results-heading"></div>
+    <p id="empty" class="empty-state" hidden>
+      No sounds match that. Try a shorter word, or browse <a href="/categories/">every soundboard</a>.
+    </p>
+  </section>
+
+  <div id="browse">
 
   <section class="section">
     <div class="section-head">
@@ -113,4 +140,106 @@ const schema = [
       browse by category above.
     </p>
   </section>
+  </div>
+
+  <script>
+    type Item = {
+      slug: string; title: string; tags: string[];
+      category: string; audio: string; duration: number;
+    };
+
+    const q = document.getElementById('q') as HTMLInputElement;
+    const browse = document.getElementById('browse')!;
+    const section = document.getElementById('results-section')!;
+    const results = document.getElementById('results')!;
+    const empty = document.getElementById('empty')!;
+    const count = document.getElementById('count')!;
+    const clear = document.getElementById('clear-search')!;
+    let index: Item[] = [];
+    let loaded = false;
+
+    const esc = (s: string) =>
+      s.replace(/[&<>"']/g, (c) =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!
+      );
+    const dur = (n: number) => `${n.toFixed(1).replace(/\.0$/, '')}s`;
+
+    const PLAY = '<svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z"/></svg>';
+
+    function card(s: Item) {
+      const title = esc(s.title);
+      return `<article class="bleep" style="--dur:${s.duration}s">
+        <button class="bleep-play" type="button" data-src="${esc(s.audio)}" data-slug="${esc(s.slug)}" aria-label="Play ${title}" aria-pressed="false">
+          <span class="bleep-ico" aria-hidden="true">${PLAY}<span class="i-eq"><i></i><i></i><i></i></span></span>
+          <span class="bleep-dur" aria-hidden="true">${dur(s.duration)}</span>
+          <span class="bleep-bar" aria-hidden="true"></span>
+        </button>
+        <a class="bleep-title" href="/sound/${esc(s.slug)}/"><span>${title}</span></a>
+      </article>`;
+    }
+
+    /** The index is only needed once someone actually searches, so it never
+     *  costs a first-paint request on the homepage. */
+    async function ensureIndex() {
+      if (loaded) return;
+      try {
+        index = await (await fetch('/search-index.json')).json();
+        loaded = true;
+      } catch {
+        count.textContent = 'Search is unavailable right now — try browsing by category below.';
+      }
+    }
+
+    function showBrowse() {
+      section.hidden = true;
+      browse.hidden = false;
+      results.innerHTML = '';
+    }
+
+    async function search() {
+      const query = q.value.trim();
+      if (!query) return showBrowse();
+
+      await ensureIndex();
+      const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      const hits = index.filter((s) => {
+        const hay = (s.title + ' ' + s.tags.join(' ') + ' ' + s.category).toLowerCase();
+        return terms.every((t) => hay.includes(t));
+      });
+
+      browse.hidden = true;
+      section.hidden = false;
+      results.innerHTML = hits.map(card).join('');
+      empty.hidden = hits.length > 0;
+      count.textContent = hits.length
+        ? `${hits.length} ${hits.length === 1 ? 'sound' : 'sounds'} matching “${query}”`
+        : `Nothing matching “${query}”`;
+    }
+
+    q.addEventListener('input', search);
+    q.addEventListener('focus', ensureIndex, { once: true });
+
+    clear.addEventListener('click', () => {
+      q.value = '';
+      showBrowse();
+      q.focus();
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('.search-tools .chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        q.value = btn.dataset.term ?? '';
+        search();
+        q.focus();
+      });
+    });
+
+    // Escape clears the search and returns to browsing
+    q.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && q.value) {
+        e.preventDefault();
+        q.value = '';
+        showBrowse();
+      }
+    });
+  </script>
 </Base>

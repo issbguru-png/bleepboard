@@ -83,7 +83,7 @@ document.addEventListener('click', (e) => {
   });
 });
 
-// "/" jumps to search — focuses the field if we're already on the search page.
+// "/" focuses the homepage search field, or sends you to the homepage to use it.
 document.addEventListener('keydown', (e) => {
   if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
   const t = e.target as HTMLElement | null;
@@ -91,5 +91,5 @@ document.addEventListener('keydown', (e) => {
   const field = document.getElementById('q') as HTMLInputElement | null;
   e.preventDefault();
   if (field) field.focus();
-  else window.location.href = '/search/';
+  else window.location.href = '/';
 });
