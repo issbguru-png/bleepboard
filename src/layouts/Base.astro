@@ -44,6 +44,8 @@ const here = Astro.url.pathname;
     <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {schema.map((obj) => (
       <script type="application/ld+json" set:html={JSON.stringify(obj)} />
     ))}
