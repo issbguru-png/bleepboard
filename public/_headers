@@ -1,0 +1,57 @@
+# Cloudflare Pages header rules. Ignored by GitHub Pages, so this file is safe
+# to commit before the migration — it simply does nothing until we move.
+#
+# The problem it solves: GitHub Pages sends `max-age=600` on everything,
+# including 40MB of MP3s that never change. A repeat visitor re-downloads audio
+# they already have every ten minutes.
+
+# Astro fingerprints these filenames, so the content can never change behind a
+# given URL. Safe to cache forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Audio: 30 days rather than a year with `immutable`. These filenames are NOT
+# hashed — /audio/vine-boom.mp3 stays that URL if we ever re-cut the clip — so
+# `immutable` would strand a stale file in caches with no way to bust it short
+# of renaming. 30 days captures nearly all the benefit and still lets a fix
+# propagate.
+/audio/*
+  Cache-Control: public, max-age=2592000
+
+# Share cards regenerate whenever a sound's title changes, so keep them
+# shorter than audio. A stale social card is cosmetic but looks careless.
+/og/*
+  Cache-Control: public, max-age=604800
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+/og-image.png
+  Cache-Control: public, max-age=604800
+
+# The search index changes on every content deploy, so it must revalidate.
+/search-index.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sitemaps and robots: crawlers should always see current state.
+/sitemap*.xml
+  Cache-Control: public, max-age=0, must-revalidate
+/robots.txt
+  Cache-Control: public, max-age=0, must-revalidate
+/ads.txt
+  Cache-Control: public, max-age=0, must-revalidate
+
+# HTML must revalidate or a deploy takes ten minutes to reach anyone.
+# Security headers go here too, applied site-wide.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+
+# NOTE: deliberately no X-Frame-Options or frame-ancestors anywhere.
+# /embed/* exists to be iframed on other people's sites — that is the backlink
+# engine. Blocking framing would break it.

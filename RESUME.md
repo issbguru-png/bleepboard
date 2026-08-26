@@ -32,6 +32,24 @@ npm run build
 - **56 sounds are already validated and cached** in `.cache/audio/` — zero network
   cost, they just need copy written.
 
+## Cloudflare migration — prepared, needs owner to execute
+
+Everything on the code side is ready: `public/_headers` (cache + security rules,
+inert on GitHub Pages), `wrangler.toml`, and a full runbook at
+**[docs/migrate-to-cloudflare.md](docs/migrate-to-cloudflare.md)**.
+
+Blocked on three things only the account holder can do: create a Cloudflare
+account, run `npx wrangler login` (browser OAuth), and change DNS at Dynadot.
+
+Measured 2026-08-26 — why it's worth doing:
+- Cold audio latency 1,453 ms vs soundboardguys.com's 1,039 ms (they use a
+  media CDN, we use GitHub Pages).
+- GitHub Pages sends `max-age=600` on 40 MB of MP3s that never change.
+- The play-count Function has never run (see below).
+
+Best done now, at zero traffic: URLs don't change, so it's a hosting swap
+rather than an SEO migration, and rollback is a DNS revert.
+
 ## Known limitation: play counts don't work
 
 `src/scripts/player.ts` fires a beacon at `/api/play`, which is a **Cloudflare Pages

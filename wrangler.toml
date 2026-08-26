@@ -1,0 +1,21 @@
+# Cloudflare Pages config.
+#
+# Not in use yet — the site is on GitHub Pages. This exists so the migration is
+# a matter of running commands rather than working out what to write.
+#
+# See docs/migrate-to-cloudflare.md for the full runbook.
+
+name = "bleepboard"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-08-26"
+
+# The play-counter Function at functions/api/play.ts needs this binding.
+# It is the reason play counts do not work today: the Function is Cloudflare
+# code sitting in a repo deployed to GitHub Pages, where it never runs.
+#
+# Create the namespace first, then paste its id here:
+#   npx wrangler kv namespace create PLAYS
+#
+# [[kv_namespaces]]
+# binding = "PLAYS"
+# id = "TODO: paste the id wrangler prints"
