@@ -1251,3 +1251,70 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
   .author-card { gap: var(--s4); padding: var(--s4); }
   .author-card > .woofer { width: 88px; height: 88px; }
 }
+
+/* --- hero mascot --------------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s4);
+  justify-items: start;
+}
+.hero-copy { min-width: 0; grid-column: 1; }
+
+.hero-mascot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 116px; height: 116px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  text-decoration: none;
+  flex: none;
+  justify-self: start;
+}
+.hero-mascot .hero-woofer {
+  width: 92px; height: 92px;
+  position: relative; z-index: 1;
+}
+
+/* concentric "it's listening" ripples */
+.hero-mascot .ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-mascot .hero-woofer { animation: woofer-bob 3.6s var(--ease) infinite; }
+  .hero-mascot .ripple { animation: woofer-ripple 3.6s var(--ease) infinite; }
+  .hero-mascot .ripple:nth-of-type(2) { animation-delay: 1.8s; }
+}
+@keyframes woofer-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%      { transform: translateY(-5px) rotate(-1.5deg); }
+  75%      { transform: translateY(-2px) rotate(1.5deg); }
+}
+@keyframes woofer-ripple {
+  0%   { transform: scale(0.82); opacity: 0.55; }
+  70%  { transform: scale(1.45); opacity: 0; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+.hero-mascot:hover .hero-woofer { transform: translateY(-6px) rotate(-3deg); }
+.hero-mascot:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--s7);
+  }
+  .hero-copy { grid-column: 1; grid-row: 1; }
+  .hero-mascot {
+    grid-column: 2; grid-row: 1;
+    width: 232px; height: 232px;
+    justify-self: end;
+  }
+  .hero-mascot .hero-woofer { width: 184px; height: 184px; }
+}

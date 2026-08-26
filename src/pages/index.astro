@@ -35,6 +35,13 @@ const schema = [
 ---
 <Base title={title} description={description} schema={schema}>
   <section class="hero">
+    <a class="hero-mascot" href="#woofer" aria-label="Meet Woofer, the Bleepboard mascot">
+      <span class="ripple" aria-hidden="true"></span>
+      <span class="ripple" aria-hidden="true"></span>
+      <Woofer size={200} class="hero-woofer" />
+    </a>
+
+    <div class="hero-copy">
     <p class="eyebrow"><span class="tick"></span>Free meme soundboard</p>
     <h1>Instant sound buttons for every meme</h1>
     <p class="lede">
@@ -69,6 +76,7 @@ const schema = [
       <li><b>Free</b> MP3 downloads</li>
       <li><b>New</b> sounds added regularly</li>
     </ul>
+    </div>
   </section>
 
   <section class="section" id="results-section" hidden>
