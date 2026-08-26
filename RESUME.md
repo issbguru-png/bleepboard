@@ -5,6 +5,9 @@
 **Live:** bleepboard.com — 523 sounds, 11 category hubs, 13 articles, 1,080 pages.
 Deploys automatically from `main` via GitHub Pages on every push.
 
+**Analytics:** GA4 live (`G-RE0Q1R4421`) with Consent Mode v2 — denied by default in
+EEA/UK/CH until a CMP is answered, granted elsewhere.
+
 **Not indexed.** No Search Console property exists, so none of this is in Google yet.
 This is the single biggest open item; everything else compounds only after it.
 
@@ -54,9 +57,9 @@ These are marked with TODOs in source (stripped at build) — grep `TODO` in
 2. **Legal entity name + postal address** — GDPR Art. 13 requires controller identity.
 3. **DMCA designated agent block** — name, address, contact.
 4. **An effective date** on the privacy policy.
-5. **A deliberate decision on child-directed treatment** — the catalogue is Roblox,
-   FNAF, SpongeBob and Minecraft audio. COPPA turns on who the audience actually is.
-   Worth proper advice.
+5. ~~Child-directed treatment~~ — **decided 2026-08-26: standard treatment
+   (`CHILD_DIRECTED = false`)**. Deliberate, not a default. Revisit if GA4 shows the
+   audience skewing heavily under 13.
 6. **CPRA "Do Not Sell or Share" footer link**, once ad partners make it applicable.
 
 Ads are not live. The whole advertising section of the privacy policy is gated behind

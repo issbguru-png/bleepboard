@@ -58,8 +58,15 @@ export const USE_GOOGLE_CMP = false;
  *
  * true  → sends tagForChildDirectedTreatment, non-personalised ads only
  * false → standard treatment
+ *
+ * DECISION (owner, 2026-08-26): false — standard treatment.
+ * This was chosen deliberately, not left at a default.
+ *
+ * Worth revisiting if GA4 audience data later shows the visitor base skewing
+ * heavily under 13, since COPPA attaches to who the audience actually is
+ * rather than how the site is classified. The switch is this one line.
  */
-export const CHILD_DIRECTED = false; // TODO (owner): decide deliberately.
+export const CHILD_DIRECTED = false;
 
 /** Derived flags — don't edit these. */
 export const ADS_LIVE = AD_NETWORK !== 'none';
