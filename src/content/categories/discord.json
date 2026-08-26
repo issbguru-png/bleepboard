@@ -2,8 +2,8 @@
   "name": "Discord",
   "hubTitle": "Discord Soundboard",
   "order": 10,
-  "metaDescription": "Discord sound buttons \u2014 join, leave, ping and notification sounds plus the clips every server plays. Free MP3 downloads for your soundboard.",
-  "intro": "Discord has its own sonic language: the join blip, the leave blip, the ping that means you've been summoned. This board collects Discord's iconic sounds plus the clips people actually upload to their server soundboards \u2014 reaction sounds, memes, and trolls calibrated for voice chat.\n\nEvery sound downloads free as MP3, sized right for Discord's native soundboard feature: download, upload to your server, and deploy in calls. Or just play them from the browser and route the chaos through your mic.",
+  "metaDescription": "Discord sound buttons: join, leave, ping and notification sounds plus the clips every server plays. Free MP3 downloads for your soundboard.",
+  "intro": "Discord has its own sonic language: the join blip, the leave blip, the ping that means you've been summoned. This board collects Discord's iconic sounds plus the clips people actually upload to their server soundboards, from reaction sounds to memes to trolls calibrated for voice chat.\n\nEvery sound downloads free as MP3, sized right for Discord's native soundboard feature. Download it, upload it to your server, deploy it in calls. Or just play them from the browser and route the chaos through your mic.",
   "faq": [
     {
       "q": "How do I add these sounds to my Discord soundboard?",
@@ -11,7 +11,7 @@
     },
     {
       "q": "Can I play these directly in a Discord call?",
-      "a": "Yes \u2014 play them from the browser with your mic on, or use a virtual audio cable to route Bleepboard's audio into your mic input for clean playback."
+      "a": "Yes. Play them from the browser with your mic on, or use a virtual audio cable to route Bleepboard's audio into your mic input for cleaner playback."
     }
   ]
 }

@@ -2,16 +2,16 @@
   "name": "Gaming",
   "hubTitle": "Gaming Soundboard",
   "order": 3,
-  "metaDescription": "Gaming sound buttons \u2014 victory jingles, coin pickups, level-up chimes and rage-inducing defeat sounds. Play instantly, download free.",
-  "intro": "Every gamer knows these sounds before they can name them: the coin pickup, the level-up chime, the defeat buzzer that haunts your dreams. The gaming soundboard collects them as instant buttons for your Discord calls, stream alerts, and video edits.\n\nTap to play, download the MP3 free, or embed a button straight into your stream overlay. We keep this board growing with the sounds trending in gaming clips right now \u2014 if a sound is echoing across Twitch and YouTube Gaming this week, it lands here.",
+  "metaDescription": "Gaming sound buttons: victory jingles, coin pickups, level-up chimes and rage-inducing defeat sounds. Play instantly, download free.",
+  "intro": "Every gamer knows these sounds before they can name them: the coin pickup, the level-up chime, the defeat buzzer that haunts your dreams. The gaming soundboard collects them as instant buttons for your Discord calls, stream alerts and video edits.\n\nTap to play, download the MP3 free, or embed a button straight into your stream overlay. We keep this board growing with whatever is trending in gaming clips right now, so if a sound is echoing across Twitch and YouTube Gaming this week, it lands here.",
   "faq": [
     {
       "q": "Can I use these sounds in my Discord server?",
-      "a": "Yes \u2014 download the MP3 and upload it to your server's soundboard, or play Bleepboard in the browser and route it through your mic input."
+      "a": "Yes. Download the MP3 and upload it to your server's soundboard, or play Bleepboard in the browser and route it through your mic input."
     },
     {
       "q": "Do these work as stream alert sounds?",
-      "a": "Yes. Download the MP3 and drop it into OBS, Streamlabs, or your alert tool of choice."
+      "a": "They do. Download the MP3 and drop it into OBS, Streamlabs or your alert tool of choice."
     }
   ]
 }

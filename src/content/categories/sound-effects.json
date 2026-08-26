@@ -2,16 +2,16 @@
   "name": "Sound Effect",
   "hubTitle": "Sound Effects Soundboard",
   "order": 2,
-  "metaDescription": "Instant sound effect buttons: bleeps, buzzers, booms, zaps and more. Tap to play, free MP3 downloads for edits, streams, and pranks.",
-  "intro": "Classic sound effects, one tap away. This board collects the workhorse SFX everyone reaches for \u2014 censor bleeps, wrong-answer buzzers, booms, zaps, and static \u2014 as instant sound buttons you can play in the browser or download free as MP3.\n\nThese are the clips that do the heavy lifting in video edits, live streams, and classroom pranks alike. Each one has its own page with the download, an embed code, and a note on where the effect is typically used, so you can find the exact sound you heard and get it into your project in seconds.",
+  "metaDescription": "Instant sound effect buttons: bleeps, buzzers, booms, zaps and more. Tap to play, free MP3 downloads for edits, streams and pranks.",
+  "intro": "Classic sound effects, one tap away. This board collects the workhorse SFX everyone reaches for, from censor bleeps and wrong-answer buzzers to booms, zaps and static, as instant sound buttons you can play in the browser or download free as MP3.\n\nThese are the clips that do the heavy lifting in video edits, live streams and classroom pranks alike. Each one has its own page with the download, an embed code, and a note on where the effect is typically used, so you can find the exact sound you heard and get it into your project in seconds.",
   "faq": [
     {
       "q": "Can I download these sound effects as MP3?",
-      "a": "Yes, every effect has a free MP3 download on its sound page \u2014 one click, no signup."
+      "a": "Yes, every effect has a free MP3 download on its sound page. One click, no signup."
     },
     {
       "q": "Are these sound effects royalty-free?",
-      "a": "Bleepboard's synthesized effects (bleeps, boops, buzzers) are original and free to use. For sounds sourced from media, check the origin note on each page before commercial use."
+      "a": "Bleepboard's synthesised effects (bleeps, boops, buzzers) are original and free to use. For sounds sourced from media, check the origin note on each page before commercial use."
     }
   ]
 }

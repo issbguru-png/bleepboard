@@ -2,8 +2,8 @@
   "name": "Prank",
   "hubTitle": "Prank Soundboard",
   "order": 6,
-  "metaDescription": "Prank sound buttons \u2014 alarms, buzzers, static and fake phone sounds to catch your friends off guard. Instant play, free downloads.",
-  "intro": "Sounds engineered to get a reaction. The prank soundboard is stocked with alarms that stop conversations, buzzers that imply someone got an answer very wrong, fake phone sounds, and bursts of static that make people check their speakers.\n\nEverything plays instantly from the browser \u2014 which is exactly what you want mid-prank \u2014 and downloads free as MP3 for more elaborate setups. Use responsibly, or at least point the blame at whoever laughed hardest.",
+  "metaDescription": "Prank sound buttons: alarms, buzzers, static and fake phone sounds to catch your friends off guard. Instant play, free downloads.",
+  "intro": "Sounds engineered to get a reaction. The prank soundboard is stocked with alarms that stop conversations, buzzers that imply someone got an answer very wrong, fake phone sounds, and bursts of static that make people check their speakers.\n\nEverything plays instantly from the browser, with no loading and no waiting, which matters more than you would think mid-prank, and everything downloads free as MP3 for the more elaborate setups. Use responsibly, or at least point the blame at whoever laughed hardest.",
   "faq": [
     {
       "q": "What's the best prank sound?",
@@ -11,7 +11,7 @@
     },
     {
       "q": "Can I play these from my phone?",
-      "a": "Yes \u2014 Bleepboard is a website, so every button works on any phone browser with no app install."
+      "a": "Yes. Bleepboard is a website, so every button works in any phone browser with nothing to install."
     }
   ]
 }
