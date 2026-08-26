@@ -108,7 +108,7 @@ const schema = [
       <h2>Trending sounds</h2>
       <a class="section-link" href="/trending/">All trending →</a>
     </div>
-    <p class="section-sub">Ranked by plays — what the internet is pressing right now.</p>
+    <p class="section-sub">The biggest sounds on the board right now.</p>
     <div class="grid grid--lg">
       {trending.map((s, i) => (
         <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i < 3 ? i + 1 : undefined} />

@@ -14,6 +14,8 @@ const sounds = defineCollection({
     explainer: z.string().optional(), // path to a blog explainer, e.g. /blog/vine-boom-history/
     added: z.coerce.date(),
     featured: z.boolean().default(false),
+    /** Editorial popularity weight used for ordering. NOT a measured play
+     *  count — nothing counts plays (see docs). Never display as "plays". */
     plays: z.number().default(0),
   }),
 });

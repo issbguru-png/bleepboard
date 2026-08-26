@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import Woofer from '../components/Woofer.astro';
+import StatIcon from '../components/StatIcon.astro';
 import TrendPipeline from '../components/TrendPipeline.astro';
 import FounderAvatar from '../components/FounderAvatar.astro';
 
@@ -20,11 +21,11 @@ const posts = await getCollection('blog');
       Bleepboard is a soundboard built around one idea: when a meme takes off, you should be
       able to play the sound — and know where it came from — within seconds.
     </p>
-    <ul class="stats">
-      <li><b class="tnum">{sounds.length}</b> sound buttons</li>
-      <li><b class="tnum">{categories.length}</b> soundboards</li>
-      <li><b class="tnum">{posts.length}</b> explainers</li>
-      <li><b>Free</b> forever</li>
+    <ul class="stats stats--icon">
+      <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> sound buttons</span></li>
+      <li><StatIcon name="categories" /><span><b class="tnum">{categories.length}</b> soundboards</span></li>
+      <li><StatIcon name="new" /><span><b class="tnum">{posts.length}</b> explainers</span></li>
+      <li><StatIcon name="download" /><span><b>Free</b> forever</span></li>
     </ul>
   </section>
 

@@ -9,25 +9,23 @@ const sounds = (await getCollection('sounds')).sort(
 );
 const top = sounds.slice(0, 12);
 const rest = sounds.slice(12);
-const totalPlays = sounds.reduce((n, s) => n + s.data.plays, 0);
 ---
 <Base
   title="Trending Sound Buttons — Most Played Right Now | Bleepboard"
-  description="The most played sound buttons on Bleepboard right now. Viral meme sounds ranked by real plays — tap to play, free to download."
+  description="The most popular sound buttons on Bleepboard — the meme sounds people come here for, ranked. Tap to play, free MP3 downloads."
 >
   <section class="page-head">
     <div class="hero-mark">
       <StatIcon name="ranked" size={48} />
-      <p class="eyebrow"><span class="tick"></span>Updated continuously</p>
+      <p class="eyebrow"><span class="tick"></span>Most popular</p>
     </div>
     <h1>Trending sounds</h1>
     <p class="lede">
-      Ranked by plays — what the internet is actually pressing right now.
-      Number one moves whenever a new clip catches.
+      The sounds people come to this board for, ranked by how big each one is
+      right now. Our call, not a play counter.
     </p>
     <ul class="stats stats--icon">
       <li><StatIcon name="ranked" /><span><b class="tnum">{sounds.length}</b> sounds ranked</span></li>
-      <li><StatIcon name="plays" /><span><b class="tnum">{totalPlays.toLocaleString()}</b> plays counted</span></li>
       <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
     </ul>
   </section>
@@ -37,7 +35,7 @@ const totalPlays = sounds.reduce((n, s) => n + s.data.plays, 0);
       <h2>Top 12 right now</h2>
       <a class="section-link" href="/new/">See what's new →</a>
     </div>
-    <p class="section-sub">The board's heavy hitters, in order.</p>
+    <p class="section-sub">The board's heavy hitters.</p>
     <div class="grid grid--lg">
       {top.map((s, i) => (
         <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i + 1} />
