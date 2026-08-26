@@ -3,6 +3,8 @@ title: "What Is Verity? The Minecraft Horror Series, Explained"
 description: "ThatMob's Verity series turned a cheerful yellow Minecraft companion into the internet's most unsettling horror character. Here's why the calm voice works."
 date: 2026-08-26
 tags: [minecraft, horror, gaming, explainer]
+image: /blog/what-is-verity-minecraft.png
+imageAlt: "Abstract Bleepboard artwork: a calm flat line on black interrupted by a single decaying blip"
 ---
 
 Minecraft horror is a crowded genre and most of it is loud. Screaming thumbnails. A scary skin sprinting at the camera. A sting lifted off a stock music library. **Verity** does none of that, and right now people cannot stop talking about it.

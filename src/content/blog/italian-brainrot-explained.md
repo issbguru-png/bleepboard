@@ -4,6 +4,8 @@ seoTitle: "Italian Brainrot, Explained: The AI Animal Memes"
 description: "Tralalero Tralala, Bombardiro Crocodilo, Tung Tung Tung Sahur and the rest: what Italian brainrot is, where it came from and why it spread."
 date: 2026-08-26
 tags: [brainrot, italian-brainrot, meme, explainer]
+image: /blog/italian-brainrot-explained.png
+imageAlt: "Abstract Bleepboard artwork: a repeating field of green dots swelling and shrinking in waves"
 ---
 
 A three-legged shark wearing Nike trainers. A crocodile fused with a bomber plane. Somewhere behind them, a ballerina whose head is a cappuccino. Each one arrives with a name built from rhyming syllables and a narrator explaining its life story in confident, completely deranged Italian. This is **Italian brainrot**, and for a stretch of 2025 it was inescapable.

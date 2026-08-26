@@ -3,6 +3,8 @@ title: "The FNAF Jumpscare Sounds, Explained"
 description: "Why the Five Nights at Freddy's jumpscare screams work, how FNAF 1, 2 and 4 differ, and why a children's cheer became one of horror's best sounds."
 date: 2026-08-26
 tags: [fnaf, gaming, horror, explainer]
+image: /blog/fnaf-jumpscare-sounds-explained.png
+imageAlt: "Abstract Bleepboard artwork: a flat violet waveform on black that erupts into one violent spike"
 ---
 
 Five Nights at Freddy's is a horror game about sitting still in a chair and looking at cameras. Almost no monsters on screen, almost no animation, a budget you could fit in a shoebox. It is also, on the evidence, an extraordinarily effective scare-delivery machine, and nearly all of that is in the audio.

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import SoundButton from '../../components/SoundButton.astro';
 import { SITE, absolute, pickTitle } from '../../lib/site';
 import { breadcrumbs, publisher } from '../../lib/schema';
 
@@ -20,12 +21,60 @@ const readingTime = Math.max(
   Math.round((post.body ?? '').trim().split(/\s+/).length / 220)
 );
 
-const more = (await getCollection('blog'))
+// Several articles share a publish date, so the id is the tiebreak — otherwise
+// the prev/next pager would depend on directory read order and could differ
+// between machines.
+const all = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf() || a.id.localeCompare(b.id)
+);
+const at = all.findIndex((p) => p.id === post.id);
+const newer = at > 0 ? all[at - 1] : null;
+const older = at >= 0 && at < all.length - 1 ? all[at + 1] : null;
+
+/** Tags every post carries tell you nothing about which posts are alike. */
+const GENERIC = new Set(['explainer', 'guide', 'how-to']);
+const mine = new Set(d.tags.filter((t) => !GENERIC.has(t)));
+const more = all
   .filter((p) => p.id !== post.id)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 2);
+  .map((p) => ({
+    p,
+    score: p.data.tags.filter((t) => mine.has(t)).length,
+  }))
+  .sort((a, b) => b.score - a.score || b.p.data.date.valueOf() - a.p.data.date.valueOf())
+  .slice(0, 3)
+  .map((x) => x.p);
+
+// The sounds an article is actually about. Each sound already points at its
+// explainer (see the `explainer` field in src/content.config.ts), so this is
+// that link read backwards — no second list to keep in step. This is the whole
+// reason the blog exists commercially: an explainer that does not hand the
+// reader the play button has done half a job.
+const sounds = await getCollection('sounds');
+const byPlays = (a, b) => b.data.plays - a.data.plays;
+const linked = sounds
+  .filter((s) => s.data.explainer === `/blog/${post.id}/`)
+  .sort(byPlays);
+// Some articles are about exactly one sound, and a single button alone in a
+// six-column grid reads as a rendering fault rather than a deliberate list. Top
+// the row up from the same categories the linked sounds live in — related by
+// the site's own taxonomy, not by guesswork.
+const cats = new Set(linked.map((s) => s.data.category));
+const linkedIds = new Set(linked.map((s) => s.id));
+const topUp =
+  linked.length === 0 || linked.length >= 4
+    ? []
+    : sounds
+        .filter((s) => !linkedIds.has(s.id) && cats.has(s.data.category))
+        .sort(byPlays)
+        .slice(0, 6 - linked.length);
+// A general guide names no single sound, so it gets the board's best instead.
+const fallback = linked.length ? [] : [...sounds].sort(byPlays).slice(0, 6);
+const strip = linked.length ? [...linked, ...topUp] : fallback;
 
 const pageUrl = SITE.url + `/blog/${post.id}/`;
+// Falls back to the sitewide card when an article has no artwork yet, so a
+// freshly drafted post still shares cleanly instead of previewing blank.
+const shareImage = absolute(d.image ?? SITE.ogImage);
 
 const schema = [
   {
@@ -34,8 +83,10 @@ const schema = [
     headline: d.title,
     description: d.description,
     // Google treats `image` as required for Article; without it the page is
-    // ineligible for article treatment entirely.
-    image: absolute(SITE.ogImage),
+    // ineligible for article treatment entirely. Now that each article has its
+    // own 1200x630 artwork this points at that rather than the sitewide card,
+    // so the image Google associates with the page is the one on the page.
+    image: shareImage,
     datePublished: d.date.toISOString(),
     // dateModified falls back to the publish date rather than being omitted —
     // an unmodified article was last modified when it was published.
@@ -59,7 +110,16 @@ const schema = [
 const headline = d.seoTitle ?? d.title;
 const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
 ---
-<Base title={title} description={d.description} schema={schema} ogType="article">
+<Base
+  title={title}
+  description={d.description}
+  schema={schema}
+  ogType="article"
+  ogImage={d.image}
+  ogImageAlt={d.imageAlt}
+  ogImageWidth={1200}
+  ogImageHeight={630}
+>
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="sep" aria-hidden="true">›</span>
@@ -68,16 +128,82 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
     <span class="here">{d.title}</span>
   </nav>
 
-  <article class="prose article">
+  <header class="article-head">
     <p class="eyebrow"><span class="tick"></span>Article</p>
     <h1>{d.title}</h1>
-    <p class="byline">
+    {/* The description was doing meta-tag duty only. On the page it earns its
+        keep as a standfirst — the reader gets the promise before the scroll. */}
+    <p class="article-standfirst">{d.description}</p>
+    <p class="article-byline">
       <time datetime={d.date.toISOString().slice(0, 10)}>{fmt(d.date)}</time>
-      {d.updated && <> · Updated {fmt(d.updated)}</>}
-      {' · '}{readingTime} min read
+      {d.updated && <> <span class="dot" aria-hidden="true">·</span> Updated {fmt(d.updated)}</>}
+      {' '}<span class="dot" aria-hidden="true">·</span> {readingTime} min read
     </p>
+  </header>
+
+  {d.image && (
+    /* Not lazy and not low priority: this is the LCP element on the page. */
+    <figure class="article-hero">
+      <img
+        src={d.image}
+        alt={d.imageAlt ?? ''}
+        width="1200"
+        height="630"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </figure>
+  )}
+
+  <article class="prose article">
     <Content />
   </article>
+
+  {strip.length > 0 && (
+    <section class="section sound-strip">
+      <div class="section-head">
+        <h2>{linked.length ? 'Sounds from this article' : 'Sounds to try while you read'}</h2>
+        <a class="section-link" href="/trending/">All trending →</a>
+      </div>
+      {/* The heading only ever claims what is true: the top-up sounds are
+          described as neighbours, never as sounds the article mentions. */}
+      <p class="section-sub">
+        {!linked.length
+          ? 'The board’s most popular buttons. Tap to play, free MP3 downloads.'
+          : topUp.length
+            ? 'The sounds this piece is about, then more from the same corner of the board. All free MP3 downloads.'
+            : 'Tap to play. Every one is a free MP3 download.'}
+      </p>
+      <div class="grid grid--lg">
+        {strip.map((s) => (
+          <SoundButton
+            slug={s.id}
+            title={s.data.title}
+            audio={s.data.audio}
+            duration={s.data.duration}
+            category={s.data.category}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {(newer || older) && (
+    <nav class="post-pager" aria-label="Previous and next articles">
+      {newer ? (
+        <a class="pager-link" href={`/blog/${newer.id}/`} rel="prev">
+          <span class="pager-dir"><span aria-hidden="true">←</span> Newer</span>
+          <span class="pager-title">{newer.data.title}</span>
+        </a>
+      ) : <span></span>}
+      {older && (
+        <a class="pager-link pager-link--next" href={`/blog/${older.id}/`} rel="next">
+          <span class="pager-dir">Older <span aria-hidden="true">→</span></span>
+          <span class="pager-title">{older.data.title}</span>
+        </a>
+      )}
+    </nav>
+  )}
 
   {more.length > 0 && (
     <section class="section post-foot">
@@ -86,9 +212,23 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
         {more.map((p) => (
           <li>
             <a class="post-card" href={`/blog/${p.id}/`}>
-              <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time>
-              <h3>{p.data.title}</h3>
-              <p>{p.data.description}</p>
+              {p.data.image && (
+                <div class="post-thumb">
+                  <img
+                    src={p.data.image}
+                    alt=""
+                    width="1200"
+                    height="630"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+              <div class="post-body">
+                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time>
+                <h3>{p.data.title}</h3>
+                <p class="post-desc">{p.data.description}</p>
+              </div>
             </a>
           </li>
         ))}
@@ -100,3 +240,142 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
     </section>
   )}
 </Base>
+
+<style>
+  /* --- article page --------------------------------------------------------
+     global.css is owned elsewhere at the moment, so the new pieces live here.
+     The .post-thumb / .post-body block at the bottom is deliberately the same
+     vocabulary as blog/index.astro; if global.css frees up, lift both out.
+  ------------------------------------------------------------------------- */
+
+  /* The headline block used to sit inside .article, which capped it at the
+     prose measure and gave the byline nowhere to go. Split out so the hero can
+     be wider than the text column without the h1 moving. */
+  .article-head { max-width: 70ch; padding-top: var(--s2); }
+  .article-head h1 { margin-bottom: var(--s4); }
+
+  .article-standfirst {
+    font-size: var(--step-2);
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 56ch;
+    margin: 0 0 var(--s5);
+  }
+
+  .article-byline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    font-size: var(--step--1);
+    color: var(--ink-3);
+    font-weight: 650;
+    margin: 0;
+  }
+  .article-byline .dot { opacity: 0.55; }
+
+  /* --- hero --------------------------------------------------------------- */
+  /* Wider than the text column on purpose: at the prose measure a 1.9:1 image
+     is a letterbox strip. aspect-ratio holds the box open before the file
+     lands, so nothing below it moves — the page is heading for ad slots and a
+     jumping hero is the fastest way to fail CLS. */
+  .article-hero {
+    margin: var(--s6) 0 var(--s7);
+    max-width: min(100%, 880px);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: var(--surface-2);
+    box-shadow: var(--shadow-1);
+  }
+  .article-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+  }
+
+  /* --- the sound strip ---------------------------------------------------- */
+  /* The one thing the blog was missing: a way out of the article and into the
+     product. Sits after the body so it never interrupts the read. */
+  .sound-strip { margin-top: var(--s8); }
+
+  /* --- prev / next -------------------------------------------------------- */
+  .post-pager {
+    display: grid;
+    gap: var(--s3);
+    margin-top: var(--s7);
+  }
+  @media (min-width: 700px) {
+    .post-pager { grid-template-columns: 1fr 1fr; }
+  }
+  .pager-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 44px;
+    padding: var(--s4) var(--s5);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    text-decoration: none;
+    box-shadow: var(--shadow-1);
+  }
+  .pager-link:hover { border-color: var(--line-2); color: var(--ink); }
+  .pager-link:hover .pager-title { color: var(--accent-text); }
+  .pager-link--next { text-align: right; align-items: flex-end; }
+  .pager-dir {
+    font-size: var(--step--2);
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .pager-title {
+    font-size: var(--step--1);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  /* --- keep reading ------------------------------------------------------- */
+  /* .post-foot is capped at the prose measure in global.css, which left three
+     cards fighting over 68ch. Related articles are navigation, not prose. */
+  .post-foot { max-width: none; }
+  .post-foot .post-list { gap: var(--s4); }
+  @media (min-width: 760px) {
+    .post-foot .post-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .post-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .post-thumb {
+    display: block;
+    aspect-ratio: 1200 / 630;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .post-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .post-body { display: block; padding: var(--s4) var(--s5) var(--s5); flex: 1 1 auto; }
+  .post-card h3 { font-size: var(--step-1); letter-spacing: -0.02em; margin: 0 0 6px; }
+  .post-card:hover h3 { color: var(--accent-text); }
+  .post-desc {
+    display: block;
+    margin: 0;
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.5;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .post-thumb img { transition: transform 0.4s var(--ease); }
+    .post-card:hover .post-thumb img { transform: scale(1.03); }
+    .pager-link { transition: border-color 0.15s, box-shadow 0.2s; }
+  }
+</style>

@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "audit": "node scripts/audit-copy.mjs",
+    "gen:blog-heroes": "node scripts/gen-blog-heroes.mjs",
     "audit:all": "node scripts/audit-copy.mjs --all",
     "check": "node scripts/audit-copy.mjs && astro build"
   },

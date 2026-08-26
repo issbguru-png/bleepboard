@@ -3,6 +3,8 @@ title: "How to Add Sounds to Your Discord Soundboard"
 description: "Upload custom sounds to a Discord server soundboard, the file limits and permissions you need, and how to play longer clips with a virtual audio cable."
 date: 2026-08-26
 tags: [discord, how-to, soundboard]
+image: /blog/how-to-add-sounds-to-discord-soundboard.png
+imageAlt: "Abstract Bleepboard artwork: an arrow lifting a small waveform clip up out of a tray, drawn as a plain upload symbol"
 ---
 
 Discord has a built-in soundboard and it's genuinely good. One click and your clip plays to everyone in the voice channel. The catch is that it's deliberately built for *very* short sounds, so half of what people want to play won't fit. Here's how to use it properly, and what to do when your clip is too long.

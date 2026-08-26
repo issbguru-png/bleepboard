@@ -3,6 +3,8 @@ title: "Why the Apple Pay Sound Became a Meme"
 description: "How Apple's payment chime turned into the internet's sound for 'buying' anything, plus where to play and download the Apple Pay sound."
 date: 2026-08-25
 tags: [meme, notification, explainer]
+image: /blog/apple-pay-sound-meme.png
+imageAlt: "Abstract Bleepboard artwork: a blue dot sending four widening arcs across the frame, like a chime crossing a room"
 ---
 
 A payment confirmation chime should not be funny. Apple designed the **Apple Pay success sound** to do one job: reassure you, in under a second, that your money has moved. Soft, expensive-sounding, final. Then the internet got hold of it.

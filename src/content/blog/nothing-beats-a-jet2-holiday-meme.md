@@ -3,6 +3,8 @@ title: "Nothing Beats a Jet2 Holiday: The TikTok Meme, Explained"
 description: "Why a cheerful British airline advert became the soundtrack to every holiday disaster on TikTok, and where to play and download the Jet2 sound."
 date: 2026-08-25
 tags: [meme, tiktok, explainer]
+image: /blog/nothing-beats-a-jet2-holiday-meme.png
+imageAlt: "Abstract Bleepboard artwork: a cyan sun sliced by horizontal bands sitting above three lines of flat sea"
 ---
 
 "Nothing beats a Jet2 holiday. And right now, you can save £50 per person…" If you can already hear the relentlessly sunny voice and the pop track underneath it, congratulations: you've been on TikTok during one of the great absurdist meme runs of recent years.

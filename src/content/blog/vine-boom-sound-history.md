@@ -4,6 +4,8 @@ seoTitle: "Vine Boom Sound: The History of the Bass Hit Meme"
 description: "The history of the Vine Boom sound effect: where it came from, why every editor uses it, and where to play and download it free."
 date: 2026-08-25
 tags: [meme, explainer, sound-effect]
+image: /blog/vine-boom-sound-history.png
+imageAlt: "Abstract Bleepboard artwork: a solid orange disc with three concentric rings expanding away from it"
 ---
 
 Some sounds are famous. The **Vine Boom** is infrastructure. It's the deep, resonant bass hit that punctuates roughly half of all meme edits in existence, doing the work of a rimshot and a raised eyebrow at the same time.

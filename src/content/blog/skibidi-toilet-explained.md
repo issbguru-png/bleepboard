@@ -3,6 +3,8 @@ title: "Skibidi Toilet, Explained: The Series That Defined Gen Alpha"
 description: "Singing heads in toilets versus men with cameras for faces. What Skibidi Toilet is, why children love it, and how 'skibidi' became a slang word."
 date: 2026-08-26
 tags: [skibidi, brainrot, gen-alpha, meme, explainer]
+image: /blog/skibidi-toilet-explained.png
+imageAlt: "Abstract Bleepboard artwork: a magenta block sliced into horizontal bands and shoved sideways, like a glitched video frame"
 ---
 
 In February 2023, an animator posted an eleven-second video of a man's head singing from inside a toilet. Within two years it had become the defining media franchise of an entire generation, and every adult who tried to explain why came away sounding unwell. Welcome to **Skibidi Toilet**.

@@ -3,6 +3,8 @@ title: "What Does 67 Mean? The Gen Alpha Meme, Explained"
 description: "Where the 67 meme came from, what 'six seven' actually means, the hand gesture, and why teachers everywhere want it to stop. Play the sound free."
 date: 2026-08-26
 tags: [meme, brainrot, gen-alpha, explainer]
+image: /blog/what-does-67-mean.png
+imageAlt: "Abstract Bleepboard artwork: the numerals 67 set very large in teal on a soft tinted panel"
 ---
 
 Somewhere in the world right now, a teacher is writing a number on a whiteboard and a room full of eleven-year-olds is losing its mind. The number is 67. If you're an adult trying to work out what on earth is happening, here's the good news: you are not missing anything, because there is nothing to miss.

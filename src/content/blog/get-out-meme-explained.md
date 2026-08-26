@@ -4,6 +4,8 @@ seoTitle: "'Get Out' Meme Explained: Tuco's Breaking Bad Scream"
 description: "Where the viral 'GET OUT' sound comes from, why Tuco's Breaking Bad scream took over TikTok, and how to use and download the sound."
 date: 2026-08-25
 tags: [meme, tiktok, explainer]
+image: /blog/get-out-meme-explained.png
+imageAlt: "Abstract Bleepboard artwork: a row of audio bars peaking so hard the loudest ones flatten against a ceiling line"
 ---
 
 If you've spent any time on TikTok or YouTube Shorts lately, you've heard it. A man screaming **"GET OUT"** with a fury that borders on unhinged, slapped onto the end of videos as the ultimate ejection notice. That scream has a name, a face, and one of television's greatest origin stories.

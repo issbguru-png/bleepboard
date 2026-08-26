@@ -3,6 +3,8 @@ title: "What Is a Soundboard? (And Why the Internet Runs on Them)"
 description: "What a soundboard is, how online sound buttons work, and how to use them on Discord, OBS, TikTok edits, and pranks."
 date: 2026-08-25
 tags: [guide, soundboard]
+image: /blog/what-is-a-soundboard.png
+imageAlt: "Abstract Bleepboard artwork: a grid of rounded sound pads, several lit in red, one showing a play triangle"
 ---
 
 A soundboard is a grid of buttons where every button plays a sound. That's the whole idea, and the simplicity is why they took over the internet. No timeline to scrub, no app to open. You press the button, the sound happens, the moment lands.

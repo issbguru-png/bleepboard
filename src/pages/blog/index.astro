@@ -12,6 +12,10 @@ const readingTime = (body?: string) =>
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+// The newest post leads the page. Everything else is the same card at grid
+// size — one hierarchy break rather than a wall of thirteen identical tiles.
+const [lead, ...rest] = posts;
+
 const schema = [
   breadcrumbs([
     ['Home', SITE.url + '/'],
@@ -44,23 +48,206 @@ const schema = [
     </p>
   </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>Latest articles</h2>
-      <a class="section-link" href="/trending/">Trending sounds →</a>
-    </div>
-    <ul class="post-list">
-      {posts.map((p) => (
-        <li>
-          <a class="post-card" href={`/blog/${p.id}/`}>
-            <time datetime={p.data.date.toISOString().slice(0, 10)}>
-              {fmt(p.data.date)} · {readingTime(p.body)} min read
-            </time>
-            <h2>{p.data.title}</h2>
-            <p>{p.data.description}</p>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
+  {lead && (
+    <section class="section lead-section" aria-labelledby="lead-h">
+      <a class="post-card blog-lead" href={`/blog/${lead.id}/`}>
+        {lead.data.image && (
+          <div class="post-thumb">
+            {/* Decorative here: the headline it belongs to is two inches away
+                and reads it out already. Described properly on the article. */}
+            <img
+              src={lead.data.image}
+              alt=""
+              width="1200"
+              height="630"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </div>
+        )}
+        <div class="post-body">
+          <p class="post-kicker">Latest article</p>
+          <h2 id="lead-h">{lead.data.title}</h2>
+          <p class="post-desc">{lead.data.description}</p>
+          <p class="post-meta">
+            <time datetime={lead.data.date.toISOString().slice(0, 10)}>{fmt(lead.data.date)}</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>{readingTime(lead.body)} min read</span>
+          </p>
+          <span class="post-more">Read the article <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    </section>
+  )}
+
+  {rest.length > 0 && (
+    <section class="section">
+      <div class="section-head">
+        <h2>More articles</h2>
+        <a class="section-link" href="/trending/">Trending sounds →</a>
+      </div>
+      <p class="section-sub">Every explainer on the board, newest first.</p>
+      <ul class="post-list">
+        {rest.map((p) => (
+          <li>
+            <a class="post-card" href={`/blog/${p.id}/`}>
+              {p.data.image && (
+                <div class="post-thumb">
+                  <img
+                    src={p.data.image}
+                    alt=""
+                    width="1200"
+                    height="630"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+              <div class="post-body">
+                <p class="post-meta">
+                  <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time>
+                  <span class="dot" aria-hidden="true">·</span>
+                  <span>{readingTime(p.body)} min read</span>
+                </p>
+                <h3>{p.data.title}</h3>
+                <p class="post-desc">{p.data.description}</p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 </Base>
+
+<style>
+  /* --- blog archive --------------------------------------------------------
+     global.css is owned elsewhere at the moment, so everything the thumbnails
+     need lives here and in [slug].astro. The two files share the .post-thumb /
+     .post-body vocabulary deliberately; if global.css frees up, this is the
+     block to lift out wholesale.
+
+     The base .post-card (surface, border, hover lift, reduced-motion opt-out)
+     still comes from global.css — this only takes the padding off so an image
+     can sit flush against the card edge.
+  ------------------------------------------------------------------------- */
+  .post-card {
+    padding: 0;
+    overflow: hidden;          /* clips the thumbnail to the card radius */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* CLS: the box is reserved from the aspect ratio before a byte of image
+     arrives, and the <img> carries width/height as a second belt. These pages
+     are heading for ad slots, so a late-loading thumbnail must not push
+     anything down. */
+  .post-thumb {
+    display: block;
+    aspect-ratio: 1200 / 630;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .post-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .post-body {
+    display: block;
+    padding: var(--s5);
+    flex: 1 1 auto;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    font-size: var(--step--2);
+    font-weight: 650;
+    color: var(--ink-3);
+    margin-bottom: var(--s2);
+  }
+  .post-meta .dot { opacity: 0.55; }
+
+  .post-desc {
+    display: block;
+    margin: 0;
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+
+  .post-card h3 {
+    font-size: var(--step-2);
+    letter-spacing: -0.022em;
+    margin: 0 0 6px;
+  }
+  .post-card:hover h3 { color: var(--accent-text); }
+
+  /* --- the lead card ------------------------------------------------------ */
+  .lead-section { margin-top: var(--s6); }
+  .lead-section .post-card { display: grid; }
+
+  .post-kicker {
+    display: inline-block;
+    font-size: var(--step--2);
+    font-weight: 750;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin-bottom: var(--s2);
+  }
+
+  .blog-lead h2 {
+    font-size: var(--step-3);
+    letter-spacing: -0.025em;
+    margin: 0 0 var(--s3);
+  }
+  .blog-lead .post-desc { font-size: var(--step-1); line-height: 1.6; }
+  .blog-lead .post-meta { margin: var(--s4) 0 0; }
+  .blog-lead .post-more {
+    display: inline-block;
+    margin-top: var(--s4);
+    font-size: var(--step--1);
+    font-weight: 750;
+    color: var(--accent-text);
+    border-bottom: 1.5px solid var(--line-2);
+    padding-bottom: 1px;
+  }
+  .blog-lead:hover .post-more { border-color: currentColor; }
+
+  @media (min-width: 760px) {
+    /* Side by side above 760px. The image column is the wider one because the
+       artwork is 1.9:1 — give it a narrow column and it collapses to a strip. */
+    .blog-lead { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); }
+    .blog-lead .post-thumb {
+      height: 100%;
+      aspect-ratio: auto;
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+    }
+    .blog-lead .post-body {
+      padding: var(--s6);
+      align-self: center;
+    }
+  }
+
+  /* --- the grid ----------------------------------------------------------- */
+  /* Two columns is what global.css gives at 860px. Thirteen posts with artwork
+     want a third column once there is room, or the cards get so wide the
+     description runs to a single lonely line. */
+  .post-list { gap: var(--s4); }
+  @media (min-width: 1020px) {
+    .post-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .post-thumb img { transition: transform 0.4s var(--ease); }
+    .post-card:hover .post-thumb img { transform: scale(1.03); }
+  }
+</style>

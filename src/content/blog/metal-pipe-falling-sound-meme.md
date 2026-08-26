@@ -3,6 +3,8 @@ title: "The Metal Pipe Falling Sound, Explained"
 description: "Why an absurdly loud metal pipe clang became one of the defining meme sounds of the 2020s, and where to play and download it."
 date: 2026-08-25
 tags: [meme, explainer, sound-effect]
+image: /blog/metal-pipe-falling-sound-meme.png
+imageAlt: "Abstract Bleepboard artwork: a long steel-grey bar falling on a diagonal, with impact marks radiating from where it lands"
 ---
 
 There is a sound that is just a metal pipe hitting the ground. It is very loud. It has no melody, no words, no joke inside it. And it is among the most beloved meme sounds of the decade. Explaining why is half comedy theory, half confession.
