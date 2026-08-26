@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#e5484d"/><polygon points="12,9 24,16 12,23" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Woofer, the Bleepboard mascot — same three shapes as the header mark.
+       Colours are hardcoded (a favicon gets no CSS), and a light ground is
+       painted so the mark stays legible on dark browser chrome. -->
+  <rect width="32" height="32" rx="8" fill="#faf8f5"/>
+  <path d="M5.6 16.6a10.4 10.4 0 0 1 20.8 0" fill="none" stroke="#5b5650" stroke-width="3.4" stroke-linecap="round"/>
+  <rect x="6" y="12" width="20" height="17" rx="5" fill="#d92d20"/>
+  <circle cx="16" cy="20.6" r="5.6" fill="#ffffff"/>
+  <circle cx="16" cy="20.6" r="2.4" fill="#b8231a"/>
+</svg>

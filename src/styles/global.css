@@ -260,17 +260,16 @@ p:last-child { margin-bottom: 0; }
   margin-right: auto;
 }
 .logo:hover { color: var(--ink); }
+/* The mark is Woofer himself now, so it carries its own colour — no accent
+   chip behind it. The header sits on --surface in both themes and the compact
+   Woofer is an --accent cabinet, which clears it either way. */
 .logo-mark {
-  width: 26px; height: 26px; flex: none;
-  border-radius: 8px;
-  background: var(--accent);
-  color: var(--accent-ink);
+  width: 28px; height: 28px; flex: none;
   display: grid; place-items: center;
-  box-shadow: 0 2px 0 0 var(--accent-2);
   transition: transform 0.14s var(--ease);
 }
 .logo:hover .logo-mark { transform: translateY(-1px) rotate(-4deg); }
-.logo-mark svg { width: 13px; height: 13px; display: block; }
+.logo-mark svg { width: 28px; height: 28px; display: block; }
 
 /* nav: inline on desktop, a scrollable pill rail on mobile */
 .site-nav {
@@ -1213,6 +1212,11 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
   50%      { transform: scale(1.12); }
 }
 
+/* The compact mark reuses the palette above but must stay perfectly still:
+   it lives in a sticky header, where a bobbing logo is just noise. */
+.woofer--mark,
+.woofer--mark * { animation: none; }
+
 .author-card {
   display: flex;
   align-items: flex-start;
@@ -1303,6 +1307,57 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
     justify-self: end;
   }
   .hero-mascot .hero-woofer { width: 184px; height: 184px; }
+}
+
+/* --- hero: mobile re-order ------------------------------------------------
+   Below 900px a 116px mascot above the eyebrow pushed the headline and the
+   search box most of the way off the first screen. Move it under the "Try …"
+   chips instead, centred and smaller, so search sits as high as it can.
+
+   The mascot is a sibling of .hero-copy in the DOM (and index.astro isn't
+   ours to touch), so `display: contents` on .hero-copy drops that wrapper's
+   box and promotes its children to grid items — then `order` can interleave
+   the mascot between the chips and the stat strip. The DOM is untouched, so
+   the mascot link keeps its position in the tab order: first thing after the
+   header, before the search field. That's a same-page anchor with a clear
+   label, so reaching it early is harmless.
+   -------------------------------------------------------------------------- */
+@media (max-width: 899.98px) {
+  .hero {
+    /* Every child is its own grid item now, and grid margins don't collapse:
+       a row-gap would stack on top of the margins these elements already
+       carry. Let the margins keep owning the vertical rhythm. */
+    gap: 0;
+    /* .hero-copy used to be the one start-aligned item and its children filled
+       it. Promoted children have to stretch, or .searchbox would shrink-to-fit
+       the input's intrinsic ~20ch width instead of filling the column. */
+    justify-items: stretch;
+  }
+  .hero-copy { display: contents; }
+  /* .hero-copy's own min-width: 0 stops applying once its box is gone, so the
+     overflow guard has to move onto the children. */
+  .hero-copy > * { min-width: 0; }
+
+  /* Reading order: eyebrow → h1 → lede → search → chips → mascot → stats. */
+  .hero .eyebrow      { order: 1; }
+  .hero h1            { order: 2; }
+  .hero .lede         { order: 3; }
+  .hero .searchbox    { order: 4; }
+  .hero .search-tools { order: 5; }
+  .hero-mascot        { order: 6; }
+  .hero .stats        { order: 7; }
+
+  /* Margins that used to collapse against each other inside .hero-copy now
+     add up, so trim the two doubled gaps back to what they used to render. */
+  .hero .searchbox    { margin-top: 0; }              /* lede already gives 24 */
+  .hero .search-tools { margin-top: var(--s1); }      /* + searchbox's 12 = 16 */
+
+  .hero-mascot {
+    justify-self: center;
+    width: 84px; height: 84px;
+    margin-top: var(--s5);   /* .stats keeps its own 24px above the strip */
+  }
+  .hero-mascot .hero-woofer { width: 66px; height: 66px; }
 }
 
 /* stats with leading icons (hero) — the plain dot variant stays for other pages */

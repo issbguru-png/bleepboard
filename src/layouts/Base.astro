@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE, canonical } from '../lib/site';
+import Woofer from '../components/Woofer.astro';
 
 interface Props {
   title: string;
@@ -52,9 +53,7 @@ const here = Astro.url.pathname;
       <div class="wrap header-inner">
         <a class="logo" href="/">
           <span class="logo-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"
-              ><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z" /></svg
-            >
+            <Woofer variant="mark" size={28} />
           </span>
           Bleepboard
         </a>

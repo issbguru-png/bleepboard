@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SoundButton from '../components/SoundButton.astro';
+import CategoryIcon from '../components/CategoryIcon.astro';
 import Woofer from '../components/Woofer.astro';
 import { SITE, hubPath } from '../lib/site';
 
@@ -135,6 +136,7 @@ const schema = [
     <div class="cat-grid">
       {categories.map((c) => (
         <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
+          <CategoryIcon cat={c.id} />
           <span class="cat-name">{c.data.name}</span>
           <span class="cat-count tnum">{counts.get(c.id) ?? 0} sounds</span>
         </a>
