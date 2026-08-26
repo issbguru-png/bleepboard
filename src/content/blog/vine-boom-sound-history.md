@@ -23,9 +23,25 @@ The Vine Boom is a **spotlight for a moment**. Someone says something wild, the 
 
 It's also the rare meme sound with no expiration date. Trends built on a specific clip fade once the reference fades. The boom references nothing at all. It's pure punctuation, and editors a decade from now will still be reaching for it.
 
+## What it does to a mix
+
+There's a technical reason the boom slots into anything. Almost all of its energy sits below the range human speech occupies, so it can land underneath someone talking without smothering a single word. Put an air horn over dialogue and you lose the dialogue. Put a boom there and both survive.
+
+The trade-off arrives at the speaker. Phone and laptop speakers are physically too small to move much low-frequency air, so a boom that shakes your headphones can turn into a polite tap on a handset. Editors compensate by pushing the level up, which is why so many TikTok edits sound fine on a phone and then assault you the moment you put earbuds in. If you're mixing one yourself, check it on both before you publish.
+
+## The long line of punchline sounds
+
+Comedy has always had a sound that tells the audience where the joke was. The [rimshot](/sound/rimshot/) came out of vaudeville and burlesque, where a drummer marked the comic's punchline so the room knew when to react. The [sitcom laugh track](/sound/sitcom-laugh/) industrialised the same idea in the 1950s, declaring that a joke had occurred whether or not one had.
+
+The boom belongs to that lineage with one important difference. A rimshot and a laugh track both insist the thing was *funny*, which is why they curdle so quickly when it wasn't. The boom only insists the thing was *significant*, and it leaves the audience to work out the rest. That's a much lower promise to keep, and it's most of why the boom has aged so well while canned laughter hasn't.
+
 ## The boom in numbers
 
 "Vine boom" remains one of the most-searched sound effect queries on the internet, year after year: tens of thousands of monthly searches for a bass hit. It may well be the single most-used editing sound of the meme era, rivalled only by the [censor bleep](/sound/censor-bleep/) and the sitcom laugh track.
+
+## Using it in an edit
+
+Land the boom on the zoom, not before it. The picture moves first and the sound confirms it a frame or two later, the same order your brain expects from a real impact. One boom per beat is plenty. If you need to escalate, escalate in kind rather than in volume: boom for the setup, [metal pipe](/sound/metal-pipe-falling/) for the collapse. And on a [Discord soundboard](/discord-soundboard/) it's the ideal reaction sound, since it comments on what someone said without ever telling them what you thought of it.
 
 ## Play and download it
 
