@@ -1,0 +1,348 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SoundButton from '../components/SoundButton.astro';
+import CategoryIcon from '../components/CategoryIcon.astro';
+import StatIcon from '../components/StatIcon.astro';
+import { SITE, hubPath, soundPath, pickTitle, buildDescription } from '../lib/site';
+import { breadcrumbs, itemList, faqPage } from '../lib/schema';
+
+const allSounds = await getCollection('sounds');
+const categories = (await getCollection('categories')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const counts = new Map<string, number>();
+for (const s of allSounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
+
+// The grid is a spread rather than a straight top-N: the top of the chart is
+// heavily meme/brainrot, and someone arriving on a locked-down school laptop
+// should see that every board on the site is reachable from here. Two per
+// category, then re-sorted by the editorial `plays` weight so the strongest
+// clips still lead. What renders here is exactly what the ItemList declares.
+const picks = categories
+  .flatMap((c) =>
+    allSounds
+      .filter((s) => s.data.category === c.id)
+      .sort((a, b) => b.data.plays - a.data.plays)
+      .slice(0, 2)
+  )
+  .sort((a, b) => b.data.plays - a.data.plays);
+
+const total = allSounds.length;
+const pageUrl = SITE.url + '/unblocked-soundboard/';
+
+// Ladder rather than one template, per the note in src/lib/site.ts. The head
+// phrase leads because "unblocked soundboard" is the query; the count is real
+// (it is `total`), and "No Install" is the thing the reader is checking for.
+const title = pickTitle([
+  `Unblocked Soundboard — ${total} Meme Sound Buttons, No Install`,
+  `Unblocked Soundboard — ${total} Meme Sound Buttons`,
+  `Unblocked Soundboard — Meme Sound Buttons`,
+]);
+
+const description = buildDescription([
+  'An unblocked soundboard that runs in the browser on a school Chromebook:',
+  `${total} meme sound buttons, no install, no signup, no Flash.`,
+  'Free MP3 downloads.',
+]);
+
+const faq = [
+  {
+    q: 'Is this soundboard really unblocked at school?',
+    a: 'Often, but nobody can promise it. Bleepboard is a plain website with no plugin, no download and no account, so it clears the checks that stop older soundboards working on a managed Chromebook. If your network blocks the domain bleepboard.com outright, the page will not load and nothing on our side changes that.',
+  },
+  {
+    q: 'Do I need to install or download anything?',
+    a: 'No. The sound buttons play in the browser tab you already have open. There is no app, no extension, no plugin and no account to make. MP3 downloads are optional and only happen if you press the download button on a sound page.',
+  },
+  {
+    q: 'Does it work on a school Chromebook?',
+    a: 'Yes, provided the site loads at all. Everything runs inside Chrome using the browser audio player that ships with it, so admin policies that block installs and extensions have nothing to object to. The same is true of a locked-down Windows laptop or a phone.',
+  },
+  {
+    q: 'I pressed a button and heard nothing. What went wrong?',
+    a: 'Browsers refuse to play audio until you have interacted with the page, so the very first press sometimes only unlocks sound. Press again. If it is still silent, check the tab is not muted, check the device volume, and check your headphones are actually connected to this device.',
+  },
+  {
+    q: 'Can I use the sounds when I am offline?',
+    a: 'Yes. Every sound has its own page with a free MP3 download. Save the files on a connection you control, at home for example, and they play from your device afterwards with no network involved.',
+  },
+  {
+    q: 'Does it cost anything?',
+    a: 'No. Every sound button and every MP3 download on Bleepboard is free, and there is no account, no trial and no paywall anywhere on the site.',
+  },
+];
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Unblocked soundboard', pageUrl],
+  ]),
+  itemList(
+    'Unblocked sound buttons',
+    picks.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+    'A spread of sound buttons from every board on Bleepboard, playable in the browser with nothing to install.'
+  ),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} schema={schema}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">Unblocked soundboard</span>
+  </nav>
+
+  <section class="page-head">
+    <div class="hero-mark">
+      <StatIcon name="instant" size={48} />
+      <p class="eyebrow"><span class="tick"></span>Works in the browser</p>
+    </div>
+    <h1>Unblocked soundboard</h1>
+    <p class="lede">
+      Sound buttons that play on a locked-down school Chromebook, because there is
+      nothing here to install. No plugin, no Flash, no signup. Open the page, press
+      a button, hear the noise.
+    </p>
+    <ul class="stats stats--icon">
+      <li><StatIcon name="buttons" /><span><b class="tnum">{total}</b> sound buttons</span></li>
+      <li><StatIcon name="instant" /><span><b>No install</b>, no signup</span></li>
+      <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Press something</h2>
+      <a class="section-link" href="/trending/">All trending →</a>
+    </div>
+    <p class="section-sub">
+      {picks.length} buttons, at least two from every board on the site. Headphones on
+      first, please. Tap a name to open the sound and grab the MP3.
+    </p>
+    <div class="grid grid--lg">
+      {picks.map((s) => (
+        <SoundButton
+          slug={s.id}
+          title={s.data.title}
+          audio={s.data.audio}
+          duration={s.data.duration}
+          category={s.data.category}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Why soundboards get blocked in the first place</h2>
+    </div>
+    <div class="prose">
+      <p>
+        School and office networks almost never block a site because somebody looked at
+        it and decided it was bad. They block by category. A filtering service sits
+        between your laptop and the internet, checks the domain of everything you
+        request against a big commercial list, and refuses anything sitting in a switched
+        off bucket. Soundboards get filed under games, entertainment or streaming media,
+        and those buckets are usually off by default in a school build.
+      </p>
+      <p>
+        The rest gets blocked the old-fashioned way. One person plays an airhorn in a
+        silent exam hall, a teacher reports the site by name, and it goes on the local
+        deny list that afternoon — a decision about one domain, which is how two
+        soundboards that look identical to you end up behaving completely differently
+        on the same network.
+      </p>
+      <p>
+        Then there is the technical half, which catches sites that were never blocked at
+        all. A lot of the boards still floating around search results were built in
+        Flash, and Flash was switched off for good at the end of 2020. Those pages load
+        and simply never make a sound. Others ask you to install a program or a browser
+        extension before anything works, and a managed Chromebook will not let you do
+        either. The page opens, the download fails, and it looks like a block when it is
+        really just a dead site.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Why this one usually gets through</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Bleepboard is a plain static website. There is no clever trick behind that
+        sentence, and the honest version of the mechanism is genuinely this dull:
+      </p>
+      <ul class="mech-list">
+        <li>
+          <b>Everything plays in the browser.</b> Each button points at a short MP3 and
+          hands it to the browser's own audio element, the same one a normal web page
+          uses. No Flash, no Java, no media player, nothing that needs a plugin to exist.
+        </li>
+        <li>
+          <b>Nothing to install.</b> No app, no extension, no .exe, no APK. A managed
+          Chromebook that blocks all three still runs this page perfectly, since it only
+          needs the browser that is already open.
+        </li>
+        <li>
+          <b>No account, no signup, no email.</b> There is no login wall to get past, so
+          there is nothing for a school single sign-on policy to trip over.
+        </li>
+        <li>
+          <b>No third-party video host.</b> The audio is served from this site as files.
+          A filter rule aimed at streaming platforms has nothing here to match.
+        </li>
+        <li>
+          <b>It works on a phone too.</b> Same page, same buttons, no app store detour.
+        </li>
+      </ul>
+      <p>
+        That combination is why the site tends to survive on networks where older boards
+        fall over. It removes the reasons a page fails, which is a different thing from
+        being unblockable.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>If it is blocked, it is blocked</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Time for the unfun paragraph. If your network blocks bleepboard.com by domain,
+        this page will not load and there is nothing we can do about it from our end. The
+        block happens on your school's equipment, before the request ever reaches our
+        server. Any site promising otherwise is selling you something.
+      </p>
+      <div class="straight">
+        <p>
+          We are not going to tell you how to get around your school's filter, and you
+          should be wary of any site that offers to. Proxies, VPNs and mirror domains on a
+          school-issued device are usually a straight policy breach, they get logged with
+          your name on them, and the trouble lands on you rather than on the website.
+        </p>
+      </div>
+      <p>
+        The boring route works better than people expect. Filters run allowlists, and IT
+        staff add sites to them all the time when there is a reason. Ask a teacher whether
+        bleepboard.com can be allowlisted for the media room, the drama club or whatever
+        you actually want it for. Failing that, use it on your own phone or at home. It is
+        the same site, and the MP3s you download there work offline afterwards.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>How to use it without getting told off</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Headphones. That is the whole guide, really, but a few things are worth knowing
+        before you press anything in a room with other people in it.
+      </p>
+      <ul class="mech-list">
+        <li>
+          <b>Check the volume first.</b> Meme clips are mastered loud on purpose. An
+          airhorn or a scream will come out considerably hotter than the video you were
+          watching a minute ago, and the sound buttons here play at whatever level your
+          device is already set to.
+        </li>
+        <li>
+          <b>The clips are short.</b> Most run under five seconds, because a soundboard is
+          punctuation rather than a playlist. Short also happens to be the difference
+          between a joke and a disruption.
+        </li>
+        <li>
+          <b>Grab the MP3 for later.</b> Every sound has its own page with a free
+          download. Save the file at home and it works with no connection at all, which
+          is the one genuinely reliable answer to a filtered network.
+        </li>
+        <li>
+          <b>First press might be silent.</b> Browsers hold audio back until you interact
+          with the page. Press again and it will play for the rest of the session.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Browse the rest of the boards</h2>
+      <a class="section-link" href="/categories/">All categories →</a>
+    </div>
+    <p class="section-sub">
+      {categories.length} soundboards, all of them the same plain page as this one.
+      The <a href="/trending/">trending chart</a> is the fastest way to find what
+      everyone is playing this week.
+    </p>
+    <div class="cat-grid">
+      {categories.map((c) => (
+        <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
+          <CategoryIcon cat={c.id} />
+          <span class="cat-name">{c.data.name}</span>
+          <span class="cat-count tnum">{counts.get(c.id) ?? 0} sounds</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="section-head">
+      <h2>Unblocked soundboard FAQ</h2>
+    </div>
+    <p class="section-sub">The questions people actually arrive with.</p>
+    {faq.map((f) => (
+      <details>
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+  </section>
+
+  <style>
+    /* Bulleted explainer with a lead-in phrase per item. `.prose ul` already
+       sets colour and indent; this only tightens the rhythm and gives the lead
+       phrase room to breathe. Tokens only, so both themes come free. */
+    .mech-list {
+      margin-top: var(--s4);
+      list-style: none;
+      padding-left: 0;
+    }
+    .mech-list li {
+      position: relative;
+      padding-left: var(--s5);
+    }
+    .mech-list li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 0.6em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cat);
+    }
+    .mech-list li + li { margin-top: var(--s3); }
+    .mech-list b { color: var(--ink); font-weight: 750; }
+
+    /* The "do not try to beat the filter" note. Tinted panel rather than a
+       warning colour: it is advice, not an error state. */
+    .straight {
+      margin-top: var(--s4);
+      padding: var(--s4);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--cat);
+      border-radius: var(--r);
+    }
+    .straight p { margin: 0; }
+
+    @media (max-width: 400px) {
+      .straight { padding: var(--s3); }
+      .mech-list li { padding-left: var(--s4); }
+    }
+  </style>
+</Base>

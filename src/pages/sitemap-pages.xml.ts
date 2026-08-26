@@ -8,6 +8,7 @@ export const GET: APIRoute = () => {
     '/new/',
     '/trending/',
     '/categories/',
+    '/unblocked-soundboard/',
     '/blog/',
     '/about/',
     '/dmca/',

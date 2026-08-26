@@ -40,4 +40,6 @@ The full walkthrough, including the file limits and the permissions you'll need,
 
 Every button on Bleepboard plays instantly in your browser, phone or desktop, with nothing to install. Each sound also gets its own page with a free MP3 download, the story of where the sound came from, and an embed code so you can put the button on your own site or stream overlay.
 
+No plugin and no download is also why the buttons tend to survive on school and office networks that kill the older Flash-era boards. There's a longer write-up of what those filters actually block on the [unblocked soundboard](/unblocked-soundboard/) page.
+
 Start with the [trending sounds](/trending/) or browse the [meme soundboard](/meme-soundboard/). If you want the reliable workhorses, the [sound effects board](/sound-effects-soundboard/) has the buzzers and booms and the [notification board](/notification-soundboard/) has the pings that make a room reach for its pockets. And if a sound blew up on TikTok this week, check [new sounds](/new/) — odds are it's already there.
