@@ -31,7 +31,7 @@ export type AdNetwork = 'none' | 'adsense' | 'mediavine';
 export const AD_NETWORK: AdNetwork = 'none';
 
 /** Google Analytics 4. Empty string = not loaded. */
-export const GA4_ID = ''; // TODO: 'G-XXXXXXXXXX'
+export const GA4_ID = 'G-RE0Q1R4421';
 
 /** AdSense publisher ID. Empty string = not loaded. */
 export const ADSENSE_ID = ''; // TODO: 'ca-pub-0000000000000000'
