@@ -15,6 +15,13 @@ import {
   DESC_MIN,
 } from '../../lib/site';
 import { breadcrumbs, publisher } from '../../lib/schema';
+import { readdirSync, existsSync } from 'node:fs';
+
+/** Which slugs actually have a generated share card. Read once at build time. */
+const OG_DIR = new URL('../../../public/og/', import.meta.url).pathname;
+const OG_CARDS = new Set(
+  existsSync(OG_DIR) ? readdirSync(OG_DIR).filter((f) => f.endsWith('.png')).map((f) => f.slice(0, -4)) : []
+);
 
 export async function getStaticPaths() {
   const sounds = await getCollection('sounds');
@@ -162,8 +169,22 @@ const schema = [
     [d.title, pageUrl],
   ]),
 ];
+// Per-sound share card from scripts/gen-og-cards.mjs. Falls back to the
+// generic card if one was never generated for this slug, so a new import
+// never ships a broken preview.
+const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
+
 ---
-<Base title={title} description={description} schema={schema} cat={d.category}>
+<Base
+  title={title}
+  description={description}
+  schema={schema}
+  cat={d.category}
+  ogImage={ogCard}
+  ogImageAlt={`${d.title} sound button on Bleepboard`}
+  ogImageWidth={1200}
+  ogImageHeight={630}
+>
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="sep" aria-hidden="true">›</span>
