@@ -1,30 +1,540 @@
 ---
 import Base from '../layouts/Base.astro';
+
+/* --- Report targets -------------------------------------------------------
+   Deliberately the same address and the same three subject prefixes the
+   Report menu on every sound page uses (`Copyright claim:`, `Broken audio:`,
+   `Inappropriate content:`). There is no form backend — a report is a real
+   email the visitor sends — so the only thing that sorts an inbox here is the
+   subject line. If those prefixes ever change on the sound page, change them
+   here too, or half the reports stop matching their filter.
+------------------------------------------------------------------------- */
+const enc = encodeURIComponent;
+const REPORT_TO = 'dmca@bleepboard.com';
+
+const noticeBody = [
+  'Sound page URL:',
+  '',
+  'The work you say it infringes (title, and a link or reference if you have one):',
+  '',
+  'Who you are (name, the rights holder you act for, and an email we can reply to):',
+  '',
+  '--',
+  'I have a good-faith belief that the use of the material described above is not',
+  'authorised by the copyright owner, its agent, or the law.',
+  '',
+  'I swear, under penalty of perjury, that the information in this notice is accurate',
+  'and that I am the copyright owner or am authorised to act on the owner’s behalf.',
+  '',
+  'Signed:',
+  '',
+].join('\n');
+
+const otherBody = [
+  'Sound page URL:',
+  '',
+  'What is wrong with it:',
+  '',
+  '',
+].join('\n');
+
+const mailto = (subject: string, body: string) =>
+  `mailto:${REPORT_TO}?subject=${enc(subject)}&body=${enc(body)}`;
+
+const noticeHref = mailto('Copyright claim: [sound page URL]', noticeBody);
+
+const otherReports = [
+  {
+    label: 'Broken or wrong audio',
+    subject: 'Broken audio: [sound page URL]',
+    blurb:
+      'The button does nothing, the clip cuts off early, or the audio is not the thing the page says it is — a mislabelled or misattributed clip belongs here too.',
+    icon: 'audio',
+  },
+  {
+    label: 'Inappropriate content',
+    subject: 'Inappropriate content: [sound page URL]',
+    blurb:
+      'A clip, title or write-up that should not be on a site people browse at work and hand to their kids. Tell us which part and why.',
+    icon: 'flag',
+  },
+];
 ---
 <Base
   title="DMCA & Takedown Policy | Bleepboard"
-  description="How to request removal of a sound from Bleepboard. We respond to valid DMCA takedown requests promptly."
+  description="How to get a sound removed from Bleepboard: what a copyright takedown notice needs to include, where to send it, what happens next, and how to report a broken or mislabelled clip."
 >
   <section class="page-head">
     <p class="eyebrow"><span class="tick"></span>Legal</p>
     <h1>DMCA &amp; takedown policy</h1>
     <p class="lede">
-      Bleepboard hosts short audio clips for commentary, reference, and entertainment.
-      If you are a rights holder and believe a clip on this site infringes your copyright,
-      email <strong>dmca@bleepboard.com</strong> with:
+      Bleepboard hosts short audio clips for commentary, reference and entertainment.
+      If you hold the rights to something here and you want it gone, this page is the
+      route — and it is a short one. One email, to one address, with the details that
+      let us find the clip and act on it.
+    </p>
+
+    <div class="cta">
+      <p class="btn-row">
+        <a class="btn primary" href={noticeHref}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          Send a takedown notice
+        </a>
+      </p>
+      <p class="cta-note">
+        Opens an email to <b class="mail">{REPORT_TO}</b>, subject line already set, with
+        the required statements drafted in the body. Nothing is sent until you send it —
+        and you can write the whole thing yourself instead, to the same address.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 1. what a notice needs ==================== -->
+  <section class="section" id="notice">
+    <div class="section-head">
+      <h2>What to put in a takedown notice</h2>
+    </div>
+    <p class="section-sub">
+      Six things. A notice missing any of them is one we have to come back to you about,
+      which costs you the round trip — so it is worth the extra minute now.
+    </p>
+
+    <ol class="req">
+      <li>
+        <b>The URL of the sound page</b>
+        <p>
+          The page address, not just the name of the clip. Several sounds share a title;
+          the URL never does. If you are already on the sound's page, its
+          <em>Report this sound</em> menu fills the URL in for you.
+        </p>
+      </li>
+      <li>
+        <b>The work you say it infringes</b>
+        <p>
+          What the clip was taken from — the film, episode, track, stream or video, and a
+          link or catalogue reference if you have one to hand.
+        </p>
+      </li>
+      <li>
+        <b>Who you are, and how to reply to you</b>
+        <p>
+          Your name, the rights holder you are acting for, and an email address we can
+          answer. Everything after this point is a statement you are making personally,
+          so it needs a person attached to it.
+        </p>
+      </li>
+      <li>
+        <b>A good-faith statement</b>
+        <p>
+          That you believe in good faith the use of the material is not authorised by the
+          copyright owner, its agent, or the law.
+        </p>
+      </li>
+      <li>
+        <b>A statement of accuracy and authority</b>
+        <p>
+          That, under penalty of perjury, the information in your notice is accurate and
+          you are the owner of the right or are authorised to act on the owner's behalf.
+        </p>
+      </li>
+      <li>
+        <b>Your signature</b>
+        <p>
+          Physical or electronic. Your full name typed at the end of the email is the
+          usual form and is fine here.
+        </p>
+      </li>
+    </ol>
+
+    <p class="origin-note">
+      <b>Note</b>
+      <span>
+        The last three points are the parts that make a notice a formal one rather than a
+        complaint. The prefilled email above already contains draft wording for them —
+        read it before you send, because you are the one signing it.
+      </span>
     </p>
   </section>
 
-  <section class="section">
+  <!-- ==================== 2. what happens next ==================== -->
+  <section class="section" id="after">
+    <div class="section-head">
+      <h2>What happens after you send it</h2>
+    </div>
+    <p class="section-sub">
+      An honest description of the process, rather than a promise about the outcome.
+    </p>
+
+    <ol class="flow">
+      <li>
+        <b>It is read by a person.</b>
+        Bleepboard is a small operation. Notices are not triaged by a bot or a ticket
+        queue — someone opens the email and reads it. We work through them as quickly as
+        we can.
+        {/* TODO: if the owner wants to commit to a response window, state it here.
+            Do not invent one — leave this out entirely rather than guess. */}
+      </li>
+      <li>
+        <b>We check the notice and find the clip.</b>
+        We match the URL to the sound, confirm the notice covers the six points above,
+        and come back to you at the address you wrote from if something is missing or
+        unclear.
+      </li>
+      <li>
+        <b>Material subject to a valid notice is taken down.</b>
+        The clip and its sound page are removed, along with its place in the soundboards
+        that listed it. We may also disable the clip while a notice is still being looked
+        at, rather than leave it up.
+      </li>
+      <li>
+        <b>Removal ships with the next build.</b>
+        Bleepboard is a static site: pages are generated ahead of time and published as
+        files. So a removal takes effect when the site is next rebuilt and deployed, and
+        caches and search engines can hold a stale copy for a while after that. It is not
+        an instant switch, and we would rather say so.
+      </li>
+      <li>
+        <b>Repeat infringement.</b>
+        Where sources or contributors turn out to be a repeated problem, we stop taking
+        material from them.
+        {/* TODO: owner to confirm the exact repeat-infringer policy wording. */}
+      </li>
+    </ol>
+  </section>
+
+  <!-- ==================== 3. everything that isn't copyright ============= -->
+  <section class="section" id="other">
+    <div class="section-head">
+      <h2>Other kinds of report</h2>
+    </div>
+    <p class="section-sub">
+      Not every problem is a copyright problem. These go to the same address — the subject
+      line is what sorts them — and none of them need the formal statements above.
+    </p>
+
+    <div class="other-grid">
+      {otherReports.map((r) => (
+        <a class="other-card" href={mailto(r.subject, otherBody)}>
+          <span class="other-icon" aria-hidden="true">
+            {r.icon === 'audio' ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m17 9 4 6"/><path d="m21 9-4 6"/></svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21.5V4"/><path d="M5 5h12.5l-2.2 3.8L17.5 12.5H5z"/></svg>
+            )}
+          </span>
+          <b>{r.label}</b>
+          <span class="other-blurb">{r.blurb}</span>
+          <span class="other-subject">Subject: {r.subject}</span>
+        </a>
+      ))}
+    </div>
+
+    <p class="other-foot">
+      Anything else — a correction, a credit we got wrong, a sound you think should be
+      here — is welcome at <b class="mail">{REPORT_TO}</b> too. Reporting from the sound's
+      own page is faster: the <em>Report this sound</em> menu fills in the title, the page
+      and the audio file before you type a word.
+    </p>
+  </section>
+
+  <!-- ==================== 4. if we got it wrong ==================== -->
+  <section class="section" id="counter">
+    <div class="section-head">
+      <h2>If something was removed by mistake</h2>
+    </div>
+
     <div class="prose">
-      <ul>
-        <li>The URL of the sound page in question</li>
-        <li>Identification of the copyrighted work you claim is infringed</li>
-        <li>Your contact information</li>
-        <li>A statement that you have a good-faith belief the use is not authorized</li>
-        <li>A statement, under penalty of perjury, that the information is accurate and you are authorized to act for the rights holder</li>
-      </ul>
-      <p class="origin-note"><b>Response</b><span>Valid requests are honored promptly and the clip is removed.</span></p>
+      <p>
+        Takedowns can be wrong. A notice can name the wrong URL, describe a clip that was
+        licensed after all, or come from someone who turns out not to speak for the rights
+        holder. If a sound you have a claim to came down and you believe that was an error,
+        you can say so — reply to the same address, tell us which page it was, and explain
+        why you think the removal was mistaken.
+      </p>
+      <p>
+        That reply is a counter-notice. Like the notice that triggered it, it carries
+        weight: you are stating, under penalty of perjury, that you have a good-faith
+        belief the material was removed as a result of mistake or misidentification. We
+        pass a counter-notice on to whoever sent the original notice, and restoring the
+        material is not immediate — the law builds in a waiting period so the claimant can
+        respond first.
+        {/* TODO: owner to add the specific counter-notice requirements and the statutory
+            waiting period for their jurisdiction, once confirmed with a lawyer. Left
+            deliberately unspecified rather than guessed at. */}
+      </p>
+      <p>
+        Sending either a takedown notice or a counter-notice in bad faith is not free —
+        knowingly misrepresenting what is infringing, or what was wrongly removed, can make
+        you liable for the costs it causes. Which is the polite way of saying: only claim
+        what is actually yours.
+      </p>
     </div>
   </section>
+
+  {/* TODO: If Bleepboard designates a DMCA agent, the agent's name, postal address,
+      phone number and email belong here, along with the operating entity's legal name.
+      None of that has been supplied, so nothing is stated — an invented agent or address
+      is worse than none. */}
+
+  <section class="section">
+    <p class="fine">
+      This page explains how to reach us and what we do with a report. It is practical
+      guidance about our process, not legal advice — if you need to know what your rights
+      are, or whether a notice is the right move, ask a lawyer rather than a soundboard.
+    </p>
+    <p class="btn-row back-row">
+      <a class="btn" href="/about/">About Bleepboard</a>
+      <a class="btn" href="/categories/">Browse soundboards</a>
+    </p>
+  </section>
 </Base>
+
+<style>
+  /* --- the one thing this page exists to do --------------------------------
+     The primary action sits in the head, above everything, because a rights
+     holder who already knows what a notice looks like should never have to
+     scroll to find the address.
+  ------------------------------------------------------------------------- */
+  .cta { margin-top: var(--s5); }
+  .cta .btn {
+    min-height: 44px;            /* global .btn lands at ~40px — this is a tap target */
+    padding-inline: var(--s5);
+  }
+  .cta-note {
+    margin: var(--s3) 0 0;
+    max-width: var(--maxw-prose);
+    font-size: var(--step--1);
+    color: var(--ink-3);
+  }
+  .cta-note b { color: var(--ink-2); font-weight: 700; }
+
+  /* Long address, narrow phone: break rather than push the page sideways. */
+  .mail {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    overflow-wrap: anywhere;
+  }
+
+  /* --- the six required fields --------------------------------------------
+     Numbered on purpose: these read as form fields to fill, not as bullets to
+     agree with. The counter is drawn as a badge so the number survives being
+     scanned at speed.
+  ------------------------------------------------------------------------- */
+  .req {
+    list-style: none;
+    counter-reset: req;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s3);
+    max-width: var(--maxw-prose);
+  }
+  .req li {
+    counter-increment: req;
+    display: grid;
+    align-items: start;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--s2) var(--s4);
+    margin: 0;
+    padding: var(--s4);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+  }
+  .req li::before {
+    content: counter(req);
+    grid-row: 1 / span 2;
+    align-self: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--r-pill);
+    background: var(--accent-soft);
+    color: var(--accent-text);
+    border: 1px solid var(--line);
+    font-size: var(--step--2);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .req b {
+    /* matched to the badge height so number and title share a centre line */
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    color: var(--ink);
+    font-weight: 750;
+    font-size: var(--step-0);
+    line-height: 1.3;
+  }
+  .req p {
+    margin: 0;
+    max-width: none;
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .req em { font-style: normal; font-weight: 650; color: var(--ink-2); }
+
+  #notice .origin-note { margin-top: var(--s5); }
+
+  /* --- the process ---------------------------------------------------------
+     A rail rather than cards: these are sequential, and a numbered column with
+     a connecting line says "steps" more honestly than five equal boxes.
+  ------------------------------------------------------------------------- */
+  .flow {
+    list-style: none;
+    counter-reset: flow;
+    margin: 0;
+    padding: 0;
+    max-width: var(--maxw-prose);
+  }
+  .flow li {
+    counter-increment: flow;
+    position: relative;
+    margin: 0;
+    padding: 0 0 var(--s5) var(--s6);
+    color: var(--ink-2);
+    font-size: var(--step--1);
+    line-height: 1.6;
+  }
+  .flow li:last-child { padding-bottom: 0; }
+  .flow li::before {
+    content: counter(flow);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--r-pill);
+    background: var(--surface-2);
+    border: 1px solid var(--line-2);
+    color: var(--ink-2);
+    font-size: var(--step--2);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  /* the rail, drawn between one badge and the next */
+  .flow li::after {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 27px;
+    bottom: 4px;
+    width: 1px;
+    background: var(--line);
+  }
+  .flow li:last-child::after { display: none; }
+  .flow b {
+    color: var(--ink);
+    font-weight: 750;
+    font-size: var(--step-0);
+    display: block;
+    margin-bottom: 2px;
+    line-height: 1.35;
+  }
+
+  /* --- non-copyright reports ---------------------------------------------- */
+  .other-grid {
+    display: grid;
+    gap: var(--s3);
+    margin-top: var(--s4);
+  }
+  @media (min-width: 760px) {
+    .other-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .other-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: var(--s2) var(--s3);
+    padding: var(--s4);
+    min-height: 44px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    text-decoration: none;
+    color: var(--ink-2);
+  }
+  .other-card b {
+    color: var(--ink);
+    font-weight: 750;
+    font-size: var(--step-0);
+    min-width: 0;
+  }
+  .other-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex: none;
+    border-radius: var(--r-sm);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--ink-3);
+  }
+  .other-icon svg { width: 17px; height: 17px; }
+  .other-blurb {
+    grid-column: 1 / -1;
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .other-subject {
+    grid-column: 1 / -1;
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    color: var(--ink-3);
+    overflow-wrap: anywhere;
+  }
+  .other-card:hover,
+  .other-card:focus-visible {
+    border-color: var(--line-2);
+    color: var(--ink-2);
+  }
+  .other-card:hover b,
+  .other-card:focus-visible b { color: var(--accent-text); }
+  .other-card:hover .other-icon,
+  .other-card:focus-visible .other-icon {
+    color: var(--accent-text);
+    border-color: var(--line-2);
+  }
+  .other-foot {
+    margin: var(--s4) 0 0;
+    max-width: var(--maxw-prose);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+  .other-foot b { color: var(--ink); font-weight: 700; }
+  .other-foot em { font-style: normal; font-weight: 650; color: var(--ink); }
+
+  /* --- closing note -------------------------------------------------------- */
+  .fine {
+    max-width: var(--maxw-prose);
+    padding: var(--s4);
+    border-left: 2px solid var(--line-2);
+    background: var(--bg-2);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+  .back-row { margin-top: var(--s5); }
+  .back-row .btn { min-height: 44px; }
+
+  /* Nothing here animates beyond the shared button transitions, but the .btn
+     hover lift is inherited from global.css — kill it when motion is not
+     wanted. This page is a place people arrive at annoyed; it should sit still. */
+  @media (prefers-reduced-motion: reduce) {
+    .cta .btn,
+    .back-row .btn,
+    .other-card {
+      transition: none;
+    }
+    .cta .btn:hover,
+    .back-row .btn:hover { transform: none; }
+  }
+</style>
