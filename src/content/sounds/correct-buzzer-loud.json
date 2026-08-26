@@ -9,9 +9,9 @@
   ],
   "duration": 1.2,
   "audio": "/audio/correct-buzzer-loud.mp3",
-  "blurb": "Being right is one thing; being right at a volume that constitutes a minor assault is a rather different proposition. This is the exact counterpart to the extremely loud incorrect buzzer, celebrating accuracy with precisely the same total disregard for anybody's eardrums or neighbours. The joke depends on the excess — a normal correct chime says well done, whereas this informs an entire street. Play it when somebody nails the answer and deserves regional recognition for it. Correctness this loud cannot be appealed and should not be attempted indoors.",
+  "blurb": "Being right is one thing; being right at a volume that constitutes a minor assault is a rather different proposition. This is the exact counterpart to the extremely loud incorrect buzzer, celebrating accuracy with precisely the same total disregard for anybody's eardrums or neighbours. The joke depends on the excess \u2014 a normal correct chime says well done, whereas this informs an entire street. Play it when somebody nails the answer and deserves regional recognition for it. Correctness this loud cannot be appealed and should not be attempted indoors.",
   "origin": "The maximum-volume edition of the correct-answer buzzer.",
-  "added": "2026-08-25",
+  "added": "2026-08-25T21:51:12+05:00",
   "featured": false,
   "plays": 1200
 }

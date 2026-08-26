@@ -9,9 +9,9 @@
   ],
   "duration": 0.7,
   "audio": "/audio/facetime-connect.mp3",
-  "blurb": "That chirp means the call has gone through and your camera is now, regrettably, live. It is one half of a matched pair with the hang-up sound: this one opens the ordeal, the other mercifully ends it. Apple's design brief was clearly reassurance, and it works — the tone is warm enough that you rarely panic until you catch sight of yourself in the corner of the screen. Use it to open a call scene in an edit, or play it aloud to make somebody check whether their camera is on. It almost certainly is.",
+  "blurb": "That chirp means the call has gone through and your camera is now, regrettably, live. It is one half of a matched pair with the hang-up sound: this one opens the ordeal, the other mercifully ends it. Apple's design brief was clearly reassurance, and it works \u2014 the tone is warm enough that you rarely panic until you catch sight of yourself in the corner of the screen. Use it to open a call scene in an edit, or play it aloud to make somebody check whether their camera is on. It almost certainly is.",
   "origin": "Apple's FaceTime call-connect sound.",
-  "added": "2026-08-25",
+  "added": "2026-08-25T22:13:30+05:00",
   "featured": false,
   "plays": 1400
 }

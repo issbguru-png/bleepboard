@@ -53,7 +53,7 @@ const schema = [
     <ul class="stats">
       <li><b class="tnum">{total}</b> sound buttons</li>
       <li><b>Free</b> MP3 downloads</li>
-      <li><b>New</b> memes every week</li>
+      <li><b>New</b> sounds added regularly</li>
     </ul>
   </section>
 
@@ -72,10 +72,10 @@ const schema = [
 
   <section class="section">
     <div class="section-head">
-      <h2>New this week</h2>
+      <h2>Latest additions</h2>
       <a class="section-link" href="/new/">All new sounds →</a>
     </div>
-    <p class="section-sub">Freshly cut clips, usually within days of the meme taking off.</p>
+    <p class="section-sub">The most recent clips to join the board.</p>
     <div class="grid">
       {newest.map((s) => (
         <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} isNew />
@@ -108,7 +108,7 @@ const schema = [
       stream overlay, or Discord server.
     </p>
     <p>
-      We add new sound buttons every week — usually within a day or two of a meme
+      We add new sound buttons regularly — aiming to cut them within a day or two of a meme
       taking off on TikTok or YouTube. Check the <a href="/new/">newest sounds</a> or
       browse by category above.
     </p>

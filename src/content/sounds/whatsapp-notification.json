@@ -9,9 +9,9 @@
   ],
   "duration": 1.9,
   "audio": "/audio/whatsapp-notification.mp3",
-  "blurb": "With roughly three billion users, this tiny chirp is a serious candidate for the most-heard message alert on Earth. Outside the United States especially, it governs daily life: family groups nobody can leave, work chats that ignore working hours, and a neighbour asking again about the bins. The sound itself is deliberately unremarkable — short, mid-range and easy to hear over street noise — which is precisely why it scales. Play it anywhere on the planet and watch several heads turn at once, none of them belonging to the person you meant.",
+  "blurb": "With roughly three billion users, this tiny chirp is a serious candidate for the most-heard message alert on Earth. Outside the United States especially, it governs daily life: family groups nobody can leave, work chats that ignore working hours, and a neighbour asking again about the bins. The sound itself is deliberately unremarkable \u2014 short, mid-range and easy to hear over street noise \u2014 which is precisely why it scales. Play it anywhere on the planet and watch several heads turn at once, none of them belonging to the person you meant.",
   "origin": "WhatsApp's default message notification.",
-  "added": "2026-08-25",
+  "added": "2026-08-25T22:13:10+05:00",
   "featured": false,
   "plays": 2100
 }

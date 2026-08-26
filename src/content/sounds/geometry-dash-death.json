@@ -9,9 +9,9 @@
   ],
   "duration": 1.9,
   "audio": "/audio/geometry-dash-death.mp3",
-  "blurb": "Heard, on average, several hundred times per level, and considerably more if the level was made by somebody with a grudge. RobTop's rhythm platformer syncs everything to the music, so death is not just failure — it is the track cutting out at the exact moment you were enjoying it. The sound is brief, blunt and immediately followed by another attempt, because the restart is instant and that is the entire hook. Play it for repeated failures, particularly ones you are visibly about to repeat again within four seconds.",
+  "blurb": "Heard, on average, several hundred times per level, and considerably more if the level was made by somebody with a grudge. RobTop's rhythm platformer syncs everything to the music, so death is not just failure \u2014 it is the track cutting out at the exact moment you were enjoying it. The sound is brief, blunt and immediately followed by another attempt, because the restart is instant and that is the entire hook. Play it for repeated failures, particularly ones you are visibly about to repeat again within four seconds.",
   "origin": "The death sound from Geometry Dash.",
-  "added": "2026-08-25",
+  "added": "2026-08-25T22:26:24+05:00",
   "featured": false,
   "plays": 1650
 }

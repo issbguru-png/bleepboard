@@ -9,9 +9,9 @@
   ],
   "duration": 2.1,
   "audio": "/audio/pac-man-death.mp3",
-  "blurb": "That descending warble has been signalling failure since 1980, which makes it one of the oldest fail sounds still in regular use anywhere. Toru Iwatani's arcade cabinet had almost nothing to work with, so the death sound is a simple downward sweep — and it lands as deflation rather than disaster, which is exactly right for a yellow circle being caught by a ghost. Play it for defeats that feel retro, inevitable and slightly self-inflicted, particularly the ones where you could see the corridor was a bad idea and went down it anyway.",
+  "blurb": "That descending warble has been signalling failure since 1980, which makes it one of the oldest fail sounds still in regular use anywhere. Toru Iwatani's arcade cabinet had almost nothing to work with, so the death sound is a simple downward sweep \u2014 and it lands as deflation rather than disaster, which is exactly right for a yellow circle being caught by a ghost. Play it for defeats that feel retro, inevitable and slightly self-inflicted, particularly the ones where you could see the corridor was a bad idea and went down it anyway.",
   "origin": "The death sound from Pac-Man (Namco, 1980).",
-  "added": "2026-08-25",
+  "added": "2026-08-25T22:26:29+05:00",
   "featured": false,
   "plays": 1550
 }

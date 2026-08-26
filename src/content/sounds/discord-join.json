@@ -9,9 +9,9 @@
   ],
   "duration": 1.3,
   "audio": "/audio/discord-join.mp3",
-  "blurb": "The Discord join sound — that friendly little blip announcing someone just entered the call. It's Pavlovian at this point: a generation of gamers hears it and instinctively says a name as a question. Use it in edits to signal an arrival, or play it in a real call to convince everyone a ghost member just joined. Simple, iconic, endlessly abusable.",
+  "blurb": "The Discord join sound \u2014 that friendly little blip announcing someone just entered the call. It's Pavlovian at this point: a generation of gamers hears it and instinctively says a name as a question. Use it in edits to signal an arrival, or play it in a real call to convince everyone a ghost member just joined. Simple, iconic, endlessly abusable.",
   "origin": "Discord's default voice-channel join notification.",
-  "added": "2026-08-25",
+  "added": "2026-08-25T19:39:39+05:00",
   "featured": false,
   "plays": 1650
 }

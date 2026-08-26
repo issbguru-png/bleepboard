@@ -9,9 +9,9 @@
   ],
   "duration": 1.2,
   "audio": "/audio/discord-leave.mp3",
-  "blurb": "The Discord leave sound — the descending blip of someone dipping from the call. Sometimes it means goodnight; sometimes it means they lost the argument and rage-quit, and the sound plays exactly the same either way, which is the beauty of it. Play it after any conversational L to imply the loser has left the building. A perfect passive-aggressive punctuation mark.",
+  "blurb": "The Discord leave sound \u2014 the descending blip of someone dipping from the call. Sometimes it means goodnight; sometimes it means they lost the argument and rage-quit, and the sound plays exactly the same either way, which is the beauty of it. Play it after any conversational L to imply the loser has left the building. A perfect passive-aggressive punctuation mark.",
   "origin": "Discord's default voice-channel disconnect notification.",
-  "added": "2026-08-25",
+  "added": "2026-08-25T19:39:44+05:00",
   "featured": false,
   "plays": 1600
 }
