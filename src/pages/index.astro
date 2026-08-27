@@ -7,7 +7,7 @@ import StatIcon from '../components/StatIcon.astro';
 import Woofer from '../components/Woofer.astro';
 import HowItWorksCompact from '../components/HowItWorksCompact.astro';
 import { SITE, hubPath, soundPath, pickTitle } from '../lib/site';
-import { organization, website, itemList } from '../lib/schema';
+import { organization, website, itemList, faqPage } from '../lib/schema';
 
 const sounds = await getCollection('sounds');
 const categories = (await getCollection('categories')).sort(
@@ -35,8 +35,45 @@ const title = pickTitle([
 ]);
 const description = SITE.description;
 
+// Homepage FAQ.
+//
+// These are real questions, answered honestly, and they are also the only
+// natural home on this page for a vocabulary we were completely missing.
+// Competitor homepages rank for one intent expressed ~50 ways, and the words
+// doing that work are "noises", "SFX", "funny" and "unblocked" — none of which
+// appeared anywhere in our prose. Google resolves the word-order variants
+// ("meme buttons" / "buttons meme") on its own, so those are deliberately not
+// written out. Each word appears once, in a sentence someone would actually say.
+const faq = [
+  {
+    q: 'Is Bleepboard free?',
+    a: 'Yes. Every sound button plays for free, and every clip has a free MP3 download on its own page. There is no account to make, nothing to install, and no paid tier holding the good sounds back.',
+  },
+  {
+    q: 'Do the sound buttons work on a school Chromebook?',
+    a: 'Often, yes. Bleepboard runs entirely in the browser, so it works on managed laptops where a desktop soundboard app will not install. Whether the site itself is reachable depends on your network filter, which is not something we control. Our unblocked soundboard page explains what actually gets blocked and why.',
+  },
+  {
+    q: 'What is the difference between a meme sound and an SFX button?',
+    a: 'Less than you would think. A meme sound carries a joke with it, so people recognise the reference the moment it plays. An SFX button is a raw building block: an airhorn, a door slam, a funny noise you need underneath a cut. Plenty of sounds start as one and end up as the other.',
+  },
+  {
+    q: 'Can I use these sounds on Discord or in a stream?',
+    a: 'Yes. Download the MP3 and load it into Discord’s own soundboard, or into OBS, Streamlabs or whatever deck you already use. Every sound page also carries an embed code if you would rather drop the working button straight into your own site or overlay.',
+  },
+  {
+    q: 'What are the most popular sounds right now?',
+    a: 'The trending row at the top of this page is the honest answer for 2026 — it moves as things blow up on TikTok and YouTube. Six Seven, the Vine Boom and the Italian brainrot clips have held the top of the board for months.',
+  },
+  {
+    q: 'How often do you add new sounds?',
+    a: 'Regularly, and usually within a day or two of a clip taking off. A bot watches rising search queries and a human picks what is worth cutting, so nothing lands on the board without somebody listening to it first.',
+  },
+];
+
 const schema = [
   organization(),
+  faqPage(faq),
   // The SearchAction is only honest because the homepage genuinely resolves
   // `?q=` into rendered results — see the script at the bottom of this file.
   website(`${SITE.url}/?q={search_term_string}`),
@@ -58,7 +95,7 @@ const schema = [
     <h1>Instant sound buttons for every meme</h1>
     <p class="lede">
       Tap a button, hear the sound. Bleepboard is a free meme soundboard.
-      Play and download meme sounds, viral clips, and sound effects instantly.
+      Play and download meme sounds, funny noises, viral clips, and sound effects instantly.
       No signup. No install.
     </p>
 
@@ -218,6 +255,19 @@ const schema = [
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="section faq">
+    <div class="section-head">
+      <h2>Sound button questions</h2>
+    </div>
+    <p class="section-sub">The things people actually ask before they press anything.</p>
+    {faq.map((f) => (
+      <details>
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
   </section>
   </div>
 
