@@ -1,0 +1,121 @@
+---
+/**
+ * The "Embed this sound button" block on a sound page.
+ *
+ * Two jobs. It has to make the snippet trivial to take — one button, no
+ * hunting — and it has to show the thing working first, because nobody pastes
+ * an iframe into their site on faith. The live preview is a real iframe of the
+ * real /embed/ route, so what you see here is exactly what lands on the host
+ * page.
+ *
+ * On the credit line: the <a> underneath the iframe is the only part Google
+ * can see. Links inside an iframe belong to the framed document, not to the
+ * page framing it, so an embed with no visible credit link earns nothing. That
+ * is why the snippet includes it, why the note says so out loud, and why it is
+ * phrased as a request rather than a licence condition — the sounds are free
+ * either way and pretending otherwise would be a lie.
+ */
+import { SITE, soundPath } from '../lib/site';
+
+interface Props {
+  slug: string;
+  title: string;
+}
+
+const { slug, title } = Astro.props;
+
+const pageUrl = SITE.url + soundPath(slug);
+const embedUrl = `${SITE.url}/embed/${slug}/`;
+// Titles are hand-written and can carry quotes or brackets. A double quote
+// would close the `title` attribute early and break the paste for whoever
+// takes it, so swap it for the typographic pair instead of escaping.
+const safeTitle = title.replace(/"/g, '”');
+const anchor = `${safeTitle} sound button`;
+
+/* width/height attributes and `frameborder` as well as the inline style: some
+   CMS sanitisers drop `style` on paste, which leaves a 300x150 iframe wearing
+   the browser's default inset border. The style wins where it survives and
+   makes the widget fluid down to a phone-width column; the attributes are the
+   floor. `frameborder` is obsolete HTML, and every browser still honours it. */
+const embedCode = `<iframe src="${embedUrl}"
+  title="${anchor}" loading="lazy" frameborder="0"
+  width="420" height="88"
+  style="border:0;width:100%;max-width:420px;height:88px"></iframe>
+<p><a href="${pageUrl}">${anchor}</a> on Bleepboard</p>`;
+---
+
+<section class="section" id="embed">
+  <div class="section-head"><h2>Embed this sound button</h2></div>
+  <p class="section-sub">
+    Put the player on your site, blog, wiki or stream overlay. It is free, it stays free, and
+    nothing here phones home — no tracking script rides along with it.
+  </p>
+
+  <div class="embed-panel">
+    <div class="embed-preview">
+      <span class="embed-preview-label">Preview</span>
+      <!-- Relative, unlike the snippet: the preview should show the build it is
+           sitting in, not whatever is live on production. `loading="lazy"` keeps
+           it off the critical path — most visitors never scroll this far. -->
+      <iframe
+        src={`/embed/${slug}/`}
+        title={`${title} sound button, embedded preview`}
+        loading="lazy"
+        width="420"
+        height="88"></iframe>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-head">
+        <span class="label">Embed code</span>
+        <button class="btn sm" type="button" data-copy={embedCode}>
+          <span data-copy-label>Copy</span>
+        </button>
+      </div>
+      <pre>{embedCode}</pre>
+    </div>
+
+    <p class="embed-note">
+      Please keep the credit line under the player. It is the only part search engines can
+      see, and it is the whole reason we can give this away.
+    </p>
+  </div>
+</section>
+
+<style>
+  .embed-panel { max-width: 620px; }
+
+  /* The preview sits on the page's tinted ground rather than a white card, so
+     the widget's own border and radius stay legible against it. */
+  .embed-preview {
+    padding: var(--s4);
+    margin-bottom: var(--s3);
+    border: 1px dashed var(--line-2);
+    border-radius: var(--r);
+    background: var(--bg-2);
+  }
+  .embed-preview-label {
+    display: block;
+    margin-bottom: var(--s3);
+    color: var(--ink-3);
+    font-size: var(--step--2);
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .embed-preview iframe {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: 88px;
+    border: 0;
+    color-scheme: normal; /* let the widget follow the visitor's OS theme */
+  }
+
+  .embed-note {
+    margin: var(--s3) 0 0;
+    color: var(--ink-3);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+</style>

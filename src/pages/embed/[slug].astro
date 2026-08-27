@@ -1,6 +1,29 @@
 ---
+/**
+ * The embeddable player.
+ *
+ * This route exists for one reason: to be iframed on other people's sites and
+ * send a link back. `public/_headers` deliberately sets no X-Frame-Options or
+ * frame-ancestors so it stays framable.
+ *
+ * Worth being clear about what actually earns the link, because it changes how
+ * this page is built. Google does not credit the host page with links that
+ * live *inside* an iframe — those are links on a bleepboard.com document that
+ * happens to be displayed elsewhere. The crawlable backlink is the plain <a>
+ * that sits next to the iframe in the snippet we hand people (see
+ * src/components/EmbedPanel.astro).
+ *
+ * So the links in here do a different job: they carry referral traffic and
+ * they make the widget look credited rather than anonymous, which is what
+ * stops someone stripping the credit line out of the snippet. The title goes
+ * to the sound page; the wordmark goes to the homepage, because that is where
+ * a curious first-time visitor should land.
+ *
+ * Everything is inline. One document, no external CSS, no external JS, no
+ * font, and — importantly — no audio request until somebody presses play.
+ */
 import { getCollection } from 'astro:content';
-import { SITE, soundPath } from '../../lib/site';
+import { SITE, soundPath, fmtDuration } from '../../lib/site';
 
 export async function getStaticPaths() {
   const sounds = await getCollection('sounds');
@@ -11,49 +34,220 @@ const { sound } = Astro.props;
 const d = sound.data;
 const pageUrl = SITE.url + soundPath(sound.id);
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{d.title} — Bleepboard</title>
-    <meta name="robots" content="noindex" />
-    <style>
-      :root { --accent: #e5484d; --ink: #1b1a19; --bg: #ffffff; --line: #e6e3df; }
+    <title>{d.title} sound button — Bleepboard</title>
+    <!-- Thin duplicate of the sound page. Keep it out of the index; the page
+         it links to is the one that should rank. No canonical alongside it —
+         noindex + canonical are contradictory instructions and Google ignores
+         the pair. -->
+    <meta name="robots" content="noindex, follow" />
+    <meta name="color-scheme" content="light dark" />
+    <style is:global>
+      /* Tokens lifted from src/styles/global.css so the widget looks like the
+         site. Copied rather than imported because this document ships alone
+         and must not pull a stylesheet onto someone else's page. */
+      :root {
+        --surface: #ffffff;
+        --surface-2: #f4f1ec;
+        --ink: #191713;
+        --ink-3: #726c64;
+        --line: #e5dfd6;
+        --accent: #d92d20;
+        --accent-ink: #ffffff;
+        --accent-text: #c02418;
+        --focus: #1d4ed8;
+        --r: 14px;
+        --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+      }
       @media (prefers-color-scheme: dark) {
-        :root { --ink: #efedea; --bg: #1d1c1a; --line: #33302c; }
+        :root {
+          --surface: #1e1c1a;
+          --surface-2: #262320;
+          --ink: #f2efea;
+          --ink-3: #948e85;
+          --line: #322e29;
+          --accent: #ff5a45;
+          --accent-ink: #26100b;
+          --accent-text: #ff7a68;
+          --focus: #8ab0ff;
+        }
       }
+
       * { box-sizing: border-box; }
+
+      html, body { height: 100%; }
+
       body {
-        margin: 0; font-family: system-ui, sans-serif;
-        background: var(--bg); color: var(--ink);
-        display: flex; align-items: center; gap: 12px;
-        padding: 12px; border: 1px solid var(--line); border-radius: 12px;
-        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        overflow: hidden;
+        margin: 0;
+        padding: 10px 14px 10px 10px;
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--surface);
+        color: var(--ink);
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
       }
-      button {
-        width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
-        background: var(--accent); color: #fff; font-size: 18px; flex-shrink: 0;
+
+      /* --- play button ---------------------------------------------------- */
+      .play {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--accent-ink);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.14s cubic-bezier(0.2, 0.8, 0.3, 1);
       }
-      .t { min-width: 0; }
-      .t strong { display: block; font-size: 14px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; }
-      .t a { font-size: 11px; color: var(--accent); text-decoration: none; }
+      .play:hover { transform: scale(1.06); }
+      .play:active { transform: scale(0.96); }
+      .play:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+      .play svg { width: 20px; height: 20px; grid-area: 1 / 1; }
+      /* Play triangle sits slightly right of centre or it reads as off-axis. */
+      .i-play { margin-left: 2px; }
+      .play[aria-pressed='true'] .i-play,
+      .play[aria-pressed='false'] .i-pause { display: none; }
+
+      /* --- text ----------------------------------------------------------- */
+      .meta { min-width: 0; }
+      .name {
+        display: block;
+        overflow: hidden;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .name:hover { color: var(--accent-text); text-decoration: underline; }
+      .sub {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 3px;
+        color: var(--ink-3);
+        font-size: 11.5px;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      .brand { color: var(--accent-text); text-decoration: none; }
+      .brand:hover { text-decoration: underline; }
+      .sep { opacity: 0.5; }
+      .dur { font-variant-numeric: tabular-nums; }
+      .name:focus-visible,
+      .brand:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+
+      /* --- progress ------------------------------------------------------- */
+      /* Hugs the bottom edge inside the card's radius. No track behind it —
+         an always-visible 3px strip reads as a rendering fault at this size.
+         transform:scaleX keeps the fill off the layout path, so playback never
+         triggers a reflow on the host page. */
+      .bar {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      /* Narrow hosts: sidebars and phone-width posts. Everything still fits at
+         200px, which is about as small as an iframe gets used in the wild. */
+      @media (max-width: 260px) {
+        body { gap: 10px; padding: 8px 10px 8px 8px; }
+        .play { width: 40px; height: 40px; }
+        .play svg { width: 17px; height: 17px; }
+        .name { font-size: 14px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .play, .play:hover, .play:active { transition: none; transform: none; }
+      }
     </style>
   </head>
   <body>
-    <button id="p" aria-label={`Play ${d.title}`}>▶</button>
-    <div class="t">
-      <strong>{d.title}</strong>
-      <a href={pageUrl} target="_blank" rel="noopener">bleepboard.com</a>
+    <button class="play" id="p" type="button" aria-pressed="false" aria-label={`Play ${d.title}`}>
+      <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+        ><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z" /></svg
+      >
+      <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+        ><rect x="7" y="5" width="3.6" height="14" rx="1.2" /><rect x="13.4" y="5" width="3.6" height="14" rx="1.2" /></svg
+      >
+    </button>
+
+    <div class="meta">
+      <a class="name" href={pageUrl} target="_blank" rel="noopener">{d.title}</a>
+      <div class="sub">
+        <a class="brand" href={SITE.url + '/'} target="_blank" rel="noopener">Bleepboard</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <span class="dur">{fmtDuration(d.duration)}</span>
+      </div>
     </div>
-    <script define:vars={{ src: d.audio, site: SITE.url }}>
-      const a = new Audio(site + src);
-      const b = document.getElementById('p');
-      b.addEventListener('click', () => {
-        if (a.paused) { a.currentTime = 0; a.play(); b.textContent = '⏸'; }
-        else { a.pause(); b.textContent = '▶'; }
+
+    <div class="bar" aria-hidden="true"><i id="b"></i></div>
+
+    <script is:inline define:vars={{ src: d.audio, title: d.title }}>
+      /* The Audio element is built on first press, never on load. `new Audio(url)`
+         defaults to preload="auto" in Chrome and Safari, so constructing it up
+         front would pull the MP3 down on every single view of the host page —
+         bandwidth spent on visitors who scroll straight past. */
+      var btn = document.getElementById('p');
+      var bar = document.getElementById('b');
+      var audio = null;
+
+      function paint(on) {
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        btn.setAttribute('aria-label', (on ? 'Pause ' : 'Play ') + title);
+        if (!on) bar.style.transform = 'scaleX(0)';
+      }
+
+      function build() {
+        var a = new Audio(src);
+        a.addEventListener('play', function () { paint(true); });
+        a.addEventListener('pause', function () { paint(false); });
+        a.addEventListener('ended', function () { paint(false); });
+        a.addEventListener('error', function () { paint(false); });
+        a.addEventListener('timeupdate', function () {
+          var d = a.duration;
+          if (d > 0) bar.style.transform = 'scaleX(' + a.currentTime / d + ')';
+        });
+        return a;
+      }
+
+      btn.addEventListener('click', function () {
+        if (!audio) audio = build();
+        if (audio.paused) {
+          audio.currentTime = 0;
+          var r = audio.play();
+          if (r && r.catch) r.catch(function () { paint(false); });
+        } else {
+          audio.pause();
+        }
       });
-      a.onended = () => (b.textContent = '▶');
     </script>
   </body>
 </html>

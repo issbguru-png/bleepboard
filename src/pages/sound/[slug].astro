@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import SoundButton from '../../components/SoundButton.astro';
+import EmbedPanel from '../../components/EmbedPanel.astro';
 import {
   SITE,
   hubPath,
@@ -120,13 +121,6 @@ const reportOptions = [
   { label: 'Broken or wrong audio', href: reportLink(`Broken audio: ${d.title} (${sound.id})`) },
   { label: 'Inappropriate content', href: reportLink(`Inappropriate content: ${d.title} (${sound.id})`) },
 ];
-
-const embedCode = `<iframe
-  src="${SITE.url}/embed/${sound.id}/"
-  width="220" height="90" style="border:0"
-  loading="lazy" title="${d.title} sound button"></iframe>
-<br>
-<a href="${pageUrl}">${d.title} sound button on Bleepboard</a>`;
 
 // A waveform unique to this sound: deterministic from the slug, so the same
 // clip always draws the same shape. Decorative, and doubles as the progress bar.
@@ -267,7 +261,10 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
         <span class="fav-label" aria-hidden="true"><span class="on">Saved</span><span class="off">Save</span></span>
       </button>
 
-      <a class="btn" href={`#embed`}>Embed</a>
+      <a class="btn" href="#embed">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.5 8.5-4 3.5 4 3.5"/><path d="m15.5 8.5 4 3.5-4 3.5"/></svg>
+        Embed
+      </a>
     </div>
 
     <p class="sound-actions-minor">
@@ -340,19 +337,7 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     </section>
   )}
 
-  <section class="section" id="embed">
-    <div class="section-head"><h2>Embed this sound button</h2></div>
-    <p class="section-sub">Drop it into your site, blog, or stream overlay — it stays free and keeps working.</p>
-    <div class="code-card">
-      <div class="code-card-head">
-        <span class="label">Embed code</span>
-        <button class="btn sm" type="button" data-copy={embedCode}>
-          <span data-copy-label>Copy</span>
-        </button>
-      </div>
-      <pre>{embedCode}</pre>
-    </div>
-  </section>
+  <EmbedPanel slug={sound.id} title={d.title} />
 
   {related.length > 0 && (
     <section class="section">
