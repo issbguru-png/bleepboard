@@ -63,6 +63,16 @@ const description = SITE.description;
 // written out. Each word appears once, in a sentence someone would actually say.
 const faq = [
   {
+    // Leads deliberately. "button noises" is the single biggest phrase in this
+    // niche — 823k volume, and 35% of all the traffic our two competitors pull
+    // through their homepages. We used both words and never the pair, which is
+    // a strange thing to be missing when people type it that way. Answering the
+    // query outright beats wedging the bigram into a sentence about something
+    // else. "button sound effects" (the same idea, lower difficulty) rides along.
+    q: 'What are button noises?',
+    a: `Short clips wired so that one press plays one sound. An airhorn, the Vine Boom, a door slam: button noises and button sound effects are two names for the same thing, and there are ${sounds.length} of them on this page. The phrase describes how people use them rather than what they are, which is why nobody stood around calling them audio samples.`,
+  },
+  {
     q: 'Is Bleepboard free?',
     a: 'Yes. Every sound button plays for free, and every clip has a free MP3 download on its own page. There is no account to make, nothing to install, and no paid tier holding the good sounds back.',
   },
