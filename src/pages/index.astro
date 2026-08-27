@@ -23,6 +23,23 @@ const newest = [...sounds]
   .sort((a, b) => b.data.added.valueOf() - a.data.added.valueOf())
   .slice(0, 14);
 
+// Per-category rows: the top five of each board, then a card through to the
+// hub. Every row is rendered into the HTML and the later ones are `hidden`,
+// so "show more" is a class flip rather than a fetch. On a static site a real
+// XHR would mean shipping a JSON endpoint and a spinner to avoid a round trip
+// we can simply not make — and it keeps all 60-odd internal links crawlable
+// whether or not the button is ever pressed.
+const CATS_SHOWN = 4;
+const PER_CAT = 5;
+const catRows = categories.map((c) => ({
+  cat: c,
+  count: counts.get(c.id) ?? 0,
+  top: sounds
+    .filter((s) => s.data.category === c.id)
+    .sort((a, b) => b.data.plays - a.data.plays)
+    .slice(0, PER_CAT),
+}));
+
 const total = sounds.length;
 const quick = ['airhorn', 'vine boom', 'discord', 'fart', 'brainrot', 'notification'];
 // Lead with the two head phrases rather than the brand: nobody is searching
@@ -192,6 +209,41 @@ const schema = [
         </a>
       ))}
     </div>
+  </section>
+
+  <section class="section cat-archive">
+    <div class="section-head">
+      <h2>Top five on every board</h2>
+      <a class="section-link" href="/categories/">All categories →</a>
+    </div>
+    <p class="section-sub">The five most-reached-for sounds in each soundboard.</p>
+
+    {catRows.map((row, i) => (
+      <div class="cat-row" data-cat={row.cat.id} hidden={i >= CATS_SHOWN}>
+        <h3 class="cat-row-head">
+          <CategoryIcon cat={row.cat.id} size={20} />
+          <a href={hubPath(row.cat.id)}>{row.cat.data.hubTitle}</a>
+          <span class="cat-count tnum">{row.count}</span>
+        </h3>
+        <div class="grid grid--sm">
+          {row.top.map((s) => (
+            <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} />
+          ))}
+          <a class="cat-more" href={hubPath(row.cat.id)}>
+            <span class="cat-more-num tnum" aria-hidden="true">+{Math.max(row.count - PER_CAT, 0)}</span>
+            <span class="cat-more-label">View all {row.count} {row.cat.data.name} sounds</span>
+          </a>
+        </div>
+      </div>
+    ))}
+
+    {catRows.length > CATS_SHOWN && (
+      <button class="btn cat-more-btn" type="button" id="more-cats"
+              data-step={CATS_SHOWN} data-total={catRows.length}>
+        Show more soundboards
+        <span class="tnum">({catRows.length - CATS_SHOWN} left)</span>
+      </button>
+    )}
   </section>
 
   <HowItWorksCompact />
@@ -395,6 +447,42 @@ const schema = [
     if (initial) {
       q.value = initial;
       search();
+    }
+  </script>
+
+  <script>
+    // "Show more soundboards" reveals rows that are already in the document.
+    // Nothing is fetched, so there is no loading state to design and no way
+    // for it to fail halfway.
+    const moreBtn = document.getElementById('more-cats') as HTMLButtonElement | null;
+    if (moreBtn) {
+      const rows = Array.from(
+        document.querySelectorAll<HTMLElement>('.cat-archive .cat-row')
+      );
+      const step = Number(moreBtn.dataset.step) || 4;
+
+      moreBtn.addEventListener('click', () => {
+        const hidden = rows.filter((r) => r.hidden);
+        const batch = hidden.slice(0, step);
+        batch.forEach((r) => { r.hidden = false; });
+
+        const left = rows.filter((r) => r.hidden).length;
+        if (left === 0) {
+          moreBtn.remove();
+        } else {
+          const n = moreBtn.querySelector('.tnum');
+          if (n) n.textContent = `(${left} left)`;
+        }
+
+        // Move focus to the first row we just revealed, so a keyboard or
+        // screen-reader user lands on the new content instead of being left
+        // on a button whose label just changed underneath them.
+        const first = batch[0]?.querySelector<HTMLElement>('.cat-row-head a');
+        if (first) {
+          first.setAttribute('tabindex', '-1');
+          first.focus({ preventScroll: true });
+        }
+      });
     }
   </script>
 </Base>
