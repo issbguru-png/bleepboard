@@ -88,11 +88,11 @@ const faq = [
   },
   {
     q: '¿Hay que pagar o registrarse?',
-    a: 'Ni lo uno ni lo otro. Todos los botones suenan gratis, y cada sonido tiene su propia página con la descarga del MP3, también gratis. No pedimos correo, no hay cuenta que crear y no existe un plan de pago escondiendo los sonidos buenos.',
+    a: 'Ni lo uno ni lo otro. Todos los botones suenan gratis, y cada sonido tiene su propia página con la descarga del MP3, también gratis. No pedimos correo, no hay cuenta que crear y no existe un plan de pago que esconda los sonidos buenos.',
   },
   {
-    q: '¿Puedo usar estos sonidos en Discord o en un directo?',
-    a: 'Sí. Descarga el MP3 y cárgalo en la botonera que trae Discord, en OBS, en Streamlabs o en el deck que ya uses. Cada ficha incluye además un código para incrustar el botón funcionando dentro de tu web o de tu overlay.',
+    q: '¿Puedo usar estos sonidos en Discord o en un stream?',
+    a: 'Sí. Descarga el MP3 y cárgalo en la botonera que trae Discord, en OBS, en Streamlabs o en el deck que ya uses. Cada ficha incluye además un código para incrustar el botón funcionando dentro de tu página o de tu overlay.',
   },
   {
     q: '¿Funciona desde el teléfono?',
@@ -278,13 +278,13 @@ const schema = [
         <p>
           Bleepboard es una botonera hecha para no hacerte esperar: el botón suena en
           cuanto lo tocas, y cada sonido tiene su ficha con la descarga en MP3, de dónde
-          salió el clip y un código para incrustar el botón en tu web, en tu overlay o en
+          salió el clip y un código para incrustar el botón en tu página, en tu overlay o en
           tu servidor de Discord.
         </p>
         <p>
           Sumamos botones de sonidos nuevos seguido, casi siempre a los pocos días de que un audio
           empiece a circular en TikTok o en YouTube. Puedes ver
-          <a href="/new/">los más recientes</a> o bajar hasta las categorías de arriba.
+          <a href="/new/">los más recientes</a> o volver a las categorías de arriba.
         </p>
         <p>
           Sobre el idioma, sin rodeos: esta página está en español, el catálogo no. Las
@@ -315,7 +315,7 @@ const schema = [
           </p>
           <p>
             Archiva con saña. Un sonido no consigue botón aquí hasta que Woofer sabe de
-            dónde viene: de qué película, de qué directo, de qué seis segundos
+            dónde viene: de qué película, de qué stream, de qué seis segundos
             desquiciados del martes de alguien. Por eso cada sonido del sitio tiene un
             texto escrito a mano en vez de un encogimiento de hombros.
           </p>
@@ -407,14 +407,14 @@ const schema = [
       alarma: ['alarm'], despertador: ['alarm'], reloj: ['alarm', 'timer'],
       notificacion: ['notification'], notificaciones: ['notification'], aviso: ['alert'],
       mensaje: ['message'], mensajes: ['message'],
-      timbre: ['bell', 'chime'], campana: ['bell'], campanita: ['chime'],
-      error: ['error', 'fail'], fallo: ['fail'], fracaso: ['fail'],
+      timbre: ['doorbell', 'bell', 'chime'], campana: ['bell'], campanita: ['chime'],
+      error: ['error', 'fail'], fallo: ['fail'], falla: ['fail'], fracaso: ['fail'],
       aplausos: ['applause', 'clapping'], aplauso: ['applause'], palmas: ['clapping'],
       pedo: ['fart'], pedos: ['fart'],
       perro: ['dog'], perros: ['dog'], ladrido: ['dog'], ladridos: ['dog'],
       gato: ['cat', 'meow'], gatos: ['cat'], maullido: ['meow'], miau: ['meow'],
       puerta: ['door'], portazo: ['door', 'slam'],
-      sirena: ['siren'], ambulancia: ['siren', 'emergency'], policia: ['siren'],
+      sirena: ['siren'], ambulancia: ['siren', 'emergency'], policia: ['police', 'siren'],
       bocina: ['horn'], claxon: ['horn'], corneta: ['horn'],
       susto: ['jumpscare'], terror: ['horror'], miedo: ['horror', 'creepy'],
       gracioso: ['funny'], chistoso: ['funny'], divertido: ['funny'], comedia: ['comedy'],
@@ -425,8 +425,10 @@ const schema = [
       animal: ['animal'], animales: ['animal'], granja: ['farm'],
       telefono: ['phone'], celular: ['phone'], movil: ['phone'], llamada: ['call'],
       camara: ['camera'], foto: ['camera'],
-      victoria: ['win'], ganar: ['win'], muerte: ['death'], morir: ['death'],
-      baile: ['dance'], bailar: ['dance'], cancion: ['song'], musica: ['song'],
+      victoria: ['win'], ganar: ['win'],
+      // Safe now that mapped tags match whole words — 'rain' no longer hits 'brainrot'.
+      lluvia: ['rain'], muerte: ['death'], morir: ['death'],
+      baile: ['dance'], bailar: ['dance'], cancion: ['song'], musica: ['song', 'music'],
       voz: ['voice'], fuerte: ['loud'], raro: ['weird', 'cursed'], raros: ['weird'],
       triste: ['sad'], lindo: ['cute'], tierno: ['cute'],
       golpe: ['hit', 'impact'], caida: ['falling', 'fail'], caer: ['falling'],
@@ -437,6 +439,19 @@ const schema = [
       futbol: ['football'], deporte: ['sports'], deportes: ['sports'],
       boton: ['button'], botones: ['button'],
       viral: ['viral'], clasico: ['classic'], nostalgia: ['nostalgia'],
+      disparo: ['gunshot', 'shoot'], disparos: ['gunshot'], tiro: ['gunshot', 'shoot'],
+      pistola: ['gunshot'], escopeta: ['shotgun'],
+      gol: ['goal'], grillo: ['crickets'], grillos: ['crickets'],
+      trueno: ['thunder'], tormenta: ['storm', 'thunder'], viento: ['wind'], fuego: ['fire'],
+      beso: ['kiss'], llorar: ['crying', 'cry'], llanto: ['crying', 'cry'], llorando: ['crying'],
+      enojado: ['angry'], vaca: ['cow', 'moo'], pollo: ['chicken'], gallina: ['chicken'],
+      pato: ['duck', 'quack'], cerdo: ['pig', 'oink'], mono: ['monkey'], rana: ['frog'],
+      leon: ['lion', 'roar'], rugido: ['roar'], tiburon: ['shark'], dinosaurio: ['dinosaur'],
+      zombi: ['zombie'], esqueleto: ['skeleton'], payaso: ['clown'], magia: ['magic'],
+      tambor: ['drum'], redoble: ['drum-roll'], trompeta: ['trumpet'], trombon: ['trombone'],
+      silbato: ['whistle'], silbido: ['whistle'], pitido: ['beep'], ruido: ['noise', 'loud'],
+      moneda: ['coin'], dinero: ['money', 'cash'], cumpleanos: ['birthday'],
+      epico: ['epic'], epica: ['epic'],
     };
 
     /** Lowercase and strip diacritics, so "explosión" and "explosion" agree. */
@@ -469,7 +484,7 @@ const schema = [
         index = await (await fetch('/search-index.json')).json();
         loaded = true;
       } catch {
-        count.textContent = 'El buscador no está disponible ahora mismo — prueba a explorar por categoría más abajo.';
+        count.textContent = 'El buscador no está disponible ahora mismo — mejor explora por categoría más abajo.';
       }
     }
 
@@ -487,11 +502,22 @@ const schema = [
       // Each typed word becomes a small set of acceptable strings: itself, plus
       // whatever English tags it translates to. A sound matches when every word
       // is satisfied by at least one of its candidates.
+      //
+      // The typed term matches as a substring, so half-typed words still find
+      // things. The MAPPED candidates match on word boundaries only: they are
+      // complete tags from the map, and substring-matching them is how
+      // «victoria» → 'win' was returning eight Windows startup sounds, and why
+      // 'rain' could never be mapped without drowning in brainrot.
       const terms = norm(query).split(/\s+/).filter(Boolean)
-        .map((t) => [t, ...(ES_EN[t] ?? [])]);
+        .map((t) => ({ raw: t, mapped: ES_EN[t] ?? [] }));
       const hits = index.filter((s) => {
         const hay = norm(s.title + ' ' + s.tags.join(' ') + ' ' + s.category);
-        return terms.every((cands) => cands.some((c) => hay.includes(c)));
+        const words = ' ' + hay.replace(/[^a-z0-9]+/g, ' ') + ' ';
+        return terms.every(
+          (t) =>
+            hay.includes(t.raw) ||
+            t.mapped.some((c) => words.includes(' ' + c + ' '))
+        );
       });
 
       browse.hidden = true;
