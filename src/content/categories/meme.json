@@ -17,5 +17,25 @@
       "q": "Can I use these sounds in my videos or streams?",
       "a": "Short clips are widely used for commentary and entertainment, but rights vary by sound. Check each sound's page for origin info, and clear rights for commercial use."
     }
-  ]
+  ],
+  "es": {
+    "name": "Memes",
+    "hubTitle": "Botonera de Memes",
+    "metaDescription": "Botonera de memes gratis: los sonidos virales que internet no deja de tocar. Escúchalos al instante y baja cada MP3 sin registrarte.",
+    "intro": "Un meme sin su sonido es la mitad de un meme. Esta botonera junta la otra mitad: los clips virales que internet no deja de tocar, desde las reacciones clásicas hasta lo que explotó en TikTok esta semana, cada uno en un botón que suena en cuanto lo tocas.\n\nDetrás de cada botón hay una ficha con la descarga del MP3 gratis y un texto corto sobre el origen real del meme, porque la mitad de la gracia está en saber de dónde salió el audio. Esas fichas están en inglés, que es como se cataloga todo el sitio, pero el sonido funciona igual en cualquier idioma.\n\nSumamos memes nuevos a los pocos días de que una tendencia reviente, así que si lo escuchaste hoy en un video, hay buenas probabilidades de que ya tenga botón. Toca lo que quieras, baja lo que necesites para tus edits o llévate el código para incrustar un botón donde te sirva.",
+    "faq": [
+      {
+        "q": "¿Los sonidos de memes son gratis?",
+        "a": "Sí. Cada botón del sitio tiene su ficha con la descarga del MP3 gratis, sin registro y sin app. Tocas, bajas y listo."
+      },
+      {
+        "q": "¿Qué tan rápido agregan los memes nuevos?",
+        "a": "Normalmente dentro de las 48 horas de que un sonido empiece a reventar en TikTok, en YouTube Shorts o en Discord. La página de novedades muestra lo último en llegar."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos en mis videos o streams?",
+        "a": "Los clips cortos se usan a diario en comentario y entretenimiento, pero los derechos cambian según el sonido. Revisa la ficha de cada uno, que trae la información de origen, y para uso comercial asegura los permisos antes."
+      }
+    ]
+  }
 }

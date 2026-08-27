@@ -10,9 +10,12 @@ export const GET: APIRoute = async () => {
   return urlset([
     ...categories.map((c) => ({ loc: SITE.url + hubPath(c.id) })),
     ...themes.map((t) => ({ loc: SITE.url + hubPath(t.id) })),
-    // Spanish counterparts exist exactly where a theme carries `es` content.
+    // Spanish counterparts exist exactly where a hub carries `es` content.
     ...themes
       .filter((t) => t.data.es)
       .map((t) => ({ loc: `${SITE.url}/es${hubPath(t.id)}` })),
+    ...categories
+      .filter((c) => c.data.es)
+      .map((c) => ({ loc: `${SITE.url}/es${hubPath(c.id)}` })),
   ]);
 };

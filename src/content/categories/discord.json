@@ -13,5 +13,25 @@
       "q": "Can I play these directly in a Discord call?",
       "a": "Yes. Play them from the browser with your mic on, or use a virtual audio cable to route Bleepboard's audio into your mic input for cleaner playback."
     }
-  ]
+  ],
+  "es": {
+    "name": "Discord",
+    "hubTitle": "Botonera de Discord",
+    "metaDescription": "Sonidos de Discord: el blip de entrada, el de salida, el ping y los clips que todo servidor sube a su botonera. Baja cada MP3 gratis.",
+    "intro": "Discord tiene su propio idioma sonoro: el blip de alguien que entra, el blip de alguien que se va, el ping que significa que te invocaron. Este tablero junta esos sonidos icónicos de la plataforma con los clips que la gente de verdad sube a la botonera de su servidor, desde sonidos de reacción hasta memes y trolleos calibrados para el chat de voz.\n\nTodo se baja gratis en MP3, con el tamaño justo para la botonera nativa de Discord. Bájalo, súbelo a tu servidor y suéltalo en plena llamada. O toca los botones directo desde el navegador y rutea el caos por tu micrófono.\n\nLas fichas de cada sonido están en inglés, pero la mecánica no necesita traducción: un toque y suena.",
+    "faq": [
+      {
+        "q": "¿Cómo agrego estos sonidos a la botonera de mi servidor de Discord?",
+        "a": "Baja el MP3 desde la ficha del sonido y en tu servidor entra a Ajustes del servidor → Panel de sonidos → Subir sonido. A la botonera de Discord le van mejor los clips de menos de 5 segundos."
+      },
+      {
+        "q": "¿Puedo tocar estos sonidos directo en una llamada de Discord?",
+        "a": "Sí. Tócalos desde el navegador con el micrófono abierto, o usa un cable de audio virtual para rutear el audio de Bleepboard hacia tu entrada de micrófono y que se escuche más limpio."
+      },
+      {
+        "q": "¿Los sonidos tienen el tamaño que pide Discord?",
+        "a": "Sí. Los MP3 se bajan con el tamaño justo para la función de botonera que trae Discord, así que los subes tal cual a tu servidor."
+      }
+    ]
+  }
 }

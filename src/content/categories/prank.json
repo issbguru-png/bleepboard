@@ -13,5 +13,25 @@
       "q": "Can I play these from my phone?",
       "a": "Yes. Bleepboard is a website, so every button works in any phone browser with nothing to install."
     }
-  ]
+  ],
+  "es": {
+    "name": "Bromas",
+    "hubTitle": "Botonera de Bromas",
+    "metaDescription": "Sonidos para bromas: alarmas, timbres de error, estática y teléfonos falsos para agarrar a tus amigos desprevenidos. Suenan al toque, gratis.",
+    "intro": "Nada corta una conversación como una alarma que nadie esperaba. Este tablero está surtido con sonidos diseñados para provocar una reacción: alarmas que detienen todo, timbres que insinúan que alguien respondió muy mal, teléfonos falsos y ráfagas de estática que hacen que la gente revise sus bocinas.\n\nTodo suena al instante desde el navegador, sin cargas ni esperas, que importa más de lo que parece a mitad de una broma. Y todo se baja gratis en MP3 para los montajes más elaborados, desde la ficha de cada sonido, que está en inglés.\n\nÚsalos con responsabilidad. O por lo menos échale la culpa al que se rio más fuerte.",
+    "faq": [
+      {
+        "q": "¿Cuál es el mejor sonido para una broma?",
+        "a": "Los clásicos funcionan porque disparan reflejos: un ping de notificación hace que todos revisen el teléfono, una alarma hace que la gente busque la salida y un timbre de respuesta incorrecta termina cualquier discusión."
+      },
+      {
+        "q": "¿Puedo hacer las bromas desde el teléfono?",
+        "a": "Sí. Bleepboard es una página, así que cada botón funciona en el navegador de cualquier teléfono sin instalar nada."
+      },
+      {
+        "q": "¿Los sonidos tardan en cargar?",
+        "a": "No, y ahí está medio truco. Los botones suenan en cuanto los tocas, sin cargas ni esperas, porque una broma que tarda tres segundos ya no es una broma."
+      }
+    ]
+  }
 }

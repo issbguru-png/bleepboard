@@ -13,5 +13,25 @@
       "q": "Are these sound effects royalty-free?",
       "a": "Bleepboard's synthesised effects (bleeps, boops, buzzers) are original and free to use. For sounds sourced from media, check the origin note on each page before commercial use."
     }
-  ]
+  ],
+  "es": {
+    "name": "Efectos de sonido",
+    "hubTitle": "Botonera de Efectos de Sonido",
+    "metaDescription": "Efectos de sonido al toque: bips de censura, timbres de error, explosiones, zaps y estática. Suenan gratis y cada MP3 se baja sin registro.",
+    "intro": "El bip de censura, el timbre de respuesta incorrecta, la explosión, el zap y la ráfaga de estática: los efectos de sonido que todo el mundo termina buscando, reunidos como botones que suenan directo en el navegador.\n\nEstos clips son los que hacen el trabajo pesado en las ediciones de video, en los streams en vivo y en más de una broma de salón de clases. Ninguno necesita presentación; necesitan estar a mano, y para eso existe este tablero.\n\nCada efecto tiene su propia ficha, en inglés, con la descarga del MP3 gratis, un código para incrustar el botón en tu página y una nota sobre dónde se suele usar. Así encuentras el sonido exacto que escuchaste y lo metes en tu proyecto en segundos, sin cuentas ni programas de por medio.",
+    "faq": [
+      {
+        "q": "¿Puedo bajar los efectos de sonido en MP3?",
+        "a": "Sí. Cada efecto tiene su descarga gratis en su ficha. Un clic, sin registro y sin app."
+      },
+      {
+        "q": "¿Son efectos libres de derechos?",
+        "a": "Los efectos sintetizados de Bleepboard, como los bips, los boops y los timbres, son originales y libres para usar donde quieras. Los que vienen de películas o programas llevan una nota de origen en su ficha: revísala antes de cualquier uso comercial."
+      },
+      {
+        "q": "¿Sirven para bromas y para presentaciones?",
+        "a": "Para eso hacen el trabajo pesado: ediciones de video, streams en vivo y bromas de salón de clases. Todo suena directo desde el navegador, también en el teléfono, sin instalar nada."
+      }
+    ]
+  }
 }

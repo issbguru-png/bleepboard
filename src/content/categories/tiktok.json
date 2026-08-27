@@ -13,5 +13,25 @@
       "q": "Can I download TikTok sounds as MP3?",
       "a": "Every sound on this board has a free MP3 download on its page, no signup needed."
     }
-  ]
+  ],
+  "es": {
+    "name": "TikTok",
+    "hubTitle": "Botonera de Sonidos de TikTok",
+    "metaDescription": "Los audios de TikTok que suenan en todos lados, como botones instantáneos. Tócalos gratis, mira de dónde salió cada uno y baja el MP3.",
+    "intro": "TikTok estrena un sonido icónico más o menos cada semana, y este tablero es donde aterrizan. Son los audios que sigues escuchando en un video sí y en el otro también: Get Out, el sonido del rizz, AUGHHH, las risas y los gritos que se adueñan de tu For You durante un mes entero.\n\nCada botón suena al instante y lleva a una ficha con la descarga del MP3 gratis y una explicación corta de dónde arrancó la tendencia, porque la mitad de la gracia de un audio de TikTok está en conocer la historia detrás. Esas fichas están escritas en inglés, aunque para el audio da lo mismo.\n\nRastreamos a diario qué sonidos vienen subiendo y publicamos los botones nuevos a uno o dos días de que un audio reviente, así que lo que escuchaste anoche probablemente ya está aquí.",
+    "faq": [
+      {
+        "q": "¿Cómo encuentro un audio de TikTok que escuché por ahí?",
+        "a": "Recorre este tablero o usa el buscador del sitio con las palabras que recuerdes, mejor en inglés, porque así está etiquetado el catálogo. Cada ficha describe la tendencia, así que puedes confirmar que es el clip correcto antes de bajarlo."
+      },
+      {
+        "q": "¿Puedo bajar los audios de TikTok en MP3?",
+        "a": "Sí. Todos los sonidos de este tablero tienen descarga gratis en MP3 en su ficha, sin registrarte y sin instalar nada."
+      },
+      {
+        "q": "¿Cada cuánto llegan audios nuevos?",
+        "a": "Revisamos a diario qué audios vienen creciendo, y los botones nuevos suelen aparecer a uno o dos días de que un sonido explote. Si hoy lo escuchaste en tu For You, dale unos días como mucho."
+      }
+    ]
+  }
 }

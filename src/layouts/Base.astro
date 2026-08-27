@@ -66,6 +66,9 @@ const TRANSLATED: Record<string, string> = {
 for (const t of await getCollection('themes')) {
   if (t.data.es) TRANSLATED[`/${t.id}-soundboard/`] = `/es/${t.id}-soundboard/`;
 }
+for (const c of await getCollection('categories')) {
+  if (c.data.es) TRANSLATED[`/${c.id}-soundboard/`] = `/es/${c.id}-soundboard/`;
+}
 const here = Astro.url.pathname;
 const path = here.endsWith('/') ? here : here + '/';
 const isEs = path === '/es/' || path.startsWith('/es/');

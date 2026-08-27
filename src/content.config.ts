@@ -31,6 +31,18 @@ const categories = defineCollection({
       .array(z.object({ q: z.string(), a: z.string() }))
       .default([]),
     order: z.number().default(99),
+    /** Spanish page content — same contract as on themes: presence of this
+     *  block is the single switch that wires the /es/ route, the hreflang
+     *  pair and the sitemap entry. */
+    es: z
+      .object({
+        name: z.string(),
+        hubTitle: z.string(),
+        metaDescription: z.string().max(160),
+        intro: z.string().min(400),
+        faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+      })
+      .optional(),
   }),
 });
 

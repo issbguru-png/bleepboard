@@ -9,5 +9,25 @@
       "q": "Do you add sounds from new anime seasons?",
       "a": "Yes. When a line or a sting starts trending in edits it gets a button here, usually within a few days."
     }
-  ]
+  ],
+  "es": {
+    "name": "Anime",
+    "hubTitle": "Botonera de Anime",
+    "metaDescription": "Sonidos de anime que se escaparon de sus series: el To Be Continued de JoJo, la teletransportación de Goku y más. Escúchalos y bájalos gratis.",
+    "intro": "Algunos sonidos se escapan de sus series y se vuelven vocabulario de internet. Esta botonera junta esos fugados del anime: el «To Be Continued» de JoJo, el zip de la Teletransportación Instantánea de Goku, el «wow» entrecortado que ya no necesita subtítulos. Son los clips que sigues oyendo en edits y en llamadas de Discord mucho después de que terminó la temporada.\n\nCada botón suena al instante, y la ficha de cada sonido, escrita en inglés, anota la serie y la escena de donde viene, porque un sonido de anime sin su contexto es solo la mitad del chiste. Los sonidos nuevos aterrizan aquí a medida que marcan tendencia en los edits y en las compilaciones de memes.",
+    "faq": [
+      {
+        "q": "¿Agregan sonidos de las temporadas nuevas?",
+        "a": "Sí. Cuando una frase o un sting empieza a marcar tendencia en los edits, gana su botón aquí, normalmente en cuestión de días."
+      },
+      {
+        "q": "¿De qué serie viene cada sonido?",
+        "a": "La ficha de cada clip anota la serie y la escena exacta, porque medio chiste está en el contexto. Esas fichas están en inglés, como el resto del catálogo."
+      },
+      {
+        "q": "¿Puedo bajar los sonidos de anime?",
+        "a": "Sí, cada uno tiene su MP3 con descarga gratis en su ficha, sin registro, listo para tus edits o para la botonera de Discord."
+      }
+    ]
+  }
 }

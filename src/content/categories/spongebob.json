@@ -25,5 +25,29 @@
       "q": "Can I put SpongeBob audio in a monetised video?",
       "a": "Short clips are used constantly in edits and commentary, but the audio belongs to Nickelodeon and Paramount. Fair dealing and fair use may cover commentary or parody depending on where you are and what you are doing. For anything monetised or commercial, clear the rights rather than assuming."
     }
-  ]
+  ],
+  "es": {
+    "name": "Bob Esponja",
+    "hubTitle": "Botonera de Bob Esponja",
+    "metaDescription": "Sonidos de Bob Esponja: las tarjetas de tiempo, la sirena de niebla, el boowomp, My Leg y la música triste. Tócalos gratis y baja el MP3.",
+    "intro": "Una caricatura estrenada en 1999 pone más audio de reacción en internet que cualquier estudio de cine. Tarjetas de tiempo, stings de comedia, un pez de fondo gritando por su pierna. Si alguna vez viste un video de YouTube donde el chiste remató con una sirena de niebla, ya escuchaste este tablero sin haberlo buscado. Aquí están los clips de Bob Esponja que la gente de verdad busca, como botones instantáneos con descarga gratis en MP3.\n\nHay una razón de producción para que tanto de esto viaje bien. Casi toda la música incidental de la serie salió de una biblioteca de producción, Associated Production Music, cuyo catálogo está lleno de cues de los años sesenta escritos para encajar en cualquier cosa. Alrededor iban grabaciones originales de tiki y guitarra hawaiana, hechas porque Stephen Hillenburg quería que Fondo de Bikini sonara a disco hawaiano viejo y rayado. La música de biblioteca es modular por diseño: quince segundos cargan un estado de ánimo completo sin pertenecer a ninguna escena, así que sacar un cue de un episodio y ponerlo sobre el video de tu amigo cayéndose no cuesta nada en significado.\n\nCada cue tiene su oficio y los editores saben cuál es cuál. Las tarjetas del Narrador Francés manejan la elipsis: «A Few Moments Later» comprime una espera y «2000 Years Later» convierte esa misma espera en un chiste sobre lo que tardó. La sirena de niebla es un punto final, lo bastante fuerte para cerrar una escena que no tenía cierre natural. El boowomp cubre los fracasos chicos, los que merecen compasión y no un timbre de error. La música triste hace el trabajo más fino: infla una decepción trivial hasta que se siente enorme y te invita a reírte del hueco entre las dos. Y los pasos de Calamardo significan que alguien está a punto de entrar donde no debía.\n\nTom Kenny pone la voz de Bob Esponja y también la del narrador, cuyo acento empezó como guiño a los documentales submarinos de Jacques Cousteau antes de volverse la voz oficial del salto de tiempo en internet. Nickelodeon estrenó la serie el 1 de mayo de 1999, hace tanto que hoy se cortan videos con episodios más viejos que quien los edita. Cada clip abre su propia ficha, en inglés, con la descarga y una línea sobre su origen. Son extractos de una serie con derechos de autor, así que asegura los permisos antes de cualquier uso comercial.",
+    "faq": [
+      {
+        "q": "¿Cuál sonido de Bob Esponja se usa más en los edits?",
+        "a": "Las tarjetas de tiempo, con «A Few Moments Later» a la cabeza. Se volvió la manera estándar de saltar el tiempo en un video en cualquier plataforma, al punto de que gente que jamás vio un episodio la usa correctamente. La sirena de niebla y el boowomp vienen después."
+      },
+      {
+        "q": "¿Quién hace la voz del narrador francés?",
+        "a": "Tom Kenny, que también pone la voz de Bob Esponja y la de Gary. El acento es un guiño a Jacques Cousteau, de cuyos documentales submarinos la serie toma su marco. Oír las dos voces en la misma escena sin notar que son el mismo actor es parte del truco."
+      },
+      {
+        "q": "¿Qué es el boowomp?",
+        "a": "Un sting corto y desinflado que suena cuando algo sale mal sin escándalo. El nombre es una onomatopeya que inventó internet, no algo que aparezca en los créditos. Es el sonido de fracaso al que recurres cuando un timbre sería demasiado agresivo y el silencio, demasiado triste."
+      },
+      {
+        "q": "¿Puedo usar audio de Bob Esponja en un video monetizado?",
+        "a": "Los clips cortos se usan a cada rato en edits y comentario, pero el audio pertenece a Nickelodeon y a Paramount. Según dónde estés y qué hagas, el uso legítimo puede cubrir comentario o parodia. Para cualquier cosa monetizada o comercial, asegura los derechos en lugar de asumirlos."
+      }
+    ]
+  }
 }

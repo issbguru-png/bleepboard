@@ -25,5 +25,33 @@
       "q": "Can I download these and use them in my edits?",
       "a": "Yes. Every sound here has a free MP3 download on its page, with no signup and no app, ready for video edits, Discord soundboards or stream alerts. Where a clip comes from a released song or a film, check the note on its page before you use it in anything commercial."
     }
-  ]
+  ],
+  "es": {
+    "name": "Brainrot",
+    "hubTitle": "Botonera de Brainrot",
+    "metaDescription": "Sonidos brainrot: 67, Tralalero Tralala, Tung Tung Tung Sahur, audios sigma y skibidi, con la historia de cada uno. Gratis, con MP3.",
+    "intro": "En diciembre de 2024, Oxford University Press eligió «brain rot» como su palabra del año, después de que la frase apareciera un 230 por ciento más que el año anterior. Los del diccionario describían una preocupación por lo que el scroll infinito le hace a una persona. La Generación Alfa ya había tomado la palabra, le quitó la preocupación y la convirtió en etiqueta de género. En español pasó lo mismo sin traducirla: brainrot se dice brainrot. Este tablero es el lado sonoro de ese género: 67, las criaturas del brainrot italiano, himnos sigma, ruido skibidi y lo demás, como botones que puedes tocar.\n\nLa rama italiana es lo más extraño que le ha pasado a los memes en años. Arrancó a comienzos de 2025 con Tralalero Tralala, un tiburón de tres patas en tenis Nike narrado por una voz sintética que habla un italiano levemente equivocado, publicado por una cuenta que fue baneada poco después. En cuestión de semanas siguieron cientos de personajes. Bombardiro Crocodilo lleva cabeza de cocodrilo sobre cuerpo de bombardero. Ballerina Cappuccina usa una taza de café por cabeza. Tung Tung Tung Sahur salió de Indonesia en febrero de 2025 y toma su nombre del tamborileo que despierta a la gente para la comida previa al amanecer en Ramadán, lo que le da la única tradición genuina de todo el elenco. Imágenes de generadores, voces de texto a voz: un universo ficticio entero construido y agotado más rápido que una temporada de televisión.\n\nCasi nada de esto es música en el sentido normal. Un sonido brainrot funciona más bien como contraseña: diez o quince segundos que confirman que tú y quien te mira están viendo el mismo feed. TikTok se organiza alrededor de páginas de audio y no de videos, así que un clip lo adoptan, lo remezclan y lo resuben miles de cuentas mientras quien lo publicó primero queda olvidado por completo. Dos números hablados de un tema de Skrilla viajaron así, por edits de basquetbol, hasta un canto de llamada y respuesta que los maestros de tres continentes escuchan todo el día.\n\nPor cierto, la frase es más vieja que el feed que describe. Oxford rastreó su primer uso registrado hasta el Walden de Thoreau, en 1854, en una queja sobre lectores que preferían las ideas fáciles a las difíciles. Thoreau al menos nunca tuvo que explicar un tiburón en tenis.\n\nLa mayoría cae aquí cazando un clip específico. Un editor necesita un remate para su video de Minecraft, alguien en Discord quiere algo que soltar a mitad de llamada, y no pocos padres llegan tratando de identificar lo que su hijo de once años no deja de cantar. Cada botón suena al toque y se baja gratis en MP3, y cada sonido conserva su propia ficha, en inglés, con la historia detrás, útil si alguna vez perdiste una discusión sobre qué significa el 67.",
+    "faq": [
+      {
+        "q": "¿De dónde viene la palabra brainrot?",
+        "a": "Oxford University Press la eligió palabra del año 2024, tras registrar un salto del 230 por ciento en su uso, y rastreó su primera aparición escrita hasta el Walden de Thoreau, en 1854. Thoreau la usaba como insulto contra el pensamiento perezoso. En línea se ablandó hasta ser una etiqueta que la gente se aplica a sus propios hábitos, casi siempre con algo de cariño, y en español se quedó tal cual, sin traducción."
+      },
+      {
+        "q": "¿Qué es el brainrot italiano?",
+        "a": "Una ola de criaturas generadas con IA, con nombres que suenan a italiano y voces sintéticas en italiano, que despegó a comienzos de 2025. A Tralalero Tralala, un tiburón en tenis, se le suele dar el crédito de ser el primero. Le siguieron Bombardiro Crocodilo, Ballerina Cappuccina, Brr Brr Patapim y Tung Tung Tung Sahur, junto con cientos más que nunca pegaron."
+      },
+      {
+        "q": "¿Qué significa el 67?",
+        "a": "Nada en particular, y ese vacío es lo que lo mantiene vivo. Salió del tema Doot Doot (6 7) de Skrilla y se regó por edits de basquetbol hasta volverse un canto con gesto de manos incluido. Los niños lo dicen porque otros niños lo dicen. Siempre son dos números sueltos, seis y siete, nunca sesenta y siete."
+      },
+      {
+        "q": "¿Por qué los personajes tienen nombres que suenan italianos?",
+        "a": "Porque el primero los tenía. Tralalero Tralala llegó con una voz de IA leyendo sinsentidos con cadencia italiana, esa combinación era el chiste y todos los que copiaron el formato la conservaron. La mayoría de los nombres ni siquiera son palabras italianas reales: puro ritmo y vocales imitando el idioma."
+      },
+      {
+        "q": "¿Puedo bajar estos sonidos para mis edits?",
+        "a": "Sí. Cada sonido tiene descarga gratis en MP3 en su ficha, sin registro y sin app, listo para ediciones de video, botoneras de Discord o alertas de stream. Cuando un clip viene de una canción publicada o de una película, revisa la nota en su ficha antes de usarlo en algo comercial."
+      }
+    ]
+  }
 }

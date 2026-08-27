@@ -20,20 +20,33 @@ import { themeSounds } from '../../lib/themes';
  */
 export async function getStaticPaths() {
   const themes = await getCollection('themes');
-  return themes
-    .filter((t) => t.data.es)
-    .map((t) => ({ params: { hub: `${t.id}-soundboard` }, props: { theme: t } }));
+  const categories = await getCollection('categories');
+  // Same contract for both kinds: an `es` block is the whole opt-in.
+  return [
+    ...themes
+      .filter((t) => t.data.es)
+      .map((t) => ({ params: { hub: `${t.id}-soundboard` }, props: { entry: t, kind: 'theme' as const } })),
+    ...categories
+      .filter((c) => c.data.es)
+      .map((c) => ({ params: { hub: `${c.id}-soundboard` }, props: { entry: c, kind: 'category' as const } })),
+  ];
 }
 
-const { theme } = Astro.props;
-const es = theme.data.es!;
+const { entry, kind } = Astro.props;
+const theme = entry;
+const es = (entry.data as any).es!;
 const allSounds = await getCollection('sounds');
-const sounds = themeSounds(allSounds, theme.data.match);
+const sounds =
+  kind === 'theme'
+    ? themeSounds(allSounds, (entry.data as any).match)
+    : allSounds
+        .filter((s) => s.data.category === entry.id)
+        .sort((a, b) => b.data.plays - a.data.plays);
 
 const paras = es.intro.split('\n\n').map((p) => p.trim()).filter(Boolean);
 const [lede, ...rest] = paras;
 
-const iconKey = theme.data.icon ?? 'meme';
+const iconKey = kind === 'theme' ? ((entry.data as any).icon ?? 'meme') : entry.id;
 const pageUrl = `${SITE.url}/es/${theme.id}-soundboard/`;
 
 const title = pickTitle([

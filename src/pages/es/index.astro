@@ -258,7 +258,7 @@ const schema = [
     </p>
     <div class="cat-grid">
       {categories.map((c) => (
-        <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
+        <a class="cat-card" href={c.data.es ? `/es${hubPath(c.id)}` : hubPath(c.id)} data-cat={c.id}>
           <CategoryIcon cat={c.id} />
           <span class="cat-name">{catName(c.id, c.data.name)}</span>
           <span class="cat-count tnum">{counts.get(c.id) ?? 0} sonidos</span>

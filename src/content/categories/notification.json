@@ -13,5 +13,25 @@
       "q": "Why do notification sounds make great pranks?",
       "a": "Because everyone reflexively checks their phone. Play a familiar ping out loud in a quiet room and watch the whole room reach for their pockets."
     }
-  ]
+  ],
+  "es": {
+    "name": "Notificaciones",
+    "hubTitle": "Botonera de Sonidos de Notificación",
+    "metaDescription": "Tonos de notificación icónicos: pings, campanitas, alertas y sonidos de mensaje. Escúchalos al toque o baja el MP3 gratis para tu teléfono.",
+    "intro": "Medio segundo basta para que una sala entera revise su teléfono. Los sonidos de notificación son los audios más reconocibles del planeta: pings, tonos de mensaje, campanitas y alertas que todo el mundo lleva tatuados en el reflejo.\n\nLa gente llega a este tablero por tres motivos. Para ponerse un tono de notificación distinto al de fábrica, para hacerle una broma a alguien en plena conversación, o para meter esa chispa de reconocimiento instantáneo en una edición de video.\n\nAquí están los clásicos y los que vienen sonando, cada uno como botón instantáneo. La ficha de cada sonido, en inglés como el resto del catálogo, trae la descarga del MP3 gratis con el tamaño justo para usarlo de tono en el teléfono, más un código para incrustar el botón en tu propia página.",
+    "faq": [
+      {
+        "q": "¿Puedo poner estos sonidos como tono de notificación en mi teléfono?",
+        "a": "Sí. Baja el MP3 desde la ficha del sonido y configúralo como tono personalizado en los ajustes de tu teléfono; tanto iOS como Android aceptan tonos propios."
+      },
+      {
+        "q": "¿Por qué los sonidos de notificación funcionan tan bien como broma?",
+        "a": "Porque todo el mundo revisa el teléfono por reflejo. Toca un ping conocido en voz alta en un cuarto silencioso y mira cómo la sala completa se lleva la mano al bolsillo."
+      },
+      {
+        "q": "¿Cuesta algo bajar los tonos?",
+        "a": "Nada. Cada sonido se escucha gratis y su MP3 se baja gratis, sin registro y sin app de por medio."
+      }
+    ]
+  }
 }

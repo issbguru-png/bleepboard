@@ -25,5 +25,33 @@
       "q": "Do you have Minecraft, FNAF and Roblox sounds?",
       "a": "All three, in quantity, and they sit in this board alongside the rest. Minecraft covers mobs, blocks and the level-up chime; Roblox covers the retired oof plus the Doors monsters; the Five Nights at Freddy's clips also have a dedicated board of their own if you want them separated out."
     }
-  ]
+  ],
+  "es": {
+    "name": "Videojuegos",
+    "hubTitle": "Botonera de Videojuegos",
+    "metaDescription": "Sonidos de videojuegos para streams, Discord y edits: monedas, level-ups, voces de anunciador y arranques de consola. Baja cada MP3 gratis.",
+    "intro": "Una moneda de Mario son dos notas, y con eso basta. El audio de los juegos se diseña para avisar algo en medio segundo, moneda recogida, ronda perdida, alguien atrás de ti, y resulta que funciona igual de bien con gente que jamás tocó el control. Ese es el oficio de este tablero: jingles de victoria, voces de anunciador, level-ups, derrotas y arranques de consola, convertidos en botones instantáneos para streams, llamadas de Discord y ediciones de video.\n\nLas reglas que moldean el sonido de un juego le vienen perfectas a una botonera. Una señal tiene que cortar una mezcla ruidosa, leerse igual a cualquier volumen y terminar antes de que empiece la siguiente. Años de juego entrenaron a la gente a reaccionar a estas señales antes de reconocerlas conscientemente, así que el editor consigue la reacción gratis y el chat entero entiende al instante el sonido de la spike de Valorant. Eso sí, no todo sobrevive la mudanza: los pasos y los disparos no van a ninguna parte fuera del juego, mientras el «wasted» de GTA V se volvió la manera estándar de cerrar el video de alguien tomando una mala decisión.\n\nTres usos cubren casi todo lo que sale de esta página. Primero las alertas de stream: una moneda para el seguidor nuevo, un anunciador para la raid. Después Discord, por la botonera del servidor o ruteando el audio del navegador a un micrófono virtual; ahí terminan el oof de Roblox y la puerta de FNAF. Tercero la edición, que es la menos piadosa, porque un hitmarker tiene que caer en el cuadro exacto o el chiste se muere.\n\nEl catálogo va de las máquinas de arcade de los ochenta a juegos parchados la semana pasada: Pac-Man, Super Mario Bros., el arranque del PlayStation original, Wii Sports, Among Us, Minecraft, Geometry Dash, Team Fortress 2 y un estante hondo de terror de Roblox. Algunos ya funcionan como nostalgia pura sin gameplay de por medio: Nintendo cerró el Wii Shop Channel en 2019 y su musiquita de espera es más popular ahora que cuando la tienda funcionaba. Todo suena en el navegador, se baja gratis en MP3 y trae código para incrustar el botón en tu página; las fichas de cada sonido están en inglés.",
+    "faq": [
+      {
+        "q": "¿Cómo meto uno de estos sonidos a una llamada de Discord?",
+        "a": "Hay dos caminos. Baja el MP3 y súbelo a la botonera del propio servidor, que es la ruta más simple y funciona en el teléfono. O toca el botón en tu navegador y rutea la salida hacia tu micrófono con un cable de audio virtual, lo que te deja usar cualquier sonido del sitio sin subirlo antes."
+      },
+      {
+        "q": "¿Cuál es la forma más limpia de usarlos como alertas de stream?",
+        "a": "Baja el MP3 y apunta OBS, Streamlabs o tu herramienta de alertas al archivo, no al navegador. Mantén las alertas por debajo de unos dos segundos para que no hablen encima de ti, y normaliza el volumen antes de salir en vivo, porque el audio de juegos viene masterizado fuerte a propósito."
+      },
+      {
+        "q": "¿Por qué se usan tanto los arranques de consola viejos?",
+        "a": "Son cortos, inconfundibles y están pegados a un recuerdo más que a un juego. El arranque del PlayStation y la campanita del Xbox 360 marcan el momento antes de que pasara cualquier cosa, así que cargan pura anticipación. Eso los vuelve buenos para abrir un video de casi lo que sea."
+      },
+      {
+        "q": "¿Cuáles puedo usar comercialmente?",
+        "a": "Los efectos sintetizados hechos para este sitio, como la moneda, el power-up y el jingle de game over, son originales y libres para cualquier uso. Los clips tomados de juegos publicados pertenecen a sus editoras y están aquí como extractos cortos, así que revisa la nota de origen en la ficha antes de meter uno en un trabajo comercial."
+      },
+      {
+        "q": "¿Tienen sonidos de Minecraft, FNAF y Roblox?",
+        "a": "Los tres, y en cantidad. Minecraft cubre mobs, bloques y la campanita de experiencia; Roblox trae el oof retirado y los monstruos de Doors; y los clips de Five Nights at Freddy's tienen además una botonera propia, por si los quieres separados."
+      }
+    ]
+  }
 }

@@ -17,5 +17,25 @@
       "q": "Why does the goat sound like a person screaming?",
       "a": "Because a goat's alarm bleat sits right in the human vocal range, so your brain files it as a person before correcting itself. That mismatch is what sent the screaming goat around the internet in 2013, and it never really left."
     }
-  ]
+  ],
+  "es": {
+    "name": "Animales",
+    "hubTitle": "Botonera de Sonidos de Animales",
+    "metaDescription": "Sonidos de animales: maullidos, mugidos, cacareos, cantos de aves y la cabra que grita. Suenan al instante y cada MP3 se baja gratis.",
+    "intro": "Maullidos, mugidos, cacareos, gruñidos de cerdo y por lo menos una cabra que suena como un señor teniendo una mañana terrible. Algunos de estos son el artículo genuino: una gallina cloqueando, un caballo relinchando al otro lado del campo, el canto de una ballena rodando por el agua profunda. Otros son los animales favoritos de internet, la marmota, la cabra que grita, la paloma que no debería poder hacer ese ruido, y están aquí porque una botonera sin ellos quedaría incompleta.\n\nHay dos buenas razones para querer sonidos de animales a la mano. La primera es práctica: editores de video, maestros, locutores de radio y cualquiera que arme una escena de granja necesitan clips limpios y reconocibles, y cada botón de aquí se baja gratis en MP3, listo para una clase o una edición. La segunda es que los sonidos de animales son, sencillamente, el chiste más viejo del mundo. Suelta una vaca en medio de una conversación seria y la conversación se acabó.\n\nCada botón suena al instante en el navegador y funciona desde el teléfono, y se puede incrustar directo en un overlay de stream o en una botonera de Discord. Las fichas de los sonidos están en inglés, aunque un mugido se entiende en cualquier idioma.",
+    "faq": [
+      {
+        "q": "¿Son grabaciones reales de animales?",
+        "a": "La mayoría son grabaciones genuinas, de campo o de estudio, del animal en cuestión. Unas pocas son juguetes y no animales, como el patito de hule y el pollo de goma que grita, y sus fichas lo dicen. Cuando un clip es famoso por un meme más que por el animal, anotamos de dónde salió."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos en un video o en una clase?",
+        "a": "Sí. Cada sonido tiene descarga gratis en MP3 en su ficha, lista para una edición de video, una presentación escolar, un pódcast o una alerta de stream. No hace falta crear ninguna cuenta."
+      },
+      {
+        "q": "¿Por qué la cabra suena como una persona gritando?",
+        "a": "Porque el balido de alarma de una cabra cae justo en el rango de la voz humana, así que el cerebro lo archiva como persona antes de corregirse. Ese cruce fue lo que mandó a la cabra gritona a dar la vuelta a internet en 2013, y de ahí nunca se fue del todo."
+      }
+    ]
+  }
 }
