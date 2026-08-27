@@ -2,16 +2,28 @@
   "name": "Gaming",
   "hubTitle": "Gaming Soundboard",
   "order": 3,
-  "metaDescription": "Gaming sound buttons: victory jingles, coin pickups, level-up chimes and rage-inducing defeat sounds. Play instantly, download free.",
-  "intro": "Every gamer knows these sounds before they can name them: the coin pickup, the level-up chime, the defeat buzzer that haunts your dreams. The gaming soundboard collects them as instant buttons for your Discord calls, stream alerts and video edits.\n\nTap to play, download the MP3 free, or embed a button straight into your stream overlay. We keep this board growing with whatever is trending in gaming clips right now, so if a sound is echoing across Twitch and YouTube Gaming this week, it lands here.",
+  "metaDescription": "Game sound buttons for streams, Discord and edits: coin pickups, level-ups, announcer calls, defeat stings and console boot chimes. Free MP3 downloads.",
+  "intro": "Game audio has a second career waiting for it. A cue built to tell a player one thing in half a second, coin collected or round lost or someone behind you, turns out to work just as well on people who never touched the controller. That is the job this board does: victory jingles, announcer calls, pickups, defeat stings and console boot chimes, collected as instant buttons for streams, Discord calls and video edits.\n\nThe constraints that shape game sound happen to suit a soundboard perfectly. A cue must cut through a busy mix, read the same at any volume, and finish before the next one starts. Mario's coin is two notes. The Minecraft level-up barely runs longer. Years of play have trained people to react to these before they consciously recognise them, so an editor gets the reaction for free and a streamer can drop a Valorant spike plant on a new follower and have the whole chat understand it instantly.\n\nNot every game sound survives the move. The ones that do tend to mark an event rather than an action: a win, a death, a purchase, an arrival. Footsteps and gunfire go nowhere off the game, while the GTA V wasted sting has become the standard way to end a video of somebody making a bad decision.\n\nThree uses cover most of what leaves this page. Stream alerts come first, with a coin for a follower, an announcer callout for a raid, and whatever a streamer finds funny that month for donations. Discord is second, either through the server's own soundboard or by routing browser audio into a virtual mic — this is where the Roblox oof and the FNAF door end up. Editing is third and the least forgiving, because a hitmarker tick has to land on the exact frame or the joke dies.\n\nThe range here runs from 1980s arcade cabinets to games patched last week: Pac-Man, Super Mario Bros., the original PlayStation boot sequence, Wii Sports, Among Us, Minecraft, Geometry Dash, Team Fortress 2 and a deep shelf of Roblox horror. Some of the older ones now work as pure nostalgia with no gameplay attached. Nintendo shut the Wii Shop Channel in 2019 and its waiting music is more popular now than it was when the shop worked. Everything plays in the browser, downloads free as an MP3, and comes with an embed code if you want a working button on your own site.",
   "faq": [
     {
-      "q": "Can I use these sounds in my Discord server?",
-      "a": "Yes. Download the MP3 and upload it to your server's soundboard, or play Bleepboard in the browser and route it through your mic input."
+      "q": "How do I get one of these into a Discord call?",
+      "a": "Two ways. Download the MP3 and upload it to your server's own soundboard, which is the simplest route and works on mobile. Or play the button in your browser and route the output into your mic with a virtual audio cable, which lets you use anything on the site without uploading it first."
     },
     {
-      "q": "Do these work as stream alert sounds?",
-      "a": "They do. Download the MP3 and drop it into OBS, Streamlabs or your alert tool of choice."
+      "q": "What is the cleanest way to use these as stream alerts?",
+      "a": "Download the MP3 and point OBS, Streamlabs or your alert tool at the file rather than at the browser. Keep alert clips under about two seconds so they do not talk over you, and normalise the volume before you go live, because game audio is mastered loud on purpose."
+    },
+    {
+      "q": "Why do old console startup sounds get so much use?",
+      "a": "They are short, unmistakable, and attached to a memory rather than to a game. The PlayStation boot sequence and the Xbox 360 chime mark the moment before anything happened, so they carry anticipation with no plot attached. That makes them useful openers for a video about almost anything."
+    },
+    {
+      "q": "Which of these can I use commercially?",
+      "a": "The synthesised effects made for this site, like the coin pickup, power-up and game-over jingle, are original and free to use anywhere. Clips taken from released games belong to their publishers and are here as short excerpts, so check the origin note on the sound page before putting one in commercial work."
+    },
+    {
+      "q": "Do you have Minecraft, FNAF and Roblox sounds?",
+      "a": "All three, in quantity, and they sit in this board alongside the rest. Minecraft covers mobs, blocks and the level-up chime; Roblox covers the retired oof plus the Doors monsters; the Five Nights at Freddy's clips also have a dedicated board of their own if you want them separated out."
     }
   ]
 }
