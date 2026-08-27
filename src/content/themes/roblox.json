@@ -1,0 +1,53 @@
+{
+  "name": "Roblox",
+  "hubTitle": "Roblox Soundboard",
+  "metaDescription": "Roblox sound buttons: the oof, the Doors monsters, c00lkidd, Adopt Me and DJ Khaled declaring life is Roblox. Play free and download the MP3s.",
+  "icon": "gaming",
+  "order": 6,
+  "match": [
+    "roblox"
+  ],
+  "intro": "Roblox got its most famous sound by accident. The oof, the little death grunt the platform used from 2006 until it was retired in 2022 over a rights dispute, outgrew the game so completely that people who cannot name one Roblox title still do the impression. It anchors this board, with everything that came after arranged around it.\n\nThe horror games supply the tension. Doors, the 2022 hit from LSPLASH, contributes Rush's approach, the Ambush cue, Seek's chase, Screech's giggle and the elevator music you catch your breath to between floors. c00lkidd, the grinning villain from Forsaken whose name comes out of old Roblox hacker legend, gets three buttons of his own.\n\nThe rest is the platform's stranger residue. Adopt Me music for anyone who has raised a virtual pet. The boing of the gravity coil. The sing-song hiiii and byeee that pass for conversation in-game. And DJ Khaled announcing that life is Roblox — a sentence no studio scripted and no editor has stopped using since.\n\nPress a button and it plays in the browser, no Robux involved. Every clip downloads as a free MP3 for edits, streams or a Discord soundboard, and each sound page includes an embed code for the working button. There is no account here either, which is more than the platform itself can say.",
+  "faq": [
+    {
+      "q": "Is the oof sound still in Roblox?",
+      "a": "No. Roblox retired the oof in 2022 after a rights dispute over where the sound originally came from, and the default death sound was replaced. The clip itself refuses to die. It lives on in edits, memes and boards like this one, where the MP3 downloads free."
+    },
+    {
+      "q": "Which Roblox Doors sounds are on the board?",
+      "a": "Six of them: Rush's approach, the Ambush cue, Seek's chase music, Screech's giggle, a door creaking open and the elevator music. Together they cover most of a Doors run, from false calm to sprinting regret."
+    },
+    {
+      "q": "Who is c00lkidd?",
+      "a": "A grinning red villain from the Roblox game Forsaken, built on a name that floated around Roblox hacker legend for years before that. His gotcha line, his intro and his laugh all have buttons here, and all three get used in edits far beyond the game itself."
+    },
+    {
+      "q": "Can I use these sounds in my own videos?",
+      "a": "The MP3s download free and drop into CapCut, Premiere or whatever you edit in. Short game clips like these are standard meme material, though anything commercial is yours to clear. Each sound page also carries an embed code if you want the button on your own site."
+    }
+  ],
+  "es": {
+    "name": "Roblox",
+    "hubTitle": "Botonera de Roblox",
+    "metaDescription": "Botonera de Roblox: el oof, los monstruos de Doors, c00lkidd, Adopt Me y el life is Roblox de DJ Khaled. Suenan gratis y se bajan en MP3.",
+    "intro": "El sonido más famoso de Roblox murió en el juego y sobrevivió en internet. El oof, ese quejido corto que acompañó cada muerte entre 2006 y 2022, fue retirado por un lío de derechos, pero a estas alturas lo imita hasta gente que jamás abrió la plataforma. Aquí tiene su botón, rodeado de todo lo que vino después.\n\nDel lado del terror están los sonidos de Doors, el juego de LSPLASH que arrasó en 2022: la llegada de Rush, el aviso de Ambush, la persecución de Seek, la risita de Screech y la música del elevador. También está c00lkidd, el villano sonriente de Forsaken, con su gotcha, su presentación y su risa.\n\nEl resto es la cara rara de la plataforma: la música de Adopt Me, el resorte del gravity coil, el hiiii y el byeee con los que se saluda medio Roblox, y DJ Khaled declarando que la vida es Roblox. Cada botón suena al toque desde el navegador. Si un clip te sirve para un video, un stream o la botonera de Discord, en su ficha está el MP3 para bajar gratis, junto con un código para incrustar el botón. Sin cuenta y sin Robux.",
+    "faq": [
+      {
+        "q": "¿El oof volvió a Roblox?",
+        "a": "No. Roblox lo quitó en 2022 por una disputa de derechos y puso otro sonido de muerte en su lugar. El original sigue vivo fuera del juego: aquí lo puedes tocar cuando quieras y bajarlo en MP3 sin pagar nada."
+      },
+      {
+        "q": "¿Qué sonidos de Doors hay?",
+        "a": "Seis: la llegada de Rush, el aviso de Ambush, la persecución de Seek, la risita de Screech, una puerta que se abre y la música del elevador. Con eso alcanza para recrear una partida completa, del silencio falso a la corrida final."
+      },
+      {
+        "q": "¿Quién es c00lkidd?",
+        "a": "Un villano rojo y sonriente del juego Forsaken, con un nombre sacado de las viejas leyendas de hackers de Roblox. Sus tres clips, el gotcha, la presentación y la risa, aparecen muchísimo en ediciones, incluso hechas por gente que nunca jugó."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos en mis videos y en Discord?",
+        "a": "Sí. Baja el MP3 desde la ficha del sonido y cárgalo en CapCut, en OBS o en la botonera de Discord. Cada ficha trae además un código para poner el botón funcionando dentro de tu propia página."
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Fortnite",
+  "hubTitle": "Fortnite Soundboard",
+  "metaDescription": "Fortnite sound buttons: the default dance, griddy, the elimination sound, pump shotgun and slurp juice. Play them free, download every MP3.",
+  "icon": "gaming",
+  "order": 7,
+  "match": [
+    "fortnite"
+  ],
+  "intro": "Fortnite's audio was engineered to be understood across a hundred metres of chaos, and that clarity is what makes it soundboard material. Epic Games launched the battle royale in 2017, and somewhere between the building and the dancing it produced a set of noises an entire generation can identify blind.\n\nThe combat set is here: the elimination sound, the thud of a player knocked down, the pump shotgun, the gulp of a shield potion and the squelch of slurp juice. In the game, each of those carries hard information. Out of the game they read as pure punctuation, and editors use them that way. The elimination sound over real-life failure remains one of the internet's most dependable jokes.\n\nThe dances did the most cultural damage. The default dance became shorthand for the game itself, complete with public arguments over who invented the moves, and Get Griddy imported a celebration that crossed over from American football's end zones. Both live here as the music alone, ready to score a victory that did not necessarily earn it.\n\nButtons play instantly in the browser. MP3s download free for edits, stream alerts and Discord soundboards, and every sound page carries an embed code for the button itself. No battle pass, and nothing to level up.",
+  "faq": [
+    {
+      "q": "What is the Fortnite default dance music from?",
+      "a": "It is the music behind Fortnite's Default Dance emote, the one every player owns from the start. The moves it animates sparked public arguments about who danced them first, but the audio is what stuck: a few bars that now mean Fortnite anywhere on the internet."
+    },
+    {
+      "q": "What is the difference between the knocked and elimination sounds?",
+      "a": "In the game, knocked means downed but revivable, and the elimination sound means gone for good. On a soundboard the distinction becomes comic timing. The knock is the stumble, the elimination is the punchline, and editors run them back to back for that reason."
+    },
+    {
+      "q": "Where does the griddy come from?",
+      "a": "The dance crossed into Fortnite from American football, where it had become a signature end-zone celebration. Epic sold it as the Get Griddy emote, and the music now works as an all-purpose victory lap. You do not need to know a single NFL player for the clip to land."
+    },
+    {
+      "q": "Can I use these sounds on Discord or in edits?",
+      "a": "Yes. Download the free MP3 from any sound page and load it into Discord's soundboard, OBS or your editor. The embed code on each page puts the working button on your own site, and none of it asks for an account."
+    }
+  ],
+  "es": {
+    "name": "Fortnite",
+    "hubTitle": "Botonera de Fortnite",
+    "metaDescription": "Botonera de Fortnite: el baile default, el griddy, el sonido de eliminación, la escopeta y el slurp juice. Tócalos gratis y baja los MP3.",
+    "intro": "El audio de Fortnite se diseñó para entenderse en medio del caos, a cien metros de distancia y con construcciones cayendo encima. Por eso rinde tanto en una botonera: cada sonido dice una sola cosa y la dice clarísimo. Epic Games lanzó el battle royale en 2017, y desde entonces toda una generación aprendió a leer la partida con los oídos.\n\nAquí está el equipo completo: el sonido de eliminación, el golpe del derribo, la escopeta de corredera, el trago de la poción de escudo y el chapoteo del slurp juice. Y están los bailes, que hicieron más ruido cultural que cualquier arma. La música del baile default se volvió sinónimo del juego, y el griddy llegó desde las celebraciones del futbol americano para quedarse.\n\nCada botón suena directo en el navegador. El sonido de eliminación encima de una caída en la vida real sigue siendo uno de los chistes más confiables de internet, y para eso está la descarga: cada clip se baja gratis en MP3 desde su ficha, listo para CapCut, OBS o la botonera de Discord. Ahí mismo hay un código para incrustar el botón en tu página. Sin pase de batalla y sin registrarte.",
+    "faq": [
+      {
+        "q": "¿Está la música del baile default?",
+        "a": "Sí, el audio del emote tal cual suena en el juego. Es el clip más reconocible de Fortnite: bastan dos compases para que cualquiera sepa de dónde salió, aunque nunca haya jugado una partida."
+      },
+      {
+        "q": "¿Qué diferencia hay entre derribado y eliminado?",
+        "a": "En el juego, derribado significa que todavía te pueden revivir, y el sonido de eliminación avisa que ya no hay regreso. En una botonera esa diferencia se vuelve puro timing de comedia: el derribo es el tropiezo y la eliminación es el remate."
+      },
+      {
+        "q": "¿De dónde salió el griddy?",
+        "a": "Del futbol americano, donde se volvió una celebración clásica de anotación. Fortnite lo vendió como el emote Get Griddy y la música quedó como vuelta olímpica universal. No hace falta conocer a ningún jugador de la NFL para que el clip funcione."
+      },
+      {
+        "q": "¿Puedo bajar estos sonidos gratis?",
+        "a": "Sí. Cada sonido tiene su ficha con el MP3 para bajar sin pagar y sin crear cuenta, más un código para incrustar el botón en tu página. Cargados en la botonera de Discord o en OBS quedan listos para disparar en vivo."
+      }
+    ]
+  }
+}

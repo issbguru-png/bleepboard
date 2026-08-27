@@ -1,0 +1,53 @@
+{
+  "name": "Sus",
+  "hubTitle": "Sus Soundboard",
+  "metaDescription": "A sus soundboard: dramatic stings, ticking clocks, heartbeats, the side-eye and the Among Us sounds. Free to play, free MP3 downloads.",
+  "icon": "meme",
+  "order": 10,
+  "match": [
+    "sus"
+  ],
+  "intro": "Sus is old slang wearing new fame. It has been short for suspect and suspicious for generations, then Among Us made it the internet's default accusation in 2020 and the word stopped needing the rest of its letters. A sus soundboard collects the audio that does the same job: sounds that announce, without argument, that something here is off.\n\nThe stings do the announcing. Dun dun dun has been parodied since the radio-drama days. The drum roll stretches a reveal out for as long as you can stand it, and the X-Files theme, written by Mark Snow in 1993, files the whole scene under unexplained. The foley handles slower tension: a heartbeat, a ticking clock, approaching footsteps, and a knock at a door nobody was expecting.\n\nThen come the reactions and the source material. The side-eye sting and The Rock's eyebrow score the moment doubt crosses a face. What do you mean by that turns the doubt into a confrontation. And the Among Us buttons, sus included, bring in the game that made the word inescapable, plus the sus clapping remix it spawned.\n\nDeployment is the whole art. A single tick-tock under someone's excuse, one dun dun dun half a second after the suspicious pause: these land after the moment, not during it. Every button plays free in the browser, every MP3 downloads free, and each sound page has an embed code. Trust that much, at least.",
+  "faq": [
+    {
+      "q": "What does sus actually mean?",
+      "a": "Short for suspect or suspicious, and far older than the game everyone learned it from. The abbreviation had been knocking around slang for generations before Among Us made it the internet's default accusation in 2020. Now the full word is the unusual one."
+    },
+    {
+      "q": "Are these all Among Us sounds?",
+      "a": "No. The Among Us set is here, sus and sus clapping included, and it has a full soundboard of its own on this site. The rest is broader: dramatic stings, tension foley and reaction sounds, everything audio can do to say someone is not telling the whole story."
+    },
+    {
+      "q": "What is the dun dun dun sound?",
+      "a": "The classic melodrama sting, three descending hits that have meant shocking revelation since the radio-drama era. It has been parodied for so long that it now only works as a joke, and it remains the fastest way to accuse someone of something without naming the something."
+    },
+    {
+      "q": "How do I use a sus sound well?",
+      "a": "Late, and once. A tick-tock under a flimsy excuse or an eyebrow sting after a suspicious pause lands hardest half a second behind the moment. Download the free MP3s for edits or Discord's soundboard, and resist the urge to press the button twice."
+    }
+  ],
+  "es": {
+    "name": "Sus",
+    "hubTitle": "Botonera Sus",
+    "metaDescription": "Botonera sus: el dun dun dun, el redoble, latidos, el reloj, la miradita de reojo y los sonidos de Among Us. Para momentos sospechosos, MP3 gratis.",
+    "intro": "En internet, sus quiere decir sospechoso, y no hace falta decir más. La palabra viene del inglés, donde era una abreviatura vieja de suspicious, y Among Us la convirtió en 2020 en la acusación favorita del planeta. En español se adoptó tal cual, sin traducirla, porque tres letras alcanzan para señalar a cualquiera.\n\nEsta botonera junta el audio que hace ese mismo trabajo. Los golpes dramáticos: el dun dun dun de melodrama, el redoble de tambor y el tema de X-Files, escrito por Mark Snow en 1993. El suspenso lento: un latido, un reloj que hace tictac, pasos que se acercan y un golpe en una puerta que nadie esperaba. Y las reacciones: la miradita de reojo, la ceja de The Rock y el what do you mean by that, que convierte la duda en careo.\n\nLos botones de Among Us también están, con el sus original y los aplausos sus que volvieron percusión la sospecha. El arte está en el momento: un tictac debajo de una excusa floja, un dun dun dun medio segundo después de la pausa incómoda. Todo suena gratis desde el navegador, cada clip se baja en MP3 desde su ficha y ahí mismo hay un código para incrustar el botón. Sin cuenta, por más sus que suene tanta generosidad.",
+    "faq": [
+      {
+        "q": "¿Qué significa sus?",
+        "a": "Sospechoso. Es la abreviatura inglesa de suspicious, mucho más vieja que el juego donde todos la aprendimos, y Among Us la volvió acusación universal en 2020. En español se usa igual, sin traducción, y ya se entiende en cualquier chat o servidor."
+      },
+      {
+        "q": "¿Son los sonidos de Among Us?",
+        "a": "Algunos sí: el sus original y los aplausos sus están aquí, y el juego tiene además su propia botonera completa en este sitio. El resto va más allá: golpes dramáticos, suspenso de fondo y reacciones, todo lo que sirve para insinuar que alguien no está contando la historia completa."
+      },
+      {
+        "q": "¿Qué es el dun dun dun?",
+        "a": "El golpe clásico del melodrama, tres notas que bajan y que significan revelación impactante desde los tiempos de la radio. Lleva tanto tiempo parodiado que ya solo funciona como chiste, y sigue siendo la forma más rápida de acusar a alguien sin decir de qué."
+      },
+      {
+        "q": "¿Cómo se usa bien un sonido sus?",
+        "a": "Tarde y una sola vez. El tictac debajo de una excusa floja o la ceja de The Rock después de una pausa rara pegan más fuerte medio segundo después del momento. Baja los MP3 gratis para tus ediciones o para la botonera de Discord, y aguanta las ganas de apretar el botón dos veces."
+      }
+    ]
+  }
+}

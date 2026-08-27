@@ -1,0 +1,53 @@
+{
+  "name": "Among Us",
+  "hubTitle": "Among Us Soundboard",
+  "metaDescription": "Among Us sound buttons: the emergency meeting alarm, the kill sound, role reveal, round start and sus. Play free, download the MP3s.",
+  "icon": "gaming",
+  "order": 8,
+  "match": [
+    "among"
+  ],
+  "intro": "Among Us spent two years as a game almost nobody played. InnerSloth released it in 2018 to a tiny audience, then 2020 locked the world indoors, streamers found it, and its handful of interface sounds became some of the most recognised audio on the planet. This board collects that handful.\n\nThe emergency meeting alarm is the centrepiece, a klaxon that means an accusation is coming. The kill sound is a wet little sting that launched a thousand animations. The role reveal and round-start cues frame every match, and the sabotage alarm handles general panic. None of them lasts more than a few seconds. None of them needs to.\n\nAround the game sounds sits the culture they created. Sus, a word that existed long before the game, became the internet's default accusation on the back of it, and the sus clapping remix turned the accusation into percussion. Playing any of these in a group call reliably starts a trial.\n\nEvery button plays free in the browser. The MP3s download at no cost for edits, Discord soundboards and stream alerts, and each sound page carries an embed code for the button itself. No account, and nobody gets ejected.",
+  "faq": [
+    {
+      "q": "What does the Among Us emergency meeting sound mean?",
+      "a": "In the game it means someone hit the button or found a body, and all movement stops for the trial. As a meme it announces that an accusation is coming, in any context whatsoever. It works on a Discord call for the same reason it works in the game: everyone freezes."
+    },
+    {
+      "q": "Why did Among Us blow up two years after it came out?",
+      "a": "InnerSloth released it in 2018 and it went mostly unnoticed. In 2020, with much of the world stuck at home and streamers hunting for group games, it exploded almost overnight. The sounds rode that wave into meme culture and never really left."
+    },
+    {
+      "q": "Is the word sus from Among Us?",
+      "a": "The game made it famous, but the word is much older: sus has been shorthand for suspect and suspicious for generations. Among Us turned it into the internet's default accusation in 2020, to the point where the full word now sounds oddly formal."
+    },
+    {
+      "q": "Can I use these sounds on Discord?",
+      "a": "Yes, and the emergency meeting alarm is practically made for it. Download the free MP3 from any sound page and load it into Discord's soundboard, and you can summon your whole server to a trial. Each page also has an embed code for the working button."
+    }
+  ],
+  "es": {
+    "name": "Among Us",
+    "hubTitle": "Botonera de Among Us",
+    "metaDescription": "Botonera de Among Us: la reunión de emergencia, el sonido del impostor al matar, el role reveal y el sus. Suenan gratis y se bajan en MP3.",
+    "intro": "Among Us pasó dos años en el olvido antes de conquistar el planeta. InnerSloth lo publicó en 2018 casi sin público, y en 2020, con medio mundo encerrado y los streamers buscando juegos para grupos grandes, sus sonidos de interfaz se volvieron audio universal. Esta botonera junta esos clips.\n\nLa alarma de la reunión de emergencia es la pieza central: cuando suena, viene una acusación. El sonido del impostor al matar es una punzada corta que generó miles de animaciones. Están también el role reveal, el arranque de ronda y la alarma de sabotaje, y del lado del meme están el sus y los aplausos sus, que convirtieron la sospecha en percusión.\n\nTocar cualquiera de estos en una llamada grupal arma juicio seguro. Todos suenan gratis desde el navegador, y cada uno tiene su ficha con la descarga del MP3 y un código para incrustar el botón en tu página. Sirven para ediciones, para la botonera de Discord y para acusar a alguien sin pronunciar una sola palabra. No hay que crear cuenta, y aquí nadie sale expulsado por la esclusa.",
+    "faq": [
+      {
+        "q": "¿Qué significa sus?",
+        "a": "Viene del inglés, donde es abreviatura vieja de suspicious, o sea sospechoso. Among Us la volvió la acusación favorita de internet en 2020, y en español se adoptó tal cual, sin traducción: decirle sus a alguien ya se entiende en cualquier servidor."
+      },
+      {
+        "q": "¿Por qué Among Us explotó en 2020 si salió en 2018?",
+        "a": "Porque el mundo se encerró. InnerSloth lo publicó en 2018 y pasó desapercibido hasta que la cuarentena y los streamers lo convirtieron en el juego de grupo del momento. Sus sonidos se subieron a esa ola y se quedaron en la cultura del meme."
+      },
+      {
+        "q": "¿Está el sonido de la reunión de emergencia?",
+        "a": "Sí, y es el botón más usado del tablero. En el juego detiene todo y abre el juicio; en una llamada de Discord hace exactamente lo mismo con tus amigos. Congela la conversación y alguien tiene que explicar dónde estaba."
+      },
+      {
+        "q": "¿Puedo bajar estos sonidos para Discord?",
+        "a": "Sí. Cada clip se baja gratis en MP3 desde su ficha, sin cuenta ni correo, y se carga directo en la botonera de Discord o en OBS. La ficha incluye también un código para incrustar el botón funcionando en tu propia página."
+      }
+    ]
+  }
+}

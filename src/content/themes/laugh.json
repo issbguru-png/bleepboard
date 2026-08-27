@@ -1,0 +1,53 @@
+{
+  "name": "Laugh",
+  "hubTitle": "Laugh Soundboard",
+  "metaDescription": "A laugh soundboard: canned sitcom laughter, evil anime cackles, giggling babies, laughing dogs and gaming taunts. Play free, download the MP3s.",
+  "icon": "meme",
+  "order": 9,
+  "match": [
+    "laugh"
+  ],
+  "intro": "Television has been sweetening its comedy with canned laughter since the early 1950s, on the theory that laughter is contagious enough to work second-hand. It is. Every button on this board tests that theory in a different register, from studio-audience warmth to sounds that should genuinely worry you.\n\nThe warm end holds the sitcom laugh track, a baby's giggle and the animals: a laughing dog, a cat, even a frog. The menacing end belongs to the villains. Light Yagami's unhinged cackle from Death Note, Freddy's chuckle out of FNAF, and the sonic.exe laugh for when a room needs ruining.\n\nGaming supplies the taunts. He He He Ha is the Clash Royale king's emote, tuned by Supercell to end friendships, while Teemo and Jhin bring their laughs over from League of Legends. The internet at large contributes FlightReacts' escalating collapse and the oh no no no track that scores slow-motion disasters.\n\nA laugh on a button has uses a live laugh does not. Editors lay these under reaction cuts, streamers bind them to a deck, and a canned laugh dropped into a dead-serious meeting remains a high-risk classic. Every MP3 downloads free, each sound page has an embed code, and no account is asked for.",
+  "faq": [
+    {
+      "q": "What is a laugh track and why does TV use one?",
+      "a": "Canned audience laughter, recorded once and reused forever. American television adopted it in the early 1950s because laughter is socially contagious: hearing other people laugh makes a joke land harder, even when you know the other people are a recording. The sitcom laugh button here is that trick, portable."
+    },
+    {
+      "q": "Do you have evil laughs?",
+      "a": "A whole shelf of them. Light Yagami's cackle from Death Note is the most theatrical, the sonic.exe laugh is the most unsettling, and Freddy's chuckle from FNAF sits in between. For petty everyday villainy, the Clash Royale king's He He He Ha does the job in under two seconds."
+    },
+    {
+      "q": "Which laugh works best as a reaction sound?",
+      "a": "Depends on the register. The sitcom track turns any statement into a punchline. Oh No No No is for watching a disaster unfold. The baby giggle reads as either wholesome or deeply mocking depending entirely on timing, which is what makes it dangerous."
+    },
+    {
+      "q": "Can I download these laughs for Discord or edits?",
+      "a": "Yes. Every laugh downloads as a free MP3 from its own sound page, ready for Discord's soundboard, OBS or your editor. Each page also carries an embed code if you want the working button somewhere of your own. No account, no cost, no small print."
+    }
+  ],
+  "es": {
+    "name": "Risas",
+    "hubTitle": "Botonera de Risas",
+    "metaDescription": "Botonera de risas: risa enlatada de sitcom, carcajadas malvadas de anime, bebés, perros que se ríen y burlas de videojuegos. Gratis y en MP3.",
+    "intro": "La risa contagia hasta cuando viene enlatada. La televisión estadounidense lo entendió desde los años cincuenta, cuando empezó a ponerle risas grabadas a sus comedias, y el truco sigue funcionando décadas después. Esta botonera reúne risas de todos los tamaños para que las dispares tú, en el momento exacto que te convenga.\n\nDel lado amable están la risa de sitcom, la carcajada de bebé y los animales: un perro que se ríe, un gato, hasta una rana. Del lado oscuro, la carcajada desquiciada de Light Yagami en Death Note, la risa de Freddy en FNAF y la de sonic.exe. Y de los videojuegos llegan las burlas: el je-je-je-ja del rey de Clash Royale, afinado por Supercell para terminar amistades, y las risas de Teemo y de Jhin en League of Legends.\n\nUna risa en botón tiene usos que la risa en vivo no alcanza. Los editores la ponen debajo del corte de reacción, los streamers la atan a su deck, y una risa enlatada soltada en plena reunión seria sigue siendo un clásico de alto riesgo. Cada clip suena gratis desde el navegador y se baja en MP3 desde su ficha, donde también hay un código para incrustar el botón. Nadie te pide cuenta ni correo.",
+    "faq": [
+      {
+        "q": "¿Qué es la risa enlatada?",
+        "a": "Risas de público grabadas una vez y reutilizadas para siempre. La televisión de Estados Unidos las adoptó en los años cincuenta porque la risa contagia: oír reír a otros hace que el chiste pegue más fuerte, aunque sepas que esos otros son una grabación. El botón de risa de sitcom es ese truco, en versión portátil."
+      },
+      {
+        "q": "¿Hay risas malvadas?",
+        "a": "Toda una repisa. La carcajada de Light Yagami en Death Note es la más teatral, la de sonic.exe la más inquietante, y la risa de Freddy en FNAF queda en medio. Para maldades chicas del día a día, el je-je-je-ja del rey de Clash Royale resuelve en menos de dos segundos."
+      },
+      {
+        "q": "¿Cuál risa funciona mejor para reaccionar?",
+        "a": "Depende del tono. La risa de sitcom convierte cualquier frase en remate. El oh no no no es para ver un desastre en cámara lenta. Y la carcajada de bebé puede leerse tierna o profundamente burlona según el momento en que la sueltes, que es justo lo que la hace peligrosa."
+      },
+      {
+        "q": "¿Puedo bajar las risas para Discord o para editar?",
+        "a": "Sí. Cada risa se baja gratis en MP3 desde su propia ficha, lista para la botonera de Discord, OBS o tu editor de video. La ficha trae además un código para incrustar el botón donde quieras. Sin cuenta, sin costo y sin letra chica."
+      }
+    ]
+  }
+}

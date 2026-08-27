@@ -1,0 +1,53 @@
+{
+  "name": "Minecraft",
+  "hubTitle": "Minecraft Soundboard",
+  "metaDescription": "Minecraft sound buttons: the creeper hiss, villager grunt, XP chime, ghast cry and the Chicken Jockey line. Play them free, download every MP3.",
+  "icon": "gaming",
+  "order": 5,
+  "match": [
+    "minecraft"
+  ],
+  "intro": "Minecraft is the best-selling game ever made, and its audio has travelled even further than its sales. The hiss of a creeper reads as danger to people who have never placed a block. The villager's grunt works as a reaction with no context attached. Mojang built the game's soundscape out of small, cheap noises, and nearly all of them now have a second life as memes.\n\nThe classics are all here. The creeper comes with its explosion attached, the closest thing the game has to a jump scare. The XP chime and the level-up sound are tiny hits of dopamine that editors drop over anything resembling progress. The ghast's wail began as a recording of a cat, which explains how it lands somewhere between animal and ghost. There are buttons for the enderman, the skeleton, the zombie, the pig, and the eating sound that has irritated a decade of YouTube viewers.\n\nThe newer arrivals came from outside the game. Chicken Jockey is the line from A Minecraft Movie (2025) that turned screenings into popcorn-throwing incidents, and Steve's Lava Chicken is a song from the same film. The Verity clips belong to a horror series built inside Minecraft, and the Russian Minecraft kid is a scream that needs no translation.\n\nEvery button plays straight from the browser. The MP3s download free for edits, stream alerts or a Discord soundboard, and each sound page carries an embed code if you would rather have the working button. No account, no launcher, no seed to write down.",
+  "faq": [
+    {
+      "q": "Can I download the Minecraft sounds as MP3s?",
+      "a": "Yes. Every button on this board links to its own sound page, and each page has a free MP3 download plus a copy-paste embed code. No account is involved. People mostly take them for video edits, stream alerts and Discord soundboards, where the XP chime and the villager grunt do heavy work."
+    },
+    {
+      "q": "Why does the Minecraft ghast sound like a cat?",
+      "a": "Because it started as one. The ghast's cries were originally recorded from a cat, then processed into the wail that haunts the Nether. Once you know, it cannot be unheard: there is a kitten hiding in every one of those cries, and the Nether is somehow worse for it."
+    },
+    {
+      "q": "What is the Chicken Jockey sound from?",
+      "a": "A Minecraft Movie (2025). The line landed in cinemas full of teenagers who had arrived pre-loaded with popcorn, and the resulting chaos made news worldwide. The clip works as a celebration sound, an interruption, or a quick way to test how fast a Discord call can fall apart."
+    },
+    {
+      "q": "Are these the real in-game sounds?",
+      "a": "They are the clips people actually share, at the quality a soundboard needs: short and instantly recognisable. If you want pristine source audio for a serious project, extract it from your own copy of the game. For edits, reactions and pranks, these load faster and get the same laugh."
+    }
+  ],
+  "es": {
+    "name": "Minecraft",
+    "hubTitle": "Botonera de Minecraft",
+    "metaDescription": "Botonera de Minecraft: el creeper, el aldeano, la experiencia, el ghast y el Chicken Jockey de la película. Tócalos gratis y baja cada MP3.",
+    "intro": "Pocos juegos han metido tantos sonidos en la memoria colectiva como Minecraft. El siseo del creeper avisa peligro hasta a quien nunca puso un bloque, y el gruñido del aldeano funciona como reacción universal sin que haga falta explicar nada. Mojang armó ese mundo sonoro con ruidos chicos y baratos, y casi todos terminaron convertidos en memes.\n\nEn esta botonera están los clásicos: el creeper con su explosión, la campanita de la experiencia, el clic del menú, el portal al Nether, el esqueleto, el zombi y el lamento del ghast, que nació de la grabación de un gato antes de volverse fantasma. También llegaron los de afuera del juego. Chicken Jockey es la frase de la película de Minecraft (2025) que llenó los cines de palomitas voladoras, y los clips de Verity vienen de una serie de terror hecha dentro del propio juego.\n\nTodo suena directo desde el navegador, sin instalar nada y sin crear cuenta. Los títulos de los clips están en inglés, que es como los busca casi todo el mundo, pero el audio no necesita traducción. Cuando un sonido te sirva para un video, un stream o la botonera de Discord, entra a su ficha y bájalo en MP3 gratis. Ahí mismo hay un código para incrustar el botón en tu propia página.",
+    "faq": [
+      {
+        "q": "¿Puedo bajar los sonidos de Minecraft en MP3?",
+        "a": "Sí, y sin pagar ni registrarte. Cada botón tiene su propia ficha con la descarga en MP3 y un código para incrustar el botón donde quieras. La mayoría los usa en ediciones de video, en alertas de stream y en la botonera de Discord."
+      },
+      {
+        "q": "¿Es verdad que el ghast era un gato?",
+        "a": "Sí. El lamento del ghast salió de la grabación de un gato, procesada hasta convertirse en el llanto que flota por el Nether. Una vez que lo sabes, ya no hay vuelta atrás: en cada quejido se esconde un maullido."
+      },
+      {
+        "q": "¿Qué es el Chicken Jockey?",
+        "a": "Una frase de la película de Minecraft del 2025. La escena provocó gritos y lluvias de palomitas en cines de medio mundo, y el audio quedó como sonido de celebración y de caos instantáneo. Aquí está el clip listo para sonar con un toque."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos en Discord o en un stream?",
+        "a": "Sí. Baja el MP3 y cárgalo en la botonera de Discord, en OBS o en el programa que ya uses. El gruñido del aldeano y la campanita de la experiencia son los que más se prestan para reaccionar en vivo."
+      }
+    ]
+  }
+}
