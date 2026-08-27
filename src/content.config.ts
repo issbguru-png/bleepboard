@@ -60,6 +60,19 @@ const themes = defineCollection({
     /** Reuses a CategoryIcon key so themes get artwork without new assets. */
     icon: z.string().default('meme'),
     order: z.number().default(99),
+    /** Spanish page content. When present, /es/{slug}-soundboard/ renders,
+     *  the hreflang pair is emitted on both sides, and the Spanish URL joins
+     *  the sitemap — all keyed off this one field, so a theme is either fully
+     *  bilingual or fully English, never half-wired. */
+    es: z
+      .object({
+        name: z.string(),
+        hubTitle: z.string(),
+        metaDescription: z.string().max(160),
+        intro: z.string().min(400),
+        faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+      })
+      .optional(),
   }),
 });
 

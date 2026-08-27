@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SoundButton from '../../components/SoundButton.astro';
+import CategoryIcon from '../../components/CategoryIcon.astro';
+import StatIcon from '../../components/StatIcon.astro';
+import { SITE, soundPath, pickTitle } from '../../lib/site';
+import { breadcrumbs, itemList, faqPage } from '../../lib/schema';
+import { themeSounds } from '../../lib/themes';
+
+/* Spanish themed hubs.
+ *
+ * A theme opts in by carrying an `es` block — the same field also registers
+ * the hreflang pair in Base and the URL in the sitemap, so there is exactly
+ * one switch to flip and no way to ship a half-wired translation.
+ *
+ * The sounds themselves stay in English (titles, audio, their pages), same
+ * as on /es/ itself, and the copy is expected to say so rather than imply a
+ * translated catalogue.
+ */
+export async function getStaticPaths() {
+  const themes = await getCollection('themes');
+  return themes
+    .filter((t) => t.data.es)
+    .map((t) => ({ params: { hub: `${t.id}-soundboard` }, props: { theme: t } }));
+}
+
+const { theme } = Astro.props;
+const es = theme.data.es!;
+const allSounds = await getCollection('sounds');
+const sounds = themeSounds(allSounds, theme.data.match);
+
+const paras = es.intro.split('\n\n').map((p) => p.trim()).filter(Boolean);
+const [lede, ...rest] = paras;
+
+const iconKey = theme.data.icon ?? 'meme';
+const pageUrl = `${SITE.url}/es/${theme.id}-soundboard/`;
+
+const title = pickTitle([
+  `${es.hubTitle} — ${sounds.length} Botones de Sonido Gratis`,
+  `${es.hubTitle} — ${sounds.length} Botones de Sonido`,
+  `${es.hubTitle} — Botones de Sonido Gratis`,
+  es.hubTitle,
+]);
+
+const schema: object[] = [
+  breadcrumbs([
+    ['Inicio', SITE.url + '/es/'],
+    [es.hubTitle, pageUrl],
+  ]),
+];
+if (sounds.length > 0) {
+  schema.push(
+    itemList(
+      es.hubTitle,
+      sounds.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+      es.metaDescription
+    )
+  );
+}
+if (es.faq.length > 0) schema.push(faqPage(es.faq));
+---
+<Base title={title} description={es.metaDescription} schema={schema} cat={iconKey}>
+  <nav class="breadcrumbs" aria-label="Ruta de navegación">
+    <a href="/es/">Inicio</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">{es.hubTitle}</span>
+  </nav>
+
+  <section class="hub-hero">
+    <div class="hero-mark">
+      <CategoryIcon cat={iconKey} size={48} />
+      <p class="eyebrow"><span class="tick"></span>Botonera</p>
+    </div>
+    <h1>{es.hubTitle}</h1>
+    <p class="lede">{lede}</p>
+    <ul class="stats stats--icon">
+      <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> botones de sonido</span></li>
+      <li><StatIcon name="download" /><span><b>Gratis</b> — MP3 para bajar</span></li>
+      <li><StatIcon name="instant" /><span><b>Al instante</b> — sin registro</span></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Botones de {es.name}</h2>
+      <a class="section-link" href="/es/">Todos los sonidos →</a>
+    </div>
+    <p class="section-sub">
+      {sounds.length > 0
+        ? `Los ${sounds.length} clips de esta botonera, los más sonados primero. Toca para reproducir; abre un sonido para bajar el MP3 gratis.`
+        : 'Esta botonera se está llenando ahora mismo.'}
+    </p>
+    {sounds.length > 0 && (
+      <div class="grid grid--lg">
+        {sounds.map((s, i) => (
+          <SoundButton
+            playLabel="Reproducir"
+            slug={s.id}
+            title={s.data.title}
+            audio={s.data.audio}
+            duration={s.data.duration}
+            category={s.data.category}
+            rank={i < 3 ? i + 1 : undefined}
+          />
+        ))}
+      </div>
+    )}
+  </section>
+
+  {rest.length > 0 && (
+    <section class="section hub-about">
+      <div class="section-head"><h2>Sobre esta botonera</h2></div>
+      <div class="prose">
+        {rest.map((para) => <p>{para}</p>)}
+      </div>
+    </section>
+  )}
+
+  {es.faq.length > 0 && (
+    <section class="section faq">
+      <div class="section-head"><h2>Preguntas sobre {es.name}</h2></div>
+      <p class="section-sub">Lo que la gente pregunta antes de tocar nada.</p>
+      {es.faq.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </section>
+  )}
+</Base>

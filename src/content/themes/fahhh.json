@@ -25,5 +25,29 @@
       "q": "What do people use the fahhh sound for?",
       "a": "Reaction audio, almost always. It goes over the frame where something breaks: a trick that fails, a car that does not stop, a message landing in visibly the wrong chat. Editors like it because there is nothing to sync. You drop it where the face changes and the edit is finished."
     }
-  ]
+  ],
+  "es": {
+    "name": "Fahhh",
+    "hubTitle": "Botonera de Fahhh",
+    "metaDescription": "Una botonera de fahhh con las tres versiones del grito viral: la normal, la muy fuerte y «I Got This». Tócalas gratis y baja el MP3 de cada una.",
+    "intro": "Fah. Fahh. Fahhh. Las haches siguen multiplicándose y nadie ha declarado un ganador, en buena parte porque nadie escribió la palabra antes de que empezara a circular. Debajo de cada grafía vive el mismo medio segundo de pánico, en algún punto entre un grito y el momento en que una persona renuncia al lenguaje.\n\nEl clip se remonta al streamer Taileons, que contó en un video de septiembre de 2025 que lo había grabado en algún momento del año anterior. TikTok lo encontró a fines de agosto de 2025 y dejó de preguntar de dónde venía casi de inmediato. En cuestión de semanas ya sonaba debajo de edits deportivos, videos de dashcam y más o menos un desastre de cocina por cada pasada de la pantalla.\n\nAquí viven tres versiones, y son tres, no treinta. La mezcla normal es para quien piensa conservar a sus amigos. La edición muy fuerte está recortada y distorsionada a propósito, y casi todo el que la toca la está tocando contra alguien. El tercer clip trae el planteo y el remate en el mismo archivo: «I got this», seguido de evidencia inmediata de lo contrario.\n\nLos tres se reproducen al toque y los MP3 se bajan gratis; la ficha de cada clip está en inglés y nada aquí te pide una cuenta. Eso sí, bájale al volumen antes de probar el fuerte.",
+    "faq": [
+      {
+        "q": "¿De dónde viene el sonido fahhh?",
+        "a": "La voz es del streamer Taileons. En un TikTok publicado el 8 de septiembre de 2025 contó la historia del sonido y dijo que la grabación era de 2024. Se volvió viral de verdad desde fines de agosto de 2025, pegado sobre todo a clips de fails. Como casi todos los memes de audio, viajó bastante más lejos que el crédito."
+      },
+      {
+        "q": "¿Se escribe fah, fahh o fahhh?",
+        "a": "De todas esas formas, y las letras extra marcan volumen, no gramática. Tres haches es la manera más común de escribirlo, pero vas a encontrar desde una sola hasta un pequeño párrafo de ellas. Nadie está revisando."
+      },
+      {
+        "q": "¿Por qué la versión fuerte suena tan distorsionada?",
+        "a": "Está recortada, no simplemente subida de volumen, así que el oído la lee como agresiva y no como fuerte a secas. Fue una decisión deliberada de mezcla y es todo el atractivo de ese archivo en particular. Con auriculares, empieza por la versión normal y decide desde ahí."
+      },
+      {
+        "q": "¿Para qué usa la gente el sonido fahhh?",
+        "a": "Audio de reacción, casi siempre. Va sobre el cuadro exacto donde algo se rompe: un truco que falla, un carro que no frena, un mensaje que cae en el chat equivocado. A los editores les gusta porque no hay nada que sincronizar. Lo sueltas donde cambia la cara y el edit queda terminado."
+      }
+    ]
+  }
 }

@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import '../styles/global.css';
 import { SITE, canonical, absolute } from '../lib/site';
 import Analytics from '../components/Analytics.astro';
@@ -60,6 +61,11 @@ const ogDims = ogImage
 const TRANSLATED: Record<string, string> = {
   '/': '/es/',
 };
+// Themed hubs register their own pair the moment they carry `es` content, so
+// a new bilingual theme needs no edit here.
+for (const t of await getCollection('themes')) {
+  if (t.data.es) TRANSLATED[`/${t.id}-soundboard/`] = `/es/${t.id}-soundboard/`;
+}
 const here = Astro.url.pathname;
 const path = here.endsWith('/') ? here : here + '/';
 const isEs = path === '/es/' || path.startsWith('/es/');
@@ -180,9 +186,12 @@ const nav = [
             English page. `lang` on the link so a screen reader pronounces the
             target language's own name correctly. */}
         <nav class="footer-lang" aria-label={isEs ? 'Idioma' : 'Language'}>
+          {/* Prefer this page's own counterpart; fall back to the landing
+              page when no translation exists. Nobody should switch language
+              and lose their place if we have the page. */}
           {isEs
-            ? <a href="/" lang="en" hreflang="en">English</a>
-            : <a href="/es/" lang="es" hreflang="es">Español</a>}
+            ? <a href={enPath ?? '/'} lang="en" hreflang="en">English</a>
+            : <a href={esPath ?? '/es/'} lang="es" hreflang="es">Español</a>}
         </nav>
       </div>
     </footer>

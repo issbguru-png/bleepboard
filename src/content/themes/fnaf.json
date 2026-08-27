@@ -4,7 +4,14 @@
   "metaDescription": "Every Five Nights at Freddy's sound in one place: jumpscares, Phone Guy, the music box, door slams and Foxy's run. Play free, download the MP3.",
   "icon": "gaming",
   "order": 1,
-  "match": ["fnaf", "freddy", "foxy", "springtrap", "animatronic", "phone guy"],
+  "match": [
+    "fnaf",
+    "freddy",
+    "foxy",
+    "springtrap",
+    "animatronic",
+    "phone guy"
+  ],
   "intro": "Five Nights at Freddy's is a horror series that barely shows you anything. You sit in a chair, you watch a battery drain, and you listen. The whole game is audio, which is why its sounds ended up somewhere no other horror game's did: in Discord calls, in edits, on soundboards like this one.\n\nThe clips split into two jobs. There are the jumpscares, which are engineered to hurt a little. The FNAF 1 scream is deliberately clipped and distorted, so your brain registers damage before it registers a jump. Springtrap in FNAF 3 is drier and more mechanical, less shriek and more the lurch of a suit with something inside it. Fans argue about which is worst and mostly settle on whichever one got them at 2am.\n\nThen there is everything else, which is the better half. The door slam. The camera flipping up. Phone Guy talking calmly through instructions that get less calm every night. The Puppet's music box, which is the one sound in the series that means you are already too late. None of these are scary on their own. They are scary because of what came after them, and that borrowed dread is what makes them work as buttons.\n\nEvery clip here plays on tap and downloads as a free MP3, and each one has its own page with the story behind it. Headphone users, take the jumpscares at your own pace.",
   "faq": [
     {
@@ -23,5 +30,29 @@
       "q": "Who is Phone Guy?",
       "a": "The recorded voice that walks you through your first week, getting steadily less reassuring as the nights go on. His calls are the closest thing the early games have to a narrator, which is why the clips get used for comic timing far more than for horror."
     }
-  ]
+  ],
+  "es": {
+    "name": "FNAF",
+    "hubTitle": "Botonera de FNAF",
+    "metaDescription": "Los sonidos de Five Nights at Freddy's en una botonera: jumpscares, Phone Guy, la caja de música y los portazos. Escúchalos gratis y baja el MP3.",
+    "intro": "Five Nights at Freddy's es una saga de terror que casi no te muestra nada. Te sientas en una silla, ves cómo se agota una batería y escuchas. El juego entero es audio, y por eso sus sonidos llegaron a donde los de ningún otro juego de terror: a las llamadas de Discord, a los edits, a botoneras como esta.\n\nLos clips se reparten en dos oficios. Están los jumpscares, diseñados para doler un poco. El grito de FNAF 1 está recortado y distorsionado a propósito, así que el cerebro registra daño antes de registrar el susto. El de Springtrap en FNAF 3 es más seco y mecánico: menos chillido y más el crujido de un traje con algo adentro. Los fans discuten cuál es el peor y casi siempre se quedan con el que los agarró a las dos de la mañana.\n\nDespués está todo lo demás, que es la mitad buena. El portazo. La cámara que sube. Phone Guy dando instrucciones con una calma que se le va gastando noche tras noche. La caja de música del Puppet, el único sonido de la saga que significa que ya llegaste tarde. Ninguno asusta por sí solo. Asustan por lo que venía después, y ese miedo prestado es lo que los vuelve buenos botones.\n\nCada clip suena al toque y se baja gratis en MP3, y cada uno tiene su propia página con la historia detrás, aunque esas fichas están en inglés. Si andas con auriculares, tómate los jumpscares con calma.",
+    "faq": [
+      {
+        "q": "¿Cuál es el jumpscare más fuerte de FNAF?",
+        "a": "El grito de FNAF 1 es el más agresivo, porque está recortado a propósito en vez de simplemente estar alto. Esa distorsión es lo que hace que el oído lo registre como daño en lugar de como un simple sobresalto. Si vas a probarlos con auriculares, empieza por los portazos y ve subiendo."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos en la botonera de Discord?",
+        "a": "Sí. Baja el MP3 desde la página de cualquier sonido y cárgalo en la botonera que trae Discord, o en el deck que uses para tu stream. Cada ficha incluye además un código para incrustar el botón funcionando en tu página."
+      },
+      {
+        "q": "¿Qué es el sonido de la caja de música del Puppet?",
+        "a": "Es la caja de cuerda que tienes que mantener cargada en FNAF 2. Si se agota, el Puppet va por ti, así que los jugadores aprenden a oír esa melodía como una cuenta regresiva y no como una canción. Es el sonido agradable más estresante de toda la saga."
+      },
+      {
+        "q": "¿Quién es Phone Guy?",
+        "a": "La voz grabada que te guía durante la primera semana y que suena cada noche un poco menos tranquilizadora. Sus llamadas son lo más parecido a un narrador que tienen los primeros juegos, y por eso los clips se usan mucho más para el remate cómico que para el terror."
+      }
+    ]
+  }
 }

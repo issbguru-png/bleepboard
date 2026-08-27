@@ -25,5 +25,29 @@
       "q": "Is a fart soundboard the same as a whoopee cushion?",
       "a": "Same gag, different century. The cushion has been a novelty-shop staple since the 1930s and required you to hide it under a chair in advance. A phone requires no setup at all, which has made the joke both easier to land and much harder to prove."
     }
-  ]
+  ],
+  "es": {
+    "name": "Pedos",
+    "hubTitle": "Botonera de Pedos",
+    "metaDescription": "Una botonera de pedos con cinco botones: el clásico, el fuerte, el húmedo, el de reverb y Quandale Dingle. Suenan al toque y los MP3 se bajan gratis.",
+    "intro": "Cinco botones de pedos y ninguno tiene historia de origen. Nadie grabó el primer efecto de pedo ni hizo falta un clip viral para explicar el chiste, que le lleva varios siglos de ventaja a los micrófonos. Lo que aporta una botonera es el timing: ahora puedes producir el ruido con un cuarto de segundo de aviso, desde el teléfono, en el cuarto donde más daño haga.\n\nNo son intercambiables, por mucho que el tema sugiera lo contrario. El pedo clásico es el artículo honesto, seco y sin adornos, y es el que funciona en una reunión en silencio. El fuerte usa la perilla de volumen como remate. El húmedo obliga a los oyentes a resolver una implicación, y la pausa mientras la resuelven es más graciosa que el audio. El de reverb mete todo el asunto en una catedral. Una tontería, y bastante mejor por serlo.\n\nEl quinto clip pertenece a otro planeta. Quandale Dingle Farted sale de un universo de memes absurdos y fritos construido alrededor de un nombre capturado en la pantalla de una computadora escolar, y se gana su lugar aquí por el verbo y nada más.\n\nCasi todos terminan en videos de bromas, en llamadas de Discord o dentro de un edit que necesitaba un signo de puntuación y ya no tenía nada que decir. Los cinco se bajan gratis en MP3 y cada ficha, escrita en inglés, trae un código para incrustar el botón en tu página. Sin cuenta, y sin deberle explicaciones a nadie.",
+    "faq": [
+      {
+        "q": "¿De dónde salen los sonidos de pedos?",
+        "a": "De ningún lugar en particular, y esa es la respuesta honesta. Son grabaciones de foley, hechas como se hace cualquier otro ruido tonto de archivo, sin película ni momento viral detrás. Cualquiera que te ofrezca el origen definitivo del sonido de pedo te está vendiendo algo."
+      },
+      {
+        "q": "¿En qué se diferencian los cinco pedos?",
+        "a": "En volumen y en implicación, sobre todo. El clásico es slapstick neutro. El fuerte elimina toda posibilidad de pasar desapercibido. El húmedo carga una sugerencia que cada oyente resuelve por su cuenta. Y el de reverb lo convierte en un evento con arquitectura, útil para edits en cámara lenta."
+      },
+      {
+        "q": "¿Puedo usar un botón de pedos en una llamada de Discord?",
+        "a": "Sí, y la gente lo hace todo el tiempo. Baja el MP3 y cárgalo en la botonera que trae Discord, o pásalo por un cable de audio virtual si quieres que salga por el micrófono. Los moderadores suelen tener opiniones firmes al respecto, así que mide el ambiente primero."
+      },
+      {
+        "q": "¿Una botonera de pedos es lo mismo que un cojín de pedos?",
+        "a": "El mismo chiste, otro siglo. El cojín es un clásico de las tiendas de bromas desde los años treinta y exigía esconderlo bajo una silla con anticipación. El teléfono no exige ninguna preparación, lo que ha vuelto el chiste más fácil de ejecutar y mucho más difícil de comprobar."
+      }
+    ]
+  }
 }

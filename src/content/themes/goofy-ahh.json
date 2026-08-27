@@ -25,5 +25,29 @@
       "q": "Can I use these in my edits?",
       "a": "Yes. The MP3s download free and drop straight into CapCut, Premiere or whatever you cut in. If you would rather have the working button than the file, each sound page gives you a copy-paste embed for your own site."
     }
-  ]
+  ],
+  "es": {
+    "name": "Goofy Ahh",
+    "hubTitle": "Botonera de Goofy Ahh",
+    "metaDescription": "Sonidos goofy ahh reunidos: el clip insignia, Dora, Bob Esponja, Ohio, Quandale Dingle y el grito de Goofy de Disney. Escúchalos gratis y baja los MP3.",
+    "intro": "Primero la etimología: «goofy ahh» es «goofy ass» con el final suavizado, una grafía que sale del inglés vernáculo afroamericano y que circula en internet por lo menos desde 2009. El audio llegó mucho después. A partir de 2021, más o menos, los usuarios de TikTok empezaron a comentar en masa «goofy ahh sound» debajo de una ola de edits deliberadamente desquiciados, y el comentario terminó bautizando un género que nadie se había molestado en nombrar.\n\nLo que nombra es un tratamiento, no un clip. Se toma algo que no tenía por qué ser distorsionado, se le dobla el tono, se comprime hasta que los bordes revientan y se coloca sobre un video que se toma en serio a sí mismo. Dora recibe ese tratamiento. Bob Esponja lo recibe. Un bebé lo recibe, por razones que esta botonera no está en condiciones de explicar.\n\nNo todos los botones de aquí son goofy ahh en sentido estricto. Ohio está porque el chiste de la dimensión maldita corría con el mismo combustible. Quandale Dingle y Anderdingus están porque los nombres ridículos y el audio reventado siempre han viajado juntos. Y el grito de Goofy de Disney está porque mucha gente que busca esta botonera en realidad quiere el alarido. Lo grabó un esquiador austriaco llamado Hannes Schroll para una caricatura de 1941, y desde entonces significa «algo se está cayendo». Ha sobrevivido a casi todo lo demás de esta página.\n\nEl género existe para desinflar cosas. Pon uno de estos debajo de un discurso de boda, de una junta corporativa o de alguien narrando su rutina matutina y el tono se derrumba antes del primer corte. Toca el botón para escucharlo y llévate el MP3 si lo quieres; las fichas de cada sonido están en inglés y en ningún momento aparece un formulario de registro.",
+    "faq": [
+      {
+        "q": "¿Qué significa goofy ahh?",
+        "a": "Es «goofy ass» escrito tal como se pronuncia, una grafía del inglés vernáculo afroamericano que ya circulaba en línea mucho antes de que existiera TikTok. Como adjetivo significa ridículo hasta rozar lo maldito. Como sustantivo pasó a nombrar un estilo concreto de audio de caricatura sobrecomprimido."
+      },
+      {
+        "q": "¿De dónde salió el sonido goofy ahh?",
+        "a": "Nadie hizo uno solo. El nombre nació en la sección de comentarios: desde 2021, más o menos, los usuarios de TikTok escribieron «goofy ahh sound» en masa debajo de edits absurdos, y la frase se pegó al estilo de audio que esos edits usaban. El clip que hoy casi todos entienden por ese nombre se volvió el sello del género después."
+      },
+      {
+        "q": "¿Está el grito de Goofy de Disney en esta botonera?",
+        "a": "Sí, y es el bicho raro del grupo. El alarido lo grabó el esquiador austriaco Hannes Schroll para un corto de Disney de 1941 sobre esquí, y desde entonces es el sonido oficial de cualquier cosa que se cae. Se usa por razones completamente distintas a las del resto del tablero."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos en mis edits?",
+        "a": "Sí. Los MP3 se bajan gratis y entran directo en CapCut, en Premiere o en el editor que uses. Y si prefieres el botón funcionando en vez del archivo, cada ficha trae un código listo para copiar e incrustarlo en tu página."
+      }
+    ]
+  }
 }
