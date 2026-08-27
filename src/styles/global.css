@@ -1535,3 +1535,14 @@ button.chip:hover { border-color: var(--accent); color: var(--accent-text); back
   gap: 6px;
 }
 .cat-more-btn .tnum { color: var(--ink-3); font-weight: 600; }
+
+/* Language switch in the footer. Quiet by default — it is wayfinding for the
+   minority who need it, not a promotion of the Spanish page. */
+.footer-lang a {
+  font-size: var(--step--1);
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-2);
+  padding-bottom: 1px;
+}
+.footer-lang a:hover { color: var(--accent-text); border-color: currentColor; }

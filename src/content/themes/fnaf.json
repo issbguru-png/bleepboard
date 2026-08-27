@@ -1,0 +1,27 @@
+{
+  "name": "FNAF",
+  "hubTitle": "FNAF Soundboard",
+  "metaDescription": "Every Five Nights at Freddy's sound in one place: jumpscares, Phone Guy, the music box, door slams and Foxy's run. Play free, download the MP3.",
+  "icon": "gaming",
+  "order": 1,
+  "match": ["fnaf", "freddy", "foxy", "springtrap", "animatronic", "phone guy"],
+  "intro": "Five Nights at Freddy's is a horror series that barely shows you anything. You sit in a chair, you watch a battery drain, and you listen. The whole game is audio, which is why its sounds ended up somewhere no other horror game's did: in Discord calls, in edits, on soundboards like this one.\n\nThe clips split into two jobs. There are the jumpscares, which are engineered to hurt a little. The FNAF 1 scream is deliberately clipped and distorted, so your brain registers damage before it registers a jump. Springtrap in FNAF 3 is drier and more mechanical, less shriek and more the lurch of a suit with something inside it. Fans argue about which is worst and mostly settle on whichever one got them at 2am.\n\nThen there is everything else, which is the better half. The door slam. The camera flipping up. Phone Guy talking calmly through instructions that get less calm every night. The Puppet's music box, which is the one sound in the series that means you are already too late. None of these are scary on their own. They are scary because of what came after them, and that borrowed dread is what makes them work as buttons.\n\nEvery clip here plays on tap and downloads as a free MP3, and each one has its own page with the story behind it. Headphone users, take the jumpscares at your own pace.",
+  "faq": [
+    {
+      "q": "Which FNAF jumpscare sound is the loudest?",
+      "a": "The FNAF 1 scream is the harshest, because it is deliberately clipped rather than simply loud. That distortion is what makes it register as painful instead of just sudden. If you are testing these on headphones, start with the door sounds and work up."
+    },
+    {
+      "q": "Can I use these in a Discord soundboard?",
+      "a": "Yes. Download the MP3 from any sound page and load it into Discord's own soundboard, or into whatever deck you run on stream. Every sound page also has an embed code if you want the working button on your own site."
+    },
+    {
+      "q": "What is the Puppet music box sound?",
+      "a": "It is the wind-up box you have to keep charged in FNAF 2. Let it run down and the Puppet comes for you, so players learn to hear that melody as a countdown rather than a tune. It is the most stressful pleasant sound in the series."
+    },
+    {
+      "q": "Who is Phone Guy?",
+      "a": "The recorded voice that walks you through your first week, getting steadily less reassuring as the nights go on. His calls are the closest thing the early games have to a narrator, which is why the clips get used for comic timing far more than for horror."
+    }
+  ]
+}

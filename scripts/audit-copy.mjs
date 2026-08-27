@@ -112,17 +112,23 @@ if (ALL) {
       check('blog', readFileSync(resolve(blogDir, f), 'utf8'), `blog/${f}`);
     }
   }
-  const catDir = resolve(root, 'src/content/categories');
-  if (existsSync(catDir)) {
-    for (const f of readdirSync(catDir).filter((x) => x.endsWith('.json'))) {
-      const d = JSON.parse(readFileSync(resolve(catDir, f), 'utf8'));
-      check('cat', [d.intro, ...(d.faq || []).map((q) => q.a)].join(' '), `categories/${f}`);
+  // Categories and themes are the same shape and carry the same kind of prose,
+  // so they get the same treatment. Themes were missed when the collection was
+  // added, and a banned construction shipped in fnaf.json before anyone
+  // noticed — hence checking both from one list rather than two code paths.
+  for (const dir of ['src/content/categories', 'src/content/themes']) {
+    const d0 = resolve(root, dir);
+    if (!existsSync(d0)) continue;
+    for (const f of readdirSync(d0).filter((x) => x.endsWith('.json'))) {
+      const d = JSON.parse(readFileSync(resolve(d0, f), 'utf8'));
+      const label = dir.endsWith('themes') ? 'themes' : 'categories';
+      check(label, [d.intro, ...(d.faq || []).map((q) => q.a)].join(' '), `${label}/${f}`);
     }
   }
 }
 
 // ---------------------------------------------------------------- report
-console.log(`\n${DIM}audited ${sounds.length} sounds${ALL ? ' + blog/category copy' : ''}${OFF}`);
+console.log(`\n${DIM}audited ${sounds.length} sounds${ALL ? ' + blog/category/theme copy' : ''}${OFF}`);
 console.log(`  words        ${totalWords.toLocaleString()} total`);
 console.log(`  em-dashes    ${totalDashes} (${perBlurb.toFixed(2)}/blurb — target 0.25–0.40)`);
 

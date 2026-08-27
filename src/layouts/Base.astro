@@ -48,16 +48,50 @@ const ogDims = ogImage
     ? { w: ogImageWidth, h: ogImageHeight }
     : null
   : { w: ogImageWidth ?? SITE.ogImageWidth, h: ogImageHeight ?? SITE.ogImageHeight };
+// --- language & hreflang ---------------------------------------------------
+// The site is English; Spanish lives under /es/. hreflang is emitted only for
+// pages that genuinely have a twin, and always as a complete reciprocal set,
+// because Google throws the whole cluster away if the alternates do not point
+// back at each other. A blanket "/es" + pathname rule would therefore break
+// the one pair that does exist the moment it guessed a URL that 404s.
+//
+// Keyed English path -> Spanish path. Add a row when a page is actually
+// translated, not before.
+const TRANSLATED: Record<string, string> = {
+  '/': '/es/',
+};
+const here = Astro.url.pathname;
+const path = here.endsWith('/') ? here : here + '/';
+const isEs = path === '/es/' || path.startsWith('/es/');
+const enPath = isEs
+  ? Object.keys(TRANSLATED).find((k) => TRANSLATED[k] === path)
+  : TRANSLATED[path]
+    ? path
+    : undefined;
+const esPath = enPath ? TRANSLATED[enPath] : undefined;
+const lang = isEs ? 'es' : 'en';
+const alternates: [string, string][] =
+  enPath && esPath
+    ? [
+        ['en', SITE.url + enPath],
+        ['es', SITE.url + esPath],
+        // x-default is the page for a searcher whose language we have no
+        // better answer for, which is the English original.
+        ['x-default', SITE.url + enPath],
+      ]
+    : [];
+const ogLocale = isEs ? 'es_ES' : 'en_US';
+const ogLocaleAlt = alternates.length ? (isEs ? 'en_US' : 'es_ES') : undefined;
+
 const nav = [
   ['/new/', 'New'],
   ['/trending/', 'Trending'],
   ['/categories/', 'Categories'],
   ['/blog/', 'Blog'],
 ];
-const here = Astro.url.pathname;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,13 +102,17 @@ const here = Astro.url.pathname;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {alternates.map(([hl, href]) => (
+      <link rel="alternate" hreflang={hl} href={href} />
+    ))}
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale} />
+    {ogLocaleAlt && <meta property="og:locale:alternate" content={ogLocaleAlt} />}
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:alt" content={ogAlt} />
     {ogDims && (
@@ -107,7 +145,7 @@ const here = Astro.url.pathname;
           </span>
           Bleepboard
         </a>
-        <nav class="site-nav" aria-label="Main">
+        <nav class="site-nav" aria-label="Main" lang={isEs ? 'en' : undefined}>
           {nav.map(([href, label]) => (
             <a href={href} aria-current={here === href ? 'page' : undefined}>{label}</a>
           ))}
@@ -122,7 +160,7 @@ const here = Astro.url.pathname;
     <footer class="site-footer">
       <div class="wrap footer-inner">
         <span class="foot-brand">© {new Date().getFullYear()} {SITE.name}</span>
-        <nav class="footer-nav" aria-label="Footer">
+        <nav class="footer-nav" aria-label="Footer" lang={isEs ? 'en' : undefined}>
           <ul class="footer-links">
             <li><a href="/categories/">Categories</a></li>
             <li><a href="/blog/">Blog</a></li>
@@ -136,6 +174,15 @@ const here = Astro.url.pathname;
               <a href="/privacy/#do-not-sell">Do Not Sell or Share My Personal Information</a>
             </li>
           </ul>
+        </nav>
+        {/* Language switch. hreflang tells Google the two pages are a pair; it
+            does nothing for a Spanish speaker who has already landed on the
+            English page. `lang` on the link so a screen reader pronounces the
+            target language's own name correctly. */}
+        <nav class="footer-lang" aria-label={isEs ? 'Idioma' : 'Language'}>
+          {isEs
+            ? <a href="/" lang="en" hreflang="en">English</a>
+            : <a href="/es/" lang="es" hreflang="es">Español</a>}
         </nav>
       </div>
     </footer>

@@ -6,11 +6,22 @@ import StatIcon from '../components/StatIcon.astro';
 import { hubPath } from '../lib/site';
 import { SITE } from '../lib/site';
 import { breadcrumbs, itemList } from '../lib/schema';
+import { themeSounds } from '../lib/themes';
 
 const categories = (await getCollection('categories')).sort(
   (a, b) => a.data.order - b.data.order
 );
 const sounds = await getCollection('sounds');
+
+// Themed boards cut across categories — a sound is filed once, but "fnaf" or
+// "goofy ahh" pulls from several files at a time. They live at the same URL
+// shape, so they belong on this page too, listed separately because they
+// overlap each other and the categories rather than partitioning anything.
+const themes = (await getCollection('themes')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const themeCounts = new Map<string, number>();
+for (const t of themes) themeCounts.set(t.id, themeSounds(sounds, t.data.match).length);
 const counts = new Map<string, number>();
 for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
 
@@ -21,8 +32,11 @@ const schema = [
   ]),
   itemList(
     'Bleepboard soundboards',
-    categories.map((c) => ({ name: c.data.hubTitle, url: SITE.url + hubPath(c.id) })),
-    'Every soundboard on Bleepboard, grouped by category.'
+    [...categories, ...themes].map((c) => ({
+      name: c.data.hubTitle,
+      url: SITE.url + hubPath(c.id),
+    })),
+    'Every soundboard on Bleepboard, by category and by theme.'
   ),
 ];
 ---
@@ -49,7 +63,7 @@ const schema = [
     </p>
     <ul class="stats stats--icon">
       <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> sound buttons total</span></li>
-      <li><StatIcon name="categories" /><span><b class="tnum">{categories.length}</b> categories</span></li>
+      <li><StatIcon name="categories" /><span><b class="tnum">{categories.length + themes.length}</b> soundboards</span></li>
       <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
     </ul>
   </section>
@@ -71,4 +85,26 @@ const schema = [
       ))}
     </div>
   </section>
+
+  {themes.length > 0 && (
+    <section class="section">
+      <div class="section-head">
+        <h2>Themed boards</h2>
+      </div>
+      <p class="section-sub">
+        These pull from across the categories. A FNAF clip might be filed under
+        gaming or sound effects; here it is filed under FNAF.
+      </p>
+      <div class="cat-grid cat-grid--lg">
+        {themes.map((t) => (
+          <a class="cat-card cat-card--lg" href={hubPath(t.id)} data-cat={t.data.icon}>
+            <CategoryIcon cat={t.data.icon} size={28} />
+            <span class="cat-name">{t.data.hubTitle}</span>
+            <span class="cat-card-desc">{t.data.metaDescription}</span>
+            <span class="cat-count tnum">{themeCounts.get(t.id) ?? 0} sounds</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
 </Base>

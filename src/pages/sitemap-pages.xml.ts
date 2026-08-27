@@ -5,6 +5,9 @@ import { urlset } from '../lib/sitemap';
 export const GET: APIRoute = () => {
   const pages = [
     '/',
+    // Spanish landing page. Same rank as the home page it mirrors, and it is a
+    // real page rather than a translation redirect, so it belongs in the map.
+    '/es/',
     '/new/',
     '/trending/',
     '/categories/',

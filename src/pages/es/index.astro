@@ -1,0 +1,552 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SoundButton from '../../components/SoundButton.astro';
+import CategoryIcon from '../../components/CategoryIcon.astro';
+import StatIcon from '../../components/StatIcon.astro';
+import Woofer from '../../components/Woofer.astro';
+import { SITE, hubPath, soundPath, pickTitle } from '../../lib/site';
+import { organization, itemList, faqPage, breadcrumbs } from '../../lib/schema';
+
+/*
+ * /es/ — the Spanish landing page.
+ *
+ * Not a translation of the home page and deliberately not built from one. The
+ * Spanish demand in this niche is a different vocabulary, not the same words in
+ * another language: "botonera de sonidos" (a button panel) carries as much
+ * volume as "botones de sonido" and has no English equivalent anyone searches,
+ * so a literal rendering of "sound buttons" would have missed a third of the
+ * opportunity outright.
+ *
+ * Register is neutral / Latin-American, because that is where the volume sits:
+ * "tú" throughout (never "vosotros"), "video" without the peninsular accent,
+ * and no word that changes meaning across the Atlantic — "coger" is absent on
+ * purpose, and phones are "el teléfono" rather than picking a side between
+ * "móvil" and "celular".
+ *
+ * HONESTY: the 600 sound pages are in English and are not being translated.
+ * The copy says so plainly instead of implying a Spanish catalogue, and the
+ * search box below actually earns that by translating the common Spanish nouns
+ * into the English tags the index is built from.
+ */
+
+const sounds = await getCollection('sounds');
+const categories = (await getCollection('categories')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const counts = new Map<string, number>();
+for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
+
+const trending = [...sounds].sort((a, b) => b.data.plays - a.data.plays).slice(0, 18);
+const newest = [...sounds]
+  .sort((a, b) => b.data.added.valueOf() - a.data.added.valueOf())
+  .slice(0, 14);
+const total = sounds.length;
+
+/* Category names, in Spanish.
+ *
+ * The cards link to the English hubs — those pages are not translated — but
+ * showing "SpongeBob" to a reader who has called him Bob Esponja since he was
+ * six is a small, avoidable jolt. Anything that is already the same word in
+ * both languages (Discord, TikTok, anime, brainrot) is left alone rather than
+ * translated for the sake of it. */
+const CAT_ES: Record<string, string> = {
+  meme: 'Memes',
+  'sound-effects': 'Efectos de sonido',
+  gaming: 'Videojuegos',
+  tiktok: 'TikTok',
+  notification: 'Notificaciones',
+  prank: 'Bromas',
+  anime: 'Anime',
+  spongebob: 'Bob Esponja',
+  discord: 'Discord',
+  brainrot: 'Brainrot',
+  animal: 'Animales',
+};
+const catName = (id: string, fallback: string) => CAT_ES[id] ?? fallback;
+
+/* Search chips. Every one of these is a Spanish word that the translator below
+ * resolves to a real tag, so the feature demonstrates itself the moment
+ * somebody presses one. */
+const quick = ['risa', 'explosión', 'grito', 'alarma', 'aplausos', 'pedo'];
+
+const title = pickTitle([
+  `Botones de Sonido — Botonera de Memes Gratis | ${SITE.name}`,
+  `Botones de Sonido — Botonera de Memes Gratis`,
+]);
+const description =
+  'Botonera de sonidos gratis: toca un botón y suena. Más de 600 botones con sonidos de memes, efectos y clips virales para escuchar y descargar en MP3.';
+
+const faq = [
+  {
+    q: '¿Qué es una botonera de sonidos?',
+    a: `Un tablero donde cada botón guarda un clip corto y lo dispara de un toque. Una bocina de aire, el Vine Boom, un portazo. En español la gente le dice botonera de sonidos, botones de sonido o directamente botones con sonidos, y las tres son la misma cosa: aquí hay ${total} de ellos, listos para sonar sin abrir nada más. Y si buscabas sonidos de botones en el sentido literal, el clic o el pitido de una interfaz, esos también están, guardados entre los efectos de sonido.`,
+  },
+  {
+    q: '¿Los sonidos están en español?',
+    a: 'No, y conviene decirlo claro. El catálogo se armó en inglés: los nombres, las etiquetas y la descripción de cada clip están en ese idioma, y las 600 fichas no tienen versión traducida. Lo que sí está en español es esta página y su buscador, que entiende palabras como «risa», «grito» o «explosión» y las convierte a la etiqueta correcta antes de buscar. El audio, de todos modos, no necesita traducción.',
+  },
+  {
+    q: '¿Hay que pagar o registrarse?',
+    a: 'Ni lo uno ni lo otro. Todos los botones suenan gratis, y cada sonido tiene su propia página con la descarga del MP3, también gratis. No pedimos correo, no hay cuenta que crear y no existe un plan de pago escondiendo los sonidos buenos.',
+  },
+  {
+    q: '¿Puedo usar estos sonidos en Discord o en un directo?',
+    a: 'Sí. Descarga el MP3 y cárgalo en la botonera que trae Discord, en OBS, en Streamlabs o en el deck que ya uses. Cada ficha incluye además un código para incrustar el botón funcionando dentro de tu web o de tu overlay.',
+  },
+  {
+    q: '¿Funciona desde el teléfono?',
+    a: 'Sí, y es de donde llega la mayoría de la gente. Todo corre dentro del navegador, así que no hay app que bajar ni permisos que conceder. Un aviso por experiencia: si tienes el teléfono en silencio verás el botón reproducirse y no escucharás nada.',
+  },
+  {
+    q: '¿Cuáles son los sonidos de memes más buscados ahora?',
+    a: 'La fila de tendencias de arriba responde eso mejor que cualquier lista fija, porque se mueve con lo que explota en TikTok y en YouTube. Six Seven, el Vine Boom y los audios del brainrot italiano llevan meses sin soltar los primeros puestos.',
+  },
+  {
+    q: '¿Cada cuánto entran sonidos nuevos?',
+    a: 'Seguido. Un bot revisa una vez al día qué búsquedas están subiendo y arma una lista de candidatos; después una persona busca el clip, lo escucha y decide si vale la pena. Nada llega al tablero sin que alguien lo haya oído antes.',
+  },
+];
+
+/* WebSite node built here rather than through website() in lib/schema.ts.
+ * That helper hardcodes inLanguage 'en' and the sitewide @id; reusing it would
+ * publish two different nodes under one identifier. This is a separate node for
+ * a separate language, and its SearchAction is honest for the same reason the
+ * English one is — the script at the bottom really does resolve /es/?q=. */
+const websiteEs = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/es/#website`,
+  name: SITE.name,
+  url: `${SITE.url}/es/`,
+  description,
+  inLanguage: 'es',
+  publisher: { '@id': `${SITE.url}/#organization` },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE.url}/es/?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const schema = [
+  organization(),
+  websiteEs,
+  faqPage(faq),
+  breadcrumbs([
+    ['Bleepboard', `${SITE.url}/`],
+    ['Español', `${SITE.url}/es/`],
+  ]),
+  itemList(
+    'Sonidos en tendencia',
+    trending.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+    'Los botones de sonido que más se están tocando ahora mismo.'
+  ),
+];
+---
+<Base title={title} description={description} schema={schema}>
+  <section class="hero">
+    <a class="hero-mascot" href="#woofer" aria-label="Conoce a Woofer, la mascota de Bleepboard">
+      <Woofer size={200} class="hero-woofer" />
+    </a>
+
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="tick"></span>Botonera de memes gratis</p>
+      <h1>Botones de sonido para cada meme</h1>
+      <p class="lede">
+        Toca un botón y suena. Bleepboard es una botonera de sonidos gratis con
+        {total} botones con sonidos de memes, efectos y clips virales. Los escuchas al
+        instante y te llevas el MP3 si lo quieres. Ni registro, ni nada que instalar.
+      </p>
+
+      <div class="searchbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input
+          id="q"
+          type="search"
+          placeholder={`Busca entre ${total} sonidos…`}
+          aria-label="Busca sonidos por nombre o etiqueta"
+          aria-controls="results"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <ul class="search-tools">
+        <li class="label" aria-hidden="true">Prueba</li>
+        {quick.map((term) => (
+          <li><button class="chip" type="button" data-term={term}>{term}</button></li>
+        ))}
+      </ul>
+
+      <p class="es-note">
+        Los sonidos están catalogados en inglés y el buscador traduce por ti las
+        palabras más comunes. ¿Prefieres el sitio original?
+        <a href="/" hreflang="en" lang="en">English version</a>.
+      </p>
+
+      <ul class="stats stats--icon">
+        <li>
+          <StatIcon name="buttons" />
+          <span><b class="tnum">{total}</b> botones de sonido</span>
+        </li>
+        <li>
+          <StatIcon name="download" />
+          <span>Descargas MP3 <b>gratis</b></span>
+        </li>
+        <li>
+          <StatIcon name="new" />
+          <span>Sonidos <b>nuevos</b> con frecuencia</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="results-section" hidden>
+    <div class="section-head">
+      <h2 id="results-heading">Resultados</h2>
+      <button class="section-link" type="button" id="clear-search">Borrar búsqueda ✕</button>
+    </div>
+    <p id="count" class="result-count" role="status" aria-live="polite"></p>
+    <div id="results" class="grid grid--lg" aria-labelledby="results-heading"></div>
+    <p id="empty" class="empty-state" hidden>
+      Ningún sonido coincide con eso. Prueba con una palabra más corta, o mira
+      <a href="/categories/">todos los tableros</a>.
+    </p>
+  </section>
+
+  <div id="browse">
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Sonidos en tendencia</h2>
+      <a class="section-link" href="/trending/">Ver tendencias →</a>
+    </div>
+    <p class="section-sub">Los botones que más se están tocando ahora mismo.</p>
+    <div class="grid grid--lg">
+      {trending.map((s, i) => (
+        <SoundButton playLabel="Reproducir" slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i < 3 ? i + 1 : undefined} />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Lo último en llegar</h2>
+      <a class="section-link" href="/new/">Ver todos los nuevos →</a>
+    </div>
+    <p class="section-sub">Los clips más recientes del tablero.</p>
+    <div class="grid">
+      {newest.map((s) => (
+        <SoundButton playLabel="Reproducir" slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} isNew />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Explora por categoría</h2>
+      <a class="section-link" href="/categories/">Todas las categorías →</a>
+    </div>
+    <p class="section-sub">
+      {categories.length} tableros, cada uno con su rincón de internet. Las fichas
+      que hay detrás están en inglés.
+    </p>
+    <div class="cat-grid">
+      {categories.map((c) => (
+        <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
+          <CategoryIcon cat={c.id} />
+          <span class="cat-name">{catName(c.id, c.data.name)}</span>
+          <span class="cat-count tnum">{counts.get(c.id) ?? 0} sonidos</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>¿Qué es Bleepboard?</h2>
+    </div>
+    <p class="section-sub">El tablero, y el gremlin que lo mantiene ordenado.</p>
+
+    <div class="author-card author-card--about">
+      <div class="about-lead prose">
+        <p>
+          Bleepboard es una botonera hecha para no hacerte esperar: el botón suena en
+          cuanto lo tocas, y cada sonido tiene su ficha con la descarga en MP3, de dónde
+          salió el clip y un código para incrustar el botón en tu web, en tu overlay o en
+          tu servidor de Discord.
+        </p>
+        <p>
+          Sumamos botones de sonidos nuevos seguido, casi siempre a los pocos días de que un audio
+          empiece a circular en TikTok o en YouTube. Puedes ver
+          <a href="/new/">los más recientes</a> o bajar hasta las categorías de arriba.
+        </p>
+        <p>
+          Sobre el idioma, sin rodeos: esta página está en español, el catálogo no. Las
+          600 fichas de sonido, sus nombres y sus descripciones se escribieron en inglés
+          y ahí se quedan por ahora. Traducirlas a medias con una máquina sería peor que
+          dejarlas como están, así que preferimos que el buscador de aquí arriba entienda
+          tus palabras y te lleve al clip correcto.
+        </p>
+        <p>
+          Todo ocurre dentro del navegador, sin instalar nada y sin cuenta, de modo que
+          los botones también funcionan en equipos administrados donde un programa de
+          escritorio ni arrancaría. La página
+          <a href="/unblocked-soundboard/" hreflang="en" lang="en">unblocked soundboard</a>
+          explica qué bloquean de verdad esas redes, aunque está en inglés.
+        </p>
+      </div>
+
+      <div class="about-meet" id="woofer">
+        <Woofer size={128} />
+        <div class="author-body">
+          <h3>Woofer</h3>
+          <p class="author-role">El gremlin del sonido de Bleepboard</p>
+          <p>
+            Woofer es una caja de altavoces a la que le salieron piernas y, poco después,
+            opiniones. Vive en algún lugar del rack de servidores, lleva unos auriculares
+            que se niega a quitarse y dedica el día a lo único que sabe hacer bien: oír
+            que un clip se está volviendo viral y necesitar catalogarlo de inmediato.
+          </p>
+          <p>
+            Archiva con saña. Un sonido no consigue botón aquí hasta que Woofer sabe de
+            dónde viene: de qué película, de qué directo, de qué seis segundos
+            desquiciados del martes de alguien. Por eso cada sonido del sitio tiene un
+            texto escrito a mano en vez de un encogimiento de hombros.
+          </p>
+          <p class="author-note">
+            Woofer es nuestra mascota, no una persona real. Detrás hay un equipo pequeño
+            al que le resulta más fácil dibujar un altavoz de caricatura que dibujarse a
+            sí mismo. Salúdanos en la
+            <a href="/about/" hreflang="en" lang="en">página «about»</a>, que está en inglés.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="section-head">
+      <h2>Preguntas sobre los botones de sonido</h2>
+    </div>
+    <p class="section-sub">Lo que la gente pregunta antes de tocar nada.</p>
+    {faq.map((f) => (
+      <details>
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+  </section>
+  </div>
+
+  <style>
+    /* Spanish category names run longer than the English ones — "Notificaciones"
+       is fourteen characters against "Notification" — and at 375px a cat-card is
+       about 134px of content. Let the name break rather than push the grid wide. */
+    .cat-name { overflow-wrap: break-word; }
+
+    .es-note {
+      margin: var(--s3) 0 0;
+      max-width: 58ch;
+      font-size: var(--step--1);
+      line-height: 1.5;
+      color: var(--ink-3);
+    }
+    .es-note a { color: var(--accent-text); font-weight: 650; }
+
+    /* Below 900px global.css sets `.hero-copy { display: contents }` and hands
+       each promoted child an explicit `order` (eyebrow 1 … stats 7) so the
+       mascot can sit between the chips and the stat strip. A new child with no
+       order of its own defaults to 0 and jumps ahead of the headline, which is
+       exactly what this note did. Tying it to the chips' own value puts it back
+       where the DOM says it goes: equal `order` resolves in source order, and
+       .search-tools precedes .es-note. */
+    @media (max-width: 899.98px) {
+      .es-note { order: 5; }
+    }
+  </style>
+
+  <script>
+    type Item = {
+      slug: string; title: string; tags: string[];
+      category: string; audio: string; duration: number;
+    };
+
+    const q = document.getElementById('q') as HTMLInputElement;
+    const browse = document.getElementById('browse')!;
+    const section = document.getElementById('results-section')!;
+    const results = document.getElementById('results')!;
+    const empty = document.getElementById('empty')!;
+    const count = document.getElementById('count')!;
+    const clear = document.getElementById('clear-search')!;
+    let index: Item[] = [];
+    let loaded = false;
+
+    /* Spanish query -> English tag.
+     *
+     * The index is built from English titles, tags and category slugs, so a
+     * Spanish page with the English search bolted straight on would answer
+     * "risa" with nothing at all — the single most obvious way for this page to
+     * feel like a translated shell. Each entry maps one Spanish noun (and the
+     * spellings people actually type) onto tags that exist in the corpus; the
+     * original term is always tried too, so English queries keep working and an
+     * unmapped word is simply searched as typed.
+     *
+     * Keys are written unaccented because the query is stripped of accents
+     * before lookup — "explosión" and "explosion" have to land in the same
+     * place, and phone keyboards are not reliable about the difference. */
+    const ES_EN: Record<string, string[]> = {
+      risa: ['laugh'], risas: ['laugh'], reir: ['laugh'], carcajada: ['laugh'],
+      grito: ['scream'], gritos: ['scream'], gritar: ['scream'],
+      explosion: ['explosion', 'boom'], explosiones: ['explosion'], bomba: ['explosion', 'blast'],
+      alarma: ['alarm'], despertador: ['alarm'], reloj: ['alarm', 'timer'],
+      notificacion: ['notification'], notificaciones: ['notification'], aviso: ['alert'],
+      mensaje: ['message'], mensajes: ['message'],
+      timbre: ['bell', 'chime'], campana: ['bell'], campanita: ['chime'],
+      error: ['error', 'fail'], fallo: ['fail'], fracaso: ['fail'],
+      aplausos: ['applause', 'clapping'], aplauso: ['applause'], palmas: ['clapping'],
+      pedo: ['fart'], pedos: ['fart'],
+      perro: ['dog'], perros: ['dog'], ladrido: ['dog'], ladridos: ['dog'],
+      gato: ['cat', 'meow'], gatos: ['cat'], maullido: ['meow'], miau: ['meow'],
+      puerta: ['door'], portazo: ['door', 'slam'],
+      sirena: ['siren'], ambulancia: ['siren', 'emergency'], policia: ['siren'],
+      bocina: ['horn'], claxon: ['horn'], corneta: ['horn'],
+      susto: ['jumpscare'], terror: ['horror'], miedo: ['horror', 'creepy'],
+      gracioso: ['funny'], chistoso: ['funny'], divertido: ['funny'], comedia: ['comedy'],
+      juego: ['gaming'], juegos: ['gaming'], videojuego: ['gaming'], videojuegos: ['gaming'],
+      dibujos: ['cartoon'], caricatura: ['cartoon'], caricaturas: ['cartoon'],
+      bebe: ['baby'], nino: ['kids'], ninos: ['kids'],
+      pajaro: ['bird'], ave: ['bird'], caballo: ['horse'],
+      animal: ['animal'], animales: ['animal'], granja: ['farm'],
+      telefono: ['phone'], celular: ['phone'], movil: ['phone'], llamada: ['call'],
+      camara: ['camera'], foto: ['camera'],
+      victoria: ['win'], ganar: ['win'], muerte: ['death'], morir: ['death'],
+      baile: ['dance'], bailar: ['dance'], cancion: ['song'], musica: ['song'],
+      voz: ['voice'], fuerte: ['loud'], raro: ['weird', 'cursed'], raros: ['weird'],
+      triste: ['sad'], lindo: ['cute'], tierno: ['cute'],
+      golpe: ['hit', 'impact'], caida: ['falling', 'fail'], caer: ['falling'],
+      comer: ['eating'], comida: ['eating'],
+      radio: ['radio'], television: ['tv'], inicio: ['startup'], arranque: ['startup'],
+      suspenso: ['suspense'], tension: ['suspense'],
+      fiesta: ['celebration'], celebracion: ['celebration'], festejo: ['cheer'],
+      futbol: ['football'], deporte: ['sports'], deportes: ['sports'],
+      boton: ['button'], botones: ['button'],
+      viral: ['viral'], clasico: ['classic'], nostalgia: ['nostalgia'],
+    };
+
+    /** Lowercase and strip diacritics, so "explosión" and "explosion" agree. */
+    const norm = (s: string) =>
+      s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    const esc = (s: string) =>
+      s.replace(/[&<>"']/g, (c) =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!
+      );
+    const dur = (n: number) => `${n.toFixed(1).replace(/\.0$/, '')}s`;
+
+    const PLAY = '<svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z"/></svg>';
+
+    function card(s: Item) {
+      const title = esc(s.title);
+      return `<article class="bleep" data-cat="${esc(s.category)}" style="--dur:${s.duration}s">
+        <button class="bleep-play" type="button" data-src="${esc(s.audio)}" data-slug="${esc(s.slug)}" aria-label="Reproducir ${title}" aria-pressed="false">
+          <span class="bleep-ico" aria-hidden="true">${PLAY}<span class="i-eq"><i></i><i></i><i></i></span></span>
+          <span class="bleep-dur" aria-hidden="true">${dur(s.duration)}</span>
+          <span class="bleep-bar" aria-hidden="true"></span>
+        </button>
+        <a class="bleep-title" href="/sound/${esc(s.slug)}/"><span>${title}</span></a>
+      </article>`;
+    }
+
+    async function ensureIndex() {
+      if (loaded) return;
+      try {
+        index = await (await fetch('/search-index.json')).json();
+        loaded = true;
+      } catch {
+        count.textContent = 'El buscador no está disponible ahora mismo — prueba a explorar por categoría más abajo.';
+      }
+    }
+
+    function showBrowse() {
+      section.hidden = true;
+      browse.hidden = false;
+      results.innerHTML = '';
+    }
+
+    async function search() {
+      const query = q.value.trim();
+      if (!query) return showBrowse();
+
+      await ensureIndex();
+      // Each typed word becomes a small set of acceptable strings: itself, plus
+      // whatever English tags it translates to. A sound matches when every word
+      // is satisfied by at least one of its candidates.
+      const terms = norm(query).split(/\s+/).filter(Boolean)
+        .map((t) => [t, ...(ES_EN[t] ?? [])]);
+      const hits = index.filter((s) => {
+        const hay = norm(s.title + ' ' + s.tags.join(' ') + ' ' + s.category);
+        return terms.every((cands) => cands.some((c) => hay.includes(c)));
+      });
+
+      browse.hidden = true;
+      section.hidden = false;
+      results.innerHTML = hits.map(card).join('');
+      empty.hidden = hits.length > 0;
+      count.textContent = hits.length
+        ? `${hits.length} ${hits.length === 1 ? 'sonido' : 'sonidos'} para «${query}»`
+        : `Nada coincide con «${query}»`;
+    }
+
+    /** Keeps /es/?q=… linkable and survivable across a reload, which is also
+     *  what makes the SearchAction in this page's JSON-LD truthful. */
+    function syncUrl(query: string) {
+      const url = new URL(window.location.href);
+      if (query) url.searchParams.set('q', query);
+      else url.searchParams.delete('q');
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }
+
+    q.addEventListener('input', () => {
+      syncUrl(q.value.trim());
+      search();
+    });
+    q.addEventListener('focus', ensureIndex, { once: true });
+
+    clear.addEventListener('click', () => {
+      q.value = '';
+      syncUrl('');
+      showBrowse();
+      q.focus();
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('.search-tools .chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        q.value = btn.dataset.term ?? '';
+        syncUrl(q.value);
+        search();
+        q.focus();
+      });
+    });
+
+    q.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && q.value) {
+        e.preventDefault();
+        q.value = '';
+        syncUrl('');
+        showBrowse();
+      }
+    });
+
+    const initial = new URLSearchParams(window.location.search).get('q');
+    if (initial) {
+      q.value = initial;
+      search();
+    }
+  </script>
+</Base>

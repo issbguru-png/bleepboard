@@ -1,0 +1,29 @@
+{
+  "name": "Fahhh",
+  "hubTitle": "Fahhh Soundboard",
+  "metaDescription": "A fahhh soundboard with all three takes on the viral shock scream: standard, very loud, and I Got This. Press to play, download free MP3s.",
+  "icon": "tiktok",
+  "order": 4,
+  "match": [
+    "fah"
+  ],
+  "intro": "Fah. Fahh. Fahhh. The vowel count keeps growing and nobody has settled on a winner, largely because nobody wrote the thing down before it spread. Underneath every spelling sits the same half-second of panic, pitched somewhere between a shout and the moment a person gives up on speech entirely.\n\nThe clip traces back to the streamer Taileons, who said in a September 2025 video that he had recorded it sometime the year before. TikTok found it in late August 2025 and stopped asking where it came from almost immediately. Within a few weeks it was sitting under sports edits, dashcam footage and roughly one cooking disaster per scroll.\n\nThree versions live here. The standard mix is for people who intend to keep their friends; the very loud edition is clipped and distorted on purpose, and most of the people playing it are playing it at somebody. The third clip carries a setup and a punchline in the same file — \"I got this\", followed by prompt evidence to the contrary.\n\nPress one to hear it. The MP3s download free and nothing here asks for an account. Do turn something down before the loud one.",
+  "faq": [
+    {
+      "q": "Where does the fahhh sound come from?",
+      "a": "The streamer Taileons is the voice. In a TikTok posted on 8 September 2025 he explained the sound's history and said the recording dated back to 2024. It went properly viral from late August 2025 onward, attached mostly to fail clips. Like most sound memes it spread a long way ahead of the credit."
+    },
+    {
+      "q": "Is it spelled fah, fahh or fahhh?",
+      "a": "All of them, and the extra letters are doing volume rather than grammar. Three h's is the most common way people type it, but you will find everything from a single h up to a small paragraph of them. Nobody is checking."
+    },
+    {
+      "q": "Why is the loud version so distorted?",
+      "a": "It is clipped rather than simply turned up, so your ear reads it as harsh instead of merely loud. That was a deliberate mastering choice and it is the whole appeal of that particular file. On headphones, start with the standard version and decide from there."
+    },
+    {
+      "q": "What do people use the fahhh sound for?",
+      "a": "Reaction audio, almost always. It goes over the frame where something breaks: a trick that fails, a car that does not stop, a message landing in visibly the wrong chat. Editors like it because there is nothing to sync. You drop it where the face changes and the edit is finished."
+    }
+  ]
+}

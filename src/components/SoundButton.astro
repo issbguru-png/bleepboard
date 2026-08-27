@@ -12,8 +12,12 @@ interface Props {
   rank?: number;
   /** show a NEW flag */
   isNew?: boolean;
+  /** Verb for the accessible label. The Spanish page renders these same
+   *  buttons inside `lang="es"`, where "Play Vine Boom" gets announced with
+   *  Spanish phonology by a screen reader. */
+  playLabel?: string;
 }
-const { slug, title, audio, duration, category, rank, isNew = false } = Astro.props;
+const { slug, title, audio, duration, category, rank, isNew = false, playLabel = 'Play' } = Astro.props;
 ---
 <article class="bleep" data-cat={category} style={`--dur:${duration}s`}>
   {rank !== undefined && (
@@ -26,7 +30,7 @@ const { slug, title, audio, duration, category, rank, isNew = false } = Astro.pr
     type="button"
     data-src={audio}
     data-slug={slug}
-    aria-label={`Play ${title}`}
+    aria-label={`${playLabel} ${title}`}
     aria-pressed="false"
   >
     <span class="bleep-ico" aria-hidden="true">

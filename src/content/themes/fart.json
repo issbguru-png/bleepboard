@@ -1,0 +1,29 @@
+{
+  "name": "Fart",
+  "hubTitle": "Fart Soundboard",
+  "metaDescription": "A fart soundboard with five fart sound buttons: the classic, loud, wet, reverb and Quandale Dingle. Play instantly, download free MP3s.",
+  "icon": "prank",
+  "order": 2,
+  "match": [
+    "fart"
+  ],
+  "intro": "Five fart buttons, and not one of them has an origin story. Nobody recorded the first fart sound effect and no viral clip was needed to explain the joke, which predates the recording equipment by a comfortable margin. What a soundboard adds is timing. You can now produce the noise on a quarter-second of notice, from a phone, in a room where it will do the most damage.\n\nThey are not interchangeable, whatever the subject matter suggests. The plain fart is the honest article, dry and unadorned, and it is the one that works in a silent meeting. Loud Fart uses the volume knob itself as the punchline. Wet Fart makes listeners resolve an implication, and the small pause while they do it is funnier than the audio. Fart with Reverb puts the whole thing in a cathedral. Stupid, and considerably better for it.\n\nThe fifth clip belongs somewhere else entirely. Quandale Dingle Farted comes out of a deep-fried absurdist meme universe built around a name screenshotted from a school computer — it earns its place here on the strength of the verb alone.\n\nMost of these end up on prank videos, in Discord calls, or dropped into an edit that needed punctuation and had nothing left to say. All five download as free MP3s, and every sound page carries an embed code if you want the working button on your own site. No account, and no explanation owed to anyone.",
+  "faq": [
+    {
+      "q": "Where do fart sound effects come from?",
+      "a": "Nowhere in particular, and that is the honest answer. These are foley recordings, made the way every other silly noise in a sound library gets made, with no film scene or viral moment behind them. Anyone claiming a definitive origin for the fart sound is selling something."
+    },
+    {
+      "q": "What is the difference between the five fart sounds?",
+      "a": "Volume and implication, mostly. The classic is neutral slapstick. The loud one removes any possibility of being missed. The wet one carries a suggestion that listeners work out for themselves. Reverb turns it into an event with architecture, which is useful for slow-motion edits."
+    },
+    {
+      "q": "Can I use a fart button on a Discord call?",
+      "a": "Yes, and people do it constantly. Download the MP3 and load it into Discord's own soundboard, or route it through a virtual audio cable if you want it going down the mic. Server moderators tend to have firm views on this, so read the room first."
+    },
+    {
+      "q": "Is a fart soundboard the same as a whoopee cushion?",
+      "a": "Same gag, different century. The cushion has been a novelty-shop staple since the 1930s and required you to hide it under a chair in advance. A phone requires no setup at all, which has made the joke both easier to land and much harder to prove."
+    }
+  ]
+}

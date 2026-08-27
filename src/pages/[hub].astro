@@ -6,21 +6,35 @@ import CategoryIcon from '../components/CategoryIcon.astro';
 import StatIcon from '../components/StatIcon.astro';
 import { SITE, hubPath, soundPath, pickTitle } from '../lib/site';
 import { breadcrumbs, itemList, faqPage } from '../lib/schema';
+import { themeSounds } from '../lib/themes';
 
 export async function getStaticPaths() {
   const categories = await getCollection('categories');
-  return categories.map((c) => ({
-    params: { hub: `${c.id}-soundboard` },
-    props: { category: c },
-  }));
+  const themes = await getCollection('themes');
+  // Both render at /{slug}-soundboard/. A theme slug that collides with a
+  // category id would silently produce a duplicate route, so fail loudly.
+  const catIds = new Set(categories.map((c) => c.id));
+  for (const t of themes) {
+    if (catIds.has(t.id)) {
+      throw new Error(`Theme "${t.id}" collides with the category of the same name.`);
+    }
+  }
+  return [
+    ...categories.map((c) => ({ params: { hub: `${c.id}-soundboard` }, props: { entry: c, kind: 'category' as const } })),
+    ...themes.map((t) => ({ params: { hub: `${t.id}-soundboard` }, props: { entry: t, kind: 'theme' as const } })),
+  ];
 }
 
-const { category } = Astro.props;
-const d = category.data;
+const { entry, kind } = Astro.props;
+const category = entry;
+const d = entry.data as any;
 const allSounds = await getCollection('sounds');
-const sounds = allSounds
-  .filter((s) => s.data.category === category.id)
-  .sort((a, b) => b.data.plays - a.data.plays);
+const sounds =
+  kind === 'theme'
+    ? themeSounds(allSounds, d.match)
+    : allSounds
+        .filter((s) => s.data.category === entry.id)
+        .sort((a, b) => b.data.plays - a.data.plays);
 
 // intro copy: first paragraph carries the page as the lede, the rest becomes
 // the "about" block under the buttons — same words, better reading order.
@@ -29,12 +43,16 @@ const [lede, ...rest] = paras;
 
 // sibling hubs, for internal linking out of the page
 const others = (await getCollection('categories'))
-  .filter((c) => c.id !== category.id)
+  .filter((c) => c.id !== entry.id)
   .sort((a, b) => a.data.order - b.data.order);
 const counts = new Map<string, number>();
 for (const s of allSounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
 
-const pageUrl = SITE.url + hubPath(category.id);
+// A theme has no CategoryIcon of its own, so it borrows one and inherits that
+// category's hue for the page chrome. Keeps themes on-brand with no new assets.
+const iconKey = kind === 'theme' ? (d.icon ?? 'meme') : entry.id;
+
+const pageUrl = SITE.url + hubPath(entry.id);
 // The old template repeated the category name and then bolted the brand on
 // ("Notification Sounds Soundboard — Free Notification Sound Buttons |
 // Bleepboard", 77 chars). Both competitors instead lead with the board name
@@ -66,7 +84,7 @@ if (sounds.length > 0) {
 }
 if (d.faq.length > 0) schema.push(faqPage(d.faq));
 ---
-<Base title={title} description={d.metaDescription} schema={schema} cat={category.id}>
+<Base title={title} description={d.metaDescription} schema={schema} cat={iconKey}>
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="sep" aria-hidden="true">›</span>
@@ -77,7 +95,7 @@ if (d.faq.length > 0) schema.push(faqPage(d.faq));
 
   <section class="hub-hero">
     <div class="hero-mark">
-      <CategoryIcon cat={category.id} size={48} />
+      <CategoryIcon cat={iconKey} size={48} />
       <p class="eyebrow"><span class="tick"></span>Soundboard</p>
     </div>
     <h1>{d.hubTitle}</h1>

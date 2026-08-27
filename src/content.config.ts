@@ -34,6 +34,35 @@ const categories = defineCollection({
   }),
 });
 
+/* Themed hubs.
+ *
+ * Separate from `categories` on purpose. A sound belongs to exactly one
+ * category, which is what makes the category grid coherent — but the queries
+ * people actually type cut across that. "fnaf soundboard" wants clips filed
+ * under gaming AND sound-effects; "goofy ahh soundboard" wants meme, brainrot
+ * and spongebob at once. Forcing those into the category system would mean
+ * re-filing sounds and breaking the grid to serve a keyword.
+ *
+ * So a theme gathers sounds by matching slug, title or tag, and nothing has to
+ * move. Themes render at the same /{slug}-soundboard/ URL as categories, so
+ * slugs must not collide with a category id.
+ */
+const themes = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/themes' }),
+  schema: z.object({
+    name: z.string(),
+    hubTitle: z.string(),
+    metaDescription: z.string().max(160),
+    intro: z.string().min(400),
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    /** Substrings matched against a sound's slug, title and tags. */
+    match: z.array(z.string()).min(1),
+    /** Reuses a CategoryIcon key so themes get artwork without new assets. */
+    icon: z.string().default('meme'),
+    order: z.number().default(99),
+  }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
@@ -62,4 +91,5 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { sounds, categories, blog };
+export const collections = {
+  themes, sounds, categories, blog };
