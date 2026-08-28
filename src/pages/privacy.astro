@@ -958,14 +958,16 @@ const description = (() => {
           are directed to GitHub, whose privacy statement governs them.
         </li>
       </ul>
-      {/* TODO (owner): GDPR Art. 13 requires the identity of the controller. This page
-          therefore needs, once known and confirmed: the operating legal entity's name;
-          a postal address; and — if the site is targeted at or monitors EEA/UK visitors
-          without an establishment there — an Art. 27 representative in the EU and/or UK.
-          A Data Protection Officer is very unlikely to be required at this scale, but that
-          determination is the owner's to make, not ours to assert. Nothing is stated
-          because none of it has been supplied, and an invented controller identity is
-          worse than an acknowledged omission. */}
+      <p>
+        The data controller for this site is <strong>Bleepboard</strong>,
+        Office 36A, UFONE Tower, Blue Area, Islamabad, Pakistan. Requests about
+        your data go to the contact address at the bottom of this page.
+      </p>
+      {/* Controller identity supplied by the owner 2026-08-29. Still open, and
+          deliberately not asserted here: whether an Art. 27 EU/UK representative
+          is needed (depends on targeting/monitoring of EEA visitors from outside
+          the EEA — a lawyer's call, not ours), and a DPO determination, which is
+          very unlikely to be required at this scale. */}
 
       <h3>California (CCPA/CPRA)</h3>
       <p>
@@ -1109,9 +1111,14 @@ const description = (() => {
         <b class="mail">{PRIVACY_TO}</b>. It is the same address used for copyright and
         content reports, and it is read by a person rather than a ticket queue.
       </p>
-      {/* TODO (owner): a governing law / jurisdiction clause is deliberately absent — it
-          depends on where the operating entity is established, which has not been
-          supplied. Add it with the entity details, or leave it out entirely. */}
+      <p>
+        By post: Bleepboard, Office 36A, UFONE Tower, Blue Area, Islamabad, Pakistan.
+        Email is faster; the letterbox is real but the inbox is watched.
+      </p>
+      {/* Entity details supplied 2026-08-29 (Bleepboard, Islamabad). A governing-law /
+          jurisdiction clause remains deliberately absent: naming one is a legal
+          commitment with consequences the owner should take advice on, not boilerplate
+          to autofill from an address. */}
     </div>
 
     <p class="fine">

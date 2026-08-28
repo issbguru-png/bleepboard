@@ -75,8 +75,11 @@ These are marked with TODOs in source (stripped at build) — grep `TODO` in
 **Blocking before running ads:**
 1. **A certified consent platform (CMP)** for EEA/UK traffic. Google requires one for
    AdSense. Mediavine bundles one; bare AdSense does not. Hard blocker.
-2. **Legal entity name + postal address** — GDPR Art. 13 requires controller identity.
-3. **DMCA designated agent block** — name, address, contact.
+2. ~~Legal entity name + postal address~~ — **supplied 2026-08-29**: Bleepboard,
+   Office 36A, UFONE Tower, Blue Area, Islamabad. On the privacy and DMCA pages.
+3. **DMCA designated agent** — operator block is live, but formal US Copyright
+   Office agent registration still needs a phone number and the filing fee.
+   Worth doing before ad networks (stronger safe-harbor position).
 4. **An effective date** on the privacy policy.
 5. ~~Child-directed treatment~~ — **decided 2026-08-26: standard treatment
    (`CHILD_DIRECTED = false`)**. Deliberate, not a default. Revisit if GA4 shows the

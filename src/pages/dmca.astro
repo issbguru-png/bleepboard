@@ -271,10 +271,31 @@ const otherReports = [
     </div>
   </section>
 
-  {/* TODO: If Bleepboard designates a DMCA agent, the agent's name, postal address,
-      phone number and email belong here, along with the operating entity's legal name.
-      None of that has been supplied, so nothing is stated — an invented agent or address
-      is worse than none. */}
+  <section class="section">
+    <div class="section-head">
+      <h2>Who to address a notice to</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Copyright notices and counter-notices go to the site operator:
+      </p>
+      <p>
+        <strong>Bleepboard</strong><br />
+        Office 36A, UFONE Tower<br />
+        Blue Area, Islamabad, Pakistan<br />
+        <b class="mail">{REPORT_TO}</b>
+      </p>
+      <p>
+        Email reaches us the same day; post reaches us eventually. Either counts.
+      </p>
+    </div>
+  </section>
+  {/* Operator identity supplied 2026-08-29. Still open, owner's call: formal DMCA
+      designated-agent status in the US requires registering the agent (name, address,
+      AND a phone number) with the US Copyright Office's online directory for a small
+      fee. No phone number has been supplied, so no registration has been made and this
+      block deliberately says "site operator", not "designated agent". Worth doing
+      before ad networks: the safe-harbor argument is stronger with the registration. */}
 
   <section class="section">
     <p class="fine">
