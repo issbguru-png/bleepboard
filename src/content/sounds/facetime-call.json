@@ -1,0 +1,17 @@
+{
+  "title": "FaceTime Call",
+  "category": "notification",
+  "tags": [
+    "facetime",
+    "ring",
+    "apple",
+    "prank"
+  ],
+  "duration": 6.7,
+  "audio": "/audio/facetime-call.mp3",
+  "blurb": "No sound on earth makes a room check its phones faster. The FaceTime ring is Apple's most theatrical piece of audio design, a rolling chime that repeats with rising social pressure until somebody answers, and it has become the backbone of an entire genre of prank: play it near any iPhone owner and watch the scramble. Editors lean on it just as hard, since nothing establishes 'an important call is happening' more economically. It sits alongside the connect chirp and the hang-up as the trilogy's dramatic opening act — the part where you could still choose not to answer.",
+  "origin": "Apple's FaceTime ringtone.",
+  "added": "2026-08-28",
+  "featured": false,
+  "plays": 2800
+}
