@@ -277,6 +277,58 @@ function wobble({ hue, t }) {
     <polyline points="${pts.join(' ')}" fill="none" stroke="${hue}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
 }
 
+/** A rhythm written out: three heavy strikes, then the long word that follows.
+ *  Abstract drum notation only — no character, no bat, nobody's log. */
+function drumTriplets({ hue, t }) {
+  const soft = mix(hue, t.bg, 0.62), faint = mix(hue, t.bg, 0.8);
+  let out = `<line x1="96" y1="446" x2="1104" y2="446" stroke="${mix(hue, t.bg, 0.45)}" stroke-width="3" stroke-dasharray="12 10"/>`;
+  // three tall strikes
+  [252, 408, 564].forEach((x, i) => {
+    out += `<rect x="${x}" y="132" width="104" height="300" rx="26" fill="${hue}"/>`;
+    // strike marks above each bar
+    [-26, 0, 26].forEach((dx) => {
+      out += `<line x1="${x + 52 + dx * 0.6}" y1="${104 - Math.abs(dx) * 0.4}" x2="${x + 52 + dx}" y2="${70 + Math.abs(dx) * 0.4}" stroke="${soft}" stroke-width="9" stroke-linecap="round"/>`;
+    });
+  });
+  // the long low answer, twice, fading — the word after the strikes
+  out += `<rect x="756" y="322" width="236" height="110" rx="30" fill="${soft}"/>`;
+  out += `<rect x="1028" y="352" width="76" height="80" rx="24" fill="${faint}"/>`;
+  return out;
+}
+
+/** A level that steps down and down and never quite reaches zero: a fade,
+ *  drawn as audio. No head, no hairline, no likeness of anybody. */
+function taperSteps({ hue, t }) {
+  const count = 13, x0 = 96, pitch = 78, bw = 56, base = 440;
+  let out = '';
+  const tops = [];
+  for (let i = 0; i < count; i++) {
+    const u = i / (count - 1);
+    const h = 330 * Math.pow(1 - u, 1.35) + 16;
+    const x = x0 + i * pitch;
+    tops.push([x + bw / 2, base - h]);
+    out += `<rect x="${x}" y="${n(base - h)}" width="${bw}" height="${n(h)}" rx="14" fill="${mix(hue, t.bg, u * 0.72)}"/>`;
+  }
+  // the guide the steps are chasing
+  out += `<line x1="${tops[0][0]}" y1="${n(tops[0][1] - 26)}" x2="${tops[count - 1][0]}" y2="${n(tops[count - 1][1] - 26)}" stroke="${hue}" stroke-width="5" stroke-dasharray="2 14" stroke-linecap="round"/>`;
+  return out;
+}
+
+/** Syllables on a bounce. The word nobody can spell, set in pills so the
+ *  chant reads as rhythm rather than language. Original type, no characters. */
+function chantPills({ hue, t }) {
+  const soft = mix(hue, t.bg, 0.82);
+  const syl = ['GE', 'GA', 'GE', 'DI', 'GE', 'DA', 'GE', 'DA', 'GO'];
+  let out = '';
+  syl.forEach((s, i) => {
+    const cx = 128 + i * 118, cy = 258 + Math.sin(i * 1.05 + 0.4) * 96;
+    const solid = i % 2 === 0;
+    out += `<rect x="${n(cx - 52)}" y="${n(cy - 40)}" width="104" height="80" rx="40" fill="${solid ? hue : soft}"/>`;
+    out += `<text x="${n(cx)}" y="${n(cy + 15)}" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="1" fill="${solid ? t.bg : hue}">${s}</text>`;
+  });
+  return out;
+}
+
 /** The joke is the number, so the number is the picture. */
 function bigNumerals({ hue, t }) {
   return `<rect x="286" y="88" width="628" height="368" rx="52" fill="${mix(hue, t.bg, 0.86)}"/>
@@ -315,6 +367,12 @@ const POSTS = {
     alt: 'Abstract Bleepboard artwork: a straight line that wobbles into a bigger and bigger squiggle across the frame' },
   'what-does-67-mean':                   { hue: '#0d9488', motif: bigNumerals,  label: 'SLANG · GEN ALPHA',
     alt: 'Abstract Bleepboard artwork: the numerals 67 set very large in teal on a soft tinted panel' },
+  'what-is-tung-tung-tung-sahur':        { hue: '#d97706', motif: drumTriplets, label: 'BRAINROT · MEME ORIGINS',
+    alt: 'Abstract Bleepboard artwork: three tall amber bars struck in groups of three, like a drum rhythm written out' },
+  'low-taper-fade-meme':                 { hue: '#16a34a', motif: taperSteps,   label: 'MEME ORIGINS · STREAMING',
+    alt: 'Abstract Bleepboard artwork: a row of green bars stepping down from left to right along a clean diagonal, like a fade drawn as audio' },
+  'what-is-gegagedigedagedago':          { hue: '#9333ea', motif: chantPills,   label: 'MEME ORIGINS · NONSENSE',
+    alt: 'Abstract Bleepboard artwork: purple rounded pills carrying the syllables ge, ga, di and go, bouncing along an invisible wave' },
 };
 
 // --- frame ----------------------------------------------------------------
