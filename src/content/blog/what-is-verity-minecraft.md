@@ -13,7 +13,7 @@ Minecraft horror is a crowded genre and most of it is loud. Screaming thumbnails
 
 Verity is a horror series by the creator **ThatMob**, built inside Minecraft and structured around a companion character: a small, yellow, friendly-looking figure who accompanies the player.
 
-She helps. She greets you. She explains things. And from very early on, something about her is deeply, unplaceably wrong, not because she does anything monstrous but because of *how* she says perfectly ordinary things. The series builds by accumulating small wrongnesses rather than delivering one big reveal, and that structure is a large part of why the clips travel: even a five-second line carries the unease out of the video with it.
+He helps. He greets you. He explains things. And from very early on, rous but because of *how* he says perfectly ordinary things. The series builds by accumulating small wrongnesses rather than delivering one big reveal, and that structure is a large part of why the clips travel: even a five-second line carries the unease out of the video with it.
 
 The setting does a lot of the work too. Minecraft is the most reassuring visual language a generation has. Blocks, daylight, the familiar clatter of crafting, the digital equivalent of a childhood bedroom. Putting genuine dread inside that skin is far more effective than putting it inside a photorealistic haunted house, because you aren't braced for it. Nobody flinches at a cube.
 
@@ -27,7 +27,7 @@ Verity's delivery never completes. The voice stays level, pleasant, evenly paced
 
 Flatness also implies something worse than anger. An angry character is engaged with you; you matter enough to provoke a reaction. A character who declines your request in a perfectly even tone has categorised you and moved on. There's no appeal process. Horror writers have known this forever — the calm villain beats the shouting one — but it stays genuinely rare in YouTube horror, where the incentives push hard towards volume.
 
-The last piece is **information over spectacle**. When Verity states that something is coming, she doesn't show you anything. The audience's imagination does the work, for free, and it always builds something scarier than a model could. Same economy that makes a closed door frightening.
+The last piece is **information over spectacle**. When Verity states that something is coming, he doesn't show you anything. The audience's imagination does the work, for free, and it always builds something scarier than a model could. Same economy that makes a closed door frightening.
 
 ## The clips people keep pulling out
 

@@ -33,7 +33,7 @@ The best sound in the series is a group of children cheering.
 
 On its own it's a stock-happy noise, the sort that plays over a theme park advert. In FNAF it turns up where children cheering should not be, attached to a story about children who did not go home. Nothing about the audio changes. The context changes, and the sound becomes unbearable. A genuinely sophisticated trick, and the reason the clip is still being passed around a decade later.
 
-The same principle runs through the spoken lines. **Phone Guy's** night-one voicemail is a bureaucratic HR induction, cheerful health-and-safety patter about a job that is going to kill you, and the mismatch does more character work than any cutscene could. Sister Location later gave the series its most-quoted line, William Afton's flat **"connection terminated"**, which lands the way a monotone always does — emotional absence where you expected a reaction.
+The same principle runs through the spoken lines. **Phone Guy's** night-one voicemail is a bureaucratic HR induction, cheerful health-and-safety patter about a job that is going to kill you, and the mismatch does more character work than any cutscene could. Freddy Fazbear's Pizzeria Simulator later gave the series its most-quoted line, Henry's flat **"connection terminated"** speech, delivered *to* William Afton rather than by him, which lands the way a monotone always does — emotional absence where you expected a reaction.
 
 ## Play the FNAF sounds
 

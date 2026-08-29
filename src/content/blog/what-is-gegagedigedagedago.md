@@ -14,7 +14,7 @@ Nobody agrees on how to spell gegagedigedagedago, which is inconvenient for the 
 
 Strip the meme back and there's a recognisable song under it: **"Cotton Eye Joe"** by Rednex, the 1994 Eurodance-does-country track that has haunted school discos ever since. The gibberish sits exactly where the chorus goes. Sing "where did you come from, where did you go" fast enough, with enough slurring, and you can hear how a run of syllables like *gegagedigedagedago* falls out of it.
 
-That mishearing didn't happen by accident. In July 2023 a TikToker called **razioff** posted a cover of the song with most of the actual words replaced by confident gibberish, sung straight. The cover was funny on its own and picked up tens of millions of plays. But audio memes need a body, and this one found the strangest body available.
+That mishearing didn't happen by accident. In July 2023 a TikToker called **razioff** posted a cover of the song with most of the actual words replaced by confident gibberish, sung straight. The cover found an audience, but its tens of millions of plays arrived later, once the fusion happened. But audio memes need a body, and this one found the strangest body available.
 
 ## Then the nugget arrived
 

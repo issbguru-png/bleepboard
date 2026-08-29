@@ -23,7 +23,7 @@ The soundboard lives at the **server** level rather than the account level, so s
 
 To play a sound, join a voice channel and open the soundboard panel from the voice controls (the smiley-face-with-speaker icon). Click a sound and it plays to the channel.
 
-On mobile it's the same idea: server name → Settings → Soundboard → upload. In a voice call, swipe up on the call controls to reach the soundboard picker.
+Uploading is desktop and web only — the mobile app can play soundboard sounds but cannot add them. If you are on a phone, open Discord in a browser and request the desktop site. In a voice call, swipe up on the call controls to reach the soundboard picker.
 
 ## The limits you need to know about
 
@@ -31,7 +31,7 @@ On mobile it's the same idea: server name → Settings → Soundboard → upload
 
 **Files have to be small.** The size ceiling is tight, which follows naturally from the length limit. A trimmed MP3 of a couple of seconds sits comfortably inside it. If you're near the edge, re-export at a lower bitrate; nobody will hear the difference on a two-second meme sound.
 
-**Format:** MP3 and OGG are the safe choices. Convert a WAV before uploading and you'll drop most of the file size for free.
+**Format:** MP3 and OGG are the sensible choices. Discord accepts WAV too, but the 512KB cap makes it a waste of the budget, so convert first and you'll drop most of the file size for free.
 
 **Slot count depends on server boosts.** Every server gets a base number of soundboard slots, and boosting the server raises that allowance at each boost level, the same way boosting raises emoji and sticker limits. If you've run out of room, that's the lever.
 

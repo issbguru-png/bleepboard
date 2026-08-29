@@ -12,7 +12,7 @@ A man sang one sentence about another man's hypothetical haircut, and the intern
 
 ## Where the line came from
 
-On 5 January 2024, the singer **ericdoa** was freestyling live on Twitch. The stream had turned genuinely emotional; he'd been improvising about his late grandfather, and by his own later account he reached for the funniest thought he could find to break the mood. What came out, sung in complete earnest over the beat, was a hypothetical about the streamer **Ninja** (Tyler Blevins) getting a specific men's haircut.
+On 5 January 2024, the singer **ericdoa** was freestyling live on Twitch. The stream had turned genuinely emotional; by most retellings he had been improvising about something heavy and reached for the funniest thought he could find to break the mood. What came out, sung in complete earnest over the beat, was a hypothetical about the streamer **Ninja** (Tyler Blevins) getting a specific men's haircut.
 
 The delivery is the whole meme. The melody is legitimately good, the voice cracks with feeling, and the content is a barber recommendation for a Fortnite streamer. A clip posted to the ericdoaclips TikTok account on 11 January pulled over a million views inside a day, and the sound escaped into the wild.
 
