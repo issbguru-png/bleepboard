@@ -28,13 +28,13 @@
 export type AdNetwork = 'none' | 'adsense' | 'mediavine';
 
 /** Which ad network is live. Change this one line to switch. */
-export const AD_NETWORK: AdNetwork = 'none';
+export const AD_NETWORK: AdNetwork = 'adsense';
 
 /** Google Analytics 4. Empty string = not loaded. */
 export const GA4_ID = 'G-RE0Q1R4421';
 
 /** AdSense publisher ID. Empty string = not loaded. */
-export const ADSENSE_ID = ''; // TODO: 'ca-pub-0000000000000000'
+export const ADSENSE_ID = 'ca-pub-9795227844443219';
 
 /** Mediavine site ID. Empty string = not loaded. */
 export const MEDIAVINE_ID = ''; // TODO: from your Mediavine dashboard
@@ -45,7 +45,7 @@ export const MEDIAVINE_ID = ''; // TODO: from your Mediavine dashboard
  * You still have to create the message in the AdSense UI; this only loads it.
  * Uses ADSENSE_ID, so no extra value needed — just switch it on.
  */
-export const USE_GOOGLE_CMP = false;
+export const USE_GOOGLE_CMP = true;
 
 /**
  * COPPA / child-directed treatment.
@@ -78,4 +78,4 @@ export const MEDIAVINE_LIVE = AD_NETWORK === 'mediavine' && MEDIAVINE_ID !== '';
 export const TRACKING_LIVE = ADS_LIVE || ANALYTICS_LIVE;
 
 /** Date the privacy policy last materially changed. */
-export const POLICY_EFFECTIVE = '2026-08-26';
+export const POLICY_EFFECTIVE = '2026-08-29';
