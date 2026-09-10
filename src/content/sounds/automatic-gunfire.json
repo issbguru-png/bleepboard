@@ -1,0 +1,17 @@
+{
+  "title": "Automatic Gunfire",
+  "category": "sound-effects",
+  "tags": [
+    "gunshot",
+    "automatic",
+    "foley",
+    "action"
+  ],
+  "duration": 40.2,
+  "audio": "/audio/automatic-gunfire.mp3",
+  "blurb": "Forty seconds of sustained fire at roughly ten rounds a second, with no gap anywhere long enough to cut on cleanly. That running time is unusual for a soundboard, and it changes what the file is for. Nobody presses this for a punchline. It exists as a bed, the layer you run underneath a scene at low level so the picture has something to sit on. Loop points are easy to find because the cadence barely varies from start to finish. Lift a short section if you want a hit, or fade the whole thing under a montage and forget about it.",
+  "origin": "A generic sustained automatic gunfire recording, used as an ambience bed in edits.",
+  "added": "2026-09-10",
+  "featured": false,
+  "plays": 750
+}

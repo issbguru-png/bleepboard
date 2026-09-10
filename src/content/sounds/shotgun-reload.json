@@ -1,0 +1,17 @@
+{
+  "title": "Shotgun Reload",
+  "category": "sound-effects",
+  "tags": [
+    "gun",
+    "shotgun",
+    "reload",
+    "foley"
+  ],
+  "duration": 1,
+  "audio": "/audio/shotgun-reload.mp3",
+  "blurb": "Three metallic clacks inside a single second: two close together, a short pause, then the one that closes the action. Almost nothing here sits below 200 Hz. The whole recording lives around a kilohertz, the register an ear reads as mechanism rather than force, and that keeps it out of the way of everything else in a mix. It was captured quietly, so expect to add gain. Editors use pump foley much as they use a door latch or a seatbelt click, a small sound whose job is telling the audience that a scene has just changed gear.",
+  "origin": "A generic pump-action shotgun foley recording, widely used in video editing.",
+  "added": "2026-09-10",
+  "featured": false,
+  "plays": 900
+}

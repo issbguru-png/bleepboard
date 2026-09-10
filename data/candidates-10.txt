@@ -1,0 +1,13 @@
+# Batch 10 candidates: restock the gunshot cluster
+# Target: /gunshot-soundboard/ hub. "gunshot sound effect" 8,100/mo SD 32,
+# "gunshots soundboard" 1,600/mo SD 18. We hold 6 usable; this takes it to ~14.
+# All treated as editing foley, consistent with the existing gun clips.
+gunshots
+pistol-shot
+shotgun-reload
+automatic-gunfire
+shots-fired
+headshot-223
+gun-shot-roblox
+murder-mystery-shot
+i-need-more-bullets

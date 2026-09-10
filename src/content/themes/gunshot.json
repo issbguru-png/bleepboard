@@ -1,0 +1,56 @@
+{
+  "name": "Gunshot",
+  "hubTitle": "Gunshot Soundboard",
+  "metaDescription": "Gunshot sound effects: a clean single crack, pistol and sniper shots, reloads, cocking, sustained gunfire and the Roblox clip. Play free, grab the MP3.",
+  "icon": "sound-effects",
+  "order": 19,
+  "match": [
+    "gunshot",
+    "gun",
+    "sniper",
+    "bullet"
+  ],
+  "intro": "Every action scene you have watched was built out of clips like these. Firearm audio is one of the oldest jobs in post-production, and very little of what reaches an audience is a straight recording of the thing itself. It is a crack, a low thump and a tail, layered and trimmed until the timing sits right against picture.\n\nThat is what this board collects. The plain gunshot is the workhorse, one clean report with the reverb shaved off it, and the sniper clip is the same idea with distance added, which is what that long echo is doing. Handgun cocking is the shortest file here and probably the most used, because film has trained everyone to read two metallic clicks as a change in the scene. The reloads work on the same principle. Nothing about a magazine change is loud, and that is the point: it slides under dialogue without fighting anything for space.\n\nThe heavier end is here too. Gunshots gives you eleven reports in two volleys with a gap you can cut on, and Automatic Gunfire runs for forty seconds as a bed rather than a hit. Games speak their own dialect. Roblox audio travels through free libraries into thousands of projects, so its default shot is familiar to players who never chose it, and the Murder Mystery clip drops the bright crack for a low thump because that survives a phone speaker better.\n\nTwo of the buttons are people talking rather than anything firing, and one is a bass-heavy music clip that ended up here on the strength of its title. Worth knowing before any of them lands on your timeline.\n\nPress one and it plays, straight from the browser. Every sound page carries a free MP3 and a copy-paste embed code, no account involved. Mind the low end: most of what makes these satisfying lives below what a laptop speaker can reproduce.",
+  "faq": [
+    {
+      "q": "Where do gunshot sound effects come from?",
+      "a": "Almost never from a single microphone pointed at the source. A usable effect is assembled: a sharp transient for the crack, a low layer for weight, and a tail borrowed from a room or a canyon to place it in space. That is why the same recording can be made to sound close or distant depending on how much tail an editor leaves on it."
+    },
+    {
+      "q": "Which gunshot sound should I use in an edit?",
+      "a": "Match the tail to the shot. The plain gunshot has its reverb trimmed, so it cuts hard and lands like a full stop. The sniper clip keeps a long echo, which reads as distance and gives you something to cut against. Gunshots is the one to reach for when a single bang has already been spent, and Automatic Gunfire is a bed rather than a hit."
+    },
+    {
+      "q": "Why do so many games share the same gunshot?",
+      "a": "Because most of them did not commission one. A handful of free-library recordings circulate into thousands of projects, so the same report ends up attached to games that have nothing else in common, and a generation of players learns it as a default rather than as anyone's design decision. Two files on this site with different names turned out to be the same recording twelve milliseconds apart."
+    },
+    {
+      "q": "Can I download these gunshot sounds for free?",
+      "a": "Yes, and without an account. Each button links to its own page with an MP3 download and an embed code. They drop straight into CapCut, Premiere, DaVinci or OBS. If you are cutting for phones, high-pass the heavier files afterwards: several of these carry most of their weight below 100 Hz, where a handset speaker gives you a click instead of a thump."
+    }
+  ],
+  "es": {
+    "name": "disparos",
+    "hubTitle": "Botonera de Disparos",
+    "metaDescription": "Sonidos de disparo: el estallido limpio, la pistola, el francotirador, las recargas y el clip de Roblox. Tócalos gratis y baja cada MP3.",
+    "intro": "Casi ninguna escena de acción que hayas visto usa la grabación real de un arma. Lo que oyes es trabajo de posproducción: un chasquido, un golpe grave y una cola de reverberación, montados en capas y recortados hasta que el tiempo cuadra con la imagen. Esta botonera junta esas piezas sueltas.\n\nEl disparo limpio es el caballo de batalla, un solo estallido al que le quitaron la reverberación. El del francotirador es la misma idea con distancia añadida, y esa cola larga es justo lo que crea la distancia. El montaje de la pistola dura menos de un segundo y quizá sea el más usado de todos: el cine nos enseñó a leer dos clics metálicos como un cambio de situación, así que funciona sin que haga falta ver nada. Las recargas siguen la misma lógica. Ninguna hace ruido, y ahí está la gracia, porque entran debajo de un diálogo sin pelearse con él.\n\nTambién está la parte pesada. Gunshots trae once disparos repartidos en dos tandas con un hueco donde puedes cortar, y Automatic Gunfire dura cuarenta segundos, pensado como fondo y no como golpe. Los videojuegos hablan su propio dialecto: el sonido de Roblox pasó por las librerías gratuitas a miles de proyectos, y el de Murder Mystery cambia el chasquido agudo por un golpe grave que aguanta mejor la bocina de un celular.\n\nDos de los botones son alguien hablando, no un arma, y otro es un clip de música con mucho bajo que llegó aquí por su título. Conviene saberlo antes de ponerlos en la línea de tiempo.\n\nTodo suena directo desde el navegador, sin cuenta y sin instalar nada. Las fichas de cada sonido están en inglés, y ahí mismo tienes el MP3 gratis y el código para incrustar el botón. Un aviso sobre los graves: casi todo lo que hace satisfactorios estos clips vive por debajo de lo que una laptop alcanza a reproducir.",
+    "faq": [
+      {
+        "q": "¿De dónde salen los sonidos de disparo?",
+        "a": "Casi nunca de un micrófono apuntando a la fuente. Un efecto que sirve se arma por capas: un transitorio agudo para el chasquido, una capa grave para el peso, y una cola prestada de un cuarto o de un cañón para situarlo en el espacio. Por eso la misma grabación puede sonar cercana o lejana según cuánta cola le dejes."
+      },
+      {
+        "q": "¿Cuál disparo me conviene para un edit?",
+        "a": "Elige según la cola. El disparo limpio no tiene reverberación, corta seco y funciona como punto final. El del francotirador conserva un eco largo, que se lee como distancia y te da algo contra qué cortar. Gunshots sirve cuando ya gastaste un estallido antes en la línea de tiempo, y Automatic Gunfire es fondo, no golpe."
+      },
+      {
+        "q": "¿Por qué tantos juegos usan el mismo disparo?",
+        "a": "Porque la mayoría no encargó uno propio. Unas pocas grabaciones de bibliotecas gratuitas circulan por miles de proyectos, así que el mismo disparo termina en juegos que no tienen nada más en común, y toda una generación de jugadores lo aprende como sonido por defecto. Dos archivos de este sitio con nombres distintos resultaron ser la misma grabación con doce milisegundos de diferencia."
+      },
+      {
+        "q": "¿Puedo bajar estos disparos gratis?",
+        "a": "Sí, y sin registrarte. Cada botón lleva a su ficha con la descarga en MP3 y un código para incrustar. Entran directo en CapCut, Premiere, DaVinci u OBS. Si editas para verse en el teléfono, filtra los graves después: varios de estos clips cargan casi todo su peso por debajo de 100 Hz, donde una bocina chica te devuelve un clic en lugar de un golpe."
+      }
+    ]
+  }
+}

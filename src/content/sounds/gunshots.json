@@ -1,0 +1,17 @@
+{
+  "title": "Gunshots",
+  "category": "sound-effects",
+  "tags": [
+    "gunshot",
+    "foley",
+    "editing",
+    "action"
+  ],
+  "duration": 4.8,
+  "audio": "/audio/gunshots.mp3",
+  "blurb": "Eleven reports in just under five seconds, arranged as two volleys with a beat of near silence between them. That gap is the useful part. It hands an editor somewhere to cut, and it stops the file reading as one undifferentiated wall of noise the way a straight burst would. Plenty of low-frequency weight sits under each crack, so check the balance on a phone speaker before committing to it. Plural files like this get pulled out when a single bang has already been spent earlier in the timeline and repeating it would be obvious. Generic foley, honestly described.",
+  "origin": "A generic multi-shot firearm foley recording; no specific source.",
+  "added": "2026-09-10",
+  "featured": false,
+  "plays": 1400
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Pistol Shot",
+  "category": "sound-effects",
+  "tags": [
+    "gunshot",
+    "pistol",
+    "foley",
+    "editing"
+  ],
+  "duration": 2.3,
+  "audio": "/audio/pistol-shot.mp3",
+  "blurb": "Room tone for half a second, then one flat report with a rumble that keeps rolling for well over a second afterwards. The crack itself is not especially bright. Most of the energy sits below 100 Hz, which is why this lands as heavy rather than sharp, and why it needs a high-pass filter the moment it goes anywhere near dialogue. Worth knowing before you build an edit around it: the audio is the same recording as the Roblox gun shot elsewhere on this board, offset by about twelve milliseconds. Trim the silent head if the hit has to land on a specific frame.",
+  "origin": "A generic pistol foley recording, widely reused in game audio.",
+  "added": "2026-09-10",
+  "featured": false,
+  "plays": 1250
+}

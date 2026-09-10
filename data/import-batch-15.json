@@ -1,0 +1,107 @@
+[
+ {
+  "src": "gunshots",
+  "slug": "gunshots",
+  "title": "Gunshots",
+  "category": "sound-effects",
+  "tags": [
+   "gunshot",
+   "foley",
+   "editing",
+   "action"
+  ],
+  "blurb": "Eleven reports in just under five seconds, arranged as two volleys with a beat of near silence between them. That gap is the useful part. It hands an editor somewhere to cut, and it stops the file reading as one undifferentiated wall of noise the way a straight burst would. Plenty of low-frequency weight sits under each crack, so check the balance on a phone speaker before committing to it. Plural files like this get pulled out when a single bang has already been spent earlier in the timeline and repeating it would be obvious. Generic foley, honestly described.",
+  "origin": "A generic multi-shot firearm foley recording; no specific source.",
+  "plays": 1400
+ },
+ {
+  "src": "pistol-shot",
+  "slug": "pistol-shot",
+  "title": "Pistol Shot",
+  "category": "sound-effects",
+  "tags": [
+   "gunshot",
+   "pistol",
+   "foley",
+   "editing"
+  ],
+  "blurb": "Room tone for half a second, then one flat report with a rumble that keeps rolling for well over a second afterwards. The crack itself is not especially bright. Most of the energy sits below 100 Hz, which is why this lands as heavy rather than sharp, and why it needs a high-pass filter the moment it goes anywhere near dialogue. Worth knowing before you build an edit around it: the audio is the same recording as the Roblox gun shot elsewhere on this board, offset by about twelve milliseconds. Trim the silent head if the hit has to land on a specific frame.",
+  "origin": "A generic pistol foley recording, widely reused in game audio.",
+  "plays": 1250
+ },
+ {
+  "src": "shotgun-reload",
+  "slug": "shotgun-reload",
+  "title": "Shotgun Reload",
+  "category": "sound-effects",
+  "tags": [
+   "gun",
+   "shotgun",
+   "reload",
+   "foley"
+  ],
+  "blurb": "Three metallic clacks inside a single second: two close together, a short pause, then the one that closes the action. Almost nothing here sits below 200 Hz. The whole recording lives around a kilohertz, the register an ear reads as mechanism rather than force, and that keeps it out of the way of everything else in a mix. It was captured quietly, so expect to add gain. Editors use pump foley much as they use a door latch or a seatbelt click, a small sound whose job is telling the audience that a scene has just changed gear.",
+  "origin": "A generic pump-action shotgun foley recording, widely used in video editing.",
+  "plays": 900
+ },
+ {
+  "src": "automatic-gunfire",
+  "slug": "automatic-gunfire",
+  "title": "Automatic Gunfire",
+  "category": "sound-effects",
+  "tags": [
+   "gunshot",
+   "automatic",
+   "foley",
+   "action"
+  ],
+  "blurb": "Forty seconds of sustained fire at roughly ten rounds a second, with no gap anywhere long enough to cut on cleanly. That running time is unusual for a soundboard, and it changes what the file is for. Nobody presses this for a punchline. It exists as a bed, the layer you run underneath a scene at low level so the picture has something to sit on. Loop points are easy to find because the cadence barely varies from start to finish. Lift a short section if you want a hit, or fade the whole thing under a montage and forget about it.",
+  "origin": "A generic sustained automatic gunfire recording, used as an ambience bed in edits.",
+  "plays": 750
+ },
+ {
+  "src": "shots-fired",
+  "slug": "shots-fired",
+  "title": "Shots Fired",
+  "category": "meme",
+  "tags": [
+   "gunshot",
+   "voice",
+   "reaction",
+   "quote"
+  ],
+  "blurb": "A spoken line rather than a bang, which catches people out on a board otherwise full of foley. Two words delivered in one falling breath across about two and a half seconds, pitched high enough to cut through a busy mix with no EQ help at all. The speaker is not credited. Nothing in the file says where it was recorded either, so treat it as an anonymous voice clip and nothing more. It functions as a caption more than an effect: something has gone visibly wrong on screen and the audio confirms it. No firearm sound is bundled in, so layer one underneath if you want both.",
+  "origin": "A short spoken 'shots fired' clip; speaker and source unknown.",
+  "plays": 1050
+ },
+ {
+  "src": "murder-mystery-shot",
+  "slug": "murder-mystery-shot",
+  "title": "Murder Mystery Shot",
+  "category": "gaming",
+  "tags": [
+   "gun",
+   "roblox",
+   "murder-mystery",
+   "gaming"
+  ],
+  "blurb": "Murder Mystery 2 is a round-based Roblox game in which exactly one player is handed a gun, and this is the cue that settles the round. As sound design it does the job cheaply and well. There is no bright crack anywhere in it, just a low thump with a tail that rumbles on for the best part of two seconds, then a smaller hit near the end. Muffling the top is what makes it read as a game event instead of foley. The long tail is the awkward bit on a soundboard, since the clip keeps going after the joke has landed.",
+  "origin": "The gun sound from the Roblox game Murder Mystery 2.",
+  "plays": 1150
+ },
+ {
+  "src": "i-need-more-bullets",
+  "slug": "i-need-more-bullets",
+  "title": "I Need More Bullets",
+  "category": "meme",
+  "tags": [
+   "gun",
+   "voice",
+   "quote",
+   "meme"
+  ],
+  "blurb": "Four seconds, one short line, repeated about every nine hundred milliseconds until the file runs out. The loop is baked in. Convenient or annoying, depending on whether you wanted one clean take rather than four. The voice sits high, near 300 Hz, so it reads as cartoonish and stays audible over almost anything. Where it came from is not recorded anywhere in the file, and a guess would be worse than admitting that. On a board it gets fired as a complaint: the button you press when a game, a spreadsheet or a group chat has run out of whatever it needed.",
+  "origin": "A short spoken clip repeated four times; speaker and source unknown.",
+  "plays": 800
+ }
+]
