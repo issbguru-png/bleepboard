@@ -37,3 +37,26 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell Bing what changed, rather than waiting to be crawled. Bing and its
+  # downstream engines (DuckDuckGo, Yahoo) are about three quarters of this
+  # site's search traffic, so this is the channel worth pushing to. Google does
+  # not use IndexNow and does not need to.
+  #
+  # Runs after deploy, never blocks it: the script swallows its own errors and
+  # continue-on-error is belt and braces. A missed ping costs a day of crawl
+  # latency; a failed release costs more.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The default submission is "URLs whose source changed in this push",
+          # which needs the previous commit to diff against.
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/indexnow.mjs

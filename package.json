@@ -13,7 +13,9 @@
     "audit": "node scripts/audit-copy.mjs",
     "gen:blog-heroes": "node scripts/gen-blog-heroes.mjs",
     "audit:all": "node scripts/audit-copy.mjs --all",
-    "check": "node scripts/audit-copy.mjs && astro build"
+    "check": "node scripts/audit-copy.mjs && astro build",
+    "indexnow": "node scripts/indexnow.mjs",
+    "indexnow:all": "node scripts/indexnow.mjs --all"
   },
   "dependencies": {
     "astro": "^7.2.6"
