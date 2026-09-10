@@ -329,6 +329,74 @@ function chantPills({ hue, t }) {
   return out;
 }
 
+/** An alarm that will not take no for an answer: the same three-note figure
+ *  four times over, louder and tighter each time. Drawn as bars, so it is a
+ *  picture of escalation and not of anybody's phone. */
+function escalatingTriad({ hue, t }) {
+  const base = 448;
+  let out = `<line x1="96" y1="${base}" x2="1104" y2="${base}" stroke="${mix(hue, t.bg, 0.5)}" stroke-width="3"/>`;
+  let x = 150;
+  for (let g = 0; g < 4; g++) {
+    const scale = 0.5 + g * 0.185;        // each repeat louder
+    const bw = 46, gap = 20 - g * 3;      // and closer together
+    const fill = g === 3 ? hue : mix(hue, t.bg, 0.55 - g * 0.18);
+    for (let i = 0; i < 3; i++) {
+      const h = (150 + i * 95) * scale;
+      out += `<rect x="${n(x)}" y="${n(base - h)}" width="${bw}" height="${n(h)}" rx="14" fill="${fill}"/>`;
+      x += bw + gap;
+    }
+    x += 54 - g * 8;                      // and the gap between repeats shrinks
+  }
+  return out;
+}
+
+/** A data burst resolving into two tones held together. The attention signal,
+ *  drawn: narrow ticks for the machine-readable header, then the pair of
+ *  frequencies that sit a major second apart and refuse to blend. */
+function twoToneBurst({ hue, t }) {
+  const soft = mix(hue, t.ink, 0.28), faint = mix(hue, t.bg, 0.6);
+  // Fixed heights rather than Math.random(), so a rerun is byte-identical.
+  const hs = [140, 86, 210, 62, 178, 104, 232, 74, 156, 118, 196, 68, 144, 208, 92, 170];
+  let out = '';
+  hs.forEach((h, i) => {
+    const x = 96 + i * 26;
+    out += `<rect x="${x}" y="${n(272 - h / 2)}" width="14" height="${h}" rx="7" fill="${i % 3 === 0 ? soft : hue}"/>`;
+  });
+  out += `<line x1="536" y1="120" x2="536" y2="424" stroke="${faint}" stroke-width="3" stroke-dasharray="12 10"/>`;
+  // the two held tones: segmented so they read as two separate frequencies
+  [186, 330].forEach((y, row) => {
+    for (let i = 0; i < 8; i++) {
+      const x = 570 + i * 68;
+      out += `<rect x="${x}" y="${y + (row ? 0 : 0)}" width="56" height="38" rx="19" fill="${(i + row) % 2 ? faint : hue}"/>`;
+    }
+  });
+  // the beat between them, thinner and paler
+  out += `<rect x="570" y="266" width="534" height="16" rx="8" fill="${mix(hue, t.bg, 0.78)}"/>`;
+  return out;
+}
+
+/** A siren sweep tightening from wail into yelp, over the low band a Rumbler
+ *  works in. Geometry only, no lightbar and no vehicle. */
+function sirenSweep({ hue, t }) {
+  const soft = mix(hue, t.bg, 0.58), faint = mix(hue, t.bg, 0.8);
+  const mid = 236, amp = 128;
+  const pts = [];
+  let phase = 0;
+  for (let x = 96; x <= 1104; x += 6) {
+    const u = (x - 96) / 1008;
+    phase += 0.03 + Math.pow(u, 2.6) * 0.62;   // slow wail accelerating into yelp
+    pts.push(`${n(x)},${n(mid - Math.sin(phase) * amp)}`);
+  }
+  let low = '';
+  for (let i = 0; i < 7; i++) {
+    const x = 118 + i * 148, tall = i % 2 === 0;
+    low += `<rect x="${x}" y="${tall ? 404 : 414}" width="96" height="${tall ? 32 : 22}" rx="11" fill="${tall ? soft : faint}"/>`;
+  }
+  return `<line x1="96" y1="${mid}" x2="1104" y2="${mid}" stroke="${faint}" stroke-width="3" stroke-dasharray="14 12"/>
+    <polyline points="${pts.join(' ')}" fill="none" stroke="${hue}" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    ${low}`;
+}
+
 /** The joke is the number, so the number is the picture. */
 function bigNumerals({ hue, t }) {
   return `<rect x="286" y="88" width="628" height="368" rx="52" fill="${mix(hue, t.bg, 0.86)}"/>
@@ -373,6 +441,12 @@ const POSTS = {
     alt: 'Abstract Bleepboard artwork: a row of green bars stepping down from left to right along a clean diagonal, like a fade drawn as audio' },
   'what-is-gegagedigedagedago':          { hue: '#9333ea', motif: chantPills,   label: 'MEME ORIGINS · NONSENSE',
     alt: 'Abstract Bleepboard artwork: purple rounded pills carrying the syllables ge, ga, di and go, bouncing along an invisible wave' },
+  'iphone-alarm-sound-explained':        { hue: '#c2410c', motif: escalatingTriad, label: 'ALARM SOUNDS · EXPLAINER',
+    alt: 'Abstract Bleepboard artwork: four groups of three rising bars, each group taller and tighter than the last, like an alarm getting louder' },
+  'why-amber-alerts-sound-like-that':    { hue: '#ca8a04', motif: twoToneBurst, label: 'EMERGENCY ALERTS · EXPLAINER',
+    alt: 'Abstract Bleepboard artwork: a dense burst of narrow amber ticks on the left resolving into two long parallel tone bars running right' },
+  'police-siren-sounds-explained':       { hue: '#1e40af', motif: sirenSweep,   label: 'SIRENS · SOUND DESIGN',
+    alt: 'Abstract Bleepboard artwork: a deep blue wave that starts as slow wide sweeps and tightens into fast oscillation, over a row of heavy low bars' },
 };
 
 // --- frame ----------------------------------------------------------------
