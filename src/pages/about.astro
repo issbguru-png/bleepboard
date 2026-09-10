@@ -19,7 +19,7 @@ const posts = await getCollection('blog');
     <h1>About Bleepboard</h1>
     <p class="lede">
       Bleepboard is a soundboard built around one idea: when a meme takes off, you should be
-      able to play the sound — and know where it came from — within seconds.
+      able to play the sound, and know where it came from, within seconds.
     </p>
     <ul class="stats stats--icon">
       <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> sound buttons</span></li>
@@ -32,7 +32,7 @@ const posts = await getCollection('blog');
   <!-- ==================== 1. how a sound gets found ==================== -->
   <section class="section" id="pipeline">
     <div class="section-head">
-      <h2>How a sound gets found</h2>
+      <h2>How a Sound Gets Found</h2>
     </div>
     <p class="section-sub">
       Half machine, half stubborn human. Here is the actual route from "the internet is
@@ -52,13 +52,13 @@ const posts = await getCollection('blog');
   <!-- ==================== 2. origin story ==================== -->
   <section class="section" id="why">
     <div class="section-head">
-      <h2>Why we built this</h2>
+      <h2>Why We Built This</h2>
     </div>
 
     <div class="prose">
       <p>
         Meme sounds have always been easy to find and impossible to understand. You could get
-        the clip in about four clicks from a dozen sites — under a banner ad, behind a popup,
+        the clip in about four clicks from a dozen sites: under a banner ad, behind a popup,
         next to a download button that wasn't the download button. What you couldn't get was
         an answer to the obvious question: <strong>what is this, actually?</strong> Which film,
         which stream, which unhinged six seconds of someone's Tuesday. The clip arrived with no
@@ -66,10 +66,10 @@ const posts = await getCollection('blog');
       </p>
       <p>
         That gap is the whole reason Bleepboard exists. We wanted the soundboard that explains
-        itself — where pressing the button is the fast part and the story is right underneath it.
+        itself, where pressing the button is the fast part and the story is right underneath it.
       </p>
 
-      <h3>What that means in practice</h3>
+      <h3>What That Means in Practice</h3>
       <ul class="why-list">
         <li>
           <b>Every sound has a write-up, written by a person.</b> Not a templated sentence with
@@ -79,7 +79,7 @@ const posts = await getCollection('blog');
         </li>
         <li>
           <b>{categories.length} curated soundboards, not one undifferentiated dump.</b> Sounds
-          live in hubs — meme, gaming, Discord, brainrot, SpongeBob and the rest — each with its
+          live in hubs (meme, gaming, Discord, brainrot, SpongeBob and the rest), each with its
           own written introduction, so browsing gets you somewhere instead of scrolling forever.
         </li>
         <li>
@@ -96,7 +96,7 @@ const posts = await getCollection('blog');
 
       <p>
         None of that is clever engineering. It's just the boring, unscalable work of listening
-        to a clip and writing down what it is — which is exactly why so few soundboards bother.
+        to a clip and writing down what it is, and that is the part almost no soundboard bothers with.
       </p>
       <p>
         Want a sound added? Found something that shouldn't be here? See our
@@ -108,7 +108,7 @@ const posts = await getCollection('blog');
   <!-- ==================== 3. founder ==================== -->
   <section class="section" id="founder">
     <div class="section-head">
-      <h2>Who's behind it</h2>
+      <h2>Who's Behind It</h2>
     </div>
     <div class="author-card">
       <span class="founder-portrait">
@@ -116,17 +116,28 @@ const posts = await getCollection('blog');
       </span>
       <div class="author-body">
         <h3>Zam Zam Gillani</h3>
-        <p class="author-role">Founder</p>
-        {/* TODO: replace with Zam Zam's own words */}
+        <p class="author-role">Founder and editor, Bleepboard</p>
         <p>
           Zam Zam founded Bleepboard on a narrow, slightly pedantic conviction: a sound button
           should be able to tell you what it is. Plenty of soundboards will hand you the audio.
           Almost none will tell you which film, stream or late-night upload it escaped from.
         </p>
         <p>
-          So the rule here is hers — nothing gets a button until someone has worked out where it
-          came from and written that down. It is the slowest possible way to run a soundboard,
-          and it is the only version worth having.
+          So the rule here is hers. Nothing gets a button until someone has worked out where the
+          clip came from and written that down in plain English. It is the slowest possible way
+          to run a soundboard, and it is the only version worth having.
+        </p>
+        <p>
+          In practice that means she decides what gets cut, edits every write-up before it goes
+          live, and reads the report inbox herself. When a description turns out to be wrong, it
+          gets corrected and the correction gets logged rather than quietly buried. Several
+          entries on this site have been rewritten that way, including one whose most famous
+          fact turned out to be a misattribution the whole internet repeats.
+        </p>
+        <p>
+          Bleepboard is a small independent operation, run from Islamabad, with no investors and
+          nobody to please but the person who came here to find a sound. You can reach her
+          through the <a href="/contact/">contact page</a>.
         </p>
         <p class="author-note">
           The portrait above is an illustration in the site's house style, not a photograph.

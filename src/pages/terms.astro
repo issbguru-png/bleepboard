@@ -1,0 +1,293 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import { breadcrumbs } from '../lib/schema';
+import { ADS_LIVE } from '../lib/monetization';
+
+/* --- Terms of use ---------------------------------------------------------
+   Written to be read, and written to be true. The section that matters on a
+   soundboard is "Sounds, Copyright and Who Owns What": most clips here are
+   somebody else's intellectual property, hosted for reference and comment,
+   and this page must not imply we can license them to anyone, because we
+   cannot. Anything that reads like "all sounds are royalty free" would be
+   both false and the exact claim that gets a site like this sued.
+
+   TODO (owner): two deliberate omissions, both of which need a lawyer rather
+   than a template.
+     1. No governing-law / jurisdiction clause. Naming one is a real legal
+        commitment about where disputes are heard, and guessing it from a
+        postal address is not good enough.
+     2. No arbitration or class-action clause, for the same reason.
+   Nothing is stated on either, which is safer than stating the wrong thing.
+
+   This page is plain-English policy, not legal advice, and it has not been
+   reviewed by a lawyer. Worth doing before ad revenue makes the site a
+   target.
+-------------------------------------------------------------------------- */
+const EFFECTIVE = '10 September 2026';
+const CONTACT_TO = 'dmca@bleepboard.com';
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Terms of Use', SITE.url + '/terms/'],
+  ]),
+];
+---
+<Base
+  title="Terms of Use | Bleepboard"
+  description="The rules for using Bleepboard: what you may do with the sounds, who owns the clips, what we promise and what we do not. Written in plain English."
+  schema={schema}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">Terms of Use</span>
+  </nav>
+
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>Effective {EFFECTIVE}</p>
+    <h1>Terms of Use</h1>
+    <p class="lede">
+      The rules for using this site, written so you can actually read them. If something here
+      is unclear, ask rather than guess: the <a href="/contact/">contact page</a> goes to a
+      person.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>The Short Version</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>Playing and downloading sounds is free, and no account is required.</li>
+        <li>
+          We do not own most of the clips on this site, so we cannot give you permission to use
+          them. That permission is the rights holder's to give.
+        </li>
+        <li>
+          Personal use is fine. Commercial use of a clip is between you and whoever owns it.
+        </li>
+        <li>
+          If a clip is yours and you want it removed, the
+          <a href="/dmca/">takedown page</a> explains how, and those requests are handled first.
+        </li>
+        <li>The site is provided as it is, with no promises that it will always work.</li>
+      </ul>
+      <p>
+        The rest of this page is the same thing at greater length. Using Bleepboard means you
+        accept it.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What Bleepboard Is</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Bleepboard is a free soundboard. It hosts short audio clips, mostly from internet
+        culture, each on its own page with a written explanation of where the clip came from.
+        There is nothing to install and no account to create.
+      </p>
+      <p>
+        The site is operated by Bleepboard, Office 36A, UFONE Tower, Blue Area, Islamabad,
+        Pakistan.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Sounds, Copyright and Who Owns What</h2>
+    </div>
+    <div class="prose">
+      <p>
+        This is the part worth reading properly, because it is the part most soundboards are
+        vague about.
+      </p>
+      <p>
+        <strong>The clips are not ours.</strong> Most sounds on this site originate in films,
+        television, games, songs, streams and videos made by other people, and the rights in
+        them stay with those people. Hosting a clip here does not transfer any rights to us,
+        and it does not let us pass rights on to you. Anyone telling you a meme soundboard has
+        made a clip royalty free is wrong.
+      </p>
+      <p>
+        <strong>Why the clips are here at all.</strong> Each sound sits on a page that
+        identifies it, explains its origin and comments on how it is used. The clips are short,
+        they are hosted for reference and commentary, and they are not a substitute for the
+        work they came from. Whether that is permitted use depends on where you are and what
+        the clip is, and it is a judgement a court makes, not a claim we get to assert.
+      </p>
+      <p>
+        <strong>"Free download" means free of charge.</strong> It does not mean free of
+        copyright. The download button spares you a screen recorder. It does not hand you a
+        licence.
+      </p>
+      <p>
+        <strong>What is ours.</strong> The written descriptions, the explainer articles, the
+        site design, the code, the mascot and the artwork are Bleepboard's own work. Quote them
+        with credit and a link. Do not scrape the corpus wholesale to fill somebody else's
+        soundboard, which is the thing this site was built to be better than.
+      </p>
+      <p>
+        <strong>If a clip is yours.</strong> Send a takedown notice and it comes down. The
+        <a href="/dmca/">DMCA and takedown page</a> sets out exactly what a notice needs to
+        contain. You do not need a lawyer to write one, and you will not get an argument from
+        us about whether your own work is yours.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What You May Do With a Clip</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Playing a sound on this site, downloading it for yourself, and using it privately with
+        friends, in a Discord call or over a video you are editing for fun, is what the site is
+        for and nobody here has a problem with it.
+      </p>
+      <p>
+        Beyond that, the honest answer is that it depends on the clip and it is your call to
+        make. Putting a copyrighted sound into a monetised video, an advert, a product or
+        anything else commercial is between you and the rights holder. Platforms run their own
+        automated matching too, so a clip that is fine socially can still get a video muted or
+        claimed. We cannot clear any of that for you, and we will not pretend otherwise.
+      </p>
+      <p>Some things are not acceptable use of this site under any reading:</p>
+      <ul>
+        <li>Using a clip to harass, threaten, impersonate or deceive somebody.</li>
+        <li>
+          Presenting our written descriptions or articles as your own work, or republishing
+          them at scale.
+        </li>
+        <li>
+          Automated scraping, bulk downloading, or anything else that treats the site as a free
+          media pipe rather than a place people read.
+        </li>
+        <li>
+          Attempting to break, overload or work around the site's technical limits, or using it
+          in a way that breaks the law where you are.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Embedding Buttons</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Every sound page carries an embed code, and you are welcome to use it. The embedded
+        player keeps a visible link back to the sound's page on this site, and that link is the
+        arrangement: keep it, and the embed is free to use. Stripping the attribution and
+        passing the player off as your own is not.
+      </p>
+      <p>
+        Embeds are provided as they are. If a clip is later removed after a takedown notice,
+        the embed for it stops working, and that is a consequence of doing the right thing
+        rather than a fault to report.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What We Do Not Promise</h2>
+    </div>
+    <div class="prose">
+      <p>
+        The site is provided as it is and as it happens to be available. We do not guarantee
+        that it will be online, that every button will work, that a clip you used yesterday
+        will still be here tomorrow, or that a page is free of mistakes.
+      </p>
+      <p>
+        We do try hard on that last one. Descriptions are researched and corrected when they
+        turn out to be wrong, and a wrong fact is treated as a bug rather than a cosmetic
+        issue. Even so, this is a site about internet folklore, where the record is often thin
+        and sometimes contested, so treat a page here as a well-sourced account rather than
+        the final word.
+      </p>
+      <p>
+        Sounds get removed sometimes, usually because a rights holder asked. There is no
+        promise that any particular clip stays available, so if a sound matters to your work,
+        keep your own copy.
+      </p>
+      <p>
+        To the fullest extent the law allows, Bleepboard is not liable for loss or damage
+        arising from your use of the site or of anything you downloaded from it, including how
+        you chose to use a clip.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Links, Ads and Other People's Services</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Pages here link out to sources, wikis, videos and articles, because that is what makes
+        an origin story checkable. Those sites are not ours and we are not responsible for what
+        they do.
+      </p>
+      {ADS_LIVE ? (
+        <p>
+          This site carries advertising, which pays for hosting and for the time that goes into
+          the write-ups. Ads are served by third parties who set their own cookies and
+          identifiers, and the <a href="/privacy/">privacy policy</a> explains what that means
+          and how to control it.
+        </p>
+      ) : (
+        <p>
+          There is currently no advertising on this site. If that changes, the
+          <a href="/privacy/">privacy policy</a> will say so before it happens, and this
+          paragraph will change with it.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Changes to These Terms</h2>
+    </div>
+    <div class="prose">
+      <p>
+        These terms will change as the site does. When they change materially, the effective
+        date at the top of this page changes with them. There is no mailing list to notify,
+        so the date is the honest signal, and continuing to use the site after a change means
+        you accept the current version.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-head">
+      <h2>Questions</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Anything about this page goes to <b class="mail">{CONTACT_TO}</b>, or through the
+        <a href="/contact/">contact page</a>, which routes the common requests for you.
+      </p>
+      <p class="fine">
+        This page describes how Bleepboard operates. It is not legal advice. If you need to
+        know how a particular law applies to you or to a clip you want to use, ask a lawyer
+        rather than a soundboard.
+      </p>
+    </div>
+
+    <p class="btn-row back-row">
+      <a class="btn" href="/privacy/">Privacy Policy</a>
+      <a class="btn" href="/dmca/">DMCA and Takedowns</a>
+      <a class="btn" href="/contact/">Contact</a>
+    </p>
+  </section>
+</Base>

@@ -9,7 +9,7 @@ export const SITE = {
   ogImage: '/og-image.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: 'Bleepboard — free meme soundboard and instant sound buttons',
+  ogImageAlt: 'Bleepboard: free meme soundboard and instant sound buttons',
   /** Square mark, used as the Organization logo in JSON-LD. */
   logo: '/apple-touch-icon.png',
 };

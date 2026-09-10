@@ -1,0 +1,216 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import { breadcrumbs } from '../lib/schema';
+
+/* --- Where mail actually goes ---------------------------------------------
+   dmca@bleepboard.com is the only address on this domain that is known to be
+   provisioned, so every route on this page points at it. That is deliberate:
+   a contact page listing four tidy addresses that bounce is worse than one
+   plain address that works.
+
+   TODO (owner): provision hello@bleepboard.com (or contact@) and change
+   CONTACT_TO below. Nothing else needs editing; the subject prefixes stay the
+   same so existing inbox filters keep working.
+
+   The prefixes match the Report menu on every sound page and the DMCA page.
+   Change them in one place and you break sorting in the others.
+-------------------------------------------------------------------------- */
+const CONTACT_TO = 'dmca@bleepboard.com';
+const enc = encodeURIComponent;
+const mailto = (subject: string, body = '') =>
+  `mailto:${CONTACT_TO}?subject=${enc(subject)}${body ? `&body=${enc(body)}` : ''}`;
+
+const suggestBody = [
+  'What the sound is:',
+  '',
+  'Where it is from (a link to the clip, video or stream if you have one):',
+  '',
+  'Anything else worth knowing:',
+  '',
+].join('\n');
+
+const routes = [
+  {
+    label: 'Suggest a Sound',
+    href: mailto('Sound suggestion: [name of the sound]', suggestBody),
+    blurb:
+      'Tell us what it is and where it came from. A link to the original clip is the single most useful thing you can include, because nothing gets a button here until someone can write down its origin.',
+  },
+  {
+    label: 'Report a Problem With a Sound',
+    href: '/dmca/',
+    internal: true,
+    blurb:
+      'A button that does nothing, a clip that cuts off early, audio that is not what the page says it is, or a write-up with a fact wrong in it. The report page has a separate route for each, and every sound page carries the same menu.',
+  },
+  {
+    label: 'Copyright and Takedowns',
+    href: '/dmca/',
+    internal: true,
+    blurb:
+      'If you own a clip on this site and want it gone, the takedown page explains exactly what a notice needs to contain and where to send it. Rights holders get answered first.',
+  },
+  {
+    label: 'Privacy and Your Data',
+    href: '/privacy/',
+    internal: true,
+    blurb:
+      'What we collect, what we do not, and how to ask about it. Short version: no accounts, no profiles, and your favourites never leave your own browser.',
+  },
+  {
+    label: 'Press, Partnerships and Everything Else',
+    href: mailto('Bleepboard enquiry'),
+    blurb:
+      'Writing about the site, want to use a button somewhere, or have a question none of the above covers. Real email, read by a person.',
+  },
+];
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Contact', SITE.url + '/contact/'],
+  ]),
+];
+---
+<Base
+  title="Contact Bleepboard"
+  description="How to reach Bleepboard: suggest a sound, report a broken or misattributed clip, send a copyright notice, or ask about privacy. Real email, read by a person."
+  schema={schema}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">Contact</span>
+  </nav>
+
+  <section class="page-head">
+    <p class="eyebrow"><span class="tick"></span>Contact</p>
+    <h1>Get in Touch</h1>
+    <p class="lede">
+      There is no ticket system here and no contact form that quietly goes nowhere. Every route
+      below is an email address that a person reads, usually the same person who wrote the page
+      you were looking at.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What Do You Need?</h2>
+    </div>
+    <p class="section-sub">
+      Picking the right route gets you a faster answer, mostly because it lands in the right
+      part of one small inbox.
+    </p>
+
+    <ul class="contact-routes">
+      {routes.map((r) => (
+        <li>
+          <a class="contact-route" href={r.href}>
+            <span class="contact-label">{r.label}</span>
+            <span class="contact-blurb">{r.blurb}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Email and Postal Address</h2>
+    </div>
+    <div class="prose">
+      <p>
+        If you would rather skip the routing above, write to
+        <b class="mail">{CONTACT_TO}</b> and say what you need. It is the same inbox either way.
+      </p>
+      <p>
+        Bleepboard<br />
+        Office 36A, UFONE Tower<br />
+        Blue Area, Islamabad<br />
+        Pakistan
+      </p>
+      <p>
+        Post reaches us eventually and email reaches us the same day, so email is the better
+        bet unless you specifically need a paper trail. Copyright notices are the exception:
+        those are answered first regardless of how they arrive.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What to Expect</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Bleepboard is run by one small team, so replies are written rather than generated, and
+        that takes as long as it takes. We do not promise a response window here because a
+        promise we cannot keep during a busy week is worth nothing to you.
+      </p>
+      <p>
+        What we can tell you is the order things get handled in. Copyright and takedown notices
+        come first. Reports of a clip that is broken or wrong come next, because a factual error
+        on a page is the one problem this site treats as urgent. Sound suggestions and general
+        questions come after that, and they do get read.
+      </p>
+      <p>
+        One thing worth saying plainly: if you tell us a write-up has a fact wrong in it, that
+        is a favour rather than a complaint, and it will be checked against a source rather
+        than waved away.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="btn-row">
+      <a class="btn primary" href="/about/">About Bleepboard</a>
+      <a class="btn" href="/dmca/">Report or Takedown</a>
+      <a class="btn" href="/terms/">Terms of Use</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  /* One column of tappable routes. Each is a whole-card link so the target is
+     big on a phone, where most of this site's traffic reads it. */
+  .contact-routes {
+    list-style: none;
+    padding: 0;
+    margin: var(--s4) 0 0;
+    display: grid;
+    gap: var(--s3);
+  }
+  @media (min-width: 760px) {
+    .contact-routes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .contact-route {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    padding: var(--s4);
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow-1);
+    transition: border-color 0.15s var(--ease), box-shadow 0.2s var(--ease),
+                transform 0.12s var(--ease);
+  }
+  .contact-route:hover {
+    border-color: var(--line-2);
+    box-shadow: var(--shadow-2);
+    transform: translateY(-1px);
+  }
+  .contact-route:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .contact-label { font-weight: 700; letter-spacing: -0.01em; }
+  .contact-route:hover .contact-label { color: var(--accent-text); }
+  .contact-blurb { font-size: var(--step--1); color: var(--ink-2); line-height: 1.5; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-route { transition: none; }
+    .contact-route:hover { transform: none; }
+  }
+</style>

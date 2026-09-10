@@ -14,8 +14,10 @@ export const GET: APIRoute = () => {
     '/unblocked-soundboard/',
     '/blog/',
     '/about/',
+    '/contact/',
     '/dmca/',
     '/privacy/',
+    '/terms/',
   ];
   return urlset(pages.map((p) => ({ loc: SITE.url + p })));
 };
