@@ -1,0 +1,58 @@
+{
+  "name": "Star Wars",
+  "hubTitle": "Star Wars Soundboard",
+  "metaDescription": "Star Wars sound buttons: the lightsaber ignition, R2-D2, Chewbacca, the main theme, Hello There and Vader's NOOOO. Play free, download every MP3.",
+  "icon": "anime",
+  "order": 18,
+  "match": [
+    "star-wars",
+    "lightsaber",
+    "r2d2",
+    "chewbacca",
+    "obi-wan",
+    "darth-vader"
+  ],
+  "intro": "One man made most of these. Ben Burtt joined Star Wars as its sound designer before anyone involved knew whether the film would work, and he built the galaxy's entire vocabulary out of ordinary objects recorded in the real world rather than out of a synthesiser bank. Nearly fifty years later his work is still the reference every science fiction film gets measured against.\n\nThe lightsaber came from two accidents. Burtt combined the idling hum of an old film projector motor with the buzz a broken television made when he walked a live microphone past the picture tube, then added doppler shift so the blade moved. That is the whole recipe for a weapon audiences believed in instantly despite it never having existed. R2-D2 took a different route: an ARP 2600 synthesiser, a microphone, and Burtt whistling and squeaking into it until the result stopped sounding human.\n\nChewbacca is the strangest achievement of the three. Burtt assembled a Wookiee's full emotional range out of bears, walruses, badgers and a lion, layered until the recordings became a language. Chewbacca expresses frustration, deep affection and mild scheduling disagreement using more or less the same noise, and audiences have never once lost track of which one he means.\n\nThe music went the opposite way, deliberately. John Williams wrote the main title for the 1977 opening crawl and recorded it with the London Symphony Orchestra, borrowing the sweep of Golden Age Hollywood at a moment when film scoring had largely moved on to synthesisers and pop songs. Two clips here come from the internet rather than from the sound department. Obi-Wan says Hello There twice in the saga, cheerfully to R2-D2 in 1977 and to Grievous in Revenge of the Sith, and prequel memes adopted the second one as a password. Vader's NOOOOO closes that same film and was later spliced into Return of the Jedi for the 2011 Blu-ray release.\n\nThere is no signup here and no launcher to open. Each sound page has a free MP3 download and a copy-paste embed code, so the lightsaber can go into an edit, a stream alert or a Discord soundboard within about a minute.",
+  "faq": [
+    {
+      "q": "How was the lightsaber sound made?",
+      "a": "Out of two pieces of broken equipment. Ben Burtt layered the idle hum of an old film projector motor with the buzz a faulty television gave off when a live microphone passed the picture tube, then added doppler shift so the blade seemed to move through space. The snap-hiss of ignition is the part everybody tries to imitate with their mouth."
+    },
+    {
+      "q": "What is R2-D2's voice actually made of?",
+      "a": "An ARP 2600 synthesiser and Ben Burtt's own voice, processed together until nothing human survived. Audiences follow every line without a single word being spoken, because the beeps carry sarcasm, alarm, exasperation and genuine affection. No child has ever needed the droid subtitled, which is a fairly remarkable piece of sound design."
+    },
+    {
+      "q": "Why is Hello There a meme?",
+      "a": "Because prequel memes turned it into a password. Obi-Wan says it twice in the films, first to R2-D2 in 1977 and later to General Grievous in Revenge of the Sith, and the internet took the second reading. Say the words in any room containing a Star Wars fan and somebody will answer before their brain has been consulted."
+    },
+    {
+      "q": "Can I download these Star Wars sounds as MP3s?",
+      "a": "Yes, free and without an account. Each button opens its own sound page with the MP3 and an embed code. They are short board clips at the quality a soundboard needs, not archival source audio. For edits, stream alerts and Discord they load faster and land the same, which is what most people are here for."
+    }
+  ],
+  "es": {
+    "name": "Star Wars",
+    "hubTitle": "Botonera de Star Wars",
+    "metaDescription": "Sonidos de Star Wars: el sable de luz, R2-D2, Chewbacca, el tema principal, Hello There y el NOOOO de Vader. Suenan gratis y bajas cada MP3.",
+    "intro": "Casi todo esto lo hizo una sola persona. Ben Burtt entró a Star Wars como diseñador de sonido cuando nadie sabía todavía si la película iba a funcionar, y armó el vocabulario entero de esa galaxia con objetos comunes grabados en el mundo real, no con un banco de sintetizadores. Casi cincuenta años después su trabajo sigue siendo la referencia con la que se mide cualquier película de ciencia ficción.\n\nEl sable de luz salió de dos accidentes. Burtt combinó el zumbido del motor de un viejo proyector de cine con el ruido que soltaba un televisor descompuesto cuando pasaba un micrófono encendido frente al tubo, y luego le agregó efecto doppler para que la hoja se moviera. Esa es la receta completa de un arma en la que el público creyó al instante pese a que no existe. R2-D2 tomó otro camino: un sintetizador ARP 2600, un micrófono y Burtt silbando y chillando hasta que aquello dejó de sonar humano.\n\nChewbacca es el logro más raro de los tres. Burtt construyó todo el rango emocional de un wookiee con osos, morsas, tejones y un león, capa sobre capa, hasta que las grabaciones se volvieron un idioma. Chewbacca expresa frustración, cariño profundo y desacuerdos menores de agenda usando prácticamente el mismo ruido, y el público nunca ha confundido cuál es cuál.\n\nLa música fue a propósito en dirección contraria. John Williams escribió el tema principal para el texto inicial de 1977 y lo grabó con la Orquesta Sinfónica de Londres, recuperando el aliento del viejo Hollywood justo cuando la música de cine ya se había mudado a los sintetizadores. Dos clips de aquí vienen de internet y no del departamento de sonido. Obi-Wan dice Hello There dos veces en la saga, primero a R2-D2 en 1977 y después a Grievous en La venganza de los Sith, y los memes de las precuelas adoptaron la segunda como contraseña. El NOOOOO de Vader cierra esa misma película.\n\nNada de esto pide registro ni instalación. Cada ficha está en inglés e incluye la descarga en MP3 gratis y un código para incrustar el botón, así que el sable de luz puede estar en tu edición, en tu alerta de stream o en tu botonera de Discord en cosa de un minuto.",
+    "faq": [
+      {
+        "q": "¿Cómo hicieron el sonido del sable de luz?",
+        "a": "Con dos aparatos descompuestos. Ben Burtt mezcló el zumbido del motor de un proyector de cine viejo con el ruido de un televisor averiado captado al pasar un micrófono encendido frente al tubo, y le añadió efecto doppler para que la hoja pareciera moverse. El chasquido del encendido es la parte que todo el mundo intenta imitar con la boca."
+      },
+      {
+        "q": "¿De qué está hecha la voz de R2-D2?",
+        "a": "De un sintetizador ARP 2600 y de la propia voz de Ben Burtt, procesadas juntas hasta que no quedó nada humano. El público entiende cada frase sin que se diga una sola palabra, porque los pitidos cargan sarcasmo, alarma, hartazgo y cariño real. Ningún niño ha necesitado subtítulos para el droide, y eso ya dice bastante del diseño sonoro."
+      },
+      {
+        "q": "¿Por qué Hello There es un meme?",
+        "a": "Porque los memes de las precuelas lo convirtieron en contraseña. Obi-Wan lo dice dos veces en las películas: primero a R2-D2 en 1977 y después al general Grievous en La venganza de los Sith, y de esa segunda salió el meme. Suelta las dos palabras en un cuarto donde haya un fan y alguien va a responder antes de pensarlo."
+      },
+      {
+        "q": "¿Puedo bajar estos sonidos de Star Wars en MP3?",
+        "a": "Sí, gratis y sin registrarte. Cada botón abre su ficha con el MP3 y un código para incrustar el botón. Son clips cortos con la calidad que necesita una botonera, no audio de archivo para un proyecto serio. Para ediciones, alertas de stream y Discord cargan más rápido y consiguen el mismo efecto, que es a lo que viene la mayoría."
+      }
+    ]
+  }
+}

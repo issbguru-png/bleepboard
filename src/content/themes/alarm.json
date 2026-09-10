@@ -1,0 +1,58 @@
+{
+  "name": "Alarm",
+  "hubTitle": "Alarm Soundboard",
+  "metaDescription": "Alarm sound buttons: the Amber Alert tone, police siren, tornado warning, smoke detector chirp and the Among Us emergency meeting. Free MP3 downloads.",
+  "icon": "sound-effects",
+  "order": 16,
+  "match": [
+    "alarm",
+    "siren",
+    "emergency",
+    "tornado",
+    "smoke-detector",
+    "amber-alert"
+  ],
+  "intro": "An alarm has one job and no interest in whether you enjoy it. Everything on this board was engineered to beat a distracted brain in a noisy room, and that same property is what makes these clips such reliable pranks and such useful edit material. Nothing else on the site clears a conversation faster.\n\nThe Amber Alert tone is the most thoroughly designed sound here. United States rules specify the Emergency Alert System attention signal as two frequencies played together, 853 Hz and 960 Hz, held within half a hertz of those values. The two sit almost exactly a major second apart, close enough to grind rather than blend, so your ear registers roughness instead of a chord and familiarity never wears it smooth. Wireless Emergency Alerts, the system that carries it to phones, went live in April 2012.\n\nSirens solve a different problem. A modern emergency vehicle runs several preset tones off one speaker: wail for distance, yelp for junctions, hi-lo against stationary traffic, and the air horn for the one driver who still has not looked up. Sirens are also notoriously hard to place, because their traditional band of roughly 500 Hz to 1.8 kHz sits in an awkward gap between the two cues human hearing uses for direction. The generic wail on this board impersonates no real service, which makes it the safer pick for anything public.\n\nThe domestic end is somehow worse. A smoke detector's low-battery chirp is a tiny sound with an outsized capacity to ruin a night, the campus fire alarm is the institutional version, and Radar is the default iPhone alarm that a great many people now resent on reflex. Screens contribute the rest: the Among Us emergency meeting and sabotage buzzer from InnerSloth, a red-alert klaxon from edit culture, SpongeBob's fog horn, and the Squid Game wake-up call, which is Haydn's Trumpet Concerto in E flat major doing a job Haydn never planned for it.\n\nOne caution worth reading before you press anything. In the United States it is unlawful to transmit the EAS or WEA attention signals outside a real emergency or an authorised test, and that rule covers broadcasts, adverts and promos. Playing a clip to the person next to you is a different matter, though their reaction may be hard to distinguish. Everything downloads free as an MP3 from its own sound page.",
+  "faq": [
+    {
+      "q": "Why is the Amber Alert sound so hard to ignore?",
+      "a": "Because two frequencies were chosen to fight each other. The Emergency Alert System signal is specified as 853 Hz and 960 Hz together, roughly a major second apart, which is close enough that your ear hears roughness rather than a chord. It also has to survive a bad speaker in a loud kitchen, so nothing about it is pleasant by accident."
+    },
+    {
+      "q": "What do the different police siren sounds mean?",
+      "a": "Wail is the slow sweep, a second or two per cycle, and it carries furthest on open road. Yelp is the same sweep run several times faster, used close to traffic. Hi-lo alternates between two fixed notes and cuts through a stationary queue better. The air horn goes over the top of whichever tone is already running."
+    },
+    {
+      "q": "Can I use the Amber Alert tone in a YouTube video?",
+      "a": "Treat it carefully. United States rules ban transmitting the real EAS and WEA attention signals, or anything close enough to be mistaken for them, outside an actual emergency or an authorised test, and the FCC has fined broadcasters over it. For anything public, the generic siren wail on this board is the sensible substitute, since it impersonates no real service."
+    },
+    {
+      "q": "Can I download these alarm sounds as MP3s?",
+      "a": "Yes, free and without an account. Each button opens its own sound page with the MP3 and a copy-paste embed code. The smoke detector chirp and the campus fire alarm are the two people take most often, usually for reasons their flatmates would not endorse. They also work as stream alerts, which is the less antisocial use."
+    }
+  ],
+  "es": {
+    "name": "alarmas",
+    "hubTitle": "Botonera de Alarmas",
+    "metaDescription": "Sonidos de alarma: la alerta de emergencia, sirena de policía, alarma de tornado, detector de humo y la junta de Among Us. Gratis y en MP3.",
+    "intro": "Una alarma tiene una sola tarea y le da igual si te incomoda. Todo lo que hay en esta botonera fue diseñado para vencer a un cerebro distraído dentro de un cuarto ruidoso, y esa misma cualidad es la que las vuelve tan buenas para bromas y tan útiles al editar. Nada más en el sitio corta una conversación tan rápido.\n\nEl tono de alerta de emergencia es el sonido mejor diseñado de la página. Las reglas estadounidenses definen la señal de atención del Emergency Alert System como dos frecuencias sonando juntas, 853 Hz y 960 Hz, con un margen de medio hercio. Esas dos notas quedan casi exactamente a una segunda mayor de distancia: lo bastante cerca para rasparse en vez de mezclarse, así que el oído percibe aspereza y no un acorde, y la costumbre nunca llega a suavizarlo.\n\nLas sirenas resuelven otro problema. Una patrulla moderna reproduce varios tonos desde una sola bocina: el barrido lento para distancias largas, el rápido para los cruces, el de dos notas alternadas contra el tráfico detenido y la bocina de aire para el conductor que todavía no levanta la vista. Además cuesta ubicarlas: su banda habitual, de unos 500 Hz a 1.8 kHz, cae justo en el hueco entre las dos pistas que usa el oído humano para orientarse. El barrido genérico de aquí no imita a ningún servicio real, y por eso es la opción más segura si el video va a algún lado público.\n\nLa parte doméstica es peor todavía. El chirrido de batería baja del detector de humo es un sonido diminuto con una capacidad enorme de arruinarte la noche, la alarma de incendios de escuela es su versión institucional y Radar es la alarma que trae el iPhone de fábrica, hoy odiada por reflejo. Las pantallas ponen el resto: la junta de emergencia y el zumbador de sabotaje de Among Us, un klaxon de alerta roja, la sirena de niebla de Bob Esponja y el despertador de Squid Game, que es el Concierto para trompeta en mi bemol mayor de Haydn haciendo un trabajo que Haydn no tenía previsto.\n\nUna advertencia antes de que toques nada. En Estados Unidos es ilegal transmitir las señales reales de alerta de emergencia fuera de una emergencia o de una prueba autorizada, y la regla cubre transmisiones, anuncios y promos. Ponerle el clip a la persona de al lado es otra cosa, aunque la reacción se parezca bastante. Cada sonido tiene su ficha en inglés con la descarga en MP3 gratis.",
+    "faq": [
+      {
+        "q": "¿Por qué es tan insoportable el tono de alerta de emergencia?",
+        "a": "Porque eligieron dos frecuencias para que peleen entre sí. La señal del Emergency Alert System son 853 Hz y 960 Hz sonando juntas, más o menos a una segunda mayor de distancia, lo bastante cerca para que el oído perciba aspereza en lugar de un acorde. Además tiene que sobrevivir a una bocina mala en una cocina ruidosa, así que nada en ella es desagradable por accidente."
+      },
+      {
+        "q": "¿Qué significa cada sonido de sirena de policía?",
+        "a": "El barrido lento, de uno o dos segundos por ciclo, es el que llega más lejos en carretera abierta. El mismo barrido acelerado varias veces se usa cerca del tráfico y en los cruces. El de dos notas alternadas atraviesa mejor una fila de coches detenidos. Y la bocina de aire se dispara encima de cualquiera de los anteriores."
+      },
+      {
+        "q": "¿Puedo usar el tono de alerta en un video de YouTube?",
+        "a": "Con cuidado. Las reglas estadounidenses prohíben transmitir las señales reales de alerta de emergencia, o cualquier cosa que se confunda con ellas, fuera de una emergencia o una prueba autorizada, y la FCC ha multado por eso. Si el video va a ser público, el barrido de sirena genérico de esta botonera es el sustituto sensato, porque no imita a ningún servicio real."
+      },
+      {
+        "q": "¿Puedo bajar estas alarmas en MP3?",
+        "a": "Sí, gratis y sin crear cuenta. Cada botón abre su ficha con el MP3 y un código para incrustar el botón donde quieras. El chirrido del detector de humo y la alarma de incendios son los que más se llevan, casi siempre por motivos que sus compañeros de piso no aprobarían. También sirven de alerta en un stream, que es el uso menos antisocial."
+      }
+    ]
+  }
+}

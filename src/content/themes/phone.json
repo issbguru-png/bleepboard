@@ -1,0 +1,66 @@
+{
+  "name": "Phone",
+  "hubTitle": "Phone Soundboard",
+  "metaDescription": "Phone sound buttons: the Nokia tune, iPhone tri-tone, FaceTime ring, dial tone, busy signal and the dial-up handshake. Play free, download the MP3.",
+  "icon": "notification",
+  "order": 14,
+  "match": [
+    "iphone",
+    "telephone",
+    "ringtone",
+    "facetime",
+    "nokia",
+    "dial",
+    "keypad",
+    "voicemail",
+    "cell-phone",
+    "phone-vibrate",
+    "yo-phone",
+    "gta-notification",
+    "hello-moto",
+    "skype"
+  ],
+  "intro": "Nobody chose these sounds and everybody knows them. A ringtone, a dial tone, three descending notes from a pocket on the far side of a room: this is the audio furniture of the last forty years, installed by carriers and handset makers rather than by anyone with taste, and lodged in your memory regardless.\n\nThe Nokia tune is the strangest success story on the board. Francisco Tarrega wrote Gran Vals for solo guitar in 1902; Nokia lifted thirteen notes out of it, and that fragment went on to ring from billions of handsets, which makes it one of the most-heard melodies in human history. Motorola answered with a sung logo instead of a melody, and Americans on Cingular heard their carrier's tone constantly until the brand took the AT&T name in 2007.\n\nApple has the largest single share of this page. The tri-tone alert has been the default text sound since the early iPhone era, which has trained a room full of people to check their pockets in unison. Radar is the default alarm. The camera shutter is a fake, synthesised on purpose so that a silent phone still announces a photograph. FaceTime supplies three separate buttons, and the hang-up sound has quietly become the internet's preferred way to end a conversation.\n\nA few of these are real telephone engineering rather than branding. The North American dial tone is two sine waves at 350 and 440 Hz played together, the busy signal is 480 and 620 Hz in a half-second cadence, and the keypad uses genuine DTMF pairs, the same frequencies a real phone dials with. The dial-up handshake is a conversation as well: two modems trading tones to agree on a speed before settling into static.\n\nThe rest arrived from games and short-form video. Phone Guy leaves his night-one voicemail in Five Nights at Freddy's, GTA V has its own notification, Skype's ringtone still triggers an exam-era flashback for a certain age group, and Yo Phone Linging is what happens when a deep-fried clip escapes. Every button plays free from the browser, and each sound page has the MP3 waiting behind it.",
+  "faq": [
+    {
+      "q": "What is the Nokia ringtone actually called?",
+      "a": "It is officially the Nokia tune, and the melody is not original to Nokia. It comes from Gran Vals, a solo guitar piece written by the Spanish composer Francisco Tarrega in 1902. Nokia took thirteen notes from it. Tarrega has been dead since 1909 and never learned that his waltz became the most-rung phrase on the planet."
+    },
+    {
+      "q": "Why does the iPhone notification sound so familiar?",
+      "a": "Because it has been the default text tone since the early iPhone years, and defaults are what everybody keeps. Three descending notes, roughly a second, and a whole cafe reaches for a pocket. Editors use it in videos to signal an incoming message without showing a screen, and the audience never needs it explained."
+    },
+    {
+      "q": "What is the dial-up modem sound doing?",
+      "a": "Negotiating. What sounds like a machine screaming is two modems exchanging tones to agree on a connection speed, then measuring the quality of the phone line before settling into that final wash of static. None of it could happen while somebody was on the telephone, which is the detail everyone who lived through it remembers."
+    },
+    {
+      "q": "Can I use these as a real ringtone?",
+      "a": "On Android, mostly yes: download the MP3 from the sound page and point your ringtone settings at it. On an iPhone it is more awkward, because iOS wants an m4r file and expects you to load it through a computer. For a video edit, a stream alert or a Discord soundboard, the MP3 works everywhere with no conversion."
+    }
+  ],
+  "es": {
+    "name": "teléfono",
+    "hubTitle": "Botonera de Teléfono",
+    "metaDescription": "Sonidos de teléfono: el tono de Nokia, la alerta del iPhone, FaceTime, el tono de marcar y el módem. Suenan gratis y bajas cada MP3 sin registrarte.",
+    "intro": "Nadie eligió estos sonidos y aun así todo el mundo los reconoce. Un tono de llamada, el tono de marcar, tres notas descendentes saliendo de un bolsillo al otro lado del cuarto. Son los muebles sonoros de los últimos cuarenta años, instalados por operadoras y fabricantes en vez de por alguien con buen gusto, y ahí siguen, metidos en tu memoria.\n\nEl tono de Nokia es la historia más rara de la página. Francisco Tárrega escribió Gran Vals para guitarra sola en 1902; Nokia le sacó trece notas, y ese fragmento terminó sonando en miles de millones de aparatos, lo que lo convierte en una de las melodías más escuchadas de la historia. Motorola respondió con un logo cantado en lugar de una melodía, y en Estados Unidos el tono de Cingular fue rutina diaria hasta que la marca pasó a llamarse AT&T en 2007.\n\nApple ocupa la porción más grande de esta botonera. La alerta de tres notas lleva de sonido de mensaje por defecto desde los primeros iPhone, y así entrenó a salas enteras para revisar el bolsillo al mismo tiempo. Radar es la alarma que viene de fábrica. El obturador de la cámara es falso, sintetizado a propósito para que un teléfono en silencio igual avise que tomó una foto. FaceTime aporta tres botones, y el de colgar se volvió la forma preferida de internet para terminar una conversación.\n\nAlgunos de estos son ingeniería telefónica de verdad, no publicidad. El tono de marcar norteamericano son dos ondas de 350 y 440 Hz sonando juntas, el tono de ocupado son 480 y 620 Hz en ciclos de medio segundo, y el teclado usa pares DTMF auténticos, las mismas frecuencias con las que marca un teléfono real. El módem también conversa: dos aparatos intercambian tonos para acordar una velocidad antes de asentarse en esa estática final.\n\nLo demás llegó de los videojuegos y del video corto. Phone Guy deja su mensaje de la primera noche en Five Nights at Freddy's, GTA V tiene su propia notificación, el timbre de Skype todavía provoca flashbacks de una generación entera y Yo Phone Linging es lo que pasa cuando un clip reventado se escapa. Las fichas de cada sonido están en inglés y ahí mismo está el MP3 gratis.",
+    "faq": [
+      {
+        "q": "¿Cómo se llama el tono clásico de Nokia?",
+        "a": "Oficialmente es el Nokia tune, y la melodía no es de Nokia. Sale de Gran Vals, una pieza para guitarra sola que el compositor español Francisco Tárrega escribió en 1902. Nokia le tomó trece notas. Tárrega murió en 1909 y nunca supo que su vals iba a terminar siendo la frase musical más sonada del planeta."
+      },
+      {
+        "q": "¿Por qué se me hace tan conocida la alerta del iPhone?",
+        "a": "Porque es el sonido de mensaje que viene por defecto desde los primeros iPhone, y lo que viene por defecto casi nadie lo cambia. Tres notas que bajan, apenas un segundo, y una cafetería entera se toca el bolsillo. En los videos sirve para anunciar un mensaje sin mostrar la pantalla, y nadie necesita que se lo expliquen."
+      },
+      {
+        "q": "¿Qué está haciendo el sonido del módem?",
+        "a": "Negociando. Lo que parece una máquina gritando son dos módems intercambiando tonos para ponerse de acuerdo en la velocidad, midiendo después la calidad de la línea y quedándose al final en esa capa de estática. Nada de eso podía ocurrir mientras alguien hablaba por teléfono, y ese detalle lo recuerda cualquiera que lo vivió."
+      },
+      {
+        "q": "¿Puedo ponerlos como tono de llamada?",
+        "a": "En Android casi siempre sí: bajas el MP3 desde la ficha del sonido y lo eliges en los ajustes de tono. En iPhone es más engorroso, porque iOS pide un archivo m4r y espera que lo cargues desde una computadora. Para un video, una alerta de stream o la botonera de Discord, el MP3 funciona tal cual."
+      }
+    ]
+  }
+}

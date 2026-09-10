@@ -1,0 +1,59 @@
+{
+  "name": "Applause",
+  "hubTitle": "Applause Soundboard",
+  "metaDescription": "Applause and crowd sound buttons: clapping, cheering, booing, a sitcom laugh track, confetti, Crab Rave and SIUUU. Play free, download every MP3.",
+  "icon": "tiktok",
+  "order": 17,
+  "match": [
+    "applause",
+    "clapping",
+    "cheer",
+    "crowd",
+    "booing",
+    "celebration",
+    "laugh-track"
+  ],
+  "intro": "A crowd is the cheapest way to tell an audience how it should feel. Applause says the thing worked, booing says it did not, and neither needs a word of explanation. That durability is why these clips have outlasted every change in how video gets made, from radio to TikTok.\n\nSize does most of the work. A large hall applauding reads as triumph, a small room applauding reads as a slightly awkward corporate away day, and two isolated claps read as contempt. The sarcastic slow clap is the one people take most often, because it does something no amount of writing can do in the same half second. Sus clapping is the Among Us era's version of the same joke.\n\nThe laugh track is the oldest trick on the board and the least honest. A sound engineer named Charles Douglass built a machine for it in the early 1950s, loaded it with real laughter recorded elsewhere, and guarded the contents so closely that barely anyone outside his family ever saw inside. Lay it over a silence and the silence retroactively becomes a punchline. Lay it over bad news and something faintly sinister happens instead, which is the more interesting use.\n\nCelebration gets its own corner. There is a confetti pop, the Times Square countdown, children cheering, and a studio audience going aww at something small and defenceless. Crab Rave is here too: Noisestorm released it through Monstercat on 1 April 2018 as an April Fools' joke, and the internet promptly adopted it as the official sound of good news, usually about someone else's misfortune.\n\nFootball supplies the loudest celebration humans currently make. Cristiano Ronaldo has said the SIUUU is simply the Spanish si, meaning yes, picked up during his Real Madrid years and stretched past breaking point, and the extended goooool call belongs to the Latin American commentary tradition. Press anything to hear it. Each sound page carries a free MP3 and an embed code, with no account at any stage.",
+  "faq": [
+    {
+      "q": "What is the difference between the applause sounds here?",
+      "a": "Room size, mostly, and it changes the meaning completely. Heavy applause reads as a full hall and real triumph. Small crowd applause reads as a conference room being polite. Clap Clap is two isolated claps, the sarcastic version, and it lands harder than either of the genuine ones when the timing is right."
+    },
+    {
+      "q": "Where does the sitcom laugh track come from?",
+      "a": "From a machine. The sound engineer Charles Douglass built a laughter device in the early 1950s, stocked it with reactions recorded from real audiences elsewhere, and kept its contents famously secret. The technique was called sweetening. Decades of television used it, and the clip still declares that a joke has occurred whether or not one has."
+    },
+    {
+      "q": "What does Ronaldo's SIUUU actually mean?",
+      "a": "Nothing dramatic. Ronaldo has explained that it is the Spanish si, meaning yes, picked up while he was at Real Madrid and held until his lungs give out. It is a wonderfully mundane origin for the most imitated sound in world football, and it now belongs to every schoolyard and every FIFA lobby on earth."
+    },
+    {
+      "q": "Can I use these on a stream or in Discord?",
+      "a": "Yes. Download the MP3 free from any sound page and load it into OBS, Streamlabs, a Stream Deck or the Discord soundboard. Applause and the laugh track are the two that earn their keep in live chat, since both let you respond to something without typing a word or unmuting yourself."
+    }
+  ],
+  "es": {
+    "name": "aplausos",
+    "hubTitle": "Botonera de Aplausos",
+    "metaDescription": "Aplausos y sonidos de público: palmas, ovaciones, abucheos, risas grabadas, confeti, Crab Rave y el SIUUU. Suenan gratis y bajas cada MP3.",
+    "intro": "El público es la manera más barata de decirle a alguien cómo debe sentirse. Los aplausos dicen que la cosa funcionó, los abucheos dicen que no, y ninguno de los dos necesita explicación. Por esa resistencia estos clips han sobrevivido a todos los cambios en la forma de hacer video, de la radio a TikTok.\n\nEl tamaño del recinto hace casi todo el trabajo. Una sala grande aplaudiendo se lee como triunfo, un cuarto chico aplaudiendo se lee como junta de oficina algo incómoda, y dos palmadas sueltas se leen como desprecio. El aplauso lento y sarcástico es el que más gente se lleva, porque logra en medio segundo algo que ningún texto consigue. El aplauso sus es la versión de la época de Among Us.\n\nLa risa grabada es el truco más viejo del tablero y el menos honesto. El ingeniero de sonido Charles Douglass construyó una máquina para eso a principios de los cincuenta, la cargó con risas reales grabadas en otra parte y guardó el contenido con tanto recelo que casi nadie fuera de su familia llegó a ver el interior. Ponla sobre un silencio y el silencio se convierte en remate. Ponla sobre una mala noticia y aparece algo bastante más siniestro.\n\nLa celebración tiene su propio rincón. Hay un cañón de confeti, la cuenta regresiva de Times Square, niños festejando y un público de estudio soltando un aaay ante algo pequeño e indefenso. También está Crab Rave: Noisestorm la publicó en Monstercat el 1 de abril de 2018 como broma del día de los inocentes gringo, e internet la adoptó de inmediato como el sonido oficial de las buenas noticias, casi siempre sobre la desgracia ajena.\n\nEl futbol pone la celebración más ruidosa que produce nuestra especie. Cristiano Ronaldo ha contado que el SIUUU no es más que el sí en español, agarrado en sus años en el Real Madrid y estirado hasta el límite, y el goooool alargado pertenece a la tradición de los relatores latinoamericanos. Toca lo que quieras para escucharlo. Cada ficha está en inglés y trae el MP3 gratis con su código para incrustar.",
+    "faq": [
+      {
+        "q": "¿En qué se diferencian los aplausos de esta botonera?",
+        "a": "Sobre todo en el tamaño del lugar, y eso les cambia el significado por completo. El aplauso pesado suena a sala llena y a triunfo real. El de público chico suena a gente siendo educada en una sala de juntas. Clap Clap son dos palmadas sueltas, la versión sarcástica, y bien colocada pega más fuerte que las dos anteriores."
+      },
+      {
+        "q": "¿De dónde salen las risas grabadas de las sitcoms?",
+        "a": "De una máquina. El ingeniero de sonido Charles Douglass armó a principios de los cincuenta un aparato lleno de risas grabadas de públicos reales en otros lugares, y mantuvo su contenido en secreto durante años. La técnica se llamaba sweetening. Décadas de televisión la usaron, y el clip sigue anunciando que hubo un chiste, lo haya habido o no."
+      },
+      {
+        "q": "¿Qué significa el SIUUU de Ronaldo?",
+        "a": "Nada espectacular. El propio Ronaldo ha explicado que es el sí en español, que lo agarró durante sus años en el Real Madrid y que lo sostiene hasta quedarse sin aire. Es un origen encantadoramente común para el sonido más imitado del futbol mundial, y hoy le pertenece a cualquier patio de escuela y a cualquier partida de FIFA."
+      },
+      {
+        "q": "¿Puedo usarlos en un stream o en Discord?",
+        "a": "Sí. Baja el MP3 gratis desde la ficha del sonido y cárgalo en OBS, en Streamlabs, en un Stream Deck o en la botonera de Discord. Los aplausos y la risa grabada son los dos que más rinden en vivo, porque te dejan reaccionar a algo sin escribir una palabra y sin quitarte el silencio del micrófono."
+      }
+    ]
+  }
+}

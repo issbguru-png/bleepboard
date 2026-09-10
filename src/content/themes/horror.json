@@ -1,0 +1,57 @@
+{
+  "name": "Horror",
+  "hubTitle": "Horror Soundboard",
+  "metaDescription": "Horror sound buttons: FNAF jumpscares, the Backrooms hum, Siren Head, the Squid Game doll and a waterphone drone. Play free, download every MP3.",
+  "icon": "gaming",
+  "order": 12,
+  "match": [
+    "horror",
+    "jumpscare",
+    "creepy",
+    "scary",
+    "haunted"
+  ],
+  "intro": "A jumpscare is mostly audio. Mute any horror film and the shot everyone remembers becomes a man in a rubber mask standing at the end of a corridor. Your eye needs a moment to read a frame; the noise does not wait for it. By the time you have understood the picture, your body has already responded to the sound.\n\nScott Cawthon's Five Nights at Freddy's supplies the loudest end of this board. The 2014 game built its reputation on a shriek fired at full volume the instant an animatronic reaches the office door, and every sequel kept the trick because it kept working. FNAF 2, 3, 4 and 6 each have their own version here, alongside Golden Freddy, Freddy's laugh, and the puppet's music box winding slowly down towards the moment it stops.\n\nThe quiet half is where the real work happens. A waterphone is a genuine instrument: a stainless steel bowl with tuned rods around the rim and water sloshing about inside, invented by Richard Waters in the late 1960s and bowed into a seasick drone that no synthesiser has matched. Around it sit a heartbeat, footsteps approaching, television static, and the Backrooms hum, which grew out of a single 4chan post in 2019 into a whole genre of found-footage horror.\n\nThen there are the monsters the internet built for itself. Trevor Henderson posted a photograph of Siren Head in 2018 and it has been broadcasting corrupted alert tones ever since. Sonic.EXE came from creepypasta, Poppy Playtime and Phasmophobia from games, Vecna's grandfather clock from the fourth season of Stranger Things (2022), and the doll from a Korean playground game that Netflix took worldwide in about a fortnight.\n\nNothing here asks for an account and nothing needs installing. Press a button and it plays. Open a sound page for the free MP3, or take the copy-paste embed if you would rather have the working button on your own site. One warning before you start pressing things: a fair few of these are extremely loud, and that is deliberate.",
+  "faq": [
+    {
+      "q": "What is the scariest sound on this soundboard?",
+      "a": "By raw volume, the FNAF jumpscares. They are engineered to arrive with no ramp at all, which is why they work on people who already know they are coming. If you want the kind of fear that builds instead, try the Backrooms ambience or the waterphone. Neither one contains a monster, and both are worse for it."
+    },
+    {
+      "q": "Where does the FNAF jumpscare sound come from?",
+      "a": "Five Nights at Freddy's, released by Scott Cawthon in 2014. The design trick is timing rather than content: the game gives you almost nothing to look at for long stretches, then drops a full-volume scream the moment an animatronic reaches you. Four sequels reused it, and this board carries the versions from FNAF 2, 3, 4 and 6."
+    },
+    {
+      "q": "Why is horror ambience frightening when nothing happens?",
+      "a": "Because it puts your hearing on duty. A low drone, a distant hum or a heartbeat gives your brain something to keep checking, and the checking is what tires you out. Film sound designers have used the waterphone for this since the 1970s. The Backrooms videos do the same job with a fluorescent buzz and an air handler."
+    },
+    {
+      "q": "Can I use these horror sounds in a video?",
+      "a": "Yes. Every clip downloads as a free MP3 from its own sound page and drops into CapCut, Premiere, OBS or a Discord soundboard without any signup. Editors mostly reach for the jumpscares and the metal pipe. The slower drones are the ones that make a whole edit feel wrong, which is usually the harder effect to get."
+    }
+  ],
+  "es": {
+    "name": "terror",
+    "hubTitle": "Botonera de Terror",
+    "metaDescription": "Sonidos de terror gratis: sustos de FNAF, el zumbido de los Backrooms, Siren Head, la muñeca de Squid Game y más. Suenan al toque y bajas el MP3.",
+    "intro": "Un susto es casi puro audio. Quítale el sonido a cualquier película de terror y la escena que todo el mundo recuerda se vuelve un señor con máscara de goma parado al fondo de un pasillo. El ojo necesita un instante para leer la imagen. El ruido no espera, y cuando entiendes lo que estabas viendo tu cuerpo ya reaccionó.\n\nLa parte más ruidosa de esta botonera viene de Five Nights at Freddy's. El juego que Scott Cawthon publicó en 2014 se hizo famoso por un alarido a todo volumen que entra justo cuando un animatrónico llega a la puerta de la oficina, y las secuelas repitieron el truco porque seguía funcionando. Aquí están las versiones de FNAF 2, 3, 4 y 6, más Golden Freddy, la risa de Freddy y la cajita musical del títere bajando de vueltas hasta que se detiene.\n\nLa mitad callada es la que hace el trabajo fino. El waterphone es un instrumento de verdad: un cuenco de acero con varillas afinadas en el borde y agua moviéndose adentro, inventado por Richard Waters a finales de los sesenta. Se toca con arco y suelta un zumbido mareado que ningún sintetizador ha logrado imitar. Al lado hay latidos, pasos que se acercan, estática de televisión y el ambiente de los Backrooms, que salió de un solo post de 4chan en 2019 y terminó siendo todo un género.\n\nDespués vienen los monstruos que internet se construyó solo. Trevor Henderson publicó una foto de Siren Head en 2018 y desde entonces la criatura no ha dejado de emitir tonos de alerta descompuestos. Sonic.EXE llegó del creepypasta, Poppy Playtime y Phasmophobia de los videojuegos, el reloj de Vecna de la cuarta temporada de Stranger Things (2022) y la muñeca de un juego de patio coreano que Netflix volvió global en cosa de quince días.\n\nAquí no hay cuenta que crear ni nada que instalar. Las fichas de cada sonido están en inglés, que es como los busca casi todo el mundo, y ahí encuentras la descarga en MP3 gratis y el código para incrustar el botón en tu página. Un aviso antes de que empieces: varios de estos son muy fuertes, y esa es toda la intención.",
+    "faq": [
+      {
+        "q": "¿Cuál es el sonido que más asusta de esta botonera?",
+        "a": "Por volumen puro, los sustos de FNAF. Están hechos para entrar sin ninguna advertencia, y por eso funcionan incluso con quien ya sabe que vienen. Si prefieres el miedo que se acumula de a poco, prueba el ambiente de los Backrooms o el waterphone: ninguno tiene monstruo adentro y los dos dan peor sensación."
+      },
+      {
+        "q": "¿De dónde salió el sonido de susto de FNAF?",
+        "a": "De Five Nights at Freddy's, el juego que Scott Cawthon publicó en 2014. El truco está en el tiempo, no en el sonido: el juego te deja largos ratos sin nada que mirar y luego suelta un grito a todo volumen cuando el animatrónico te alcanza. Cuatro secuelas lo reutilizaron y aquí tienes las versiones de FNAF 2, 3, 4 y 6."
+      },
+      {
+        "q": "¿Por qué da miedo el ambiente de terror si no pasa nada?",
+        "a": "Porque pone tu oído a trabajar. Un zumbido grave, un latido o un ruido lejano le dan a tu cerebro algo que revisar cada pocos segundos, y esa revisión constante es la que cansa. Los diseñadores de sonido usan el waterphone para eso desde los setenta, y los videos de los Backrooms consiguen lo mismo con un zumbido de fluorescente."
+      },
+      {
+        "q": "¿Puedo usar estos sonidos de terror en un video?",
+        "a": "Sí, gratis y sin registrarte. Cada clip tiene su ficha con la descarga en MP3 y entra directo en CapCut, en Premiere, en OBS o en la botonera de Discord. Para editar, los sustos y el tubo metálico son los más socorridos. Los zumbidos lentos son los que dejan raro un video entero, que suele ser lo más difícil de lograr."
+      }
+    ]
+  }
+}
