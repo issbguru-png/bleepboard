@@ -25,7 +25,7 @@ A scream is an **honest signal**. When something screams at you it is telling yo
 
 Verity's delivery never completes. The voice stays level, pleasant, evenly paced, carrying the affect of a helpful in-game tutorial while the content underneath it curdles. Your brain receives two signals that won't reconcile: *this is a friendly assistant* and *this is not a friendly assistant*. Unable to settle the conflict, it keeps the file open. Dread, in other words, as distinct from fright. Dread is the thing people rewatch.
 
-Flatness also implies something worse than anger. An angry character is engaged with you; you matter enough to provoke a reaction. A character who declines your request in a perfectly even tone has categorised you and moved on. There's no appeal process. Horror writers have known this forever — the calm villain beats the shouting one — but it stays genuinely rare in YouTube horror, where the incentives push hard towards volume.
+Flatness also implies something worse than anger. An angry character is engaged with you; you matter enough to provoke a reaction. A character who declines your request in a perfectly even tone has categorised you and moved on. There's no appeal process. Horror writers have known this forever (the calm villain beats the shouting one), but it stays genuinely rare in YouTube horror, where the incentives push hard towards volume.
 
 The last piece is **information over spectacle**. When Verity states that something is coming, he doesn't show you anything. The audience's imagination does the work, for free, and it always builds something scarier than a model could. Same economy that makes a closed door frightening.
 

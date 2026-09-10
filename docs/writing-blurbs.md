@@ -22,6 +22,7 @@ tell listed here and exits non-zero if the corpus regresses.
 | ≥200 characters | `src/content.config.ts` schema — build fails |
 | No duplicate blurb | `audit-copy.mjs` |
 | No two blurbs sharing a four-word opening | `audit-copy.mjs` |
+| **No em dashes anywhere** | `audit-copy.mjs`, hard failure |
 | Facts accurate, never invented | Human judgement. See "Facts" below. |
 
 ## The soft rules (audited, use judgement)
@@ -31,9 +32,7 @@ them is fine. Fifty is the problem.
 
 | Target | Why |
 |---|---|
-| Em-dashes: about **1 per 3–4 blurbs** | Overuse is the single loudest AI tell. **Zero is also a tell** — don't strip them all. |
-| Never two em-dashes in one blurb | Reads as machine cadence instantly. |
-| Never open `Name — appositive` | 74 blurbs once shared this exact shape. It's invisible per-blurb and obvious across a grid. |
+| Never open `Name, appositive` as a dash construction | 74 blurbs once shared this exact shape. It's invisible per-blurb and obvious across a grid. |
 | Vary sentence length | Every sentence 15–25 words is a tell in itself. Land a short one. |
 | Vary openings between neighbours | Sounds in a category render side by side. |
 
@@ -59,6 +58,29 @@ These were stripped from the corpus. Don't reintroduce them.
 ---
 
 ## How to actually fix a tell
+
+## Em dashes are banned outright
+
+Owner rule, 2026-08-31, and it applies to every site in this account: no em
+dashes in any user-facing copy. Not in blurbs, hub intros, articles, page text,
+headings, meta descriptions or alt text.
+
+This reverses earlier guidance. The old rule allowed about one em dash per three
+or four blurbs and warned when the corpus had too few, on the theory that
+stripping them all was itself an AI tell. That theory is overruled. The audit
+now fails the build on any em dash, and the rhythm they used to provide has to
+come from somewhere harder: a colon, a parenthesis, a short sentence landed
+against a long one.
+
+Use instead, in rough order of preference:
+
+- **A full stop.** Two sentences of different length beat one dash-joined one.
+- **A colon**, when the second half explains or delivers the first.
+- **A comma**, for a genuine aside that is short.
+- **Parentheses**, for a true aside that the sentence survives without.
+
+The one place a dash still appears is a hyphen inside a compound word
+(`sound-ish`, `bass-boosted`). That is a hyphen, not an em dash, and it is fine.
 
 **Do not find-and-replace.** Swapping every `—` for a comma leaves prose that
 still reads as machine-made, just worse punctuated. Rewrite the sentence so the

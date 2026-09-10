@@ -40,9 +40,9 @@ const pageUrl = SITE.url + soundPath(sound.id);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{d.title} sound button — Bleepboard</title>
+    <title>{d.title} sound button, Bleepboard</title>
     <!-- Thin duplicate of the sound page. Keep it out of the index; the page
-         it links to is the one that should rank. No canonical alongside it —
+         it links to is the one that should rank. No canonical alongside it:
          noindex + canonical are contradictory instructions and Google ignores
          the pair. -->
     <meta name="robots" content="noindex, follow" />
@@ -213,7 +213,7 @@ const pageUrl = SITE.url + soundPath(sound.id);
     <script is:inline define:vars={{ src: d.audio, title: d.title }}>
       /* The Audio element is built on first press, never on load. `new Audio(url)`
          defaults to preload="auto" in Chrome and Safari, so constructing it up
-         front would pull the MP3 down on every single view of the host page —
+         front would pull the MP3 down on every single view of the host page:
          bandwidth spent on visitors who scroll straight past. */
       var btn = document.getElementById('p');
       var bar = document.getElementById('b');

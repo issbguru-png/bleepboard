@@ -23,7 +23,7 @@ export const GET: APIRoute = () => {
 
   if (MEDIAVINE_LIVE) {
     lines.push('');
-    lines.push('# Mediavine — paste the full list from your Mediavine dashboard below.');
+    lines.push('# Mediavine: paste the full list from your Mediavine dashboard below.');
     lines.push('# TODO (owner): Mediavine supplies dozens of authorised-seller lines.');
   }
 

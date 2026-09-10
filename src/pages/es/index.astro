@@ -71,8 +71,8 @@ const catName = (id: string, fallback: string) => CAT_ES[id] ?? fallback;
 const quick = ['risa', 'explosión', 'grito', 'alarma', 'aplausos', 'pedo'];
 
 const title = pickTitle([
-  `Botones de Sonido — Botonera de Memes Gratis | ${SITE.name}`,
-  `Botones de Sonido — Botonera de Memes Gratis`,
+  `Botones de Sonido: Botonera de Memes Gratis | ${SITE.name}`,
+  `Botones de Sonido: Botonera de Memes Gratis`,
 ]);
 const description =
   'Botonera de sonidos gratis: toca un botón y suena. Más de 600 botones con sonidos de memes, efectos y clips virales para escuchar y descargar en MP3.';
@@ -484,7 +484,7 @@ const schema = [
         index = await (await fetch('/search-index.json')).json();
         loaded = true;
       } catch {
-        count.textContent = 'El buscador no está disponible ahora mismo — mejor explora por categoría más abajo.';
+        count.textContent = 'El buscador no está disponible ahora mismo. Mejor explora por categoría más abajo.';
       }
     }
 

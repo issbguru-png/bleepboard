@@ -41,8 +41,8 @@ const schema = [
 ];
 ---
 <Base
-  title={`All ${categories.length} Soundboards — Browse by Category`}
-  description="Browse every Bleepboard soundboard — meme sounds, sound effects, gaming, TikTok, anime, notifications, pranks and more. Free MP3 downloads."
+  title={`All ${categories.length} Soundboards: Browse by Category`}
+  description="Browse every Bleepboard soundboard: meme sounds, sound effects, gaming, TikTok, anime, notifications, pranks and more. Free MP3 downloads."
   schema={schema}
 >
   <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -58,7 +58,7 @@ const schema = [
     </div>
     <h1>Soundboard categories</h1>
     <p class="lede">
-      Every board on Bleepboard, each with its own corner of the internet —
+      Every board on Bleepboard, each with its own corner of the internet,
       from brainrot and TikTok audio to clean, usable sound effects.
     </p>
     <ul class="stats stats--icon">
@@ -73,7 +73,7 @@ const schema = [
       <h2>Browse every soundboard</h2>
       <a class="section-link" href="/">Or search all sounds →</a>
     </div>
-    <p class="section-sub">Tap a board to open it — every sound plays instantly, no signup.</p>
+    <p class="section-sub">Tap a board to open it. Every sound plays instantly, no signup.</p>
     <div class="cat-grid cat-grid--lg">
       {categories.map((c) => (
         <a class="cat-card cat-card--lg" href={hubPath(c.id)} data-cat={c.id}>

@@ -18,7 +18,7 @@ Italian brainrot is a collectively-built universe of AI-generated characters, an
 2. **A nonsense name made of rhythm.** Not a translation, not a pun. The names are chosen for how they *bounce*: Tralalero Tralala, Brr Brr Patapim, Udin Din Din Dun. They're closer to drum patterns than words.
 3. **Lore, delivered with total conviction.** A text-to-speech Italian voice narrates the character's backstory, habits and enemies in the tone of a nature documentary. Set that seriousness against the stupidity of the subject and you have the whole engine.
 
-Almost none of it is actual Italian, which matters more than it might sound. What the audio reproduces is Italian *shape* — the cadence, the vowel endings, the rolling consonants — and shape travels. It lands identically for listeners in Jakarta, São Paulo and Manchester. You don't need the language to get the joke, because the language isn't carrying the joke.
+Almost none of it is actual Italian, which matters more than it might sound. What the audio reproduces is Italian *shape*: the cadence, the vowel endings, the rolling consonants. Shape travels. It lands identically for listeners in Jakarta, São Paulo and Manchester. You don't need the language to get the joke, because the language isn't carrying the joke.
 
 ## The cast
 
@@ -46,7 +46,7 @@ Every character above has a sound button on Bleepboard. Play instantly, download
 
 - [Tralalero Tralala](/sound/tralalero-tralala/), the shark that started it
 - [Tung Tung Tung Sahur](/sound/tung-tung-tung-sahur/), the sahur drum call
-- [Bombardiro Crocodilo](/sound/bombardiro-crocodilo/) — crocodile, meet bomber
+- [Bombardiro Crocodilo](/sound/bombardiro-crocodilo/): crocodile, meet bomber
 - [Ballerina Cappuccina](/sound/ballerina-cappuccina/), the coffee-cup ballerina
 - [Cappuccino Assassino](/sound/cappuccino-assassino/), her counterpart
 - [Brr Brr Patapim](/sound/brr-brr-patapim/)

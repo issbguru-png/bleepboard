@@ -50,9 +50,9 @@ const iconKey = kind === 'theme' ? ((entry.data as any).icon ?? 'meme') : entry.
 const pageUrl = `${SITE.url}/es/${theme.id}-soundboard/`;
 
 const title = pickTitle([
-  `${es.hubTitle} — ${sounds.length} Botones de Sonido Gratis`,
-  `${es.hubTitle} — ${sounds.length} Botones de Sonido`,
-  `${es.hubTitle} — Botones de Sonido Gratis`,
+  `${es.hubTitle}: ${sounds.length} Botones de Sonido Gratis`,
+  `${es.hubTitle}: ${sounds.length} Botones de Sonido`,
+  `${es.hubTitle}: Botones de Sonido Gratis`,
   es.hubTitle,
 ]);
 
@@ -89,8 +89,8 @@ if (es.faq.length > 0) schema.push(faqPage(es.faq));
     <p class="lede">{lede}</p>
     <ul class="stats stats--icon">
       <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> botones de sonido</span></li>
-      <li><StatIcon name="download" /><span><b>Gratis</b> — MP3 para bajar</span></li>
-      <li><StatIcon name="instant" /><span><b>Al instante</b> — sin registro</span></li>
+      <li><StatIcon name="download" /><span><b>Gratis</b>, MP3 para bajar</span></li>
+      <li><StatIcon name="instant" /><span><b>Al instante</b>, sin registro</span></li>
     </ul>
   </section>
 

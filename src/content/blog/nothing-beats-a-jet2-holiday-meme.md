@@ -33,7 +33,7 @@ The Jet2 audio does not know anything has happened. It carries on selling a fami
 
 ## Why it stuck
 
-Most audio memes burn out in weeks. This one lasted because the supply of holiday disasters is infinite and self-renewing. Every summer produces a fresh harvest of chaos footage and the audio is sitting there waiting for it — seasonal and evergreen at once, and deeply British with it.
+Most audio memes burn out in weeks. This one lasted because the supply of holiday disasters is infinite and self-renewing. Every summer produces a fresh harvest of chaos footage and the audio is sitting there waiting for it. It is seasonal and evergreen at once, and deeply British with it.
 
 It also survives leaving the internet, which very few meme sounds manage. The phrase is a complete sentence with a built-in ironic use, so it works spoken aloud in an airport queue by someone who has never opened the app. A meme that can travel by voice doesn't need a platform to keep it alive.
 

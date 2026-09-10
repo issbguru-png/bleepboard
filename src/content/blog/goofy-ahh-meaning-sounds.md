@@ -49,4 +49,4 @@ All of them play instantly and download free on the [meme soundboard](/meme-soun
 
 ## Why it endures
 
-Goofy ahh works because it's a **renewable format rather than a single joke**. Every new serious thing the world produces is fresh raw material, and the sounds themselves keep mutating — pitched, remixed, layered. As long as people take themselves seriously on camera, the genre has a job to do.
+Goofy ahh works because it's a **renewable format rather than a single joke**. Every new serious thing the world produces is fresh raw material, and the sounds themselves keep mutating (pitched, remixed, layered). As long as people take themselves seriously on camera, the genre has a job to do.

@@ -13,7 +13,7 @@ Five Nights at Freddy's is a horror game about sitting still in a chair and look
 
 The jumpscare scream isn't scary on its own. Play it cold to someone in a bright room and it's just distortion. What makes it work is everything that **isn't** it.
 
-FNAF's default state is quiet. Fans, a hum, distant clanking, the shuffle of something moving in a room you can't see — nothing you could point at and name. Your ears spend the entire night straining at the edge of audibility, hunting for signal in near-silence. That hunting is not passive. You are leaning in with the gain turned all the way up, literally and neurologically.
+FNAF's default state is quiet. Fans, a hum, distant clanking, the shuffle of something moving in a room you can't see. Nothing you could point at and name. Your ears spend the entire night straining at the edge of audibility, hunting for signal in near-silence. That hunting is not passive. You are leaning in with the gain turned all the way up, literally and neurologically.
 
 Then the scream arrives at maximum amplitude with **no attack ramp**. No swell, no build, no warning frame. The jump from near-silence to a clipped, saturated shriek is the biggest dynamic gap the game can produce, and it lands on ears that have been deliberately opened wide. Players who raise the volume to hear the threat get hit hardest, so the game punishes exactly the behaviour it requires.
 
@@ -33,7 +33,7 @@ The best sound in the series is a group of children cheering.
 
 On its own it's a stock-happy noise, the sort that plays over a theme park advert. In FNAF it turns up where children cheering should not be, attached to a story about children who did not go home. Nothing about the audio changes. The context changes, and the sound becomes unbearable. A genuinely sophisticated trick, and the reason the clip is still being passed around a decade later.
 
-The same principle runs through the spoken lines. **Phone Guy's** night-one voicemail is a bureaucratic HR induction, cheerful health-and-safety patter about a job that is going to kill you, and the mismatch does more character work than any cutscene could. Freddy Fazbear's Pizzeria Simulator later gave the series its most-quoted line, Henry's flat **"connection terminated"** speech, delivered *to* William Afton rather than by him, which lands the way a monotone always does — emotional absence where you expected a reaction.
+The same principle runs through the spoken lines. **Phone Guy's** night-one voicemail is a bureaucratic HR induction, cheerful health-and-safety patter about a job that is going to kill you, and the mismatch does more character work than any cutscene could. Freddy Fazbear's Pizzeria Simulator later gave the series its most-quoted line, Henry's flat **"connection terminated"** speech, delivered *to* William Afton rather than by him, which lands the way a monotone always does: emotional absence where you expected a reaction.
 
 ## Play the FNAF sounds
 

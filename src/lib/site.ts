@@ -3,7 +3,7 @@ export const SITE = {
   url: 'https://bleepboard.com',
   tagline: 'Instant sound buttons & meme soundboard',
   description:
-    'Free meme soundboard with instant sound buttons. Play meme sounds, sound effects and viral clips, then download the MP3 free — no signup, no install.',
+    'Free meme soundboard with instant sound buttons. Play meme sounds, sound effects and viral clips, then download the MP3 free. No signup, no install.',
   twitter: '@bleepboard',
   /** Default social share card. 1200x630, lives in public/. */
   ogImage: '/og-image.png',

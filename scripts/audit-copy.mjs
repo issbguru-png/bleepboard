@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Copy audit — the guard rail behind docs/writing-blurbs.md.
+ * Copy audit: the guard rail behind docs/writing-blurbs.md.
  *
  *   node scripts/audit-copy.mjs            # audit sound blurbs
  *   node scripts/audit-copy.mjs --all      # also audit blog + category copy
  *   node scripts/audit-copy.mjs --slugs a,b,c   # only these (use after an import)
  *
  * Exits non-zero on any HARD failure, so it can gate CI or a pre-commit hook.
- * Soft targets print as warnings — they describe the corpus, not each blurb.
+ * Soft targets print as warnings. They describe the corpus, not each blurb.
  *
  * Why this exists: in Aug 2026 all 523 blurbs had to be rewritten because they
  * read as machine-written (517 em-dashes, 74 identical `Name — appositive`
@@ -60,14 +60,23 @@ for (const s of sounds) {
 
   if (words < 70) note(hard, s.slug, `${words} words (min 70)`);
   else if (words > 110) note(soft, s.slug, `${words} words (target ≤110)`);
-  if (b.length < 200) note(hard, s.slug, `${b.length} chars — schema requires 200+`);
+  if (b.length < 200) note(hard, s.slug, `${b.length} chars, schema requires 200+`);
 
   for (const [re, label] of BANNED) {
     if (re.test(b)) note(hard, s.slug, `banned: ${label}`);
   }
 
-  const dashes = (b.match(/—/g) || []).length;
-  if (dashes >= 2) note(hard, s.slug, `${dashes} em-dashes in one blurb (max 1)`);
+  // Em dashes are banned outright (owner rule, 2026-08-31). This used to allow
+  // one per blurb and warn when the corpus had too FEW, on the theory that zero
+  // em dashes is itself an AI tell. That theory is overruled: the house voice
+  // now varies rhythm with commas, colons, parentheses and short sentences
+  // instead, which is harder and reads better anyway.
+  // Checks title and origin too, not just the blurb: all three are rendered on
+  // the sound page, and origin doubles as the meta description source.
+  const dashes = [b, s.title || '', s.origin || '']
+    .join(' ')
+    .split('—').length - 1;
+  if (dashes > 0) note(hard, s.slug, `${dashes} em-dash${dashes > 1 ? 'es' : ''} (none allowed)`);
 
   // `Name — appositive` opening: the shape 74 blurbs once shared
   if (/^[^.!?—]{1,45}—/.test(b)) note(hard, s.slug, 'opens `Name — appositive`');
@@ -75,7 +84,7 @@ for (const s of sounds) {
   // rhythm: a blurb where nothing is short reads as machine-even
   const sentences = b.split(/(?<=[.!?])\s+/).filter(Boolean);
   if (sentences.length > 2 && !sentences.some((x) => x.split(/\s+/).length < 12)) {
-    note(soft, s.slug, 'no sentence under 12 words — vary the rhythm');
+    note(soft, s.slug, 'no sentence under 12 words, vary the rhythm');
   }
 }
 
@@ -96,15 +105,13 @@ for (const s of sounds) {
 
 const totalWords = blurbs.reduce((n, b) => n + b.split(/\s+/).length, 0);
 const totalDashes = blurbs.reduce((n, b) => n + (b.match(/—/g) || []).length, 0);
-const perBlurb = sounds.length ? totalDashes / sounds.length : 0;
 
 // ---------------------------------------------------------------- optional: prose
 if (ALL) {
   const check = (label, text, file) => {
     for (const [re, name] of BANNED) if (re.test(text)) note(hard, file, `banned: ${name}`);
     const d = (text.match(/—/g) || []).length;
-    const w = text.split(/\s+/).length;
-    if (w > 200 && d / w > 1 / 250) note(soft, file, `em-dash density 1 per ${Math.round(w / d)} words (target ≥250)`);
+    if (d > 0) note(hard, file, `${d} em-dash${d > 1 ? 'es' : ''} (none allowed)`);
   };
   const blogDir = resolve(root, 'src/content/blog');
   if (existsSync(blogDir)) {
@@ -115,14 +122,22 @@ if (ALL) {
   // Categories and themes are the same shape and carry the same kind of prose,
   // so they get the same treatment. Themes were missed when the collection was
   // added, and a banned construction shipped in fnaf.json before anyone
-  // noticed — hence checking both from one list rather than two code paths.
+  // noticed, hence checking both from one list rather than two code paths.
   for (const dir of ['src/content/categories', 'src/content/themes']) {
     const d0 = resolve(root, dir);
     if (!existsSync(d0)) continue;
     for (const f of readdirSync(d0).filter((x) => x.endsWith('.json'))) {
       const d = JSON.parse(readFileSync(resolve(d0, f), 'utf8'));
       const label = dir.endsWith('themes') ? 'themes' : 'categories';
-      check(label, [d.intro, ...(d.faq || []).map((q) => q.a)].join(' '), `${label}/${f}`);
+      // Every user-facing string, both languages. This used to read only
+      // `intro` and the FAQ *answers* of the English block, which left FAQ
+      // questions, both metaDescriptions and the entire Spanish half of 22
+      // bilingual hubs unchecked. An em dash sat in one Spanish
+      // metaDescription for a fortnight because nothing looked at it.
+      const strings = (blk) =>
+        blk ? [blk.metaDescription, blk.intro, ...(blk.faq || []).flatMap((q) => [q.q, q.a])] : [];
+      check(label, strings(d).filter(Boolean).join(' '), `${label}/${f}`);
+      if (d.es) check(label, strings(d.es).filter(Boolean).join(' '), `${label}/${f} (es)`);
     }
   }
 }
@@ -130,11 +145,7 @@ if (ALL) {
 // ---------------------------------------------------------------- report
 console.log(`\n${DIM}audited ${sounds.length} sounds${ALL ? ' + blog/category/theme copy' : ''}${OFF}`);
 console.log(`  words        ${totalWords.toLocaleString()} total`);
-console.log(`  em-dashes    ${totalDashes} (${perBlurb.toFixed(2)}/blurb — target 0.25–0.40)`);
-
-if (perBlurb > 0.45) soft.push({ slug: '(corpus)', msg: `em-dash density ${perBlurb.toFixed(2)}/blurb is drifting up` });
-if (sounds.length > 40 && perBlurb < 0.10)
-  soft.push({ slug: '(corpus)', msg: `em-dash density ${perBlurb.toFixed(2)}/blurb — zero is its own tell, let some back in` });
+console.log(`  em-dashes    ${totalDashes} (must be 0)`);
 
 const group = (arr) => {
   const m = new Map();
@@ -146,7 +157,7 @@ const group = (arr) => {
 };
 
 if (soft.length) {
-  console.log(`\n${YEL}soft (${soft.length}) — judgement calls, not blockers${OFF}`);
+  console.log(`\n${YEL}soft (${soft.length}), judgement calls not blockers${OFF}`);
   for (const [msg, slugs] of group(soft)) {
     console.log(`  ${msg} ${DIM}(${slugs.length})${OFF}  ${slugs.slice(0, 6).join(', ')}${slugs.length > 6 ? '…' : ''}`);
   }

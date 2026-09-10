@@ -12,7 +12,7 @@ Some sounds are famous. The **Vine Boom** is infrastructure. It's the deep, reso
 
 ## Where it came from
 
-The sound predates its fame. It's a stock cinematic bass drop — Bluezone Corporation's "Cimpact Sound 001", released in a 2012 sample library, the kind of impact sound trailer editors reach for constantly. What made it *the* Vine Boom was **Vine**, the six-second video platform that compressed comedy into its purest form between 2013 and 2017.
+The sound predates its fame. It's a stock cinematic bass drop: Bluezone Corporation's "Cimpact Sound 001", released in a 2012 sample library, the kind of impact sound trailer editors reach for constantly. What made it *the* Vine Boom was **Vine**, the six-second video platform that compressed comedy into its purest form between 2013 and 2017.
 
 Vine's editors needed maximum impact in minimum time. A single dramatic boom over a freeze-frame or a zoom did in half a second what a laugh track needed ten for. Then Vine died and its editing grammar didn't. The grammar migrated to YouTube and TikTok, and the boom went along with it.
 
@@ -50,4 +50,4 @@ Land the boom on the zoom, not before it. The picture moves first and the sound 
 
 Play the [Vine Boom sound button](/sound/vine-boom/) on Bleepboard and grab the free MP3 for your edits. It pairs naturally with the [Metal Pipe Falling sound](/sound/metal-pipe-falling/), its chaotic younger sibling, and the [Sanctuary Guardian sting](/sound/sanctuary-guardian/), its melodramatic cousin. Both live on our [meme soundboard](/meme-soundboard/).
 
-One boom is emphasis. Two booms is a bit. Twelve booms in a row is an MLG montage — and for that you'll also need the [MLG Airhorn](/sound/mlg-airhorn/).
+One boom is emphasis. Two booms is a bit. Twelve booms in a row is an MLG montage. For that you'll also need the [MLG Airhorn](/sound/mlg-airhorn/).

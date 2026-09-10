@@ -13,7 +13,7 @@ There is a sound that is just a metal pipe hitting the ground. It is very loud. 
 
 The clip is exactly what it says. A **metal pipe falling**: a colossal, clattering CLANG-clang-clang of a heavy pipe meeting concrete, recorded close and loud. It's the kind of impact sound that sits in stock libraries for industrial scenes, until meme editors worked out that out of context, at full volume, it is inexplicably hilarious.
 
-Some of its power is straightforward physics. A hollow steel tube struck hard rings at its own resonant frequencies, so instead of a dull thump you get a bright metallic tone with a long tail. Then the pipe bounces. Each bounce is quieter than the last and arrives sooner, which produces that unmistakable accelerating rattle before everything finally stops. Your ear hears an entire small event — strike, ring, panic, silence. Most of that energy sits high in the frequency range, and high frequencies are the part that phone speakers and laptops actually reproduce well. A deep cinematic boom dies on a phone. The pipe cuts through anything.
+Some of its power is straightforward physics. A hollow steel tube struck hard rings at its own resonant frequencies, so instead of a dull thump you get a bright metallic tone with a long tail. Then the pipe bounces. Each bounce is quieter than the last and arrives sooner, which produces that unmistakable accelerating rattle before everything finally stops. Your ear hears an entire small event: strike, ring, panic, silence. Most of that energy sits high in the frequency range, and high frequencies are the part that phone speakers and laptops actually reproduce well. A deep cinematic boom dies on a phone. The pipe cuts through anything.
 
 ## The meme mechanics
 

@@ -11,7 +11,7 @@ Somewhere in the world right now, a teacher is writing a number on a whiteboard 
 
 ## What 67 actually means
 
-Nothing at all. That isn't a dodge or a shrug on my part — it is the actual answer, and the joke is built on top of it.
+Nothing at all. That isn't a dodge or a shrug on my part: it is the actual answer, and the joke is built on top of it.
 
 "Six seven" is always said as two separate numbers, never "sixty-seven". It's pure verbal confetti. It isn't code for a rude word, it isn't a reference you're too old to get, and it doesn't stand for anything. Ask a child to define it and watch them genuinely struggle, because the honest definition is closer to a noise than a word. It works the way "wassup" or a fist bump works: a social signal that costs nothing and means only *I am here and you are here*.
 
@@ -33,7 +33,7 @@ Then there's the maths variant. Because 67 is a perfectly ordinary number it tur
 
 ## Why adults find it so annoying
 
-Meme-literate adults can usually meet Gen Alpha halfway. This one refuses to be met. There's no punchline to appreciate, no origin story that makes it click, nothing clever hiding underneath. It's a sound a child enjoys making, repeated at volume, for months on end — and no amount of explaining improves it. The frustration adults feel is itself part of the content, too: every viral clip of a teacher pleading for it to stop is another reason to keep going.
+Meme-literate adults can usually meet Gen Alpha halfway. This one refuses to be met. There's no punchline to appreciate, no origin story that makes it click, nothing clever hiding underneath. It's a sound a child enjoys making, repeated at volume, for months on end. No amount of explaining improves it. The frustration adults feel is itself part of the content, too: every viral clip of a teacher pleading for it to stop is another reason to keep going.
 
 It got big enough that dictionary publishers took notice, which is traditionally the sign that a piece of slang has peaked and is about to become deeply uncool. That day is coming. Until then: six.
 

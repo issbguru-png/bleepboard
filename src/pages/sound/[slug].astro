@@ -58,10 +58,10 @@ const audioUrl = SITE.url + d.audio;
 // Names here run from "6 7" to "Lie Detector (Determined That Was a Lie)", so
 // the qualifier shrinks to fit rather than the title overflowing.
 const title = pickTitle([
-  `${d.title} Sound Button — Play & Download Free MP3`,
-  `${d.title} Sound Button — Play & Download MP3`,
-  `${d.title} Sound Button — Free MP3 Download`,
-  `${d.title} Sound Button — Free MP3`,
+  `${d.title} Sound Button: Play & Download Free MP3`,
+  `${d.title} Sound Button: Play & Download MP3`,
+  `${d.title} Sound Button: Free MP3 Download`,
+  `${d.title} Sound Button: Free MP3`,
   `${d.title} Sound Button`,
 ]);
 
@@ -74,7 +74,7 @@ const blurbSentences = d.blurb.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filte
 // until the snippet is full. Everything here is copy that already passes the
 // blurb audit, so nothing new has to be written per sound.
 let description = buildDescription([
-  `Play the ${d.title} sound button instantly — free MP3 download, no signup.`,
+  `Play the ${d.title} sound button instantly. Free MP3 download, no signup.`,
   d.origin,
   ...blurbSentences,
 ]);
@@ -284,7 +284,7 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
         Report this sound
       </button>
       <span class="fav-warn" data-fav-warn hidden>
-        Favourites need site storage, which this browser has turned off — saving is unavailable here.
+        Favourites need site storage, which this browser has turned off, so saving is unavailable here.
       </span>
     </p>
 

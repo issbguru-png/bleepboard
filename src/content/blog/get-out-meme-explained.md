@@ -43,6 +43,6 @@ The scream has competition, and the differences are worth knowing because they a
 
 ## Play and download the sound
 
-You can play the [Get Out (Tuco) sound button](/sound/get-out-tuco/) instantly on Bleepboard and download the MP3 free, no signup required. Yes, the button keeps the Tuco name — that is what the whole internet calls it, and a sound page nobody can find corrects nobody. It lives on our [TikTok sounds soundboard](/tiktok-soundboard/) with the rest of the trending audio.
+You can play the [Get Out (Tuco) sound button](/sound/get-out-tuco/) instantly on Bleepboard and download the MP3 free, no signup required. Yes, the button keeps the Tuco name: that is what the whole internet calls it, and a sound page nobody can find corrects nobody. It lives on our [TikTok sounds soundboard](/tiktok-soundboard/) with the rest of the trending audio.
 
 If you're loading up a Discord soundboard, the clip's one-second length puts it well inside the upload limit; see the [Discord soundboard](/discord-soundboard/) for sounds to pair it with, and the [full walkthrough](/blog/how-to-add-sounds-to-discord-soundboard/) if you haven't set one up before. And if you enjoy famous audio with a complicated paper trail, the [Vine Boom](/sound/vine-boom/) has a history of its own.

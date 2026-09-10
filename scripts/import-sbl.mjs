@@ -36,6 +36,15 @@ for (const item of manifest) {
     console.log(`- ${slug}: already exists, skipping`);
     continue;
   }
+  // Em dashes are banned in all site copy (owner rule, 2026-08-31). Gate it
+  // here rather than trusting the manifests: batches 1-14 predate the rule and
+  // still contain 550 of them, and the copy audit only sees a blurb once it is
+  // already written into src/content/sounds/.
+  if (blurb.includes('\u2014')) {
+    console.error(`✗ ${slug}: blurb contains an em dash. Rewrite the sentence, see docs/writing-blurbs.md`);
+    failed.push(slug);
+    continue;
+  }
   const words = blurb.trim().split(/\s+/).length;
   if (words < 70) {
     console.error(`✗ ${slug}: blurb is ${words} words (<70) — quality gate. Skipped. See docs/writing-blurbs.md`);

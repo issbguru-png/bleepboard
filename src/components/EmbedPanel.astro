@@ -48,7 +48,7 @@ const embedCode = `<iframe src="${embedUrl}"
   <div class="section-head"><h2>Embed this sound button</h2></div>
   <p class="section-sub">
     Put the player on your site, blog, wiki or stream overlay. It is free, it stays free, and
-    nothing here phones home — no tracking script rides along with it.
+    nothing here phones home, and no tracking script rides along with it.
   </p>
 
   <div class="embed-panel">
@@ -56,7 +56,7 @@ const embedCode = `<iframe src="${embedUrl}"
       <span class="embed-preview-label">Preview</span>
       <!-- Relative, unlike the snippet: the preview should show the build it is
            sitting in, not whatever is live on production. `loading="lazy"` keeps
-           it off the critical path — most visitors never scroll this far. -->
+           it off the critical path, since most visitors never scroll this far. -->
       <iframe
         src={`/embed/${slug}/`}
         title={`${title} sound button, embedded preview`}

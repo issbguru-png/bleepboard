@@ -25,7 +25,7 @@ Editors quickly worked out that it stacks. One ding is a purchase, and a rapid r
 
 ## Why the polite version hits harder
 
-Most meme punctuation is loud. The [air horn](/sound/air-horn/) shouts, the [Vine Boom](/sound/vine-boom/) thumps, the [extremely loud incorrect buzzer](/sound/incorrect-buzzer-loud/) simply bullies. Apple Pay does the opposite job with none of the volume. The clip carries no emotion whatsoever, so every drop of contempt in the edit belongs to the person who placed it — there's nothing in the audio to argue with. Somebody got taken apart and a machine noted it, pleasantly, for the records.
+Most meme punctuation is loud. The [air horn](/sound/air-horn/) shouts, the [Vine Boom](/sound/vine-boom/) thumps, the [extremely loud incorrect buzzer](/sound/incorrect-buzzer-loud/) simply bullies. Apple Pay does the opposite job with none of the volume. The clip carries no emotion whatsoever, so every drop of contempt in the edit belongs to the person who placed it. There's nothing in the audio to argue with. Somebody got taken apart and a machine noted it, pleasantly, for the records.
 
 It helps that the sound triggers a small Pavlovian response in anyone who uses Apple Pay. Part of your brain hears it and thinks *did I just buy something?* That flicker of involuntary attention is the thing every meme sound is chasing.
 

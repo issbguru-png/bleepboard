@@ -59,9 +59,9 @@ const pageUrl = SITE.url + hubPath(entry.id);
 // and hang a real count off it ("Spongebob Soundboard 1000+ Unique Sounds").
 // `sounds.length` is the actual number rendered below, so the count is real.
 const title = pickTitle([
-  `${d.hubTitle} — ${sounds.length} Free Sound Buttons`,
-  `${d.hubTitle} — ${sounds.length} Sound Buttons`,
-  `${d.hubTitle} — Free Sound Buttons`,
+  `${d.hubTitle}: ${sounds.length} Free Sound Buttons`,
+  `${d.hubTitle}: ${sounds.length} Sound Buttons`,
+  `${d.hubTitle}: Free Sound Buttons`,
   d.hubTitle,
 ]);
 
@@ -103,7 +103,7 @@ if (d.faq.length > 0) schema.push(faqPage(d.faq));
     <ul class="stats stats--icon">
       <li><StatIcon name="buttons" /><span><b class="tnum">{sounds.length}</b> sound buttons</span></li>
       <li><StatIcon name="download" /><span><b>Free</b> MP3 downloads</span></li>
-      <li><StatIcon name="instant" /><span><b>Instant</b> — no signup</span></li>
+      <li><StatIcon name="instant" /><span><b>Instant</b>, no signup</span></li>
     </ul>
   </section>
 
@@ -132,7 +132,7 @@ if (d.faq.length > 0) schema.push(faqPage(d.faq));
       </div>
     ) : (
       <p class="empty-state">
-        Sounds coming soon — check the <a href="/new/">newest sounds</a> in the meantime.
+        Sounds coming soon. Check the <a href="/new/">newest sounds</a> in the meantime.
       </p>
     )}
   </section>

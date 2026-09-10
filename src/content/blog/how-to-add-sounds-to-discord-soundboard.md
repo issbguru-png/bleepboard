@@ -23,11 +23,11 @@ The soundboard lives at the **server** level rather than the account level, so s
 
 To play a sound, join a voice channel and open the soundboard panel from the voice controls (the smiley-face-with-speaker icon). Click a sound and it plays to the channel.
 
-Uploading is desktop and web only — the mobile app can play soundboard sounds but cannot add them. If you are on a phone, open Discord in a browser and request the desktop site. In a voice call, swipe up on the call controls to reach the soundboard picker.
+Uploading is desktop and web only. The mobile app can play soundboard sounds but cannot add them. If you are on a phone, open Discord in a browser and request the desktop site. In a voice call, swipe up on the call controls to reach the soundboard picker.
 
 ## The limits you need to know about
 
-**Clips have to be short.** This is the big one. Discord's soundboard is designed for stingers, not songs — a single yell, a ping, a boom. In practice you're looking at a handful of seconds at most, and if your clip runs longer than a short sound effect Discord will simply refuse it. Trim before you upload rather than hoping.
+**Clips have to be short.** This is the big one. Discord's soundboard is designed for stingers, not songs: a single yell, a ping, a boom. In practice you're looking at a handful of seconds at most, and if your clip runs longer than a short sound effect Discord will simply refuse it. Trim before you upload rather than hoping.
 
 **Files have to be small.** The size ceiling is tight, which follows naturally from the length limit. A trimmed MP3 of a couple of seconds sits comfortably inside it. If you're near the edge, re-export at a lower bitrate; nobody will hear the difference on a two-second meme sound.
 
@@ -47,7 +47,7 @@ You install a **virtual audio device**, a fake sound card that shows up as both 
 - **macOS:** BlackHole, paired with a Multi-Output Device in Audio MIDI Setup so you can still hear what you're playing.
 - **Linux:** PulseAudio/PipeWire creates a null sink and loopback natively, no extra software needed.
 
-Two practical notes. Route your desktop audio to the virtual cable *and* your headphones, or you'll be playing sounds you can't hear. And turn **noise suppression and echo cancellation off** in Discord's voice settings — they're tuned for speech and will chew through music and effects until everything sounds underwater.
+Two practical notes. Route your desktop audio to the virtual cable *and* your headphones, or you'll be playing sounds you can't hear. And turn **noise suppression and echo cancellation off** in Discord's voice settings. They're tuned for speech and will chew through music and effects until everything sounds underwater.
 
 ## Good clips to start with
 

@@ -23,13 +23,13 @@ The gap wasn't taste. It was **format literacy**.
 
 An adult opening the first episode sees eleven seconds of a toilet singing and concludes, reasonably, that there is nothing here. A child opening the same episode sees **episode one of a serialised war epic** and keeps going. The series is almost entirely wordless. No dialogue, no exposition, no narration, so the storytelling has to happen through visual continuity: who has which upgrade, who was present at which battle, what the camera lingers on. It rewards attention across hundreds of instalments and it punishes sampling.
 
-So "I watched one and it was nonsense" became the standard adult verdict, and the standard adult verdict was wrong. Sampling one episode of Skibidi Toilet is like reading one page of a comic pulled from the middle of a run — technically you've read it. The fandom built wikis, timelines and power-scaling arguments because there was enough structure in there to argue about.
+So "I watched one and it was nonsense" became the standard adult verdict, and the standard adult verdict was wrong. Sampling one episode of Skibidi Toilet is like reading one page of a comic pulled from the middle of a run. Technically you've read it. The fandom built wikis, timelines and power-scaling arguments because there was enough structure in there to argue about.
 
 There's also the plain fact that it is a **toilet**. Scatological humour has been the reliable engine of children's comedy for the entire history of children, and adults forgetting this is itself a generational tradition.
 
 ## How "skibidi" escaped the series
 
-The word broke free of the show almost immediately and became something stranger: a **general-purpose slang word with no fixed meaning**. It works as an intensifier, a marker of absurdity, or a flag that the sentence isn't to be taken seriously. "Skibidi rizz", "what the skibidi", "that's so skibidi" — positive or negative depends entirely on delivery.
+The word broke free of the show almost immediately and became something stranger: a **general-purpose slang word with no fixed meaning**. It works as an intensifier, a marker of absurdity, or a flag that the sentence isn't to be taken seriously. "Skibidi rizz", "what the skibidi", "that's so skibidi": positive or negative depends entirely on delivery.
 
 It also became the banner of the whole **brainrot** aesthetic. When a newspaper needed one word to gesture at incomprehensible Gen Alpha internet culture, it reached for "skibidi", and the word did duty as a synonym for the entire category. That's an unusual amount of linguistic work for a made-up sound from a Source Filmmaker short.
 

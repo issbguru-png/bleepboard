@@ -47,8 +47,8 @@ const quick = ['airhorn', 'vine boom', 'discord', 'fart', 'brainrot', 'notificat
 // volume is. Brand stays on the end because this is the one page that should
 // carry it.
 const title = pickTitle([
-  `Sound Buttons — Free Meme Soundboard | ${SITE.name}`,
-  `Sound Buttons — Free Meme Soundboard`,
+  `Sound Buttons: Free Meme Soundboard | ${SITE.name}`,
+  `Sound Buttons: Free Meme Soundboard`,
 ]);
 const description = SITE.description;
 
@@ -90,7 +90,7 @@ const faq = [
   },
   {
     q: 'What are the most popular sounds right now?',
-    a: 'The trending row at the top of this page is the honest answer for 2026 — it moves as things blow up on TikTok and YouTube. Six Seven, the Vine Boom and the Italian brainrot clips have held the top of the board for months.',
+    a: 'The trending row at the top of this page is the honest answer for 2026. It moves as things blow up on TikTok and YouTube. Six Seven, the Vine Boom and the Italian brainrot clips have held the top of the board for months.',
   },
   {
     q: 'How often do you add new sounds?',
@@ -276,7 +276,7 @@ const schema = [
           stream overlay, or Discord server.
         </p>
         <p>
-          We add new sound buttons regularly — aiming to cut them within a day or two of a meme
+          We add new sound buttons regularly, aiming to cut them within a day or two of a meme
           taking off on TikTok or YouTube. Check the <a href="/new/">newest sounds</a> or
           browse by category above.
         </p>
@@ -301,7 +301,7 @@ const schema = [
           </p>
           <p>
             His filing system is aggressive. A sound doesn't get a button here until Woofer
-            knows where it came from — which film, which stream, which unhinged six seconds
+            knows where it came from: which film, which stream, which unhinged six seconds
             of someone's Tuesday. That's why every sound on this site has a write-up
             instead of a shrug. He finds untagged audio genuinely upsetting.
           </p>
@@ -310,7 +310,7 @@ const schema = [
             and unbearable about it.
           </p>
           <p class="author-note">
-            Woofer is our mascot, not a real person — Bleepboard is made by a small team who
+            Woofer is our mascot, not a real person. Bleepboard is made by a small team who
             find a cartoon speaker easier to draw than themselves. Say hello on the
             <a href="/about/">about page</a>.
           </p>
@@ -377,7 +377,7 @@ const schema = [
         index = await (await fetch('/search-index.json')).json();
         loaded = true;
       } catch {
-        count.textContent = 'Search is unavailable right now — try browsing by category below.';
+        count.textContent = 'Search is unavailable right now. Try browsing by category below.';
       }
     }
 
