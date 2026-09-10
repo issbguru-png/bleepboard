@@ -2,35 +2,55 @@
   "name": "Discord",
   "hubTitle": "Discord Soundboard",
   "order": 10,
-  "metaDescription": "Discord sound buttons: join, leave, ping and notification sounds plus the clips every server plays. Free MP3 downloads for your soundboard.",
-  "intro": "Discord has its own sonic language: the join blip, the leave blip, the ping that means you've been summoned. This board collects Discord's iconic sounds plus the clips people actually upload to their server soundboards, from reaction sounds to memes to trolls calibrated for voice chat.\n\nEvery sound downloads free as MP3, sized right for Discord's native soundboard feature. Download it, upload it to your server, deploy it in calls. Or just play them from the browser and route the chaos through your mic.",
+  "metaDescription": "Discord sound buttons: the join and leave blips, the ping, and the clips servers actually upload. Free MP3s trimmed for Discord's own soundboard.",
+  "intro": "Almost everyone who uses Discord can identify its sounds without ever having thought about them. The two-note blip when somebody joins a voice channel, the falling one when they leave, the soft knock of a message, the ping that means your name got used. What makes that set unusual is that it was built to be heard during a conversation rather than instead of one, so every tone is quiet, brief and pitched clear of the human voice. You register it and carry on talking.\n\nA server soundboard gets used for three things, roughly in that order of frequency. Reaction comes first, a clip landed on the end of somebody else's sentence, which is the voice-chat equivalent of replying with a GIF. Entrances come second, one sound fired the instant you connect so the channel knows who arrived without looking. Trolling comes third, and it is why moderators keep the permission switched off in some channels. A join blip played from a soundboard is indistinguishable from a real one, so it sends everybody to the member list for nothing.\n\nGetting a sound in there takes one of two routes. The native one runs through Server Settings, then Soundboard, then Upload Sound, and Discord's own guide puts the ceiling at an MP3 no larger than 512 KB and no longer than five seconds, short enough that most clips need trimming first. Slots are limited per server and boosting unlocks more of them. Moderators decide who can fire them through the Use Soundboard and Use External Sounds role permissions, and a Nitro subscription lets you carry sounds you already have access to into other servers and into DM calls.\n\nThe second route skips the upload entirely. Send your browser audio into your microphone input with a virtual audio cable, VB-Cable or VoiceMeeter on Windows, BlackHole or Loopback on macOS, and anything on this site becomes playable in any call with no length limit and no slot to spend. Two warnings, both learned the hard way. Your own monitoring goes strange once the mic input is not a mic, so arrange a way to hear yourself first, and pull the volume down before you start, because soundboard clips are mastered far louder than a voice on a headset.\n\nWhat sits on this board is the platform's own set plus the clips that keep getting uploaded to servers: reaction sounds, short memes and a few things chosen purely to irritate. Everything downloads as a free MP3 with no account, and each sound has its own page with a note on where it came from and an embed code if you want the button working on your own site.",
   "faq": [
     {
-      "q": "How do I add these sounds to my Discord soundboard?",
-      "a": "Download the MP3 from any sound page, then in your server go to Server Settings \u2192 Soundboard \u2192 Upload Sound. Discord soundboard clips work best under 5 seconds."
+      "q": "How do I add these to my server's soundboard?",
+      "a": "Download the MP3 from any sound page, then open Server Settings, choose Soundboard and press Upload Sound. Give it a name and an emoji, and set the default volume lower than you think you need. You need the right permission on the server to add one, and the number of slots a server has depends on its boost level, so a busy server may need you to retire something before it takes a new clip."
     },
     {
-      "q": "Can I play these directly in a Discord call?",
-      "a": "Yes. Play them from the browser with your mic on, or use a virtual audio cable to route Bleepboard's audio into your mic input for cleaner playback."
+      "q": "Why does Discord refuse my upload?",
+      "a": "Almost always length or size. Discord's guide caps a soundboard clip at five seconds and 512 KB as an MP3, and a lot of meme audio runs longer than that even when it feels instant. Trim the clip to the part that matters, re-export at a lower bitrate or in mono, and it will usually drop under the limit without sounding any worse through a voice channel."
+    },
+    {
+      "q": "Can I play a sound in a call without uploading it?",
+      "a": "Yes, by routing browser audio into your microphone. On Windows that means VB-Cable or VoiceMeeter, on macOS BlackHole or Loopback: set the virtual device as your Discord input, play the button, and the call hears it. Nothing gets uploaded, so the five-second limit does not apply, but everyone hears exactly what your browser plays, including whatever else is open in another tab."
+    },
+    {
+      "q": "Can I use a sound from one server in another?",
+      "a": "That is what Nitro's external sounds are for: a subscriber can use sounds they already have access to in any server or DM call. Without it you are limited to the sounds uploaded where you are, and a server can turn the whole feature off for a role or a channel. If a button works in one place and not another, check the permissions before assuming the file is broken."
+    },
+    {
+      "q": "Are the downloads free and the right size?",
+      "a": "Free, with no signup and no app. The MP3s here are short clips rather than full tracks, so most of them go straight into a Discord soundboard slot without any editing. Check the length before uploading anyway, since five seconds is a harder limit than it sounds and a clip that runs to six will simply be refused."
     }
   ],
   "es": {
     "name": "Discord",
     "hubTitle": "Botonera de Discord",
-    "metaDescription": "Sonidos de Discord: el blip de entrada, el de salida, el ping y los clips que todo servidor sube a su botonera. Baja cada MP3 gratis.",
-    "intro": "Discord tiene su propio idioma sonoro: el blip de alguien que entra, el blip de alguien que se va, el ping que significa que te invocaron. Este tablero junta esos sonidos icónicos de la plataforma con los clips que la gente de verdad sube a la botonera de su servidor, desde sonidos de reacción hasta memes y trolleos calibrados para el chat de voz.\n\nTodo se baja gratis en MP3, con el tamaño justo para la botonera nativa de Discord. Bájalo, súbelo a tu servidor y suéltalo en plena llamada. O toca los botones directo desde el navegador y rutea el caos por tu micrófono.\n\nLas fichas de cada sonido están en inglés, pero la mecánica no necesita traducción: un toque y suena.",
+    "metaDescription": "Sonidos de Discord: el blip de entrada, el de salida, el ping y los clips que suben los servidores. MP3 gratis y listos para la botonera.",
+    "intro": "Casi cualquiera que use Discord reconoce sus sonidos sin haber pensado nunca en ellos. El blip de dos notas cuando alguien entra al canal de voz, el que baja cuando se va, el toque suave de un mensaje, el ping que significa que usaron tu nombre. Lo raro de ese conjunto es que fue hecho para escucharse durante una conversación y no en lugar de ella, así que cada tono es corto, discreto y está afinado lejos de la voz humana. Lo registras y sigues hablando.\n\nLa botonera de un servidor se usa para tres cosas, más o menos en ese orden. Primero, reaccionar: un clip soltado justo al final de la frase de otro, que es el equivalente en voz de contestar con un GIF. Segundo, la entrada: un sonido disparado en el instante en que te conectas, para que el canal sepa quién llegó sin voltear. Tercero, el trolleo, que es la razón por la que en algunos canales los moderadores dejan el permiso apagado. Un blip de entrada tocado desde la botonera es idéntico al de verdad, así que manda a todos a revisar la lista de miembros para nada.\n\nMeter un sonido ahí tiene dos rutas. La nativa va por Ajustes del servidor, Panel de sonidos y Subir sonido, y la guía de Discord fija el tope en un MP3 de máximo 512 KB y de no más de cinco segundos, lo bastante corto para que casi todo clip haya que recortarlo antes. Los espacios por servidor son limitados y con boosts se desbloquean más. Los moderadores deciden quién puede tocarlos con los permisos de rol Usar panel de sonidos y Usar sonidos externos, y una suscripción a Nitro te deja llevar los sonidos a los que ya tienes acceso a otros servidores y a las llamadas por mensaje directo.\n\nLa segunda ruta se salta la subida por completo. Manda el audio del navegador hacia tu entrada de micrófono con un cable de audio virtual, VB-Cable o VoiceMeeter en Windows, BlackHole o Loopback en macOS, y cualquier sonido del sitio se vuelve tocable en cualquier llamada, sin límite de segundos y sin gastar un espacio. Dos avisos aprendidos a la mala. Tu propio monitoreo se pone raro en cuanto la entrada de micrófono deja de ser un micrófono, así que arregla primero cómo vas a escucharte, y baja el volumen antes de empezar, porque estos clips vienen masterizados mucho más fuerte que una voz en diadema.\n\nEn este tablero está el juego de sonidos de la plataforma y también los clips que la gente sube de verdad a sus servidores: reacciones, memes cortos y unas cuantas cosas elegidas nada más para fastidiar. Todo se baja gratis en MP3, sin cuenta, y cada sonido tiene su ficha, en inglés, con una nota sobre su origen y un código para incrustar el botón en tu propia página.",
     "faq": [
       {
-        "q": "¿Cómo agrego estos sonidos a la botonera de mi servidor de Discord?",
-        "a": "Baja el MP3 desde la ficha del sonido y en tu servidor entra a Ajustes del servidor → Panel de sonidos → Subir sonido. A la botonera de Discord le van mejor los clips de menos de 5 segundos."
+        "q": "¿Cómo agrego estos sonidos a la botonera de mi servidor?",
+        "a": "Baja el MP3 desde la ficha del sonido, entra a Ajustes del servidor, elige Panel de sonidos y toca Subir sonido. Ponle nombre y un emoji, y deja el volumen por defecto más bajo de lo que crees que necesitas. Hace falta el permiso correspondiente en el servidor, y la cantidad de espacios depende del nivel de boosts, así que en un servidor lleno tal vez tengas que quitar un sonido antes de meter otro."
       },
       {
-        "q": "¿Puedo tocar estos sonidos directo en una llamada de Discord?",
-        "a": "Sí. Tócalos desde el navegador con el micrófono abierto, o usa un cable de audio virtual para rutear el audio de Bleepboard hacia tu entrada de micrófono y que se escuche más limpio."
+        "q": "¿Por qué Discord me rechaza el archivo?",
+        "a": "Casi siempre es la duración o el peso. La guía de Discord limita cada sonido a cinco segundos y 512 KB en MP3, y mucho audio de meme dura más de lo que parece. Recorta el clip a la parte que importa y vuelve a exportarlo con menos bitrate o en mono: normalmente baja del límite sin que se note nada por un canal de voz."
       },
       {
-        "q": "¿Los sonidos tienen el tamaño que pide Discord?",
-        "a": "Sí. Los MP3 se bajan con el tamaño justo para la función de botonera que trae Discord, así que los subes tal cual a tu servidor."
+        "q": "¿Puedo tocar un sonido en una llamada sin subirlo?",
+        "a": "Sí, ruteando el audio del navegador hacia tu micrófono. En Windows eso es VB-Cable o VoiceMeeter, en macOS BlackHole o Loopback: pones el dispositivo virtual como entrada de Discord, tocas el botón y la llamada lo escucha. No se sube nada, así que el límite de cinco segundos no aplica, pero la llamada oye exactamente lo que suena en tu navegador, incluido lo que tengas abierto en otra pestaña."
+      },
+      {
+        "q": "¿Puedo usar en otro servidor un sonido que está en el mío?",
+        "a": "Para eso están los sonidos externos de Nitro: con la suscripción puedes usar los sonidos a los que ya tienes acceso en cualquier servidor o llamada por mensaje directo. Sin ella te quedas con los que estén subidos donde estás, y además un servidor puede apagar la función entera para un rol o un canal. Si un botón funciona en un lado y en otro no, revisa los permisos antes de culpar al archivo."
+      },
+      {
+        "q": "¿Los MP3 vienen con el tamaño que pide Discord?",
+        "a": "Se bajan gratis, sin registro, y son clips cortos y no canciones completas, así que la mayoría entra directo en un espacio de la botonera sin editar nada. Aun así revisa la duración antes de subir: cinco segundos es un límite más duro de lo que suena, y un clip de seis simplemente no pasa."
       }
     ]
   }

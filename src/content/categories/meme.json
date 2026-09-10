@@ -2,39 +2,55 @@
   "name": "Meme",
   "hubTitle": "Meme Soundboard",
   "order": 1,
-  "metaDescription": "Play the internet's favourite meme sound buttons: viral clips, reaction sounds and classic meme audio. Free to play and download as MP3.",
-  "intro": "This is the meme soundboard: every viral sound the internet can't stop pressing, in one grid of instant buttons. From classic reaction clips to whatever blew up on TikTok this week, each button plays the moment you tap it, and every sound has its own page with a free MP3 download and a short write-up on where the meme actually came from.\n\nWe add new meme sounds within days of a trend breaking, so if you heard it in a video today there's a good chance it's already here. Tap around, download what you need for your edits, or grab an embed code to put a button anywhere.",
+  "metaDescription": "Meme sound buttons with the story behind each clip: the Vine Boom, metal pipe, screams and stings. Play free, download the MP3, no signup.",
+  "intro": "Audio is the cheapest thing on the internet to copy. An image macro needs fresh text every time it comes round again, a video needs fresh footage, but a sound clip attaches to any picture at all and arrives intact. That is most of why the joke moved to the speaker. This board is where those clips live: booms, screams, cartoon disasters and the noises that turn ordinary footage into a bit.\n\nA sound stops belonging to its source faster than anything else in a meme. Take Metal Pipe Falling. The clip entered circulation through a YouTuber called Jixaw, who used it in a video posted in September 2020, and it did not become a punchline until roughly two years after that. Where the recording itself came from is not settled. Guesses point at a game asset, nothing is documented, and the meme carried on regardless. Millions of people can recognise a sound perfectly while nobody can name it.\n\nScale that up and the Vine Boom makes the same case. Bluezone Corporation, a sample library company, say the impact comes from an industrial collection they released in 2012, recorded by hitting hangar doors and shipping containers with sledgehammers. It was sold to trailer editors. Vine's six-second format then borrowed it as punctuation, because one bass hit did in half a second what a laugh track needed ten seconds for. Vine closed on 17 January 2017 and Twitter deleted the public archive two years later. The boom did not notice.\n\nLongevity here tracks one thing: how little the sound refers to. Clips tied to a specific person or scene die when the reference dies, and half of 2019 is already unusable for that reason. A boom points at nothing. It says only that the moment you just watched mattered, and it leaves you to decide whether it mattered sincerely or ridiculously. The censor bleep has been doing that same job since the 1920s and shows no sign of tiring.\n\nSearch traffic arrives here in two moods. Half already know the sound and want the file: an editor after a stinger, someone loading a Discord server board, a streamer building alerts. The other half heard something in a video, cannot name it, and are working down the grid by ear until one clicks. Both are catered for. Every button plays on tap, every sound downloads as a free MP3 with no signup, and each keeps its own page with whatever is actually known about where it came from, including the cases where the honest answer is that nobody knows.",
   "faq": [
     {
-      "q": "Are these meme sounds free to download?",
-      "a": "Yes. Every sound button on Bleepboard has a free MP3 download on its page, with no signup and no app."
+      "q": "Why do so many memes come down to a sound?",
+      "a": "Because audio is the part that survives being reused. A picture has to be redrawn or recaptioned to work on a new joke, while a clip of audio drops onto any footage at all and loses nothing. Richard Dawkins coined the word meme in 1976 for a unit of culture that copies itself, shortening the Greek mimeme to make it rhyme with gene. A sound file is about as close to that idea as anything gets, since it copies without degrading."
     },
     {
-      "q": "How fast do new meme sounds get added?",
-      "a": "Usually within 48 hours of a sound trending on TikTok, YouTube Shorts or Discord. Check the New page for the latest additions."
+      "q": "Where does the Vine Boom actually come from?",
+      "a": "Not from Vine. Bluezone Corporation, a company that sells sample libraries to film and trailer editors, say the hit is one of the impacts in an industrial collection they put out in 2012, recorded by striking metal doors and containers. Vine arrived later and made it famous by using it as comic punctuation, and the platform's name stuck to a sound it had nothing to do with creating."
+    },
+    {
+      "q": "How does a sound outlive the app that made it famous?",
+      "a": "By referring to nothing. Vine shut down on 17 January 2017 and the public archive of its videos was taken offline a couple of years afterwards, yet the boom is used more now than it was then. Clips that depend on knowing a particular person or scene expire when that memory does. Clips that only supply emphasis have nothing to expire."
+    },
+    {
+      "q": "Why can nobody say where some of these clips came from?",
+      "a": "The thing that spreads is the file, and the file carries no credit. By the time a sound is everywhere it has been re-uploaded thousands of times, each copy a little further from whoever recorded it. Metal Pipe Falling is the clean example: the first meme use is documented, the origin of the recording is not. Where the trail runs out we say so on the sound page rather than picking a plausible story."
     },
     {
       "q": "Can I use these sounds in my videos or streams?",
-      "a": "Short clips are widely used for commentary and entertainment, but rights vary by sound. Check each sound's page for origin info, and clear rights for commercial use."
+      "a": "The effects synthesised for this site are original and free to use anywhere. Clips lifted from films, games, songs or shows belong to whoever made them and sit here as short excerpts, so read the origin note on the sound page before putting one in anything monetised. Personal edits and Discord calls are a different matter from commercial work, and the two are worth keeping separate in your head."
     }
   ],
   "es": {
     "name": "Memes",
     "hubTitle": "Botonera de Memes",
-    "metaDescription": "Botonera de memes gratis: los sonidos virales que internet no deja de tocar. Escúchalos al instante y baja cada MP3 sin registrarte.",
-    "intro": "Un meme sin su sonido es la mitad de un meme. Esta botonera junta la otra mitad: los clips virales que internet no deja de tocar, desde las reacciones clásicas hasta lo que explotó en TikTok esta semana, cada uno en un botón que suena en cuanto lo tocas.\n\nDetrás de cada botón hay una ficha con la descarga del MP3 gratis y un texto corto sobre el origen real del meme, porque la mitad de la gracia está en saber de dónde salió el audio. Esas fichas están en inglés, que es como se cataloga todo el sitio, pero el sonido funciona igual en cualquier idioma.\n\nSumamos memes nuevos a los pocos días de que una tendencia reviente, así que si lo escuchaste hoy en un video, hay buenas probabilidades de que ya tenga botón. Toca lo que quieras, baja lo que necesites para tus edits o llévate el código para incrustar un botón donde te sirva.",
+    "metaDescription": "Sonidos de memes con la historia real de cada clip: Vine Boom, metal pipe, gritos y remates. Tócalos gratis y baja el MP3 sin registrarte.",
+    "intro": "El audio es lo más barato que hay para copiar en internet. Un meme de imagen pide texto nuevo cada vez que vuelve a usarse y un video pide material nuevo, pero un clip de sonido se pega a cualquier cosa y llega entero. Ahí está buena parte de la explicación de por qué el chiste se mudó a la bocina. Este tablero guarda esos clips: golpes graves, gritos, desastres de caricatura y los ruidos que convierten un video cualquiera en un chiste.\n\nUn sonido deja de pertenecer a su origen más rápido que cualquier otra pieza de un meme. Mira el caso del Metal Pipe Falling. El clip entró en circulación con un youtuber llamado Jixaw, en un video de septiembre de 2020, y no se volvió remate hasta unos dos años después. De dónde salió la grabación original no está resuelto. Se apunta a un recurso de videojuego, no hay nada documentado y al meme le dio igual. Millones de personas reconocen un sonido perfectamente sin que nadie sepa nombrarlo.\n\nSube la escala y el Vine Boom cuenta lo mismo. Bluezone Corporation, una empresa que vende bibliotecas de samples, sostiene que ese impacto viene de una colección industrial que publicó en 2012, grabada golpeando portones de hangar y contenedores con mazos. Se vendía a editores de tráilers. El formato de seis segundos de Vine lo adoptó como puntuación, porque un solo golpe grave hacía en medio segundo lo que a una risa grabada le toma diez. Vine cerró el 17 de enero de 2017 y Twitter borró el archivo público dos años más tarde. Al boom no le pasó nada.\n\nLa vida útil de un sonido depende de cuán poco señale. Los clips atados a una persona o a una escena concreta mueren cuando muere la referencia, y por eso medio 2019 ya es inservible. Un boom no señala nada. Dice apenas que el momento que acabas de ver importa, y deja que tú decidas si importa en serio o de broma. El bip de censura viene haciendo ese mismo trabajo desde los años veinte y no da señales de cansarse.\n\nAquí llega gente en dos estados de ánimo. La mitad ya sabe qué sonido quiere y viene por el archivo: un editor buscando un remate, alguien armando la botonera de su servidor de Discord, un streamer montando alertas. La otra mitad escuchó algo en un video, no sabe cómo se llama y va probando de oído hasta dar con él. Para las dos cosas sirve esta página. Cada botón suena al toque, cada sonido se baja gratis en MP3 sin registro, y cada uno conserva su ficha, escrita en inglés, con lo que de verdad se sabe de su origen y también con los casos en que la respuesta honesta es que nadie lo sabe.",
     "faq": [
       {
-        "q": "¿Los sonidos de memes son gratis?",
-        "a": "Sí. Cada botón del sitio tiene su ficha con la descarga del MP3 gratis, sin registro y sin app. Tocas, bajas y listo."
+        "q": "¿Por qué tantos memes dependen del sonido?",
+        "a": "Porque el audio es la parte que aguanta la reutilización. Una imagen hay que redibujarla o volver a ponerle texto para que sirva en otro chiste; un clip de audio cae sobre cualquier material y no pierde nada. Richard Dawkins inventó la palabra meme en 1976 para nombrar una unidad de cultura que se copia a sí misma, acortando el griego mimeme para que rimara con gen. Un archivo de sonido es lo más cercano a esa idea, porque se copia sin degradarse."
       },
       {
-        "q": "¿Qué tan rápido agregan los memes nuevos?",
-        "a": "Normalmente dentro de las 48 horas de que un sonido empiece a reventar en TikTok, en YouTube Shorts o en Discord. La página de novedades muestra lo último en llegar."
+        "q": "¿De dónde salió el Vine Boom?",
+        "a": "De Vine, no. Bluezone Corporation, una empresa que vende bibliotecas de samples a editores de cine y de tráilers, sostiene que ese golpe es uno de los impactos de una colección industrial que sacó en 2012, grabada golpeando puertas metálicas y contenedores. Vine llegó después y lo volvió famoso usándolo como puntuación cómica, así que el nombre de la plataforma se le quedó pegado a un sonido que ella no creó."
+      },
+      {
+        "q": "¿Cómo sobrevive un sonido a la app que lo hizo famoso?",
+        "a": "No señalando nada. Vine cerró el 17 de enero de 2017 y el archivo público de sus videos se dio de baja un par de años más tarde, y sin embargo el boom se usa más hoy que entonces. Los clips que dependen de reconocer a una persona o una escena caducan cuando caduca ese recuerdo. Los que solo aportan énfasis no tienen nada que caducar."
+      },
+      {
+        "q": "¿Por qué de algunos sonidos nadie sabe el origen?",
+        "a": "Porque lo que se propaga es el archivo, y el archivo no lleva crédito. Cuando un sonido ya está en todas partes lo han vuelto a subir miles de veces, y cada copia queda un poco más lejos de quien lo grabó. Metal Pipe Falling es el ejemplo limpio: el primer uso como meme está documentado, el origen de la grabación no. Donde se corta el rastro lo decimos en la ficha en vez de inventar una historia verosímil."
       },
       {
         "q": "¿Puedo usar estos sonidos en mis videos o streams?",
-        "a": "Los clips cortos se usan a diario en comentario y entretenimiento, pero los derechos cambian según el sonido. Revisa la ficha de cada uno, que trae la información de origen, y para uso comercial asegura los permisos antes."
+        "a": "Los efectos sintetizados para este sitio son originales y libres para cualquier uso. Los clips sacados de películas, juegos, canciones o programas pertenecen a quien los hizo y están aquí como extractos cortos, así que revisa la nota de origen en la ficha antes de meter uno en algo monetizado. Un edit personal o una llamada de Discord no son lo mismo que un trabajo comercial, y conviene tenerlos separados en la cabeza."
       }
     ]
   }

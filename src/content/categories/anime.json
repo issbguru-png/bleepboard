@@ -2,31 +2,55 @@
   "name": "Anime",
   "hubTitle": "Anime Soundboard",
   "order": 7,
-  "metaDescription": "Anime sound buttons: To Be Continued, Instant Transmission, and the iconic sounds that escaped their shows. Play and download free.",
-  "intro": "The anime soundboard collects the sounds that escaped their shows and became internet vocabulary: the JoJo To Be Continued sting, Goku's Instant Transmission zip, the breathless anime wow. These are the clips you hear in edits and Discord calls long after the season ended.\n\nEach button plays instantly, and each sound's page notes the show and scene it comes from, because an anime sound without its context is only half the joke. New sounds land here as they trend in edits and meme compilations.",
+  "metaDescription": "Anime sound buttons: ora ora ora, domain expansion, the To Be Continued sting and Goku's power-up scream, with the scene behind each. Free MP3s.",
+  "intro": "Anime lines travel further than lines from almost any other kind of television, and part of the reason is technical. Japanese studios record the voices after the animation is drawn, a method called afureko: the cast performs to finished picture in a booth, with no set and nothing happening off camera. What lands on the tape is a dry, isolated, completely committed take. Pull it out of the episode and it drops onto anything at all without dragging a scene behind it.\n\nEach cue here does a specific job, and editors pick between them with more care than the chaos suggests. A domain expansion announces that a fight has stopped being fair: Gojo Satoru opens Unlimited Void, Sukuna opens Malevolent Shrine. Jotaro Kujo's ora ora ora sits in the opposite register, a barrage rather than a threshold, one shout per punch. Light Yagami's laugh marks the second a plan lands and the schemer stops being polite. All Might's Detroit Smash is a finisher from a set named after American places: Texas, Oklahoma, Carolina, Detroit.\n\nThe sub and the dub do not always leave the same meme behind. Ora ora ora survives untranslated in both, because there is nothing in it to translate: a single ora in Japanese works more like oi than like a word, and repeating it is Jotaro shouting once on every hit. Goku splits the other way. Masako Nozawa has voiced him since the first Dragon Ball anime in 1986, so the Japanese power-up scream comes from a woman now in her late eighties, while the English scream is a separate performance entirely. People reach for whichever one they grew up with.\n\nOne subtitle blunder outlived the group that made it. A Death Note fansub left Light's keikaku doori half finished as \"just according to keikaku\" and pinned a note across the top of the screen explaining that keikaku means plan. Screenshots have circulated since 2007, and the phrase now mocks any translation that gives up halfway.\n\nReaction audio is the part that escaped the fandom altogether. A wide-eyed gasp, a flat baka, a transformation scream held four seconds longer than seems reasonable: these carry a shape rather than a plot, so they work as punctuation over a clip of a cat falling off a table. The To Be Continued sting ended up doing the same job. It comes from the freeze frames that closed the first season of the 2012 JoJo's Bizarre Adventure anime, scored to Roundabout, a Yes track from 1971 that most of the people using it have never heard in full.\n\nEverything here plays in the browser and downloads as a free MP3, with a page per sound naming the series, the character and the scene. A few anime-flavoured clips live elsewhere on the site, because the internet filed them as memes first and anime second. These are short excerpts from licensed series, so treat them as borrowed audio once money is involved.",
   "faq": [
     {
-      "q": "Do you add sounds from new anime seasons?",
-      "a": "Yes. When a line or a sting starts trending in edits it gets a button here, usually within a few days."
+      "q": "What does ora ora ora actually mean?",
+      "a": "Close to nothing, which is why it survives in every language version. A single ora in Japanese works like oi or hey, a way of grabbing attention rather than a word carrying content. Jotaro Kujo and Star Platinum shout one per punch, so the length of the barrage is the length of the beating. Daisuke Ono delivers it in Japanese and Matthew Mercer keeps it in the English dub."
+    },
+    {
+      "q": "What is a domain expansion, and why is it a sound?",
+      "a": "In Jujutsu Kaisen a domain expansion, ryoiki tenkai in Japanese, pulls an opponent into a space where the caster's technique cannot miss. Gojo's is Unlimited Void, Sukuna's is Malevolent Shrine. It became audio because the technique is announced out loud: the words arrive before the effect does, so a few seconds of shouting carry the whole escalation without a frame of picture."
+    },
+    {
+      "q": "Where does the To Be Continued sting come from?",
+      "a": "The first season of the 2012 JoJo's Bizarre Adventure anime, which ended episodes on a sepia freeze frame with an arrow sliding across it, over Roundabout by the British band Yes. The song came out in 1971 and is older than the manga. The meme version cuts a video at the worst possible moment and lets the guitar riff finish the thought."
+    },
+    {
+      "q": "Do the subbed and dubbed versions give you different sounds?",
+      "a": "Sometimes. Shouts that are not really words, ora ora ora among them, come through almost unchanged. Performances do not. Goku is voiced in Japanese by Masako Nozawa, who has played him since 1986 and voices Gohan, Goten and Bardock as well, while the English scream belongs to somebody else, so the same transformation exists in two versions with separate fanbases. Most people meme the track they watched first."
+    },
+    {
+      "q": "Can I use these in edits, Discord or a stream?",
+      "a": "Yes, and that is what most of them get taken for. Every button downloads as a free MP3 with no account, ready for a video edit, a server soundboard or a stream alert. The clips are excerpts from licensed series, so for anything monetised or commercial, clear the rights rather than assuming a few seconds is safe."
     }
   ],
   "es": {
     "name": "Anime",
     "hubTitle": "Botonera de Anime",
-    "metaDescription": "Sonidos de anime que se escaparon de sus series: el To Be Continued de JoJo, la teletransportación de Goku y más. Escúchalos y bájalos gratis.",
-    "intro": "Algunos sonidos se escapan de sus series y se vuelven vocabulario de internet. Esta botonera junta esos fugados del anime: el «To Be Continued» de JoJo, el zip de la Teletransportación Instantánea de Goku, el «wow» entrecortado que ya no necesita subtítulos. Son los clips que sigues oyendo en edits y en llamadas de Discord mucho después de que terminó la temporada.\n\nComo en todo el sitio, cada botón suena al instante, y la ficha de cada sonido, escrita en inglés, anota la serie y la escena de donde viene, porque un sonido de anime sin su contexto es solo la mitad del chiste. Los sonidos nuevos aterrizan aquí a medida que marcan tendencia en los edits y en las compilaciones de memes.",
+    "metaDescription": "Sonidos de anime: ora ora ora, domain expansion, el To Be Continued de JoJo y el grito de Goku, con la escena de cada uno. Gratis y con MP3.",
+    "intro": "Las voces del anime se graban después de que el dibujo ya está terminado, con un método que en Japón llaman afureko: el elenco actúa frente a la imagen montada, en cabina, sin set, sin ruido de sala y sin nada ocurriendo fuera de cuadro. Lo que queda es una toma seca, aislada y entregadísima. Sácala del episodio y cae encima de cualquier cosa sin arrastrar la escena detrás. Por eso el audio de anime viaja mejor que el de casi cualquier otra televisión.\n\nCada sonido de aquí cumple un trabajo distinto, y quien edita elige con más cuidado del que parece. Un domain expansion avisa que la pelea dejó de ser pareja: Gojo abre Unlimited Void y Sukuna abre Malevolent Shrine. El ora ora ora de Jotaro va en otro registro: no marca un umbral, es una tanda, un grito por golpe. La risa de Light Yagami señala el segundo exacto en que el plan sale y el tipo deja de fingir educación. Y el Detroit Smash de All Might es un remate, parte de una tanda de ataques bautizados con nombres de lugares de Estados Unidos: Texas, Oklahoma, Carolina, Detroit.\n\nEl sub y el dub no siempre dejan el mismo meme. El ora ora ora sobrevive igual en los dos porque ahí no hay nada que traducir: un ora suelto en japonés se parece más a un «oye» que a una palabra, y repetirlo es Jotaro gritando en cada golpe. Con Goku pasa lo contrario. Masako Nozawa lo interpreta desde el primer anime de Dragon Ball, en 1986, así que el grito japonés sale de una señora que ya pasó los ochenta. Y en América Latina hay una tercera versión, la de Mario Castañeda, que llegó con Dragon Ball Z en 1997 y para media región es la única voz posible.\n\nUn error de subtítulos le sobrevivió al grupo que lo cometió. Un fansub de Death Note dejó el keikaku doori a medio traducir, «just according to keikaku», y encima puso una nota explicando que keikaku significa plan. Esa captura circula desde 2007 y hoy sirve para burlarse de cualquier traducción que se rinde a la mitad. La serie se emitió de octubre de 2006 a junio de 2007, con Mamoru Miyano como Light.\n\nEl audio de reacción es la parte que se salió del fandom por completo. Un jadeo de asombro, un baka plano, un grito de transformación sostenido cuatro segundos más de lo razonable: eso carga una forma, no una trama, y por eso funciona como puntuación sobre el video de un gato cayéndose de la mesa. Al «To Be Continued» le pasó lo mismo. Viene de los congelados que cerraban la primera temporada del anime de JoJo de 2012, con Roundabout de fondo, un tema de Yes de 1971 que casi nadie de los que lo usan escuchó completo.\n\nTodo aquí se toca desde el navegador y se baja gratis en MP3, con una ficha por sonido que anota la serie, el personaje y la escena. Esas fichas están en inglés, como el resto del catálogo. Unos cuantos clips con sabor a anime viven en otras secciones del sitio, porque internet los archivó como memes antes que como anime. Y todos son extractos de series con licencia: si hay dinero de por medio, trátalos como audio prestado.",
     "faq": [
       {
-        "q": "¿Agregan sonidos de las temporadas nuevas?",
-        "a": "Sí. Cuando una frase o un sting empieza a marcar tendencia en los edits, gana su botón aquí, normalmente en cuestión de días."
+        "q": "¿Qué significa realmente ora ora ora?",
+        "a": "Casi nada, y por eso sobrevive intacto en todos los idiomas. Un ora suelto en japonés funciona como un «oye», sirve para llamar la atención y no carga contenido. Jotaro y Star Platinum sueltan uno por golpe, así que lo que dura la tanda es lo que dura la paliza. Daisuke Ono lo grita en japonés y Matthew Mercer lo conserva igual en el doblaje al inglés."
       },
       {
-        "q": "¿De qué serie viene cada sonido?",
-        "a": "La ficha de cada clip anota la serie y la escena exacta, porque medio chiste está en el contexto. Esas fichas están en inglés, como el resto del catálogo."
+        "q": "¿Qué es un domain expansion y por qué acabó siendo un sonido?",
+        "a": "En Jujutsu Kaisen un domain expansion, ryoiki tenkai en japonés, mete al rival en un espacio donde la técnica del que lo invoca no puede fallar. El de Gojo es Unlimited Void y el de Sukuna, Malevolent Shrine. Terminó como audio porque la técnica se anuncia en voz alta: las palabras llegan antes que el efecto, así que unos segundos de grito cargan toda la escalada sin un solo cuadro de imagen."
       },
       {
-        "q": "¿Puedo bajar los sonidos de anime?",
-        "a": "Sí, cada uno tiene su MP3 con descarga gratis en su ficha, sin registro, listo para tus edits o para la botonera de Discord."
+        "q": "¿De dónde sale el To Be Continued?",
+        "a": "De la primera temporada del anime de JoJo's Bizarre Adventure de 2012, que cerraba sus episodios con un congelado en sepia y una flecha cruzando la pantalla, con Roundabout de la banda británica Yes encima. El tema es de 1971 y es más viejo que el manga. La versión meme corta el video en el peor momento posible y deja que el riff de guitarra remate."
+      },
+      {
+        "q": "¿El sub y el doblaje dan sonidos distintos?",
+        "a": "A veces. Los gritos que no son palabras, el ora ora ora entre ellos, pasan casi iguales. Las actuaciones no. A Goku lo hace Masako Nozawa en japonés desde 1986, y también a Gohan, Goten y Bardock; en inglés es otra persona, y en el doblaje latino es Mario Castañeda. El mismo grito existe en tres versiones con hinchadas separadas, y cada quien usa la que escuchó primero."
+      },
+      {
+        "q": "¿Puedo bajarlos para mis edits o para Discord?",
+        "a": "Sí, y es para lo que se usan casi siempre. Cada botón trae descarga gratis en MP3, sin registro, lista para una edición, para la botonera de un servidor o para una alerta de stream. Son extractos de series con licencia, así que si el video está monetizado o es comercial, resuelve los derechos en lugar de dar por hecho que unos segundos no cuentan."
       }
     ]
   }

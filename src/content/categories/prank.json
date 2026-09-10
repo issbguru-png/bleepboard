@@ -2,35 +2,55 @@
   "name": "Prank",
   "hubTitle": "Prank Soundboard",
   "order": 6,
-  "metaDescription": "Prank sound buttons: alarms, buzzers, static and fake phone sounds to catch your friends off guard. Instant play, free downloads.",
-  "intro": "Sounds engineered to get a reaction. The prank soundboard is stocked with alarms that stop conversations, buzzers that imply someone got an answer very wrong, fake phone sounds, and bursts of static that make people check their speakers.\n\nEverything plays instantly from the browser, with no loading and no waiting, which matters more than you would think mid-prank, and everything downloads free as MP3 for the more elaborate setups. Use responsibly, or at least point the blame at whoever laughed hardest.",
+  "metaDescription": "Prank sound buttons that work: alarms, buzzers, fake phone sounds and static. Instant play on any phone, free MP3 downloads, no signup.",
+  "intro": "A startle is a reflex, and reflexes have specifications. What triggers one is speed of arrival rather than loudness: work on the acoustic startle response finds that a sound reaching full intensity within a few milliseconds sets it off, while the same sound faded in over a fifth of a second largely does not. It fires in hundredths of a second, before anyone has decided anything. A burst of static works. A slow siren does not, and turning it up will not help.\n\nRestraint does the rest. One hit lands. Two is a bit. By the fourth nobody reacts, because the reflex that fires on a surprise stops firing on a pattern. The best sounds here borrow authority from something real: a smoke detector chirp, a school bell, a phone buzzing on a hard table. Nobody looks up for a cartoon boing. Everybody looks up for a low battery.\n\nWhere the sound has to travel decides which clips are usable. In a room, a small speaker face down on a hard surface beats a loud one held in the air, since the surface does the work and nobody can locate the source. Down a phone line, physics narrows things sharply. Traditional telephone audio carries roughly 300 Hz to 3.4 kHz and discards the rest, so a deep boom arrives as a faint thump while a beep, a siren or a voice comes through whole.\n\nDiscord and the other voice apps add an obstacle of their own. Discord's noise suppression is licensed from Krisp and trained to keep speech and discard everything else, which is wonderful for your keyboard and fatal for a soundboard routed in through a virtual microphone. Turn suppression off on your own input, or upload the MP3 to the server's own soundboard and skip the microphone entirely.\n\nNow the part nobody enjoys writing. A prank is something you do to a person who gets to laugh afterwards, and once it stops being that it is harassment, a legal matter in most places rather than a question of taste. Repeated unwanted calls qualify. Faking an emergency is worse. The Amber Alert tone and the tornado warning are here because people search for them and want to know what they heard, but United States rules forbid transmitting those signals, or convincing imitations, outside a real emergency or an authorised test. Broadcasters have been fined heavily. Play them out of curiosity, not at strangers.\n\nSpeed matters more than it sounds like it should, so nothing here loads first. Every clip plays the moment you tap it, on a phone as readily as a laptop, and downloads free as an MP3. One curiosity: the mosquito tone here sits at 15 kHz, and hearing that high fades with age, so the classroom version works on the class and not the teacher.",
   "faq": [
     {
-      "q": "What's the best prank sound?",
-      "a": "The classics work because they trigger reflexes: a notification ping makes everyone check their phone, an alarm makes people look for the exit, and a wrong-answer buzzer ends any argument."
+      "q": "What actually makes a prank sound work?",
+      "a": "How fast it starts, not how loud it is. The acoustic startle reflex responds to a sudden onset, and research on it finds that a sound reaching full level within a few milliseconds triggers the response while the same sound eased in over a couple of hundred milliseconds mostly does not. Pick a clip with a hard attack and leave the volume alone. Familiar sounds help too, because an alarm or a notification carries meaning before anyone works out what happened."
     },
     {
-      "q": "Can I play these from my phone?",
-      "a": "Yes. Bleepboard is a website, so every button works in any phone browser with nothing to install."
+      "q": "Which sounds work over a phone call?",
+      "a": "Anything that lives where speech lives. Traditional phone audio passes roughly 300 Hz to 3.4 kHz and throws the rest away, so beeps, sirens, buzzers and voices survive the trip intact while bass drops and deep booms arrive as a disappointing thud. Test on an actual call before you rely on it, because the codec varies between networks and apps."
+    },
+    {
+      "q": "Why does my soundboard sound thin or vanish on Discord?",
+      "a": "Noise suppression is eating it. Discord licenses its suppression from Krisp, and the model is trained to keep human speech and discard everything that is not, so audio fed in through a virtual microphone gets treated as background noise. Switch it off in your voice settings, or avoid the problem by uploading the MP3 to the server's own soundboard, which never touches your microphone."
+    },
+    {
+      "q": "Can I run all this from my phone?",
+      "a": "Yes, and most people do. Bleepboard is a website rather than an app, so every button works in any mobile browser with nothing installed and no account. Two things to watch: a phone on silent will show the button playing and produce nothing, and a phone speaker cannot move much low-frequency air, so bass-heavy clips lose their punch. Mid-range sounds carry far better off a handset."
+    },
+    {
+      "q": "Is there anything here I should not use as a prank?",
+      "a": "The emergency tones. The Amber Alert and tornado warning sounds are on this board so people can identify what they heard, but United States rules prohibit transmitting real alert signals, or convincing imitations of them, outside an actual emergency or an authorised test, and the fines are serious. Beyond that, the honest line is simple: a prank ends with the other person laughing. Repeated unwanted calls and anything aimed at frightening a stranger are harassment, and no sound file makes that different."
     }
   ],
   "es": {
     "name": "Bromas",
     "hubTitle": "Botonera de Bromas",
-    "metaDescription": "Sonidos para bromas: alarmas, timbres de error, estática y teléfonos falsos para agarrar a tus amigos desprevenidos. Suenan al toque, gratis.",
-    "intro": "Nada corta una conversación como una alarma que nadie esperaba. Este tablero está surtido con sonidos diseñados para provocar una reacción: alarmas que detienen todo, timbres que insinúan que alguien respondió muy mal, teléfonos falsos y ráfagas de estática que hacen que la gente revise sus bocinas.\n\nTodo suena al instante desde el navegador, sin cargas ni esperas, que importa más de lo que parece a mitad de una broma. Y todo se baja gratis en MP3 para los montajes más elaborados, desde la ficha de cada sonido, que está en inglés.\n\nÚsalos con responsabilidad. O por lo menos échale la culpa al que se rio más fuerte.",
+    "metaDescription": "Sonidos para bromas que sí funcionan: alarmas, timbres, teléfonos falsos y estática. Suenan al toque en el teléfono y el MP3 es gratis.",
+    "intro": "El susto es un reflejo, y los reflejos tienen especificaciones. Lo que lo dispara es la rapidez con que llega el sonido, más que el volumen: los estudios sobre el reflejo de sobresalto acústico encuentran que un estímulo que alcanza su intensidad plena en pocos milisegundos lo activa, mientras que ese mismo sonido subido poco a poco durante una quinta parte de segundo casi no lo hace. Se dispara en centésimas de segundo, antes de que nadie decida nada. Una ráfaga de estática funciona. Una sirena lenta no, y subirle el volumen tampoco ayuda.\n\nLa contención hace el resto. Un golpe cae bien. Dos ya son un chiste. Para el cuarto nadie reacciona, porque el reflejo que salta ante una sorpresa se apaga ante un patrón. Los mejores sonidos de aquí toman prestada su autoridad de algo real: el chirrido de un detector de humo, el timbre de la escuela, un teléfono vibrando sobre una mesa dura. Nadie levanta la cabeza por un boing de caricatura. Todo el mundo la levanta por una batería baja.\n\nPor dónde tiene que viajar el sonido decide qué clips sirven. En una habitación, una bocina chica boca abajo sobre una superficie dura le gana a una fuerte sostenida en el aire, porque la superficie hace el trabajo y nadie logra ubicar el origen. Por teléfono, la física recorta las opciones de golpe. El audio telefónico clásico lleva más o menos de 300 Hz a 3,4 kHz y tira lo demás, así que un golpe grave llega como un ruidito sordo mientras un pitido, una sirena o una voz pasan enteros.\n\nDiscord y las demás apps de voz suman su propio obstáculo. La supresión de ruido de Discord está licenciada de Krisp y entrenada para conservar la voz y descartar todo lo demás, algo estupendo para tu teclado y letal para una botonera ruteada por un micrófono virtual. Apágala en tu entrada, o sube el MP3 a la botonera del propio servidor y sáltate el micrófono.\n\nAhora la parte que a nadie le gusta escribir. Una broma es algo que le haces a alguien que después se puede reír, y en cuanto deja de ser eso pasa a ser acoso, que en casi todas partes es un asunto legal y no de buen gusto. Las llamadas repetidas no deseadas entran ahí. Fingir una emergencia es peor. El tono de Amber Alert y la alerta de tornado están aquí porque la gente los busca y quiere saber qué escuchó, pero las normas de Estados Unidos prohíben transmitir esas señales, o imitaciones convincentes, fuera de una emergencia real o una prueba autorizada. Hay emisoras multadas con cifras altas. Tócalos por curiosidad, no contra desconocidos.\n\nLa velocidad importa más de lo que parece, así que aquí nada se queda cargando. Cada clip suena en cuanto lo tocas, en el teléfono igual que en la computadora, y se baja gratis en MP3. Las fichas de cada sonido están en inglés. Una curiosidad: el tono de mosquito de aquí está en 15 kHz, y la audición a esa altura se pierde con la edad, así que la versión de salón funciona con el grupo y no con el profesor.",
     "faq": [
       {
-        "q": "¿Cuál es el mejor sonido para una broma?",
-        "a": "Los clásicos funcionan porque disparan reflejos: un ping de notificación hace que todos revisen el teléfono, una alarma hace que la gente busque la salida y un timbre de respuesta incorrecta termina cualquier discusión."
+        "q": "¿Qué hace que un sonido de broma funcione?",
+        "a": "Lo rápido que empieza, no lo fuerte que suena. El reflejo de sobresalto acústico responde a un arranque repentino, y la investigación sobre él encuentra que un sonido que llega a su nivel pleno en pocos milisegundos dispara la respuesta, mientras que ese mismo sonido subido a lo largo de un par de cientos de milisegundos casi no la dispara. Elige un clip de ataque seco y deja el volumen en paz. Los sonidos conocidos ayudan también, porque una alarma o una notificación significan algo antes de que nadie entienda qué pasó."
       },
       {
-        "q": "¿Puedo hacer las bromas desde el teléfono?",
-        "a": "Sí. Bleepboard es una página, así que cada botón funciona en el navegador de cualquier teléfono sin instalar nada."
+        "q": "¿Qué sonidos se escuchan bien por llamada?",
+        "a": "Los que viven donde vive la voz. El audio telefónico clásico deja pasar de unos 300 Hz a 3,4 kHz y descarta el resto, así que pitidos, sirenas, timbres y voces llegan enteros mientras los graves profundos llegan como un golpe sordo y decepcionante. Pruébalo en una llamada real antes de confiarte, porque el códec cambia entre redes y entre aplicaciones."
       },
       {
-        "q": "¿Los sonidos tardan en cargar?",
-        "a": "No, y ahí está medio truco. Los botones suenan en cuanto los tocas, sin cargas ni esperas, porque una broma que tarda tres segundos ya no es una broma."
+        "q": "¿Por qué mi botonera se oye débil o desaparece en Discord?",
+        "a": "Se la está comiendo la supresión de ruido. Discord licencia su supresión de Krisp, y el modelo está entrenado para conservar la voz humana y descartar lo que no lo es, así que el audio que entra por un micrófono virtual queda tratado como ruido de fondo. Apágala en los ajustes de voz, o evita el problema subiendo el MP3 a la botonera del propio servidor, que nunca pasa por tu micrófono."
+      },
+      {
+        "q": "¿Puedo hacer todo esto desde el teléfono?",
+        "a": "Sí, y es de donde llega casi todo el mundo. Bleepboard es una página y no una app, así que cada botón funciona en el navegador de cualquier teléfono sin instalar nada y sin cuenta. Dos avisos: con el teléfono en silencio verás el botón reproducirse sin oír nada, y la bocina de un teléfono no mueve mucho aire grave, así que los clips con mucho bajo pierden fuerza. Los sonidos de rango medio salen bastante mejor."
+      },
+      {
+        "q": "¿Hay algo aquí que no debería usar para una broma?",
+        "a": "Los tonos de emergencia. La Amber Alert y la alerta de tornado están en este tablero para que la gente identifique lo que escuchó, pero las normas de Estados Unidos prohíben transmitir señales de alerta reales, o imitaciones convincentes de ellas, fuera de una emergencia auténtica o una prueba autorizada, y las multas son serias. Fuera de eso, la línea honesta es simple: una broma termina con la otra persona riéndose. Las llamadas repetidas no deseadas y cualquier cosa dirigida a asustar a un desconocido son acoso, y ningún archivo de audio cambia eso."
       }
     ]
   }

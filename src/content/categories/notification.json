@@ -2,35 +2,55 @@
   "name": "Notification",
   "hubTitle": "Notification Sounds Soundboard",
   "order": 5,
-  "metaDescription": "Iconic notification sound buttons: pings, chimes, alerts and message tones. Play them instantly or download the MP3 free.",
-  "intro": "The most recognisable half-second sounds on Earth: notification pings, message chimes and alert tones. People come looking for these to use as custom ringtones, to prank friends mid-conversation, or to drop into edits for that instant flash of recognition.\n\nThis board collects the classics and the trending ones as instant buttons. Each sound's page has a free MP3 download sized for use as a phone notification, plus an embed code if you want the button on your own site.",
+  "metaDescription": "Notification sound buttons: iPhone alerts, WhatsApp, Instagram, Windows chimes, the Nokia tune and AOL mail. Play free, download the MP3 for your phone.",
+  "intro": "An alert tone has one job, which is to be heard through whatever you were already doing, and the whole design follows from that. Human hearing peaks somewhere between about 2 and 5 kHz, partly because the ear canal resonates in that band, so a tone parked there sounds louder than it measures and cuts through a room on less power. Pitch that rises reads as a question and holds you. Pitch that falls reads as finished. Keep the whole thing under a second and it never collides with the next one.\n\nNobody decides to react to these. Play a familiar ping out loud in a quiet room and half the people in it reach for a pocket before working out what happened. The reflex is trained rather than chosen, and it is strong enough to misfire unprompted: a 2013 study of medical interns found that most of them had felt a phone vibrate that had not. That reliability is what makes these sounds useful twice over, as a prank needing no setup and as edit punctuation that gets a physical response before recognition catches up.\n\nTwo searches bring most people to a page like this. One is identification, because something in the room keeps pinging and the app it belongs to is easier to find by ear than by scrolling through settings, so the board is labelled by app and by era. The other is replacement, usually because a default tone has been ruined by association with one particular sender. Both end in the same place: a free MP3 short enough to sit under a notification.\n\nThe famous ones have odder histories than their length suggests. The Nokia tune is four bars lifted from Gran Vals, a solo guitar piece Francisco Tárrega wrote in 1902, picked partly because it had long since fallen out of copyright, and it reached handsets on the Nokia 2110 in 1994. Microsoft asked Brian Eno for something exactly 3.25 seconds long for Windows 95; he wrote 84 candidates, went over the limit, and composed the winner on a Mac, having never used a PC. In April 2025 the Library of Congress added that startup chime to the National Recording Registry.\n\nSeveral of these no longer signal anything. A dial tone, a busy signal, the shriek of a 56k modem handshake, the AOL mail greeting: nobody meets them in the wild any more, so they have quietly turned into shorthand for the past rather than alerts. Drop the modem into a video and the scene is dated without a caption. The rest of the board covers what actually goes off now, from the Apple Pay confirmation to the two Duolingo chimes, and every button plays in the browser and downloads free.",
   "faq": [
     {
-      "q": "Can I set these as my phone's notification sound?",
-      "a": "Yes. Download the MP3 from the sound page, then set it as a custom sound in your phone's settings; both iOS and Android support custom tones."
+      "q": "How do I set one of these as my notification sound?",
+      "a": "Download the MP3 first. On Android you can usually point the notification setting straight at a file in storage, or drop the MP3 into the phone's Notifications folder so it appears in the list. iPhone is fussier, because iOS wants a .m4r tone file rather than an MP3: the free route is to import the MP3 into GarageBand on the phone, export it as a ringtone, then pick it under Settings as your text tone."
     },
     {
-      "q": "Why do notification sounds make great pranks?",
-      "a": "Because everyone reflexively checks their phone. Play a familiar ping out loud in a quiet room and watch the whole room reach for their pockets."
+      "q": "Why do notification sounds work so well as pranks?",
+      "a": "The response is automatic and it is public. Everyone in earshot checks at once, including the people who do not have that app installed. It lands better in a quiet room than a loud one, and better with a stock tone than a custom one, since defaults are the sounds the largest number of people have been trained on."
+    },
+    {
+      "q": "How do I work out which app a notification is coming from?",
+      "a": "Listen to the shape before the melody. Messaging apps tend towards one or two notes going up, system and email alerts sit lower and run longer, payment and success chimes resolve upward onto a settled note. Playing candidates back to back here is faster than opening every app in turn. If the sound feels old rather than obscure, the answer may be a device or a service you no longer use."
+    },
+    {
+      "q": "Why are alert tones always short and high?",
+      "a": "Short so they finish before the next one starts, and so they never become music you have to wait out. High because the ear is most sensitive between roughly 2 and 5 kHz, so a tone placed in that band carries across a room, over speech and out of a pocket at a level that would vanish lower down. Push past a second or so and it stops being an alert and starts being a ringtone."
+    },
+    {
+      "q": "Are these free to download and use?",
+      "a": "Free, with no account and no app. Some are original synthesis made for this site, including the doorbell, the dial tone and the message pop, and those carry no restrictions. Others are recordings of tones owned by the companies that commissioned them, so keep those to personal use and read the origin note on the sound page before putting one into commercial work."
     }
   ],
   "es": {
     "name": "Notificaciones",
     "hubTitle": "Botonera de Sonidos de Notificación",
-    "metaDescription": "Tonos de notificación icónicos: pings, campanitas, alertas y sonidos de mensaje. Escúchalos al toque o baja el MP3 gratis para tu teléfono.",
-    "intro": "Medio segundo basta para que una sala entera revise su teléfono. Los sonidos de notificación son los audios más reconocibles del planeta: pings, tonos de mensaje, campanitas y alertas que todo el mundo lleva tatuados en el reflejo.\n\nLa gente llega a este tablero por tres motivos. Para ponerse un tono de notificación distinto al de fábrica, para hacerle una broma a alguien en plena conversación, o para meter esa chispa de reconocimiento instantáneo en una edición de video.\n\nAquí están los clásicos y los que vienen sonando, cada uno como botón instantáneo. La ficha de cada sonido, en inglés como el resto del catálogo, trae la descarga del MP3 gratis con el tamaño justo para usarlo de tono en el teléfono, más un código para incrustar el botón en tu propia página.",
+    "metaDescription": "Tonos de notificación: alertas de iPhone, WhatsApp, Instagram, campanitas de Windows, el tono de Nokia y el correo de AOL. Gratis y con MP3.",
+    "intro": "Un tono de alerta tiene un solo trabajo: hacerse oír por encima de lo que ya estabas haciendo. Todo el diseño sale de ahí. El oído humano llega a su punto más sensible entre unos 2 y 5 kHz, en parte porque el conducto auditivo resuena en esa banda, así que un tono colocado ahí suena más fuerte de lo que mide y cruza un cuarto con menos potencia. Si el tono sube, se lee como pregunta y te retiene. Si baja, se lee como asunto cerrado. Y si dura menos de un segundo, nunca se encima con el siguiente.\n\nNadie decide reaccionar a esto. Toca un ping conocido en voz alta en un cuarto callado y media sala se lleva la mano al bolsillo antes de entender qué pasó. El reflejo está entrenado, no elegido, y es tan fuerte que se dispara solo: un estudio de 2013 con médicos internos encontró que la mayoría había sentido vibrar un teléfono que no vibró. Esa fiabilidad es lo que vuelve útiles estos audios dos veces, como broma que no necesita preparación y como puntuación de edición que arranca una reacción física antes de que llegue el reconocimiento.\n\nA una página así se llega por dos búsquedas. Una es identificar: algo suena en la casa y averiguar de qué app viene resulta más rápido de oído que revisando ajustes uno por uno, así que aquí los sonidos están ordenados por app y por época. La otra es reemplazar, casi siempre porque un tono de fábrica quedó arruinado por asociación con cierto remitente. Las dos terminan en el mismo lugar: un MP3 gratis y lo bastante corto para caber en una notificación.\n\nLos famosos tienen historias más raras de lo que su duración sugiere. El tono de Nokia son cuatro compases sacados de Gran Vals, una pieza para guitarra sola que Francisco Tárrega escribió en 1902, elegida en parte porque hacía mucho que había salido de derechos, y llegó a los teléfonos con el Nokia 2110 en 1994. A Brian Eno le pidieron algo de exactamente 3.25 segundos para Windows 95: escribió 84 candidatos, se pasó del límite y compuso el ganador en una Mac, porque nunca había usado una PC. En abril de 2025 la Biblioteca del Congreso metió esa campanita de arranque en su registro nacional de grabaciones.\n\nVarios de estos ya no avisan nada. El tono de marcar, la señal de ocupado, el chillido del módem de 56k, el saludo del correo de AOL: nadie se los topa en la vida real, así que se convirtieron en abreviatura del pasado más que en alertas. Mete el módem en un video y la escena queda fechada sin poner un letrero. El resto de la botonera cubre lo que sí suena hoy, del pago con Apple Pay a las dos campanitas de Duolingo. Todo suena en el navegador y se baja gratis, y las fichas de cada sonido están en inglés.",
     "faq": [
       {
-        "q": "¿Puedo poner estos sonidos como tono de notificación en mi teléfono?",
-        "a": "Sí. Baja el MP3 desde la ficha del sonido y configúralo como tono personalizado en los ajustes de tu teléfono; tanto iOS como Android aceptan tonos propios."
+        "q": "¿Cómo pongo uno de estos como tono de notificación?",
+        "a": "Primero baja el MP3. En Android normalmente puedes apuntar el ajuste de notificación directo a un archivo del almacenamiento, o dejar el MP3 en la carpeta Notifications para que aparezca en la lista. El iPhone es más quisquilloso, porque iOS quiere un archivo .m4r y no un MP3: la ruta gratis es importar el MP3 a GarageBand desde el teléfono, exportarlo como tono y luego elegirlo en Ajustes como tono de mensaje."
       },
       {
-        "q": "¿Por qué los sonidos de notificación funcionan tan bien como broma?",
-        "a": "Porque todo el mundo revisa el teléfono por reflejo. Toca un ping conocido en voz alta en un cuarto silencioso y mira cómo la sala completa se lleva la mano al bolsillo."
+        "q": "¿Por qué funcionan tan bien como broma?",
+        "a": "Porque la reacción es automática y además es pública. Todos los que están cerca revisan al mismo tiempo, incluidos los que ni siquiera tienen esa app instalada. Sale mejor en un cuarto callado que en uno ruidoso, y mejor con un tono de fábrica que con uno personalizado, porque los de fábrica son los que más gente trae entrenados."
       },
       {
-        "q": "¿Cuesta algo bajar los tonos?",
-        "a": "Nada. Cada sonido se escucha gratis y su MP3 se baja gratis, sin registro y sin app de por medio."
+        "q": "¿Cómo identifico de qué app viene un sonido que oigo todo el día?",
+        "a": "Fíjate en la forma antes que en la melodía. Las apps de mensajería suelen usar una o dos notas hacia arriba, las alertas del sistema y del correo van más graves y más largas, y los tonos de pago o de éxito cierran subiendo hasta una nota que se queda quieta. Probar candidatos uno tras otro aquí es más rápido que abrir app por app. Y si el sonido te suena viejo y no raro, quizá venga de un aparato o un servicio que ya no usas."
+      },
+      {
+        "q": "¿Por qué todos los tonos de alerta son cortos y agudos?",
+        "a": "Cortos para que terminen antes de que empiece el siguiente y para que no se vuelvan una musiquita que hay que esperar. Agudos porque el oído es más sensible entre unos 2 y 5 kHz, así que un tono en esa banda cruza un cuarto, se impone sobre una conversación y sale del bolsillo a un volumen que más abajo se perdería. Pasado un segundo, deja de ser alerta y empieza a ser tono de llamada."
+      },
+      {
+        "q": "¿Se bajan gratis?",
+        "a": "Gratis, sin cuenta y sin app. Algunos son síntesis original hecha para este sitio, como el timbre de casa, el tono de marcar y el pop de mensaje, y esos no traen restricciones. Otros son grabaciones de tonos que pertenecen a las empresas que los encargaron: esos déjalos para uso personal y revisa la nota de origen en la ficha antes de meterlos en algo comercial."
       }
     ]
   }

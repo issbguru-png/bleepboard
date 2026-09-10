@@ -2,35 +2,55 @@
   "name": "TikTok",
   "hubTitle": "TikTok Sounds Soundboard",
   "order": 4,
-  "metaDescription": "The TikTok sounds everyone is using right now, as instant sound buttons. Play viral TikTok audio and download the MP3 free.",
-  "intro": "TikTok invents a new iconic sound roughly every week, and this board is where they land. These are the audios you keep hearing in every other video: Get Out, the rizz sound, AUGHHH, the laughs and screams that take over your For You page for a month at a time.\n\nEvery button plays instantly and links to a page with the free MP3 download plus a short explainer on where the trend started, because half the fun of a TikTok sound is knowing the story behind it. We track rising audio daily and ship new buttons within a day or two of a sound breaking out.",
+  "metaDescription": "Viral TikTok sounds as instant buttons, with the trend behind each one explained. Play free, download the MP3, no signup and no app.",
+  "intro": "The app was an audio app first. TikTok's ancestor was Musical.ly, a lip-sync platform launched in 2014, bought by ByteDance in 2017 and folded into TikTok on 2 August 2018. Sound was never a feature bolted on afterwards. It is the object the whole product is arranged around, and that piece of history explains most of what happens on this board.\n\nEvery sound on TikTok has a page of its own. Tap the spinning disc in the corner of a video and you land in a feed of every other clip built on that audio, with a button that starts you recording your own. A sound is a place, then, rather than a property of a video. That one design decision is why an audio clip can gather tens of thousands of uses while the account that posted it first sits at four hundred followers and no one ever finds out who they were.\n\nNothing in that feed depends on who you follow. TikTok's own account of the For You system says recommendations are drawn from your interactions, from device and account settings, and from video information, which the company lists as captions, sounds and hashtags. It states plainly that follower count is not a direct factor, and neither is having had a hit before. Ranking happens per video. A sound can therefore cross thousands of unconnected accounts without a single follower relationship carrying it anywhere.\n\nSpeed is the other half of it. Because audio is tracked as its own object, sounds chart separately from the videos wearing them: TikTok's Creative Center publishes trending audio by region and time window, with use counts and growth rates, next to but apart from trending hashtags. Audio trends run their whole arc in days. A clip can go from unheard to inescapable to slightly embarrassing inside a fortnight, a shorter half-life than any format the internet had before.\n\nWhat that means for you is simpler. You heard something last night, the video has scrolled away for good, and the name was never on screen anyway. Search this board with any word you remember, or work down the grid by ear until one lands. Every button plays the instant you tap it, every clip downloads as a free MP3 with no signup, and each sound has a page explaining what the trend was and where the audio started, which is regularly somewhere unrelated: a film, a football match, a stream from three years ago.",
   "faq": [
     {
-      "q": "How do I find a TikTok sound I heard?",
-      "a": "Browse this board or use the site search with any words you remember. Each sound page describes the trend so you can confirm it's the right clip."
+      "q": "How do I find a TikTok sound I heard but cannot name?",
+      "a": "Search this board with any word you caught, even a fragment of what someone shouted, then read the page for the closest match to confirm it. If the words escape you entirely, work down the grid by ear. The clips are ordered by how much they get played, so the sound that has been chasing you around your feed is usually near the top."
+    },
+    {
+      "q": "Why do TikTok sounds trend separately from the videos?",
+      "a": "Because the platform treats a sound as its own object with its own page, its own follower-free feed and its own counters. TikTok's Creative Center even publishes charts of trending audio by region, listing how many videos use each clip and how fast that number is climbing. A sound can outlive, outgrow and completely outrank the video that introduced it."
+    },
+    {
+      "q": "Does using a trending sound actually help a video spread?",
+      "a": "It helps the system understand what your video is, which is not the same as a guaranteed boost. TikTok says video information including sounds feeds the recommendation model alongside your own interactions and settings, and that follower count is not a direct factor. So a familiar sound places your clip with an audience that already responds to it. Everything after that is the video's problem."
+    },
+    {
+      "q": "How long does a TikTok sound stay current?",
+      "a": "Days, sometimes two or three weeks. The cycle is faster than any earlier meme format because the sound page collects every use in one place, so adoption and saturation both happen at speed. A handful escape the cycle entirely and settle in as permanent editing furniture, which is how clips from 2020 are still turning up in edits made this month."
     },
     {
       "q": "Can I download TikTok sounds as MP3?",
-      "a": "Every sound on this board has a free MP3 download on its page, no signup needed."
+      "a": "Every sound on this board has a free MP3 download on its page, with no signup and nothing to install. Original effects made for this site are free to use anywhere. Clips taken from a released song, a film or a broadcast belong to their owners and are here as short excerpts, so check the origin note before using one commercially."
     }
   ],
   "es": {
     "name": "TikTok",
     "hubTitle": "Botonera de Sonidos de TikTok",
-    "metaDescription": "Los audios de TikTok que suenan en todos lados, como botones instantáneos. Tócalos gratis, mira de dónde salió cada uno y baja el MP3.",
-    "intro": "TikTok estrena un sonido icónico más o menos cada semana, y este tablero es donde aterrizan. Son los audios que sigues escuchando en un video sí y en el otro también: Get Out, el sonido del rizz, AUGHHH, las risas y los gritos que se adueñan de tu For You durante un mes entero.\n\nAquí también, cada botón suena al instante y lleva a una ficha con la descarga del MP3 gratis y una explicación corta de dónde arrancó la tendencia, porque la mitad de la gracia de un audio de TikTok está en conocer la historia detrás. Esas fichas están escritas en inglés, aunque para el audio da lo mismo.\n\nRastreamos a diario qué sonidos vienen subiendo y publicamos los botones nuevos a uno o dos días de que un audio reviente, así que lo que escuchaste anoche probablemente ya está aquí.",
+    "metaDescription": "Los audios virales de TikTok como botones instantáneos, con la tendencia de cada uno explicada. Suenan gratis y el MP3 se baja sin registro.",
+    "intro": "La app nació como una app de audio. El antecesor de TikTok fue Musical.ly, una plataforma de lip sync lanzada en 2014, comprada por ByteDance en 2017 y fusionada con TikTok el 2 de agosto de 2018. El sonido nunca fue un añadido posterior. Es el objeto alrededor del cual está armado el producto entero, y ese detalle de historia explica casi todo lo que pasa en este tablero.\n\nCada sonido de TikTok tiene su propia página. Tocas el disco que gira en la esquina de un video y caes en un feed con todos los demás clips hechos con ese audio, más un botón que te pone a grabar el tuyo. Un sonido es un lugar, entonces, y no una propiedad del video. Esa sola decisión de diseño explica por qué un audio puede juntar decenas de miles de usos mientras la cuenta que lo publicó primero se queda en cuatrocientos seguidores y nadie llega a enterarse de quién era.\n\nNada de ese reparto depende de a quién sigues. La explicación que la propia TikTok da del sistema For You dice que las recomendaciones salen de tus interacciones, de la configuración del equipo y de la información del video, que la empresa enumera como textos, sonidos y hashtags. Y afirma sin rodeos que la cantidad de seguidores no es un factor directo, ni tampoco haber tenido un éxito antes. El orden se decide video por video. Así, un sonido puede atravesar miles de cuentas sin relación entre sí sin que ningún vínculo de seguidores lo cargue.\n\nLa velocidad es la otra mitad del asunto. Como el audio se rastrea como objeto propio, los sonidos entran en las listas por separado de los videos que los llevan: el Creative Center de TikTok publica el audio en tendencia por región y por ventana de tiempo, con cifras de uso y de crecimiento, al lado de los hashtags pero aparte de ellos. Una tendencia de audio recorre su arco completo en días. Un clip pasa de desconocido a inevitable y de ahí a un poco vergonzoso en quince días, una vida más corta que la de cualquier formato anterior.\n\nEn la práctica, para ti la cosa es más simple. Escuchaste algo anoche, el video ya se perdió en el scroll y el nombre nunca apareció en pantalla. Busca en este tablero con la palabra que recuerdes, mejor en inglés porque así está etiquetado el catálogo, o baja por la cuadrícula de oído hasta que uno caiga. Cada botón suena en cuanto lo tocas, cada clip se baja gratis en MP3 sin registro, y cada sonido tiene su ficha, en inglés, con la tendencia explicada y con el punto donde arrancó el audio, que a menudo es un lugar sin relación: una película, un partido, un stream de hace tres años.",
     "faq": [
       {
-        "q": "¿Cómo encuentro un audio de TikTok que escuché por ahí?",
-        "a": "Recorre este tablero o usa el buscador del sitio con las palabras que recuerdes, mejor en inglés, porque así está etiquetado el catálogo. Cada ficha describe la tendencia, así que puedes confirmar que es el clip correcto antes de bajarlo."
+        "q": "¿Cómo encuentro un audio de TikTok si no sé cómo se llama?",
+        "a": "Busca en este tablero con cualquier palabra que hayas alcanzado a oír, aunque sea un pedazo de lo que alguien gritó, y confirma leyendo la ficha del resultado más parecido. Conviene teclear en inglés, porque así está etiquetado el catálogo. Si no te quedó ninguna palabra, baja por la cuadrícula de oído: los clips van ordenados por cuánto se tocan, así que el que te viene persiguiendo suele estar arriba."
+      },
+      {
+        "q": "¿Por qué los audios se vuelven tendencia aparte de los videos?",
+        "a": "Porque la plataforma trata cada sonido como un objeto con página propia, con su feed sin seguidores de por medio y con sus propios contadores. El Creative Center de TikTok incluso publica listas de audio en tendencia por región, con cuántos videos usan cada clip y qué tan rápido sube esa cifra. Un sonido puede sobrevivir al video que lo presentó y dejarlo muy atrás."
+      },
+      {
+        "q": "¿Usar un audio en tendencia ayuda de verdad a que un video crezca?",
+        "a": "Ayuda a que el sistema entienda qué es tu video, que no es lo mismo que un empujón garantizado. TikTok dice que la información del video, sonidos incluidos, alimenta el modelo de recomendación junto con tus interacciones y tu configuración, y que los seguidores no son un factor directo. Un audio conocido coloca tu clip frente a un público que ya reacciona a él. De ahí en adelante el problema es del video."
+      },
+      {
+        "q": "¿Cuánto dura vigente un audio de TikTok?",
+        "a": "Días, a veces dos o tres semanas. El ciclo va más rápido que en cualquier formato de meme anterior porque la página del sonido junta todos los usos en un mismo sitio, así que la adopción y la saturación llegan casi juntas. Unos pocos se escapan del ciclo y se quedan como mobiliario fijo de edición, y por eso todavía aparecen clips de 2020 en videos hechos este mes."
       },
       {
         "q": "¿Puedo bajar los audios de TikTok en MP3?",
-        "a": "Sí. Todos los sonidos de este tablero tienen descarga gratis en MP3 en su ficha, sin registrarte y sin instalar nada."
-      },
-      {
-        "q": "¿Cada cuánto llegan audios nuevos?",
-        "a": "Revisamos a diario qué audios vienen creciendo, y los botones nuevos suelen aparecer a uno o dos días de que un sonido explote. Si hoy lo escuchaste en tu For You, dale unos días como mucho."
+        "a": "Sí. Todos los sonidos de este tablero traen descarga gratis en MP3 en su ficha, sin registro y sin instalar nada. Los efectos originales hechos para el sitio se pueden usar donde quieras. Los clips que vienen de una canción publicada, de una película o de una transmisión pertenecen a sus dueños y están aquí como extractos cortos: revisa la nota de origen antes de un uso comercial."
       }
     ]
   }

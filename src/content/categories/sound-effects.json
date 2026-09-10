@@ -2,35 +2,55 @@
   "name": "Sound Effect",
   "hubTitle": "Sound Effects Soundboard",
   "order": 2,
-  "metaDescription": "Instant sound effect buttons: bleeps, buzzers, booms, zaps and more. Tap to play, free MP3 downloads for edits, streams and pranks.",
-  "intro": "Classic sound effects, one tap away. This board collects the workhorse SFX everyone reaches for, from censor bleeps and wrong-answer buzzers to booms, zaps and static, as instant sound buttons you can play in the browser or download free as MP3.\n\nThese are the clips that do the heavy lifting in video edits, live streams and classroom pranks alike. Each one has its own page with the download, an embed code, and a note on where the effect is typically used, so you can find the exact sound you heard and get it into your project in seconds.",
+  "metaDescription": "Sound effect buttons for edits and streams: bleeps, buzzers, stings, risers, booms and zaps. Tap to play, download every MP3 free.",
+  "intro": "Editors do not call all of these sound effects. There is a working vocabulary behind the job, older than the internet, and knowing four words of it makes finding the right clip much faster. This board holds what people actually reach for: hits, builds, transitions and the everyday noises that stand in for real objects.\n\nFoley is the narrowest of those words and the one most often misused online. It means sound performed live in sync with the picture: footsteps, cloth rustle, a hand setting a glass down. The name is Jack Foley's, who was at Universal when the studio scrambled to add sound to a picture at the end of the 1920s. The trade keeps foley apart from hard effects, cut in from libraries, and from ambience, the room tone under everything else. Very little here is foley. Most of it is hard effects.\n\nA sting is a short musical phrase used as punctuation. Radio invented the habit and television kept it: a few seconds of orchestra telling you a scene has ended or a revelation is close. The suspense sting everybody can hum, dun dun duuun, has its earliest documented broadcast use in CBS Radio's Suspense in 1942. The comedy version, that percussion payoff after a punchline, gets called a rimshot almost universally and is technically a sting as well.\n\nRisers and whooshes handle movement instead of meaning. A riser climbs in pitch or volume toward a point on the timeline and does nothing except make you expect something. Land an impact on the frame it resolves and the cut feels deliberate; land it two frames late and the whole thing feels amateur. A whoosh does the same job sideways, covering a transition so the join stops being visible. Neither is funny. Both are structural.\n\nThe split that matters most here is between a sound that carries the joke and a sound that does a job. A rimshot announces that a joke has occurred. A door close just closes a door. Reach for the announcing kind only when the comedy needs pointing at, because it wears out fast and the working kind never does. The censor bleep sits across that line: a 1000 Hz tone borrowed from the alignment signal on every broadcast engineer's bench, never written into any standard, funny and functional at once.\n\nOne practical note on level. YouTube and the streaming services normalise playback loudness, so an effect exported hotter than everything around it gets turned back down rather than played louder. When a sound is not cutting through, the fix is frequency and timing, not gain. Everything here plays in the browser, downloads free as an MP3, and carries an embed code for the working button.",
   "faq": [
     {
-      "q": "Can I download these sound effects as MP3?",
-      "a": "Yes, every effect has a free MP3 download on its sound page. One click, no signup."
+      "q": "What is the difference between foley and a sound effect?",
+      "a": "Foley is performed. An artist watches the picture and creates the sound in real time with props, which is how footsteps, clothing and handled objects get their weight. Hard effects, sometimes called spot effects, are chosen from a library and cut to the frame instead: doors, gunfire, engines, explosions. Ambience is the continuous background under both. Nearly everything on this board is a hard effect, whatever the internet calls it."
     },
     {
-      "q": "Are these sound effects royalty-free?",
-      "a": "Bleepboard's synthesised effects (bleeps, boops, buzzers) are original and free to use. For sounds sourced from media, check the origin note on each page before commercial use."
+      "q": "What is a sting, and what is a riser?",
+      "a": "A sting is a short musical phrase used as punctuation, a few seconds long, marking the end of a scene or the arrival of a revelation. Broadcasting has used them since at least the 1940s. A riser is not musical in that sense: it climbs in pitch or volume toward a specific moment and creates expectation without saying anything. Stings comment, risers build. Most edits need both and use neither well."
+    },
+    {
+      "q": "Why does the censor bleep sound the way it does?",
+      "a": "It is a 1000 Hz sine tone, and the reason is convenience rather than design. That exact tone was the reference signal engineers used to line up equipment, so a generator for it sat on every desk in every studio when broadcasters started needing to erase words in a hurry. It masks speech cleanly and can never be mistaken for programme audio. No rule ever specified it. It simply became the convention and stayed."
+    },
+    {
+      "q": "Which of these sound effects can I use commercially?",
+      "a": "The effects synthesised for Bleepboard, including the bleeps, boops, buzzers and pops, are original and free to use anywhere with no attribution. Anything sourced from a film, a game or a broadcast belongs to its owner and appears here as a short excerpt, so read the origin note on the sound page before it goes anywhere commercial."
+    },
+    {
+      "q": "Why does my sound effect get lost in the mix?",
+      "a": "Usually because it is fighting the dialogue for the same frequencies, and turning it up rarely fixes that. YouTube and the streaming services normalise playback loudness, so a hotter export mostly gets turned back down at the other end. Choose an effect that sits above or below the speech range, place it in a gap rather than under a word, and put the hit on the frame where the picture actually moves."
     }
   ],
   "es": {
     "name": "Efectos de sonido",
     "hubTitle": "Botonera de Efectos de Sonido",
-    "metaDescription": "Efectos de sonido al toque: bips de censura, timbres de error, explosiones, zaps y estática. Suenan gratis y cada MP3 se baja sin registro.",
-    "intro": "El bip de censura, el timbre de respuesta incorrecta, la explosión, el zap y la ráfaga de estática: los efectos de sonido que todo el mundo termina buscando, reunidos como botones que suenan directo en el navegador.\n\nEstos clips son los que hacen el trabajo pesado en las ediciones de video, en los streams en vivo y en más de una broma de salón de clases. Ninguno necesita presentación; necesitan estar a mano, y para eso existe este tablero.\n\nCada efecto tiene su propia ficha, en inglés, con la descarga del MP3 gratis, un código para incrustar el botón en tu página y una nota sobre dónde se suele usar. Así encuentras el sonido exacto que escuchaste y lo metes en tu proyecto en segundos, sin cuentas ni programas de por medio.",
+    "metaDescription": "Efectos de sonido al toque: bips de censura, timbres, stings, risers, explosiones y zaps. Suenan gratis y cada MP3 se baja sin registro.",
+    "intro": "Los editores no le dicen efecto de sonido a todo esto. Detrás del oficio hay un vocabulario de trabajo, cincuenta años más viejo que internet, y saber cuatro de sus palabras acelera muchísimo la búsqueda del clip correcto. Este tablero reúne lo que la gente de verdad usa: golpes, subidas, transiciones y los ruidos cotidianos que representan objetos reales.\n\nFoley es la más estrecha de esas palabras y la que peor se usa en internet. Significa sonido interpretado en vivo y en sincronía con la imagen: pasos, roce de ropa, una mano dejando un vaso. El apellido es el de Jack Foley, que estaba en Universal cuando el estudio corrió a meterle sonido a una película a finales de los años veinte. El gremio separa el foley de los efectos duros, que salen de una biblioteca y se cortan al cuadro, y del ambiente, el fondo continuo debajo de todo. Muy poco de esta página es foley. Casi todo son efectos duros.\n\nUn sting es una frase musical corta que funciona como puntuación. La radio inventó la costumbre y la televisión la conservó: unos segundos de orquesta avisando que una escena terminó o que viene una revelación. El sting de suspenso que cualquiera puede tararear, ese dun dun duuun, tiene su primer uso documentado en el programa Suspense de CBS, en 1942. La versión cómica, el remate de percusión después del chiste, casi todo el mundo la llama rimshot y también es técnicamente un sting.\n\nLos risers y los whooshes se ocupan del movimiento, no del significado. Un riser sube de tono o de volumen hacia un punto de la línea de tiempo y no hace nada salvo ponerte a esperar algo. Si el impacto cae en el cuadro donde el riser resuelve, el corte se siente decidido; si cae dos cuadros tarde, se siente amateur. El whoosh hace lo mismo de costado: tapa una transición para que la unión deje de verse. Ninguno es gracioso. Los dos son estructura.\n\nLa división que más importa aquí es entre el sonido que carga el chiste y el sonido que hace un trabajo. Un rimshot anuncia que hubo un chiste. Una puerta al cerrarse nada más cierra una puerta. Usa el que anuncia solo cuando la comedia necesita que la señalen, porque ese se gasta rápido y el otro no se gasta nunca. El bip de censura queda a caballo entre los dos: un tono de 1000 Hz tomado de la señal de calibración que había en la mesa de todo ingeniero de radio, nunca lo fijó ninguna norma, y hoy es gracioso y funcional a la vez.\n\nUna nota práctica sobre el volumen. YouTube y los servicios de streaming normalizan el nivel de reproducción, así que un efecto exportado más fuerte que el resto termina bajado en lugar de sonar más. Cuando algo no se abre paso, la solución es la frecuencia y el momento, no la ganancia. Todo suena aquí mismo en el navegador, se baja gratis en MP3 y trae código para incrustar el botón. Las fichas de cada efecto están en inglés.",
     "faq": [
       {
-        "q": "¿Puedo bajar los efectos de sonido en MP3?",
-        "a": "Sí. Cada efecto tiene su descarga gratis en su ficha. Un clic, sin registro y sin app."
+        "q": "¿Cuál es la diferencia entre foley y un efecto de sonido?",
+        "a": "El foley se interpreta. Alguien mira la imagen y crea el sonido en tiempo real con objetos, que es como los pasos, la ropa y las cosas que se manipulan consiguen su peso. Los efectos duros se eligen de una biblioteca y se cortan al cuadro: puertas, disparos, motores, explosiones. El ambiente es el fondo continuo debajo de ambos. Casi todo lo de este tablero es efecto duro, le diga internet como le diga."
       },
       {
-        "q": "¿Son efectos libres de derechos?",
-        "a": "Los efectos sintetizados de Bleepboard, como los bips, los boops y los timbres, son originales y libres para usar donde quieras. Los que vienen de películas o programas llevan una nota de origen en su ficha: revísala antes de cualquier uso comercial."
+        "q": "¿Qué es un sting y qué es un riser?",
+        "a": "Un sting es una frase musical corta que sirve de puntuación, de unos pocos segundos, y marca el final de una escena o la llegada de una revelación. La radio los usa desde los años cuarenta por lo menos. Un riser no es musical en ese sentido: sube de tono o de volumen hacia un momento concreto y genera expectativa sin decir nada. El sting comenta, el riser construye. Casi todo edit necesita los dos y no aprovecha ninguno."
       },
       {
-        "q": "¿Sirven para bromas y para presentaciones?",
-        "a": "Para eso hacen el trabajo pesado: ediciones de video, streams en vivo y bromas de salón de clases. Todo suena directo desde el navegador, también en el teléfono, sin instalar nada."
+        "q": "¿Por qué el bip de censura suena así?",
+        "a": "Es un tono senoidal de 1000 Hz, y la razón es la comodidad más que el diseño. Ese tono exacto era la señal de referencia con la que los ingenieros calibraban los equipos, así que había un generador en cada mesa de cada estudio justo cuando las emisoras empezaron a necesitar borrar palabras a toda prisa. Tapa la voz limpiamente y nunca se confunde con el audio del programa. Ninguna norma lo estableció: se volvió costumbre y ahí se quedó."
+      },
+      {
+        "q": "¿Cuáles de estos efectos puedo usar comercialmente?",
+        "a": "Los efectos sintetizados para Bleepboard, entre ellos los bips, los boops, los timbres y los pops, son originales y libres para usar donde quieras, sin atribución. Lo que viene de una película, un juego o una transmisión pertenece a su dueño y aparece aquí como extracto corto, así que lee la nota de origen en la ficha antes de llevarlo a un trabajo comercial."
+      },
+      {
+        "q": "¿Por qué mi efecto se pierde en la mezcla?",
+        "a": "Casi siempre porque pelea con la voz por las mismas frecuencias, y subirle el volumen rara vez lo arregla. YouTube y los servicios de streaming normalizan el nivel de reproducción, así que una exportación más fuerte suele terminar bajada del otro lado. Elige un efecto que viva por encima o por debajo del rango de la voz, ponlo en un hueco y no debajo de una palabra, y haz que el golpe caiga en el cuadro donde la imagen se mueve."
       }
     ]
   }
