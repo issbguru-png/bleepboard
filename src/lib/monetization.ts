@@ -42,19 +42,25 @@ export const MEDIAVINE_ID = ''; // TODO: from your Mediavine dashboard
 /**
  * Grow by Mediavine (faves.grow.me).
  *
- * Audience engagement, not advertising: sharing, faves and newsletter prompts.
- * It is Mediavine's free product and is NOT the Mediavine ad network, so it
- * does not trip the AdSense/Mediavine exclusivity note above. AD_NETWORK stays
- * 'adsense'.
+ * OFF: Mediavine requires a site to be 120 days old before Grow is eligible.
+ * Bleepboard's first commit was 2026-08-25, so the earliest it qualifies is
+ * roughly 2026-12-23. Installed and then switched off on 2026-09-12 rather
+ * than deleted, because the wiring is the slow part and the date will come.
  *
- * It is third-party JavaScript that identifies visitors, so it is disclosed in
- * the privacy policy and it loads after the Consent Mode defaults like
- * everything else here. Empty string = not loaded.
+ * TO TURN BACK ON, once eligible: restore the id below. That single change
+ * brings back the script tag in Analytics.astro, the dedicated section in the
+ * privacy policy, and Grow's contribution to TRACKING_LIVE. Nothing else needs
+ * editing. Remember to move POLICY_EFFECTIVE at the same time, since the
+ * privacy policy changes when this flips.
  *
- * The value is the site id from the Grow embed, already base64 as Grow expects
- * it. This one decodes to Site:95dab47a-b16f-4079-84d1-fef7c8f48ba2.
+ *   export const GROW_SITE_ID = 'U2l0ZTo5NWRhYjQ3YS1iMTZmLTQwNzktODRkMS1mZWY3YzhmNDhiYTI=';
+ *   (decodes to Site:95dab47a-b16f-4079-84d1-fef7c8f48ba2)
+ *
+ * Note for whoever flips it: Grow is Mediavine's free engagement product, not
+ * the Mediavine ad network, so it does NOT trip the exclusivity note above.
+ * AD_NETWORK can stay 'adsense'.
  */
-export const GROW_SITE_ID = 'U2l0ZTo5NWRhYjQ3YS1iMTZmLTQwNzktODRkMS1mZWY3YzhmNDhiYTI=';
+export const GROW_SITE_ID = '';
 
 /**
  * Google Funding Choices / Privacy & Messaging is Google's own CMP. It is
