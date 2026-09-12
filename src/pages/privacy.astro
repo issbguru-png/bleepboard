@@ -18,6 +18,7 @@ import {
   ADS_LIVE,
   ANALYTICS_LIVE,
   ADSENSE_LIVE,
+  GROW_LIVE,
   MEDIAVINE_LIVE,
   TRACKING_LIVE,
 } from '../lib/monetization';
@@ -68,6 +69,7 @@ const liveBits: string[] = [];
 if (ANALYTICS_LIVE) liveBits.push('Google Analytics 4');
 if (ADSENSE_LIVE) liveBits.push('Google AdSense');
 if (MEDIAVINE_LIVE) liveBits.push('Mediavine');
+if (GROW_LIVE) liveBits.push('Grow by Mediavine');
 
 const consentClause = CONSENT_TOOL
   ? ' In the EEA, the UK and Switzerland none of that storage happens until you answer the consent banner.'
@@ -556,6 +558,47 @@ const description = (() => {
       </span>
     </p>
   </section>
+
+  {/* ==================== 3b. grow ==================== */}
+  {GROW_LIVE && (
+    <section class="section" id="grow">
+      <div class="section-head">
+        <h2>Grow by Mediavine</h2>
+      </div>
+      <p class="section-sub">
+        A separate tool from the advertising above, and worth describing on its own.
+      </p>
+
+      <div class="prose">
+        <p>
+          The site loads <strong>Grow by Mediavine</strong>, a free audience tool from the
+          same company that runs the Mediavine ad network. It is not an ad network itself
+          and it does not place adverts on these pages. What it provides is engagement
+          tooling: sharing controls and a way for readers to save things.
+        </p>
+        <p>
+          It is third-party JavaScript, which means it can set its own cookies or
+          identifiers in your browser and can see which pages you visit on this site while
+          it is loaded. We do not receive a copy of your identity from it, and there is no
+          account here for it to attach anything to.
+        </p>
+        <p>
+          Two honest caveats. Grow is operated by Mediavine rather than by us, so what it
+          collects is governed by
+          {' '}<a href="https://www.mediavine.com/privacy-policy/" rel="noopener">Mediavine's privacy policy</a>{' '}
+          and not by this page. And it is loaded last, after everything else on the page,
+          because it is the least important script here: nothing about playing a sound or
+          downloading an MP3 depends on it.
+        </p>
+        <p>
+          Bleepboard's own favourites feature is unrelated to Grow. That list is written to
+          your browser's local storage under a single key, never leaves your device, and is
+          described in full in the storage section above. If Grow offers you its own way to
+          save something, that is a separate thing held by a separate company.
+        </p>
+      </div>
+    </section>
+  )}
 
   {/* ==================== 4. consent ==================== */}
   <section class="section" id="consent">

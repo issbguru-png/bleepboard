@@ -40,6 +40,23 @@ export const ADSENSE_ID = 'ca-pub-9795227844443219';
 export const MEDIAVINE_ID = ''; // TODO: from your Mediavine dashboard
 
 /**
+ * Grow by Mediavine (faves.grow.me).
+ *
+ * Audience engagement, not advertising: sharing, faves and newsletter prompts.
+ * It is Mediavine's free product and is NOT the Mediavine ad network, so it
+ * does not trip the AdSense/Mediavine exclusivity note above. AD_NETWORK stays
+ * 'adsense'.
+ *
+ * It is third-party JavaScript that identifies visitors, so it is disclosed in
+ * the privacy policy and it loads after the Consent Mode defaults like
+ * everything else here. Empty string = not loaded.
+ *
+ * The value is the site id from the Grow embed, already base64 as Grow expects
+ * it. This one decodes to Site:95dab47a-b16f-4079-84d1-fef7c8f48ba2.
+ */
+export const GROW_SITE_ID = 'U2l0ZTo5NWRhYjQ3YS1iMTZmLTQwNzktODRkMS1mZWY3YzhmNDhiYTI=';
+
+/**
  * Google Funding Choices / Privacy & Messaging is Google's own CMP. It is
  * IAB TCF certified, free, and the practical choice if you run AdSense.
  * You still have to create the message in the AdSense UI; this only loads it.
@@ -72,10 +89,11 @@ export const CHILD_DIRECTED = false;
 export const ADS_LIVE = AD_NETWORK !== 'none';
 export const ANALYTICS_LIVE = GA4_ID !== '';
 export const ADSENSE_LIVE = AD_NETWORK === 'adsense' && ADSENSE_ID !== '';
+export const GROW_LIVE = GROW_SITE_ID !== '';
 export const MEDIAVINE_LIVE = AD_NETWORK === 'mediavine' && MEDIAVINE_ID !== '';
 
 /** Anything that sets a cookie or an ad identifier is live. Drives the policy. */
-export const TRACKING_LIVE = ADS_LIVE || ANALYTICS_LIVE;
+export const TRACKING_LIVE = ADS_LIVE || ANALYTICS_LIVE || GROW_LIVE;
 
 /** Date the privacy policy last materially changed. */
-export const POLICY_EFFECTIVE = '2026-08-29';
+export const POLICY_EFFECTIVE = '2026-09-12';
