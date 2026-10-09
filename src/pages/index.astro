@@ -8,6 +8,7 @@ import Woofer from '../components/Woofer.astro';
 import HowItWorksCompact from '../components/HowItWorksCompact.astro';
 import { SITE, hubPath, soundPath, pickTitle } from '../lib/site';
 import { organization, website, itemList, faqPage } from '../lib/schema';
+import { themeSounds } from '../lib/themes';
 
 const sounds = await getCollection('sounds');
 const categories = (await getCollection('categories')).sort(
@@ -15,6 +16,7 @@ const categories = (await getCollection('categories')).sort(
 );
 const counts = new Map<string, number>();
 for (const s of sounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
+const themes = await getCollection('themes');
 
 const trending = [...sounds]
   .sort((a, b) => b.data.plays - a.data.plays)
@@ -29,10 +31,36 @@ const newest = [...sounds]
 // XHR would mean shipping a JSON endpoint and a spinner to avoid a round trip
 // we can simply not make — and it keeps all 60-odd internal links crawlable
 // whether or not the button is ever pressed.
-const CATS_SHOWN = 4;
+const CATS_SHOWN = 7;
 const PER_CAT = 5;
-const catRows = categories.map((c) => ({
-  cat: c,
+
+/* Rows are normalised so a themed hub can sit in this archive beside a
+ * category: both end up as { id, name, hubTitle, icon, count, top }. The
+ * difference is only in how the sound set is derived, by category field for
+ * one and by match[] patterns for the other.
+ *
+ * Which themes get a row is a deliberate, short list rather than all 21.
+ * This page takes 76% of our organic landings, so a row here is the most
+ * valuable internal link we can give a hub, and spending that on every theme
+ * would spend it on none of them. ARCHIVE_THEMES is where that bet is placed:
+ * the phone and text-tone boards, which carry a ~15k/mo keyword cluster at
+ * SD 20-30 that we were not linking to from anywhere prominent.
+ */
+const ARCHIVE_THEMES = ['text-tone', 'phone'];
+type Row = {
+  id: string;
+  name: string;
+  hubTitle: string;
+  icon: string;
+  count: number;
+  top: typeof sounds;
+};
+
+const categoryRows: Row[] = categories.map((c) => ({
+  id: c.id,
+  name: c.data.name,
+  hubTitle: c.data.hubTitle,
+  icon: c.id,
   count: counts.get(c.id) ?? 0,
   top: sounds
     .filter((s) => s.data.category === c.id)
@@ -40,8 +68,33 @@ const catRows = categories.map((c) => ({
     .slice(0, PER_CAT),
 }));
 
+const themeRows: Row[] = ARCHIVE_THEMES.flatMap((id) => {
+  const t = themes.find((x) => x.id === id);
+  if (!t) return []; // a renamed theme should drop its row, not break the build
+  const matched = themeSounds(sounds, t.data.match);
+  return [{
+    id: t.id,
+    name: t.data.name,
+    hubTitle: t.data.hubTitle,
+    icon: t.data.icon,
+    count: matched.length,
+    top: matched.slice(0, PER_CAT),
+  }];
+});
+
+// Slot the themed rows in after `notification`, so the text-tone board lands
+// next to the category it overlaps instead of at the end of the list where
+// nobody scrolls.
+const anchor = categoryRows.findIndex((r) => r.id === 'notification');
+const at = anchor === -1 ? categoryRows.length : anchor + 1;
+const catRows: Row[] = [
+  ...categoryRows.slice(0, at),
+  ...themeRows,
+  ...categoryRows.slice(at),
+];
+
 const total = sounds.length;
-const quick = ['airhorn', 'vine boom', 'discord', 'fart', 'brainrot', 'notification'];
+const quick = ['airhorn', 'vine boom', 'discord', 'fart', 'brainrot', 'text tone'];
 // Lead with the two head phrases rather than the brand: nobody is searching
 // "Bleepboard" yet, and "sound buttons" / "meme soundboard" are where the
 // volume is. Brand stays on the end because this is the one page that should
@@ -226,22 +279,22 @@ const schema = [
       <h2>Top five on every board</h2>
       <a class="section-link" href="/categories/">All categories →</a>
     </div>
-    <p class="section-sub">The five most-reached-for sounds in each soundboard.</p>
+    <p class="section-sub">The five most-reached-for sounds on each of our {catRows.length} boards.</p>
 
     {catRows.map((row, i) => (
-      <div class="cat-row" data-cat={row.cat.id} hidden={i >= CATS_SHOWN}>
+      <div class="cat-row" data-cat={row.id} hidden={i >= CATS_SHOWN}>
         <h3 class="cat-row-head">
-          <CategoryIcon cat={row.cat.id} size={20} />
-          <a href={hubPath(row.cat.id)}>{row.cat.data.hubTitle}</a>
+          <CategoryIcon cat={row.icon} size={20} />
+          <a href={hubPath(row.id)}>{row.hubTitle}</a>
           <span class="cat-count tnum">{row.count}</span>
         </h3>
         <div class="grid grid--sm">
           {row.top.map((s) => (
             <SoundButton slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} />
           ))}
-          <a class="cat-more" href={hubPath(row.cat.id)}>
+          <a class="cat-more" href={hubPath(row.id)}>
             <span class="cat-more-num tnum" aria-hidden="true">+{Math.max(row.count - PER_CAT, 0)}</span>
-            <span class="cat-more-label">View all {row.count} {row.cat.data.name} sounds</span>
+            <span class="cat-more-label">View all {row.count} {row.name} sounds</span>
           </a>
         </div>
       </div>

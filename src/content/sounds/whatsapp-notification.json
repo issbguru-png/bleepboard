@@ -5,7 +5,8 @@
     "whatsapp",
     "notification",
     "message",
-    "global"
+    "global",
+    "text-tone"
   ],
   "duration": 1.9,
   "audio": "/audio/whatsapp-notification.mp3",

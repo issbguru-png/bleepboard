@@ -5,7 +5,8 @@
     "msn",
     "messenger",
     "notification",
-    "nostalgia"
+    "nostalgia",
+    "text-tone"
   ],
   "duration": 1,
   "audio": "/audio/msn-message.mp3",

@@ -1,0 +1,61 @@
+{
+  "name": "Text Tone",
+  "hubTitle": "Text Tone Soundboard",
+  "metaDescription": "Every text tone in one place: iPhone tri-tone, Samsung, WhatsApp, Discord, Snapchat and more. Played free, downloaded free as MP3.",
+  "icon": "notification",
+  "order": 15,
+  "match": [
+    "text-tone"
+  ],
+  "intro": "A text tone is the half-second of noise that makes a whole room check its pockets. Every phone ships with one, hardly anyone ever changes it, and the few that everybody recognises have turned into some of the most reliably conditioned reflexes in modern life. Seventeen of them sit on this page, playable back to back.\n\nThe two that matter most are also the two that sound least alike. Apple's tri-tone is three descending notes, bright and metallic, pitched high enough to cut straight through a crowded train. Samsung's default answers with five quick tones in a lower, rounder register, nearer a marimba than a bell. Play them one after the other and the whole iPhone versus Android argument reduces to a question of timbre.\n\nAfter the handset defaults come the app tones, and that is where the sharpest recognition lives. WhatsApp's double pop. Discord's clipped blip. The Snapchat and Messenger chimes, Instagram's soft thud, and the two Windows alerts that most desk workers hear more often than their own doorbell. A short history shelf sits alongside them: MSN Messenger's message alert, AOL announcing that you have mail, and the GTA phone buzz that a generation of players knows better than any notification they have ever actually received.\n\nEvery button plays on tap and every clip downloads as a free MP3, which is the part you need if you want one of these as your real text tone rather than something to play at your friends. Worth knowing before you start: on iPhone the file has to be converted to a ringtone before Settings will offer it under Text Tone, while on Android you can usually drop the MP3 straight into the Notifications folder and pick it from sound settings.",
+  "faq": [
+    {
+      "q": "What Is a Text Tone?",
+      "a": "It is the sound your phone makes for an incoming message, as opposed to the ringtone it uses for a call. Both are set separately on iPhone and on Android, which is why you can change one and find the other untouched. The default is short on purpose, usually under two seconds, because it fires dozens of times a day."
+    },
+    {
+      "q": "How Do I Set a Custom Text Tone on iPhone?",
+      "a": "iOS will not take an MP3 directly. Download the clip here, convert it to an M4R ringtone file (GarageBand on the phone does this, or Finder on a Mac), and it then shows up in Settings, Sounds and Haptics, Text Tone. The limit is 30 seconds, which nothing on this board comes close to. You can also assign a different tone per contact from that person's card in Contacts."
+    },
+    {
+      "q": "How Do I Change the Text Tone on Android or Samsung?",
+      "a": "Android is the easier of the two. Download the MP3, move it into the Notifications folder in your internal storage, then open Settings, Sounds and Vibration, Notification Sound and the file appears in the list. On Samsung's One UI the path is the same, and Messages keeps its own separate notification sound if you want texts to differ from everything else."
+    },
+    {
+      "q": "Which of These Cuts Through Background Noise Best?",
+      "a": "Not the one most people expect. Apple's tri-tone is pitched high but sits at a fairly modest level, whereas the Samsung default and several of the app chimes here are mastered noticeably hotter. If you keep missing messages, a louder file will help more than a higher-pitched one. Raising the phone's own ringer volume helps most of all, since no file can exceed it."
+    },
+    {
+      "q": "Are These Free to Download?",
+      "a": "Free of charge, yes. Every clip downloads as an MP3 with no account and no signup. Free of charge is not the same as free of copyright, though: most of these tones belong to Apple, Samsung, Meta and the rest, so personal use on your own handset is fine and putting them in something you monetise is not."
+    }
+  ],
+  "es": {
+    "name": "Tono de Mensaje",
+    "hubTitle": "Botonera de Tonos de Mensaje",
+    "metaDescription": "Todos los tonos de mensaje: el tri-tono de iPhone, Samsung, WhatsApp, Discord, Snapchat y más. Gratis, en MP3 y al instante.",
+    "intro": "El tono de mensaje es ese medio segundo de sonido que hace que una sala entera se revise los bolsillos. Todos los teléfonos traen uno, casi nadie lo cambia, y los pocos que todo el mundo reconoce se volvieron reflejos tan entrenados que ya cuesta oírlos sin reaccionar. Aquí hay diecisiete, uno tras otro.\n\nLos dos más importantes son también los que menos se parecen entre sí. El tri-tono de Apple son tres notas que bajan, brillantes y metálicas, agudas de más para que atraviesen un vagón lleno. El de Samsung contesta con cinco toques rápidos en un registro más grave y redondo, más cerca de una marimba que de una campana. Suénalos seguidos y toda la discusión entre iPhone y Android se reduce a una cuestión de timbre.\n\nDespués de los tonos de fábrica vienen los de las apps, que es donde el reconocimiento pega más fuerte: el doble pop de WhatsApp, el blip corto de Discord, las campanitas de Snapchat y Messenger, el golpe sordo de Instagram y las dos alertas de Windows que cualquiera que trabaje en escritorio oye más que su propio timbre. Al lado hay una repisa de historia: el aviso de MSN Messenger, el «you've got mail» de AOL y el zumbido del teléfono de GTA.\n\nCada botón suena al toque y cada clip se baja gratis en MP3. En iPhone el archivo hay que convertirlo a tono (formato M4R) antes de que Ajustes lo ofrezca como tono de mensaje; en Android basta con dejar el MP3 en la carpeta Notifications y elegirlo desde los ajustes de sonido. Las fichas de cada sonido están en inglés, que es como se buscan estos tonos incluso en español.",
+    "faq": [
+      {
+        "q": "¿Qué es un tono de mensaje?",
+        "a": "Es el sonido que hace el teléfono cuando llega un mensaje, a diferencia del tono de llamada. En iPhone y en Android se configuran por separado, y por eso puedes cambiar uno y encontrar el otro igual que estaba. El de fábrica es corto a propósito, casi siempre menos de dos segundos, porque suena decenas de veces al día."
+      },
+      {
+        "q": "¿Cómo pongo un tono de mensaje personalizado en iPhone?",
+        "a": "iOS no acepta MP3 directo. Baja el clip, conviértelo a un archivo de tono M4R (GarageBand en el propio teléfono sirve, o Finder en una Mac) y después aparece en Ajustes, Sonidos y vibraciones, Tono de mensaje. El límite es de 30 segundos y nada de esta botonera se acerca. También puedes asignar un tono distinto por contacto desde su ficha."
+      },
+      {
+        "q": "¿Y en Android o Samsung?",
+        "a": "Ahí es más fácil. Baja el MP3, muévelo a la carpeta Notifications del almacenamiento interno y entra a Ajustes, Sonidos y vibración, Sonido de notificación: el archivo ya sale en la lista. En One UI de Samsung la ruta es la misma, y la app de Mensajes guarda su propio sonido aparte si quieres que los textos suenen distinto a todo lo demás."
+      },
+      {
+        "q": "¿Cuál se escucha mejor con ruido alrededor?",
+        "a": "No el que la gente supone. El tri-tono de Apple es agudo pero está a un volumen bastante discreto, mientras que el de Samsung y varias campanitas de apps vienen bastante más fuertes. Si se te pasan los mensajes, te va a servir más un archivo con más nivel que uno más agudo. Y subir el volumen del timbre del teléfono sirve más que cualquier archivo."
+      },
+      {
+        "q": "¿Se pueden bajar gratis?",
+        "a": "Gratis de precio, sí: cada clip se baja en MP3 sin cuenta y sin registro. Gratis de precio no es gratis de derechos, eso sí. La mayoría de estos tonos son de Apple, Samsung, Meta y compañía, así que usarlos en tu propio teléfono está bien y meterlos en algo que monetices no."
+      }
+    ]
+  }
+}

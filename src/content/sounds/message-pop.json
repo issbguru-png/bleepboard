@@ -5,7 +5,8 @@
     "message",
     "pop",
     "notification",
-    "ping"
+    "ping",
+    "text-tone"
   ],
   "duration": 0.5,
   "audio": "/audio/message-pop.mp3",

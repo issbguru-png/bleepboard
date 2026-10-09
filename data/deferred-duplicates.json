@@ -553,5 +553,17 @@
   "blurb": "Goats scream. Properly scream, in a register far more human than any farm animal has a right to manage, and the internet has never entirely recovered from finding this out. A run of goat-edition remixes around 2013 spliced these bleats into pop choruses, and the joke has quietly refused to die since. Biologically it is ordinary goat vocalisation, nothing unusual for the species. The comedy comes purely from the resemblance. A bleat that lands on the ear as a person yelling. Use it as a punchline over a dramatic pause, or in place of a reaction you would rather not voice yourself.",
   "origin": "A recording of a domestic goat bleating, of the type popularised by the 2013 goat-edition remix videos.",
   "plays": 1800
+ },
+ {
+  "src": "samsung-whistle",
+  "slug": "samsung-whistle",
+  "title": "Samsung Whistle",
+  "category": "notification",
+  "tags": [
+   "samsung",
+   "notification"
+  ],
+  "rejected": "2026-10-09",
+  "reason": "Source file is mislabelled. Waveform cross-correlation against our existing whatsapp-notification scores 0.986, i.e. it is the WhatsApp alert, not a Samsung tone. Importing it would have put a wrong name on a sound we already hold."
  }
 ]

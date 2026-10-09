@@ -5,7 +5,8 @@
     "grindr",
     "notification",
     "message",
-    "iconic"
+    "iconic",
+    "text-tone"
   ],
   "duration": 1,
   "audio": "/audio/grindr-notification.mp3",

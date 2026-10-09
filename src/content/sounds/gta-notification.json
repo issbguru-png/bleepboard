@@ -5,7 +5,8 @@
     "gta",
     "phone",
     "ifruit",
-    "notification"
+    "notification",
+    "text-tone"
   ],
   "duration": 1.5,
   "audio": "/audio/gta-notification.mp3",
