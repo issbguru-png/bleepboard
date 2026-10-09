@@ -53,10 +53,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # The default submission is "URLs whose source changed in this push",
-          # which needs the previous commit to diff against.
-          fetch-depth: 2
+          # Full history. `fetch-depth: 2` used to be enough back when the
+          # default diff was HEAD~1, but that silently under-reports any push
+          # carrying more than one commit: on 2026-10-09 a two-commit push
+          # submitted the nine URLs from the second commit and none of the new
+          # hub and sound pages from the first. Diffing the push's own base
+          # needs however many commits the push contained.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/indexnow.mjs
+      # `github.event.before` is the SHA main pointed at before this push, so
+      # this covers the whole push regardless of how many commits it carried.
+      # It is all-zeroes for a branch's first push and for workflow_dispatch,
+      # where there is no previous state to diff; fall back to HEAD~1 there.
+      - name: Submit changed URLs to IndexNow
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            echo "No usable push base, falling back to HEAD~1."
+            node scripts/indexnow.mjs
+          else
+            node scripts/indexnow.mjs --since "$BEFORE"
+          fi
