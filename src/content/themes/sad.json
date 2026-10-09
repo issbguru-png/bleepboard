@@ -1,0 +1,58 @@
+{
+  "name": "Sad",
+  "hubTitle": "Sad Soundboard",
+  "metaDescription": "Sad sound effects for when something goes wrong: the violin, the trombone, emotional damage, Squidward crying. Free MP3 downloads.",
+  "icon": "meme",
+  "order": 17,
+  "match": [
+    "sad",
+    "violin",
+    "emotional-damage",
+    "roblox-cry",
+    "boowomp",
+    "squidward-crying"
+  ],
+  "intro": "Comedy needs a sound for failure, and there are only about four of them. The tiny violin for self-pity nobody asked you to perform. The descending trombone for a plan that collapsed on contact. A swell of strings for a defeat you want framed as tragic. And whatever Squidward is doing, which is its own category.\n\nWhat makes these work is that none of them are actually sad. They are punctuation. Dropping a sad violin under somebody's complaint does not sympathise with it, it ends the conversation, and every person hearing it understands that instantly. The sound carries the joke so the speaker does not have to make it, which is the most efficient trade in comedy.\n\nThe board collects the ones with real currency: the violin and the trombone, which between them cover most of the ground, plus emotional damage, the line that turned a YouTube reaction into a reusable verdict. Sad hamster for the specific flavour of pathetic that is also cute. The SpongeBob set, which arrived early enough that an entire generation hears disappointment in that key. And boowomp, which needs no explanation to anyone who has heard it and cannot be explained to anyone who has not.\n\nEvery button plays on tap and downloads as a free MP3. These are among the most-used clips in video editing for a reason: a failure lands better with a sound on it.",
+  "faq": [
+    {
+      "q": "What Is the Sad Violin Sound Called?",
+      "a": "Most people are looking for one of two things. The short solo violin sting is the world's smallest violin, a gesture that long predates the internet and means roughly \"your suffering is noted and not taken seriously\". The longer orchestral swell is a different thing used for genuine melodrama. Both are here, and the short one is the one that gets dropped into videos."
+    },
+    {
+      "q": "What Is Emotional Damage From?",
+      "a": "Comedian Steven He, whose delivery of the line in a sketch about strict parenting escaped the video almost immediately and became the standard caption for any insult that landed harder than intended. It works because it names the damage out loud, which is funnier than reacting to it."
+    },
+    {
+      "q": "Which One Should I Use in an Edit?",
+      "a": "The trombone for something that failed, the violin for someone complaining, and emotional damage for an insult that connected. Getting these the wrong way round is the most common mistake, and the joke does not survive it. If the moment is a genuine defeat rather than a joke about one, the orchestral swell is the only one of the four that plays it straight."
+    },
+    {
+      "q": "Are These Free to Download?",
+      "a": "Yes, as MP3s, with no account and no signup. The orchestral and foley clips are generic; the meme lines belong to the people who said them. Personal use and edits are fine, and anything commercial needs you to sort out the rights yourself."
+    }
+  ],
+  "es": {
+    "name": "Tristes",
+    "hubTitle": "Botonera de Sonidos Tristes",
+    "metaDescription": "Sonidos tristes para cuando algo sale mal: el violín, el trombón, daño emocional y Calamardo llorando. Botones gratis en MP3.",
+    "intro": "La comedia necesita un sonido para el fracaso, y en realidad hay como cuatro. El violincito para la autocompasión que nadie pidió. El trombón que baja para el plan que se cayó solo. Una cuerda que sube para una derrota que quieres presentar como tragedia. Y lo que sea que hace Calamardo, que es una categoría aparte.\n\nLo que los hace funcionar es que ninguno es triste de verdad: son puntuación. Poner un violín triste debajo de la queja de alguien no la acompaña, la termina, y todo el que lo escucha lo entiende al instante. El sonido carga el chiste para que no tenga que hacerlo quien habla, que es el mejor negocio que existe en comedia.\n\nAquí están los que de verdad circulan: el violín y el trombón, que entre los dos cubren casi todo; el daño emocional, la frase que convirtió una reacción de YouTube en un veredicto reutilizable; el hámster triste, para ese tipo concreto de patetismo que además es tierno; la tanda de Bob Esponja, que llegó tan temprano que una generación entera oye decepción en esa tonalidad; y el boowomp, que no hace falta explicarle a nadie que lo haya oído.\n\nCada botón suena al toque y se descarga gratis en MP3. Son de los clips más usados al editar video por una razón sencilla: un fracaso se entiende mejor con sonido encima. Las fichas de cada sonido están en inglés.",
+    "faq": [
+      {
+        "q": "¿Cómo se llama el sonido del violín triste?",
+        "a": "Casi siempre se busca una de dos cosas. El violín solo y corto es «el violín más pequeño del mundo», un gesto muy anterior a internet que viene a decir «tomo nota de tu sufrimiento y no me lo tomo en serio». La cuerda orquestal larga es otra cosa y se usa para el melodrama de verdad. Los dos están aquí; el corto es el que se mete en los videos."
+      },
+      {
+        "q": "¿De dónde viene el «emotional damage»?",
+        "a": "Del comediante Steven He. Soltó la frase en un sketch sobre padres estrictos y se escapó del video casi de inmediato hasta volverse el pie de foto estándar para cualquier insulto que pegó más fuerte de lo previsto. Funciona porque nombra el daño en voz alta, que es más gracioso que reaccionar a él."
+      },
+      {
+        "q": "¿Cuál uso en un edit?",
+        "a": "El trombón para algo que falló, el violín para alguien que se queja y el daño emocional para un insulto que dio en el blanco. Confundirlos es el error más común y el chiste no sobrevive. Si el momento es una derrota de verdad y no un chiste sobre una, la cuerda orquestal es la única de las cuatro que lo toma en serio."
+      },
+      {
+        "q": "¿Son gratis?",
+        "a": "Sí, en MP3, sin cuenta y sin registro. Los clips orquestales y de foley son genéricos; las frases de memes son de quien las dijo. Para uso personal y edits está bien; para algo comercial los derechos los arreglas tú."
+      }
+    ]
+  }
+}

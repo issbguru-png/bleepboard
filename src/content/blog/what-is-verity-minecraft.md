@@ -1,6 +1,14 @@
 ---
 title: "What Is Verity? The Minecraft Horror Series, Explained"
-description: "ThatMob's Verity series turned a cheerful yellow Minecraft companion into the internet's most unsettling horror character. Here's why the calm voice works."
+seoTitle: "Is Verity From Minecraft? The Series, Explained"
+description: "Yes and no: Verity is set in Minecraft but is not an official Mojang character. She comes from ThatMob's horror series. Here is where she came from."
+faq:
+  - q: "Is Verity From Minecraft?"
+    a: "Both answers are true, which is why the question keeps getting asked. Verity is built in Minecraft and every frame of the series is Minecraft footage, so she looks like part of the game. She is not an official Mojang character though: she does not appear in vanilla Minecraft, in any update, or in any paid Marketplace content from Mojang. She is an original character from ThatMob's independent horror series, made with Minecraft as the medium the way a film is made with a camera."
+  - q: "Who Made Verity?"
+    a: "A creator working as ThatMob. The series is independent, not a Mojang or Microsoft production, and it is not affiliated with them. That distinction matters if you were searching because you wanted to find her in your own world: there is nothing to find, because she was never shipped with the game."
+  - q: "Can You Meet Verity in Your Own Minecraft World?"
+    a: "No. There is no seed, no command, no version and no settings combination that spawns her, and any video promising one is farming the search. What does exist are fan-made mods, maps and skins that recreate her, which are third-party downloads and have nothing to do with the original series."
 date: 2026-08-26
 tags: [minecraft, horror, gaming, explainer]
 image: /blog/what-is-verity-minecraft.png

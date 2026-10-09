@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import SoundButton from '../../components/SoundButton.astro';
 import { SITE, absolute, pickTitle } from '../../lib/site';
-import { breadcrumbs, publisher } from '../../lib/schema';
+import { breadcrumbs, publisher, faqPage } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -76,7 +76,7 @@ const pageUrl = SITE.url + `/blog/${post.id}/`;
 // freshly drafted post still shares cleanly instead of previewing blank.
 const shareImage = absolute(d.image ?? SITE.ogImage);
 
-const schema = [
+const schema: object[] = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -103,6 +103,7 @@ const schema = [
     [d.title, pageUrl],
   ]),
 ];
+if (d.faq.length > 0) schema.push(faqPage(d.faq));
 
 // The <h1> keeps the editorial headline; the <title> may use a shorter
 // `seoTitle` where that headline overruns the ~60 characters Google shows.
@@ -158,6 +159,22 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
   <article class="prose article">
     <Content />
   </article>
+
+  {d.faq.length > 0 && (
+    /* Placed after the body rather than before it: the article is what the
+       reader came for, and a question block above it reads as an interstitial.
+       The FAQPage schema is what does the work in the SERP, and that does not
+       care where on the page the markup sits. */
+    <section class="section faq">
+      <div class="section-head"><h2>Quick Answers</h2></div>
+      {d.faq.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </section>
+  )}
 
   {strip.length > 0 && (
     <section class="section sound-strip">

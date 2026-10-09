@@ -49,10 +49,17 @@ const [lede, ...rest] = paras;
 const iconKey = kind === 'theme' ? ((entry.data as any).icon ?? 'meme') : entry.id;
 const pageUrl = `${SITE.url}/es/${theme.id}-soundboard/`;
 
+/* MP3 leads the fallback chain because the Spanish queries that reach these
+ * pages carry it: "botonera mp3" sits at position 7.2 and "botonera sonido"
+ * at 8.9, both on page one with zero clicks. "Gratis" was already here and
+ * was not enough on its own. Longer titles degrade to shorter ones through
+ * pickTitle, so a hub with a long name still gets a sane title. */
 const title = pickTitle([
+  `${es.hubTitle}: ${sounds.length} Botones de Sonido MP3 Gratis`,
+  `${es.hubTitle}: ${sounds.length} Botones MP3 Gratis`,
   `${es.hubTitle}: ${sounds.length} Botones de Sonido Gratis`,
   `${es.hubTitle}: ${sounds.length} Botones de Sonido`,
-  `${es.hubTitle}: Botones de Sonido Gratis`,
+  `${es.hubTitle}: Botones MP3 Gratis`,
   es.hubTitle,
 ]);
 
@@ -101,7 +108,7 @@ if (es.faq.length > 0) schema.push(faqPage(es.faq));
     </div>
     <p class="section-sub">
       {sounds.length > 0
-        ? `Los ${sounds.length} clips de esta botonera, los más sonados primero. Toca para reproducir; abre un sonido para bajar el MP3 gratis.`
+        ? `Los ${sounds.length} botones que suenan en esta botonera, los más sonados primero. Toca para reproducir; abre un sonido para descargar el MP3 gratis.`
         : 'Esta botonera se está llenando ahora mismo.'}
     </p>
     {sounds.length > 0 && (

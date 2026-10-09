@@ -113,6 +113,17 @@ const blog = defineCollection({
     /** Alt text for `image`. Describes the abstract artwork, not the article —
      *  the headline is already adjacent, so repeating it here is noise. */
     imageAlt: z.string().optional(),
+    /** Questions this article answers outright, rendered as a Q&A block and
+     *  emitted as FAQPage schema.
+     *
+     *  Added because Search Console showed the clearest kind of failure:
+     *  "verity is from minecraft" at position 10.7 on 100 impressions and
+     *  "verity belongs to minecraft" at 9.7 on 42, both earning zero clicks.
+     *  We ranked page one for a question and answered it with an essay, so
+     *  the click went to whoever answered it in their title. A Q&A block
+     *  puts the answer where the searcher can see it before clicking, and
+     *  the schema makes it eligible for the expandable result. */
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
   }),
 });
 

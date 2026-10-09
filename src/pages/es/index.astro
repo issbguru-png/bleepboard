@@ -70,12 +70,29 @@ const catName = (id: string, fallback: string) => CAT_ES[id] ?? fallback;
  * somebody presses one. */
 const quick = ['risa', 'explosión', 'grito', 'alarma', 'aplausos', 'pedo'];
 
+/* Title and description are written against the queries this page actually
+ * ranks for, not against a translation of the English homepage.
+ *
+ * Search Console, all time to 2026-10-09: this page sits at position 9.6 on
+ * 1,054 impressions and converts 1.7%. Page one, almost no clicks. The query
+ * set behind it is a cluster of generic forms we were not saying out loud:
+ * "botonera sonido" (pos 8.9), "botonera mp3" (7.2), "botonera online" (8.8),
+ * "botones que suenan" (7.7), "botonera meme" (7.8), "botones de sonidos"
+ * (10.7) — every one of them page one, every one of them zero clicks.
+ *
+ * The old title led with "Botones de Sonido" and never said botonera, mp3 or
+ * online. So: lead with botonera, carry MP3 and online, and keep the count,
+ * which is the one thing a soundboard result can show that a competitor's
+ * generic title cannot. */
 const title = pickTitle([
-  `Botones de Sonido: Botonera de Memes Gratis | ${SITE.name}`,
-  `Botones de Sonido: Botonera de Memes Gratis`,
+  `Botonera de Sonidos Online: ${total} Botones MP3 Gratis`,
+  `Botonera de Sonidos Online: ${total} Botones Gratis`,
+  `Botonera de Sonidos: ${total} Botones MP3 Gratis`,
+  `Botonera de Sonidos Online Gratis`,
 ]);
 const description =
-  'Botonera de sonidos gratis: toca un botón y suena. Más de 600 botones con sonidos de memes, efectos y clips virales para escuchar y descargar en MP3.';
+  `Botonera de sonidos online y gratis: ${total} botones que suenan al toque. ` +
+  'Memes, efectos y clips virales para escuchar y descargar en MP3, sin registro.';
 
 const faq = [
   {

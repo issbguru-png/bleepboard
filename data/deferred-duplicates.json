@@ -565,5 +565,18 @@
   ],
   "rejected": "2026-10-09",
   "reason": "Source file is mislabelled. Waveform cross-correlation against our existing whatsapp-notification scores 0.986, i.e. it is the WhatsApp alert, not a Samsung tone. Importing it would have put a wrong name on a sound we already hold."
+ },
+ {
+  "src": "correct-answer",
+  "slug": "correct-answer",
+  "title": "Correct Answer",
+  "category": "sound-effects",
+  "tags": [
+   "correct",
+   "chime",
+   "quiz"
+  ],
+  "rejected": "2026-10-09",
+  "reason": "Audio is genuinely distinct (spectral cosine 0.211 against correct-ding; the 0.839 envelope score is the usual short-clip artifact). Deferred on subject redundancy, not duplication: we already publish correct-ding, correct-buzzer-loud and duolingo-correct. A fourth generic affirmative chime with no story of its own splits ranking signal across four pages for one intent."
  }
 ]
