@@ -2,6 +2,15 @@
 title: "What Is the iPhone Alarm Sound? Radar, Explained"
 seoTitle: "What Is the iPhone Alarm Sound? Radar, Explained"
 description: "The iPhone's default alarm is called Radar. What it is, why the escalation works on you, whether it plays on silent, and how to change it."
+faq:
+  - q: "What Is the Default iPhone Alarm Sound Called?"
+    a: "Radar. Build a new alarm in the Clock app and that is the tone already sitting there with a tick beside it. The confusion comes from the phone keeping three unrelated sound settings. Alarms, calls and texts each have their own, each set from a different menu, and each starts on different audio, so fixing one leaves the other two exactly as they were."
+  - q: "Does the iPhone Alarm Sound on Silent?"
+    a: "It does. The Clock app routes alarms to the speaker regardless, and Apple says outright that the mute switch, the Action button and Do Not Disturb change nothing about an alarm. Focus will quietly bin your messages and still let 6am arrive at full volume. The caveat is alarms set in other apps, which Focus can mute depending on how the developer built them. Oversleeping since you moved to a sleep tracker? Start there."
+  - q: "Why Does the iPhone Alarm Make Me Anxious?"
+    a: "Its structure, rather than its timbre. The tone starts soft, walks up a short figure, then runs that figure again quicker and harder on every pass. There is no bang to flinch at. The ramp carries it, so Radar neither startles you awake nor lets you lie there ignoring it for long. Hearing it in a film can still tighten your chest, because what you learned was not fear of the noise but certainty that it is about to escalate."
+  - q: "Is the iPhone Alarm the Marimba Sound?"
+    a: "It is not. Marimba, the wooden plinking everyone hums when asked, arrived with the 2007 iPhone as a ringtone and never served as an alarm. In 2013 iOS 7 handed the default ringtone job to Opening and demoted Marimba to the Classic list, from which nostalgic owners keep retrieving it. Incoming calls, incoming texts and the end of your sleep are therefore three different tones, written at different times for different jobs."
 date: 2026-09-10
 tags: [notification, alarm, alerts, explainer]
 image: /blog/iphone-alarm-sound-explained.png

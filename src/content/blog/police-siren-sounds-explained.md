@@ -2,6 +2,15 @@
 title: "Police Siren Sounds Explained: Wail, Yelp and Hi-Lo"
 seoTitle: "Police Siren Sounds: Wail, Yelp and Hi-Lo Explained"
 description: "What each police siren mode means, why sirens are so hard to locate, where the low rumble comes from, and why hi-lo means evacuate in California."
+faq:
+  - q: "What Are the Different Police Siren Sounds?"
+    a: "There are four presets. Wail sweeps slowly up and down across a second or two and travels furthest, so it suits open road. Yelp is the same sweep compressed, several cycles in the time wail takes one, which reads as emergency and gets used in traffic. Hi-lo, also sold as phaser, jumps between two held notes instead of sliding, and penetrates a stopped queue better. Air horn is punched over the top for the driver still staring at his phone."
+  - q: "Why Are Sirens So Hard to Locate?"
+    a: "Siren tones fall into a blind spot. Older sirens occupy roughly 500 Hz to 1.8 kHz. Below about 1 kHz we place sound using the minute delay between one ear and the other, and that cue blurs above it. Higher up we switch to the volume shadow cast by the skull, which contributes little until around 3 kHz. The siren sits in the trough between the two. Add a street of glass and brick bouncing it about and you are guessing."
+  - q: "What Is the Low Rumble Some Police Cars Make?"
+    a: "A Rumbler, built for the city problem. Treble reflects off glass and steel instead of travelling through it, so a sealed car with music playing can genuinely miss an approaching siren. The unit takes the siren's signal, drops it two octaves to somewhere between 182 and 400 Hz, and sends it out of dedicated speakers. Bass walks through a car door. It also vibrates things. Eight seconds per burst, then it stops, and it runs around ten decibels below the siren proper."
+  - q: "What Does a Hi-Lo Siren Mean in California?"
+    a: "Leave now. Senate Bill 909, passed in September 2020, licensed the hi-lo tone in California for evacuation orders and nothing else, a response to the 2017 Tubbs Fire and the discovery that nobody had a way to clear a street in a hurry. Agencies from Humboldt down to Ventura have since wired it in. Everywhere else the alternating pair is just the ordinary European siren, which is why it sounds foreign to American ears."
 date: 2026-09-10
 tags: [alerts, emergency, sound-effects, explainer]
 image: /blog/police-siren-sounds-explained.png

@@ -1,6 +1,16 @@
 ---
 title: "The FNAF Jumpscare Sounds, Explained"
+seoTitle: "Why the FNAF Jumpscare Sound Is So Scary"
 description: "Why the Five Nights at Freddy's jumpscare screams work, how FNAF 1, 2 and 4 differ, and why a children's cheer became one of horror's best sounds."
+faq:
+  - q: "Why Is the FNAF Jumpscare Sound So Scary?"
+    a: "The quiet in front of it does most of the work. A night in the office is fans, hum and faint clanking, nothing nameable, so you spend the shift listening at the threshold of what you can hear. The scream then lands flat out, instantly, with nothing ramping into it. Turning the volume up to catch the threat is both necessary and the thing that gets you hurt."
+  - q: "How Was the FNAF Scream Made?"
+    a: "Deliberate mess. Layers of processing and distortion push it into a register you cannot file as animal or as machine, and refusing to be identified is the point. A clean sound gets recognised and then discarded. A dirty one keeps your brain working on it. Play the file cold in daylight and it is only noise, which tells you the fear was never stored in the audio."
+  - q: "How Do the FNAF Games Differ in Sound Design?"
+    a: "The first is the formula at its plainest: one enormous blast, plus Freddy laughing somewhere in the building to signal that he has moved. The second takes the doors away, so threats get tracked by ear, and the Puppet's music box inverts the scare completely. Silence from the box is the dangerous event. The third hangs on Springtrap and on luring him with noises in the wrong room, and the fourth sits you at a bedroom doorway, listening."
+  - q: "Can I Download the FNAF Jumpscare Sound?"
+    a: "Yes, free, no signup. Headphone users should turn the volume down first. The whole set is on the board: scares from games two, three, four and six, the music box, Balloon Boy's greeting, Phone Guy's voicemail, the 6 AM relief, and that group of cheering children who have no business being frightening. They are filed on the gaming soundboard with the other horror clips."
 date: 2026-08-26
 tags: [fnaf, gaming, horror, explainer]
 image: /blog/fnaf-jumpscare-sounds-explained.png

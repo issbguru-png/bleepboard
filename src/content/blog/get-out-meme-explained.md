@@ -2,6 +2,15 @@
 title: "The 'Get Out' Meme Explained: Why the Scream Isn't Tuco"
 seoTitle: "'Get Out' Meme Explained: The Scream Isn't Tuco"
 description: "Everyone credits the viral 'GET OUT' scream to Tuco from Breaking Bad. It isn't him. The real source is a GTA 5 roleplay clip by a streamer nobody has named."
+faq:
+  - q: "Is the 'Get Out' Scream Tuco from Breaking Bad?"
+    a: "No. There is no such moment in the show, so there is nothing to clip, and Know Your Meme logs the credit as a misattribution. Tracing points instead at a GTA V roleplay livestream on a server called Paradise State, started in mid-2021. Someone pulls up to an in-game car meet in a Lightning McQueen monster truck and asks for a space. What he gets back is the scream."
+  - q: "Who Actually Says 'Get Out'?"
+    a: "No idea, and probably never will be. Whoever was roleplaying that night went uncredited, and the name did not travel with the file. So the meme's most searched question has an unsatisfying answer: the internet's loudest scream has no author. The server's own TikTok account, where the clip first spread, has since been taken down, and the reposts were doing the numbers anyway by spring 2023."
+  - q: "Why Does Everyone Think It Is Tuco?"
+    a: "A simile lost two words. An iFunny post from flyingmantis on 10 May 2023 captioned the clip as sounding like Tuco from Breaking Bad. Sounding like. Each repost sanded that qualifier down until it vanished, and when @notkchaze started pulling millions of views from the sound in March 2024, those videos treated the credit as settled fact. Arrive with no context and a joke built on an assumption reads as proof of it."
+  - q: "Can I Download the 'Get Out' Sound?"
+    a: "Yes, free, nothing to sign. The page still carries the Tuco name, since correcting the record somewhere nobody can find helps no one. The clip lasts about a second, comfortably under Discord's limit, and that is how it ended up as the standard soundtrack to kicking somebody off a call. For a colder eviction, You Need to Leave does the same work at conversational volume."
 date: 2026-08-25
 tags: [meme, tiktok, explainer]
 image: /blog/get-out-meme-explained.png

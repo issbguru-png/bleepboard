@@ -21,7 +21,7 @@ Minecraft horror is a crowded genre and most of it is loud. Screaming thumbnails
 
 Verity is a horror series by the creator **ThatMob**, built inside Minecraft and structured around a companion character: a small, yellow, friendly-looking figure who accompanies the player.
 
-He helps. He greets you. He explains things. And from very early on, rous but because of *how* he says perfectly ordinary things. The series builds by accumulating small wrongnesses rather than delivering one big reveal, and that structure is a large part of why the clips travel: even a five-second line carries the unease out of the video with it.
+He helps. He greets you. He explains things. And from very early on, something is wrong, not because of anything he says but because of *how* he says perfectly ordinary things. The series builds by accumulating small wrongnesses rather than delivering one big reveal, and that structure is a large part of why the clips travel: even a five-second line carries the unease out of the video with it.
 
 The setting does a lot of the work too. Minecraft is the most reassuring visual language a generation has. Blocks, daylight, the familiar clatter of crafting, the digital equivalent of a childhood bedroom. Putting genuine dread inside that skin is far more effective than putting it inside a photorealistic haunted house, because you aren't braced for it. Nobody flinches at a cube.
 

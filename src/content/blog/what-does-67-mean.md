@@ -1,6 +1,15 @@
 ---
 title: "What Does 67 Mean? The Gen Alpha Meme, Explained"
 description: "Where the 67 meme came from, what 'six seven' actually means, the hand gesture, and why teachers everywhere want it to stop. Play the sound free."
+faq:
+  - q: "What Does 67 Mean?"
+    a: "Nothing. That is the real answer rather than a dodge. It is spoken as two numbers, six then seven, never as sixty-seven, and it conceals no rude word and no reference you are too old to catch. Ask a child for a definition and watch them flounder, because the nearest honest one is a noise. Its emptiness doubles as armour: slang an adult can decode is slang an adult can eventually spoil."
+  - q: "Where Did the 67 Meme Come From?"
+    a: "A Skrilla track, 'Doot Doot (6 7)', in which the phrase loops as a hook. Hooks rarely stay put, and this one went hunting for video almost at once. Basketball took it. Clipped over highlight reels, the number picked up a second meaning that almost makes sense, since plenty of players stand six foot seven. Nobody can say whether the height reading came first or was invented afterwards by kids explaining themselves to adults."
+  - q: "What Is the 67 Hand Gesture?"
+    a: "Two flat palms turned upward, tipping alternately like scales weighing invisible options. The read is a shrug, a maybe this, maybe that, which fits a phrase with nothing inside it. The chant comes bundled in. Someone offers the six, the room supplies the seven, and a meme that has become a chant no longer depends on an app to carry it. Schools moved this one faster than any platform could have."
+  - q: "Why Have Teachers Banned the Number 67?"
+    a: "Because 67 is an ordinary number, it keeps appearing in lessons by chance, and children worked out how to make it appear on purpose. Rig a sum so the total comes out at 67 and the room detonates. Arithmetic became hazardous. Teachers write a harmless question on the board and spot the problem a second after it is too late. A few have outlawed the number outright. That is the funniest available result and a cast-iron promise of twelve more months of it."
 date: 2026-08-26
 tags: [meme, brainrot, gen-alpha, explainer]
 image: /blog/what-does-67-mean.png

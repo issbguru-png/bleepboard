@@ -2,6 +2,15 @@
 title: "The Low Taper Fade Meme: Two Years of Still Massive"
 seoTitle: "Low Taper Fade Meme Explained: Ninja and ericdoa"
 description: "How one line in an ericdoa freestyle became the Ninja low taper fade meme, why Ninja actually got the haircut, and whether it's really still massive."
+faq:
+  - q: "What Is the Low Taper Fade Meme?"
+    a: "One sung sentence: 'imagine if Ninja got a low taper fade'. ericdoa improvised it during a Twitch freestyle on 5 January 2024, played completely straight over the beat. No setup, no punchline, nothing to explain. The ericdoaclips upload on 11 January cleared a million views within a day, and a fortnight later three words were enough to get a whole classroom chanting the rest."
+  - q: "Did Ninja Actually Get a Low Taper Fade?"
+    a: "He went and got it, which is what lifted the clip above the usual TikTok sound. He saw the joke coming, walked into it, and showed the haircut to an audience of millions. A hypothetical answered itself. Acknowledgement normally kills a meme stone dead, and this one grew because its subject would not stop acknowledging it."
+  - q: "Is the Low Taper Fade Meme Still Massive?"
+    a: "Those words are Ninja's own, said on stream in late January 2024, insisting the joke had not gone anywhere. It had. Saying so revived it, and the clip became a copypasta, a wave of AI covers and eventually a running argument about what else qualifies as massive. Every obituary written for the phrase has worked as a renewal notice. Two years on it still beats most memes' first week."
+  - q: "Who Sang the Low Taper Fade Song?"
+    a: "ericdoa, live on his own Twitch channel. The tune is genuinely decent and the voice properly cracks, which does more comic damage than a deadpan would, given that the lyric is barbering advice for a Fortnite streamer. Remixers never let it go: slowed, sped up, pushed into drill, scored for strings, covered in several languages. The sound button is here and the MP3 is free."
 date: 2026-08-29
 tags: [meme, tiktok, brainrot, explainer]
 image: /blog/low-taper-fade-meme.png

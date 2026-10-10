@@ -2,6 +2,15 @@
 title: "Why the Amber Alert Sound Is So Alarming"
 seoTitle: "Why the Amber Alert Sound Is So Alarming"
 description: "Where the Amber Alert tone comes from, why two frequencies a major second apart grate, why it beats your silent switch, and who Amber was."
+faq:
+  - q: "Why Is the Amber Alert Sound So Alarming?"
+    a: "An interval chosen to be unpleasant. The Emergency Alert System attention signal is specified in federal rules as two tones sounded together, 853 and 960 Hz, each held to within half a hertz. Set a major second apart like that, they beat against each other instead of harmonising, so the ear files the result as roughness rather than as a chord. Repetition never wears it smooth. It has to cut through a loud kitchen and a bad car radio, reaching somebody who is not listening."
+  - q: "Why Do Amber Alerts Sound on Silent?"
+    a: "They are built to ignore the switch, and the reasoning holds up. Muting your phone says something about which humans you are willing to hear from, and nobody is being muted when a town is told to evacuate. Alarm clocks get waved through on the same grounds. The delivery is unusual too, since these are not text messages. Cell broadcast throws one copy at every phone on a mast, which is how a packed stadium gets the words simultaneously without the network buckling."
+  - q: "Who Was Amber in Amber Alert?"
+    a: "Amber Hagerman, aged nine, taken in Arlington, Texas on 13 January 1996 and found dead four days afterwards. The name works as a backronym as well, standing officially for America's Missing: Broadcast Emergency Response, but it was picked for her. In the weeks that followed, people ringing Dallas radio stations floated the idea that bulletins about missing children could go out the way storm warnings did. Station managers and police assembled the first version from that suggestion. Her case remains unsolved."
+  - q: "Can You Turn Amber Alerts Off?"
+    a: "Mostly, yes. Your notification settings carry separate switches for Amber Alerts, imminent threat alerts and public safety alerts, and each can be turned off. Presidential and FEMA national alerts are the one category you cannot refuse, because handsets are forbidden from offering the option. One related rule, worth knowing: broadcasting the genuine attention signal when there is no emergency and no authorised test is illegal, which is why no advert has ever used it."
 date: 2026-09-10
 tags: [alerts, emergency, notification, explainer]
 image: /blog/why-amber-alerts-sound-like-that.png
