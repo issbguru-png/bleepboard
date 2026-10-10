@@ -13,7 +13,15 @@
  *   --all           every URL in the built sitemaps (use sparingly, see below)
  *   --since <ref>   URLs whose source files changed since a git ref
  *   (default)       --since HEAD~1, i.e. what this push actually changed
+ *   --match <str>   keep only URLs containing <str>; combine with --all
  *   --dry           print the payload and exit without calling the API
+ *
+ * `--match` exists because a change to a dynamic route's template rewrites
+ * every page it renders while the git diff names only the template. Editing
+ * src/pages/es/[hub].astro retitles all 32 Spanish hubs; urlsForFile() maps
+ * that file to nothing, correctly, because it cannot know which ones matter.
+ * `--all --match /es/` is the honest way to say "those pages, specifically"
+ * without submitting the whole sitemap to make the point.
  *
  * Submitting everything on every deploy is the one way to get throttled, so
  * the default is deliberately the narrow one. `--all` is for the first run and
@@ -141,6 +149,13 @@ async function main() {
   const all = has('--all');
   const since = valueOf('--since') ?? 'HEAD~1';
   let urls = all ? urlsFromSitemaps() : urlsFromGit(since);
+
+  const match = valueOf('--match');
+  if (match) {
+    const before = urls.length;
+    urls = urls.filter((u) => u.includes(match));
+    console.log(`IndexNow: --match ${match} kept ${urls.length} of ${before} URL(s).`);
+  }
 
   if (urls.length === 0) {
     console.log('IndexNow: nothing to submit (no page-level changes detected).');
