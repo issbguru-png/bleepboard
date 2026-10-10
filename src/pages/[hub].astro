@@ -41,12 +41,36 @@ const sounds =
 const paras = d.intro.split('\n\n').map((p) => p.trim()).filter(Boolean);
 const [lede, ...rest] = paras;
 
-// sibling hubs, for internal linking out of the page
-const others = (await getCollection('categories'))
-  .filter((c) => c.id !== entry.id)
-  .sort((a, b) => a.data.order - b.data.order);
 const counts = new Map<string, number>();
 for (const s of allSounds) counts.set(s.data.category, (counts.get(s.data.category) ?? 0) + 1);
+
+/* Sibling hubs, for internal linking out of the page.
+ *
+ * This used to list categories only, which quietly starved the themed hubs:
+ * with the homepage archive carrying a curated handful, /categories/ was the
+ * single internal link into all 23 of them. A themed hub could be good and
+ * still be invisible, and /goofy-ahh-soundboard/ was, against a 14,800/mo
+ * term at SD 17 with no serious page on the SERP.
+ *
+ * Themes carry their own icon key and derive their count from match[], so
+ * both kinds normalise to the same shape and the grid does not care which
+ * is which. Ordered by size, because a 35-button board is a better onward
+ * click than a 5-button one and the alternative is an arbitrary tie-break
+ * between two collections that number their `order` independently.
+ */
+const others = [
+  ...(await getCollection('categories'))
+    .filter((c) => c.id !== entry.id)
+    .map((c) => ({ id: c.id, name: c.data.name, icon: c.id, count: counts.get(c.id) ?? 0 })),
+  ...(await getCollection('themes'))
+    .filter((t) => t.id !== entry.id)
+    .map((t) => ({
+      id: t.id,
+      name: t.data.name,
+      icon: t.data.icon,
+      count: themeSounds(allSounds, t.data.match).length,
+    })),
+].sort((a, b) => b.count - a.count);
 
 // A theme has no CategoryIcon of its own, so it borrows one and inherits that
 // category's hue for the page chrome. Keeps themes on-brand with no new assets.
@@ -168,9 +192,9 @@ if (d.faq.length > 0) schema.push(faqPage(d.faq));
     <div class="cat-grid">
       {others.map((c) => (
         <a class="cat-card" href={hubPath(c.id)} data-cat={c.id}>
-          <CategoryIcon cat={c.id} />
-          <span class="cat-name">{c.data.name}</span>
-          <span class="cat-count tnum">{counts.get(c.id) ?? 0} sounds</span>
+          <CategoryIcon cat={c.icon} />
+          <span class="cat-name">{c.name}</span>
+          <span class="cat-count tnum">{c.count} sounds</span>
         </a>
       ))}
     </div>
