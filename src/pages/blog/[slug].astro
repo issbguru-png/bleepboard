@@ -54,22 +54,37 @@ const byPlays = (a, b) => b.data.plays - a.data.plays;
 const linked = sounds
   .filter((s) => s.data.explainer === `/blog/${post.id}/`)
   .sort(byPlays);
-// Some articles are about exactly one sound, and a single button alone in a
-// six-column grid reads as a rendering fault rather than a deliberate list. Top
-// the row up from the same categories the linked sounds live in — related by
-// the site's own taxonomy, not by guesswork.
+/* Related sounds for the foot strip, drawn from the categories the linked
+ * sounds live in: related by the site's own taxonomy, not by guesswork.
+ *
+ * This used to be sized as padding, `6 - linked.length` and nothing at all
+ * once an article had four or more linked sounds, because back then the foot
+ * strip was one combined row that only needed topping up to six. Now that the
+ * linked sounds render above the article, that sizing silently deleted the
+ * whole foot section from the three articles with four linked sounds, taking
+ * their onward internal links with it. The two rows are independent, so this
+ * one just asks for six related sounds every time.
+ */
 const cats = new Set(linked.map((s) => s.data.category));
 const linkedIds = new Set(linked.map((s) => s.id));
-const topUp =
-  linked.length === 0 || linked.length >= 4
-    ? []
-    : sounds
-        .filter((s) => !linkedIds.has(s.id) && cats.has(s.data.category))
-        .sort(byPlays)
-        .slice(0, 6 - linked.length);
+const topUp = linked.length === 0
+  ? []
+  : sounds
+      .filter((s) => !linkedIds.has(s.id) && cats.has(s.data.category))
+      .sort(byPlays)
+      .slice(0, 6);
 // A general guide names no single sound, so it gets the board's best instead.
 const fallback = linked.length ? [] : [...sounds].sort(byPlays).slice(0, 6);
-const strip = linked.length ? [...linked, ...topUp] : fallback;
+/* The linked sounds move above the article; the strip below becomes the
+ * related row only. Previously both sat at the foot of the page together.
+ *
+ * The reason is intent. "apple pay sound" is 18,100/mo and this article is
+ * the page Google matches to it, but someone typing that wants to HEAR the
+ * sound, and we answered with 851 words and a play button on the last line.
+ * Blog pages convert 0.32% against a 9.1% site average, and burying the one
+ * thing the visitor came for is a plausible part of why. 18 of 19 articles
+ * have a linked sound, so this is a template-level fix, not a one-off. */
+const strip = linked.length ? topUp : fallback;
 
 const pageUrl = SITE.url + `/blog/${post.id}/`;
 // Falls back to the sitewide card when an article has no artwork yet, so a
@@ -156,6 +171,26 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
     </figure>
   )}
 
+  {linked.length > 0 && (
+    <section class="article-play">
+      <p class="article-play-label">
+        {linked.length === 1 ? 'The sound this article is about' : `The ${linked.length} sounds this article is about`}
+        <span class="dot" aria-hidden="true">·</span> tap to play, free MP3
+      </p>
+      <div class="grid grid--lg">
+        {linked.map((s) => (
+          <SoundButton
+            slug={s.id}
+            title={s.data.title}
+            audio={s.data.audio}
+            duration={s.data.duration}
+            category={s.data.category}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
   <article class="prose article">
     <Content />
   </article>
@@ -179,7 +214,7 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
   {strip.length > 0 && (
     <section class="section sound-strip">
       <div class="section-head">
-        <h2>{linked.length ? 'Sounds from this article' : 'Sounds to try while you read'}</h2>
+        <h2>{linked.length ? 'More from This Board' : 'Sounds to Try While You Read'}</h2>
         <a class="section-link" href="/trending/">All trending →</a>
       </div>
       {/* The heading only ever claims what is true: the top-up sounds are
@@ -187,9 +222,7 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
       <p class="section-sub">
         {!linked.length
           ? 'The board’s most popular buttons. Tap to play, free MP3 downloads.'
-          : topUp.length
-            ? 'The sounds this piece is about, then more from the same corner of the board. All free MP3 downloads.'
-            : 'Tap to play. Every one is a free MP3 download.'}
+          : 'More from the same corner of the board. All free MP3 downloads.'}
       </p>
       <div class="grid grid--lg">
         {strip.map((s) => (
@@ -317,6 +350,21 @@ const title = pickTitle([`${headline} | ${SITE.name}`, headline]);
   /* The one thing the blog was missing: a way out of the article and into the
      product. Sits after the body so it never interrupts the read. */
   .sound-strip { margin-top: var(--s8); }
+
+  /* --- the play strip above the article ----------------------------------- */
+  /* Sits between the hero and the prose, so the sound the visitor searched for
+     is reachable without scrolling past the essay. Capped at the prose measure
+     so it reads as part of the article rather than as a separate section. */
+  .article-play {
+    max-width: var(--maxw-prose);
+    margin: var(--s6) auto var(--s7);
+  }
+  .article-play-label {
+    margin: 0 0 var(--s3);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+  .article-play-label .dot { margin: 0 0.35em; opacity: 0.5; }
 
   /* --- prev / next -------------------------------------------------------- */
   .post-pager {

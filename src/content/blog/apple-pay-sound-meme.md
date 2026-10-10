@@ -1,5 +1,6 @@
 ---
 title: "Why the Apple Pay Sound Became a Meme"
+seoTitle: "Apple Pay Sound: Play It Free, and Why It's a Meme"
 description: "How Apple's payment chime turned into the internet's sound for 'buying' anything, plus where to play and download the Apple Pay sound."
 faq:
   - q: "What Does the Apple Pay Sound Mean in a Meme?"
