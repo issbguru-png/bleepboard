@@ -13,5 +13,10 @@
   "origin": "The classic wide-eyed anime gasp, memed as ironic amazement at nothing.",
   "added": "2026-08-25T19:34:23+05:00",
   "featured": false,
-  "plays": 1050
+  "plays": 1050,
+  "es": {
+    "title": "Wow de Anime",
+    "origin": "El clásico jadeo de asombro de anime, usado como meme de asombro irónico ante nada.",
+    "blurb": "Asombro sin aliento y con ojos brillantes ante absolutamente nada. Los personajes de anime sueltan este suspiro ante los atardeceres, ante los sándwiches, ante el concepto de la amistad, y esa fiabilidad lo vuelve enormemente útil en cuanto lo aplicas con ironía. ¿Alguien se estaciona en paralelo de forma aceptable? Wow de anime. ¿Una máquina expendedora devuelve el cambio correcto a la primera? Wow de anime. Suministra asombro barato en cantidades ilimitadas y nunca se seca, que es más de lo que logra el entusiasmo sincero. Mejor úsalo ante el logro más pequeño del cuarto."
+  }
 }

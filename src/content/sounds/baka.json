@@ -13,5 +13,10 @@
   "origin": "A stock anime delivery of the Japanese word for idiot.",
   "added": "2026-08-25T23:38:23+05:00",
   "featured": false,
-  "plays": 1400
+  "plays": 1400,
+  "es": {
+    "title": "Baka",
+    "origin": "Una entrega típica de anime de la palabra japonesa para idiota.",
+    "blurb": "¡Baka! La palabra que carga con todo el peso del arquetipo tsundere. Significa idiota y casi siempre se usa para decir aproximadamente lo contrario, un truco lingüístico que el anime lleva décadas ejecutando. Probablemente sea la primera palabra japonesa que aprende cualquiera que ve anime, y se quedó en el vocabulario de los memes mucho después de que las series que la popularizaron se apagaran. Aquí viene con la inflexión completa de alguien azorado, y es básica para servidores de Discord y para el regaño cariñoso."
+  }
 }
