@@ -1,0 +1,33 @@
+---
+/**
+ * The Spanish embeddable player.
+ *
+ * Built only for clips carrying an `es` block, the same single opt-in that
+ * builds /es/sound/{slug}/. A Spanish embedder was previously handed a snippet
+ * whose credit line read in Spanish above a player labelled in English; this
+ * is the other half of that fix.
+ *
+ * The document is shared with the English route, so see
+ * src/pages/embed/[slug].astro for why the links in here are what they are.
+ */
+import { getCollection } from 'astro:content';
+import EmbedPlayer from '../../../components/EmbedPlayer.astro';
+import { SITE, esSoundPath } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  const sounds = await getCollection('sounds');
+  return sounds
+    .filter((s) => s.data.es)
+    .map((s) => ({ params: { slug: s.id }, props: { sound: s } }));
+}
+
+const { sound } = Astro.props;
+const d = sound.data;
+---
+<EmbedPlayer
+  title={d.es!.title}
+  href={SITE.url + esSoundPath(sound.id)}
+  audio={d.audio}
+  duration={d.duration}
+  lang="es"
+/>

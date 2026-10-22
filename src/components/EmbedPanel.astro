@@ -57,7 +57,9 @@ const COPY = {
 }[lang];
 
 const pageUrl = SITE.url + (isEs ? esSoundPath(slug) : soundPath(slug));
-const embedUrl = `${SITE.url}/embed/${slug}/`;
+// The widget follows the page it was taken from, so a Spanish embedder gets a
+// Spanish-labelled player under a Spanish credit line.
+const embedUrl = `${SITE.url}${isEs ? '/es' : ''}/embed/${slug}/`;
 // Titles are hand-written and can carry quotes or brackets. A double quote
 // would close the `title` attribute early and break the paste for whoever
 // takes it, so swap it for the typographic pair instead of escaping.
@@ -87,7 +89,7 @@ const embedCode = `<iframe src="${embedUrl}"
            sitting in, not whatever is live on production. `loading="lazy"` keeps
            it off the critical path, since most visitors never scroll this far. -->
       <iframe
-        src={`/embed/${slug}/`}
+        src={`${isEs ? '/es' : ''}/embed/${slug}/`}
         title={COPY.previewTitle(title)}
         loading="lazy"
         width="420"
