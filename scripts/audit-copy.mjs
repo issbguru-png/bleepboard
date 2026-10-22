@@ -49,6 +49,18 @@ const BANNED = [
   [/\b(at its core|in the realm of|look no further)\b/i, 'stock AI phrase'],
 ];
 
+/** The Spanish equivalents. Separate list because the English patterns above
+ *  are phrase-specific and would never fire on Spanish copy, which would have
+ *  left the /es/ half of the corpus effectively unaudited for voice. */
+const BANNED_ES = [
+  [/\b(sumérgete|sumergirse) en\b/i, '"sumérgete en" (stock AI phrase)'],
+  [/\ben el (mundo|ámbito|universo) de\b/i, '"en el mundo/ámbito de" (stock AI phrase)'],
+  [/\bno (es|se trata de) solo .{0,40}(es|sino)\b/i, '"no es solo X, es Y"'],
+  [/\b(sin duda alguna|cabe destacar|cabe mencionar|en definitiva)\b/i, 'stock AI connector'],
+  [/\b(robusto|robusta|sin fisuras|testimonio de)\b/i, 'stock AI vocabulary'],
+  [/\bya sea que (seas|eres)\b/i, '"whether you are X or Y" opening'],
+];
+
 const hard = [];
 const soft = [];
 const note = (bucket, slug, msg) => bucket.push({ slug, msg });
@@ -103,8 +115,92 @@ for (const s of sounds) {
   else openings.set(key, s.slug);
 }
 
+// ------------------------------------------------- Spanish clip copy
+// A sound carrying an `es` block renders a full /es/sound/{slug}/ page, so that
+// copy is as user-facing as the English blurb and gets the same hard rules:
+// length, em dashes, no duplicates, no shared four-word opening. Checked in its
+// own namespace, since a Spanish blurb opening the same way as an unrelated
+// English one is not a collision anyone can see.
+const esSounds = sounds.filter((s) => s.es);
+const esSeen = new Map();
+const esOpenings = new Map();
+for (const s of esSounds) {
+  const b = (s.es.blurb || '').trim();
+  const words = b.split(/\s+/).filter(Boolean).length;
+  const tag = `${s.slug} (es)`;
+
+  if (words < 70) note(hard, tag, `${words} words (min 70)`);
+  else if (words > 110) note(soft, tag, `${words} words (target ≤110)`);
+  if (b.length < 200) note(hard, tag, `${b.length} chars, schema requires 200+`);
+
+  for (const [re, label] of BANNED_ES) {
+    if (re.test(b)) note(hard, tag, `banned: ${label}`);
+  }
+
+  const dashes = [b, s.es.title || '', s.es.origin || ''].join(' ').split('—').length - 1;
+  if (dashes > 0) note(hard, tag, `${dashes} em-dash${dashes > 1 ? 'es' : ''} (none allowed)`);
+
+  if (!s.es.title) note(hard, tag, 'es block has no title');
+
+  const sentences = b.split(/(?<=[.!?])\s+/).filter(Boolean);
+  if (sentences.length > 2 && !sentences.some((x) => x.split(/\s+/).length < 12)) {
+    note(soft, tag, 'no sentence under 12 words, vary the rhythm');
+  }
+
+  if (esSeen.has(b)) note(hard, tag, `duplicate blurb (matches ${esSeen.get(b)})`);
+  else esSeen.set(b, tag);
+
+  const key = b.split(/\s+/).slice(0, 4).join(' ').toLowerCase();
+  if (esOpenings.has(key)) note(hard, tag, `shares a 4-word opening with ${esOpenings.get(key)}`);
+  else esOpenings.set(key, tag);
+}
+
+// A Spanish hub whose own clips are only partly translated is the failure mode
+// that silently makes hub copy wrong: the prose says the pages are in one
+// language while the grid links to both. Soft, because a board mid-translation
+// is a legitimate state to be in for a day, not a reason to fail the build.
+if (!only) {
+  const byCat = new Map();
+  for (const s of sounds) {
+    if (!byCat.has(s.category)) byCat.set(s.category, { total: 0, es: 0 });
+    const c = byCat.get(s.category);
+    c.total++;
+    if (s.es) c.es++;
+  }
+  for (const [cat, c] of byCat) {
+    if (c.es > 0 && c.es < c.total) {
+      note(soft, `categories/${cat}`, `${c.es} of ${c.total} clips translated, board is mid-translation`);
+    }
+  }
+
+  // Themes matter more here than categories do. A theme gathers sounds by
+  // substring across every category, so translating one category leaves a
+  // scattering of themes half done without anybody touching them, and their
+  // Spanish copy goes stale silently. Mirrors themeSounds() in src/lib/themes.
+  const themeDir = resolve(root, 'src/content/themes');
+  if (existsSync(themeDir)) {
+    for (const f of readdirSync(themeDir).filter((x) => x.endsWith('.json'))) {
+      const t = JSON.parse(readFileSync(resolve(themeDir, f), 'utf8'));
+      if (!t.es) continue;
+      const pats = (t.match || []).map((m) => m.toLowerCase()).filter(Boolean);
+      const hit = sounds.filter((s) => {
+        const hay = [s.slug, s.title, ...(s.tags || [])].join(' ').toLowerCase();
+        return pats.some((p) => hay.includes(p));
+      });
+      const es = hit.filter((s) => s.es).length;
+      if (es > 0 && es < hit.length) {
+        note(soft, `themes/${basename(f, '.json')}`, `${es} of ${hit.length} clips translated, board is mid-translation`);
+      }
+    }
+  }
+}
+
 const totalWords = blurbs.reduce((n, b) => n + b.split(/\s+/).length, 0);
-const totalDashes = blurbs.reduce((n, b) => n + (b.match(/—/g) || []).length, 0);
+const esWords = esSounds.reduce((n, s) => n + (s.es.blurb || '').split(/\s+/).length, 0);
+const totalDashes = [
+  ...blurbs,
+  ...esSounds.map((s) => s.es.blurb || ''),
+].reduce((n, b) => n + (b.match(/—/g) || []).length, 0);
 
 // ---------------------------------------------------------------- optional: prose
 if (ALL) {
@@ -123,6 +219,7 @@ if (ALL) {
   // so they get the same treatment. Themes were missed when the collection was
   // added, and a banned construction shipped in fnaf.json before anyone
   // noticed, hence checking both from one list rather than two code paths.
+  const introOpenings = new Map();
   for (const dir of ['src/content/categories', 'src/content/themes']) {
     const d0 = resolve(root, dir);
     if (!existsSync(d0)) continue;
@@ -138,6 +235,35 @@ if (ALL) {
         blk ? [blk.metaDescription, blk.intro, ...(blk.faq || []).flatMap((q) => [q.q, q.a])] : [];
       check(label, strings(d).filter(Boolean).join(' '), `${label}/${f}`);
       if (d.es) check(label, strings(d.es).filter(Boolean).join(' '), `${label}/${f} (es)`);
+
+      // Hub intros carry the same four-word-opening rule as blurbs, and for
+      // the same reason: hubs render in a grid on /categories/ and a shared
+      // opening is invisible per page and obvious across the set. Checked per
+      // language, since a Spanish paragraph opening like an unrelated English
+      // one is not a collision anyone can see.
+      for (const [lang, blk] of [['en', d], ['es', d.es]]) {
+        if (!blk?.intro) continue;
+        blk.intro
+          .split('\n\n')
+          .map((p) => p.trim())
+          .filter(Boolean)
+          .forEach((para, i) => {
+            const key = para
+              .toLowerCase()
+              .replace(/[^\p{L}\p{N}]+/gu, ' ')
+              .trim()
+              .split(' ')
+              .slice(0, 4)
+              .join(' ');
+            if (!key) return;
+            const where = `${label}/${basename(f, '.json')} [${lang}] para ${i + 1}`;
+            if (introOpenings.has(key)) {
+              note(hard, where, `shares a 4-word opening with ${introOpenings.get(key)}`);
+            } else {
+              introOpenings.set(key, where);
+            }
+          });
+      }
     }
   }
 }
@@ -145,6 +271,9 @@ if (ALL) {
 // ---------------------------------------------------------------- report
 console.log(`\n${DIM}audited ${sounds.length} sounds${ALL ? ' + blog/category/theme copy' : ''}${OFF}`);
 console.log(`  words        ${totalWords.toLocaleString()} total`);
+console.log(
+  `  es clips     ${esSounds.length} of ${sounds.length} translated, ${esWords.toLocaleString()} words`
+);
 console.log(`  em-dashes    ${totalDashes} (must be 0)`);
 
 const group = (arr) => {

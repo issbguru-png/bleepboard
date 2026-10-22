@@ -14,5 +14,10 @@
   "added": "2026-08-25T22:10:00+05:00",
   "featured": false,
   "plays": 3200,
-  "explainer": "/blog/what-does-67-mean/"
+  "explainer": "/blog/what-does-67-mean/",
+  "es": {
+    "title": "67 (Seis Siete)",
+    "origin": "De Doot Doot (6 7) de Skrilla, amplificado por los edits de basquetbol hasta volverse un canto global de la generación Alfa.",
+    "blurb": "¡Seis... siete! Los dos números que rompieron a una generación. El tema de Skrilla lo arrancó, los edits de basquetbol jugando con la estatura de 6 pies 7 lo turboalimentaron, y en algún punto de ese traspaso se volvió el chiste interno de la generación Alfa. Un canto de llamada y respuesta con su propia seña, gritado en salones de todo el mundo hasta que los maestros empezaron a confiscar el concepto mismo. Pregúntale a un niño qué significa 67 y míralo cortocircuitarse intentando explicarlo, porque no hay explicación, solo participación."
+  }
 }

@@ -16,8 +16,21 @@ interface Props {
    *  buttons inside `lang="es"`, where "Play Vine Boom" gets announced with
    *  Spanish phonology by a screen reader. */
   playLabel?: string;
+  /** Where the title links. Defaults to the English clip page; the Spanish
+   *  hubs pass the /es/ twin for sounds that have one. */
+  href?: string;
 }
-const { slug, title, audio, duration, category, rank, isNew = false, playLabel = 'Play' } = Astro.props;
+const {
+  slug,
+  title,
+  audio,
+  duration,
+  category,
+  rank,
+  isNew = false,
+  playLabel = 'Play',
+  href,
+} = Astro.props;
 ---
 <article class="bleep" data-cat={category} style={`--dur:${duration}s`}>
   {rank !== undefined && (
@@ -43,5 +56,5 @@ const { slug, title, audio, duration, category, rank, isNew = false, playLabel =
     <span class="bleep-bar" aria-hidden="true"></span>
   </button>
 
-  <a class="bleep-title" href={soundPath(slug)}><span>{title}</span></a>
+  <a class="bleep-title" href={href ?? soundPath(slug)}><span>{title}</span></a>
 </article>

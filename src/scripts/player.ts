@@ -125,7 +125,7 @@ document.addEventListener('click', (e) => {
     if (btn.dataset.copyBusy) return;
     btn.dataset.copyBusy = '1';
     const prev = label.textContent;
-    label.textContent = 'Copied!';
+    label.textContent = btn.dataset.copyDone ?? 'Copied!';
     setTimeout(() => {
       label.textContent = prev;
       delete btn.dataset.copyBusy;

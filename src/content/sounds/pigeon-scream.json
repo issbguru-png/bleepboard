@@ -13,5 +13,10 @@
   "origin": "A pigeon distress call popularised through chaotic edit compilations.",
   "added": "2026-08-25T23:39:23+05:00",
   "featured": false,
-  "plays": 1250
+  "plays": 1250,
+  "es": {
+    "title": "Grito de Paloma",
+    "origin": "Llamado de alarma de paloma popularizado en compilaciones de edits caóticos.",
+    "blurb": "Las palomas, por regla general, no gritan. Que esta sí lo haga resulta alarmante y muy chistoso. El clip se volvió un fijo de los edits caóticos y de las compilaciones de ruidos de aves: un chillido ahogado y repentino de un animal que tenías archivado como recipiente ambulante de pan. Úsalo cuando algo completamente normal hace algo profundamente inesperado. Funciona especialmente bien encima de imágenes de cualquiera comiendo en público cerca de una banca de parque, donde la amenaza siempre fue real y las aves siempre lo supieron."
+  }
 }

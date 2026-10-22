@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import '../styles/global.css';
-import { SITE, canonical, absolute } from '../lib/site';
+import { SITE, canonical, absolute, soundPath, esSoundPath } from '../lib/site';
 import Analytics from '../components/Analytics.astro';
 import Woofer from '../components/Woofer.astro';
 
@@ -68,6 +68,10 @@ for (const t of await getCollection('themes')) {
 }
 for (const c of await getCollection('categories')) {
   if (c.data.es) TRANSLATED[`/${c.id}-soundboard/`] = `/es/${c.id}-soundboard/`;
+}
+// Individual clips register the same way, so translating one needs no edit here.
+for (const s of await getCollection('sounds')) {
+  if (s.data.es) TRANSLATED[soundPath(s.id)] = esSoundPath(s.id);
 }
 const here = Astro.url.pathname;
 const path = here.endsWith('/') ? here : here + '/';

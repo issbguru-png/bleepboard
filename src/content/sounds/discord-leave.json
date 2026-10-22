@@ -14,5 +14,10 @@
   "added": "2026-08-25T19:39:44+05:00",
   "featured": false,
   "plays": 1600,
-  "explainer": "/blog/how-to-add-sounds-to-discord-soundboard/"
+  "explainer": "/blog/how-to-add-sounds-to-discord-soundboard/",
+  "es": {
+    "title": "Salir de Llamada de Discord",
+    "origin": "El sonido con que Discord avisa que alguien salió del canal de voz.",
+    "blurb": "La contraparte descendente del sonido de entrada, avisando que alguien se fue. Su gracia está en la neutralidad absoluta: suena igualito si la persona se despidió con cariño o si abandonó furiosa una discusión que venía perdiendo a la vista de todos. Esa ambigüedad lo vuelve un signo de puntuación pasivo-agresivo perfecto. Suéltalo justo después de cualquier derrota conversacional para dar a entender que el perdedor ya desalojó el edificio. Combínalo con el de entrada para edits sobre el vaivén interminable de un canal de voz a las tres de la mañana."
+  }
 }

@@ -13,5 +13,10 @@
   "origin": "From the viral 'Chill Guy' character meme.",
   "added": "2026-08-25T22:23:54+05:00",
   "featured": false,
-  "plays": 1800
+  "plays": 1800,
+  "es": {
+    "title": "Chill Guy",
+    "origin": "Del meme del personaje viral Chill Guy.",
+    "blurb": "Mi nuevo personaje es un chill guy: un perro con suéter gris que tiene problemas y sencillamente se niega a involucrarse con ninguno. Phillip Banks lo dibujó a finales de 2023. Un año después internet lo adoptó como mascota de la no participación radical, y el personaje se le escapó a su creador por completo en cosa de un mes. El atractivo es obvio en un año que le dio a todo el mundo bastante por lo que no estar chill. Tócalo en el momento en que decides, con razón, que algo no merece ni una unidad más de tu energía."
+  }
 }

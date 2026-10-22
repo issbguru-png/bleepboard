@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import SoundButton from '../../components/SoundButton.astro';
 import CategoryIcon from '../../components/CategoryIcon.astro';
 import StatIcon from '../../components/StatIcon.astro';
-import { SITE, soundPath, pickTitle } from '../../lib/site';
+import { SITE, soundPath, esSoundPath, pickTitle } from '../../lib/site';
 import { breadcrumbs, itemList, faqPage } from '../../lib/schema';
 import { themeSounds } from '../../lib/themes';
 
@@ -14,9 +14,11 @@ import { themeSounds } from '../../lib/themes';
  * the hreflang pair in Base and the URL in the sitemap, so there is exactly
  * one switch to flip and no way to ship a half-wired translation.
  *
- * The sounds themselves stay in English (titles, audio, their pages), same
- * as on /es/ itself, and the copy is expected to say so rather than imply a
- * translated catalogue.
+ * A clip is translated one at a time, by carrying its own `es` block. Where
+ * that exists this hub shows the Spanish name and links to the Spanish clip
+ * page; where it does not, the English name and page still show, so a hub is
+ * never blocked on its whole catalogue being translated. Hub copy should
+ * describe whichever of those two states its own board is actually in.
  */
 export async function getStaticPaths() {
   const themes = await getCollection('themes');
@@ -42,6 +44,10 @@ const sounds =
     : allSounds
         .filter((s) => s.data.category === entry.id)
         .sort((a, b) => b.data.plays - a.data.plays);
+
+/** Spanish name and URL when the clip is translated, English when it is not. */
+const label = (s: any) => s.data.es?.title ?? s.data.title;
+const link = (s: any) => (s.data.es ? esSoundPath(s.id) : soundPath(s.id));
 
 const paras = es.intro.split('\n\n').map((p) => p.trim()).filter(Boolean);
 const [lede, ...rest] = paras;
@@ -73,7 +79,7 @@ if (sounds.length > 0) {
   schema.push(
     itemList(
       es.hubTitle,
-      sounds.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+      sounds.map((s) => ({ name: label(s), url: SITE.url + link(s) })),
       es.metaDescription
     )
   );
@@ -117,7 +123,8 @@ if (es.faq.length > 0) schema.push(faqPage(es.faq));
           <SoundButton
             playLabel="Reproducir"
             slug={s.id}
-            title={s.data.title}
+            title={label(s)}
+            href={link(s)}
             audio={s.data.audio}
             duration={s.data.duration}
             category={s.data.category}

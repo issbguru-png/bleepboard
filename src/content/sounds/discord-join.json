@@ -14,5 +14,10 @@
   "added": "2026-08-25T19:39:39+05:00",
   "featured": false,
   "plays": 1650,
-  "explainer": "/blog/how-to-add-sounds-to-discord-soundboard/"
+  "explainer": "/blog/how-to-add-sounds-to-discord-soundboard/",
+  "es": {
+    "title": "Entrar a Llamada de Discord",
+    "origin": "El sonido con que Discord avisa que alguien entró al canal de voz.",
+    "blurb": "Dos notas que suben, amables, y alguien acaba de entrar a la llamada. Hay una generación entera condicionada a responderle a ese blip diciendo un nombre en forma de pregunta, antes de que la persona haya soltado una sola palabra. Está entre los sonidos más escuchados de la vida social en línea, así que fuera de contexto cae perfecto: tócalo a media conversación y mira cómo todos revisan la barra de tareas. Úsalo en edits para marcar una llegada. O en una llamada de verdad, para convencer al grupo de que se materializó un miembro fantasma."
+  }
 }

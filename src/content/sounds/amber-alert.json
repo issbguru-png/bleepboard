@@ -14,5 +14,10 @@
   "added": "2026-08-25T22:13:35+05:00",
   "explainer": "/blog/why-amber-alerts-sound-like-that/",
   "featured": false,
-  "plays": 2000
+  "plays": 2000,
+  "es": {
+    "title": "Alerta Amber",
+    "origin": "El tono de alerta de emergencia que se usa en las alertas Amber.",
+    "blurb": "Diseñado específicamente para que sea imposible de ignorar. El tono de emergencia pasa por encima del modo silencio, del no molestar y de la conversación que estuvieras teniendo. Ese chirrido de dos tonos no es un accidente de la tecnología: lo armó gente que necesitaba un sonido capaz de atravesar un cerebro metido en un cuarto ruidoso. Eso lo convierte en el sonido de broma más eficaz que existe y también en el más genuinamente alarmante. Cada teléfono al alcance del oído se va a revisar al instante, así que úsalo poco. Este de verdad asusta."
+  }
 }

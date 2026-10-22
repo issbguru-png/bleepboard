@@ -22,6 +22,7 @@ tell listed here and exits non-zero if the corpus regresses.
 | ≥200 characters | `src/content.config.ts` schema — build fails |
 | No duplicate blurb | `audit-copy.mjs` |
 | No two blurbs sharing a four-word opening | `audit-copy.mjs` |
+| No two **hub intro paragraphs** sharing a four-word opening, per language | `audit-copy.mjs --all` |
 | **No em dashes anywhere** | `audit-copy.mjs`, hard failure |
 | Facts accurate, never invented | Human judgement. See "Facts" below. |
 
@@ -35,6 +36,13 @@ them is fine. Fifty is the problem.
 | Never open `Name, appositive` as a dash construction | 74 blurbs once shared this exact shape. It's invisible per-blurb and obvious across a grid. |
 | Vary sentence length | Every sentence 15–25 words is a tell in itself. Land a short one. |
 | Vary openings between neighbours | Sounds in a category render side by side. |
+
+The hub-intro version of the opening rule exists for the same reason as the
+blurb one: every hub is listed on `/categories/`, so a shared opening is invisible
+on any single page and obvious down the column. It is checked per language,
+because a Spanish paragraph opening like an unrelated English one is not a
+collision a reader can see. Four hubs shipped sharing one opening in both
+languages before this was enforced, which is how it got enforced.
 
 ---
 
