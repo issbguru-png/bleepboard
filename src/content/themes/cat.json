@@ -1,0 +1,59 @@
+{
+  "name": "Cat",
+  "hubTitle": "Cat Soundboard",
+  "metaDescription": "Every cat sound worth having: meows, purring, Maxwell, huh cat, pluh and the Minecraft cat. Played free, downloaded free as MP3.",
+  "icon": "animal",
+  "order": 16,
+  "match": [
+    "cat-",
+    "-cat",
+    "meow",
+    "kitten",
+    "purr",
+    "pluh",
+    "happy-happy-happy"
+  ],
+  "intro": "Cats occupy a strange position in internet audio. They are the most photographed animal online and among the least recorded, because a cat will not perform on cue and everybody who owns one knows it. What circulates instead is a small, fiercely specific set of clips: a handful of real meows, one or two purrs, and a much larger pile of cats that have been edited into saying things.\n\nThe real recordings are here and they do the job. A clean meow for a text tone or a video cut, a long purr that works better than most white noise, and the Minecraft cat for anyone who learned their animal sounds from a video game rather than an animal. These are the ones people actually download, because a genuine meow is harder to find online than it has any right to be.\n\nThen there is the other half of the board, which is where the internet actually lives. Maxwell, the spinning cat that soundtracked an entire year of edits. Huh cat, the single most reusable expression of confusion ever committed to video. Banana cat crying, which is somehow both unbearable and extremely funny. Pluh. The Discord kitten, and a cat laugh that nobody can explain the origin of and everybody recognises anyway.\n\nEvery button plays on tap and every clip downloads as a free MP3, with no account and no signup. If you came here for a notification sound rather than a joke, the clean meow and the purr are the two to take.",
+  "faq": [
+    {
+      "q": "What Is the Maxwell Cat Sound?",
+      "a": "Maxwell is the grey cat that spins in place to music, and the clip attached to him has been pasted under more edits than almost any other animal sound of recent years. The cat is real and the spinning is an animation; the audio that travels with him changes depending on which version of the meme you met first, which is why people searching for it often cannot describe what they are looking for."
+    },
+    {
+      "q": "Can I Use a Meow as My Text Tone?",
+      "a": "That is one of the main reasons people download it. The clean meow here is short, which is what a text tone needs, and it cuts through background noise better than most default alerts because nothing else on a phone sounds remotely like it. On iPhone you will need to convert the MP3 to a ringtone file first; on Android you can drop it straight into the Notifications folder."
+    },
+    {
+      "q": "Why Does My Cat React to These?",
+      "a": "Some will and some will not. A recorded meow carries none of the scent or body language a real cat uses, so most cats treat it as a curiosity rather than another animal, and plenty ignore it completely. Played loudly or repeatedly it can stress an animal out, so it is worth keeping that in mind before testing the theory on your own cat."
+    },
+    {
+      "q": "Are These Free to Download?",
+      "a": "Free of charge, every one, with no account needed. Free of charge is not the same as free of copyright though. The plain animal recordings are generic foley, but the meme clips belong to whoever made them, so personal use is fine and putting them in something you monetise is a different question."
+    }
+  ],
+  "es": {
+    "name": "Gatos",
+    "hubTitle": "Botonera de Gatos",
+    "metaDescription": "Sonidos de gatos: maullidos, ronroneo, Maxwell, huh cat, pluh y el gato de Minecraft. Botones gratis para tocar y descargar en MP3.",
+    "intro": "Los gatos son el animal más fotografiado de internet y uno de los menos grabados, porque un gato no actúa cuando se lo piden y eso lo sabe cualquiera que tenga uno. Lo que circula es un conjunto pequeño y muy concreto: unos pocos maullidos reales, algún ronroneo y una montaña bastante más grande de gatos editados para que parezca que hablan.\n\nLas grabaciones de verdad están aquí y cumplen. Un maullido limpio para usar de tono de mensaje o en un video, un ronroneo largo que funciona mejor que casi cualquier ruido blanco, y el gato de Minecraft para quien aprendió los sonidos de animales en un videojuego y no en el campo. Son los que más se descargan, porque un maullido decente cuesta más de encontrar de lo que debería.\n\nLa otra mitad de la botonera es donde vive internet de verdad: Maxwell, el gato que gira y que acompañó un año entero de edits; el huh cat, la cara de desconcierto más reutilizable que existe; el banana cat llorando, insoportable y graciosísimo a la vez; el pluh; el gatito de Discord y una risa de gato que nadie sabe de dónde salió.\n\nCada botón suena al toque y cada clip se descarga gratis en MP3, sin cuenta y sin registro. Si viniste buscando un tono y no un chiste, el maullido limpio y el ronroneo son los dos que te sirven. Las fichas de cada sonido están en inglés, que es como se buscan estos clips incluso en español.",
+    "faq": [
+      {
+        "q": "¿Qué es el sonido del gato Maxwell?",
+        "a": "Maxwell es el gato gris que gira sobre sí mismo al ritmo de la música, y el audio que lo acompaña se ha pegado debajo de más edits que casi cualquier otro sonido animal de los últimos años. El gato es real y el giro es una animación; el audio cambia según la versión del meme con la que te cruzaste primero, y por eso mucha gente lo busca sin saber describirlo."
+      },
+      {
+        "q": "¿Puedo usar un maullido como tono de mensaje?",
+        "a": "Es de las razones principales por las que se descarga. El maullido limpio de aquí es corto, que es justo lo que necesita un tono, y se distingue del ruido de fondo mejor que casi cualquier alerta de fábrica porque nada más en un teléfono suena así. En iPhone hay que convertir el MP3 a archivo de tono antes; en Android basta con dejarlo en la carpeta Notifications."
+      },
+      {
+        "q": "¿Por qué reacciona mi gato a estos sonidos?",
+        "a": "Algunos reaccionan y otros no. Un maullido grabado no lleva olor ni lenguaje corporal, que es con lo que se comunican los gatos de verdad, así que la mayoría lo toma como una curiosidad y muchos lo ignoran directamente. A volumen alto o repetido puede estresar al animal, así que conviene tenerlo en cuenta antes de probar la teoría con el tuyo."
+      },
+      {
+        "q": "¿Se descargan gratis?",
+        "a": "Gratis de precio todos, sin cuenta. Gratis de precio no es gratis de derechos, eso sí: las grabaciones de animales son genéricas, pero los clips de memes son de quien los hizo, así que para uso personal bien y para algo que monetices ya es otra conversación."
+      }
+    ]
+  }
+}

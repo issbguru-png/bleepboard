@@ -1,0 +1,18 @@
+{
+  "title": "Mobile Notification",
+  "category": "notification",
+  "tags": [
+    "notification",
+    "text-tone",
+    "phone",
+    "ping",
+    "generic"
+  ],
+  "duration": 1.8,
+  "audio": "/audio/mobile-notification.mp3",
+  "blurb": "A single clean tone, struck once and left to decay on its own, with nothing else anywhere in the file. Generic by design and labelled honestly here: it belongs to no particular handset, it is just one mid-range ping of the sort every messaging app in the world reaches for. That makes it the safe pick whenever a video needs a phone to go off and the brand has to stay out of shot. No melody to date it, no voice to place it, no logo attached to it. Lay it under dialogue and nobody asks which phone it came from.",
+  "origin": "Generic mobile alert foley; no specific handset or app.",
+  "added": "2026-10-09",
+  "featured": false,
+  "plays": 1200
+}

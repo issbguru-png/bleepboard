@@ -1,6 +1,15 @@
 ---
 title: "The Metal Pipe Falling Sound, Explained"
 description: "Why an absurdly loud metal pipe clang became one of the defining meme sounds of the 2020s, and where to play and download it."
+faq:
+  - q: "What Is the Metal Pipe Falling Sound?"
+    a: "A length of steel pipe landing on concrete, miked close and far too loud. Hit a hollow tube hard and it sings at its resonances, so what you hear is a bright ringing tone with a tail on it rather than a thud. Then come the bounces, closer together and softer each time, building that rattling decay everyone recognises. The file contains a complete tiny drama. Impact, ring, scramble, nothing."
+  - q: "Why Is the Metal Pipe Sound So Funny?"
+    a: "Scale, mostly. An actual trip makes a sad little noise, and the pipe promotes it to an industrial accident. Oversizing an impact is as old as slapstick, and editors with no restraint have run the idea into the ground gleefully. It also drives the no-threat jumpscare: lull the viewer, then drop scaffolding on them. Startle reflexes answer to the rate of change in volume, not to meaning, so your shoulders are up before you work out what hit the floor."
+  - q: "Why Does the Pipe Cut Through Phone Speakers?"
+    a: "Its energy lives up at the top of the range, and that is the part small speakers handle competently. A cinematic sub-bass hit simply evaporates on a handset. The pipe survives anywhere. That is the real split between it and the Vine Boom, which sits low, and it is why editors chain the two: boom to set up, pipe to demolish."
+  - q: "How Should You Use It in an Edit?"
+    a: "Timing beats loudness every time. Let the clang arrive a frame or two behind the fall so the eye leads and the ear catches up, the order real impacts come in. Duck or kill any music underneath, because nothing else should be competing. Above all, keep the tail. That dying rattle is the best part of the clip, and cutting to dialogue on the first hit throws the laugh away. Free MP3, and consider your headphones warned."
 date: 2026-08-25
 tags: [meme, explainer, sound-effect]
 image: /blog/metal-pipe-falling-sound-meme.png

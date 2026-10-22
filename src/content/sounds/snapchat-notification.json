@@ -5,7 +5,8 @@
     "snapchat",
     "notification",
     "streak",
-    "alert"
+    "alert",
+    "text-tone"
   ],
   "duration": 3,
   "audio": "/audio/snapchat-notification.mp3",

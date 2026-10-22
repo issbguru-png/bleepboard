@@ -18,7 +18,13 @@
     "yo-phone",
     "gta-notification",
     "hello-moto",
-    "skype"
+    "skype",
+    "samsung",
+    "android",
+    "galaxy",
+    "mobile-notification",
+    "text-tone",
+    "busy-signal"
   ],
   "intro": "Nobody chose these sounds and everybody knows them. A ringtone, a dial tone, three descending notes from a pocket on the far side of a room: this is the audio furniture of the last forty years, installed by carriers and handset makers rather than by anyone with taste, and lodged in your memory regardless.\n\nThe Nokia tune is the strangest success story on the board. Francisco Tarrega wrote Gran Vals for solo guitar in 1902; Nokia lifted thirteen notes out of it, and that fragment went on to ring from billions of handsets, which makes it one of the most-heard melodies in human history. Motorola answered with a sung logo instead of a melody, and Americans on Cingular heard their carrier's tone constantly until the brand took the AT&T name in 2007.\n\nApple has the largest single share of this page. The tri-tone alert has been the default text sound since the early iPhone era, which has trained a room full of people to check their pockets in unison. Radar is the default alarm. The camera shutter is a fake, synthesised on purpose so that a silent phone still announces a photograph. FaceTime supplies three separate buttons, and the hang-up sound has quietly become the internet's preferred way to end a conversation.\n\nA few of these are real telephone engineering rather than branding. The North American dial tone is two sine waves at 350 and 440 Hz played together, the busy signal is 480 and 620 Hz in a half-second cadence, and the keypad uses genuine DTMF pairs, the same frequencies a real phone dials with. The dial-up handshake is a conversation as well: two modems trading tones to agree on a speed before settling into static.\n\nThe rest arrived from games and short-form video. Phone Guy leaves his night-one voicemail in Five Nights at Freddy's, GTA V has its own notification, Skype's ringtone still triggers an exam-era flashback for a certain age group, and Yo Phone Linging is what happens when a deep-fried clip escapes. Every button plays free from the browser, and each sound page has the MP3 waiting behind it.",
   "faq": [

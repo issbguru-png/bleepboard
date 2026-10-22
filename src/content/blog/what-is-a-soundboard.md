@@ -1,6 +1,15 @@
 ---
 title: "What Is a Soundboard? (And Why the Internet Runs on Them)"
-description: "What a soundboard is, how online sound buttons work, and how to use them on Discord, OBS, TikTok edits, and pranks."
+description: "A soundboard is a grid of buttons that each play one short clip the instant you tap it. Here is how online sound buttons work, and how to use them."
+faq:
+  - q: "What Is a Soundboard?"
+    a: "A grid of buttons where each one holds a short audio clip and fires it the moment you press it. Nothing loads, nothing queues, there is no track to scrub through. The format comes from radio and TV studios, where a producer needed an applause or a laugh on cue, and it survived online because the interaction is the same one a meme needs: the sound, right now, at the moment it is funny."
+  - q: "What Is the Difference Between a Soundboard and a Sound Effect?"
+    a: "A sound effect is the file; a soundboard is the way you reach it. Downloading one MP3 and dropping it into a video editor is using a sound effect. Opening a page of buttons and firing clips at each other over a voice call is using a soundboard. The same clip can be both, which is why most soundboards, this one included, let you play in place or download the file."
+  - q: "Are Online Soundboards Free?"
+    a: "The good ones are, and they should not ask you to sign up either. Free of charge is not the same as free of copyright though. Most meme and game clips belong to whoever made them, so playing one on your own call is fine and dropping it into something you monetise is a different question entirely."
+  - q: "How Do You Use a Soundboard on Discord?"
+    a: "Two ways. Discord has its own built-in soundboard, so you can download an MP3 here and upload it there, which is the simplest route. The alternative is routing your desktop audio into your microphone with something like VB-Cable or VoiceMeeter, which plays whatever is on screen into the call and does not need you to upload anything first."
 date: 2026-08-25
 tags: [guide, soundboard]
 image: /blog/what-is-a-soundboard.png

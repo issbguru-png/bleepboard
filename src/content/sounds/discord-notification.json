@@ -5,7 +5,8 @@
     "discord",
     "notification",
     "ping",
-    "message"
+    "message",
+    "text-tone"
   ],
   "duration": 0.5,
   "audio": "/audio/discord-notification.mp3",

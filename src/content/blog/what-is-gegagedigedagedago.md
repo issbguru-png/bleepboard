@@ -2,6 +2,15 @@
 title: "What Is Gegagedigedagedago? The Nugget Song, Explained"
 seoTitle: "What Is Gegagedigedagedago? The Nugget Song"
 description: "Where gegagedigedagedago comes from: a gibberish Cotton Eye Joe cover, a singing chicken nugget with a Roblox face, and how the two memes fused."
+faq:
+  - q: "What Is Gegagedigedagedago?"
+    a: "Gibberish sung over the tune of 'Cotton Eye Joe', usually by an animated chicken nugget. Pull the meme apart and Rednex's 1994 single is plainly underneath, with the nonsense occupying the chorus slot. Slur 'where did you come from' quickly enough and you can hear those syllables emerging. Spelling it is a free-for-all. That is awkward for the very large number of people trying to look it up."
+  - q: "Who Sings Gegagedigedagedago?"
+    a: "razioff, a TikTok creator, who uploaded a 'Cotton Eye Joe' cover in July 2023 with the lyrics swapped for assured nonsense and delivered dead straight. Worth saying clearly, because reuploads stripped the credit and a lot of write-ups file the whole thing as an AI song. A human is doing the singing. The machine only supplies the animation that moves the nugget's mouth, so the commitment in the vocal is entirely real."
+  - q: "What Is the Singing Chicken Nugget?"
+    a: "From August 2023, an account called wenonugget was animating a nugget with a face stuck on it to perform songs. The face is Roblox's blank, staring Man Face, deepfaked so its features follow the vocal. James Brown got the debut. By January 2024 the nugget had taken on razioff's cover, the two memes merged, and within a month the audio was also coming out of pets, babies and footballers."
+  - q: "Why Do Nonsense Syllables Stick in Your Head?"
+    a: "The same way nursery rhymes do. Even rhythm, open vowels, and no meaning to process, so nothing obstructs the repetition. Because it behaves like a word, your head stores it as one. The remix pile proves the durability: metal, bardcore, choirs of nuggets harmonising, and not one version damaged the syllables, since there was never anything in them to translate. Free MP3 download if you want it."
 date: 2026-08-29
 tags: [meme, tiktok, explainer]
 image: /blog/what-is-gegagedigedagedago.png

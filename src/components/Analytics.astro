@@ -17,6 +17,7 @@
 import {
   GA4_ID, ADSENSE_ID, MEDIAVINE_ID,
   ANALYTICS_LIVE, ADSENSE_LIVE, MEDIAVINE_LIVE, TRACKING_LIVE,
+  GROW_SITE_ID, GROW_LIVE,
   USE_GOOGLE_CMP, CHILD_DIRECTED,
 } from '../lib/monetization';
 
@@ -103,6 +104,29 @@ const CONSENT_REGIONS = [
         data-cfasync="false"
         src={`https://scripts.mediavine.com/tags/${MEDIAVINE_ID}.js`}
       ></script>
+    )}
+
+    {/* 4. Grow by Mediavine. Engagement tooling, not an ad network, so it sits
+           alongside AdSense rather than competing with it.
+
+           Loads last on purpose: it is the least important script on the page
+           and this site's whole argument is that a button plays the instant you
+           press it. `defer` keeps it off the parser's critical path, matching
+           the vendor's own snippet. */}
+    {GROW_LIVE && (
+      <script is:inline defer data-grow-initializer="" define:vars={{ GROW_SITE_ID }}>
+        window.growMe ||
+          ((window.growMe = function (e) {
+            window.growMe._.push(e);
+          }),
+          (window.growMe._ = []));
+        var growScript = document.createElement('script');
+        growScript.type = 'text/javascript';
+        growScript.src = 'https://faves.grow.me/main.js';
+        growScript.defer = true;
+        growScript.setAttribute('data-grow-faves-site-id', GROW_SITE_ID);
+        document.head.appendChild(growScript);
+      </script>
     )}
   </>
 )}

@@ -1,6 +1,15 @@
 ---
 title: "Nothing Beats a Jet2 Holiday: The TikTok Meme, Explained"
 description: "Why a cheerful British airline advert became the soundtrack to every holiday disaster on TikTok, and where to play and download the Jet2 sound."
+faq:
+  - q: "What Is the Jet2 Holiday Meme?"
+    a: "A real Jet2holidays television advert laid over footage of holidays collapsing. Wasps overrunning a beach bar, a parasail going wrong, water coming down a hotel corridor, and through all of it a silky voice offering fifty pounds off your next break. The engine is tonal mismatch. A worse disaster on screen means a harder landing for the narration, because everyone has lived the distance between the brochure photograph and the actual week."
+  - q: "What Song Is in the Jet2 Advert?"
+    a: "'Hold My Hand' by Jess Glynne, already a chart hit long before any holiday company licensed it. That ordering counts. Plenty of viewers could sing the chorus without ever having seen the ad, so the audio showed up carrying warmth and summer and uncomplicated good cheer, all of which the meme got to burn through at once. Eleven seconds is the full clip, though hardly any edit needs more than the opening line."
+  - q: "Is the Jet2 Advert Real?"
+    a: "Entirely. Jet2holidays sells package holidays in the UK and the clip is a genuine British TV spot, backing track included. As marketing it is completely unremarkable, and being unremarkable is what made it usable. The voiceover artist picked up a measure of fame off the back of it, and the line itself left the internet altogether. People say it out loud now whenever something goes wrong within sight of a pool."
+  - q: "How Do You Make a Jet2 Edit?"
+    a: "Open on calm, never on chaos. Give it the empty pool at breakfast, the hotel frontage, the family wheeling cases through departures with the whole week ahead. The advert has to be winning before anything breaks, so let a few words land first. Then do not touch the audio again. Most people instinctively cut the music on impact, and holding the fifty-pound offer over the wreckage is the part that pays. The MP3 is free here."
 date: 2026-08-25
 tags: [meme, tiktok, explainer]
 image: /blog/nothing-beats-a-jet2-holiday-meme.png

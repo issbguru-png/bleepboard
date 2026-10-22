@@ -1,0 +1,32 @@
+[
+  {
+    "src": "samsung-notification",
+    "slug": "samsung-notification",
+    "title": "Samsung Notification",
+    "category": "notification",
+    "tags": ["samsung", "notification", "text-tone", "android", "phone"],
+    "blurb": "Five quick tones inside two seconds, rising then settling like a doorbell that learned some manners. This is the Android answer to Apple's tri-tone, doing the identical job in a completely different accent. Where the iPhone alert is bright and metallic, this one sits far lower and rounder, closer to a marimba than a bell. Samsung owners stop consciously hearing it within a week of unboxing the phone, then cannot unhear it anywhere else for years. Useful to anyone cutting a scene where a handset needs to go off without an Apple logo entering the frame.",
+    "origin": "The default notification alert shipped on Samsung Galaxy handsets.",
+    "plays": 1700
+  },
+  {
+    "src": "mobile-notification",
+    "slug": "mobile-notification",
+    "title": "Mobile Notification",
+    "category": "notification",
+    "tags": ["notification", "text-tone", "phone", "ping", "generic"],
+    "blurb": "A single clean tone, struck once and left to decay on its own, with nothing else anywhere in the file. Generic by design and labelled honestly here: it belongs to no particular handset, it is just one mid-range ping of the sort every messaging app in the world reaches for. That makes it the safe pick whenever a video needs a phone to go off and the brand has to stay out of shot. No melody to date it, no voice to place it, no logo attached to it. Lay it under dialogue and nobody asks which phone it came from.",
+    "origin": "Generic mobile alert foley; no specific handset or app.",
+    "plays": 1200
+  },
+  {
+    "src": "youve-got-mail-aol",
+    "slug": "youve-got-mail-aol",
+    "title": "You've Got Mail (AOL)",
+    "category": "notification",
+    "tags": ["aol", "notification", "nostalgia", "email", "dial-up"],
+    "blurb": "Four syllables that defined checking your email for most of a decade. AOL shipped this spoken alert with its dial-up software through the nineties, and in millions of households it was simply the sound of the internet arriving. Voice talent Elwood Edwards recorded it in 1989 alongside the rest of the service's prompts, reportedly for a couple of hundred dollars. The clip runs under a second and sits low in the register, which is exactly how it cut through a modem still settling down. It carries a nostalgia charge no modern alert has managed to earn.",
+    "origin": "AOL's dial-up client, voiced by Elwood Edwards from 1989.",
+    "plays": 1500
+  }
+]

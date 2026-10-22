@@ -1,0 +1,25 @@
+# Batch 17: download-intent gaps seen in Search Console
+apple-pay-sound
+apple-pay
+netflix-tudum
+tudum
+venmo-notification
+cash-app-notification
+paypal-notification
+duolingo-notification
+airpods-connect
+cash-register
+ka-ching
+coin-drop
+level-up
+achievement-unlocked
+error-sound
+correct-answer
+wrong-answer
+success-sound
+microwave-beep
+doorbell
+school-bell
+elevator-ding
+truck-backing-up
+car-horn

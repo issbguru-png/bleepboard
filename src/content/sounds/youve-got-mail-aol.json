@@ -1,0 +1,19 @@
+{
+  "title": "You've Got Mail (AOL)",
+  "category": "notification",
+  "tags": [
+    "aol",
+    "notification",
+    "nostalgia",
+    "email",
+    "dial-up",
+    "text-tone"
+  ],
+  "duration": 0.9,
+  "audio": "/audio/youve-got-mail-aol.mp3",
+  "blurb": "Four syllables that defined checking your email for most of a decade. AOL shipped this spoken alert with its dial-up software through the nineties, and in millions of households it was simply the sound of the internet arriving. Voice talent Elwood Edwards recorded it in 1989 alongside the rest of the service's prompts, reportedly for a couple of hundred dollars. The clip runs under a second and sits low in the register, which is exactly how it cut through a modem still settling down. It carries a nostalgia charge no modern alert has managed to earn.",
+  "origin": "AOL's dial-up client, voiced by Elwood Edwards from 1989.",
+  "added": "2026-10-09",
+  "featured": false,
+  "plays": 1500
+}

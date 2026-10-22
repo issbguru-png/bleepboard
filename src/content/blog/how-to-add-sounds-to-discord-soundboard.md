@@ -1,6 +1,15 @@
 ---
 title: "How to Add Sounds to Your Discord Soundboard"
 description: "Upload custom sounds to a Discord server soundboard, the file limits and permissions you need, and how to play longer clips with a virtual audio cable."
+faq:
+  - q: "How Do You Add Sounds to a Discord Soundboard?"
+    a: "Click the server name, go to Server Settings, pick Soundboard from the sidebar and hit Upload Sound. Choose the file, name it, add an emoji if you want it findable, and drop the default volume before saving rather than after someone's ears. There is no upload button on mobile. Phones can fire existing sounds but not add new ones, so load Discord in a browser and ask for the desktop site."
+  - q: "Why Will Discord Not Accept My Sound File?"
+    a: "Length first, size second. The feature exists for stingers, so anything longer than a quick effect gets bounced at the door. Trim it yourself instead of testing your luck. The byte ceiling is 512KB, generous for a trimmed MP3 or OGG and hopeless for WAV, so convert before you try. Shaving the bitrate costs you nothing audible on a two-second clip."
+  - q: "What Permission Do You Need to Upload a Soundboard Sound?"
+    a: "The expressions permission, the one that also governs emoji and stickers, which in practice means an admin or somebody handed a role on purpose. Firing sounds at all requires Use Soundboard, and an owner can revoke that per role or per channel when a call gets unbearable. Borrowing another server's sounds is a separate matter again, needing external-sounds rights plus Nitro. How many slots exist depends on boost level."
+  - q: "How Do You Play Longer Clips in Discord?"
+    a: "Give up on the soundboard and become the microphone instead. A virtual audio device registers as an output and an input at once, so you push browser audio in and then tell Discord that device is your mic. Windows has VB-CABLE, macOS has BlackHole, and PulseAudio or PipeWire can make a null sink with a loopback. Everybody trips on the same two things. Send the audio to your headphones as well, and disable noise suppression and echo cancellation."
 date: 2026-08-26
 tags: [discord, how-to, soundboard]
 image: /blog/how-to-add-sounds-to-discord-soundboard.png

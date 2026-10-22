@@ -1,0 +1,54 @@
+{
+  "name": "Italian Brainrot",
+  "hubTitle": "Italian Brainrot Soundboard",
+  "metaDescription": "Tralalero Tralala, Bombardiro Crocodilo, Tung Tung Tung Sahur and the rest of the Italian brainrot cast. Played free, downloaded free as MP3.",
+  "icon": "brainrot",
+  "order": 18,
+  "match": [
+    "italian-brainrot",
+    "quaso"
+  ],
+  "intro": "Italian brainrot is what happens when an AI image generator, a text-to-speech voice with an Italian accent and a complete absence of adult supervision are left alone together. The output is a cast of invented creatures with rhyming nonsense names, each introduced by the same breathless narrator, each somehow given a backstory nobody asked for. A shark in Nike trainers. A crocodile that is also a bomber aircraft. A coffee cup with legs.\n\nNone of it means anything and that is not a criticism. The genre runs on the specific pleasure of a name that scans well in Italian and describes something that cannot exist, delivered with total conviction. Tralalero Tralala came first and set the template; the rest arrived within weeks, because once the formula was visible anyone with an image model could add to it.\n\nThis board holds the nine characters that actually circulate: Tralalero Tralala, Bombardiro Crocodilo, Tung Tung Tung Sahur, Ballerina Cappuccina, Cappuccino Assassino, Brr Brr Patapim, Trippi Troppi, Udin Din Din Dun and Quaso. They are the ones children in several countries can recite from memory, which is the only ranking that matters here.\n\nEvery button plays on tap and every clip downloads as a free MP3. If you arrived here because a child in your life will not stop saying one of these names, the audio is the fastest way to work out which one.",
+  "faq": [
+    {
+      "q": "What Is Italian Brainrot?",
+      "a": "A meme genre built from AI-generated images and text-to-speech narration in an Italian accent, where each entry is an invented creature with a rhyming nonsense name and an absurd backstory. It is deliberately meaningless. The humour lives in the gap between how seriously the narrator delivers it and how little sense any of it makes."
+    },
+    {
+      "q": "Which One Came First?",
+      "a": "Tralalero Tralala is generally credited as the original, and it set the pattern everything else followed: the rhythmic name, the AI image, the confident narration. Once that template was visible the genre expanded fast, because the barrier to adding a character was an image generator and a rhyme."
+    },
+    {
+      "q": "Why Do Children Love These So Much?",
+      "a": "The names are the whole appeal. They scan, they rhyme, they are fun to shout, and they mean nothing an adult can decode or correct. That last part matters more than it sounds. A joke that cannot be explained to a parent is a joke that belongs entirely to the people telling it."
+    },
+    {
+      "q": "Are These Free to Download?",
+      "a": "Yes, as MP3s, with no account and no signup. The clips come from AI-generated videos circulated on TikTok and YouTube, so treat them the way you would any meme audio: personal use and edits are fine, and anything you monetise is a question you need to answer yourself."
+    }
+  ],
+  "es": {
+    "name": "Brainrot Italiano",
+    "hubTitle": "Botonera de Brainrot Italiano",
+    "metaDescription": "Tralalero Tralala, Bombardiro Crocodilo, Tung Tung Tung Sahur y todo el brainrot italiano. Botones gratis para tocar y descargar en MP3.",
+    "intro": "El brainrot italiano es lo que pasa cuando juntas un generador de imágenes con IA, una voz de texto a voz con acento italiano y cero supervisión adulta. El resultado es un reparto de criaturas inventadas con nombres que riman y no significan nada, cada una presentada por el mismo narrador entusiasmado y con una historia de fondo que nadie pidió. Un tiburón con tenis Nike. Un cocodrilo que además es un bombardero. Una taza de café con piernas.\n\nNada de esto quiere decir nada, y eso no es un defecto. El género funciona por el placer concreto de un nombre que suena bien en italiano y describe algo imposible, dicho con absoluta seguridad. Tralalero Tralala llegó primero y fijó la fórmula; el resto apareció en semanas, porque en cuanto la receta quedó a la vista cualquiera con un modelo de imágenes pudo sumar un personaje.\n\nAquí están los nueve que de verdad circulan: Tralalero Tralala, Bombardiro Crocodilo, Tung Tung Tung Sahur, Ballerina Cappuccina, Cappuccino Assassino, Brr Brr Patapim, Trippi Troppi, Udin Din Din Dun y Quaso. Son los que los niños de medio mundo se saben de memoria, que es el único ranking que importa.\n\nCada botón suena al toque y cada clip se descarga gratis en MP3. Si llegaste porque algún niño cercano no para de repetir uno de estos nombres, el audio es la vía más rápida para averiguar cuál. Las fichas de cada sonido están en inglés.",
+    "faq": [
+      {
+        "q": "¿Qué es el brainrot italiano?",
+        "a": "Un género de memes hecho con imágenes generadas por IA y narración de texto a voz con acento italiano, donde cada entrada es una criatura inventada con nombre rimado y una historia absurda. No significa nada a propósito. La gracia está en la distancia entre lo serio que suena el narrador y lo poco que se sostiene lo que cuenta."
+      },
+      {
+        "q": "¿Cuál fue el primero?",
+        "a": "A Tralalero Tralala se le suele dar el crédito de haber abierto el género, y fijó el patrón que siguió todo lo demás: el nombre rítmico, la imagen de IA, la narración segura de sí misma. En cuanto la fórmula quedó visible el género creció rapidísimo, porque para sumar un personaje bastaba un generador de imágenes y una rima."
+      },
+      {
+        "q": "¿Por qué les gusta tanto a los niños?",
+        "a": "Los nombres son todo el chiste. Riman, suenan bien, da gusto gritarlos y no significan nada que un adulto pueda descifrar o corregir. Esa última parte pesa más de lo que parece: un chiste que no se le puede explicar a un padre es un chiste que les pertenece por completo a quienes lo cuentan."
+      },
+      {
+        "q": "¿Se descargan gratis?",
+        "a": "Sí, en MP3, sin cuenta y sin registro. Los clips vienen de videos generados con IA que circulan en TikTok y YouTube, así que trátalos como cualquier audio de meme: para uso personal y edits está bien, y lo que monetices lo decides tú."
+      }
+    ]
+  }
+}

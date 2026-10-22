@@ -40,6 +40,29 @@ export const ADSENSE_ID = 'ca-pub-9795227844443219';
 export const MEDIAVINE_ID = ''; // TODO: from your Mediavine dashboard
 
 /**
+ * Grow by Mediavine (faves.grow.me).
+ *
+ * OFF: Mediavine requires a site to be 120 days old before Grow is eligible.
+ * Bleepboard's first commit was 2026-08-25, so the earliest it qualifies is
+ * roughly 2026-12-23. Installed and then switched off on 2026-09-12 rather
+ * than deleted, because the wiring is the slow part and the date will come.
+ *
+ * TO TURN BACK ON, once eligible: restore the id below. That single change
+ * brings back the script tag in Analytics.astro, the dedicated section in the
+ * privacy policy, and Grow's contribution to TRACKING_LIVE. Nothing else needs
+ * editing. Remember to move POLICY_EFFECTIVE at the same time, since the
+ * privacy policy changes when this flips.
+ *
+ *   export const GROW_SITE_ID = 'U2l0ZTo5NWRhYjQ3YS1iMTZmLTQwNzktODRkMS1mZWY3YzhmNDhiYTI=';
+ *   (decodes to Site:95dab47a-b16f-4079-84d1-fef7c8f48ba2)
+ *
+ * Note for whoever flips it: Grow is Mediavine's free engagement product, not
+ * the Mediavine ad network, so it does NOT trip the exclusivity note above.
+ * AD_NETWORK can stay 'adsense'.
+ */
+export const GROW_SITE_ID = '';
+
+/**
  * Google Funding Choices / Privacy & Messaging is Google's own CMP. It is
  * IAB TCF certified, free, and the practical choice if you run AdSense.
  * You still have to create the message in the AdSense UI; this only loads it.
@@ -72,10 +95,11 @@ export const CHILD_DIRECTED = false;
 export const ADS_LIVE = AD_NETWORK !== 'none';
 export const ANALYTICS_LIVE = GA4_ID !== '';
 export const ADSENSE_LIVE = AD_NETWORK === 'adsense' && ADSENSE_ID !== '';
+export const GROW_LIVE = GROW_SITE_ID !== '';
 export const MEDIAVINE_LIVE = AD_NETWORK === 'mediavine' && MEDIAVINE_ID !== '';
 
 /** Anything that sets a cookie or an ad identifier is live. Drives the policy. */
-export const TRACKING_LIVE = ADS_LIVE || ANALYTICS_LIVE;
+export const TRACKING_LIVE = ADS_LIVE || ANALYTICS_LIVE || GROW_LIVE;
 
 /** Date the privacy policy last materially changed. */
-export const POLICY_EFFECTIVE = '2026-08-29';
+export const POLICY_EFFECTIVE = '2026-09-12';

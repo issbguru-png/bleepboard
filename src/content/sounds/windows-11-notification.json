@@ -5,7 +5,8 @@
     "windows",
     "11",
     "notification",
-    "modern"
+    "modern",
+    "text-tone"
   ],
   "duration": 1.7,
   "audio": "/audio/windows-11-notification.mp3",
