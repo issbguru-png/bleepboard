@@ -91,7 +91,25 @@ function urlsForFile(file) {
     return r ? fn(r) : null;
   };
   return (
-    m(/^src\/content\/sounds\/(.+)\.json$/, (r) => [`${ORIGIN}/sound/${r[1]}/`]) ??
+    m(/^src\/content\/sounds\/(.+)\.json$/, (r) => {
+      // A clip renders at two URLs once it carries an `es` block, and the
+      // Spanish one is the half that needs the ping: it is brand new, nothing
+      // links to it from outside yet, and Bing is roughly 40% of this site's
+      // organic traffic. Read the file rather than assume, so an untranslated
+      // clip never submits a URL that 404s, which is the fastest way to lose
+      // IndexNow trust.
+      const urls = [`${ORIGIN}/sound/${r[1]}/`];
+      const src = resolve(root, `src/content/sounds/${r[1]}.json`);
+      if (existsSync(src)) {
+        try {
+          if (JSON.parse(readFileSync(src, 'utf8')).es) urls.push(`${ORIGIN}/es/sound/${r[1]}/`);
+        } catch {
+          // Unparseable JSON is the build's problem to report, not ours; the
+          // English URL still stands.
+        }
+      }
+      return urls;
+    }) ??
     m(/^src\/content\/blog\/(.+)\.md$/, (r) => [`${ORIGIN}/blog/${r[1]}/`]) ??
     m(/^src\/content\/(categories|themes)\/(.+)\.json$/, (r) => [
       `${ORIGIN}/${r[2]}-soundboard/`,
