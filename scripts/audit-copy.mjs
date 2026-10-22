@@ -219,6 +219,7 @@ if (ALL) {
   // so they get the same treatment. Themes were missed when the collection was
   // added, and a banned construction shipped in fnaf.json before anyone
   // noticed, hence checking both from one list rather than two code paths.
+  const introOpenings = new Map();
   for (const dir of ['src/content/categories', 'src/content/themes']) {
     const d0 = resolve(root, dir);
     if (!existsSync(d0)) continue;
@@ -234,6 +235,35 @@ if (ALL) {
         blk ? [blk.metaDescription, blk.intro, ...(blk.faq || []).flatMap((q) => [q.q, q.a])] : [];
       check(label, strings(d).filter(Boolean).join(' '), `${label}/${f}`);
       if (d.es) check(label, strings(d.es).filter(Boolean).join(' '), `${label}/${f} (es)`);
+
+      // Hub intros carry the same four-word-opening rule as blurbs, and for
+      // the same reason: hubs render in a grid on /categories/ and a shared
+      // opening is invisible per page and obvious across the set. Checked per
+      // language, since a Spanish paragraph opening like an unrelated English
+      // one is not a collision anyone can see.
+      for (const [lang, blk] of [['en', d], ['es', d.es]]) {
+        if (!blk?.intro) continue;
+        blk.intro
+          .split('\n\n')
+          .map((p) => p.trim())
+          .filter(Boolean)
+          .forEach((para, i) => {
+            const key = para
+              .toLowerCase()
+              .replace(/[^\p{L}\p{N}]+/gu, ' ')
+              .trim()
+              .split(' ')
+              .slice(0, 4)
+              .join(' ');
+            if (!key) return;
+            const where = `${label}/${basename(f, '.json')} [${lang}] para ${i + 1}`;
+            if (introOpenings.has(key)) {
+              note(hard, where, `shares a 4-word opening with ${introOpenings.get(key)}`);
+            } else {
+              introOpenings.set(key, where);
+            }
+          });
+      }
     }
   }
 }
