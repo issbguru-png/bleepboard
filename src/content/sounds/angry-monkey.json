@@ -13,5 +13,10 @@
   "origin": "A field recording of an agitated monkey's threat call.",
   "added": "2026-08-25T23:40:03+05:00",
   "featured": false,
-  "plays": 1250
+  "plays": 1250,
+  "es": {
+    "title": "Mono Enojado",
+    "origin": "Grabación de campo del llamado de amenaza de un mono agitado.",
+    "blurb": "Chillido furioso de primate, el sonido de un mono que ya tuvo suficiente y quiere que el bosque entero lo sepa. Casi todos los llamados de amenaza y alarma de los primates evolucionaron para resultar lo más desagradables posible, porque ser ignorables echaría a perder el asunto, así que este corta por encima de absolutamente cualquier mezcla. Es un fijo de los edits caóticos y de los videos de cuando el grupo de chat se desata. Tócalo en el segundo en que una conversación deja de ser civilizada. Nadie gana una discusión después de esto."
+  }
 }

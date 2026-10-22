@@ -13,5 +13,10 @@
   "origin": "The spoken version of the scene-era internet 'rawr'.",
   "added": "2026-08-25T23:40:13+05:00",
   "featured": false,
-  "plays": 1100
+  "plays": 1100,
+  "es": {
+    "title": "Rawr",
+    "origin": "La versión hablada del rawr de la era scene de internet.",
+    "blurb": "Sobre todo es una palabra escrita, y aquí viene dicha en voz alta con un compromiso absoluto. Pertenece a una época muy concreta de internet: chicos scene, avatares de dinosaurio y aquel rawr significa te amo en dinosaurio escrito en un perfil de MySpace con una tipografía que nadie podía leer. Después la rescató el juego irónico. Es más o menos el destino de todo lo que pasa por aquí. Sirve para amenazas juguetonas, para nostalgia maldita y para fingir que eres un dinosaurio muy pequeño que va en serio."
+  }
 }

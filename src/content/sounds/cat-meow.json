@@ -13,5 +13,10 @@
   "origin": "A studio recording of a domestic cat's meow.",
   "added": "2026-08-25T23:38:48+05:00",
   "featured": false,
-  "plays": 2000
+  "plays": 2000,
+  "es": {
+    "title": "Maullido de Gato",
+    "origin": "Grabación de estudio del maullido de un gato doméstico.",
+    "blurb": "Un maullido limpio y clásico, probablemente el sonido animal más útil que existe. Antes de tocarlo conviene saber esto: los gatos adultos casi no se maúllan entre ellos. Todo ese vocabulario evolucionó específicamente para manipular a los humanos, y funciona. Además de traer al gato de alguien desde tres cuartos de distancia, sirve como respuesta cómica cuando no quieres responder. Alguien te hace una pregunta incómoda y tú contestas con esto. Va bien en videos, en llamadas de broma y para confundir a tu propio gato, que es eficaz y un poco cruel en partes iguales."
+  }
 }

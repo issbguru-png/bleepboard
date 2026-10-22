@@ -17,6 +17,19 @@ const sounds = defineCollection({
     /** Editorial popularity weight used for ordering. NOT a measured play
      *  count — nothing counts plays (see docs). Never display as "plays". */
     plays: z.number().default(0),
+    /** Spanish clip page. Presence of this block is the whole opt-in, exactly
+     *  as on themes and categories: it renders /es/sound/{slug}/, registers
+     *  the hreflang pair on both sides and adds the Spanish URL to the
+     *  sitemap. A sound is therefore either fully bilingual or English only,
+     *  never half-wired. `title` is the Spanish display name; the audio, the
+     *  slug and the tags are shared with the English page. */
+    es: z
+      .object({
+        title: z.string(),
+        blurb: z.string().min(200),
+        origin: z.string().optional(),
+      })
+      .optional(),
   }),
 });
 

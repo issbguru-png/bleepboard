@@ -22,6 +22,13 @@ export function soundPath(slug: string): string {
   return `/sound/${slug}/`;
 }
 
+/** Spanish twin of `soundPath`. A clip page only exists here when the sound
+ *  carries an `es` block, which is the same single opt-in switch themes and
+ *  categories use, so there is no way to link at a page that was never built. */
+export function esSoundPath(slug: string): string {
+  return `/es/sound/${slug}/`;
+}
+
 export function canonical(pathname: string): string {
   // normalize to trailing slash, absolute
   let p = pathname.endsWith('/') ? pathname : pathname + '/';

@@ -15,22 +15,54 @@
  * phrased as a request rather than a licence condition — the sounds are free
  * either way and pretending otherwise would be a lie.
  */
-import { SITE, soundPath } from '../lib/site';
+import { SITE, soundPath, esSoundPath } from '../lib/site';
 
 interface Props {
   slug: string;
   title: string;
+  /** Page language. Switches the visible copy, the snippet anchor and which
+   *  clip page the credit link points at. The embed widget itself has no prose
+   *  in it, so only this block changes. */
+  lang?: 'en' | 'es';
 }
 
-const { slug, title } = Astro.props;
+const { slug, title, lang = 'en' } = Astro.props;
+const isEs = lang === 'es';
 
-const pageUrl = SITE.url + soundPath(slug);
+const COPY = {
+  en: {
+    heading: 'Embed this sound button',
+    sub: 'Put the player on your site, blog, wiki or stream overlay. It is free, it stays free, and nothing here phones home, and no tracking script rides along with it.',
+    preview: 'Preview',
+    previewTitle: (t: string) => `${t} sound button, embedded preview`,
+    codeLabel: 'Embed code',
+    copy: 'Copy',
+    copied: 'Copied!',
+    note: 'Please keep the credit line under the player. It is the only part search engines can see, and it is the whole reason we can give this away.',
+    anchor: (t: string) => `${t} sound button`,
+    credit: 'on Bleepboard',
+  },
+  es: {
+    heading: 'Incrusta este botón de sonido',
+    sub: 'Pon el reproductor en tu página, tu blog, una wiki o el overlay de tu stream. Es gratis y seguirá siendo gratis. No lleva ningún script de rastreo encima.',
+    preview: 'Vista previa',
+    previewTitle: (t: string) => `Botón de sonido ${t}, vista previa incrustada`,
+    codeLabel: 'Código para incrustar',
+    copy: 'Copiar',
+    copied: '¡Copiado!',
+    note: 'Deja la línea de crédito debajo del reproductor. Es la única parte que los buscadores alcanzan a ver, y es la razón por la que podemos regalar esto.',
+    anchor: (t: string) => `botón de sonido ${t}`,
+    credit: 'en Bleepboard',
+  },
+}[lang];
+
+const pageUrl = SITE.url + (isEs ? esSoundPath(slug) : soundPath(slug));
 const embedUrl = `${SITE.url}/embed/${slug}/`;
 // Titles are hand-written and can carry quotes or brackets. A double quote
 // would close the `title` attribute early and break the paste for whoever
 // takes it, so swap it for the typographic pair instead of escaping.
 const safeTitle = title.replace(/"/g, '”');
-const anchor = `${safeTitle} sound button`;
+const anchor = COPY.anchor(safeTitle);
 
 /* width/height attributes and `frameborder` as well as the inline style: some
    CMS sanitisers drop `style` on paste, which leaves a 300x150 iframe wearing
@@ -41,25 +73,22 @@ const embedCode = `<iframe src="${embedUrl}"
   title="${anchor}" loading="lazy" frameborder="0"
   width="420" height="88"
   style="border:0;width:100%;max-width:420px;height:88px"></iframe>
-<p><a href="${pageUrl}">${anchor}</a> on Bleepboard</p>`;
+<p><a href="${pageUrl}">${anchor}</a> ${COPY.credit}</p>`;
 ---
 
 <section class="section" id="embed">
-  <div class="section-head"><h2>Embed this sound button</h2></div>
-  <p class="section-sub">
-    Put the player on your site, blog, wiki or stream overlay. It is free, it stays free, and
-    nothing here phones home, and no tracking script rides along with it.
-  </p>
+  <div class="section-head"><h2>{COPY.heading}</h2></div>
+  <p class="section-sub">{COPY.sub}</p>
 
   <div class="embed-panel">
     <div class="embed-preview">
-      <span class="embed-preview-label">Preview</span>
+      <span class="embed-preview-label">{COPY.preview}</span>
       <!-- Relative, unlike the snippet: the preview should show the build it is
            sitting in, not whatever is live on production. `loading="lazy"` keeps
            it off the critical path, since most visitors never scroll this far. -->
       <iframe
         src={`/embed/${slug}/`}
-        title={`${title} sound button, embedded preview`}
+        title={COPY.previewTitle(title)}
         loading="lazy"
         width="420"
         height="88"></iframe>
@@ -67,18 +96,15 @@ const embedCode = `<iframe src="${embedUrl}"
 
     <div class="code-card">
       <div class="code-card-head">
-        <span class="label">Embed code</span>
-        <button class="btn sm" type="button" data-copy={embedCode}>
-          <span data-copy-label>Copy</span>
+        <span class="label">{COPY.codeLabel}</span>
+        <button class="btn sm" type="button" data-copy={embedCode} data-copy-done={COPY.copied}>
+          <span data-copy-label>{COPY.copy}</span>
         </button>
       </div>
       <pre>{embedCode}</pre>
     </div>
 
-    <p class="embed-note">
-      Please keep the credit line under the player. It is the only part search engines can
-      see, and it is the whole reason we can give this away.
-    </p>
+    <p class="embed-note">{COPY.note}</p>
   </div>
 </section>
 

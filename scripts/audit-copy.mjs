@@ -49,6 +49,18 @@ const BANNED = [
   [/\b(at its core|in the realm of|look no further)\b/i, 'stock AI phrase'],
 ];
 
+/** The Spanish equivalents. Separate list because the English patterns above
+ *  are phrase-specific and would never fire on Spanish copy, which would have
+ *  left the /es/ half of the corpus effectively unaudited for voice. */
+const BANNED_ES = [
+  [/\b(sumérgete|sumergirse) en\b/i, '"sumérgete en" (stock AI phrase)'],
+  [/\ben el (mundo|ámbito|universo) de\b/i, '"en el mundo/ámbito de" (stock AI phrase)'],
+  [/\bno (es|se trata de) solo .{0,40}(es|sino)\b/i, '"no es solo X, es Y"'],
+  [/\b(sin duda alguna|cabe destacar|cabe mencionar|en definitiva)\b/i, 'stock AI connector'],
+  [/\b(robusto|robusta|sin fisuras|testimonio de)\b/i, 'stock AI vocabulary'],
+  [/\bya sea que (seas|eres)\b/i, '"whether you are X or Y" opening'],
+];
+
 const hard = [];
 const soft = [];
 const note = (bucket, slug, msg) => bucket.push({ slug, msg });
@@ -103,8 +115,71 @@ for (const s of sounds) {
   else openings.set(key, s.slug);
 }
 
+// ------------------------------------------------- Spanish clip copy
+// A sound carrying an `es` block renders a full /es/sound/{slug}/ page, so that
+// copy is as user-facing as the English blurb and gets the same hard rules:
+// length, em dashes, no duplicates, no shared four-word opening. Checked in its
+// own namespace, since a Spanish blurb opening the same way as an unrelated
+// English one is not a collision anyone can see.
+const esSounds = sounds.filter((s) => s.es);
+const esSeen = new Map();
+const esOpenings = new Map();
+for (const s of esSounds) {
+  const b = (s.es.blurb || '').trim();
+  const words = b.split(/\s+/).filter(Boolean).length;
+  const tag = `${s.slug} (es)`;
+
+  if (words < 70) note(hard, tag, `${words} words (min 70)`);
+  else if (words > 110) note(soft, tag, `${words} words (target ≤110)`);
+  if (b.length < 200) note(hard, tag, `${b.length} chars, schema requires 200+`);
+
+  for (const [re, label] of BANNED_ES) {
+    if (re.test(b)) note(hard, tag, `banned: ${label}`);
+  }
+
+  const dashes = [b, s.es.title || '', s.es.origin || ''].join(' ').split('—').length - 1;
+  if (dashes > 0) note(hard, tag, `${dashes} em-dash${dashes > 1 ? 'es' : ''} (none allowed)`);
+
+  if (!s.es.title) note(hard, tag, 'es block has no title');
+
+  const sentences = b.split(/(?<=[.!?])\s+/).filter(Boolean);
+  if (sentences.length > 2 && !sentences.some((x) => x.split(/\s+/).length < 12)) {
+    note(soft, tag, 'no sentence under 12 words, vary the rhythm');
+  }
+
+  if (esSeen.has(b)) note(hard, tag, `duplicate blurb (matches ${esSeen.get(b)})`);
+  else esSeen.set(b, tag);
+
+  const key = b.split(/\s+/).slice(0, 4).join(' ').toLowerCase();
+  if (esOpenings.has(key)) note(hard, tag, `shares a 4-word opening with ${esOpenings.get(key)}`);
+  else esOpenings.set(key, tag);
+}
+
+// A Spanish hub whose own clips are only partly translated is the failure mode
+// that silently makes hub copy wrong: the prose says the pages are in one
+// language while the grid links to both. Soft, because a board mid-translation
+// is a legitimate state to be in for a day, not a reason to fail the build.
+if (!only) {
+  const byCat = new Map();
+  for (const s of sounds) {
+    if (!byCat.has(s.category)) byCat.set(s.category, { total: 0, es: 0 });
+    const c = byCat.get(s.category);
+    c.total++;
+    if (s.es) c.es++;
+  }
+  for (const [cat, c] of byCat) {
+    if (c.es > 0 && c.es < c.total) {
+      note(soft, `categories/${cat}`, `${c.es} of ${c.total} clips translated, board is mid-translation`);
+    }
+  }
+}
+
 const totalWords = blurbs.reduce((n, b) => n + b.split(/\s+/).length, 0);
-const totalDashes = blurbs.reduce((n, b) => n + (b.match(/—/g) || []).length, 0);
+const esWords = esSounds.reduce((n, s) => n + (s.es.blurb || '').split(/\s+/).length, 0);
+const totalDashes = [
+  ...blurbs,
+  ...esSounds.map((s) => s.es.blurb || ''),
+].reduce((n, b) => n + (b.match(/—/g) || []).length, 0);
 
 // ---------------------------------------------------------------- optional: prose
 if (ALL) {
@@ -145,6 +220,9 @@ if (ALL) {
 // ---------------------------------------------------------------- report
 console.log(`\n${DIM}audited ${sounds.length} sounds${ALL ? ' + blog/category/theme copy' : ''}${OFF}`);
 console.log(`  words        ${totalWords.toLocaleString()} total`);
+console.log(
+  `  es clips     ${esSounds.length} of ${sounds.length} translated, ${esWords.toLocaleString()} words`
+);
 console.log(`  em-dashes    ${totalDashes} (must be 0)`);
 
 const group = (arr) => {
