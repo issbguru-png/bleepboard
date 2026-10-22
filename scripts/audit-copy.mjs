@@ -172,6 +172,27 @@ if (!only) {
       note(soft, `categories/${cat}`, `${c.es} of ${c.total} clips translated, board is mid-translation`);
     }
   }
+
+  // Themes matter more here than categories do. A theme gathers sounds by
+  // substring across every category, so translating one category leaves a
+  // scattering of themes half done without anybody touching them, and their
+  // Spanish copy goes stale silently. Mirrors themeSounds() in src/lib/themes.
+  const themeDir = resolve(root, 'src/content/themes');
+  if (existsSync(themeDir)) {
+    for (const f of readdirSync(themeDir).filter((x) => x.endsWith('.json'))) {
+      const t = JSON.parse(readFileSync(resolve(themeDir, f), 'utf8'));
+      if (!t.es) continue;
+      const pats = (t.match || []).map((m) => m.toLowerCase()).filter(Boolean);
+      const hit = sounds.filter((s) => {
+        const hay = [s.slug, s.title, ...(s.tags || [])].join(' ').toLowerCase();
+        return pats.some((p) => hay.includes(p));
+      });
+      const es = hit.filter((s) => s.es).length;
+      if (es > 0 && es < hit.length) {
+        note(soft, `themes/${basename(f, '.json')}`, `${es} of ${hit.length} clips translated, board is mid-translation`);
+      }
+    }
+  }
 }
 
 const totalWords = blurbs.reduce((n, b) => n + b.split(/\s+/).length, 0);
