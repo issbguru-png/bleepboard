@@ -13,5 +13,10 @@
   "origin": "The brainrot-lyric remix of KSI's Thick of It.",
   "added": "2026-08-25T22:10:30+05:00",
   "featured": false,
-  "plays": 1800
+  "plays": 1800,
+  "es": {
+    "title": "Thick of It (Versión Brainrot)",
+    "origin": "El remix con letra brainrot de Thick of It, de KSI.",
+    "blurb": "KSI hizo un éxito de listas; internet lo metió a la licuadora y le sirvió el resultado a todo un ciclo escolar. La edición brainrot reemplaza la letra por vocabulario puro de meme, con skibidi y sigma y gyatt presentes y contabilizados, y después fríe el audio bastante más allá del punto de ser legible. Es el ejemplo definitivo de qué pasa cuando una canción genuinamente exitosa se topa con una generación que trata todo como materia prima. La original entró en listas mundiales. Esta versión volvió los salones brevemente ingobernables."
+  }
 }

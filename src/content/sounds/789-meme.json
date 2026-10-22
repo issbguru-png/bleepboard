@@ -13,5 +13,10 @@
   "origin": "The 'seven eight nine' number joke in its TikTok-era meme form.",
   "added": "2026-08-28",
   "featured": false,
-  "plays": 1050
+  "plays": 1050,
+  "es": {
+    "title": "Meme del 789",
+    "origin": "El chiste numérico del siete ocho nueve en su forma de meme de la era TikTok.",
+    "blurb": "¿Por qué le tenía miedo el seis al siete? Porque siete ocho nueve: un chiste lo bastante viejo como para que tus abuelos ya hubieran resoplado con él, resucitado por una generación que convirtió dos de esos números en religión. Una vez que el 67 saturó cada salón, el 789 estaba ahí mismo como la jugada obvia, y TikTok la hizo. Este clip de veinte segundos carga el chiste en su forma moderna. Funciona cuando el seis siete ya se gastó, y como ofrenda de paz entre generaciones."
+  }
 }

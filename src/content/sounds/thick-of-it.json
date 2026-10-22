@@ -13,5 +13,10 @@
   "origin": "From KSI's 'Thick of It', the internet's most-remixed hook.",
   "added": "2026-08-25T22:10:25+05:00",
   "featured": false,
-  "plays": 2200
+  "plays": 2200,
+  "es": {
+    "title": "Thick of It (KSI)",
+    "origin": "De Thick of It de KSI, el gancho más remixeado de internet.",
+    "blurb": "In the thick of it, everybody knows. El gancho de KSI se volvió el audio más remixeado de internet, y generó un género entero donde la letra se cambia por disparates cada vez más desquiciados mientras el beat queda intacto. Aguanta porque el instrumental es lo bastante pegajoso como para cargar con cualquier letra, así que cada término nuevo del brainrot tiene su versión a los pocos días de aparecer. El original es el cimiento de todo lo demás. Tócalo como presumida, como broma, o como apertura de una batalla que nadie aceptó."
+  }
 }

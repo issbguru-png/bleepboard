@@ -14,5 +14,10 @@
   "added": "2026-08-25T19:33:48+05:00",
   "featured": false,
   "plays": 2200,
-  "explainer": "/blog/skibidi-toilet-explained/"
+  "explainer": "/blog/skibidi-toilet-explained/",
+  "es": {
+    "title": "Skibidi Toilet",
+    "origin": "De la serie Skibidi Toilet de DaFuq!?Boom!, la franquicia de memes que define a la generación Alfa.",
+    "blurb": "Alexey Gerasimov, conocido en internet como DaFuq!?Boom!, lanzó Skibidi Toilet en febrero de 2023 y convirtió un chiste hecho en Source Filmmaker sobre cabezas cantando dentro de inodoros en la franquicia que define a la generación Alfa. El canto está cosido con Dom Dom Yes Yes de Biser King y un gancho de Timbaland, que es justo por qué se te queda clavado tras una sola escucha. Opines lo que opines del brainrot, los números de vistas zanjaron esa discusión hace años. O para alarmar a cualquiera que pase de treinta."
+  }
 }
