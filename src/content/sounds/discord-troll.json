@@ -13,5 +13,10 @@
   "origin": "A voice-chat disruption classic from Discord soundboard culture.",
   "added": "2026-08-25T21:52:47+05:00",
   "featured": false,
-  "plays": 1100
+  "plays": 1100,
+  "es": {
+    "title": "Troleo de Discord",
+    "origin": "Un clásico de interrupción de canales de voz en la cultura de botoneras de Discord.",
+    "blurb": "Hecho con un solo fin: dejar inservible un canal de voz. La botonera que Discord integró le puso a todo el mundo un botón que dispara audio directo adentro de una llamada en vivo, y clips como este existen nada más para abusar de eso. No es dañino ni ofensivo. Es simplemente lo bastante insistente como para que alguien termine preguntando quién fue. La comedia vive en la repetición y en el momento exacto, y cae siempre durante la única frase seria de la noche. Cárgalo para el caos del lobby, o úsalo con el amigo que da instrucciones tácticas en una partida casual."
+  }
 }

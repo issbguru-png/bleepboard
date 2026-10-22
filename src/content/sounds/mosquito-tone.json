@@ -7,11 +7,16 @@
     "teen-tone",
     "hearing-test"
   ],
-  "duration": 2.0,
+  "duration": 2,
   "audio": "/audio/mosquito-tone.mp3",
   "blurb": "A pure 15 kHz tone, the infamous mosquito sound most teenagers can hear and most adults cannot. High-frequency hearing declines steadily with age, so this single tone doubles as a rough hearing test, a science demo and a legendary classroom prank. It was even deployed commercially as a teen deterrent outside shops, which is a genuinely strange thing to have existed. Play it in mixed company and map who still has their top end. Whoever winces first has answered the question.",
   "origin": "Pure 15 kHz sine tone whose audibility drops sharply with age, hence the name.",
   "added": "2026-08-25T19:40:37+05:00",
   "featured": false,
-  "plays": 890
+  "plays": 890,
+  "es": {
+    "title": "Tono Mosquito (15 kHz)",
+    "origin": "Tono senoidal puro de 15 kHz, cuya audibilidad cae de golpe con la edad.",
+    "blurb": "Un tono puro de 15 kHz, el famoso sonido mosquito que casi todos los adolescentes oyen y casi ningún adulto. La audición en frecuencias altas se va perdiendo de forma constante con la edad, así que este tono solo funciona a la vez como prueba de oído aproximada, demostración científica y broma legendaria de salón de clases. Incluso se usó comercialmente afuera de tiendas para espantar adolescentes, que es una cosa genuinamente rara de que haya existido. Tócalo en compañía mixta y mapea a quién le queda el rango alto. El primero que haga una mueca ya respondió."
+  }
 }

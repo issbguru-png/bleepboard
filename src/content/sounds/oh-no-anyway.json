@@ -13,5 +13,10 @@
   "origin": "Jeremy Clarkson's dismissive pivot from Top Gear's Dacia Sandero running gag.",
   "added": "2026-08-25T19:50:20+05:00",
   "featured": false,
-  "plays": 1500
+  "plays": 1500,
+  "es": {
+    "title": "Oh No... En Fin",
+    "origin": "El desdén de Jeremy Clarkson en la broma recurrente del Dacia Sandero en Top Gear.",
+    "blurb": "Jeremy Clarkson da una clase magistral de indiferencia armada: un tiempo de preocupación actuada, después un en fin, y el tema queda cerrado para siempre. La frase viene de Top Gear, en plena broma recurrente del Dacia Sandero. Hace mucho que se escapó del programa. Hoy es el método favorito de internet para reconocer un problema y dejar clarísimo que no piensas involucrarte. Tócala encima del portafolio cripto de alguien, de la quinta reprogramación de la misma junta, o de cualquier consecuencia que se veía venir desde lejos. Cruel, eficiente y bastante más educada que decir lo que de verdad piensas."
+  }
 }
