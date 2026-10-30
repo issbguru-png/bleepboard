@@ -11,9 +11,13 @@ import { readFileSync } from 'node:fs';
  * Cloudflare migration these become real 301s via public/_redirects.
  */
 const removed = JSON.parse(readFileSync(new URL('./src/data/removed-sounds.json', import.meta.url), 'utf8'));
-const redirects = Object.fromEntries(
-  removed.map((r) => [`/sound/${r.slug}`, r.redirectTo])
-);
+const redirects = {
+  ...Object.fromEntries(removed.map((r) => [`/sound/${r.slug}`, r.redirectTo])),
+  // Renamed to /upload/, which is what every other soundboard calls it and
+  // what people actually search. The old path was live for about an hour and
+  // went out in an IndexNow push, so it redirects rather than 404s.
+  '/submit': '/upload/',
+};
 
 // https://astro.build/config
 export default defineConfig({

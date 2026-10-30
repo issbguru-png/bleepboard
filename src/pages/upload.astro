@@ -1,6 +1,6 @@
 ---
 /**
- * /submit/ — send a sound in.
+ * /upload/ — upload a sound.
  *
  * Two states, decided by SUBMIT_ENDPOINT_LIVE in src/lib/submissions.ts:
  * the upload form once the Cloudflare Function is reachable, and an email
@@ -23,16 +23,16 @@ import {
   ACCEPTED,
 } from '../lib/submissions';
 
-const pageUrl = SITE.url + '/submit/';
+const pageUrl = SITE.url + '/upload/';
 const formLive = SUBMIT_ENDPOINT_LIVE && TURNSTILE_SITE_KEY !== '';
 
 const title = pickTitle([
-  'Submit a Sound: Add Your Clip to Bleepboard',
-  'Submit a Sound to Bleepboard',
-  'Submit a Sound',
+  'Upload a Sound: Add Your Clip to Bleepboard',
+  'Upload a Sound to Bleepboard',
+  'Upload a Sound',
 ]);
 const description = buildDescription([
-  'Send us a sound for the board.',
+  'Upload a sound to the board.',
   `${ACCEPTED.join(', ')} up to ${MAX_MB} MB, credited to you by name.`,
   'Every submission is reviewed by a person before it goes live.',
 ]);
@@ -54,7 +54,7 @@ const mailHref = `mailto:${SUBMIT_EMAIL}?subject=${encodeURIComponent('Sound sub
 const schema = [
   breadcrumbs([
     ['Home', SITE.url + '/'],
-    ['Submit a Sound', pageUrl],
+    ['Upload a Sound', pageUrl],
   ]),
 ];
 ---
@@ -62,16 +62,16 @@ const schema = [
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="sep" aria-hidden="true">›</span>
-    <span class="here">Submit a Sound</span>
+    <span class="here">Upload a Sound</span>
   </nav>
 
   <section class="hub-hero">
     <p class="eyebrow"><span class="tick"></span>Contribute</p>
-    <h1>Submit a Sound</h1>
+    <h1>Upload a Sound</h1>
     <p class="lede">
       Most of what is on this board was put here by us. This is how that changes.
-      Send a clip, tell us where it came from, and if it passes review it goes up
-      with your name on it.
+      Upload a clip, tell us where it came from, and if it passes review it goes
+      up with your name on it.
     </p>
   </section>
 

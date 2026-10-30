@@ -38,7 +38,7 @@ single risk in a reapplication and still need removing or cutting to stings.
 ## The pipeline
 
 ```
-visitor → /submit/ → bleepboard-submit.workers.dev → R2 + KV (pending)
+visitor → /upload/ → bleepboard-submit.workers.dev → R2 + KV (pending)
                           ↓
           scripts/review-submissions.mjs --pull
                           ↓
@@ -83,7 +83,7 @@ The site currently advertises five such addresses:
 | `hello@bleepboard.com` | `/contact/` | Nobody can reach the site, which AdSense reviewers do check |
 | `privacy@bleepboard.com` | `/privacy/` | GDPR/CCPA requests go nowhere |
 | legal address | `/terms/` | Same |
-| `sounds@bleepboard.com` | `/submit/` | Gated off until mail works, see `SUBMIT_EMAIL_LIVE` |
+| `sounds@bleepboard.com` | `/upload/` | Gated off until mail works, see `SUBMIT_EMAIL_LIVE` |
 
 This is older than the submissions feature and more urgent than it. Fixing it
 is fifteen minutes: Cloudflare Email Routing is free and forwards to any inbox,
@@ -126,7 +126,7 @@ catalogue is Roblox, FNAF, Minecraft and Gen Alpha brainrot. An open audio
 endpoint pointed at that audience will receive slurs, recordings of real
 children, and worse, and it will receive them early.
 
-The refusal list on `/submit/` is the review criteria, and it is the same list
+The refusal list on `/upload/` is the review criteria, and it is the same list
 as the exclusions in `writing-blurbs.md` plus two additions that only apply to
 submissions: no recordings of identifiable people without their agreement, and
 nothing captured from a call or a classroom where the people in it did not

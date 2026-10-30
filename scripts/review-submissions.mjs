@@ -7,7 +7,7 @@
  *   node scripts/review-submissions.mjs --accept <id> --slug <slug> --category <cat>
  *   node scripts/review-submissions.mjs --reject <id> --reason "..."
  *
- * This is the only path from a submission to the published site. /submit/ tells
+ * This is the only path from a submission to the published site. /upload/ tells
  * visitors a person listens to every clip before it goes up, and this script is
  * what makes that true rather than a claim.
  *
