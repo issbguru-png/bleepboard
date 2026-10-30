@@ -16,15 +16,16 @@
  * token and fails closed without its secret, so a live form with no site key
  * would refuse every submission.
  */
-export const SUBMIT_ENDPOINT_LIVE = false;
+export const SUBMIT_ENDPOINT_LIVE = true;
 
 /** Full URL of the deployed Worker. Cross-origin, so its CORS allowlist in
  *  workers/submit/index.ts has to include this site. */
-export const SUBMIT_ENDPOINT = 'https://bleepboard-submit.workers.dev';
+export const SUBMIT_ENDPOINT = 'https://bleepboard-submit.vidscall.workers.dev';
 
-/** Cloudflare Turnstile site key (public half). Pairs with the
- *  TURNSTILE_SECRET Pages secret the Function verifies against. */
-export const TURNSTILE_SITE_KEY = '';
+/** Cloudflare Turnstile site key. The public half of the pair: the secret is
+ *  a Worker secret set with `wrangler secret put` and is not in this repo.
+ *  The Worker fails closed without it, so these two travel together. */
+export const TURNSTILE_SITE_KEY = '0x4AAAAAAFsNUWhe2WYOXSgy';
 
 /** Where submissions go while the endpoint is not live. */
 export const SUBMIT_EMAIL = 'sounds@bleepboard.com';

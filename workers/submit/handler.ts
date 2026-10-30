@@ -11,11 +11,13 @@
  * that audience is a safety problem before it is a copyright one. The
  * exclusions in docs/writing-blurbs.md are the review criteria.
  *
- * Storage (bindings must be declared in wrangler.toml or they are wiped on the
- * next deploy, see the note in that file):
- *   SUBMISSIONS   R2 bucket  — the uploaded audio, under pending/{id}.{ext}
- *   SUBMISSIONS_KV KV        — the metadata record, key submission:{id}
- *   TURNSTILE_SECRET         — Cloudflare Turnstile secret, anti-abuse
+ * Storage is KV only, deliberately. R2 would be the obvious home for audio,
+ * but it needs an account-level opt-in with its own terms, and KV already
+ * holds values up to 25 MB against a 2 MB cap here. One binding instead of
+ * two, nothing to enable, and the queue is transient anyway: review drains it.
+ *
+ *   SUBMISSIONS_KV    audio under audio:{id}, metadata under submission:{id}
+ *   TURNSTILE_SECRET  Cloudflare Turnstile secret, anti-abuse
  *
  * Deployed as a standalone Worker on workers.dev (see index.ts), NOT as a
  * Pages Function. That distinction is the whole point: a Worker runs without
@@ -28,7 +30,6 @@
  */
 
 export interface Env {
-  SUBMISSIONS: R2Bucket;
   SUBMISSIONS_KV: KVNamespace;
   TURNSTILE_SECRET?: string;
 }
@@ -149,10 +150,15 @@ export async function handleSubmit(request: Request, env: Env): Promise<Response
     status: 'pending' as const,
   };
 
-  await env.SUBMISSIONS.put(`pending/${id}.${ext}`, bytes, {
-    httpMetadata: { contentType: `audio/${ext === 'mp3' ? 'mpeg' : ext}` },
+  // Audio first. If the metadata write fails after this, review never sees the
+  // submission and an orphaned blob expires on its own rather than lingering.
+  await env.SUBMISSIONS_KV.put(`audio:${id}`, bytes, {
+    expirationTtl: 60 * 60 * 24 * 90,
+    metadata: { ext, title },
   });
-  await env.SUBMISSIONS_KV.put(`submission:${id}`, JSON.stringify(record));
+  await env.SUBMISSIONS_KV.put(`submission:${id}`, JSON.stringify(record), {
+    expirationTtl: 60 * 60 * 24 * 90,
+  });
 
   return json(202, {
     ok: true,
