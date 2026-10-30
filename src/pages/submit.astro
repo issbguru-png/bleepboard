@@ -15,6 +15,7 @@ import { SITE, pickTitle, buildDescription } from '../lib/site';
 import { breadcrumbs } from '../lib/schema';
 import {
   SUBMIT_ENDPOINT_LIVE,
+  SUBMIT_ENDPOINT,
   SUBMIT_EMAIL_LIVE,
   TURNSTILE_SITE_KEY,
   SUBMIT_EMAIL,
@@ -105,7 +106,7 @@ const schema = [
     {formLive ? (
       <>
         <h2>Send It</h2>
-        <form class="submit-form" method="post" action="/api/submit" enctype="multipart/form-data">
+        <form class="submit-form" method="post" action={SUBMIT_ENDPOINT} enctype="multipart/form-data">
           <p class="field">
             <label for="f-title">Sound name</label>
             <input id="f-title" name="title" type="text" required maxlength="60" placeholder="Dog sneeze" />

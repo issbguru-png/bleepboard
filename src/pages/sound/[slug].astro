@@ -59,13 +59,22 @@ const audioUrl = SITE.url + d.audio;
 // of "| Bleepboard" was pushing most of these past the ~60ch truncation point.
 // Names here run from "6 7" to "Lie Detector (Determined That Was a Lie)", so
 // the qualifier shrinks to fit rather than the title overflowing.
-const title = pickTitle([
-  `${d.title} Sound Button: Play & Download Free MP3`,
-  `${d.title} Sound Button: Play & Download MP3`,
-  `${d.title} Sound Button: Free MP3 Download`,
-  `${d.title} Sound Button: Free MP3`,
-  `${d.title} Sound Button`,
-]);
+// A clip whose rights sit with a studio keeps its page and its play button but
+// not the MP3, so its title cannot go on advertising a download. See the
+// `downloadable` note in src/content.config.ts.
+const title = d.downloadable
+  ? pickTitle([
+      `${d.title} Sound Button: Play & Download Free MP3`,
+      `${d.title} Sound Button: Play & Download MP3`,
+      `${d.title} Sound Button: Free MP3 Download`,
+      `${d.title} Sound Button: Free MP3`,
+      `${d.title} Sound Button`,
+    ])
+  : pickTitle([
+      `${d.title} Sound Button: Play It Free Online`,
+      `${d.title} Sound Button: Play Free`,
+      `${d.title} Sound Button`,
+    ]);
 
 // Descriptions were previously `.slice(0, 158)`, which cut mid-word whenever
 // `origin` ran long, and left 124 of them under 120 characters when `origin`
@@ -76,7 +85,9 @@ const blurbSentences = d.blurb.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filte
 // until the snippet is full. Everything here is copy that already passes the
 // blurb audit, so nothing new has to be written per sound.
 let description = buildDescription([
-  `Play the ${d.title} sound button instantly. Free MP3 download, no signup.`,
+  d.downloadable
+    ? `Play the ${d.title} sound button instantly. Free MP3 download, no signup.`
+    : `Play the ${d.title} sound button instantly in your browser, no signup.`,
   d.origin,
   ...blurbSentences,
 ]);
@@ -220,10 +231,12 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     </div>
 
     <div class="btn-row sound-actions">
-      <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
-        Download MP3
-      </a>
+      {d.downloadable && (
+        <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
+          Download MP3
+        </a>
+      )}
       <button
         class="btn"
         type="button"
@@ -336,6 +349,15 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     )}
     {d.explainer && (
       <p><a href={d.explainer}>Read the full story behind this sound →</a></p>
+    )}
+    {!d.downloadable && (
+      <p class="credit-note">
+        <b>No download</b>
+        <span>
+          This clip belongs to its rights holder, so it plays here but is not
+          offered as a file. Most of the board <a href="/">downloads freely</a>.
+        </span>
+      </p>
     )}
     {contributor && (
       <p class="credit-note">

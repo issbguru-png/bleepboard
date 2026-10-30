@@ -32,6 +32,17 @@ const sounds = defineCollection({
     /** What the submitter said about where they got it, kept verbatim. Only
      *  meaningful on user submissions; the editorial catalogue uses `origin`. */
     sourceNote: z.string().optional(),
+    /** Whether the MP3 download button is offered.
+     *
+     *  False on clips owned by a studio or a label. Google's ads policy names
+     *  "downloading of copyrighted content" specifically, and distributing a
+     *  file is a materially different act from letting somebody press play on
+     *  a few seconds of it. Turning the button off keeps the page, its copy
+     *  and its ranking while dropping the part that is actually a problem.
+     *
+     *  Set by scripts/fix-rights.mjs from the tiering in audit-rights.mjs.
+     *  Anything genuinely ours stays downloadable, which is most of the site. */
+    downloadable: z.boolean().default(true),
     /** Spanish clip page. Presence of this block is the whole opt-in, exactly
      *  as on themes and categories: it renders /es/sound/{slug}/, registers
      *  the hreflang pair on both sides and adds the Spanish URL to the

@@ -38,7 +38,7 @@ single risk in a reapplication and still need removing or cutting to stings.
 ## The pipeline
 
 ```
-visitor → /submit/ → functions/api/submit.ts → R2 + KV (pending)
+visitor → /submit/ → bleepboard-submit.workers.dev → R2 + KV (pending)
                           ↓
           scripts/review-submissions.mjs --pull
                           ↓
@@ -93,26 +93,30 @@ forwarding too. Add the MX records, send yourself a test, then flip
 
 ## Current state: the form is not open
 
-`functions/api/submit.ts` is Cloudflare code and the site is on GitHub Pages,
-where Functions do not run. This is the same trap `/api/play` fell into: wired
-up, shipped, and silently 404ing in production.
+The endpoint is a **standalone Worker**, not a Pages Function. That matters: a
+Worker runs on workers.dev without bleepboard.com being on Cloudflare at all,
+so taking submissions no longer waits on migrating the site off GitHub Pages.
+The migration in `docs/migrate-to-cloudflare.md` is now optional and nothing
+here depends on it.
 
-So `SUBMIT_ENDPOINT_LIVE` in `src/lib/submissions.ts` is `false`, and `/submit/`
-shows an email route and says the upload form is not open yet. It does not
-render a form that posts into nothing and then tells a child their clip is
-under review when it was dropped by a 404.
+The cost of that choice is being cross-origin, handled by an explicit CORS
+allowlist in `workers/submit/index.ts`. Not `*`: this endpoint writes to
+storage, and an open one lets any page on the internet fill the review queue.
 
 **To open it:**
 
-1. Do the migration in `docs/migrate-to-cloudflare.md`.
-2. `wrangler r2 bucket create bleepboard-submissions`
-3. `wrangler kv namespace create SUBMISSIONS_KV`, paste the id into `wrangler.toml`
-4. Create a Turnstile widget, `wrangler pages secret put TURNSTILE_SECRET`,
-   and put the site key in `src/lib/submissions.ts`
-5. Set `SUBMIT_ENDPOINT_LIVE = true`
+```bash
+wrangler login                                   # one click in the browser
+wrangler r2 bucket create bleepboard-submissions
+wrangler kv namespace create SUBMISSIONS_KV      # paste id into workers/submit/wrangler.toml, uncomment
+wrangler secret put TURNSTILE_SECRET --config workers/submit/wrangler.toml
+wrangler deploy --config workers/submit/wrangler.toml
+```
 
-The endpoint fails closed without the Turnstile secret, so step 4 is not
-optional.
+Then in `src/lib/submissions.ts`: set `SUBMIT_ENDPOINT` to the deployed URL,
+`TURNSTILE_SITE_KEY` to the widget's public key, and `SUBMIT_ENDPOINT_LIVE` to
+`true`. The Worker fails closed without the Turnstile secret, so that step is
+not optional.
 
 ## Moderation is a safety job, not just a copyright one
 

@@ -57,6 +57,6 @@ Land the boom on the zoom, not before it. The picture moves first and the sound 
 
 ## Play and download it
 
-Play the [Vine Boom sound button](/sound/vine-boom/) on Bleepboard and grab the free MP3 for your edits. It pairs naturally with the [Metal Pipe Falling sound](/sound/metal-pipe-falling/), its chaotic younger sibling, and the [Sanctuary Guardian sting](/sound/sanctuary-guardian/), its melodramatic cousin. Both live on our [meme soundboard](/meme-soundboard/).
+Play the [Vine Boom sound button](/sound/vine-boom/) on Bleepboard and grab the free MP3 for your edits. It pairs naturally with the [Metal Pipe Falling sound](/sound/metal-pipe-falling/), its chaotic younger sibling. Both live on our [meme soundboard](/meme-soundboard/).
 
 One boom is emphasis. Two booms is a bit. Twelve booms in a row is an MLG montage. For that you'll also need the [MLG Airhorn](/sound/mlg-airhorn/).

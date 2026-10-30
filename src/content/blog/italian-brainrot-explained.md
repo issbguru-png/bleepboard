@@ -62,4 +62,4 @@ Every character above has a sound button on Bleepboard. Play instantly, download
 - [Trippi Troppi](/sound/trippi-troppi/)
 - [Udin Din Din Dun](/sound/udin-din-din-dun/)
 
-They live on the [brainrot soundboard](/brainrot-soundboard/) with the rest of the Gen Alpha canon, including [67](/sound/six-seven/) and [Quaso](/sound/quaso/). For the wider vocabulary, the [Brainrot Rap](/sound/brainrot-rap/) covers most of it in one go.
+They live on the [brainrot soundboard](/brainrot-soundboard/) with the rest of the Gen Alpha canon, including [67](/sound/six-seven/) and [Quaso](/sound/quaso/). That board is where the wider vocabulary turns up too, a term at a time.

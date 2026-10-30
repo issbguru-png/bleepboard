@@ -1,0 +1,21 @@
+# The submissions Worker, deployed on its own.
+#
+# Separate from the repo-root wrangler.toml, which describes the Pages project
+# the site would use if it ever migrates. This one needs no zone and no custom
+# domain: it runs on workers.dev and the site talks to it cross-origin.
+#
+# Setup, once:
+#   wrangler kv namespace create SUBMISSIONS_KV      # already done, id below
+#   wrangler secret put TURNSTILE_SECRET --config workers/submit/wrangler.toml
+#   wrangler deploy --config workers/submit/wrangler.toml
+
+name = "bleepboard-submit"
+main = "index.ts"
+compatibility_date = "2026-10-30"
+
+# KV holds both the audio and the metadata. R2 would be the obvious home for
+# files, but it needs an account-level opt-in and KV takes values up to 25 MB
+# against a 2 MB cap here, so one binding does the job with nothing to enable.
+[[kv_namespaces]]
+binding = "SUBMISSIONS_KV"
+id = "7fecae4cbd8845e8a9be68b0233407d0"

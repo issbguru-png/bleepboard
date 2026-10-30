@@ -15,5 +15,6 @@
   "explainer": "/blog/iphone-alarm-sound-explained/",
   "featured": false,
   "plays": 2400,
-  "contributor": "bleepboard"
+  "contributor": "bleepboard",
+  "downloadable": false
 }

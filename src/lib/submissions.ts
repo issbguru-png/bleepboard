@@ -1,22 +1,31 @@
 /**
  * Submission config.
  *
- * `SUBMIT_ENDPOINT_LIVE` is the honest switch. functions/api/submit.ts is
- * Cloudflare code, and the site is still on GitHub Pages, where Functions do
- * not run. That is the same trap /api/play fell into: shipped, wired up, and
- * silently 404ing in production for weeks.
+ * The endpoint is a standalone Cloudflare Worker on workers.dev, not a Pages
+ * Function. That was the unlock: a Worker runs without bleepboard.com being on
+ * Cloudflare, so uploads no longer wait on migrating the site off GitHub
+ * Pages. See workers/submit/.
  *
- * So while this is false, /submit/ shows the email route and says the upload
- * form is not open yet, rather than rendering a form that posts into nothing
- * and tells the visitor their clip is under review when it was discarded by a
- * 404. Flip it in the same change that completes docs/migrate-to-cloudflare.md,
- * and set TURNSTILE_SITE_KEY at the same time or the endpoint fails closed.
+ * `SUBMIT_ENDPOINT_LIVE` stays false until the Worker is actually deployed and
+ * SUBMIT_ENDPOINT below points at it. While false, /submit/ says submissions
+ * are not open rather than rendering a form that posts into nothing and tells
+ * a visitor their clip is under review when it was dropped by a 404. That is
+ * the trap /api/play fell into for weeks.
+ *
+ * TURNSTILE_SITE_KEY has to be set at the same time: the Worker verifies the
+ * token and fails closed without its secret, so a live form with no site key
+ * would refuse every submission.
  */
-export const SUBMIT_ENDPOINT_LIVE = false;
+export const SUBMIT_ENDPOINT_LIVE = true;
 
-/** Cloudflare Turnstile site key (public half). Pairs with the
- *  TURNSTILE_SECRET Pages secret the Function verifies against. */
-export const TURNSTILE_SITE_KEY = '';
+/** Full URL of the deployed Worker. Cross-origin, so its CORS allowlist in
+ *  workers/submit/index.ts has to include this site. */
+export const SUBMIT_ENDPOINT = 'https://bleepboard-submit.vidscall.workers.dev';
+
+/** Cloudflare Turnstile site key. The public half of the pair: the secret is
+ *  a Worker secret set with `wrangler secret put` and is not in this repo.
+ *  The Worker fails closed without it, so these two travel together. */
+export const TURNSTILE_SITE_KEY = '0x4AAAAAAFsNUWhe2WYOXSgy';
 
 /** Where submissions go while the endpoint is not live. */
 export const SUBMIT_EMAIL = 'sounds@bleepboard.com';

@@ -23,10 +23,10 @@
  *
  * ── THE QUEUE ───────────────────────────────────────────────────────────────
  * Two sources, same shape:
- *   data/submissions/*.json  local, used for the email route while the upload
- *                            endpoint is not live. Audio sits beside it.
- *   Cloudflare KV + R2       once functions/api/submit.ts is reachable; --pull
- *                            drains them into data/submissions/.
+ *   data/submissions/*.json  local files, for anything that arrives by hand.
+ *   Cloudflare KV            what the Worker writes; --pull drains it here.
+ *                            Audio and metadata both live in KV, see
+ *                            workers/submit/handler.ts for why.
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, copyFileSync, renameSync } from 'node:fs';
 import { resolve, dirname, basename, extname } from 'node:path';
@@ -89,29 +89,41 @@ function listQueue() {
 }
 
 function pull() {
-  // Drains Cloudflare into the local queue so review happens against real files
-  // rather than through a dashboard. Needs wrangler and the bindings live.
-  console.log('Pulling pending submissions from Cloudflare…');
+  // Drains the Worker's KV into the local queue so review happens against real
+  // files on disk rather than through a dashboard.
+  console.log('Pulling pending submissions from Cloudflare KV…');
+  // --remote is not optional. Wrangler 4 points KV commands at LOCAL storage by
+  // default, so without it `key list` returns [] against a namespace that is
+  // full of real submissions, and this reports "Pulled 0" forever while the
+  // queue silently backs up. Cost an hour to find; do not drop it.
+  const CFG = ['--remote', '--config', 'workers/submit/wrangler.toml'];
+  const wrangler = (args) =>
+    execFileSync('npx', ['wrangler', ...args], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  // Same call without an encoding, so stdout comes back as a Buffer. `kv key
+  // get` has no --path in wrangler 4: it writes the raw value to stdout, and
+  // reading that as utf8 silently mangles every byte above 0x7f, which for an
+  // MP3 is most of them. The file looks plausible and will not play.
+  const wranglerBin = (args) =>
+    execFileSync('npx', ['wrangler', ...args], { cwd: root, maxBuffer: 64 * 1024 * 1024 });
+
   let keys;
   try {
-    const out = execFileSync('npx', ['wrangler', 'kv', 'key', 'list', '--binding', 'SUBMISSIONS_KV', '--prefix', 'submission:'], {
-      cwd: root, encoding: 'utf8',
-    });
-    keys = JSON.parse(out).map((k) => k.name);
-  } catch (e) {
+    keys = JSON.parse(wrangler(['kv', 'key', 'list', '--binding', 'SUBMISSIONS_KV', '--prefix', 'submission:', ...CFG]))
+      .map((k) => k.name);
+  } catch {
     console.error(`${RED}Could not reach Cloudflare KV.${OFF}`);
-    console.error(`${DIM}This needs the migration in docs/migrate-to-cloudflare.md to be done,`);
-    console.error(`and the bindings in wrangler.toml to be created. Until then submissions`);
-    console.error(`arrive by email and you drop them into data/submissions/ by hand.${OFF}`);
+    console.error(`${DIM}Run \`npx wrangler login\` first. If that is fine, check the binding id in`);
+    console.error(`workers/submit/wrangler.toml matches the namespace that exists.${OFF}`);
     process.exit(1);
   }
+
   let n = 0;
   for (const key of keys) {
-    const raw = execFileSync('npx', ['wrangler', 'kv', 'key', 'get', key, '--binding', 'SUBMISSIONS_KV'], { cwd: root, encoding: 'utf8' });
-    const rec = JSON.parse(raw);
+    const rec = JSON.parse(wrangler(['kv', 'key', 'get', key, '--binding', 'SUBMISSIONS_KV', ...CFG]));
     if (rec.status !== 'pending') continue;
     const audio = `${rec.id}.${rec.ext}`;
-    execFileSync('npx', ['wrangler', 'r2', 'object', 'get', `bleepboard-submissions/pending/${audio}`, '--file', resolve(QUEUE, audio)], { cwd: root });
+    const bytes = wranglerBin(['kv', 'key', 'get', `audio:${rec.id}`, '--binding', 'SUBMISSIONS_KV', ...CFG]);
+    writeFileSync(resolve(QUEUE, audio), bytes);
     writeFileSync(resolve(QUEUE, `${rec.id}.json`), JSON.stringify({ ...rec, audioFile: audio }, null, 2) + '\n');
     n++;
   }

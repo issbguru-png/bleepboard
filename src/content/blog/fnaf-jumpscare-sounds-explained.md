@@ -55,7 +55,6 @@ All free to play and download on Bleepboard:
 - [FNAF 4 Jumpscare](/sound/fnaf-4-jumpscare/), the nightmare animatronics
 - [FNAF 6 Jumpscare](/sound/fnaf-6-jumpscare/), the salvage scare
 - [FNAF Yay! (Children)](/sound/fnaf-yay/), the one that shouldn't work and does
-- [FNAF Puppet Music Box](/sound/fnaf-music-box/), wind it up
 - [Freddy Fazbear Laugh](/sound/fnaf-freddy-laugh/) and [Balloon Boy Hello](/sound/fnaf-balloon-boy-hello/)
 - [FNAF Phone Guy Call](/sound/fnaf-phone-guy/) and [FNAF 6 AM](/sound/fnaf-6am/), the induction and the relief
 - [Connection Terminated](/sound/connection-terminated/) and [Is That Freddy Fazbear?](/sound/is-that-freddy-fazbear/)
