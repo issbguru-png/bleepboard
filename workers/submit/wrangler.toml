@@ -1,0 +1,23 @@
+# The submissions Worker, deployed on its own.
+#
+# Separate from the repo-root wrangler.toml, which describes the Pages project
+# the site would use if it ever migrates. This one needs no zone and no custom
+# domain: it runs on workers.dev and the site talks to it cross-origin.
+#
+# Setup, once:
+#   wrangler r2 bucket create bleepboard-submissions
+#   wrangler kv namespace create SUBMISSIONS_KV      # paste the id below
+#   wrangler secret put TURNSTILE_SECRET --config workers/submit/wrangler.toml
+#   wrangler deploy --config workers/submit/wrangler.toml
+
+name = "bleepboard-submit"
+main = "index.ts"
+compatibility_date = "2026-10-30"
+
+[[r2_buckets]]
+binding = "SUBMISSIONS"
+bucket_name = "bleepboard-submissions"
+
+# [[kv_namespaces]]
+# binding = "SUBMISSIONS_KV"
+# id = "PASTE_ID_HERE"   # uncomment once created; an empty id fails to parse

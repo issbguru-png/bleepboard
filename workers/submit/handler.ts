@@ -1,5 +1,5 @@
 /**
- * Cloudflare Pages Function: POST /api/submit
+ * The submission handler: POST a sound, park it for review.
  *
  * Takes a sound submission from a visitor and parks it for review. It never
  * publishes anything. The only way a submission reaches the site is a human
@@ -17,12 +17,17 @@
  *   SUBMISSIONS_KV KV        — the metadata record, key submission:{id}
  *   TURNSTILE_SECRET         — Cloudflare Turnstile secret, anti-abuse
  *
- * This Function does not run on GitHub Pages. Until the Cloudflare migration
- * in docs/migrate-to-cloudflare.md is done, /submit/ falls back to email and
- * says so plainly rather than posting into a void.
+ * Deployed as a standalone Worker on workers.dev (see index.ts), NOT as a
+ * Pages Function. That distinction is the whole point: a Worker runs without
+ * bleepboard.com being on Cloudflare at all, so taking submissions no longer
+ * waits on migrating the site off GitHub Pages. The static site posts to it
+ * cross-origin and CORS is handled in index.ts.
+ *
+ * The exported handler takes (request, env) so it would also drop into a Pages
+ * Function unchanged if the site ever does move.
  */
 
-interface Env {
+export interface Env {
   SUBMISSIONS: R2Bucket;
   SUBMISSIONS_KV: KVNamespace;
   TURNSTILE_SECRET?: string;
@@ -84,8 +89,7 @@ async function turnstileOk(env: Env, token: string, ip: string): Promise<boolean
   return out.success === true;
 }
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { request, env } = context;
+export async function handleSubmit(request: Request, env: Env): Promise<Response> {
   const ip = request.headers.get('CF-Connecting-IP') ?? 'unknown';
 
   let form: FormData;
@@ -155,4 +159,4 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     id,
     message: 'Submitted for review. Nothing goes live until a person has listened to it.',
   });
-};
+}
