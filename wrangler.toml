@@ -33,10 +33,15 @@ id = "e404cff7b9534d3ba39b16d31a5bb02d"
 # then paste the KV id below. TURNSTILE_SECRET is a secret, not a var:
 #   wrangler pages secret put TURNSTILE_SECRET
 
-[[r2_buckets]]
-binding = "SUBMISSIONS"
-bucket_name = "bleepboard-submissions"
-
-[[kv_namespaces]]
-binding = "SUBMISSIONS_KV"
-id = "" # TODO: from `wrangler kv namespace create SUBMISSIONS_KV`
+# Commented out rather than left with an empty id: wrangler refuses to parse
+# this whole file if a kv_namespaces entry has id = "", which would break every
+# wrangler command including the deploy. Uncomment both blocks once the stores
+# exist and the id is pasted in.
+#
+# [[r2_buckets]]
+# binding = "SUBMISSIONS"
+# bucket_name = "bleepboard-submissions"
+#
+# [[kv_namespaces]]
+# binding = "SUBMISSIONS_KV"
+# id = "PASTE_ID_HERE"
