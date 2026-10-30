@@ -13,5 +13,11 @@
   "origin": "From A Minecraft Movie (2025), the line that caused worldwide cinema chaos.",
   "added": "2026-08-25T22:23:39+05:00",
   "featured": false,
-  "plays": 2400
+  "plays": 2400,
+  "es": {
+    "title": "Chicken Jockey",
+    "origin": "De la película de Minecraft (2025), la frase que provocó caos en cines de todo el mundo.",
+    "blurb": "Dos palabras que convirtieron funciones de cine en incidentes de orden público. Cuando la película de Minecraft llegó en abril de 2025, esta frase desató un caos sincronizado en todo el mundo: palomitas volando, niños parados en las butacas, personal replanteándose su carrera en silencio, varias cadenas emitiendo advertencias de verdad. Nadie lo vio venir. Quedó como el meme de comportamiento en cines del año, y como un caso genuinamente raro de un público volviéndose más famoso que su película. Tócala con responsabilidad, o sea en cualquier parte menos un cine."
+  },
+  "contributor": "bleepboard"
 }

@@ -7,6 +7,7 @@ import {
   SITE,
   hubPath,
   soundPath,
+  esSoundPath,
   fmtDuration,
   absolute,
   pickTitle,
@@ -32,6 +33,7 @@ export async function getStaticPaths() {
 const { sound } = Astro.props;
 const d = sound.data;
 const category = await getEntry('categories', d.category);
+const contributor = await getEntry('contributors', d.contributor);
 const catName = category?.data.name ?? d.category;
 
 // related: same category or overlapping tags, excluding self
@@ -283,6 +285,15 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21.5V4"/><path d="M5 5h12.5l-2.2 3.8L17.5 12.5H5z"/></svg>
         Report this sound
       </button>
+      {d.es && (
+        <>
+          <span class="minor-sep" aria-hidden="true">·</span>
+          <a class="minor-link" href={esSoundPath(sound.id)} hreflang="es" lang="es">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.4 9h17.2M3.4 15h17.2"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18"/></svg>
+            Ver en español
+          </a>
+        </>
+      )}
       <span class="fav-warn" data-fav-warn hidden>
         Favourites need site storage, which this browser has turned off, so saving is unavailable here.
       </span>
@@ -325,6 +336,15 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     )}
     {d.explainer && (
       <p><a href={d.explainer}>Read the full story behind this sound →</a></p>
+    )}
+    {contributor && (
+      <p class="credit-note">
+        <b>{contributor.data.editorial ? 'Added by' : 'Submitted by'}</b>
+        <span>
+          <a href={`/contributors/${contributor.id}/`}>{contributor.data.name}</a>
+          {!contributor.data.editorial && d.sourceNote && ` — ${d.sourceNote}`}
+        </span>
+      </p>
     )}
   </section>
 

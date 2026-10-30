@@ -13,5 +13,11 @@
   "origin": "A field recording of a horse whinnying.",
   "added": "2026-08-25T23:39:38+05:00",
   "featured": false,
-  "plays": 1200
+  "plays": 1200,
+  "es": {
+    "title": "Relincho de Caballo",
+    "origin": "Grabación de campo de un caballo relinchando.",
+    "blurb": "Un relincho a plena garganta, con el gañido ascendente al final. Los caballos hacen este ruido sobre todo para alcanzarse a distancia, así que viaja absurdamente lejos y funciona todavía mejor como interrupción. Los cómicos de radio lo descubrieron temprano y el truco nunca se gastó. Tócalo después de un chiste malo, encima de una entrada en cámara lenta, o cada vez que alguien dice algo que merece respuesta del ganado y no de una persona. El caballo no tiene notas sobre tu material. El caballo simplemente se opone."
+  },
+  "contributor": "bleepboard"
 }

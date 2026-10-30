@@ -13,5 +13,11 @@
   "origin": "Generated pink-noise burst, shaped like an analog radio dropout.",
   "added": "2026-08-25T19:50:12+05:00",
   "featured": false,
-  "plays": 430
+  "plays": 430,
+  "es": {
+    "title": "Ráfaga de Estática",
+    "origin": "Ráfaga de ruido rosa generada, moldeada como una caída de señal analógica.",
+    "blurb": "Medio segundo de ruido rosa, moldeado como una radio analógica perdiendo el agarre de una señal. Quienes editan lo usan como transición de glitch porque corta la atención de una manera que un corte limpio no logra: el oído lee falla de equipo y se pone alerta de inmediato. Los bromistas lo sueltan a media conversación para convencer a alguien de que sus audífonos se están muriendo, y funciona mucho más seguido de lo que debería. Las dos aplicaciones se apoyan en lo mismo. Atraviesa cualquier mezcla al instante."
+  },
+  "contributor": "bleepboard"
 }

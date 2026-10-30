@@ -13,5 +13,11 @@
   "origin": "A high-frequency whistle tone at the edge of human hearing, though dogs hear it fine.",
   "added": "2026-08-25T19:34:53+05:00",
   "featured": false,
-  "plays": 850
+  "plays": 850,
+  "es": {
+    "title": "Silbato para Perros",
+    "origin": "Un silbato de frecuencia alta en el borde de la audición humana, que los perros oyen sin problema.",
+    "blurb": "Contenido en frecuencias altas que los perros oyen clarísimo y que la mayoría de las personas casi no percibe. Los perros detectan frecuencias cerca del doble de altas que nosotros, así que esto funciona como broma sobre dos especies al mismo tiempo: todos los perros del alcance se ponen firmes mientras los humanos miran alrededor sin entender. También sirve de verdad para probar si tus bocinas o tus audífonos reproducen la parte alta de su rango. Queda advertido. Tu perro está a punto de interesarse muchísimo en tu teléfono y no habrá forma de disuadirlo."
+  },
+  "contributor": "bleepboard"
 }

@@ -13,5 +13,11 @@
   "origin": "A recording of a lion cub's early attempt at roaring.",
   "added": "2026-08-25T23:39:58+05:00",
   "featured": false,
-  "plays": 1050
+  "plays": 1050,
+  "es": {
+    "title": "Rugido de León Bebé",
+    "origin": "Grabación del primer intento de rugido de un cachorro de león.",
+    "blurb": "Un cachorro de león intentando rugir y produciendo algo más parecido a un bostezo chillón. Los leones no logran el rugido de verdad hasta los dos años, así que esto es muy claramente un trabajo en progreso, y resulta tierno exactamente en la medida en que un rugido adulto no lo es. Perfecto para cualquiera que esté dando una pelea imposible de ganar. Un perro chiquito. Un niño de dos años. Un compañero de trabajo objetando una decisión que se cerró la semana pasada y se firmó el martes."
+  },
+  "contributor": "bleepboard"
 }

@@ -13,5 +13,11 @@
   "origin": "A field recording of a hen clucking.",
   "added": "2026-08-25T23:38:58+05:00",
   "featured": false,
-  "plays": 1300
+  "plays": 1300,
+  "es": {
+    "title": "Cacareo de Gallina",
+    "origin": "Grabación de campo de una gallina cacareando.",
+    "blurb": "Las gallinas tienen más de veinte llamados distintos, y este es el de la conversación diaria. Un cacareo tranquilo de gallina ocupada en sus cosas, la textura de fondo de toda escena de corral que se haya filmado. No es el llamado de alarma. No es el canto del huevo. Es básico para edits de dibujos animados, para videos de granja y para llamarle cobarde a alguien sin usar palabras. También funciona desproporcionadamente bien en un silencio durante una reunión de trabajo, un uso que la gallina nunca autorizó."
+  },
+  "contributor": "bleepboard"
 }

@@ -13,5 +13,11 @@
   "origin": "A squeeze recording of a classic rubber bath duck.",
   "added": "2026-08-25T23:39:43+05:00",
   "featured": false,
-  "plays": 1150
+  "plays": 1150,
+  "es": {
+    "title": "Chillido de Patito de Goma",
+    "origin": "Grabación del apretón de un clásico patito de goma de baño.",
+    "blurb": "El chillido de un patito de goma, un sonido con una segunda carrera sorprendentemente seria en la programación. El método del patito de goma consiste en explicarle tu código roto en voz alta a un juguete de baño hasta que oyes el error tú mismo. Funciona con una frecuencia molesta. Fuera de eso es simplemente el chillido cómico perfecto: ligero, tonto, imposible de tomar en serio ni un instante. Bueno para edits de dibujos, para videos en la tina y para puntuar tus propias malas decisiones."
+  },
+  "contributor": "bleepboard"
 }

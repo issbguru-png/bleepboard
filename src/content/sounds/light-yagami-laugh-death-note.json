@@ -13,5 +13,11 @@
   "origin": "Light Yagami's laugh from the Death Note anime (2006).",
   "added": "2026-08-26",
   "featured": false,
-  "plays": 1750
+  "plays": 1750,
+  "es": {
+    "title": "Risa de Light Yagami (Death Note)",
+    "origin": "La risa de Light Yagami en el anime de Death Note (2006).",
+    "blurb": "Death Note trata de dos personas inteligentes intentando pensar más rápido que la otra, y así suena ganar cuando no hay nadie más en el cuarto. La interpretación de Mamoru Miyano como Light Yagami arranca en risita privada y termina en derrumbe operístico, y el anime de 2006 la deja correr mucho más de lo que casi cualquier serie se atrevería. La contención lo habría arruinado. Los edits de anime llevan dos décadas usando esa risa como el sonido universal de un plan saliendo bien, casi siempre sobre imágenes de algo extremadamente mezquino funcionando."
+  },
+  "contributor": "bleepboard"
 }

@@ -1,0 +1,107 @@
+---
+/**
+ * /contributors/ — everyone who has put a sound on the board.
+ *
+ * Right now that is one account, the in-house one, and the page says so. It
+ * would be easy to pad this list and considerably less honest; the number goes
+ * up when real people send real clips in.
+ */
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { SITE, pickTitle, buildDescription } from '../../lib/site';
+import { breadcrumbs } from '../../lib/schema';
+
+const people = await getCollection('contributors');
+const sounds = await getCollection('sounds');
+const counted = people
+  .map((p) => ({ p, n: sounds.filter((s) => s.data.contributor === p.id).length }))
+  .sort((a, b) => Number(b.p.data.editorial) - Number(a.p.data.editorial) || b.n - a.n);
+
+const community = counted.filter((c) => !c.p.data.editorial);
+const pageUrl = SITE.url + '/contributors/';
+
+const title = pickTitle([
+  'Contributors: Who Put Each Sound on Bleepboard',
+  'Contributors on Bleepboard',
+  'Contributors',
+]);
+const description = buildDescription([
+  'Every sound on Bleepboard is credited to whoever supplied it.',
+  community.length
+    ? `${community.length} people have contributed so far.`
+    : 'The catalogue so far is in-house, and the submission form is how that changes.',
+]);
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Contributors', pageUrl],
+  ]),
+];
+---
+<Base title={title} description={description} schema={schema}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">Contributors</span>
+  </nav>
+
+  <section class="hub-hero">
+    <p class="eyebrow"><span class="tick"></span>Credits</p>
+    <h1>Contributors</h1>
+    <p class="lede">
+      Every clip here is credited to whoever actually supplied it. Most of the
+      catalogue so far came from us, and it says so. The rest came from people
+      who sent something in.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Everyone So Far</h2></div>
+    <ul class="contrib-list">
+      {counted.map(({ p, n }) => (
+        <li>
+          <a href={`/contributors/${p.id}/`}>
+            <span class="c-name">{p.data.name}</span>
+            {p.data.editorial && <span class="c-tag">site account</span>}
+          </a>
+          <span class="c-count tnum">{n} sound{n === 1 ? '' : 's'}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section prose">
+    <h2>How to Get on This List</h2>
+    <p>
+      Send a clip through <a href="/submit/">the submission form</a>. A person
+      listens to everything before it goes up, and an accepted clip gets your
+      name on it and a page of your own. Clips you do not have the right to
+      share are refused, which rules out most film, TV, game and music audio
+      however widely it circulates.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .contrib-list { margin: 0; padding: 0; list-style: none; }
+  .contrib-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s3);
+    padding: var(--s3) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contrib-list a { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; }
+  .contrib-list a:hover .c-name { color: var(--accent-text); text-decoration: underline; }
+  .c-tag {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--ink-3);
+    font-size: var(--step--2);
+    font-weight: 700;
+  }
+  .c-count { color: var(--ink-3); font-size: var(--step--1); font-weight: 650; white-space: nowrap; }
+</style>

@@ -14,5 +14,11 @@
   "added": "2026-08-25T22:23:09+05:00",
   "featured": false,
   "plays": 2000,
-  "explainer": "/blog/italian-brainrot-explained/"
+  "explainer": "/blog/italian-brainrot-explained/",
+  "es": {
+    "title": "Brr Brr Patapim",
+    "origin": "Un personaje de IA del brainrot italiano, del universo de Tralalero Tralala.",
+    "blurb": "Patas de árbol, una historia de fondo sospechosamente detallada y un nombre que simplemente da gusto decir en voz alta. Patapim es una de las figuras más queridas del universo del brainrot italiano, y el ritmo del nombre hace todo el trabajo: percusión sin significado, propagándose como una ronda infantil. El lore que lo acompaña se entrega con la gravedad de un documental de naturaleza, lo que lo vuelve más gracioso y no menos. Tócalo para convocar al instante a cualquiera menor de quince. Y para alarmar a cualquiera que pase de veinticinco."
+  },
+  "contributor": "bleepboard"
 }

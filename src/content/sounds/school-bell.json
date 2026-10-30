@@ -13,5 +13,11 @@
   "origin": "The classic school period bell.",
   "added": "2026-08-25T19:44:04+05:00",
   "featured": false,
-  "plays": 1100
+  "plays": 1100,
+  "es": {
+    "title": "Timbre de Escuela",
+    "origin": "El clásico timbre de cambio de clase.",
+    "blurb": "Áspero, nada musical y a cargo de la infancia desde hace más de un siglo. El timbre activa algo profundo en cualquiera que haya tenido un casillero: la urgencia involuntaria de pararse e irse, sin importar lo que se esté diciendo en ese momento. El reflejo no se gasta con los años. Tócalo a media junta y vas a ver adultos hechos y derechos empezando a guardar sus cosas antes de darse cuenta. También queda bien en edits sobre fugas, fechas límite y libertad, que son las tres cosas que siempre significó a la vez."
+  },
+  "contributor": "bleepboard"
 }

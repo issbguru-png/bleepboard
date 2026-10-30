@@ -5,3 +5,9 @@ dist/
 .env
 .env.*
 .cache/
+
+# Pending submissions: real people's files and contact details, which have no
+# business in a public repo. The README and the reviewed/ record stay.
+data/submissions/*
+!data/submissions/README.md
+!data/submissions/reviewed/

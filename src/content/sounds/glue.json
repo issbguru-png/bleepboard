@@ -13,5 +13,11 @@
   "origin": "A short meme clip of the word 'glue', circulated with the deep-fried pink Doge image; its original source is undocumented.",
   "added": "2026-08-26",
   "featured": false,
-  "plays": 700
+  "plays": 700,
+  "es": {
+    "title": "Glue",
+    "origin": "Un clip corto de la palabra glue, que circula con la imagen sobrefrita del Doge rosa; su fuente original no está documentada.",
+    "blurb": "Tres segundos, una palabra, ninguna explicación disponible en ninguna parte. El clip de glue viaja con un Doge rosa sobrefrito y lleva años pasando por botoneras, reposts de iFunny y servidores de Discord sin que nadie produzca un relato convincente de dónde empezó. Ese anonimato le queda bien. El audio de meme de esta añada rara vez viene con acta de nacimiento, y el chiste depende por completo de que la palabra llegue con confianza total y cero contexto. Úsalo como cierre de conversación, o como respuesta a algo que decidiste no tomar en serio."
+  },
+  "contributor": "bleepboard"
 }

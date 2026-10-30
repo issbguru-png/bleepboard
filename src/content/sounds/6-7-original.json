@@ -13,5 +13,11 @@
   "origin": "The hook from Skrilla's 'Doot Doot (6 7)', the track behind the 67 meme.",
   "added": "2026-08-28",
   "featured": false,
-  "plays": 2900
+  "plays": 2900,
+  "es": {
+    "title": "67 Sonido Original",
+    "origin": "El gancho de Doot Doot (6 7) de Skrilla, el tema detrás del meme del 67.",
+    "blurb": "El gancho que empezó todo: cinco segundos de Doot Doot (6 7) de Skrilla, el corte exacto que los editores de basquetbol montaron sobre jugadas de LaMelo Ball hasta que dos números se volvieron un canto mundial. Este es el sonido que los maestros ahora temen, conservado en su fuente. Todo lo demás del estante del 67 es un remix, una parodia o un descendiente de lo que oyes aquí. Suéltalo en una llamada y alguien va a contestar siete antes de darse cuenta de lo que hizo. El reflejo es el meme entero."
+  },
+  "contributor": "bleepboard"
 }

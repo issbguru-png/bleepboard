@@ -13,5 +13,11 @@
   "origin": "An Italian brainrot AI character.",
   "added": "2026-08-25T22:23:19+05:00",
   "featured": false,
-  "plays": 1700
+  "plays": 1700,
+  "es": {
+    "title": "Trippi Troppi",
+    "origin": "Un personaje de IA del brainrot italiano.",
+    "blurb": "Otra entrada en el bestiario del brainrot italiano, y prueba de lo confiablemente que la fórmula escala. La receta nunca cambia. Generas una criatura que nadie pidió, le pones un nombre pseudoitaliano que rime, narras su lore con acento de texto a voz y sinceridad total, y después dejas que los niños hagan el resto. Trippi Troppi llegó durante la ola de 2025, cuando aparecían personajes nuevos más rápido de lo que alguien podía catalogarlos, y sobrevivió solo por cadencia. Di el nombre dos veces y te vas a descubrir diciéndolo una tercera."
+  },
+  "contributor": "bleepboard"
 }

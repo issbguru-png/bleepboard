@@ -13,5 +13,11 @@
   "origin": "A recording of the classic rubber screaming chicken toy.",
   "added": "2026-08-25T23:39:48+05:00",
   "featured": false,
-  "plays": 1400
+  "plays": 1400,
+  "es": {
+    "title": "Gallina de Goma Gritando",
+    "origin": "Grabación del clásico juguete de goma con forma de gallina.",
+    "blurb": "Un propósito, un ruido, cero virtudes rescatables. La gallina de goma es un juguete de apretar diseñado para resultar insoportable, y lleva décadas sirviendo de utilería para el humor físico. Enloquece a los perros de manera genuina. Sigue siendo el método más rápido que existe para arruinar el ambiente de cualquier cuarto donde estés parado. Por dentro no hay más que una lengüeta siendo maltratada, lo que de alguna forma vuelve el resultado más ofensivo y no menos. Úsala con responsabilidad, aunque nadie en la historia registrada ha usado una gallina de goma con responsabilidad."
+  },
+  "contributor": "bleepboard"
 }

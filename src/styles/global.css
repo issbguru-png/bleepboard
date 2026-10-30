@@ -905,7 +905,8 @@ a.chip:hover { border-color: var(--accent); color: var(--accent-text); backgroun
 }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: var(--s6) 0; }
 
-.origin-note {
+.origin-note,
+.credit-note {
   display: flex; gap: var(--s3);
   padding: var(--s4);
   border-radius: var(--r-sm);
@@ -915,7 +916,8 @@ a.chip:hover { border-color: var(--accent); color: var(--accent-text); backgroun
   color: var(--ink-2);
   max-width: var(--maxw-prose);
 }
-.origin-note b {
+.origin-note b,
+.credit-note b {
   color: var(--ink); font-weight: 800; font-size: var(--step--2);
   letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
   padding-top: 1px;
@@ -1083,7 +1085,8 @@ a.chip:hover { border-color: var(--accent); color: var(--accent-text); backgroun
   margin: 0 0 var(--s3);
 }
 .tag-section { margin-top: var(--s6); }
-.origin-note span { min-width: 0; }
+.origin-note span,
+.credit-note span { min-width: 0; }
 
 /* ==========================================================================
    Page heads — the shared opening block for every non-home page

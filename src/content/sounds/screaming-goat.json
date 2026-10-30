@@ -13,5 +13,11 @@
   "origin": "The goat bleat behind the 2013 'screaming goat' meme wave.",
   "added": "2026-08-25T23:39:13+05:00",
   "featured": false,
-  "plays": 2300
+  "plays": 2300,
+  "es": {
+    "title": "Cabra Gritando",
+    "origin": "El balido de cabra detrás de la ola de memes de 2013.",
+    "blurb": "Las cabras suenan igual que una persona pasando el peor día de su vida, y en 2013 a alguien se le ocurrió meterlas dentro de canciones pop. I Knew You Were Trouble, de Taylor Swift, nunca volvió a ser la misma. El motivo por el que funciona tan bien es acústico: el balido cae justo dentro del rango de la voz humana, así que tu cerebro lo archiva como persona y se corrige medio segundo después. Sigue siendo el botón más gracioso de cualquier botonera de animales."
+  },
+  "contributor": "bleepboard"
 }

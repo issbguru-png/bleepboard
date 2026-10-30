@@ -13,5 +13,11 @@
   "origin": "From TikTok's 'I'm a baby, 67' trend of toddler six-seven videos.",
   "added": "2026-08-28",
   "featured": false,
-  "plays": 950
+  "plays": 950,
+  "es": {
+    "title": "Soy un Bebé, 67",
+    "origin": "De la tendencia de TikTok I'm a baby, 67, con videos de niños pequeños haciendo el seis siete.",
+    "blurb": "En algún punto por debajo de la edad de armar frases completas, el meme del 67 encontró a su público más joven. Soy un bebé... seis siete se volvió un fijo de TikTok a través de videos de niños chiquitos siendo iniciados en el canto mucho antes de que pudieran entenderlo, prueba de lo hondo que este asunto se metió en el rango de edad. Aquí viven nueve segundos de eso. Los padres se lo ponen a sus propios hijos y los hermanos mayores lo usan como acusación."
+  },
+  "contributor": "bleepboard"
 }

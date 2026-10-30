@@ -13,5 +13,11 @@
   "origin": "A viral track cataloguing the entire Gen Alpha brainrot vocabulary.",
   "added": "2026-08-25T22:10:35+05:00",
   "featured": false,
-  "plays": 1700
+  "plays": 1700,
+  "es": {
+    "title": "Rap de Brainrot",
+    "origin": "Un tema viral que cataloga el vocabulario brainrot completo de la generación Alfa.",
+    "blurb": "Cada palabra de moda de la generación Alfa, comprimida en un solo tema y entregada con una confianza completamente inmerecida. Skibidi, gyatt, rizz, sigma, fanum tax, Ohio. El léxico entero llega en secuencia sobre un beat, funcionando a la vez como parodia y como documento genuino de la época. Algún día los lingüistas van a estudiar esto, y la van a tener más fácil que los padres que ahora mismo intentan descifrar una conversación en la mesa. Tócalo para quien quiera entender la jerga juvenil moderna, y después discúlpate sinceramente con esa persona."
+  },
+  "contributor": "bleepboard"
 }

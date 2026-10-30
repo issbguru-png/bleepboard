@@ -13,5 +13,11 @@
   "origin": "An Italian brainrot AI character: the assassin cappuccino.",
   "added": "2026-08-25T22:23:34+05:00",
   "featured": false,
-  "plays": 1650
+  "plays": 1650,
+  "es": {
+    "title": "Cappuccino Assassino",
+    "origin": "Un personaje de IA del brainrot italiano: el capuchino asesino.",
+    "blurb": "El café asesino, y la otra mitad de la trama romántica más comprometida del universo brainrot. El brainrot italiano produjo una facción entera basada en el espresso: asesinos, bailarinas, una cantidad alarmante de bebidas antropomorfas. Léelo como comentario agudo sobre la identidad nacional italiana, o léelo como lo que produce un generador de imágenes cuando le piden inventar personajes a las tres de la mañana. Las dos lecturas aguantan igual de bien. El nombre se escande como un hechizo, y esa es la razón de que se esparciera."
+  },
+  "contributor": "bleepboard"
 }

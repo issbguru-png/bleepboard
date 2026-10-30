@@ -13,5 +13,11 @@
   "origin": "A generic institutional fire-alarm recording of the type used in schools and university buildings.",
   "added": "2026-08-26",
   "featured": false,
-  "plays": 900
+  "plays": 900,
+  "es": {
+    "title": "Alarma de Incendio Escolar",
+    "origin": "Grabación de una alarma de incendio institucional del tipo usado en escuelas y universidades.",
+    "blurb": "Quien haya vivido en una residencia conoce esto a las tres de la mañana, parado afuera en bata mientras el pan tostado de alguien carga con la culpa. El clip es una alarma institucional estándar: penetrante, repetitiva, diseñada para que ningún humano dormido pueda ignorarla. Como botón de broma es profundamente desalmada y muy eficaz, sobre todo encima de una llamada al compañero de cuarto que tiene examen mañana. Quienes editan video la usan distinto, soltándola en el instante exacto en que algo en pantalla sale catastróficamente mal. Mide el volumen antes de tocarla."
+  },
+  "contributor": "bleepboard"
 }

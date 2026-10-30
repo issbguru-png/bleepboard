@@ -13,5 +13,11 @@
   "origin": "An ambient field recording of dawn birdsong.",
   "added": "2026-08-25T23:39:28+05:00",
   "featured": false,
-  "plays": 1350
+  "plays": 1350,
+  "es": {
+    "title": "Pájaros Cantando",
+    "origin": "Grabación ambiental de campo del canto de aves al amanecer.",
+    "blurb": "Canto de pájaros por la mañana, el loop ambiental que avisa en silencio que es temprano y que todo está en orden. Los editores lo usan de dos maneras opuestas. En serio, para escenas tranquilas al aire libre, pistas para dormir y videos de meditación. Con sarcasmo, como el sonido del silencio absoluto después de que alguien dice algo que cae muy mal (un recurso cómico que va de la mano con los grillos). También da gusto dejarlo sonando en una pestaña mientras trabajas, algo que no puede decirse de casi nada en este sitio."
+  },
+  "contributor": "bleepboard"
 }

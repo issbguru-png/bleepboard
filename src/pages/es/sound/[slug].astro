@@ -1,0 +1,255 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import SoundButton from '../../../components/SoundButton.astro';
+import EmbedPanel from '../../../components/EmbedPanel.astro';
+import {
+  SITE,
+  soundPath,
+  esSoundPath,
+  fmtDuration,
+  absolute,
+  pickTitle,
+  buildDescription,
+  clamp,
+  isoDuration,
+} from '../../../lib/site';
+import { breadcrumbs, publisher } from '../../../lib/schema';
+import { readdirSync, existsSync } from 'node:fs';
+
+/* Spanish clip pages.
+ *
+ * A sound opts in by carrying an `es` block, the same single switch themes and
+ * categories use. That one field builds this route, registers the hreflang
+ * pair in Base and adds the URL to the sitemap, so a Spanish clip page cannot
+ * exist without Spanish copy behind it.
+ *
+ * Deliberately leaner than the English page, matching how es/[hub].astro sits
+ * beside [hub].astro: the player, the download, the copy, the embed and the
+ * related grid all carry over, while the share and report menus stay on the
+ * English page. Those two open mail and native share sheets with English
+ * strings baked in, and shipping them half-translated would read worse than
+ * leaving them where they already work.
+ */
+
+const OG_DIR = new URL('../../../../public/og/', import.meta.url).pathname;
+const OG_CARDS = new Set(
+  existsSync(OG_DIR) ? readdirSync(OG_DIR).filter((f) => f.endsWith('.png')).map((f) => f.slice(0, -4)) : []
+);
+
+export async function getStaticPaths() {
+  const sounds = await getCollection('sounds');
+  return sounds
+    .filter((s) => s.data.es)
+    .map((s) => ({ params: { slug: s.id }, props: { sound: s } }));
+}
+
+const { sound } = Astro.props;
+const d = sound.data;
+const es = d.es!;
+const category = await getEntry('categories', d.category);
+const contributor = await getEntry('contributors', d.contributor);
+// The hub only has a Spanish name when the category itself is translated, and
+// its Spanish URL only exists on the same condition, so both travel together.
+const catEs = category?.data.es;
+const catName = catEs?.name ?? category?.data.name ?? d.category;
+const hubHref = catEs ? `/es/${d.category}-soundboard/` : `/${d.category}-soundboard/`;
+
+/** Spanish name and URL when the related clip is translated too. */
+const label = (s: any) => s.data.es?.title ?? s.data.title;
+const link = (s: any) => (s.data.es ? esSoundPath(s.id) : soundPath(s.id));
+
+// Related clips, same scoring as the English page, but translated ones first:
+// a reader who landed in Spanish is better served by a board they can read.
+const all = await getCollection('sounds');
+const related = all
+  .filter((s) => s.id !== sound.id)
+  .map((s) => ({
+    s,
+    score:
+      (s.data.category === d.category ? 2 : 0) +
+      s.data.tags.filter((t) => d.tags.includes(t)).length +
+      (s.data.es ? 1 : 0),
+  }))
+  .filter((r) => r.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 12)
+  .map((r) => r.s);
+
+const pageUrl = SITE.url + esSoundPath(sound.id);
+const audioUrl = SITE.url + d.audio;
+
+// Same ladder idea as everywhere else: richest candidate that survives the
+// ~60 character cut. "Botón de sonido" is the head phrase this page competes
+// on, so it sits straight after the name.
+const title = pickTitle([
+  `Botón de Sonido ${es.title}: Tócalo y Baja el MP3 Gratis`,
+  `Botón de Sonido ${es.title}: Tócalo y Baja el MP3`,
+  `Botón de Sonido ${es.title}: MP3 Gratis`,
+  `Botón de Sonido ${es.title}`,
+]);
+
+const blurbSentences = es.blurb.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
+const description = clamp(
+  buildDescription([
+    `Toca el sonido ${es.title} al instante. Baja el MP3 gratis, sin registro.`,
+    es.origin,
+    ...blurbSentences,
+  ])
+);
+
+const BARS = 72;
+let seed = 0;
+for (let i = 0; i < sound.id.length; i++) seed = (seed * 31 + sound.id.charCodeAt(i)) >>> 0;
+const bars = Array.from({ length: BARS }, (_, i) => {
+  seed = (seed * 1664525 + 1013904223) >>> 0;
+  const noise = (seed % 1000) / 1000;
+  const env = Math.sin((Math.PI * (i + 0.5)) / BARS) ** 0.55;
+  return Math.round(14 + noise * 86 * env);
+});
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AudioObject',
+    name: es.title,
+    contentUrl: audioUrl,
+    duration: isoDuration(d.duration),
+    encodingFormat: 'audio/mpeg',
+    url: pageUrl,
+    description: clamp(es.blurb, 320),
+    uploadDate: d.added.toISOString(),
+    thumbnailUrl: absolute(SITE.ogImage),
+    inLanguage: 'es',
+    isFamilyFriendly: true,
+    isAccessibleForFree: true,
+    genre: catName,
+    ...(d.tags.length ? { keywords: d.tags.join(', ') } : {}),
+    publisher,
+  },
+  breadcrumbs([
+    ['Inicio', SITE.url + '/es/'],
+    [`Botonera de ${catName}`, SITE.url + hubHref],
+    [es.title, pageUrl],
+  ]),
+];
+
+const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
+---
+<Base
+  title={title}
+  description={description}
+  schema={schema}
+  cat={d.category}
+  ogImage={ogCard}
+  ogImageAlt={`Botón de sonido ${es.title} en Bleepboard`}
+  ogImageWidth={1200}
+  ogImageHeight={630}
+>
+  <nav class="breadcrumbs" aria-label="Ruta de navegación">
+    <a href="/es/">Inicio</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <a href={hubHref}>Botonera de {catName}</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">{es.title}</span>
+  </nav>
+
+  <div class="sound-hero" style={`--dur:${d.duration}s`}>
+    <div class="sound-hero-top">
+      <button
+        class="hero-play"
+        type="button"
+        data-src={d.audio}
+        data-slug={sound.id}
+        aria-label={`Reproducir ${es.title}`}
+        aria-pressed="false"
+      >
+        <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+          ><path d="M8.4 5.2a1 1 0 0 1 1.52-.85l9.1 5.5a1.4 1.4 0 0 1 0 2.4l-9.1 5.5a1 1 0 0 1-1.52-.85z" /></svg
+        >
+        <span class="i-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <div class="sound-hero-text">
+        <p class="eyebrow"><span class="tick"></span>Botón de sonido</p>
+        <h1>{es.title}</h1>
+        <ul class="sound-hero-meta">
+          <li><a href={hubHref}>{catName}</a></li>
+          <li><span class="tnum">{fmtDuration(d.duration)}</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wave" aria-hidden="true">
+      <div class="wave-row">{bars.map((h) => <i style={`--h:${h}`}></i>)}</div>
+      <div class="wave-row wave-fill">{bars.map((h) => <i style={`--h:${h}`}></i>)}</div>
+    </div>
+
+    <div class="btn-row sound-actions">
+      <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
+        Bajar MP3
+      </a>
+      <a class="btn" href="#embed">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.5 8.5-4 3.5 4 3.5"/><path d="m15.5 8.5 4 3.5-4 3.5"/></svg>
+        Incrustar
+      </a>
+      <a class="btn" href={soundPath(sound.id)} hreflang="en" lang="en">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.4 9h17.2M3.4 15h17.2"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18"/></svg>
+        English
+      </a>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Sobre el sonido {es.title}</h2>
+    <p>{es.blurb}</p>
+    {es.origin && (
+      <p class="origin-note"><b>Origen</b><span>{es.origin}</span></p>
+    )}
+    {contributor && (
+      <p class="origin-note">
+        <b>{contributor.data.editorial ? 'Agregado por' : 'Enviado por'}</b>
+        <span><a href={`/contributors/${contributor.id}/`}>{contributor.data.name}</a></span>
+      </p>
+    )}
+  </section>
+
+  {d.tags.length > 0 && (
+    <section class="section tag-section">
+      <h2 class="section-mini">Etiquetas</h2>
+      <ul class="chips">
+        {d.tags.map((t) => <li class="chip">#{t}</li>)}
+      </ul>
+    </section>
+  )}
+
+  <EmbedPanel slug={sound.id} title={es.title} lang="es" />
+
+  {related.length > 0 && (
+    <section class="section">
+      <div class="section-head">
+        <h2>También te puede gustar</h2>
+        <a class="section-link" href={hubHref}>Más sonidos de {catName} →</a>
+      </div>
+      <div class="grid grid--sm">
+        {related.map((s) => (
+          <SoundButton
+            playLabel="Reproducir"
+            slug={s.id}
+            title={label(s)}
+            href={link(s)}
+            audio={s.data.audio}
+            duration={s.data.duration}
+            category={s.data.category}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <script src="../../../scripts/sound-actions.ts"></script>
+</Base>
+
+<style>
+  .sound-actions .btn { min-height: 44px; }
+</style>

@@ -13,5 +13,11 @@
   "origin": "A clean edit-ready cut of the six-seven hook from Skrilla's 'Doot Doot (6 7)'.",
   "added": "2026-08-28",
   "featured": false,
-  "plays": 2600
+  "plays": 2600,
+  "es": {
+    "title": "Efecto de Sonido 6 7",
+    "origin": "Un corte limpio y listo para editar del gancho seis siete de Doot Doot (6 7) de Skrilla.",
+    "blurb": "Los editores necesitaban una versión limpia del golpe del seis siete, y esta es: el canto recortado al hueso, sin intro y sin cola, listo para caer en el remate. El meme del 67 se esparció tanto por los edits como por los salones de clase, y un efecto de sonido usable es la infraestructura poco glamorosa debajo de todo eso. Cinco segundos, entra y sale. Móntalo sobre una jugada de basquetbol, una calificación, un recibo que suma 6.70, o cualquier cosa que se pueda torturar hasta dar esos números."
+  },
+  "contributor": "bleepboard"
 }

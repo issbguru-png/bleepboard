@@ -13,5 +13,11 @@
   "origin": "The viral Russian pop song by Betsy and Maria Yankovskaya that took over TikTok.",
   "added": "2026-08-25T22:10:20+05:00",
   "featured": false,
-  "plays": 2400
+  "plays": 2400,
+  "es": {
+    "title": "Sigma Boy",
+    "origin": "La canción pop rusa viral de Betsy y Maria Yankovskaya que se apoderó de TikTok.",
+    "blurb": "Betsy y Maria Yankovskaya grabaron una canción pop rusa sobre los sigma boys, y en cuestión de meses estaba en las listas de media Europa y se cantaba en patios por niños que no hablan una palabra de ruso. El truco es que es un disco pop genuinamente bien hecho, brillante y pegajoso e imposible de sacudirse, lo que le dio al meme un sistema de entrega que nada pudo frenar. También completó un viaje raro para la palabra sigma, arrastrándola desde la jerga seria de la manosfera hasta el puro disparate de patio. Tócala para convocar a todo niño a cien metros."
+  },
+  "contributor": "bleepboard"
 }

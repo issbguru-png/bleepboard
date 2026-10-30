@@ -13,5 +13,11 @@
   "origin": "A recording of the breathy panting sound identified as canine laughter.",
   "added": "2026-08-25T23:40:08+05:00",
   "featured": false,
-  "plays": 1300
+  "plays": 1300,
+  "es": {
+    "title": "Risa de Perro",
+    "origin": "Grabación del jadeo que se identifica como risa canina.",
+    "blurb": "Los perros sí tienen risa: un jadeo rítmico y entrecortado que los investigadores de comportamiento grabaron y después les pusieron a perros de refugio, que se calmaron de forma medible. Este clip es la versión clásica, y resulta inquietante, parado justo en la línea entre un jadeo inocente y la burla abierta. Internet, por supuesto, se quedó con la segunda lectura. Tócalo cada vez que alguien se cae y está perfectamente, perfectamente bien. Nadie en el cuarto se cree que el perro esté siendo solidario."
+  },
+  "contributor": "bleepboard"
 }

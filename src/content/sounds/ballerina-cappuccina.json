@@ -14,5 +14,11 @@
   "added": "2026-08-25T22:23:29+05:00",
   "featured": false,
   "plays": 1750,
-  "explainer": "/blog/italian-brainrot-explained/"
+  "explainer": "/blog/italian-brainrot-explained/",
+  "es": {
+    "title": "Ballerina Cappuccina",
+    "origin": "Un personaje de IA del brainrot italiano: la bailarina con taza de capuchino.",
+    "blurb": "Una bailarina con una taza de capuchino por cabeza, porque el universo del brainrot italiano funciona con lógica de sueño y se niega a explicarse. Está entre los personajes más compartidos de toda la ola, y la entrega cantadita de su nombre hace casi todo el trabajo: cuatro sílabas que riman consigo mismas y se clavan al instante. También ancla una facción entera basada en el café, con una trama romántica canónica que los fans debaten en serio. Tócala para quien intente entender qué le pasó al humor infantil en 2025. Café, danza y disparate en equilibrio perfecto."
+  },
+  "contributor": "bleepboard"
 }

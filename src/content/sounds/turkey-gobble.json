@@ -13,5 +13,11 @@
   "origin": "A field recording of a wild turkey gobbling.",
   "added": "2026-08-25T23:39:08+05:00",
   "featured": false,
-  "plays": 1100
+  "plays": 1100,
+  "es": {
+    "title": "Glu Glú de Pavo",
+    "origin": "Grabación de campo de un pavo salvaje.",
+    "blurb": "Ese glu glú rápido y tembloroso es un pavo macho anunciándose, y se le oye desde un kilómetro y medio de distancia. El volumen y la confianza salen de ahí. Para quien escucha en Estados Unidos suena a Día de Acción de Gracias en forma de audio; para el resto del mundo suena a puro absurdo. Úsalo en edits navideños, para interrumpir a alguien a media frase o como el tono de notificación más irritante del planeta. Es de verdad uno de los ruidos más raros que un ave ha aceptado hacer."
+  },
+  "contributor": "bleepboard"
 }
