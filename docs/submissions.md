@@ -69,6 +69,28 @@ Rejections are kept in `data/submissions/reviewed/` with their reason. Keep
 that record. It is the evidence that review actually happens, and it is what
 you would produce if a rights holder ever asked how the site is run.
 
+## Before anything else: the domain cannot receive email
+
+Checked 2026-10-30 against both 8.8.8.8 and 1.1.1.1: **bleepboard.com has no MX
+records.** Mail sent to any address on the domain is discarded silently. The
+sender gets no bounce, so nobody on either end finds out.
+
+The site currently advertises five such addresses:
+
+| Address | Where it appears | What breaks |
+|---|---|---|
+| `dmca@bleepboard.com` | `/dmca/` and the report menu on all 650 sound pages | **The takedown route.** A site serving studio-owned audio with an unreachable takedown contact is the worst version of this problem |
+| `hello@bleepboard.com` | `/contact/` | Nobody can reach the site, which AdSense reviewers do check |
+| `privacy@bleepboard.com` | `/privacy/` | GDPR/CCPA requests go nowhere |
+| legal address | `/terms/` | Same |
+| `sounds@bleepboard.com` | `/submit/` | Gated off until mail works, see `SUBMIT_EMAIL_LIVE` |
+
+This is older than the submissions feature and more urgent than it. Fixing it
+is fifteen minutes: Cloudflare Email Routing is free and forwards to any inbox,
+or the registrar (Dynadot, per the `ns1.dyna-ns.net` nameservers) does
+forwarding too. Add the MX records, send yourself a test, then flip
+`SUBMIT_EMAIL_LIVE`.
+
 ## Current state: the form is not open
 
 `functions/api/submit.ts` is Cloudflare code and the site is on GitHub Pages,

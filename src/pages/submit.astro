@@ -15,6 +15,7 @@ import { SITE, pickTitle, buildDescription } from '../lib/site';
 import { breadcrumbs } from '../lib/schema';
 import {
   SUBMIT_ENDPOINT_LIVE,
+  SUBMIT_EMAIL_LIVE,
   TURNSTILE_SITE_KEY,
   SUBMIT_EMAIL,
   MAX_MB,
@@ -147,19 +148,39 @@ const schema = [
     ) : (
       <>
         <h2>Send It</h2>
-        <p>
-          The upload form is not open yet. It needs a server behind it and this
-          site is still served as static files, so rather than show you a form
-          that quietly loses your clip, here is the route that works today.
-        </p>
-        <p class="btn-row">
-          <a class="btn primary" href={mailHref}>Email your sound in</a>
-        </p>
-        <p>
-          That opens a message to <b>{SUBMIT_EMAIL}</b> with the questions already
-          filled in. Attach the audio and send. Same review, same credit, same
-          rules as above.
-        </p>
+        {SUBMIT_EMAIL_LIVE ? (
+          <>
+            <p>
+              The upload form is not open yet. It needs a server behind it and
+              this site is still served as static files, so rather than show you
+              a form that quietly loses your clip, here is the route that works
+              today.
+            </p>
+            <p class="btn-row">
+              <a class="btn primary" href={mailHref}>Email your sound in</a>
+            </p>
+            <p>
+              That opens a message to <b>{SUBMIT_EMAIL}</b> with the questions
+              already filled in. Attach the audio and send. Same review, same
+              credit, same rules as above.
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              Submissions are not open yet. The upload form needs a server
+              behind it and the mailbox is not running either, so there is
+              currently no route that would actually reach us. Rather than take
+              a clip you spent time on and drop it, here is the honest state of
+              it.
+            </p>
+            <p>
+              The rules above are the ones that will apply when it opens, so
+              they are worth reading now if you have something in mind. Check
+              back shortly.
+            </p>
+          </>
+        )}
       </>
     )}
 
