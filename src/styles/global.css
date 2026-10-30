@@ -303,37 +303,31 @@ p:last-child { margin-bottom: 0; }
   background: var(--surface-2);
 }
 
-/* The upload link is the one item in the nav that asks something of the
-   visitor rather than offering them something, so it carries the accent and
-   reads as a button. Everything else stays quiet. */
-.site-nav a.cta {
+/* The upload control sits beside the nav, not inside it: on a phone the nav
+   is a scrolling strip and a fifth item would park the CTA off the right edge.
+   `.logo` carries margin-right:auto, so this lands hard right on the first row
+   at every width, and the nav wraps underneath it on mobile. */
+.header-cta {
+  order: 2;
+  flex: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 8px 15px;
+  border-radius: var(--r-pill);
   background: var(--accent);
-  border-color: var(--accent);
   color: var(--accent-ink);
+  font-size: var(--step--1);
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: 0 2px 0 0 var(--accent-2);
+  transition: background 0.14s, box-shadow 0.14s, transform 0.14s var(--ease);
 }
-.site-nav a.cta svg { width: 15px; height: 15px; }
-.site-nav a.cta:hover {
-  background: var(--accent-text);
-  border-color: var(--accent-text);
-  color: var(--accent-ink);
-}
-.site-nav a.cta[aria-current='page'] {
-  background: var(--accent-text);
-  border-color: var(--accent-text);
-  color: var(--accent-ink);
-}
-@media (min-width: 760px) {
-  /* The desktop rule above strips backgrounds from nav links; the CTA keeps
-     its own, or it would vanish into the header at exactly the width where
-     there is most room for it. */
-  .site-nav a.cta,
-  .site-nav a.cta:hover,
-  .site-nav a.cta[aria-current='page'] { background: var(--accent); border-color: var(--accent); }
-  .site-nav a.cta:hover { background: var(--accent-text); border-color: var(--accent-text); }
-}
+.header-cta svg { width: 15px; height: 15px; }
+.header-cta:hover { background: var(--accent-text); box-shadow: 0 3px 0 0 var(--accent-2); }
+.header-cta:active { box-shadow: 0 0 0 0 var(--accent-2); transform: translateY(1px); }
+.header-cta:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.header-cta[aria-current='page'] { background: var(--accent-text); }
 @media (min-width: 760px) {
   .site-nav {
     order: 0; width: auto; overflow: visible; margin: 0; padding: 0;
@@ -345,23 +339,36 @@ p:last-child { margin-bottom: 0; }
 
 
 /* --- hero upload ask ------------------------------------------------------
-   Deliberately a secondary button next to a line of plain text, not a second
-   primary. The hero already has one job, the search field, and two competing
-   calls to action in the same block means neither gets pressed. */
+   The line reads left to right as statement then action, with the button on
+   the right edge of the copy column where the eye finishes. It carries the
+   accent so it matches the Upload control in the header and is findable at a
+   glance, which a plain outline button at the foot of a busy hero was not.
+
+   It still sits below the search field rather than beside it. Search is the
+   job most people came to do; this is the ask, and it waits its turn. */
 .hero-upload {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--s2) var(--s3);
   margin: var(--s5) 0 0;
+  width: 100%;
 }
 .hero-upload .btn { flex: none; }
 .hero-upload span {
+  flex: 1 1 22ch;
   color: var(--ink-3);
   font-size: var(--step--1);
   font-weight: 600;
   line-height: 1.5;
-  max-width: 42ch;
+  max-width: 46ch;
+}
+@media (max-width: 560px) {
+  /* Stacked on a phone, the button is the thing being asked for, so it leads
+     and spans the column rather than hanging off one edge. */
+  .hero-upload { flex-direction: column-reverse; align-items: stretch; }
+  .hero-upload span { flex: none; max-width: none; }
 }
 
 /* --- footer -------------------------------------------------------------- */

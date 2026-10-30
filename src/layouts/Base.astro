@@ -96,16 +96,17 @@ const alternates: [string, string][] =
 const ogLocale = isEs ? 'es_ES' : 'en_US';
 const ogLocaleAlt = alternates.length ? (isEs ? 'en_US' : 'es_ES') : undefined;
 
-// The last entry carries a `cta` flag: uploading is the one thing in here we
-// are asking for rather than offering, so it reads as a button instead of a
-// fifth identical pill.
-const nav: [string, string, 'cta'?][] = [
+const nav = [
   ['/new/', 'New'],
   ['/trending/', 'Trending'],
   ['/categories/', 'Categories'],
   ['/blog/', 'Blog'],
-  ['/upload/', 'Upload', 'cta'],
 ];
+// Upload is deliberately NOT in that list. On a phone .site-nav is a
+// horizontally scrolling strip, and as a fifth item the CTA sat off the right
+// edge: the one control we are actively asking people to use was the only one
+// you had to scroll to find. It is a sibling of the nav instead, so it stays
+// on the first row next to the logo at every width.
 ---
 <!doctype html>
 <html lang={lang}>
@@ -163,15 +164,14 @@ const nav: [string, string, 'cta'?][] = [
           Bleepboard
         </a>
         <nav class="site-nav" aria-label="Main" lang={isEs ? 'en' : undefined}>
-          {nav.map(([href, label, kind]) => (
-            <a href={href} class={kind} aria-current={here === href ? 'page' : undefined}>
-              {kind === 'cta' && (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V8m0 0 4 4m-4-4-4 4"/><path d="M5 5h14"/></svg>
-              )}
-              {label}
-            </a>
+          {nav.map(([href, label]) => (
+            <a href={href} aria-current={here === href ? 'page' : undefined}>{label}</a>
           ))}
         </nav>
+        <a class="header-cta" href="/upload/" aria-current={path === '/upload/' ? 'page' : undefined}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V8m0 0 4 4m-4-4-4 4"/><path d="M5 5h14"/></svg>
+          Upload
+        </a>
       </div>
     </header>
     <main>
