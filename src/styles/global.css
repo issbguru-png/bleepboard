@@ -350,19 +350,22 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: var(--s2) var(--s3);
   margin: var(--s5) 0 0;
-  width: 100%;
+  /* Matches .searchbox so the two edges of this row land on the two edges of
+     the hero: the text starts where the headline and the lede start, and the
+     button finishes where the search field finishes. Free-floating at the
+     column's full width, it lined up with nothing on either side. */
+  max-width: 520px;
 }
 .hero-upload .btn { flex: none; }
 .hero-upload span {
-  flex: 1 1 22ch;
+  flex: 1 1 18ch;
   color: var(--ink-3);
   font-size: var(--step--1);
   font-weight: 600;
-  line-height: 1.5;
-  max-width: 46ch;
+  line-height: 1.45;
 }
 @media (max-width: 560px) {
   /* Stacked on a phone, the button is the thing being asked for, so it leads
