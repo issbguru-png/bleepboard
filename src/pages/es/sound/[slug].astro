@@ -48,6 +48,7 @@ const { sound } = Astro.props;
 const d = sound.data;
 const es = d.es!;
 const category = await getEntry('categories', d.category);
+const contributor = await getEntry('contributors', d.contributor);
 // The hub only has a Spanish name when the category itself is translated, and
 // its Spanish URL only exists on the same condition, so both travel together.
 const catEs = category?.data.es;
@@ -204,6 +205,12 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     <p>{es.blurb}</p>
     {es.origin && (
       <p class="origin-note"><b>Origen</b><span>{es.origin}</span></p>
+    )}
+    {contributor && (
+      <p class="origin-note">
+        <b>{contributor.data.editorial ? 'Agregado por' : 'Enviado por'}</b>
+        <span><a href={`/contributors/${contributor.id}/`}>{contributor.data.name}</a></span>
+      </p>
     )}
   </section>
 

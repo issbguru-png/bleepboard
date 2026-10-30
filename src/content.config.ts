@@ -17,6 +17,21 @@ const sounds = defineCollection({
     /** Editorial popularity weight used for ordering. NOT a measured play
      *  count — nothing counts plays (see docs). Never display as "plays". */
     plays: z.number().default(0),
+    /** Who supplied this clip: a contributor id from src/content/contributors.
+     *
+     *  Required, and deliberately so. Every clip on the site is attributable
+     *  to someone, and the honest answer for the launch catalogue is the
+     *  editorial account rather than an invented person. Submissions that
+     *  come in through /submit/ carry the submitter id instead.
+     *
+     *  This is a provenance record, not decoration: it is what a takedown
+     *  notice is answered with, and what decides whether a clip was stored at
+     *  the direction of a user. Never fill it in with a name that did not
+     *  actually supply the file. */
+    contributor: z.string().default('bleepboard'),
+    /** What the submitter said about where they got it, kept verbatim. Only
+     *  meaningful on user submissions; the editorial catalogue uses `origin`. */
+    sourceNote: z.string().optional(),
     /** Spanish clip page. Presence of this block is the whole opt-in, exactly
      *  as on themes and categories: it renders /es/sound/{slug}/, registers
      *  the hreflang pair on both sides and adds the Spanish URL to the
@@ -101,6 +116,35 @@ const themes = defineCollection({
   }),
 });
 
+/* Contributors.
+ *
+ * A contributor is whoever actually supplied a clip. Two kinds exist:
+ *
+ *   - `bleepboard`, the editorial account, covering the launch catalogue that
+ *     the site team researched, cut and wrote the copy for;
+ *   - real people, created only when a submission through /submit/ is accepted.
+ *
+ * There is no third kind. Inventing contributors to make a curated catalogue
+ * look user-supplied would misstate provenance on the exact record a takedown
+ * notice is answered with, so review-submission.mjs will not create one
+ * without a submission file behind it.
+ */
+const contributors = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/contributors' }),
+  schema: z.object({
+    /** Public display name, as the contributor gave it. */
+    name: z.string().min(2).max(40),
+    /** One line shown on their page and under their clips. */
+    bio: z.string().max(240).optional(),
+    /** The in-house account. Renders as a site account, not as a community
+     *  member, because it is not one. */
+    editorial: z.boolean().default(false),
+    joined: z.coerce.date(),
+    /** A link they asked to be credited with. */
+    link: z.string().url().optional(),
+  }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
@@ -141,4 +185,4 @@ const blog = defineCollection({
 });
 
 export const collections = {
-  themes, sounds, categories, blog };
+  themes, sounds, categories, blog, contributors };

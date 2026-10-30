@@ -1,0 +1,130 @@
+---
+/**
+ * A contributor's page: who they are and what they supplied.
+ *
+ * Every clip on the site resolves to one of these, which is the point. The
+ * editorial account covers the launch catalogue and says so in plain words
+ * rather than being dressed up as a community member.
+ */
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SoundButton from '../../components/SoundButton.astro';
+import { SITE, soundPath, pickTitle, buildDescription } from '../../lib/site';
+import { breadcrumbs, itemList } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const people = await getCollection('contributors');
+  const sounds = await getCollection('sounds');
+  return people.map((p) => ({
+    params: { id: p.id },
+    props: {
+      person: p,
+      clips: sounds
+        .filter((s) => s.data.contributor === p.id)
+        .sort((a, b) => b.data.plays - a.data.plays),
+    },
+  }));
+}
+
+const { person, clips } = Astro.props;
+const d = person.data;
+const pageUrl = `${SITE.url}/contributors/${person.id}/`;
+
+// The editorial account is called Bleepboard, so the usual
+// "{name} on Bleepboard" shape would stutter. It gets its own ladder.
+const title = d.editorial
+  ? pickTitle([
+      `Sounds Added by the ${SITE.name} Team: ${clips.length} Clips`,
+      `Sounds Added by the ${SITE.name} Team`,
+      `${SITE.name} Team`,
+    ])
+  : pickTitle([
+      `${d.name}: ${clips.length} Sounds on ${SITE.name}`,
+      `${d.name} on ${SITE.name}`,
+      d.name,
+    ]);
+const description = buildDescription([
+  d.editorial
+    ? `Clips added by the Bleepboard team: ${clips.length} sounds in all.`
+    : `${d.name} has contributed ${clips.length} sound${clips.length === 1 ? '' : 's'} to Bleepboard.`,
+  d.bio,
+]);
+
+const joined = d.joined.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+
+const schema = [
+  breadcrumbs([
+    ['Home', SITE.url + '/'],
+    ['Contributors', SITE.url + '/contributors/'],
+    [d.name, pageUrl],
+  ]),
+];
+if (clips.length) {
+  schema.push(
+    itemList(
+      `Sounds from ${d.name}`,
+      clips.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+      description
+    )
+  );
+}
+---
+<Base title={title} description={description} schema={schema}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <a href="/contributors/">Contributors</a>
+    <span class="sep" aria-hidden="true">›</span>
+    <span class="here">{d.name}</span>
+  </nav>
+
+  <section class="hub-hero">
+    <p class="eyebrow">
+      <span class="tick"></span>{d.editorial ? 'Site account' : 'Contributor'}
+    </p>
+    <h1>{d.name}</h1>
+    {d.bio && <p class="lede">{d.bio}</p>}
+    <ul class="stats stats--icon">
+      <li><span><b class="tnum">{clips.length}</b> sound{clips.length === 1 ? '' : 's'}</span></li>
+      <li><span>Since <b>{joined}</b></span></li>
+      {d.link && <li><a href={d.link} rel={d.editorial ? undefined : 'nofollow ugc'}>Link</a></li>}
+    </ul>
+  </section>
+
+  {clips.length > 0 && (
+    <section class="section">
+      <div class="section-head"><h2>Sounds from {d.name}</h2></div>
+      <div class="grid grid--lg">
+        {clips.map((s) => (
+          <SoundButton
+            slug={s.id}
+            title={s.data.title}
+            audio={s.data.audio}
+            duration={s.data.duration}
+            category={s.data.category}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="section prose">
+    {d.editorial ? (
+      <p>
+        This is the in-house account. Everything credited to it was found, cut
+        and written up by the site team, not sent in by a visitor. It is listed
+        here so that every clip on Bleepboard has an honest answer to the
+        question of who put it there.
+      </p>
+    ) : (
+      <p>
+        {d.name} sent these in through <a href="/submit/">the submission form</a>,
+        and a person reviewed each one before it went up. If any of it should
+        come down, from {d.name} or from a rights holder, the
+        <a href="/dmca/"> takedown page</a> is the fastest route and we act on
+        direct requests too.
+      </p>
+    )}
+    <p><a href="/submit/">Send a sound in →</a></p>
+  </section>
+</Base>

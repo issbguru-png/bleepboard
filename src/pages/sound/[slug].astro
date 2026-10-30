@@ -33,6 +33,7 @@ export async function getStaticPaths() {
 const { sound } = Astro.props;
 const d = sound.data;
 const category = await getEntry('categories', d.category);
+const contributor = await getEntry('contributors', d.contributor);
 const catName = category?.data.name ?? d.category;
 
 // related: same category or overlapping tags, excluding self
@@ -335,6 +336,15 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     )}
     {d.explainer && (
       <p><a href={d.explainer}>Read the full story behind this sound →</a></p>
+    )}
+    {contributor && (
+      <p class="credit-note">
+        <b>{contributor.data.editorial ? 'Added by' : 'Submitted by'}</b>
+        <span>
+          <a href={`/contributors/${contributor.id}/`}>{contributor.data.name}</a>
+          {!contributor.data.editorial && d.sourceNote && ` — ${d.sourceNote}`}
+        </span>
+      </p>
     )}
   </section>
 

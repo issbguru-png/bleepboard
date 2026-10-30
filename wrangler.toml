@@ -21,3 +21,22 @@ compatibility_date = "2026-08-26"
 [[kv_namespaces]]
 binding = "PLAYS"
 id = "e404cff7b9534d3ba39b16d31a5bb02d"
+
+# --- Sound submissions (functions/api/submit.ts) ------------------------------
+# The upload endpoint parks files here for review. Nothing in these stores is
+# served to the public: the site only ever renders what review-submissions.mjs
+# has promoted into src/content/.
+#
+# Create them before the first deploy that includes /submit/:
+#   wrangler r2 bucket create bleepboard-submissions
+#   wrangler kv namespace create SUBMISSIONS_KV
+# then paste the KV id below. TURNSTILE_SECRET is a secret, not a var:
+#   wrangler pages secret put TURNSTILE_SECRET
+
+[[r2_buckets]]
+binding = "SUBMISSIONS"
+bucket_name = "bleepboard-submissions"
+
+[[kv_namespaces]]
+binding = "SUBMISSIONS_KV"
+id = "" # TODO: from `wrangler kv namespace create SUBMISSIONS_KV`

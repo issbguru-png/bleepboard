@@ -20,5 +20,6 @@
     "title": "Notificación de Discord",
     "origin": "El sonido de mensaje entrante que trae Discord por defecto.",
     "blurb": "El golpecito doble y suave significa que alguien te necesita, o mucho más probablemente que alguien subió un meme a las dos de la mañana. Discord diseñó sus sonidos a propósito más amables que los del teléfono, partiendo de que vas a oírlos cientos de veces al día y no deberías odiarlos para el jueves. Esa familiaridad es justo lo que lo hace útil aquí. Tócalo en cualquier cuarto con gamers adentro. Varios van a voltear por reflejo a revisar un segundo monitor. Imprescindible para edits sobre grupos, servidores y la condición general de ser percibido."
-  }
+  },
+  "contributor": "bleepboard"
 }
