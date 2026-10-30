@@ -82,17 +82,25 @@ const audioUrl = SITE.url + d.audio;
 // Same ladder idea as everywhere else: richest candidate that survives the
 // ~60 character cut. "Botón de sonido" is the head phrase this page competes
 // on, so it sits straight after the name.
-const title = pickTitle([
-  `Botón de Sonido ${es.title}: Tócalo y Baja el MP3 Gratis`,
-  `Botón de Sonido ${es.title}: Tócalo y Baja el MP3`,
-  `Botón de Sonido ${es.title}: MP3 Gratis`,
-  `Botón de Sonido ${es.title}`,
-]);
+const title = d.downloadable
+  ? pickTitle([
+      `Botón de Sonido ${es.title}: Tócalo y Baja el MP3 Gratis`,
+      `Botón de Sonido ${es.title}: Tócalo y Baja el MP3`,
+      `Botón de Sonido ${es.title}: MP3 Gratis`,
+      `Botón de Sonido ${es.title}`,
+    ])
+  : pickTitle([
+      `Botón de Sonido ${es.title}: Tócalo Gratis en Línea`,
+      `Botón de Sonido ${es.title}: Tócalo Gratis`,
+      `Botón de Sonido ${es.title}`,
+    ]);
 
 const blurbSentences = es.blurb.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
 const description = clamp(
   buildDescription([
-    `Toca el sonido ${es.title} al instante. Baja el MP3 gratis, sin registro.`,
+    d.downloadable
+      ? `Toca el sonido ${es.title} al instante. Baja el MP3 gratis, sin registro.`
+      : `Toca el sonido ${es.title} al instante en tu navegador, sin registro.`,
     es.origin,
     ...blurbSentences,
   ])
@@ -185,10 +193,12 @@ const ogCard = OG_CARDS.has(sound.id) ? `/og/${sound.id}.png` : SITE.ogImage;
     </div>
 
     <div class="btn-row sound-actions">
-      <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
-        Bajar MP3
-      </a>
+      {d.downloadable && (
+        <a class="btn primary" href={d.audio} download={`${sound.id}.mp3`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
+          Bajar MP3
+        </a>
+      )}
       <a class="btn" href="#embed">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.5 8.5-4 3.5 4 3.5"/><path d="m15.5 8.5 4 3.5-4 3.5"/></svg>
         Incrustar
