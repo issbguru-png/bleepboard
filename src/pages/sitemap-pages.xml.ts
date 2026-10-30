@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
     '/categories/',
     '/unblocked-soundboard/',
     '/blog/',
-    '/submit/',
+    '/upload/',
     '/contributors/',
     '/about/',
     '/contact/',

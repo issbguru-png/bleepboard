@@ -7,7 +7,7 @@
  * Pages. See workers/submit/.
  *
  * `SUBMIT_ENDPOINT_LIVE` stays false until the Worker is actually deployed and
- * SUBMIT_ENDPOINT below points at it. While false, /submit/ says submissions
+ * SUBMIT_ENDPOINT below points at it. While false, /upload/ says submissions
  * are not open rather than rendering a form that posts into nothing and tells
  * a visitor their clip is under review when it was dropped by a 404. That is
  * the trap /api/play fell into for weeks.
@@ -38,7 +38,7 @@ export const SUBMIT_EMAIL = 'sounds@bleepboard.com';
  * discards anything sent to it. Nothing bounces to the sender either; it just
  * goes nowhere.
  *
- * So this stays false and /submit/ does not print a mailto a visitor would
+ * So this stays false and /upload/ does not print a mailto a visitor would
  * trust. Set up mail routing (Cloudflare Email Routing is free, or forwarding
  * at the registrar, which is Dynadot per the NS records), send yourself a test
  * message, and only then flip this.

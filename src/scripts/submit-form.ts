@@ -1,5 +1,5 @@
 /**
- * Progressive enhancement for the /submit/ form.
+ * Progressive enhancement for the /upload/ form.
  *
  * The form posts natively without this file, which is the point: if the script
  * fails to load, a visitor still gets a working submission and a plain response

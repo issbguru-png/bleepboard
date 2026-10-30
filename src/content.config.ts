@@ -22,7 +22,7 @@ const sounds = defineCollection({
      *  Required, and deliberately so. Every clip on the site is attributable
      *  to someone, and the honest answer for the launch catalogue is the
      *  editorial account rather than an invented person. Submissions that
-     *  come in through /submit/ carry the submitter id instead.
+     *  come in through /upload/ carry the submitter id instead.
      *
      *  This is a provenance record, not decoration: it is what a takedown
      *  notice is answered with, and what decides whether a clip was stored at
@@ -133,7 +133,7 @@ const themes = defineCollection({
  *
  *   - `bleepboard`, the editorial account, covering the launch catalogue that
  *     the site team researched, cut and wrote the copy for;
- *   - real people, created only when a submission through /submit/ is accepted.
+ *   - real people, created only when a submission through /upload/ is accepted.
  *
  * There is no third kind. Inventing contributors to make a curated catalogue
  * look user-supplied would misstate provenance on the exact record a takedown
