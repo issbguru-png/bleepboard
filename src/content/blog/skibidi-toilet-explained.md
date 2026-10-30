@@ -49,6 +49,6 @@ The franchise's real legacy is what it proved: a serialised animated epic could 
 
 You can play the [Skibidi Toilet sound button](/sound/skibidi-toilet/) instantly and download the MP3 free. No signup, no account.
 
-It lives on the [brainrot soundboard](/brainrot-soundboard/) with the rest of the Gen Alpha canon: [67](/sound/six-seven/), the [Thick of It brainrot remix](/sound/thick-of-it-brainrot/), the whole [Italian brainrot](/blog/italian-brainrot-explained/) cast including [Tralalero Tralala](/sound/tralalero-tralala/), and the [Brainrot Rap](/sound/brainrot-rap/) if you want the entire vocabulary in one clip.
+It lives on the [brainrot soundboard](/brainrot-soundboard/) with the rest of the Gen Alpha canon: [67](/sound/six-seven/), [Quaso](/sound/quaso/), and the whole [Italian brainrot](/blog/italian-brainrot-explained/) cast including [Tralalero Tralala](/sound/tralalero-tralala/).
 
 Still lost on the numbers thing? We've explained [what 67 means](/blog/what-does-67-mean/) too.

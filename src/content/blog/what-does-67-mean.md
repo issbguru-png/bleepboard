@@ -50,4 +50,4 @@ It got big enough that dictionary publishers took notice, which is traditionally
 
 You can play the [67 (Six Seven) sound button](/sound/six-seven/) instantly on Bleepboard and download the MP3 free. Ideal for ambushing a group chat or an unsuspecting Discord call.
 
-It sits with the rest of the Gen Alpha canon on our [brainrot soundboard](/brainrot-soundboard/), alongside [Skibidi Toilet](/sound/skibidi-toilet/), the [Thick of It brainrot remix](/sound/thick-of-it-brainrot/) and the [Brainrot Rap](/sound/brainrot-rap/) that catalogues the whole vocabulary. For the previous generation's take on number-based nonsense, there's always [Nine Plus Ten](/sound/nine-plus-ten/).
+It sits with the rest of the Gen Alpha canon on our [brainrot soundboard](/brainrot-soundboard/), alongside [Skibidi Toilet](/sound/skibidi-toilet/) and [Quaso](/sound/quaso/). For the previous generation's take on number-based nonsense, there's always [Nine Plus Ten](/sound/nine-plus-ten/).

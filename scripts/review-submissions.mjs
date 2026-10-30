@@ -92,9 +92,19 @@ function pull() {
   // Drains the Worker's KV into the local queue so review happens against real
   // files on disk rather than through a dashboard.
   console.log('Pulling pending submissions from Cloudflare KV…');
-  const CFG = ['--config', 'workers/submit/wrangler.toml'];
+  // --remote is not optional. Wrangler 4 points KV commands at LOCAL storage by
+  // default, so without it `key list` returns [] against a namespace that is
+  // full of real submissions, and this reports "Pulled 0" forever while the
+  // queue silently backs up. Cost an hour to find; do not drop it.
+  const CFG = ['--remote', '--config', 'workers/submit/wrangler.toml'];
   const wrangler = (args) =>
     execFileSync('npx', ['wrangler', ...args], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  // Same call without an encoding, so stdout comes back as a Buffer. `kv key
+  // get` has no --path in wrangler 4: it writes the raw value to stdout, and
+  // reading that as utf8 silently mangles every byte above 0x7f, which for an
+  // MP3 is most of them. The file looks plausible and will not play.
+  const wranglerBin = (args) =>
+    execFileSync('npx', ['wrangler', ...args], { cwd: root, maxBuffer: 64 * 1024 * 1024 });
 
   let keys;
   try {
@@ -112,9 +122,8 @@ function pull() {
     const rec = JSON.parse(wrangler(['kv', 'key', 'get', key, '--binding', 'SUBMISSIONS_KV', ...CFG]));
     if (rec.status !== 'pending') continue;
     const audio = `${rec.id}.${rec.ext}`;
-    // --text would mangle binary, so the audio comes back as a file.
-    wrangler(['kv', 'key', 'get', `audio:${rec.id}`, '--binding', 'SUBMISSIONS_KV',
-              '--path', resolve(QUEUE, audio), ...CFG]);
+    const bytes = wranglerBin(['kv', 'key', 'get', `audio:${rec.id}`, '--binding', 'SUBMISSIONS_KV', ...CFG]);
+    writeFileSync(resolve(QUEUE, audio), bytes);
     writeFileSync(resolve(QUEUE, `${rec.id}.json`), JSON.stringify({ ...rec, audioFile: audio }, null, 2) + '\n');
     n++;
   }

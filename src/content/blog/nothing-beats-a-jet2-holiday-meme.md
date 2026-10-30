@@ -36,9 +36,9 @@ The format went so viral that the voiceover artist behind the ad became a minor 
 
 ## Why indifference is funnier than commentary
 
-Most disaster sounds react to the disaster. The [Oh No No No laugh](/sound/oh-no-no-no/) starts wheezing before the impact even lands, and [It Was at This Moment He Knew](/sound/he-knew/) arrives specifically to point at the mistake. Both are commentary. Both are on your side.
+Most disaster sounds react to the disaster. [It Was at This Moment He Knew](/sound/he-knew/) arrives specifically to point at the mistake, wheezing along before the impact has even landed. That is commentary, and it is on your side.
 
-The Jet2 audio does not know anything has happened. It carries on selling a family break at £50 off while a gazebo cartwheels down a beach behind it, and that refusal to acknowledge the footage is the whole trick. It's closer to what [elevator music](/sound/elevator-music/) does in an awkward silence: cheerfulness that keeps going long after the room has stopped deserving it. Nothing in the audio is doing comedy. The clash is, and the clash gets funnier the harder the edit works to earn it.
+The Jet2 audio does not know anything has happened. It carries on selling a family break at £50 off while a gazebo cartwheels down a beach behind it, and that refusal to acknowledge the footage is the whole trick. It's closer to what hold music does in an awkward silence: cheerfulness that keeps going long after the room has stopped deserving it. Nothing in the audio is doing comedy. The clash is, and the clash gets funnier the harder the edit works to earn it.
 
 ## Why it stuck
 
@@ -54,6 +54,6 @@ Then leave the audio alone. The instinct to cut the music when the disaster land
 
 ## Play and download it
 
-Play the [Nothing Beats a Jet2 Holiday sound button](/sound/jet2-holiday/) on Bleepboard and download the free MP3 for your own disaster edits. It lives on our [meme soundboard](/meme-soundboard/) alongside fellow chaos-certified audio like the [Oh No No No laugh](/sound/oh-no-no-no/) and [It Was at This Moment He Knew](/sound/he-knew/), the holy trinity of things-going-wrong sounds.
+Play the [Nothing Beats a Jet2 Holiday sound button](/sound/jet2-holiday/) on Bleepboard and download the free MP3 for your own disaster edits. It lives on our [meme soundboard](/meme-soundboard/) alongside fellow chaos-certified audio like [It Was at This Moment He Knew](/sound/he-knew/) and the [Metal Pipe Falling sound](/sound/metal-pipe-falling/), the holy trinity of things-going-wrong sounds.
 
 £50 per person off. That's £200 for a family of four.
