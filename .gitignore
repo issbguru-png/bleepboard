@@ -11,3 +11,8 @@ dist/
 data/submissions/*
 !data/submissions/README.md
 !data/submissions/reviewed/
+
+# Wrangler local state and local-mode KV. Not ours to track, and it holds
+# cached copies of whatever passed through the submission queue.
+.wrangler/
+**/.wrangler/
