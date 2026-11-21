@@ -84,11 +84,20 @@ const quick = ['risa', 'explosión', 'grito', 'alarma', 'aplausos', 'pedo'];
  * online. So: lead with botonera, carry MP3 and online, and keep the count,
  * which is the one thing a soundboard result can show that a competitor's
  * generic title cannot. */
-// The h1 leads on "botonera de sonidos" deliberately. That phrase and its
-// close variants carry ~900 impressions a month at positions 7 to 10, which is
-// the biggest ranked cluster the Spanish tree has, and the h1 used to say
-// "Botones de sonido para cada meme" while the title targeted the other
-// phrase. Keep the two pointing at the same query.
+/* The two search engines want different words for this page, and Bing is the
+ * one with the volume, so the title leads on its phrase and keeps Google's.
+ *
+ * Bing, all time: "botones de sonidos" 4.2K impressions, "botones" 1.2K,
+ * "sonidos botones" 545, all at positions 6 to 10. Google over the same
+ * period: "botonera sonidos" 448, "botonera de sonidos" 199. Bing shows this
+ * page about ten times as often and wants "botones", the plural noun, where
+ * Google wants "botonera", the collective.
+ *
+ * The page takes 109 clicks from 11.8K Bing impressions. That is 0.93% at
+ * position 7.9, the worst click-through of any page on the site and the
+ * biggest single gap in it. Leading with the exact phrase is the first thing
+ * to try. Part of it is unwinnable: the bare word "botones" also means the
+ * kind you sew on, so do not expect all of those impressions to convert. */
 /* Spanish name and Spanish URL when the clip has been translated, English
  * when it has not. This page is the best-ranking thing in the /es/ tree and
  * it was sending all 30 of its clip links into English, so the 77 translated
@@ -98,10 +107,10 @@ const label = (s: any) => s.data.es?.title ?? s.data.title;
 const link = (s: any) => (s.data.es ? esSoundPath(s.id) : soundPath(s.id));
 
 const title = pickTitle([
-  `Botonera de Sonidos Online: ${total} Botones MP3 Gratis`,
-  `Botonera de Sonidos Online: ${total} Botones Gratis`,
-  `Botonera de Sonidos: ${total} Botones MP3 Gratis`,
-  `Botonera de Sonidos Online Gratis`,
+  `Botones de Sonidos: Botonera Online con ${total} Gratis`,
+  `Botones de Sonidos: Botonera Online Gratis`,
+  `Botones de Sonidos: ${total} Botones MP3 Gratis`,
+  `Botones de Sonidos Gratis`,
 ]);
 const description =
   `Botonera de sonidos online y gratis: ${total} botones que suenan al toque. ` +
@@ -185,7 +194,7 @@ const schema = [
 
     <div class="hero-copy">
       <p class="eyebrow"><span class="tick"></span>Botonera de memes gratis</p>
-      <h1>Botonera de Sonidos Online para Cada Meme</h1>
+      <h1>Botones de Sonidos: la Botonera Online</h1>
       <p class="lede">
         Toca un botón y suena. Bleepboard es una botonera de sonidos gratis con
         {total} botones con sonidos de memes, efectos y clips virales. Los escuchas al
