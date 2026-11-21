@@ -19,6 +19,26 @@ if (form && note) {
     else delete note.dataset.state;
   };
 
+  /* Turnstile does not hand over a token the instant the page loads. Measured
+     on production 2026-11-21: the field is still empty at 7s and filled by
+     8.5s. Anyone who submits inside that window hits the Worker with no token
+     and gets a flat 403 telling them we could not verify they are a person,
+     which reads as a rejection rather than "wait a moment". The form is slow
+     to fill so most people never race it, but the ones who do get the worst
+     possible message, and we have 116 form_starts and zero completions. */
+  const tokenReady = () =>
+    (form.querySelector<HTMLInputElement>('input[name="cf-turnstile-response"]')?.value ?? '').length > 20;
+
+  /** Give Turnstile up to `ms` to produce a token before giving up on it. */
+  const waitForToken = async (ms: number) => {
+    const until = Date.now() + ms;
+    while (Date.now() < until) {
+      if (tokenReady()) return true;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    return tokenReady();
+  };
+
   form.addEventListener('submit', async (e) => {
     const file = form.querySelector<HTMLInputElement>('input[type="file"]')?.files?.[0];
     // Checked here as well as on the server so somebody on a phone connection
@@ -30,8 +50,18 @@ if (form && note) {
     }
 
     e.preventDefault();
-    say('Sending…', '');
     if (button) button.disabled = true;
+
+    if (!tokenReady()) {
+      say('Just a moment, finishing the robot check…', '');
+      if (!(await waitForToken(15000))) {
+        say('The robot check has not finished. Give it a few seconds and press send again.', 'error');
+        if (button) button.disabled = false;
+        return;
+      }
+    }
+
+    say('Sending…', '');
 
     try {
       const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
