@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /embed/
+Disallow: /es/embed/
 Disallow: /api/
 
 Sitemap: https://bleepboard.com/sitemap_index.xml
