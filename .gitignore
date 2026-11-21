@@ -11,6 +11,14 @@ dist/
 data/submissions/*
 !data/submissions/README.md
 !data/submissions/reviewed/
+# ...but never the identifiers. reviewed/ is tracked and this repo is public,
+# so contact addresses, IPs and user agents go in a .private.json sidecar that
+# stays local. See the note above split() in scripts/review-submissions.mjs.
+data/submissions/reviewed/*.private.json
+data/submissions/reviewed/*.submitted.json
+data/submissions/reviewed/*.mp3
+data/submissions/reviewed/*.wav
+data/submissions/reviewed/*.ogg
 
 # Wrangler local state and local-mode KV. Not ours to track, and it holds
 # cached copies of whatever passed through the submission queue.

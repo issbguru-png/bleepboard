@@ -1,0 +1,13 @@
+{
+  "id": "4c54cc59-7be7-402d-86c2-0af5b73b43ce",
+  "title": "Horse",
+  "sourceNote": "Family guy",
+  "contributorName": "Liam",
+  "ext": "mp3",
+  "bytes": 81084,
+  "submittedAt": "2026-11-20T15:46:57.051Z",
+  "status": "rejected",
+  "audioFile": "4c54cc59-7be7-402d-86c2-0af5b73b43ce.mp3",
+  "reason": "Family Guy audio. The submitter named the source themselves. TV audio is refused.",
+  "reviewedAt": "2026-11-21T05:10:26.956Z"
+}

@@ -28,7 +28,7 @@
  *                            Audio and metadata both live in KV, see
  *                            workers/submit/handler.ts for why.
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, copyFileSync, renameSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, copyFileSync, renameSync, rmSync } from 'node:fs';
 import { resolve, dirname, basename, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
@@ -41,6 +41,40 @@ const CONTRIBUTORS = resolve(root, 'src/content/contributors');
 const AUDIO = resolve(root, 'public/audio');
 
 const RED = '\x1b[31m', YEL = '\x1b[33m', GRN = '\x1b[32m', DIM = '\x1b[2m', OFF = '\x1b[0m';
+
+/* The reviewed/ record is TRACKED IN GIT and this repository is PUBLIC.
+ *
+ * A submission carries `contact`, `ip` and `userAgent`. Writing those into
+ * reviewed/ publishes them. That is not hypothetical: of the first 26
+ * submissions, reviewed on 2026-11-21, four left an address and three of the
+ * four were school accounts (student.upperdarbysd.org, docostudents.org,
+ * students.d303.org). Children's email addresses and their IPs, in a public
+ * repository, permanently, in the git history where deleting the file does
+ * not remove them.
+ *
+ * So the record splits in two. The sanitised half is the moderation evidence
+ * and is tracked: what was sent, who said they made it, what we decided and
+ * why. The private half holds the identifiers, sits beside it under a
+ * .private.json name, and is gitignored. Nothing of evidential value is lost
+ * and nothing identifying is published. */
+const PRIVATE_FIELDS = ['contact', 'ip', 'userAgent'];
+function split(sub) {
+  const pub = { ...sub };
+  const priv = {};
+  for (const f of PRIVATE_FIELDS) {
+    if (sub[f] !== undefined) priv[f] = sub[f];
+    delete pub[f];
+  }
+  delete pub.file;
+  return { pub, priv };
+}
+/** Writes the public record and, when there is anything to protect, the
+ *  gitignored private sidecar next to it. */
+function writeReviewed(id, pub, priv) {
+  writeFileSync(resolve(DONE, `${id}.json`), JSON.stringify(pub, null, 2) + '\n');
+  if (Object.keys(priv).length)
+    writeFileSync(resolve(DONE, `${id}.private.json`), JSON.stringify({ id, ...priv }, null, 2) + '\n');
+}
 
 const argv = process.argv.slice(2);
 const has = (f) => argv.includes(f);
@@ -199,7 +233,9 @@ function accept() {
     sourceNote: sub.sourceNote,
   }, null, 2) + '\n');
 
-  renameSync(sub.file, resolve(DONE, basename(sub.file)));
+  const { pub, priv } = split(sub);
+  writeReviewed(sub.id, { ...pub, status: 'accepted', slug, reviewedAt: new Date().toISOString() }, priv);
+  rmSync(sub.file, { force: true });
   renameSync(audioSrc, resolve(DONE, basename(audioSrc)));
 
   console.log(`\n${GRN}Accepted${OFF} ${id} as ${slug}, credited to ${sub.contributorName}.`);
@@ -218,10 +254,11 @@ function reject() {
     console.error(`${RED}No submission ${id} in the queue.${OFF}`);
     process.exit(1);
   }
-  writeFileSync(resolve(DONE, `${id}.json`), JSON.stringify({
-    ...sub, file: undefined, status: 'rejected', reason, reviewedAt: new Date().toISOString(),
-  }, null, 2) + '\n');
-  renameSync(sub.file, resolve(DONE, `${id}.submitted.json`));
+  const { pub, priv } = split(sub);
+  writeReviewed(id, { ...pub, status: 'rejected', reason, reviewedAt: new Date().toISOString() }, priv);
+  // The raw submission file still holds the identifiers, so it is removed
+  // rather than parked in reviewed/ where it would be committed.
+  rmSync(sub.file, { force: true });
   const audio = resolve(QUEUE, sub.audioFile ?? '');
   if (sub.audioFile && existsSync(audio)) renameSync(audio, resolve(DONE, basename(audio)));
   console.log(`${GRN}Rejected${OFF} ${id}.${reason ? ` Reason recorded: ${reason}` : ''}`);
