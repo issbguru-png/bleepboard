@@ -84,6 +84,11 @@ const quick = ['risa', 'explosión', 'grito', 'alarma', 'aplausos', 'pedo'];
  * online. So: lead with botonera, carry MP3 and online, and keep the count,
  * which is the one thing a soundboard result can show that a competitor's
  * generic title cannot. */
+// The h1 leads on "botonera de sonidos" deliberately. That phrase and its
+// close variants carry ~900 impressions a month at positions 7 to 10, which is
+// the biggest ranked cluster the Spanish tree has, and the h1 used to say
+// "Botones de sonido para cada meme" while the title targeted the other
+// phrase. Keep the two pointing at the same query.
 const title = pickTitle([
   `Botonera de Sonidos Online: ${total} Botones MP3 Gratis`,
   `Botonera de Sonidos Online: ${total} Botones Gratis`,
@@ -172,7 +177,7 @@ const schema = [
 
     <div class="hero-copy">
       <p class="eyebrow"><span class="tick"></span>Botonera de memes gratis</p>
-      <h1>Botones de sonido para cada meme</h1>
+      <h1>Botonera de Sonidos Online para Cada Meme</h1>
       <p class="lede">
         Toca un botón y suena. Bleepboard es una botonera de sonidos gratis con
         {total} botones con sonidos de memes, efectos y clips virales. Los escuchas al
