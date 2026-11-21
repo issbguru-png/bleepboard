@@ -1,6 +1,6 @@
 ---
 /**
- * /upload/ — upload a sound.
+ * /upload/ - upload a sound.
  *
  * Two states, decided by SUBMIT_ENDPOINT_LIVE in src/lib/submissions.ts:
  * the upload form once the Cloudflare Function is reachable, and an email
@@ -91,11 +91,13 @@ const schema = [
 
     <h2>What Gets Refused</h2>
     <ul class="rules">
-      <li><b>Music and media you do not own.</b> Songs, film and TV audio, game rips, anything under a label or a studio.</li>
+      <li><b>Music and media you do not own.</b> Songs, film and TV audio, game rips, anything under a label or a studio.
+        Recording it off your own screen or your own server does not change who owns it.</li>
       <li><b>Slurs and harassment.</b> Including clips whose only purpose is to be shouted at someone.</li>
       <li><b>Sexual or crude-sexual audio</b>, drug references, and politically charged clips.</li>
       <li><b>Real people's voices without their say-so.</b> A private recording of someone is not yours to publish.</li>
-      <li><b>Anything recorded off a call or a classroom</b> where the people in it did not know.</li>
+      <li><b>Anything you recorded in class or on a call.</b> If the people in it did not know, it
+        does not go up, however funny it was.</li>
     </ul>
     <p>
       A person listens to every submission against that list before anything
@@ -120,7 +122,8 @@ const schema = [
             <label for="f-source">Where does it come from?</label>
             <textarea id="f-source" name="source" required maxlength="400" rows="3"
               placeholder="I recorded my dog in 2024."></textarea>
-            <span class="hint">"I made it" is a complete answer. Vagueness here is the usual reason a clip is refused.</span>
+            <span class="hint">"I made it" is a complete answer. So is naming the show, game or song,
+              and that one means no. Say where the audio came from, not where the file was saved.</span>
           </p>
           <p class="field">
             <label for="f-name">Name to credit you as</label>

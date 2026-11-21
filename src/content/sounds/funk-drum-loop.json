@@ -1,0 +1,20 @@
+{
+  "title": "funk",
+  "category": "sound-effects",
+  "tags": [
+    "funk",
+    "drums",
+    "loop",
+    "beat",
+    "groove"
+  ],
+  "duration": 8.4,
+  "audio": "/audio/funk-drum-loop.mp3",
+  "blurb": "Eight seconds of drum machine, programmed in Drumbit, a free pattern sequencer that runs in a browser tab. AAron built it and sent it in. The pattern sits around 152 beats per minute and repeats cleanly, which makes it the odd one out on a board built for one-shot noises: most buttons here are a single hit, and this one is a groove you let run. Good as a bed under a voiceover, a stream starting soon screen, or anything that needs filling while you talk.",
+  "origin": "Programmed by AAron in Drumbit, a drum machine that runs in a browser, and sent in through the upload form.",
+  "added": "2026-11-21T05:27:45.285Z",
+  "featured": false,
+  "plays": 0,
+  "contributor": "aaron",
+  "sourceNote": "from drumbit i made it"
+}
