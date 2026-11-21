@@ -5,7 +5,7 @@ import SoundButton from '../../components/SoundButton.astro';
 import CategoryIcon from '../../components/CategoryIcon.astro';
 import StatIcon from '../../components/StatIcon.astro';
 import Woofer from '../../components/Woofer.astro';
-import { SITE, hubPath, soundPath, pickTitle } from '../../lib/site';
+import { SITE, hubPath, soundPath, esSoundPath, pickTitle } from '../../lib/site';
 import { organization, itemList, faqPage, breadcrumbs } from '../../lib/schema';
 
 /*
@@ -89,6 +89,14 @@ const quick = ['risa', 'explosión', 'grito', 'alarma', 'aplausos', 'pedo'];
 // the biggest ranked cluster the Spanish tree has, and the h1 used to say
 // "Botones de sonido para cada meme" while the title targeted the other
 // phrase. Keep the two pointing at the same query.
+/* Spanish name and Spanish URL when the clip has been translated, English
+ * when it has not. This page is the best-ranking thing in the /es/ tree and
+ * it was sending all 30 of its clip links into English, so the 77 translated
+ * clip pages had almost nothing pointing at them. Between them they had one
+ * impression. Same pair of helpers es/[hub].astro uses. */
+const label = (s: any) => s.data.es?.title ?? s.data.title;
+const link = (s: any) => (s.data.es ? esSoundPath(s.id) : soundPath(s.id));
+
 const title = pickTitle([
   `Botonera de Sonidos Online: ${total} Botones MP3 Gratis`,
   `Botonera de Sonidos Online: ${total} Botones Gratis`,
@@ -164,7 +172,7 @@ const schema = [
   ]),
   itemList(
     'Sonidos en tendencia',
-    trending.map((s) => ({ name: s.data.title, url: SITE.url + soundPath(s.id) })),
+    trending.map((s) => ({ name: label(s), url: SITE.url + link(s) })),
     'Los botones de sonido que más se están tocando ahora mismo.'
   ),
 ];
@@ -251,7 +259,7 @@ const schema = [
     <p class="section-sub">Los botones que más se están tocando ahora mismo.</p>
     <div class="grid grid--lg">
       {trending.map((s, i) => (
-        <SoundButton playLabel="Reproducir" slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i < 3 ? i + 1 : undefined} />
+        <SoundButton playLabel="Reproducir" slug={s.id} title={label(s)} href={link(s)} audio={s.data.audio} duration={s.data.duration} category={s.data.category} rank={i < 3 ? i + 1 : undefined} />
       ))}
     </div>
   </section>
@@ -264,7 +272,7 @@ const schema = [
     <p class="section-sub">Los clips más recientes del tablero.</p>
     <div class="grid">
       {newest.map((s) => (
-        <SoundButton playLabel="Reproducir" slug={s.id} title={s.data.title} audio={s.data.audio} duration={s.data.duration} category={s.data.category} isNew />
+        <SoundButton playLabel="Reproducir" slug={s.id} title={label(s)} href={link(s)} audio={s.data.audio} duration={s.data.duration} category={s.data.category} isNew />
       ))}
     </div>
   </section>
