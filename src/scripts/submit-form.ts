@@ -19,6 +19,27 @@ if (form && note) {
     else delete note.dataset.state;
   };
 
+  /* GA4 cannot see this form finish on its own.
+     Enhanced measurement's `form_submit` hooks a native submit, and this
+     handler calls preventDefault() and posts with fetch(), so the event never
+     fires. That blind spot cost three weeks: the dashboard showed 116
+     form_starts and zero completions, which read as a broken form, while 26
+     real submissions sat unreviewed in KV the whole time. Checked against the
+     live namespace on 2026-11-21.
+     So report the outcome ourselves. `upload_failed` matters as much as the
+     success: a browser test on 2026-11-21 hit two thrown fetches in five
+     attempts that no backend probe could reproduce, and the duplicate names in
+     the queue (three from one person, two from two others) look like people
+     retrying after exactly that. Without this event there is no way to tell a
+     quiet failure from nobody trying. */
+  const track = (event: string, params: Record<string, string | number> = {}) => {
+    try {
+      (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', event, params);
+    } catch {
+      /* Analytics must never break a submission. */
+    }
+  };
+
   /* Turnstile does not hand over a token the instant the page loads. Measured
      on production 2026-11-21: the field is still empty at 7s and filled by
      8.5s. Anyone who submits inside that window hits the Worker with no token
@@ -45,6 +66,7 @@ if (form && note) {
     // is not made to upload 10 MB before being told no.
     if (file && file.size > MAX_BYTES) {
       e.preventDefault();
+      track('upload_failed', { reason: 'too_large', bytes: file.size });
       say('That file is over 2 MB. Trim the clip and try again.', 'error');
       return;
     }
@@ -55,6 +77,7 @@ if (form && note) {
     if (!tokenReady()) {
       say('Just a moment, finishing the robot check…', '');
       if (!(await waitForToken(15000))) {
+        track('upload_failed', { reason: 'turnstile_timeout' });
         say('The robot check has not finished. Give it a few seconds and press send again.', 'error');
         if (button) button.disabled = false;
         return;
@@ -68,11 +91,14 @@ if (form && note) {
       const data = (await res.json().catch(() => ({}))) as { error?: string; message?: string };
       if (res.ok) {
         form.hidden = true;
+        track('upload_submitted', { bytes: file?.size ?? 0 });
         say(data.message ?? 'Submitted for review. Nothing goes live until a person has listened to it.', 'ok');
         return;
       }
+      track('upload_failed', { reason: `http_${res.status}` });
       say(data.error ?? `Something went wrong (${res.status}). Try again in a minute.`, 'error');
     } catch {
+      track('upload_failed', { reason: 'network' });
       say('Could not reach the server. Check your connection and try again.', 'error');
     } finally {
       if (button) button.disabled = false;
